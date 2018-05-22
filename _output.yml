@@ -1,0 +1,12 @@
+bookdown::gitbook:
+  css: style.css
+  split_by: rmd
+  config:
+    toc:
+      collapse: section
+    download: [pdf]
+    edit: https://github.com/bird-team/brisbane-bird-atlas/edit/master/%s
+bookdown::pdf_book:
+  keep_tex: false
+  include:
+    in_header: preamble.tex

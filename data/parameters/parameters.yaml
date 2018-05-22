@@ -1,0 +1,20 @@
+title: atlas parameters
+
+crs: 3857                                 # coordinate reference system for mapping
+number_species: all                       # number of species to include in atlas
+grid_resolution: 2000                     # resolution for altlas grids in meters
+
+records:                                   # parameters for eBird record data
+  scientific_column_name: SCIENTIFIC_NAME # column name for species' scientific names
+  date_column_name: OBSERVATION_DATE      # column name for record date data
+  date_column_format: %d/%m/%Y            # date format for record dates
+  longitude_column_name: LON              # column name for record longitude data
+  latitude_column_name: LAT               # column name for record latitudes data
+  start_date: 01/01/2007                    # omit records collected before this date
+
+taxonomy:                                 # parameters for eBird taxonomy data
+  scientific_column_name: SCI_NAME        # column name for species' scientific names
+  common_column_name: PRIMARY_COM_NAME    # column name for species' common names
+  family_column_name: FAMILY              # column name for species' family names
+  order_column_name: ORDER                # column name for species' order names
+  sort_column_name: TAXON_ORDER           # column name for sorting different species in the atlas
