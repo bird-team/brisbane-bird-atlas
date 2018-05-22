@@ -77,11 +77,11 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
   x <- x[!grepl("sp.", x$species_scientific_name, fixed = TRUE), , drop = FALSE]
 
   # convert data.frame to sf object
-  x <- st_as_sf(x, coords = c("longitude", "latitude"), crs = 4326,
+  x <- sf::st_as_sf(x, coords = c("longitude", "latitude"), crs = 4326,
                 agr = "constant")
 
   # remove records not inside study area
-  x <- x[sf::st_intersects(x, study_area_data, sparse = TRUE)[, 1], ]
+  x <- x[as.matrix(sf::st_intersects(x, study_area_data))[, 1], ]
 
   # return result
   x
@@ -128,8 +128,7 @@ format_ebird_taxonomy <- function(x, scientific_column_name,
                            assertthat::has_name(x, order_column_name),
                            is.character(x[[order_column_name]]),
                            assertthat::is.string(sort_column_name),
-                           assertthat::has_name(x, sort_column_name),
-                           is.character(x[[sort_column_name]]))
+                           assertthat::has_name(x, sort_column_name))
   # set column names
   data.table::setnames(x,
                        c(scientific_column_name, common_column_name,
@@ -139,13 +138,16 @@ format_ebird_taxonomy <- function(x, scientific_column_name,
                          "family", "order_scientific_name",
                          "species_sorting_key"))
 
+  # remove duplicated
+  x <- x[!duplicated(x$species_scientific_name), ]
+
   # remove taxa not identified to sp. level
   x <- x[!grepl("sp.", x$species_scientific_name, fixed = TRUE), , drop = FALSE]
 
   # add in family common name
-  x$family_scientific_name <- vapply(strsplit(" ", x$family, fixed = TRUE),
+  x$family_scientific_name <- vapply(strsplit(x$family, " ", fixed = TRUE),
                                      `[[`, character(1), 1)
-  x$family_common_name <- vapply(strsplit("(", x$family, fixed = TRUE),
+  x$family_common_name <- vapply(strsplit(x$family, "(", fixed = TRUE),
                                  `[[`, character(1), 2)
   x$family_common_name <- gsub(")", "", x$family_common_name, fixed = TRUE)
 

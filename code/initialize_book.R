@@ -1,25 +1,35 @@
 # Initialization
-# set parameters
+## set default options
 options(stringsAsFactors = FALSE)
+
+## set parameters
 species_template_path <- "templates/species-template.txt"
 chapter_template_path <- "templates/chapter-template.txt"
 taxonomy_path <- dir("data/taxonomy","^.*\\.xlsx$", full.names = TRUE)
 study_area_path <- dir("data/study-area", "^.*\\.shp$", full.names = TRUE)
-unzip(dir('data/records', '^.*\\.zip$', full.names = TRUE), exdir = tempdir())
-record_path <- dir(tempdir(), '^.*\\.csv$', full.names = TRUE)
+unzip(dir("data/records", "^.*\\.zip$", full.names = TRUE), exdir = tempdir())
+record_path <- dir(tempdir(), "^.*\\.csv$", full.names = TRUE)
 
-# load packages
+## set coommand line arguments
+cmd_args <- commandArgs(trailingOnly = TRUE)
+if (length(cmd_args) > 0) {
+  overwrite <- as.logical(cmd_args[1])
+} else {
+  overwrite <- FALSE
+}
+
+## load packages
 library(yaml)
 library(plyr)
 library(dplyr)
 library(sf)
 
-# source functions
+## source functions
 source("code/functions.R")
 
 # Preliminary processing
 ## load parameters
-raw_parameters <- yaml::yaml.load("data/parameters/parameters.yaml")
+parameters <- yaml::read_yaml("data/parameters/parameters.yaml")
 
 ## load data
 study_area_data <- sf::st_transform(sf::st_read(study_area_path), 4326)
@@ -31,25 +41,29 @@ chapter_template_data <- readLines(chapter_template_path)
 species_template_data <- readLines(species_template_path)
 
 ## format record data
-record_data <- do.call(record_data, append(list(x = record_data,
-                                                study_area = study_area_data),
-                                           raw_parameters$records))
+record_data <- do.call(format_ebird_records,
+                       append(list(x = record_data,
+                                   study_area = study_area_data),
+                              parameters$records))
 
 ## format taxonomy data
-taxonomy_data <- do.call(taxonomy_data, append(list(x = taxonomy_data),
-                                               raw_parameters$taxonomy))
+taxonomy_data <- do.call(format_ebird_taxonomy,
+                         append(list(x = taxonomy_data),
+                                parameters$taxonomy))
 
-## align data sets
+## define species names
 species_names <- intersect(record_data$species_scientific_name,
                            taxonomy_data$species_scientific_name)
+
+## subset taxonomy data if required
+if (!identical(parameters$number_species, "all"))
+  species_names <- species_names[seq_len(parameters$number_species)]
+
+## align data sets
 taxonomy_data <- taxonomy_data[taxonomy_data$species_scientific_name %in%
                                species_names, , drop = FALSE]
 record_data <- record_data[record_data$species_scientific_name %in%
                            species_names, , drop = FALSE]
-
-## subset taxonomy data if required
-if (!identical(raw_parameters$number_species, "all"))
-  taxonomy_data <- taxonomy_data[seq_len(raw_parameters$number_species)]
 
 # Main processing
 ## generate rmarkdown files using the templates
@@ -67,15 +81,20 @@ rmd_paths <- lapply(unique(taxonomy_data$family_scientific_name), function(f) {
   file_names <- gsub("(", "", file_names, fixed = TRUE)
   file_names <- gsub(")", "", file_names, fixed = TRUE)
   file_names <- gsub("/", "", file_names, fixed = TRUE)
-  file_names <- gsub(" ", "", file_names, fixed = TRUE)
+  file_names <- gsub(" ", "-", file_names, fixed = TRUE)
   file_names <- gsub(".", "", file_names, fixed = TRUE)
   file_names <- paste0(file_names, ".Rmd")
   ### create family chapter header
-  writeLines(gsub('$$FAMILYNAME$$', f, chapter_template_data, fixed = TRUE),
+  writeLines(gsub("$$FAMILYNAME$$", f, chapter_template_data, fixed = TRUE),
              file.path(file_names[1]))
   ### create rmarkdown file for the species in the family
-  vapply(seq_along(species_names), FUN.VALUE = logical(1), function(i) {
-    writeLines(gsub('$$SPECIESNAME$$', species_names[i],
+  if (overwrite) {
+    pos <- seq_along(species_names)
+  } else {
+    pos <- which(!file.exists(file_names[-1]))
+  }
+  vapply(pos, FUN.VALUE = logical(1), function(i) {
+    writeLines(gsub("$$SPECIESNAME$$", species_names[i],
                species_template_data, fixed = TRUE), file_names[i + 1])
     TRUE
   })
