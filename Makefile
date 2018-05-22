@@ -32,7 +32,11 @@ init: data/* code/initialize_book.R
 	docker run --name=brisbanebird -dt 'brisbanebirdteam/docker:latest' \
 	&& docker cp . brisbanebird:/tmp/ \
 	&& docker exec brisbanebird sh -c "cd /tmp; Rscript code/initialize_book.R TRUE" \
-	&& docker cp brisbanebird:/tmp/*.Rmd . || true
+	&& docker cp brisbanebird:/tmp/_bookdown.yml . \
+	&& docker exec brisbanebird sh -c "cd tmp; zip -r rmd.zip *.Rmd"
+	&& docker cp brisbanebird:/tmp/rmd.zip . \
+	&& unzip rmd.zip \
+	&& rm rmd.zip || true
 	docker stop -t 1 brisbanebird || true && docker rm brisbanebird || true
 
 # update graphs in existing book pages with graphs in template file
@@ -40,7 +44,11 @@ update: data/* code/initialize_book.R
 	docker run --name=brisbanebird -dt 'brisbanebirdteam/docker:latest' \
 	&& docker cp . brisbanebird:/tmp/ \
 	&& docker exec brisbanebird sh -c "cd /tmp; Rscript code/initialize_book.R FALSE" \
-	&& docker cp brisbanebird:/tmp/*.Rmd . || true
+	&& docker cp brisbanebird:/tmp/_bookdown.yml . \
+	&& docker exec brisbanebird sh -c "cd tmp; zip -r rmd.zip *.Rmd"
+	&& docker cp brisbanebird:/tmp/rmd.zip . \
+	&& unzip rmd.zip \
+	&& rm rmd.zip || true
 	docker stop -t 1 brisbanebird || true && docker rm brisbanebird || true
 
 # build book
