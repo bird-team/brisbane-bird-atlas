@@ -3,6 +3,10 @@ title: atlas parameters
 crs: 3857                                 # coordinate reference system for mapping
 number_species: 3                         # number of species to include in atlas
 grid_resolution: 2000                     # resolution for altlas grids in meters
+map_width: 4.5                            # map image width in inches
+map_height: 4.5                           # map image height in inches
+graph_width: 7.5                          # graph image width in inches
+graph_height: 2.5                         # graph image height in inches
 
 species:                                  # parameters for species data
   scientific_column_name: SCI_NAME        # column name for species' scientific names
