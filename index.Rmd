@@ -1,5 +1,5 @@
 ---
-title: "Brisbane Bird Atlas"
+title: "Atlas of the Birds of Brisbane"
 author: |
   | Richard A. Fuller, Jeffrey O. Hanson
 date: "`r Sys.Date()`"
