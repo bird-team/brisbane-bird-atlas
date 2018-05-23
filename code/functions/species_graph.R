@@ -1,9 +1,16 @@
-#" Plot species graphs
-#"
-#" @param x \code{character} scientific name of species.
-#"
-#" @return \code{gg} pkg{ggplot2} plot.
-species_graphs <- function(x, record_data) {
+#' Plot species graphs
+#'
+#' Create graphs showing temporal distribution of species records.
+#'
+#' @param x \code{character} scientific name of species.
+#'
+#' @param record_data \code{sf} object containing the records for the species.
+#'   This object must have the following fields:
+#'   \code{"species_scientific_name"}, \code{"year"}, \code{"month"}, and
+#'   \code{"elevation"}.
+#'
+#' @return \code{gg} pkg{ggplot2} plot.
+species_graph <- function(x, record_data) {
   # initialization
   ## format data
   x <- as.data.frame(x)
