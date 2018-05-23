@@ -80,6 +80,9 @@ land_data <- sf::st_transform(land_data, sf::st_crs(study_area_data))
 land_data <- sf::st_intersection(land_data,
   sf::st_as_sfc(sf::st_bbox(sf::st_buffer(study_area_data, 200000))))
 
+## create grid overlay for plotting distribution of records
+grid_data <- sf::st_grid(study_area_data, parameters$grid_resolution)
+
 ## extract elevation data
 record_pts <- as(record_data[, c("year")], "Spatial")
 elevation_data <- raster::projectRaster(elevation_data, record_pts@proj4string)
@@ -119,8 +122,7 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
 ## create graphs for each species
 result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {
-  p <- species_graph(species_data$species_scientific_name[i], record_data,
-                     grid_data, land_data)
+  p <- species_graph(species_data$species_scientific_name[i], record_data)
   ggplot2::ggsave(paste0("assets/graphs/", file_names[i], ".png"), p,
                   width = parameters$graph_width,
                   height = parameters$graph_width, units = "in")
