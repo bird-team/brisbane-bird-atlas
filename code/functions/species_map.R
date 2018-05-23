@@ -1,6 +1,6 @@
 #' Plot species map
 #'
-#' Create maps showing spatio-temporal distribution of species records. 
+#' Create maps showing spatio-temporal distribution of species records.
 #'
 #' @param x \code{character} scientific name of species.
 #'
@@ -8,8 +8,8 @@
 #'   This object must have the following fields:
 #'   \code{"species_scientific_name"} and \code{"season"}.
 #'
-#' @param grid_data \code{sf} object containing the grid cells for displaying
-#'   on the map.
+#' @param grid_data \code{\link[raster]{RasterLayer} object containing the grid
+#'   cells for displaying data on the map.
 #'
 #' @param land_data \code{sf} object showing the land masses. This
 #'   is not used if the argument to \code{interactive} is \code{FALSE}
@@ -18,55 +18,61 @@
 species_map <- function(x, record_data, grid_data, land_data) {
   # initialization
   ## subset record data
-  x <- x[x$species_scientific_name == x, , drop = FALSE]
+  record_data <- record_data[record_data$species_scientific_name == x, ,
+                             drop = FALSE]
+  ## create raster stack to store frequency data
+  layer_names <- c("summer", "autumn", "winter", "spring")
+  grid_data <- raster::stack(grid_data, grid_data, grid_data, grid_data)
+  names(grid_data) <- layer_names
   ## calculate frequency of records in grid cells
-  ovr <- as.matrix(sf::st_intersects(x[!is.na(x$season), ], grid_data,
-                   sparse = FALSE))
-  grid_data$total_freq <- colSums(ovr)
-  grid_data$summer_freq <- colSums(ovr[x$season == "spring", , drop = FALSE])
-  grid_data$autumn_freq <- colSums(ovr[x$season == "autumn", , drop = FALSE])
-  grid_data$winter_freq <- colSums(ovr[x$season == "winter", , drop = FALSE])
-  grid_data$spring_freq <- colSums(ovr[x$season == "spring", , drop = FALSE])
-  ## store column names
-  column_names <- c("total_freq", "summer_freq", "autumn_freq", "winter_freq",
-                    "spring_freq")
+  cells <- raster::extract(grid_data[[1]], as(record_data[, "year"], "Spatial"),
+                           cellnumbers = TRUE)[, 1]
+  for (l in layer_names[-1]) {
+    curr_tbl <- as.data.frame(table(cells[record_data$season == l]))
+    if (nrow(curr_tbl) > 0) {
+       curr_tbl[[1]] <- as.integer(as.character(curr_tbl[[1]]))
+       grid_data[[l]][curr_tbl[[1]]] <- curr_tbl[[2]]
+    }
+  }
   ## create group names
-  group_names <- c("Annual", "Summer", "Autumn", "Winter", "Spring")
-  names(group_names) <- column_names
+  group_names <- c("Summer", "Autumn", "Winter", "Spring")
+  names(grid_data) <- group_names
   # main processing
   ## set boundary box data
   bb <- sf::st_bbox(grid_data)
+  ## format land data
+  land_data$name <- NULL
   ## format data for plotting
-  plot_data <- sf::st_sf(
-    freq = c(as.matrix(as.data.frame(x)[, column_names[-1]])),
-    season = rep(group_names[-1], each = nrow(grid_data)),
-    geometry  = sf::st_geometry(grid_data)[rep(seq_len(nrow(grid_data)), 4)])
+  plot_data <- as.data.frame(grid_data, xy = TRUE, na.rm = TRUE)
+  plot_data$cell <- seq_len(nrow(plot_data))
+  plot_data <- tidyr::gather(plot_data, name, value, -x, -y, -cell)
+  plot_data$name <- factor(plot_data$name, levels = group_names)
   ## create plot
   p <- ggplot2::ggplot() +
        ggplot2::geom_sf(data = land_data, color = "#333333",
                         fill = "#333333") +
-       ggplot2::geom_sf(data = plot_data, ggplot2::aes(fill = freq)) +
-       ggplot2::coord_equal() +
-       ggplot2::coord_cartesian(xlim = bb[c(1, 3)], ylim = bb[c(2, 4)]) +
+       ggplot2::geom_tile(data = plot_data,
+                          ggplot2::aes(x = x, y = y, fill = value)) +
+       ggplot2::coord_sf(xlim = bb[c(1, 3)], ylim = bb[c(2, 4)]) +
+       ggplot2::facet_wrap(~ name) +
+       viridis::scale_fill_viridis(name = "Sightings") +
        ggplot2::theme(
-         axis.ticks = ggplot2::element_blank(),
-         axis.text = ggplot2::element_blank(),
+         #axis.ticks = ggplot2::element_blank(),
+         #axis.text = ggplot2::element_blank(),
          axis.title = ggplot2::element_blank(),
-         axis.line = ggplot2::element_blank(),
-         axis.ticks.length = ggplot2::unit(0, "null"),
-         axis.ticks.margin = ggplot2::unit(0, "null"),
+         #axis.line = ggplot2::element_blank(),
+         #axis.ticks.length = ggplot2::unit(0, "null"),
+         #axis.ticks.margin = ggplot2::unit(0, "null"),
+         panel.background = ggplot2::element_rect(color = "black", fill = NA),
+         panel.border = ggplot2::element_rect(color = NA, fill = NA),
          panel.grid = ggplot2::element_blank(),
-         panel.margin = ggplot2::unit(c(0, 0, 0, 0), "null"),
-         legend.margin = ggplot2::unit(0, "null"),
-         legend.position = "bottom",
-         legend.key.width = ggplot2::unit(2, "cm"),
+         panel.grid.major = element_line(colour = "transparent"),
+         #legend.margin = ggplot2::unit(0, "null"),
+         legend.key.height = ggplot2::unit(2, "cm"),
          legend.text = ggplot2::element_text(size = 10),
          legend.title = ggplot2::element_text(size = 10),
-         panel.border = ggplot2::element_rect(color = NA, fill = NA),
-         strip.background = ggplot2::element_rect(fill = "#333333"),
-         strip.text = ggplot2::element_text(color = "white", size = 12)) +
-       ggplot2::facet_wrap(~ season) +
-       ggplot2::scale_fill_viridis(name = "Sightings")
+         strip.background = ggplot2::element_blank(),
+         strip.text = ggplot2::element_text(color = "black", size = 12))
   # return result
   p
 }

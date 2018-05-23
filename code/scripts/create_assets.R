@@ -84,7 +84,21 @@ land_data <- sf::st_intersection(land_data,
   sf::st_as_sfc(sf::st_bbox(sf::st_buffer(study_area_data, 200000))))
 
 ## create grid overlay for plotting distribution of records
-grid_data <- sf::st_make_grid(study_area_data, parameters$grid_resolution)
+grid_extent <- c(sf::st_bbox(study_area_data))
+grid_extent <- c(grid_extent[1], grid_extent[2],
+                 grid_extent[1] + round(abs(grid_extent[3] - grid_extent[1]) /
+                                        parameters$grid_resolution) *
+                                        parameters$grid_resolution,
+                 grid_extent[2] + round(abs(grid_extent[4] - grid_extent[2]) /
+                                        parameters$grid_resolution) *
+                                        parameters$grid_resolution)
+grid_data <- raster::raster(xmn = grid_extent[1], xmx = grid_extent[3],
+                            ymn = grid_extent[2], ymx = grid_extent[4],
+                            crs = as(study_area_data, "Spatial")@proj4string,
+                            res = rep(parameters$grid_resolution, 2))
+study_area_data$value <- 0
+grid_data <- raster::rasterize(as(study_area_data, "Spatial"), grid_data,
+                               field = "value")
 
 ## extract elevation data
 elevation_data <- raster::crop(elevation_data,
