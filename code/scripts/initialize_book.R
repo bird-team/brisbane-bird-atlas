@@ -10,7 +10,7 @@ study_area_path <- dir("data/study-area", "^.*\\.shp$", full.names = TRUE)[1]
 unzip(dir("data/records", "^.*\\.zip$", full.names = TRUE), exdir = tempdir())
 record_path <- dir(tempdir(), "^.*\\.csv$", full.names = TRUE)
 
-## set coommand line arguments
+## set command line arguments
 cmd_args <- commandArgs(trailingOnly = TRUE)
 if (length(cmd_args) > 0) {
   overwrite <- as.logical(cmd_args[1])
