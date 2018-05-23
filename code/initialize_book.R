@@ -32,7 +32,8 @@ source("code/functions.R")
 parameters <- yaml::read_yaml("data/parameters/parameters.yaml")
 
 ## load data
-study_area_data <- sf::st_transform(sf::st_read(study_area_path), 4326)
+study_area_data <- sf::st_transform(sf::st_read(study_area_path),
+                                    parameters$crs)
 record_data <- data.table::fread(record_path, data.table = FALSE)
 taxonomy_data <- readxl::read_excel(taxonomy_path, sheet = 1)
 
