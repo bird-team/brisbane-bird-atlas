@@ -65,6 +65,8 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
   record_original_na_dates <- sum(is.na(x$date))
   record_posix_dates <- as.POSIXct(strptime(x$date, date_column_format))
   x$date <- format(record_posix_dates, "%d/%m/%Y")
+  x$month <- format(record_posix_dates, "%b")
+  x$year <- format(record_posix_dates, "%Y")
 
   # create column with season data
   month <- format(record_posix_dates, "%m")
