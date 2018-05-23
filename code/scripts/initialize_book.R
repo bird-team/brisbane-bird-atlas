@@ -6,9 +6,6 @@ options(stringsAsFactors = FALSE)
 species_template_path <- "templates/species-template.txt"
 species_path <- dir("data/species", "^.*\\.csv", full.names = TRUE)[1]
 taxonomy_path <- dir("data/taxonomy","^.*\\.xlsx$", full.names = TRUE)[1]
-study_area_path <- dir("data/study-area", "^.*\\.shp$", full.names = TRUE)[1]
-unzip(dir("data/records", "^.*\\.zip$", full.names = TRUE), exdir = tempdir())
-record_path <- dir(tempdir(), "^.*\\.csv$", full.names = TRUE)
 
 ## set command line arguments
 cmd_args <- commandArgs(trailingOnly = TRUE)
@@ -23,7 +20,6 @@ library(dplyr)
 library(sf)
 
 ## source functions
-source("code/functions/format_ebird_records.R")
 source("code/functions/format_ebird_taxonomy.R")
 source("code/functions/format_species_data.R")
 
@@ -32,9 +28,6 @@ source("code/functions/format_species_data.R")
 parameters <- yaml::read_yaml("data/parameters/parameters.yaml")
 
 ## load data
-study_area_data <- sf::st_transform(sf::st_read(study_area_path),
-                                    parameters$crs)
-record_data <- data.table::fread(record_path, data.table = FALSE)
 taxonomy_data <- readxl::read_excel(taxonomy_path, sheet = 1)
 species_data <- data.table::fread(species_path, data.table = FALSE)
 
@@ -46,11 +39,6 @@ species_template_data <- paste(species_template_data, collapse = "\n")
 species_data <- do.call(format_species_data,
                         append(list(x = species_data), parameters$species))
 
-## format record data
-record_data <- do.call(format_ebird_records,
-                       append(list(x = record_data,
-                                   study_area = study_area_data),
-                              parameters$records))
 ## format taxonomy data
 taxonomy_data <- do.call(format_ebird_taxonomy,
                          append(list(x = taxonomy_data),
@@ -62,9 +50,6 @@ if (!identical(parameters$number_species, "all"))
                                drop = FALSE]
 
 ## discard unused species
-record_data <- record_data[record_data$species_scientific_name %in%
-                           species_data$species_scientific_name, ,
-                           drop = FALSE]
 taxonomy_data <- taxonomy_data[taxonomy_data$species_scientific_name %in%
                                species_data$species_scientific_name, ,
                                drop = FALSE]
