@@ -2,18 +2,25 @@
 ## set default options
 options(stringsAsFactors = FALSE)
 
-
 ## set parameters
 species_template_path <- "templates/species-template.txt"
-chapter_template_path <- "templates/chapter-template.txt"
-taxonomy_path <- dir("data/taxonomy","^.*\\.xlsx$", full.names = TRUE)
-study_area_path <- dir("data/study-area", "^.*\\.shp$", full.names = TRUE)
+species_path <- dir("data/species", "^.*\\.csv", full.names = TRUE)[1]
+taxonomy_path <- dir("data/taxonomy","^.*\\.xlsx$", full.names = TRUE)[1]
+study_area_path <- dir("data/study-area", "^.*\\.shp$", full.names = TRUE)[1]
 unzip(dir("data/records", "^.*\\.zip$", full.names = TRUE), exdir = tempdir())
 record_path <- dir(tempdir(), "^.*\\.csv$", full.names = TRUE)
 
 ## load packages
 library(dplyr)
 library(sf)
+
+## source functions
+source("code/functions/format_ebird_records.R")
+source("code/functions/format_ebird_taxonomy.R")
+source("code/functions/format_species_data.R")
+source("code/functions/species_graph.R")
+source("code/functions/species_map.R")
+source("code/functions/species_widget.R")
 
 # Preliminary processing
 ## load parameters
@@ -24,26 +31,47 @@ study_area_data <- sf::st_transform(sf::st_read(study_area_path),
                                     parameters$crs)
 record_data <- data.table::fread(record_path, data.table = FALSE)
 taxonomy_data <- readxl::read_excel(taxonomy_path, sheet = 1)
+species_data <- data.table::fread(species_path, data.table = FALSE)
 
-## load templates
-chapter_template_data <- readLines(chapter_template_path)
-species_template_data <- readLines(species_template_path)
+## format species data
+species_data <- do.call(format_species_data,
+                        append(list(x = species_data), parameters$species))
 
-# Main processing
 ## format record data
 record_data <- do.call(format_ebird_records,
                        append(list(x = record_data,
                                    study_area = study_area_data),
                               parameters$records))
-
 ## format taxonomy data
 taxonomy_data <- do.call(format_ebird_taxonomy,
                          append(list(x = taxonomy_data),
                                 parameters$taxonomy))
 
-## subset taxonomy data if required
+## subset data if required
 if (!identical(parameters$number_species, "all"))
-  species_names <- species_names[seq_len(parameters$number_species)]
+  species_data <- species_data[seq_len(parameters$number_species), ,
+                               drop = FALSE]
+
+## discard unused species
+record_data <- record_data[record_data$species_scientific_name %in%
+                           species_data$species_scientific_name, ,
+                           drop = FALSE]
+taxonomy_data <- taxonomy_data[taxonomy_data$species_scientific_name %in%
+                               species_data$species_scientific_name, ,
+                               drop = FALSE]
+
+## order taxonomy data by species data
+taxonomy_data <- taxonomy_data[match(taxonomy_data$species_scientific_name,
+                                     species_data$species_scientific_name), ,
+                                     drop = FALSE]
+
+## verify that all species are accounted
+assertthat::assert_that(
+  setequal(taxonomy_data$species_scientific_name,
+           species_data$species_scientific_name),
+  msg = paste0("missing taxonomy data for: ",
+               paste(setdiff(taxonomy_data$species_scientific_name,
+                       species_data$species_scientific_name), collapse = ", ")))
 
 ## create spatial data representing landmasses around Brisbane
 land_data <- rnaturalearth::ne_countries(country = "australia", scale = 10,
@@ -52,42 +80,49 @@ land_data <- sf::st_transform(land_data, sf::st_crs(study_area_data))
 land_data <- sf::st_intersection(land_data,
   sf::st_as_sfc(sf::st_bbox(sf::st_buffer(study_area_data, 200000))))
 
-## define species names
-species_names <- intersect(record_data$species_scientific_name,
-                           taxonomy_data$species_scientific_name)
+## extract elevation data
+record_pts <- as(record_data[, c("year")], "Spatial")
+elevation_data <- raster::projectRaster(elevation_data, record_pts@proj4string)
+record_data$elevation <- raster::extract(elevation_data, record_pts)
+rm(record_pts, elevation_data)
 
-# Exports
-## create file names
-file_names <- species_name
+## create file names to save images/widgets
+file_names <- species_data$species_scientific_name
 file_names <- gsub("(", "", file_names, fixed = TRUE)
 file_names <- gsub(")", "", file_names, fixed = TRUE)
 file_names <- gsub("/", "", file_names, fixed = TRUE)
 file_names <- gsub(" ", "-", file_names, fixed = TRUE)
 file_names <- gsub(".", "", file_names, fixed = TRUE)
 
+# Exports
 ## create interactive maps for each species
-result <- vapply(species_names, FUN.VALUE = logical(1), function(i) {
-  p <- plot_species_maps(species_name[i], record_data, grid_data, land_data,
-                         TRUE)
+result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
+                 function(i) {
+  p <- species_widget(species_data$species_scientific_name[i], record_data,
+                      grid_data)
   saveRDS(p, paste0("assets/interactive-maps/", file_names[i], ".rds"),
           compress = "xz")
   TRUE
 })
 
 ## create static maps for each species
-result <- vapply(seq_along(species_names), FUN.VALUE = logical(1), function(i) {
-  p <- plot_species_maps(species_names[i], record_data, grid_data, land_data,
-                         FALSE)
+result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
+                 function(i) {
+  p <- species_map(species_data$species_scientific_name[i], record_data,
+                   grid_data, land_data)
   ggplot2::ggsave(paste0("assets/static-maps/", file_names[i], ".png"), p,
-                  width = 4.5, height = 4.5, units = "in")
+                  width = parameters$map_width, height = parameters$map_width,
+                  units = "in")
   TRUE
 })
 
 ## create graphs for each species
-result <- vapply(seq_along(species_names), FUN.VALUE = logical(1), function(i) {
-  p <- plot_graphs_maps(species_names[i], record_data, grid_data, land_data,
-                         FALSE)
+result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
+                 function(i) {
+  p <- species_graph(species_data$species_scientific_name[i], record_data,
+                     grid_data, land_data)
   ggplot2::ggsave(paste0("assets/graphs/", file_names[i], ".png"), p,
-                  width = 2.5, height = 5.5, units = "in")
+                  width = parameters$graph_width,
+                  height = parameters$graph_width, units = "in")
   TRUE
 })
