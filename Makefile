@@ -29,38 +29,38 @@ reset: clean
 
 # generate initial book with no text (warning: this will reset all the pages)
 init: data/* code/initialize_book.R
-	@docker run --name=brisbanebird -dt 'brisbanebirdteam/build-env:latest' \
-	&& docker cp . brisbanebird:/tmp/ \
-	&& docker exec brisbanebird sh -c "cd /tmp; Rscript code/initialize_book.R TRUE" \
-	&& docker cp brisbanebird:/tmp/_bookdown.yml . \
-	&& docker exec brisbanebird sh -c "cd tmp; zip -r rmd.zip *.Rmd" \
-	&& docker cp brisbanebird:/tmp/rmd.zip . \
+	@docker run --name=bba -dt 'brisbanebirdteam/build-env:latest' \
+	&& docker cp . bba:/tmp/ \
+	&& docker exec bba sh -c "cd /tmp; Rscript code/initialize_book.R TRUE" \
+	&& docker cp bba:/tmp/_bookdown.yml . \
+	&& docker exec bba sh -c "cd tmp; zip -r rmd.zip *.Rmd" \
+	&& docker cp bba:/tmp/rmd.zip . \
 	&& unzip -o rmd.zip \
 	&& rm rmd.zip || true
-	@docker stop -t 1 brisbanebird || true && docker rm brisbanebird || true
+	@docker stop -t 1 bba || true && docker rm bba || true
 
 # update graphs in existing book pages with graphs in template file
 update: data/* code/initialize_book.R
-	@docker run --name=brisbanebird -dt 'brisbanebirdteam/build-env:latest' \
-	&& docker cp . brisbanebird:/tmp/ \
-	&& docker exec brisbanebird sh -c "cd /tmp; Rscript code/initialize_book.R FALSE" \
-	&& docker cp brisbanebird:/tmp/_bookdown.yml . \
-	&& docker exec brisbanebird sh -c "cd tmp; zip -r rmd.zip *.Rmd" \
-	&& docker cp brisbanebird:/tmp/rmd.zip . \
+	@docker run --name=bba -dt 'brisbanebirdteam/build-env:latest' \
+	&& docker cp . bba:/tmp/ \
+	&& docker exec bba sh -c "cd /tmp; Rscript code/initialize_book.R FALSE" \
+	&& docker cp bba:/tmp/_bookdown.yml . \
+	&& docker exec bba sh -c "cd tmp; zip -r rmd.zip *.Rmd" \
+	&& docker cp bba:/tmp/rmd.zip . \
 	&& unzip -o rmd.zip \
 	&& rm rmd.zip || true
-	@docker stop -t 1 brisbanebird || true && docker rm brisbanebird || true
+	@docker stop -t 1 bba || true && docker rm bba || true
 
 # make container
 run:
-	@docker run --name=brisbanebird -dt 'brisbanebirdteam/build-env:latest'
+	@docker run --name=bba -dt 'brisbanebirdteam/build-env:latest'
 
 stop:
-	@docker stop -t 1 brisbanebird || true && docker rm brisbanebird || true
+	@docker stop -t 1 bba || true && docker rm bba || true
 
 # build book
 build:
-	echo "TODO"
+	
 
 # deploy book to website
 deploy:
