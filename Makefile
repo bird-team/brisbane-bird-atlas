@@ -28,12 +28,12 @@ reset: clean
 	@$(MV) index.Rmd.bck index.Rmd
 
 # generate initial book with no text (warning: this will reset all the pages)
-init: data/* code/initialize_book.R
+init:
 	@docker run --name=bba -dt 'brisbanebirdteam/build-env:latest' \
 	&& docker cp . bba:/tmp/ \
-	&& docker exec bba sh -c "cd /tmp; Rscript code/initialize_book.R TRUE" \
+	&& docker exec bba -w /tmp sh -c "Rscript code/scripts/initialize_book.R TRUE" \
 	&& docker cp bba:/tmp/_bookdown.yml . \
-	&& docker exec bba sh -c "cd tmp; zip -r rmd.zip *.Rmd" \
+	&& docker exec bba sh -w /tmp -c "zip -r rmd.zip *.Rmd" \
 	&& docker cp bba:/tmp/rmd.zip . \
 	&& unzip -o rmd.zip \
 	&& rm rmd.zip || true
@@ -43,9 +43,9 @@ init: data/* code/initialize_book.R
 update: data/* code/initialize_book.R
 	@docker run --name=bba -dt 'brisbanebirdteam/build-env:latest' \
 	&& docker cp . bba:/tmp/ \
-	&& docker exec bba sh -c "cd /tmp; Rscript code/initialize_book.R FALSE" \
+	&& docker exec bba -w /tmp sh -c "Rscript code/scripts/initialize_book.R FALSE" \
 	&& docker cp bba:/tmp/_bookdown.yml . \
-	&& docker exec bba sh -c "cd tmp; zip -r rmd.zip *.Rmd" \
+	&& docker exec bba -w /tmp sh -c "zip -r rmd.zip *.Rmd" \
 	&& docker cp bba:/tmp/rmd.zip . \
 	&& unzip -o rmd.zip \
 	&& rm rmd.zip || true
@@ -60,7 +60,7 @@ stop:
 
 # build book
 build:
-	
+
 
 # deploy book to website
 deploy:
