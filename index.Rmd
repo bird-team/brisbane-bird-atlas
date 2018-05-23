@@ -1,0 +1,81 @@
+---
+title: "Brisbane Bird Atlas"
+author: |
+  | Richard A. Fuller, Jeffrey O. Hanson
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: references.bib
+biblio-style: apalike
+link-citations: yes
+github-repo: bird-team/brisbane-bird-atlas
+url: "https://github.com/bird-team/brisbane-birds"
+description: "Community Bird atlas for Brisbane, Australia"
+---
+
+```{r, include = FALSE}
+# set default options
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE,
+                      results = "asis", fig.align = "centre")
+```
+
+# Preface
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat.
+
+In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque. Cras vel felis sed purus sollicitudin pharetra eu eget arcu. In volutpat eleifend mauris, sed porta nunc dapibus a. Suspendisse fringilla tempus quam a fermentum. Morbi quis lacus nec eros maximus interdum. Nullam venenatis vehicula magna, a egestas est ornare vel. Fusce quis luctus orci, eget congue dolor. Morbi luctus est justo, quis porttitor lacus facilisis sit amet.
+
+```{r, include = FALSE}
+# Initialization
+## set default options
+options(stringsAsFactors = FALSE)
+
+## set parameters
+species_template_path <- "templates/species-template.txt"
+chapter_template_path <- "templates/chapter-template.txt"
+taxonomy_path <- dir("data/taxonomy","^.*\\.xlsx$", full.names = TRUE)
+study_area_path <- dir("data/study-area", "^.*\\.shp$", full.names = TRUE)
+unzip(dir("data/records", "^.*\\.zip$", full.names = TRUE), exdir = tempdir())
+record_path <- dir(tempdir(), "^.*\\.csv$", full.names = TRUE)
+
+## load packages
+library(dplyr)
+library(sf)
+
+## source functions
+source("code/functions.R")
+
+# Preliminary processing
+## load parameters
+parameters <- yaml::read_yaml("data/parameters/parameters.yaml")
+
+## load data
+study_area_data <- sf::st_transform(sf::st_read(study_area_path),
+                                    parameters$crs)
+record_data <- data.table::fread(record_path, data.table = FALSE)
+taxonomy_data <- readxl::read_excel(taxonomy_path, sheet = 1)
+
+## load templates
+chapter_template_data <- readLines(chapter_template_path)
+species_template_data <- readLines(species_template_path)
+
+# Main processing
+## format record data
+record_data <- do.call(format_ebird_records,
+                       append(list(x = record_data,
+                                   study_area = study_area_data),
+                              parameters$records))
+
+## format taxonomy data
+taxonomy_data <- do.call(format_ebird_taxonomy,
+                         append(list(x = taxonomy_data),
+                                parameters$taxonomy))
+
+## create spatial data representing landmasses around Brisbane
+land_data <- rnaturalearth::ne_countries(country = "australia", scale = 10,
+                                         returnclass = "sf")
+land_data <- sf::st_transform(land_data, sf::st_crs(study_area_data))
+land_data <- sf::st_intersection(land_data,
+  sf::st_as_sfc(sf::st_bbox(sf::st_buffer(study_area_data, 200000))))
+```
