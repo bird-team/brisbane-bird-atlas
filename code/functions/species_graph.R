@@ -13,43 +13,57 @@
 species_graph <- function(x, record_data) {
   # initialization
   ## format data
-  x <- as.data.frame(x)
-  years <- unique(x$year)
-  x <- x[x$species_scientific_name == x, , drop = FALSE]
+  record_data <- as.data.frame(record_data)
+  years <- unique(record_data$year)
+  record_data <- record_data[record_data$species_scientific_name == x, ,
+                             drop = FALSE]
   ## create month and year columns
-  x$Month <- factor(x$Month, levels = c("Jan", "Feb", "Mar", "Apr", "May",
-                                        "Jun", "Jul", "Aug", "Sep", "Oct",
-                                        "Nov", "Dec"))
-  x$Year <- factor(x$year, levels = sort(years))
+  record_data$Month <- factor(record_data$month,
+                              levels = c("Jan", "Feb", "Mar", "Apr", "May",
+                                         "Jun", "Jul", "Aug", "Sep", "Oct",
+                                         "Nov", "Dec"))
+  record_data$Year <- factor(record_data$year, levels = sort(years))
   # main processing
   ## reporting rate by month
-  p1 <- x %>%
+  p1 <- record_data %>%
         dplyr::group_by(Year, Month) %>%
         dplyr::summarize(n = length(Month)) %>%
         dplyr::ungroup() %>%
         dplyr::mutate(n = n / sum(n)) %>%
-        ggplot2::ggplot(mapping = ggplot2::aes(x = Month, y = n)) +
-          ggplot2::geom_boxplot() +
-          ggplot2::xlab() +
+        dplyr::group_by(Month) %>%
+        dplyr::mutate(mean = mean(n, na.rm = TRUE),
+                      lower = quantile(n, 0.05, names = FALSE, na.rm = TRUE),
+                      upper = quantile(n, 0.95, names = FALSE,
+                                       na.rm = TRUE)) %>%
+        dplyr::ungroup() %>%
+        ggplot2::ggplot(mapping = ggplot2::aes(x = Month, y = mean)) +
+          ggplot2::geom_linerange(ggplot2::aes(ymin = lower, ymax = upper)) +
+          ggplot2::geom_point() +
+          ggplot2::xlab("") +
           ggplot2::ylab("Percentage of records (%)") +
           ggplot2::scale_y_continuous(labels = scales::percent) +
           ggplot2::scale_x_discrete(drop = FALSE) +
           ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 40,
                                                              hjust = 1))
   ## elevation by month
-  p2 <- x %>%
+  p2 <- record_data %>%
         dplyr::group_by(Month) %>%
-        dplyr::summarize(elev = mean(elevation, na.rm = TRUE)) %>%
+        dplyr::summarize(alt = mean(elevation, na.rm = TRUE)) %>%
         dplyr::ungroup() %>%
-        ggplot2::ggplot(mapping = ggplot2::aes(x = Month, y = elev)) +
-          ggplot2::geom_boxplot() +
+        dplyr::mutate(mean = mean(alt, na.rm = TRUE),
+                      lower = quantile(alt, 0.05, names = FALSE, na.rm = TRUE),
+                      upper = quantile(alt, 0.95, names = FALSE,
+                                       na.rm = TRUE)) %>%
+        ggplot2::ggplot(mapping = ggplot2::aes(x = Month, y = mean)) +
+          ggplot2::geom_linerange(ggplot2::aes(ymin = lower, ymax = upper)) +
+          ggplot2::geom_point() +
           ggplot2::xlab("") +
           ggplot2::ylab("Elevation (m)") +
           ggplot2::scale_x_discrete(drop = FALSE) +
           ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 40,
                                                              hjust = 1))
   ## reporting rate by year
-  p3 <- x %>%
+  p3 <- record_data %>%
         dplyr::group_by(Year) %>%
         dplyr::summarize(n = length(Year)) %>%
         dplyr::ungroup() %>%

@@ -9,6 +9,7 @@ taxonomy_path <- dir("data/taxonomy","^.*\\.xlsx$", full.names = TRUE)[1]
 study_area_path <- dir("data/study-area", "^.*\\.shp$", full.names = TRUE)[1]
 unzip(dir("data/records", "^.*\\.zip$", full.names = TRUE), exdir = tempdir())
 record_path <- dir(tempdir(), "^.*\\.csv$", full.names = TRUE)
+elevation_path <- dir("data/elevation", "^.*\\.grd$", full.names = TRUE)[1]
 
 ## load packages
 library(dplyr)
@@ -32,6 +33,7 @@ study_area_data <- sf::st_transform(sf::st_read(study_area_path),
 record_data <- data.table::fread(record_path, data.table = FALSE)
 taxonomy_data <- readxl::read_excel(taxonomy_path, sheet = 1)
 species_data <- data.table::fread(species_path, data.table = FALSE)
+elevation_data <- raster::raster(elevation_path)
 
 ## format species data
 species_data <- do.call(format_species_data,
@@ -42,6 +44,7 @@ record_data <- do.call(format_ebird_records,
                        append(list(x = record_data,
                                    study_area = study_area_data),
                               parameters$records))
+
 ## format taxonomy data
 taxonomy_data <- do.call(format_ebird_taxonomy,
                          append(list(x = taxonomy_data),
@@ -81,11 +84,15 @@ land_data <- sf::st_intersection(land_data,
   sf::st_as_sfc(sf::st_bbox(sf::st_buffer(study_area_data, 200000))))
 
 ## create grid overlay for plotting distribution of records
-grid_data <- sf::st_grid(study_area_data, parameters$grid_resolution)
+grid_data <- sf::st_make_grid(study_area_data, parameters$grid_resolution)
 
 ## extract elevation data
+elevation_data <- raster::crop(elevation_data,
+  raster::extent(as(sf::st_as_sfc(sf::st_bbox(sf::st_transform(sf::st_buffer(
+    study_area_data, 200000), 4326))), "Spatial")))
 record_pts <- as(record_data[, c("year")], "Spatial")
-elevation_data <- raster::projectRaster(elevation_data, record_pts@proj4string)
+elevation_data <- raster::projectRaster(elevation_data, method = "bilinear",
+                                        crs = record_pts@proj4string)
 record_data$elevation <- raster::extract(elevation_data, record_pts)
 rm(record_pts, elevation_data)
 

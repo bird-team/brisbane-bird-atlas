@@ -2,7 +2,7 @@ title: atlas parameters
 
 crs: 3857                                 # coordinate reference system for mapping
 number_species: 3                         # number of species to include in atlas
-grid_resolution: 2000                     # resolution for altlas grids in meters
+grid_resolution: 1000                     # resolution for altlas grids in meters
 map_width: 4.5                            # map image width in inches
 map_height: 4.5                           # map image height in inches
 graph_width: 7.5                          # graph image width in inches
@@ -18,7 +18,7 @@ records:                                  # parameters for eBird record data
   date_column_format: "%d/%m/%Y"          # date format for record dates
   longitude_column_name: LON              # column name for record longitude data
   latitude_column_name: LAT               # column name for record latitudes data
-  start_date: 01/01/2007                  # omit records collected before this date
+  start_date: 01/01/2005                  # omit records collected before this date
 
 taxonomy:                                 # parameters for eBird taxonomy data
   scientific_column_name: SCI_NAME        # column name for species' scientific names
