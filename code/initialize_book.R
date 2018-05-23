@@ -111,7 +111,6 @@ bookdown_list$book_filename <- "brisbane-bird-atlas"
 bookdown_list$chapter_name <- "Chapter "
 bookdown_list$rmd_files <- c("index.Rmd", rmd_paths)
 
-
 # Exports
 ## save bookdown metadata yaml file
 writeLines(yaml::as.yaml(bookdown_list), "_bookdown.yml")
