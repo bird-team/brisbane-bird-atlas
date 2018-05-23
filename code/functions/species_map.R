@@ -1,5 +1,7 @@
 #' Plot species map
 #'
+#' Create maps showing spatio-temporal distribution of species records. 
+#'
 #' @param x \code{character} scientific name of species.
 #'
 #' @param record_data \code{sf} object containing the records for the species.
