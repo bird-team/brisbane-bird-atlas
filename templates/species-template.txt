@@ -1,12 +1,10 @@
 ```{r, include=FALSE}
-species.name <- '$$SPECIESNAME$$'
+species_name <- "$$SPECIESNAME$$"
 ```
 
-```{r, message=FALSE, echo=FALSE, results='asis', cache=TRUE, cache.rebuild=!use.cache[['make_species_title']]}
-cat('## ', species.DATA$make_species_title(species.name))
+```{r}
+cat("## ", species_name_title(species_name, taxonomy_data))
 ```
-
-**species level text in here**
 
 ![No image for species](assets/missing.png)
 
@@ -14,12 +12,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed justo nunc. I
 
 In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque. Cras vel felis sed purus sollicitudin pharetra eu eget arcu. In volutpat eleifend mauris, sed porta nunc dapibus a. Suspendisse fringilla tempus quam a fermentum. Morbi quis lacus nec eros maximus interdum. Nullam venenatis vehicula magna, a egestas est ornare vel. Fusce quis luctus orci, eget congue dolor. Morbi luctus est justo, quis porttitor lacus facilisis sit amet.
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.cap = 'insert figure caption', fig.width=8, fig.height=4.5, fig.align='centre', cache=TRUE, cache.rebuild=!use.cache[['make_species_maps']]}
-species.DATA$make_species_maps(species.name, grid=grid.PLY)
+```{r, fig.cap = "insert figure caption", fig.width = 8, fig.height = 4.5}
+plot_species_maps(species_name, record_data, grid_data, land_data)
 ```
 
 In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.cap ='insert figure caption', fig.width=8, fig.height=2.5, cache=TRUE, cache.rebuild=!use.cache[['make_species_graphs']]}
-species.DATA$make_species_graphs(species.name)
+```{r, fig.cap = "insert figure caption", fig.width = 8, fig.height = 2.5}
+plot_species_graphs(species_name, record_data)
 ```
