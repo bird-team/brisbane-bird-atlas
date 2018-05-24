@@ -143,8 +143,7 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
 ## create graphs for each species
 result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {
-  p <- species_graph(species_data$species_scientific_name[i], record_data,
-                     parameters$records$checklist_protocol_names)
+  p <- species_graph(species_data$species_scientific_name[i], record_data)
   ggplot2::ggsave(paste0("assets/graphs/", file_names[i], ".png"), p,
                   width = parameters$graph_width,
                   height = parameters$graph_height, units = "in")

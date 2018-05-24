@@ -9,8 +9,10 @@
 #' @param grid_data \code{\link[raster]{RasterLayer} object containing the grid
 #'   cells for displaying data on the map.
 #'
+#' @param study_area_data \code{sf} object showing the study area.
+#'
 #' @return interactive widget.
-species_widget <- function(x, record_data, grid_data) {
+species_widget <- function(x, record_data, grid_data, study_area_data) {
   # Initialization
   ## remove name column in study_area_data
   study_area_data$name <- NULL

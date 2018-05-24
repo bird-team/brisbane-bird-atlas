@@ -11,8 +11,9 @@
 #' @param grid_data \code{\link[raster]{RasterLayer} object containing the grid
 #'   cells for displaying data on the map.
 #'
-#' @param land_data \code{sf} object showing the land masses. This
-#'   is not used if the argument to \code{interactive} is \code{FALSE}
+#' @param land_data \code{sf} object showing the land masses.
+#'
+#' @param study_area_data \code{sf} object showing the study area.
 #'
 #' @return \code{gg} pkg{ggplot2} plot.
 species_map <- function(x, record_data, grid_data, land_data,
