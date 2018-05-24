@@ -14,9 +14,6 @@
 #' @param land_data \code{sf} object showing the land masses. This
 #'   is not used if the argument to \code{interactive} is \code{FALSE}
 #'
-#'@param checklist_protocol_names \code{character} vector with names of
-#'   sampling protocols to use for calculating reporting rate.
-#'
 #' @return \code{gg} pkg{ggplot2} plot.
 species_map <- function(x, record_data, grid_data, land_data,
                         study_area_data) {
@@ -85,10 +82,10 @@ species_map <- function(x, record_data, grid_data, land_data,
   plot_data$name <- factor(plot_data$name, levels = group_names)
   ## create plot
   p <- ggplot2::ggplot() +
-       ggplot2::geom_sf(data = land_data, color = "grey85",
-                        fill = "grey85") +
-       ggplot2::geom_sf(data = study_area_data, color = "grey50",
-                        fill = NA) +
+       ggplot2::geom_sf(data = land_data, color = "grey90",
+                        fill = "grey90") +
+       ggplot2::geom_sf(data = study_area_data, color = "grey70",
+                        fill = "grey70") +
        ggplot2::geom_tile(data = plot_data,
                           ggplot2::aes(x = x, y = y, fill = value)) +
        ggplot2::coord_sf(xlim = bb[c(1, 3)], ylim = bb[c(2, 4)]) +
