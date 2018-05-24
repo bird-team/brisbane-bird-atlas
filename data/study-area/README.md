@@ -1,6 +1,6 @@
 # Study area
 
-This directory contains spatial data delineating the extent of Brisbane, Australia. Note that Moreton Island and several other islands off the Australian coastline are omitted from this data set. It was derived using the "Local government area boundaries - Queensland" data set.
+This directory contains spatial data delineating the extent of Brisbane, Australia. It was derived using the "Local government area boundaries - Queensland" data set.
 
 ## Reference
 
