@@ -5,8 +5,8 @@ number_species: 3                                    # number of species to incl
 grid_resolution: 2000                                # resolution for altlas grids in meters
 map_width: 4.5                                       # map image width in inches
 map_height: 4.5                                      # map image height in inches
-graph_width: 7.5                                     # graph image width in inches
-graph_height: 2.5                                    # graph image height in inches
+graph_width: 8.0                                     # graph image width in inches
+graph_height: 3.0                                    # graph image height in inches
 
 species:                                             # parameters for species data
   scientific_column_name: species_scientific_name    # column name for species' scientific name
