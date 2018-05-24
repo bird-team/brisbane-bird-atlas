@@ -93,7 +93,8 @@ rmd_texts <- vapply(species_data$species_scientific_name,
 bookdown_list <- list()
 bookdown_list$book_filename <- "brisbane-bird-atlas"
 bookdown_list$chapter_name <- "Chapter "
-bookdown_list$rmd_files <- c("index.Rmd", rmd_paths)
+bookdown_list$rmd_files <- c("index.Rmd", "front-matter.Rmd", rmd_paths,
+                             "end-matter.Rmd",)
 
 # Exports
 ## save rmarkdown files
