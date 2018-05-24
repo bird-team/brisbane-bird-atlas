@@ -24,13 +24,28 @@
 #'   omitted. The argument to \code{start_date} must be in the
 #'   \code{"%d/%m/%Y"} format (e.g. \code{"30/01/1990"}).
 #'
+#' @param event_column_name \code{character} name of column with the
+#'   unique identifier for each sampling event.
+#'
+#' @param protocol_column_name \code{character} name of column with the
+#'   name of the sampling methodology.
+#'
+#' @param all_species_column_name \code{character} name of column indicating if
+#'   all the species observed in a sampling event were reported.
+#'
+#'@param omit_protocol_names \code{character} vector with names of
+#'   sampling protocols to omit from reporting rate calculations.
+#'
 #' @param study_area \code{sf} object delineating the extent of the study area.
 #'   Records that do not overlap with the study area will be omitted.
 #'
 #' @return \code{\link[sf]{sf}} with the observation records and meta-data.
 format_ebird_records <- function(x, scientific_column_name, date_column_name,
                                  date_column_format, longitude_column_name,
-                                 latitude_column_name, start_date, study_area) {
+                                 latitude_column_name, start_date,
+                                 event_column_name, protocol_column_name,
+                                 all_species_column_name,
+                                 omit_protocol_names, study_area) {
    # assert that arguments are valid
    assertthat::assert_that(inherits(x, "data.frame"),
                            nrow(x) > 0,
@@ -48,6 +63,17 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
                            assertthat::has_name(x, latitude_column_name),
                            is.numeric(x[[latitude_column_name]]),
                            assertthat::is.string(start_date),
+                           assertthat::is.string(event_column_name),
+                           assertthat::has_name(x, event_column_name),
+                           is.character(x[[event_column_name]]),
+                           assertthat::is.string(protocol_column_name),
+                           assertthat::has_name(x, protocol_column_name),
+                           is.character(x[[protocol_column_name]]),
+                           assertthat::is.string(all_species_column_name),
+                           assertthat::has_name(x, all_species_column_name),
+                           is.numeric(x[[all_species_column_name]]),
+                           is.character(omit_protocol_names),
+                           assertthat::noNA(omit_protocol_names),
                            inherits(study_area, "sf"))
   # parse record start date
   start_date <- as.POSIXct(strptime(start_date, "%d/%m/%Y"))
@@ -57,9 +83,15 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
   # rename columns in the table
   data.table::setnames(x,
                        c(scientific_column_name, date_column_name,
-                         longitude_column_name, latitude_column_name),
+                         longitude_column_name, latitude_column_name,
+                         event_column_name, protocol_column_name),
                       c("species_scientific_name", "date", "longitude",
-                        "latitude"))
+                        "latitude", "event", "protocol"))
+
+  # create is_checklist column indicating if data corresponds to a "true"
+  # checklist for calculating reporting rates
+  x$is_checklist <- (x[[all_species_column_name]] == 1) &
+                    (!x$protocol %in% omit_protocol_names)
 
   # create formatted date data
   record_original_na_dates <- sum(is.na(x$date))

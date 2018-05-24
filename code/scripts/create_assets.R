@@ -96,9 +96,7 @@ grid_data <- raster::raster(xmn = grid_extent[1], xmx = grid_extent[3],
                             ymn = grid_extent[2], ymx = grid_extent[4],
                             crs = as(study_area_data, "Spatial")@proj4string,
                             res = rep(parameters$grid_resolution, 2))
-study_area_data$value <- 0
-grid_data <- raster::rasterize(as(study_area_data, "Spatial"), grid_data,
-                               field = "value")
+grid_data <- raster::setValues(grid_data, NA_real_)
 
 ## extract elevation data
 elevation_data <- raster::crop(elevation_data,
@@ -125,7 +123,7 @@ file_names <- paste0(taxonomy_data$order_scientific_name, "-",
 result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {
   p <- species_widget(species_data$species_scientific_name[i], record_data,
-                      grid_data)
+                      grid_data, study_area_data)
   saveRDS(p, paste0("assets/widgets/", file_names[i], ".rds"),
           compress = "xz")
   TRUE
@@ -135,7 +133,7 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
 result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {
   p <- species_map(species_data$species_scientific_name[i], record_data,
-                   grid_data, land_data)
+                   grid_data, land_data, study_area_data)
   ggplot2::ggsave(paste0("assets/maps/", file_names[i], ".png"), p,
                   width = parameters$map_width, height = parameters$map_width,
                   units = "in")
@@ -145,7 +143,8 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
 ## create graphs for each species
 result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {
-  p <- species_graph(species_data$species_scientific_name[i], record_data)
+  p <- species_graph(species_data$species_scientific_name[i], record_data,
+                     parameters$records$checklist_protocol_names)
   ggplot2::ggsave(paste0("assets/graphs/", file_names[i], ".png"), p,
                   width = parameters$graph_width,
                   height = parameters$graph_height, units = "in")
