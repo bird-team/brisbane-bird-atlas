@@ -27,7 +27,7 @@ species_map <- function(x, record_data, grid_data, land_data) {
   ## calculate frequency of records in grid cells
   cells <- raster::extract(grid_data[[1]], as(record_data[, "year"], "Spatial"),
                            cellnumbers = TRUE)[, 1]
-  for (l in layer_names[-1]) {
+  for (l in layer_names) {
     curr_tbl <- as.data.frame(table(cells[record_data$season == l]))
     if (nrow(curr_tbl) > 0) {
        curr_tbl[[1]] <- as.integer(as.character(curr_tbl[[1]]))
