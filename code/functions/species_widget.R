@@ -6,59 +6,62 @@
 #'   This object must have the following fields:
 #'   \code{"species_scientific_name"} and \code{"season"}.
 #'
-#' @param grid_data \code{sf} object containing the grid cells for displaying
-#'   on the map.
+#' @param grid_data \code{\link[raster]{RasterLayer} object containing the grid
+#'   cells for displaying data on the map.
 #'
 #' @return interactive widget.
 species_widget <- function(x, record_data, grid_data) {
   # initialization
   ## subset record data
-  x <- x[x$species_scientific_name == x, , drop = FALSE]
+  record_data <- record_data[record_data$species_scientific_name == x, ,
+                             drop = FALSE]
+  ## create raster stack to store frequency data
+  layer_names <- c("summer", "autumn", "winter", "spring")
+  grid_data <- raster::stack(grid_data, grid_data, grid_data, grid_data)
+  names(grid_data) <- layer_names
   ## calculate frequency of records in grid cells
-  ovr <- as.matrix(sf::st_intersects(x[!is.na(x$season), ], grid_data,
-                   sparse = FALSE))
-  grid_data$total_freq <- colSums(ovr)
-  grid_data$summer_freq <- colSums(ovr[x$season == "spring", , drop = FALSE])
-  grid_data$autumn_freq <- colSums(ovr[x$season == "autumn", , drop = FALSE])
-  grid_data$winter_freq <- colSums(ovr[x$season == "winter", , drop = FALSE])
-  grid_data$spring_freq <- colSums(ovr[x$season == "spring", , drop = FALSE])
-  ## store column names
-  column_names <- c("total_freq", "summer_freq", "autumn_freq", "winter_freq",
-                    "spring_freq")
+  cells <- raster::extract(grid_data[[1]], as(record_data[, "year"], "Spatial"),
+                           cellnumbers = TRUE)[, 1]
+  for (l in layer_names) {
+    curr_tbl <- as.data.frame(table(cells[record_data$season == l]))
+    if (nrow(curr_tbl) > 0) {
+       curr_tbl[[1]] <- as.integer(as.character(curr_tbl[[1]]))
+       grid_data[[l]][curr_tbl[[1]]] <- curr_tbl[[2]]
+    }
+  }
   ## create group names
-  group_names <- c("Annual", "Summer", "Autumn", "Winter", "Spring")
-  names(group_names) <- column_names
+  group_names <- c("Summer", "Autumn", "Winter", "Spring")
+  names(grid_data) <- group_names
+  ## create lon/lat version of records
+  record_pts <- as(sf::st_transform(record_data[, "year"], 4326), "Spatial")
   # main processing
   ## initialize leaflet map
-  p <- leaflet::leaflet()
-  ## create palettes
-  pal_list <- lapply(column_names, function(i)
-    leaflet::colorNumeric("viridis", grid_data[[i]],
-                          na.color = "transparent"))
-  names(pal_list) <- column_names
+  l <- leaflet::leaflet()
+  ## create palette
+  palette <- leaflet::colorNumeric("viridis",
+    range(c(c(raster::cellStats(grid_data, "min")),
+            c(raster::cellStats(grid_data, "max")))),
+    na.color = "transparent")
   ## add tiles
-  p <- leaflet::addProviderTiles(p, "Esri.WorldImagery")
-  ## add polygons
-  for (i in column_names)
-    p <- leaflet::addPolygons(p, data = grid_data[[i]],
-                              fillColor = pal_list[[i]](grid_data[[i]]),
-                              fillOpacity = 0.6, color = "#333333",
-                              weight = 2.5, opacity = 0.8,
-                              group = group_names[[i]])
-  ## add legends
-  for (i in column_names)
-    p <- leaflet::addLegend(p, pal = pal_list[[i]],
-                            values = grid_data[[i]],
-                            title = group_names[[i]],
-                            position = "topleft")
+  l <- leaflet::addProviderTiles(l, "Esri.WorldImagery")
+  ## add rasters
+  for (i in group_names)
+    l <- leaflet::addRasterImage(l, x = grid_data[[i]],
+                              colors = palette, opacity = 0.6, group = i)
   ## add points
-  p <- leaflet::addMarkers(p, data = x, group = "Sightings",
-    clusterOptions = leaflet::markerClusterOptions()) %>%
+  l <- leaflet::addMarkers(l, lng = record_pts@coords[, 1],
+                           lat = record_pts@coords[, 2], group = "Sightings",
+                           clusterOptions = leaflet::markerClusterOptions())
+  ## add legend
+  l <- leaflet::addLegend(l, pal = palette,
+                          values = na.omit(c(raster::values(grid_data))),
+                          title = "Number sightings",
+                          position = "topleft")
   ## add layer control
-  p <- leaflet::addLayersControl(p,
-    baseGroups = group_names, overlayGroups = "Sightings",
+  l <- leaflet::addLayersControl(l,
+    baseGroups = group_names, overlayGroups = "Sighting locations",
     options = leaflet::layersControlOptions(collapsed = FALSE))
   # exports
   ## return widget
-  p
+  l
 }
