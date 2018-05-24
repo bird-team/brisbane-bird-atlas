@@ -22,13 +22,13 @@ clean:
 	@$(RMDIR) _bookdown_files
 
 # reset book to orginal text -- warning: this will reset all the book pages
-reset: clean
+reset_pages: clean
 	@$(MV) index.Rmd index.Rmd.bck
 	@$(RM) *.Rmd
 	@$(MV) index.Rmd.bck index.Rmd
 
 # generate initial book with no text (warning: this will reset all the pages)
-init:
+init_pages:
 	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
 	&& docker cp . bba:/tmp/ \
 	&& docker exec bba sh -c "Rscript code/scripts/initialize_book.R TRUE" \
@@ -39,8 +39,8 @@ init:
 	&& rm rmd.zip || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
-# update graphs in existing book pages with graphs in template file
-update: data/* code/initialize_book.R
+# add new pages for species in file
+update_pages:
 	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
 	&& docker cp . bba:/tmp/ \
 	&& docker exec bba sh -c "Rscript code/scripts/initialize_book.R FALSE" \
@@ -49,6 +49,28 @@ update: data/* code/initialize_book.R
 	&& docker cp bba:/tmp/rmd.zip . \
 	&& unzip -o rmd.zip \
 	&& rm rmd.zip || true
+	@docker stop -t 1 bba || true && docker rm bba || true
+
+# add new pages for species in file
+assets:
+	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
+	&& docker cp . bba:/tmp/ \
+	&& docker exec bba sh -c "Rscript code/scripts/create_assets.R" \
+	&& docker cp bba:/tmp/_bookdown.yml . \
+	&& docker exec bba sh -c "cd assets; zip -r maps.zip maps" \
+	&& docker exec bba sh -c "cd assets; zip -r widgets.zip widgets" \
+	&& docker exec bba sh -c "cd assets; zip -r graphs.zip widgets" \
+	&& docker cp bba:/tmp/maps.zip . \
+	&& docker cp bba:/tmp/widgets.zip . \
+	&& docker cp bba:/tmp/graphs.zip . \
+	&& cd assets \
+	&& unzip -o maps.zip \
+	&& unzip -o widgets.zip \
+	&& unzip -o graphs.zip \
+	&& cd .. \
+	&& rm maps.zip \
+	&& rm widgets.zip \
+	&& rm graphs.zip || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 # make container
@@ -66,4 +88,4 @@ build:
 deploy:
 	echo "TODO"
 
-.PHONY: clean init data update build deploy reset
+.PHONY: clean init data update build deploy reset assets
