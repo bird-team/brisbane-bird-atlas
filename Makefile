@@ -56,18 +56,16 @@ assets:
 	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
 	&& docker cp . bba:/tmp/ \
 	&& docker exec bba sh -c "Rscript code/scripts/create_assets.R" \
-	&& docker cp bba:/tmp/_bookdown.yml . \
 	&& docker exec bba sh -c "cd assets; zip -r maps.zip maps" \
 	&& docker exec bba sh -c "cd assets; zip -r widgets.zip widgets" \
-	&& docker exec bba sh -c "cd assets; zip -r graphs.zip widgets" \
-	&& docker cp bba:/tmp/maps.zip . \
-	&& docker cp bba:/tmp/widgets.zip . \
-	&& docker cp bba:/tmp/graphs.zip . \
+	&& docker exec bba sh -c "cd assets; zip -r graphs.zip graphs" \
+	&& docker cp bba:/tmp/assets/maps.zip assets \
+	&& docker cp bba:/tmp/assets/widgets.zip assets \
+	&& docker cp bba:/tmp/assets/graphs.zip assets \
 	&& cd assets \
 	&& unzip -o maps.zip \
 	&& unzip -o widgets.zip \
 	&& unzip -o graphs.zip \
-	&& cd .. \
 	&& rm maps.zip \
 	&& rm widgets.zip \
 	&& rm graphs.zip || true
