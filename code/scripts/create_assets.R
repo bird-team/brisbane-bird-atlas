@@ -4,7 +4,7 @@ options(stringsAsFactors = FALSE)
 
 ## set parameters
 species_template_path <- "templates/species-template.txt"
-species_path <- dir("data/species", "^.*\\.csv", full.names = TRUE)[1]
+species_path <- dir("data/species", "^.*\\.xlsx", full.names = TRUE)[1]
 taxonomy_path <- dir("data/taxonomy","^.*\\.xlsx$", full.names = TRUE)[1]
 study_area_path <- dir("data/study-area", "^.*\\.shp$", full.names = TRUE)[1]
 unzip(dir("data/records", "^.*\\.zip$", full.names = TRUE), exdir = tempdir())
@@ -32,7 +32,7 @@ study_area_data <- sf::st_transform(sf::st_read(study_area_path),
                                     parameters$crs)
 record_data <- data.table::fread(record_path, data.table = FALSE)
 taxonomy_data <- readxl::read_excel(taxonomy_path, sheet = 1)
-species_data <- data.table::fread(species_path, data.table = FALSE)
+species_data <- readxl::read_excel(species_path, sheet = 1)
 elevation_data <- raster::raster(elevation_path)
 
 ## format species data
@@ -117,6 +117,8 @@ file_names <- gsub(")", "", file_names, fixed = TRUE)
 file_names <- gsub("/", "", file_names, fixed = TRUE)
 file_names <- gsub(" ", "-", file_names, fixed = TRUE)
 file_names <- gsub(".", "", file_names, fixed = TRUE)
+file_names <- paste0(taxonomy_data$order_scientific_name, "-",
+                     taxonomy_data$family_scientific_name, "-", file_names)
 
 # Exports
 ## create interactive maps for each species
@@ -124,7 +126,7 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {
   p <- species_widget(species_data$species_scientific_name[i], record_data,
                       grid_data)
-  saveRDS(p, paste0("assets/interactive-maps/", file_names[i], ".rds"),
+  saveRDS(p, paste0("assets/widgets/", file_names[i], ".rds"),
           compress = "xz")
   TRUE
 })
@@ -134,7 +136,7 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {
   p <- species_map(species_data$species_scientific_name[i], record_data,
                    grid_data, land_data)
-  ggplot2::ggsave(paste0("assets/static-maps/", file_names[i], ".png"), p,
+  ggplot2::ggsave(paste0("assets/maps/", file_names[i], ".png"), p,
                   width = parameters$map_width, height = parameters$map_width,
                   units = "in")
   TRUE
@@ -146,6 +148,6 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
   p <- species_graph(species_data$species_scientific_name[i], record_data)
   ggplot2::ggsave(paste0("assets/graphs/", file_names[i], ".png"), p,
                   width = parameters$graph_width,
-                  height = parameters$graph_width, units = "in")
+                  height = parameters$graph_height, units = "in")
   TRUE
 })
