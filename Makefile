@@ -1,8 +1,8 @@
-#### Main instructions
-# build and deploy book
+# Main instructions
+## build and deploy book
 all: build deploy
 
-#### Define variables
+# Define variables
 ifdef ComSpec
 	RM=del /F /Q
 	RMDIR=rmdir
@@ -15,31 +15,19 @@ else
 	MV=mv
 endif
 
-#### Individual instructions
-# clean compiled book
+# Individual instructions
+## clean compiled book
 clean:
 	@$(RMDIR) _book
 	@$(RMDIR) _bookdown_files
 
-# reset book to orginal text -- warning: this will reset all the book pages
+## reset book to orginal text -- warning: this will reset all the book pages
 reset_pages: clean
 	@$(MV) index.Rmd index.Rmd.bck
 	@$(RM) *.Rmd
 	@$(MV) index.Rmd.bck index.Rmd
 
-# generate initial book with no text (warning: this will reset all the pages)
-init_pages:
-	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
-	&& docker cp . bba:/tmp/ \
-	&& docker exec bba sh -c "Rscript code/scripts/initialize_book.R TRUE" \
-	&& docker cp bba:/tmp/_bookdown.yml . \
-	&& docker exec bba sh -c "zip -r rmd.zip *.Rmd" \
-	&& docker cp bba:/tmp/rmd.zip . \
-	&& unzip -o rmd.zip \
-	&& rm rmd.zip || true
-	@docker stop -t 1 bba || true && docker rm bba || true
-
-# add new pages for species in file
+## add new pages for species in file
 update_pages:
 	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
 	&& docker cp . bba:/tmp/ \
@@ -51,7 +39,20 @@ update_pages:
 	&& rm rmd.zip || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
-# add new pages for species in file
+# book commands
+## generate initial book with no text (warning: this will reset all the pages)
+init:
+	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
+	&& docker cp . bba:/tmp/ \
+	&& docker exec bba sh -c "Rscript code/scripts/initialize_book.R TRUE" \
+	&& docker cp bba:/tmp/_bookdown.yml . \
+	&& docker exec bba sh -c "zip -r rmd.zip *.Rmd" \
+	&& docker cp bba:/tmp/rmd.zip . \
+	&& unzip -o rmd.zip \
+	&& rm rmd.zip || true
+	@docker stop -t 1 bba || true && docker rm bba || true
+
+## build assets
 assets:
 	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
 	&& docker cp . bba:/tmp/ \
@@ -71,19 +72,35 @@ assets:
 	&& rm graphs.zip || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
-# make container
+## build book
+build:
+	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
+	&& docker cp . bba:/tmp/ \
+	&& docker exec bba sh -c "Rscript -e /tmp/code/scripts/build_book.R" \
+	&& docker cp bba:/tmp/_book . || true
+	@docker stop -t 1 bba || true && docker rm bba || true
+
+## deploy book
+deploy: build
+	@set -e
+	@[ -z "${GITHUB_PAT}" ] && exit 0
+	@[ "${TRAVIS_BRANCH}" != "master" ] && exit 0
+	@git config --global user.email "jeff.o.hanson+bot@gmail.com"
+	@git config --global user.name "bird-team-bot"
+	@git clone -b gh-pages https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git book-output
+	@cd book-output
+	@cp -r ../_book/* ./
+	@git add --all *
+	@git commit -m"Automagic book update" || true
+	@git push -q origin gh-pages
+
+# docker container commands
+## spin up container
 run:
 	@docker run --name=bba -dt 'brisbanebirdteam/build-env:latest'
 
+## kill container
 stop:
 	@docker stop -t 1 bba || true && docker rm bba || true
-
-# build book
-build:
-
-
-# deploy book to website
-deploy:
-	echo "TODO"
 
 .PHONY: clean init data update build deploy reset assets
