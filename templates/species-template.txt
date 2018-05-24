@@ -3,7 +3,7 @@ species_name <- "$$SPECIESNAME$$"
 ```
 
 ```{r}
-cat("## ", species_name_title(species_name, taxonomy_data))
+cat("## ", species_name_title(species_name, species_data))
 ```
 
 ![No image for species](assets/profile/missing.png)

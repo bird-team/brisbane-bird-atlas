@@ -4,7 +4,7 @@ options(stringsAsFactors = FALSE)
 
 ## set parameters
 species_template_path <- "templates/species-template.txt"
-species_path <- dir("data/species", "^.*\\.csv", full.names = TRUE)[1]
+species_path <- dir("data/species", "^.*\\.xlsx", full.names = TRUE)[1]
 taxonomy_path <- dir("data/taxonomy","^.*\\.xlsx$", full.names = TRUE)[1]
 
 ## set command line arguments
@@ -29,13 +29,16 @@ parameters <- yaml::read_yaml("data/parameters/parameters.yaml")
 
 ## load data
 taxonomy_data <- readxl::read_excel(taxonomy_path, sheet = 1)
-species_data <- data.table::fread(species_path, data.table = FALSE)
+species_data <- readxl::read_excel(species_path, sheet = 1)
 
 ## load templates
 species_template_data <- readLines(species_template_path)
 species_template_data <- paste(species_template_data, collapse = "\n")
 
 ## format species data
+print(parameters$species)
+print(format_species_data)
+
 species_data <- do.call(format_species_data,
                         append(list(x = species_data), parameters$species))
 
