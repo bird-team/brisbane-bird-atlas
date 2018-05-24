@@ -43,7 +43,7 @@ species_map <- function(x, record_data, grid_data, land_data) {
   ## format land data
   land_data$name <- NULL
   ## format data for plotting
-  plot_data <- as.data.frame(grid_data, xy = TRUE, na.rm = TRUE)
+  plot_data <- raster::as.data.frame(grid_data, xy = TRUE, na.rm = TRUE)
   plot_data$cell <- seq_len(nrow(plot_data))
   plot_data <- tidyr::gather(plot_data, name, value, -x, -y, -cell)
   plot_data$name <- factor(plot_data$name, levels = group_names)
@@ -58,7 +58,9 @@ species_map <- function(x, record_data, grid_data, land_data) {
        viridis::scale_fill_viridis(name = "Sightings") +
        ggplot2::theme(
          #axis.ticks = ggplot2::element_blank(),
-         #axis.text = ggplot2::element_blank(),
+         axis.text.x = ggplot2::element_text(size = 8, angle = 45,
+                                             vjust = 0.6, hjust = 0.75),
+         axis.text.y = ggplot2::element_text(size = 8),
          axis.title = ggplot2::element_blank(),
          #axis.line = ggplot2::element_blank(),
          #axis.ticks.length = ggplot2::unit(0, "null"),
@@ -66,9 +68,9 @@ species_map <- function(x, record_data, grid_data, land_data) {
          panel.background = ggplot2::element_rect(color = "black", fill = NA),
          panel.border = ggplot2::element_rect(color = NA, fill = NA),
          panel.grid = ggplot2::element_blank(),
-         panel.grid.major = element_line(colour = "transparent"),
+         panel.grid.major = ggplot2::element_line(colour = "transparent"),
          #legend.margin = ggplot2::unit(0, "null"),
-         legend.key.height = ggplot2::unit(2, "cm"),
+         legend.key.height = ggplot2::unit(1.0, "cm"),
          legend.text = ggplot2::element_text(size = 10),
          legend.title = ggplot2::element_text(size = 10),
          strip.background = ggplot2::element_blank(),
