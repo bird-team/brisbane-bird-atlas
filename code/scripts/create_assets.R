@@ -66,7 +66,7 @@ taxonomy_data <- taxonomy_data[taxonomy_data$species_scientific_name %in%
 ## order taxonomy data by species data
 taxonomy_data <- taxonomy_data[match(taxonomy_data$species_scientific_name,
                                      species_data$species_scientific_name), ,
-                                     drop = FALSE]
+                               drop = FALSE]
 
 ## verify that all species are accounted
 assertthat::assert_that(
