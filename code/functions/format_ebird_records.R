@@ -69,7 +69,7 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
   x$year <- format(record_posix_dates, "%Y")
 
   # create column with season data
-  month <- format(record_posix_dates, "%m")
+  month <- as.integer(format(record_posix_dates, "%m"))
   month[month == 12] <- 0
   season <- character(length(month))
   season[month <= 2] <- "summer"
