@@ -29,6 +29,8 @@ species_widget <- function(x, record_data, grid_data) {
        grid_data[[l]][curr_tbl[[1]]] <- curr_tbl[[2]]
     }
   }
+  ## project data for leaflet
+  grid_data <- leaflet::projectRasterForLeaflet(grid_data, method = "ngb")
   ## create group names
   group_names <- c("Summer", "Autumn", "Winter", "Spring")
   names(grid_data) <- group_names
@@ -46,8 +48,8 @@ species_widget <- function(x, record_data, grid_data) {
   l <- leaflet::addProviderTiles(l, "Esri.WorldImagery")
   ## add rasters
   for (i in group_names)
-    l <- leaflet::addRasterImage(l, x = grid_data[[i]],
-                              colors = palette, opacity = 0.6, group = i)
+    l <- leaflet::addRasterImage(l, x = grid_data[[i]], project = FALSE,
+                                 colors = palette, opacity = 0.6, group = i)
   ## add points
   l <- leaflet::addMarkers(l, lng = record_pts@coords[, 1],
                            lat = record_pts@coords[, 2], group = "Sightings",
