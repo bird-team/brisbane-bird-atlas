@@ -36,9 +36,6 @@ species_template_data <- readLines(species_template_path)
 species_template_data <- paste(species_template_data, collapse = "\n")
 
 ## format species data
-print(parameters$species)
-print(format_species_data)
-
 species_data <- do.call(format_species_data,
                         append(list(x = species_data), parameters$species))
 
