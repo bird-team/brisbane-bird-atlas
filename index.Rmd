@@ -18,6 +18,8 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE,
                       results = "asis", fig.align = "centre")
 ```
 
+# Notice
+
 **Please note that this project is still very much under active construction and is not yet ready for contributions.**
 
 # Preface
