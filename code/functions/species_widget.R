@@ -89,17 +89,18 @@ species_widget <- function(x, record_data, grid_data, study_area_data) {
                            group = "Brisbane extent")
   ## add points
   l <- leaflet::addMarkers(l, lng = record_pts@coords[, 1],
-                           lat = record_pts@coords[, 2], group = "Sightings",
+                           lat = record_pts@coords[, 2], group = "Observations",
                            clusterOptions = leaflet::markerClusterOptions())
+  ## add layer control
+  l <- leaflet::addLayersControl(l,
+    baseGroups = group_names,
+    overlayGroups = c("Observations", "Brisbane extent"),
+    options = leaflet::layersControlOptions(collapsed = FALSE))
   ## add legend
   l <- leaflet::addLegend(l, pal = palette, opacity = 1,
                           values = na.omit(c(raster::values(grid_data))),
-                          title = "Number sightings",
-                          position = "topleft")
-  ## add layer control
-  l <- leaflet::addLayersControl(l,
-    baseGroups = group_names, overlayGroups = c("Sightings", "Brisbane extent"),
-    options = leaflet::layersControlOptions(collapsed = FALSE))
+                          title = "Rate",
+                          position = "topright")
   # exports
   ## return widget
   l
