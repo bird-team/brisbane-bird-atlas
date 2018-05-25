@@ -83,29 +83,16 @@ book:
 
 ## deploy book
 deploy: book
-	echo "1"
 	@set -e
-	echo "2"
-	echo "SLUG=${TRAVIS_REPO_SLUG}"
-	echo "BRANCH=${TRAVIS_BRANCH}"
 	@if [ -z "${GITHUB_PAT}" ]; then exit 0; fi;
-	echo "3"
 	@if [ "${TRAVIS_BRANCH}" != "master" ]; then exit 0; fi;
-	echo "4"
 	@git config --global user.email "jeff.o.hanson+bot@gmail.com"
-	echo "5"
 	@git config --global user.name "bird-team-bot"
-	echo "6"
 	@git clone -b gh-pages https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git book-output
-	echo "7"
 	@cd book-output \
-	&& echo "8" \
 	&& cp -r ../_book/* ./ \
-	&& echo "9" \
 	&& git add --all * \
-	&& echo "10" \
 	&& git commit -m"Automagic book update" \
-	&& echo "11" \
 	&& git push -q origin gh-pages
 
 # docker container commands
