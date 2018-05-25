@@ -98,16 +98,15 @@ deploy: book
 	echo "6"
 	@git clone -b gh-pages https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git book-output
 	echo "7"
-	@cd book-output
-	echo "8"
-	@cp -r ../_book/* ./
-	echo "9"
-	@git add --all *
-	echo "10"
-	@git commit -m"Automagic book update"
-	echo "11"
-	@git push -q origin gh-pages
-	echo "12"
+	@cd book-output \
+	&& echo "8" \
+	&& cp -r ../_book/* ./ \
+	&& echo "9"
+	&& git add --all * \
+	&& echo "10" \
+	&& git commit -m"Automagic book update" \
+	&& echo "11" \
+	&& git push -q origin gh-pages
 
 # docker container commands
 ## pull image
