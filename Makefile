@@ -73,10 +73,10 @@ assets:
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 ## build book
-build:
+book:
 	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
 	&& docker cp . bba:/tmp/ \
-	&& docker exec bba sh -c "Rscript -e /tmp/code/scripts/build_book.R" \
+	&& docker exec bba sh -c "Rscript /tmp/code/scripts/build_book.R" \
 	&& docker cp bba:/tmp/_book . || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
