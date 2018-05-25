@@ -105,6 +105,7 @@ elevation_data <- raster::crop(elevation_data,
 record_pts <- as(record_data[, c("year")], "Spatial")
 elevation_data <- raster::projectRaster(elevation_data, method = "bilinear",
                                         crs = record_pts@proj4string)
+elevation_data[raster::Which(elevation_data < 0)] <- 0
 record_data$elevation <- raster::extract(elevation_data, record_pts)
 rm(record_pts, elevation_data)
 
