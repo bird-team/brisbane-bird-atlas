@@ -1,0 +1,10 @@
+book_filename: brisbane-bird-atlas
+chapter_name: 'Chapter '
+rmd_files:
+- index.Rmd
+- front-matter.Rmd
+- birds.Rmd
+- Anseriformes-Anseranatidae-Anseranas-semipalmata.Rmd
+- Anseriformes-Anatidae-Dendrocygna-eytoni.Rmd
+- Anseriformes-Anatidae-Dendrocygna-arcuata.Rmd
+- end-matter.Rmd
