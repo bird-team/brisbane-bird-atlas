@@ -88,9 +88,9 @@ deploy: book
 	echo "2"
 	echo "SLUG=${TRAVIS_REPO_SLUG}"
 	echo "BRANCH=${TRAVIS_BRANCH}"
-	@[ -z "${GITHUB_PAT}" ] && exit 0
+	@if [ -z "${GITHUB_PAT}" ]; then exit 0; fi;
 	echo "3"
-	@[ "${TRAVIS_BRANCH}" != "master" ] && exit 0
+	@if [ "${TRAVIS_BRANCH}" != "master" ]; then exit 0; fi;
 	echo "4"
 	@git config --global user.email "jeff.o.hanson+bot@gmail.com"
 	echo "5"
