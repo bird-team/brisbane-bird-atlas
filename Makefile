@@ -101,7 +101,7 @@ deploy: book
 	@cd book-output \
 	&& echo "8" \
 	&& cp -r ../_book/* ./ \
-	&& echo "9"
+	&& echo "9" \
 	&& git add --all * \
 	&& echo "10" \
 	&& git commit -m"Automagic book update" \
