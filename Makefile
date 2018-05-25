@@ -49,7 +49,8 @@ init:
 	&& docker exec bba sh -c "zip -r rmd.zip *.Rmd" \
 	&& docker cp bba:/tmp/rmd.zip . \
 	&& unzip -o rmd.zip \
-	&& rm rmd.zip || true
+	&& rm rmd.zip \
+	&& rm -f README.Rmd || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 ## build assets
