@@ -8,6 +8,6 @@
 #'
 #' @return \code{character} markdown formatted title.
 species_title <- function(x, data) {
-  paste0(data$species_common_name[which(data$species_scientific_name == x)[1]],
-         "_", x, "_")
+  cat("##", paste0(data$species_common_name[
+    which(data$species_scientific_name == x)[1]], " _", x, "_\n"), "\n")
 }

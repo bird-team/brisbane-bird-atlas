@@ -10,8 +10,13 @@
 #'   \code{"family_scientific_name"}.
 #'
 #' @return interactive widget.
-render_species_graph <- function(x, data) {
+render_species_widget <- function(x, data) {
   pos <- which(data$species_scientific_name == x)[1]
+  x <- gsub("(", "", x, fixed = TRUE)
+  x <- gsub(")", "", x, fixed = TRUE)
+  x <- gsub("/", "", x, fixed = TRUE)
+  x <- gsub(" ", "-", x, fixed = TRUE)
+  x <- gsub(".", "", x, fixed = TRUE)
   path <- paste0("assets/widgets/", data$order_scientific_name[pos], "-",
                  data$family_scientific_name[pos], "-", x, ".rds")
   stopifnot(file.exists(path))

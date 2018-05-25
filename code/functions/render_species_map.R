@@ -12,8 +12,13 @@
 #' @return \code{gg} pkg{ggplot2} plot.
 render_species_map <- function(x, data) {
   pos <- which(data$species_scientific_name == x)[1]
+  x <- gsub("(", "", x, fixed = TRUE)
+  x <- gsub(")", "", x, fixed = TRUE)
+  x <- gsub("/", "", x, fixed = TRUE)
+  x <- gsub(" ", "-", x, fixed = TRUE)
+  x <- gsub(".", "", x, fixed = TRUE)
   path <- paste0("assets/maps/", data$order_scientific_name[pos], "-",
                  data$family_scientific_name[pos], "-", x, ".png")
   stopifnot(file.exists(path))
-  cat(paste0("![](", path, "\n"))
+  cat(paste0("![](", path, ")\n"))
 }
