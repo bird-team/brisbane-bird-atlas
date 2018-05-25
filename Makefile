@@ -84,9 +84,10 @@ book:
 ## deploy book
 deploy: book
 	echo "1"
-	echo "${TRAVIS_REPO_SLUG}"
 	@set -e
 	echo "2"
+	echo "SLUG=${TRAVIS_REPO_SLUG}"
+	echo "BRANCH=${TRAVIS_BRANCH}"
 	@[ -z "${GITHUB_PAT}" ] && exit 0
 	echo "3"
 	@[ "${TRAVIS_BRANCH}" != "master" ] && exit 0
