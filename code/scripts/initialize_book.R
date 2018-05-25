@@ -86,15 +86,15 @@ if (overwrite) {
   file_index <- which(!file.exists(rmd_paths))
 }
 rmd_texts <- vapply(species_data$species_scientific_name,
-                   FUN.VALUE = character(1), gsub, pattern = "$$SPECIESNAME$$",
-                   fixed = TRUE, x = species_template_data)
+                    FUN.VALUE = character(1), gsub, pattern = "$$SPECIESNAME$$",
+                    fixed = TRUE, x = species_template_data)
 
 ## create bookdown metadata file
 bookdown_list <- list()
 bookdown_list$book_filename <- "brisbane-bird-atlas"
 bookdown_list$chapter_name <- "Chapter "
-bookdown_list$rmd_files <- c("index.Rmd", "front-matter.Rmd", rmd_paths,
-                             "end-matter.Rmd")
+bookdown_list$rmd_files <- c("index.Rmd", "front-matter.Rmd", "birds.Rmd",
+                             rmd_paths, "end-matter.Rmd")
 
 # Exports
 ## save rmarkdown files
