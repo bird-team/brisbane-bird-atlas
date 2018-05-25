@@ -82,7 +82,7 @@ book:
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 ## deploy book
-deploy: build
+deploy: book
 	@set -e
 	@[ -z "${GITHUB_PAT}" ] && exit 0
 	@[ "${TRAVIS_BRANCH}" != "master" ] && exit 0
