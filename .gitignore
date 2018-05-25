@@ -1,0 +1,21 @@
+# C++ compiled files
+*.o
+*.so
+*.dll
+
+# R profile files
+*.Rproj.user
+*.Rhistory
+
+# log files
+
+# system files
+.directory
+*.kate-swp
+
+# do not ignore the following files
+!.gitkeep
+!*/
+
+# raw book files
+_book
