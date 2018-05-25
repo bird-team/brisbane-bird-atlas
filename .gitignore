@@ -18,5 +18,4 @@
 !*/
 
 # raw book files
-book/_book/*
-book/_bookdown_files/*
+_book
