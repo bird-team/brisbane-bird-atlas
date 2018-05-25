@@ -1,6 +1,6 @@
 bookdown::gitbook:
   css: style.css
-  split_by: rmd
+  split_by: section
   config:
     toc:
       collapse: section
@@ -8,5 +8,6 @@ bookdown::gitbook:
     edit: https://github.com/bird-team/brisbane-bird-atlas/edit/master/%s
 bookdown::pdf_book:
   keep_tex: false
+  pandoc_args: [--wrap=none]
   include:
     in_header: preamble.tex

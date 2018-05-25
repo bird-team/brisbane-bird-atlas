@@ -3,14 +3,12 @@ title: "Atlas of the Birds of Brisbane"
 author: |
   | Richard A. Fuller, Jeffrey O. Hanson
 date: "`r Sys.Date()`"
-site: bookdown::bookdown_site
-output: bookdown::gitbook
 documentclass: book
 bibliography: references.bib
 biblio-style: apalike
 link-citations: yes
 github-repo: bird-team/brisbane-bird-atlas
-url: "https://github.com/bird-team/brisbane-birds"
+url: "https\\://brisbanebirds.com/"
 description: "Community bird atlas for Brisbane, Australia"
 ---
 
@@ -33,12 +31,21 @@ options(stringsAsFactors = FALSE)
 
 ## set parameters
 species_path <- dir("data/species", "^.*\\.xlsx", full.names = TRUE)[1]
+taxonomy_path <- dir("data/taxonomy","^.*\\.xlsx$", full.names = TRUE)[1]
 
 ## source functions
 source("code/functions/format_species_data.R")
+source("code/functions/format_ebird_taxonomy.R")
+source("code/functions/species_title.R")
 source("code/functions/render_species_graph.R")
 source("code/functions/render_species_map.R")
 source("code/functions/render_species_widget.R")
+
+## load packages
+library(sf)
+library(ggplot2)
+library(leaflet)
+library(plotly)
 
 # Preliminary processing
 ## load parameters
@@ -46,9 +53,15 @@ parameters <- yaml::read_yaml("data/parameters/parameters.yaml")
 
 ## load data
 species_data <- readxl::read_excel(species_path, sheet = 1)
+taxonomy_data <- readxl::read_excel(taxonomy_path, sheet = 1)
 
 # Main processing
 ## format species data
 species_data <- do.call(format_species_data,
                         append(list(x = species_data), parameters$species))
+
+## format taxonomy data
+taxonomy_data <- do.call(format_ebird_taxonomy,
+                         append(list(x = taxonomy_data),
+                                parameters$taxonomy))
 ```
