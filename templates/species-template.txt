@@ -3,7 +3,7 @@ species_name <- "$$SPECIESNAME$$"
 ```
 
 ```{r}
-cat("## ", species_name_title(species_name, species_data))
+species_title(species_name, species_data)
 ```
 
 ![No image for species](assets/profile/missing.png)
@@ -17,7 +17,6 @@ render_species_widget(species_name, taxonomy_data)
 ```{r, eval = !isTRUE(knitr:::is_html_output())}
 render_species_map(species_name, taxonomy_data)
 ```
-
 
 In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
 
