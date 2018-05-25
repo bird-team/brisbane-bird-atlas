@@ -76,6 +76,7 @@ assets:
 book:
 	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
 	&& docker cp . bba:/tmp/ \
+	&& docker exec bba sh -c "rm -rf /tmp/_book" \
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/build_book.R" \
 	&& docker cp bba:/tmp/_book . || true
 	@docker stop -t 1 bba || true && docker rm bba || true
@@ -95,6 +96,14 @@ deploy: build
 	@git push -q origin gh-pages
 
 # docker container commands
+## pull image
+pull:
+	@docker pull 'brisbanebirdteam/build-env:latest'
+
+## remove image
+rm:
+	@docker image rm 'brisbanebirdteam/build-env:latest'
+
 ## spin up container
 run:
 	@docker run --name=bba -dt 'brisbanebirdteam/build-env:latest'
