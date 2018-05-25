@@ -83,17 +83,30 @@ book:
 
 ## deploy book
 deploy: book
+	echo "1"
+	echo "${TRAVIS_REPO_SLUG}"
 	@set -e
+	echo "2"
 	@[ -z "${GITHUB_PAT}" ] && exit 0
+	echo "3"
 	@[ "${TRAVIS_BRANCH}" != "master" ] && exit 0
+	echo "4"
 	@git config --global user.email "jeff.o.hanson+bot@gmail.com"
+	echo "5"
 	@git config --global user.name "bird-team-bot"
+	echo "6"
 	@git clone -b gh-pages https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git book-output
+	echo "7"
 	@cd book-output
+	echo "8"
 	@cp -r ../_book/* ./
+	echo "9"
 	@git add --all *
-	@git commit -m"Automagic book update" || true
+	echo "10"
+	@git commit -m"Automagic book update"
+	echo "11"
 	@git push -q origin gh-pages
+	echo "12"
 
 # docker container commands
 ## pull image
