@@ -1,10 +1,6 @@
-# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
-
 sudo: required
 
 dist: trusty
-
-sudo: required
 
 services:
   - docker
@@ -14,7 +10,7 @@ before_script:
   - docker pull "brisbanebirdteam/build-env:latest"
 
 script:
-  - make deploy_book
+  - make deploy
 
 notifications:
   email:
