@@ -66,8 +66,11 @@ species_widget <- function(x, record_data, grid_data, study_area_data) {
   ## create group names
   group_names <- c("Summer", "Autumn", "Winter", "Spring")
   names(grid_data) <- group_names
-  ## create lon/lat version of records
-  record_pts <- as(sf::st_transform(record_data[, "year"], 4326), "Spatial")
+  ## create data to show in widget
+  pts_data <- spp_data[, c("year", "season", "vegetation_class",
+                           "elevation"), drop = FALSE]
+  pts_data <- as(sf::st_transform(pts_data, 4326), "Spatial")
+  shared_pts_data <- SharedData$new(pts_data)
   # main processing
   ## initialize leaflet map
   l <- leaflet::leaflet()
@@ -88,8 +91,7 @@ species_widget <- function(x, record_data, grid_data, study_area_data) {
                                      "Spatial"),
                            group = "Brisbane extent")
   ## add points
-  l <- leaflet::addMarkers(l, lng = record_pts@coords[, 1],
-                           lat = record_pts@coords[, 2], group = "Observations",
+  l <- leaflet::addMarkers(l, data = shared_pts_data, group = "Observations",
                            clusterOptions = leaflet::markerClusterOptions())
   ## add layer control
   l <- leaflet::addLayersControl(l,
@@ -101,6 +103,19 @@ species_widget <- function(x, record_data, grid_data, study_area_data) {
                           values = na.omit(c(raster::values(grid_data))),
                           title = "Rate",
                           position = "topright")
+  # exports
+  ## make crosstalk widget
+  w <- crosstalk::bscols(
+    widths = c(NA, 3),
+    list(crosstalk::filter_slider("year", "Year", shared_pts_data, ~year),
+         crosstalk::filter_select("season", "Season", shared_pts_data, ~season),
+         crosstalk::filter_select("vegetation_class", "Vegetation",
+                                  shared_pts_data, ~vegetation_class),
+         crosstalk::filter_slider("elevation", "Elevation", shared_pts_data,
+                                  ~elevation),
+
+  d3scatter(shared_quakes, ~depth, ~mag, width = "100%", height = 300)
+)
   # exports
   ## return widget
   l

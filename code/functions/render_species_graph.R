@@ -6,13 +6,12 @@
 #'
 #' @return \code{gg} pkg{ggplot2} plot.
 render_species_graph <- function(x) {
-  pos <- which(data$species_scientific_name == x)[1]
   x <- gsub("(", "", x, fixed = TRUE)
   x <- gsub(")", "", x, fixed = TRUE)
   x <- gsub("/", "", x, fixed = TRUE)
   x <- gsub(" ", "-", x, fixed = TRUE)
   x <- gsub(".", "", x, fixed = TRUE)
   path <- paste0("assets/graphs/", x, ".png")
-  stopifnot(file.exists(path))
+  if(!file.exists(path)) stop(paste(path, "does not exist"))
   cat(paste0("![](", path, ")\n"))
 }
