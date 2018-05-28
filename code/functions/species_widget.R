@@ -66,11 +66,20 @@ species_widget <- function(x, record_data, grid_data, study_area_data) {
   ## create group names
   group_names <- c("Summer", "Autumn", "Winter", "Spring")
   names(grid_data) <- group_names
-  ## create data to show in widget
-  pts_data <- spp_data[, c("year", "season", "vegetation_class",
-                           "elevation"), drop = FALSE]
-  pts_data <- as(sf::st_transform(pts_data, 4326), "Spatial")
-  shared_pts_data <- SharedData$new(pts_data)
+  ## create checklist data to show in widget
+  chk_widget_data <- record_data[record_data$is_checklist &
+                                 record_data$species_scientific_name == x,
+                                c("event"), drop = FALSE]
+  chk_widget_data <- chk_widget_data[!duplicated(chk_widget_data$event), ,
+                                     drop = FALSE]
+  chk_widget_data <- as(sf::st_transform(chk_widget_data, 4326), "Spatial")
+  ## create observation data to show in widget
+  obs_widget_data <- record_data[!record_data$is_checklist &
+                                 record_data$species_scientific_name == x,
+                                 c("event"), drop = FALSE]
+  obs_widget_data <- obs_widget_data[!duplicated(obs_widget_data$event), ,
+                                     drop = FALSE]
+  obs_widget_data <- as(sf::st_transform(obs_widget_data, 4326), "Spatial")
   # main processing
   ## initialize leaflet map
   l <- leaflet::leaflet()
@@ -87,35 +96,27 @@ species_widget <- function(x, record_data, grid_data, study_area_data) {
                                  colors = palette, opacity = 0.6, group = i)
   ## add polygons
   l <- leaflet::addPolygons(l, color = "black",
-                           data = as(sf::st_transform(study_area_data, 4326),
-                                     "Spatial"),
-                           group = "Brisbane extent")
-  ## add points
-  l <- leaflet::addMarkers(l, data = shared_pts_data, group = "Observations",
+                            data = as(sf::st_transform(study_area_data, 4326),
+                                      "Spatial"),
+                            group = "Brisbane extent")
+  ## add checklist points
+  l <- leaflet::addMarkers(l, data = chk_widget_data,
+                           group = "Checklists",
+                           clusterOptions = leaflet::markerClusterOptions())
+  ## add observations points
+  l <- leaflet::addMarkers(l, data = obs_widget_data,
+                           group = "Observations",
                            clusterOptions = leaflet::markerClusterOptions())
   ## add layer control
   l <- leaflet::addLayersControl(l,
     baseGroups = group_names,
-    overlayGroups = c("Observations", "Brisbane extent"),
+    overlayGroups = c("Checklists", "Observations", "Brisbane extent"),
     options = leaflet::layersControlOptions(collapsed = FALSE))
   ## add legend
   l <- leaflet::addLegend(l, pal = palette, opacity = 1,
                           values = na.omit(c(raster::values(grid_data))),
                           title = "Rate",
                           position = "topright")
-  # exports
-  ## make crosstalk widget
-  w <- crosstalk::bscols(
-    widths = c(NA, 3),
-    list(crosstalk::filter_slider("year", "Year", shared_pts_data, ~year),
-         crosstalk::filter_select("season", "Season", shared_pts_data, ~season),
-         crosstalk::filter_select("vegetation_class", "Vegetation",
-                                  shared_pts_data, ~vegetation_class),
-         crosstalk::filter_slider("elevation", "Elevation", shared_pts_data,
-                                  ~elevation),
-
-  d3scatter(shared_quakes, ~depth, ~mag, width = "100%", height = 300)
-)
   # exports
   ## return widget
   l
