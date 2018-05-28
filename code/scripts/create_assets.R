@@ -7,6 +7,11 @@ species_template_path <- "templates/species-template.txt"
 species_path <- dir("data/species", "^.*\\.xlsx", full.names = TRUE)[1]
 taxonomy_path <- dir("data/taxonomy","^.*\\.xlsx$", full.names = TRUE)[1]
 study_area_path <- dir("data/study-area", "^.*\\.shp$", full.names = TRUE)[1]
+unzip(dir("data/vegetation", "^.*\\.zip$", full.names = TRUE),
+          exdir = tempdir())
+vegetation_path <- dir(tempdir(), "^.*\\.shp$", full.names = TRUE)[1]
+vegetation_class_path <- dir("data/vegetation", "^.*\\.xlsx$",
+                             full.names = TRUE)[1]
 unzip(dir("data/records", "^.*\\.zip$", full.names = TRUE), exdir = tempdir())
 record_path <- dir(tempdir(), "^.*\\.csv$", full.names = TRUE)
 elevation_path <- dir("data/elevation", "^.*\\.grd$", full.names = TRUE)[1]
@@ -14,6 +19,7 @@ elevation_path <- dir("data/elevation", "^.*\\.grd$", full.names = TRUE)[1]
 ## load packages
 library(dplyr)
 library(sf)
+library(patchwork)
 
 ## source functions
 source("code/functions/format_ebird_records.R")
@@ -34,6 +40,8 @@ record_data <- data.table::fread(record_path, data.table = FALSE)
 taxonomy_data <- readxl::read_excel(taxonomy_path, sheet = 1)
 species_data <- readxl::read_excel(species_path, sheet = 1)
 elevation_data <- raster::raster(elevation_path)
+vegetation_data <- sf::st_transform(sf::st_read(vegetation_path),
+                                    parameters$crs)
 
 ## format species data
 species_data <- do.call(format_species_data,
@@ -108,6 +116,17 @@ elevation_data <- raster::projectRaster(elevation_data, method = "bilinear",
 elevation_data[raster::Which(elevation_data < 0)] <- 0
 record_data$elevation <- raster::extract(elevation_data, record_pts)
 rm(record_pts, elevation_data)
+
+## extract vegetation data
+pos <- max.col(cbind(as.matrix(sf::st_intersects(record_data,
+                                                 vegetation_data)), FALSE),
+               ties.method = "last")
+record_data$vegetation_class <- vegetation_data[[
+  parameters$vegetation$class_column_name]][pos]
+assertthat::assert_that(assertthat::noNA(record_data$vegetation_class),
+  msg = "all eBird records must overlap with vegetation data")
+record_data$vegetation_class <- factor(record_data$vegetation_class,
+  levels = parameters$vegetation$classes)
 
 ## create file names to save images/widgets
 file_names <- species_data$species_scientific_name

@@ -5,8 +5,8 @@ number_species: 3                                    # number of species to incl
 grid_resolution: 2000                                # resolution for altlas grids in meters
 map_width: 4.5                                       # map image width in inches
 map_height: 4.5                                      # map image height in inches
-graph_width: 8.0                                     # graph image width in inches
-graph_height: 3.0                                    # graph image height in inches
+graph_width: 4.5                                     # graph image width in inches
+graph_height: 4.5                                    # graph image height in inches
 
 species:                                             # parameters for species data
   scientific_column_name: species_scientific_name    # column name for species' scientific name
@@ -30,3 +30,20 @@ taxonomy:                                            # parameters for eBird taxo
   scientific_column_name: SCI_NAME                   # column name for species' scientific name
   family_column_name: FAMILY                         # column name for species' family name
   order_column_name: ORDER                           # column name for species' order name
+
+vegetation:                                          # parameters for vegetation data
+  class_column_name: name                            # column iname for vegetation class name
+  classes:                                           # order for vegetation classes to appear in graph
+    - "Rainforest"
+    - "Eucalypt"
+    - "Acacia"
+    - "Melaleuca"
+    - "Mixed"
+    - "Small-remnant"
+    - "Non-remnant"
+    - "Urban"
+    - "Wetlands"
+    - "Water"
+    - "Mangroves"
+    - "Estuary"
+    - "Ocean"
