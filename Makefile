@@ -98,19 +98,19 @@ deploy: book
 
 # docker container commands
 ## pull image
-pull:
+pull_image:
 	@docker pull 'brisbanebirdteam/build-env:latest'
 
 ## remove image
-rm:
+rm_image:
 	@docker image rm 'brisbanebirdteam/build-env:latest'
 
 ## spin up container
-run:
+spin_container:
 	@docker run --name=bba -dt 'brisbanebirdteam/build-env:latest'
 
 ## kill container
-stop:
+stop_container:
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 .PHONY: clean init data update build deploy reset assets

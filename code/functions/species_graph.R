@@ -47,9 +47,12 @@ species_graph <- function(x, record_data) {
         ggplot2::scale_y_continuous(labels = scales::percent,
                                     limits = c(0, 1)) +
         ggplot2::scale_x_discrete(drop = FALSE) +
-        ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45,
-                                                           hjust = 1,
-                                                           vjust = 0.8))
+        ggplot2::theme(
+          plot.title = ggplot2::element_blank(),
+          plot.margin = ggplot2::unit(c(5.5, 5.5, 0, 5.5), "pt"),
+          panel.spacing.y = ggplot2::unit(0, "pt"),
+          axis.text.x = ggplot2::element_text(angle = 45, hjust = 1,
+                                              vjust = 0.8))
   ## reporting rate by month
   p2 <- record_data %>%
         dplyr::group_by(Month) %>%
@@ -67,9 +70,12 @@ species_graph <- function(x, record_data) {
         ggplot2::scale_y_continuous(labels = scales::percent,
                                     limits = c(0, 1)) +
         ggplot2::scale_x_discrete(drop = FALSE) +
-        ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45,
-                                                           hjust = 1,
-                                                           vjust = 0.8))
+        ggplot2::theme(
+          plot.title = ggplot2::element_blank(),
+          plot.margin = ggplot2::unit(c(5.5, 5.5, 0, 5.5), "pt"),
+          panel.spacing.y = ggplot2::unit(0, "pt"),
+          axis.text.x = ggplot2::element_text(angle = 45, hjust = 1,
+                                                          vjust = 0.8))
   ## vegetation
   p3 <- record_data %>%
         dplyr::group_by(vegetation_class) %>%
@@ -87,9 +93,12 @@ species_graph <- function(x, record_data) {
         ggplot2::scale_y_continuous(labels = scales::percent,
                                     limits = c(0, 1)) +
         ggplot2::scale_x_discrete(drop = FALSE) +
-        ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45,
-                                                           hjust = 1,
-                                                           vjust = 0.5))
+        ggplot2::theme(
+          plot.title = ggplot2::element_blank(),
+          plot.margin = ggplot2::unit(c(5.5, 5.5, 0, 5.5), "pt"),
+          panel.spacing.y = ggplot2::unit(0, "pt"),
+          axis.text.x = ggplot2::element_text(angle = 45, hjust = 1,
+                                                          vjust = 0.7))
   ## elevation by month
   p4 <- record_data %>%
         dplyr::filter(species_scientific_name == x) %>%
@@ -99,11 +108,14 @@ species_graph <- function(x, record_data) {
         ggplot2::ylab("Elevation (m)") +
         ggplot2::scale_x_discrete(drop = FALSE) +
         ggplot2::scale_y_continuous(limits = elvational_limits) +
-        ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 45,
-                                                           hjust = 1,
-                                                           vjust = 0.8))
+        ggplot2::theme(
+          plot.title = ggplot2::element_blank(),
+          plot.margin = ggplot2::unit(c(5.5, 5.5, 0, 5.5), "pt"),
+          panel.spacing.y = ggplot2::unit(0, "pt"),
+          axis.text.x = ggplot2::element_text(angle = 45, hjust = 1,
+                                                          vjust = 0.8))
   ## assemble plot
-  p <- p1 + p2 + p3 + p4 + plot_layout(ncol = 2)
+  p <- {p1 + p2} / {p3 + p4}
   # Exports
   ## return result
   p

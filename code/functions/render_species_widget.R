@@ -4,21 +4,15 @@
 #'
 #' @param x \code{character} scientific name of species.
 #'
-#' @param data \code{data.frame} containing the scientific name, family, and
-#'   order data. The argument to \code{data} must have the columns
-#'   \code{"species_scientific_name"}, \code{"order_scientific_name"}, and
-#'   \code{"family_scientific_name"}.
-#'
 #' @return interactive widget.
-render_species_widget <- function(x, data) {
+render_species_widget <- function(x) {
   pos <- which(data$species_scientific_name == x)[1]
   x <- gsub("(", "", x, fixed = TRUE)
   x <- gsub(")", "", x, fixed = TRUE)
   x <- gsub("/", "", x, fixed = TRUE)
   x <- gsub(" ", "-", x, fixed = TRUE)
   x <- gsub(".", "", x, fixed = TRUE)
-  path <- paste0("assets/widgets/", data$order_scientific_name[pos], "-",
-                 data$family_scientific_name[pos], "-", x, ".rds")
+  path <- paste0("assets/widgets/", "-", x, ".rds")
   stopifnot(file.exists(path))
   readRDS(path)
 }

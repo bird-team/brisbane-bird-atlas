@@ -4,8 +4,8 @@ rmd_files:
 - index.Rmd
 - front-matter.Rmd
 - birds.Rmd
-- Anseriformes-Anseranatidae-Anseranas-semipalmata.Rmd
-- Anseriformes-Anatidae-Dendrocygna-eytoni.Rmd
-- Anseriformes-Anatidae-Dendrocygna-arcuata.Rmd
+- Anseranas-semipalmata.Rmd
+- Dendrocygna-eytoni.Rmd
+- Dendrocygna-arcuata.Rmd
 - end-matter.Rmd
 

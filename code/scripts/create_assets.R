@@ -5,7 +5,6 @@ options(stringsAsFactors = FALSE)
 ## set parameters
 species_template_path <- "templates/species-template.txt"
 species_path <- dir("data/species", "^.*\\.xlsx", full.names = TRUE)[1]
-taxonomy_path <- dir("data/taxonomy","^.*\\.xlsx$", full.names = TRUE)[1]
 study_area_path <- dir("data/study-area", "^.*\\.shp$", full.names = TRUE)[1]
 unzip(dir("data/vegetation", "^.*\\.zip$", full.names = TRUE),
           exdir = tempdir())
@@ -23,7 +22,6 @@ library(patchwork)
 
 ## source functions
 source("code/functions/format_ebird_records.R")
-source("code/functions/format_ebird_taxonomy.R")
 source("code/functions/format_species_data.R")
 source("code/functions/species_graph.R")
 source("code/functions/species_map.R")
@@ -37,7 +35,6 @@ parameters <- yaml::read_yaml("data/parameters/parameters.yaml")
 study_area_data <- sf::st_transform(sf::st_read(study_area_path),
                                     parameters$crs)
 record_data <- data.table::fread(record_path, data.table = FALSE)
-taxonomy_data <- readxl::read_excel(taxonomy_path, sheet = 1)
 species_data <- readxl::read_excel(species_path, sheet = 1)
 elevation_data <- raster::raster(elevation_path)
 vegetation_data <- sf::st_transform(sf::st_read(vegetation_path),
@@ -53,11 +50,6 @@ record_data <- do.call(format_ebird_records,
                                    study_area = study_area_data),
                               parameters$records))
 
-## format taxonomy data
-taxonomy_data <- do.call(format_ebird_taxonomy,
-                         append(list(x = taxonomy_data),
-                                parameters$taxonomy))
-
 ## subset data if required
 if (!identical(parameters$number_species, "all"))
   species_data <- species_data[seq_len(parameters$number_species), ,
@@ -67,22 +59,6 @@ if (!identical(parameters$number_species, "all"))
 record_data <- record_data[record_data$species_scientific_name %in%
                            species_data$species_scientific_name, ,
                            drop = FALSE]
-taxonomy_data <- taxonomy_data[taxonomy_data$species_scientific_name %in%
-                               species_data$species_scientific_name, ,
-                               drop = FALSE]
-
-## order taxonomy data by species data
-taxonomy_data <- taxonomy_data[match(taxonomy_data$species_scientific_name,
-                                     species_data$species_scientific_name), ,
-                               drop = FALSE]
-
-## verify that all species are accounted
-assertthat::assert_that(
-  setequal(taxonomy_data$species_scientific_name,
-           species_data$species_scientific_name),
-  msg = paste0("missing taxonomy data for: ",
-               paste(setdiff(taxonomy_data$species_scientific_name,
-                       species_data$species_scientific_name), collapse = ", ")))
 
 ## create spatial data representing landmasses around Brisbane
 land_data <- rnaturalearth::ne_countries(country = "australia", scale = 10,
@@ -135,8 +111,6 @@ file_names <- gsub(")", "", file_names, fixed = TRUE)
 file_names <- gsub("/", "", file_names, fixed = TRUE)
 file_names <- gsub(" ", "-", file_names, fixed = TRUE)
 file_names <- gsub(".", "", file_names, fixed = TRUE)
-file_names <- paste0(taxonomy_data$order_scientific_name, "-",
-                     taxonomy_data$family_scientific_name, "-", file_names)
 
 # Exports
 ## create interactive maps for each species
