@@ -7,8 +7,8 @@
 #' @param scientific_column_name \code{character} name of column with the
 #'   species' scientific names in \code{character} format.
 #'
-#' @param key_column_name \code{numeric} name of column with the values with
-#'   which to sort species in the atlas.
+#' @param key_column_name \code{character} name of column with the values with
+#'   \code{numeric} values used to sort species in the atlas.
 #'
 #' @return \code{data.frame} with formatted data.
 format_species_data <- function(x, scientific_column_name, common_column_name,
