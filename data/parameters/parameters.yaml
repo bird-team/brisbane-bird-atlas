@@ -26,6 +26,15 @@ records:                                             # parameters for eBird reco
   omit_protocol_names:                               # list of sampling protocols to exclude from reporting rate
     - "Incidental"
 
+audio:                                               # parameters for audio files
+    scientific_column_name: species_scientific_name  # column name with the species' names of the audio files
+    track_url_column_name: track_url                 # column name with the url of the audio files
+    track_title_column_name: track_title             # column name with the title of the audio files
+    author_name_column_name: author_name             # column name with the author of the audio files
+    author_url_column_name: author_url               # column name with the url to the author of the audio files
+    copyright_image_column_name: copyright_image     # column name with the copyright image to display
+    copyright_url_column_name: copyright_url         # column name with the copyright url to provide
+
 vegetation:                                          # parameters for vegetation data
   class_column_name: name                            # column iname for vegetation class name
   classes:                                           # order for vegetation classes to appear in graph
