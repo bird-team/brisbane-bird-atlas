@@ -1,5 +1,5 @@
 book_filename: brisbane-bird-atlas
-chapter_name: 'Chapter '
+chapter_name: ''
 rmd_files:
 - index.Rmd
 - preface.Rmd
@@ -12,4 +12,5 @@ rmd_files:
 - Dendrocygna-arcuata.Rmd
 - references.Rmd
 - gazetteer.Rmd
+- contributing.Rmd
 

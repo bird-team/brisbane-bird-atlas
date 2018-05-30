@@ -73,7 +73,8 @@ bookdown_list$rmd_files <- c("index.Rmd",
                              "species-accounts.Rmd",
                              rmd_paths,
                              "references.Rmd",
-                             "gazetteer.Rmd")
+                             "gazetteer.Rmd",
+                             "contributing.Rmd")
 
 # Exports
 ## save rmarkdown files
