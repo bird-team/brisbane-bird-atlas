@@ -6,8 +6,6 @@ bookdown::gitbook:
     in_header: preamble.html
   config:
     toc:
-      before: |
-        <li><a href="./">Atlas of the Birds of Brisbane</a></li>
       collapse: section
     download: [pdf]
     edit: https://github.com/bird-team/brisbane-bird-atlas/edit/master/%s
