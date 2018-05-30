@@ -2,6 +2,8 @@
 species_name <- "Anseranas semipalmata"
 ```
 
+**Insert header text here**
+
 ```{r}
 species_title(species_name, species_data)
 ```

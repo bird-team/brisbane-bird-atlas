@@ -2,10 +2,14 @@ book_filename: brisbane-bird-atlas
 chapter_name: 'Chapter '
 rmd_files:
 - index.Rmd
-- front-matter.Rmd
-- birds.Rmd
+- preface.Rmd
+- introduction.Rmd
+- brisbanes-environment.Rmd
+- methods.Rmd
+- species-accounts.Rmd
 - Anseranas-semipalmata.Rmd
 - Dendrocygna-eytoni.Rmd
 - Dendrocygna-arcuata.Rmd
-- end-matter.Rmd
+- references.Rmd
+- gazetteer.Rmd
 
