@@ -1,6 +1,7 @@
 bookdown::gitbook:
   css: style.css
   split_by: section
+  number_sections: false
   include:
     in_header: preamble.html
   config:

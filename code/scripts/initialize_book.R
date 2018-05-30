@@ -64,7 +64,7 @@ rmd_texts <- vapply(species_data$species_scientific_name,
 ## create bookdown metadata file
 bookdown_list <- list()
 bookdown_list$book_filename <- "brisbane-bird-atlas"
-bookdown_list$chapter_name <- "Chapter "
+bookdown_list$chapter_name <- ""
 bookdown_list$rmd_files <- c("index.Rmd",
                              "preface.Rmd",
                              "introduction.Rmd",
