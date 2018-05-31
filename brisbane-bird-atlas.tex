@@ -1,0 +1,513 @@
+\documentclass[12pt,openany,oneside]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Atlas of the Birds of Brisbane},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+% \newcommand{\subtitle}[1]{
+%   \posttitle{
+%     \begin{center}\large#1\end{center}
+%     }
+% }
+
+% \setlength{\droptitle}{-2em}
+% %   \title{Atlas of the Birds of Brisbane}
+%   \pretitle{\vspace{\droptitle}\centering\huge}
+%   \posttitle{\par}
+% % % %   \author{Richard A. Fuller, Jeffrey O. Hanson}
+%   \preauthor{\centering\large\emph}
+%   \postauthor{\par}
+% % %   \predate{\centering\large\emph}
+%   \postdate{\par}
+%   \date{2018-05-31}
+% 
+% load packages
+\usepackage{amsmath,amsfonts,float,makecell,hyperref,natbib,changepage}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[onehalfspacing]{setspace}
+\usepackage[explicit]{titlesec}
+\usepackage[titles]{tocloft}
+\usepackage{makeidx}
+\usepackage{etoolbox}
+\usepackage{atbegshi}% http://ctan.org/pkg/atbegshi
+
+% format captions
+\usepackage[labelfont={small,bf}, labelsep=space, font={small}]{caption}
+
+% allow breaks in equations
+\allowdisplaybreaks
+
+% format chapter + section headings
+\titleformat{\chapter}[display]{\Large\bfseries}{}{0.5em}{#1}
+\titleformat{\section}[display]{\large\bfseries}{}{0.5em}{#1}
+
+% set page headings to only show page numbers
+\pagestyle{plain}
+
+% format table of contents
+\renewcommand{\contentsname}{Contents}
+\renewcommand{\cfttoctitlefont}{\normalfont\Large\bfseries}
+\renewcommand{\chaptername}{}
+\renewcommand{\thechapter}{}
+\renewcommand{\thesection}{}
+\renewcommand{\numberline}{}
+\renewcommand{\cftdot}{}
+
+% rename table of contents function
+\let\stdtableofcontents\tableofcontents
+\renewcommand{\tableofcontents}{}
+
+% rename bibliography function
+\let\stdbibliography\bibliography
+\renewcommand{\bibsection}{}
+\renewcommand{\bibliography}{}
+\setcitestyle{super}
+
+% set up book index
+\makeindex
+
+% enable roman numerals for backmatter
+\makeatletter
+\patchcmd{\backmatter}
+{\@mainmatterfalse}
+{\@mainmatterfalse\pagenumbering{roman}}
+{}
+{}
+\makeatother
+
+% make figures static
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][2] {
+  \expandafter\origfigure\expandafter[H]
+} {
+  \endorigfigure
+}
+
+% initialize front matter
+\frontmatter
+
+% skip fist page
+\AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+
+\newcommand{\adjustimg}{% Horizontal adjustment of image
+  \checkoddpage%
+  \ifoddpage\hspace*{\dimexpr\evensidemargin-\oddsidemargin}\else\hspace*{-\dimexpr\evensidemargin-\oddsidemargin}\fi%
+}
+\newcommand{\centerimg}[2][width=\textwidth]{% Center an image
+  \makebox[\textwidth]{\adjustimg\includegraphics[#1]{#2}}%
+}
+
+\begin{document}
+
+\begin{titlepage}
+\newgeometry{left=0.1cm, right=0.1cm, top=0.1cm, bottom=0.1cm}
+\mbox{} \par
+\noindent\centerimg[width=\paperwidth,height=\paperheight]{assets/misc/book-cover.png}
+\end{titlepage}
+
+% % \maketitle
+% 
+
+{
+\setcounter{tocdepth}{0}
+\tableofcontents
+}
+\setcounter{page}{1}
+
+\hypertarget{preface}{%
+\chapter{Preface}\label{preface}}
+
+\textbf{Please note that this project is still very much under active
+construction and is not yet ready for contributions.}
+
+\hypertarget{acknowledgements}{%
+\chapter{Acknowledgements}\label{acknowledgements}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed justo
+nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et
+orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit
+amet sapien consequat fringilla. Praesent pretium aliquet ante, eu
+maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis,
+ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea
+dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque
+ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia,
+diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna
+justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit
+sit amet lacus nec, mattis commodo neque. Cras vel felis sed purus
+sollicitudin pharetra eu eget arcu. In volutpat eleifend mauris, sed
+porta nunc dapibus a. Suspendisse fringilla tempus quam a fermentum.
+Morbi quis lacus nec eros maximus interdum. Nullam venenatis vehicula
+magna, a egestas est ornare vel. Fusce quis luctus orci, eget congue
+dolor. Morbi luctus est justo, quis porttitor lacus facilisis sit amet.
+
+\stdtableofcontents
+
+\mainmatter
+
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed justo
+nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et
+orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit
+amet sapien consequat fringilla. Praesent pretium aliquet ante, eu
+maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis,
+ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea
+dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque
+ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia,
+diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna
+justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit
+sit amet lacus nec, mattis commodo neque. Cras vel felis sed purus
+sollicitudin pharetra eu eget arcu. In volutpat eleifend mauris, sed
+porta nunc dapibus a. Suspendisse fringilla tempus quam a fermentum.
+Morbi quis lacus nec eros maximus interdum. Nullam venenatis vehicula
+magna, a egestas est ornare vel. Fusce quis luctus orci, eget congue
+dolor. Morbi luctus est justo, quis porttitor lacus facilisis sit amet.
+
+\hypertarget{brisbanes-environment}{%
+\chapter{Brisbane's Environment}\label{brisbanes-environment}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed justo
+nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et
+orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit
+amet sapien consequat fringilla. Praesent pretium aliquet ante, eu
+maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis,
+ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea
+dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque
+ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia,
+diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna
+justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit
+sit amet lacus nec, mattis commodo neque. Cras vel felis sed purus
+sollicitudin pharetra eu eget arcu. In volutpat eleifend mauris, sed
+porta nunc dapibus a. Suspendisse fringilla tempus quam a fermentum.
+Morbi quis lacus nec eros maximus interdum. Nullam venenatis vehicula
+magna, a egestas est ornare vel. Fusce quis luctus orci, eget congue
+dolor. Morbi luctus est justo, quis porttitor lacus facilisis sit amet.
+
+\hypertarget{methods}{%
+\chapter{Methods}\label{methods}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed justo
+nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et
+orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit
+amet sapien consequat fringilla. Praesent pretium aliquet ante, eu
+maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis,
+ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea
+dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque
+ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia,
+diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna
+justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit
+sit amet lacus nec, mattis commodo neque. Cras vel felis sed purus
+sollicitudin pharetra eu eget arcu. In volutpat eleifend mauris, sed
+porta nunc dapibus a. Suspendisse fringilla tempus quam a fermentum.
+Morbi quis lacus nec eros maximus interdum. Nullam venenatis vehicula
+magna, a egestas est ornare vel. Fusce quis luctus orci, eget congue
+dolor. Morbi luctus est justo, quis porttitor lacus facilisis sit amet.
+
+\hypertarget{species-accounts}{%
+\chapter{Species Accounts}\label{species-accounts}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed justo
+nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et
+orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit
+amet sapien consequat fringilla. Praesent pretium aliquet ante, eu
+maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis,
+ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea
+dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque
+ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia,
+diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna
+justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit
+sit amet lacus nec, mattis commodo neque. Cras vel felis sed purus
+sollicitudin pharetra eu eget arcu. In volutpat eleifend mauris, sed
+porta nunc dapibus a. Suspendisse fringilla tempus quam a fermentum.
+Morbi quis lacus nec eros maximus interdum. Nullam venenatis vehicula
+magna, a egestas est ornare vel. Fusce quis luctus orci, eget congue
+dolor. Morbi luctus est justo, quis porttitor lacus facilisis sit amet.
+
+\clearpage
+
+\hypertarget{magpie-goose-anseranas-semipalmata}{%
+\section{\texorpdfstring{Magpie Goose \emph{Anseranas
+semipalmata}}{Magpie Goose Anseranas semipalmata}}\label{magpie-goose-anseranas-semipalmata}}
+
+\index{Magpie Goose}
+
+\textbf{Insert header text here}
+
+\begin{figure}
+\centering
+\includegraphics{assets/profile/missing.png}
+\caption{No image for species}
+\end{figure}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit \citep{r2}.
+Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque
+lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex.
+Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium
+aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula
+non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac
+habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus
+id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere
+porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate
+ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut
+velit elit, hendrerit sit amet lacus nec, mattis commodo neque. Cras vel
+felis sed purus sollicitudin pharetra eu eget arcu. In volutpat eleifend
+mauris, sed porta nunc dapibus a.
+
+\includegraphics{assets/maps/Anseranas-semipalmata.png}
+
+In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum
+primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+Phasellus ullamcorper eros at magna malesuada, ac maximus nibh
+imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit
+neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio
+pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur
+tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet
+auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem
+aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit
+amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed
+vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+
+\includegraphics{assets/graphs/Anseranas-semipalmata.png}
+
+In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum
+primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+Phasellus ullamcorper eros at magna malesuada, ac maximus nibh
+imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit
+neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio
+pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur
+tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet
+auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem
+aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit
+amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed
+vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+
+\clearpage
+
+\hypertarget{plumed-whistling-duck-dendrocygna-eytoni}{%
+\section{\texorpdfstring{Plumed Whistling-Duck \emph{Dendrocygna
+eytoni}}{Plumed Whistling-Duck Dendrocygna eytoni}}\label{plumed-whistling-duck-dendrocygna-eytoni}}
+
+\index{Plumed Whistling-Duck}
+
+\textbf{Insert header text here}
+
+\begin{figure}
+\centering
+\includegraphics{assets/profile/missing.png}
+\caption{No image for species}
+\end{figure}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit \citep{r2}.
+Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque
+lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex.
+Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium
+aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula
+non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac
+habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus
+id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere
+porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate
+ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut
+velit elit, hendrerit sit amet lacus nec, mattis commodo neque. Cras vel
+felis sed purus sollicitudin pharetra eu eget arcu. In volutpat eleifend
+mauris, sed porta nunc dapibus a.
+
+\includegraphics{assets/maps/Dendrocygna-eytoni.png}
+
+In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum
+primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+Phasellus ullamcorper eros at magna malesuada, ac maximus nibh
+imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit
+neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio
+pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur
+tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet
+auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem
+aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit
+amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed
+vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+
+\includegraphics{assets/graphs/Dendrocygna-eytoni.png}
+
+In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum
+primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+Phasellus ullamcorper eros at magna malesuada, ac maximus nibh
+imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit
+neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio
+pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur
+tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet
+auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem
+aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit
+amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed
+vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+
+\clearpage
+
+\hypertarget{wandering-whistling-duck-dendrocygna-arcuata}{%
+\section{\texorpdfstring{Wandering Whistling-Duck \emph{Dendrocygna
+arcuata}}{Wandering Whistling-Duck Dendrocygna arcuata}}\label{wandering-whistling-duck-dendrocygna-arcuata}}
+
+\index{Wandering Whistling-Duck}
+
+\textbf{Insert header text here}
+
+\begin{figure}
+\centering
+\includegraphics{assets/profile/missing.png}
+\caption{No image for species}
+\end{figure}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit \citep{r2}.
+Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque
+lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex.
+Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium
+aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula
+non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac
+habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus
+id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere
+porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate
+ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut
+velit elit, hendrerit sit amet lacus nec, mattis commodo neque. Cras vel
+felis sed purus sollicitudin pharetra eu eget arcu. In volutpat eleifend
+mauris, sed porta nunc dapibus a.
+
+\includegraphics{assets/maps/Dendrocygna-arcuata.png}
+
+In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum
+primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+Phasellus ullamcorper eros at magna malesuada, ac maximus nibh
+imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit
+neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio
+pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur
+tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet
+auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem
+aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit
+amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed
+vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+
+\includegraphics{assets/graphs/Dendrocygna-arcuata.png}
+
+In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum
+primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+Phasellus ullamcorper eros at magna malesuada, ac maximus nibh
+imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit
+neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio
+pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur
+tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet
+auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem
+aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit
+amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed
+vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+
+\clearpage
+
+\hypertarget{references}{%
+\chapter{References}\label{references}}
+
+\stdbibliography{references.bib}
+
+\hypertarget{contributing}{%
+\chapter{Contributing}\label{contributing}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed justo
+nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et
+orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit
+amet sapien consequat fringilla. Praesent pretium aliquet ante, eu
+maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis,
+ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea
+dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque
+ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia,
+diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna
+justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit
+sit amet lacus nec, mattis commodo neque. Cras vel felis sed purus
+sollicitudin pharetra eu eget arcu. In volutpat eleifend mauris, sed
+porta nunc dapibus a. Suspendisse fringilla tempus quam a fermentum.
+Morbi quis lacus nec eros maximus interdum. Nullam venenatis vehicula
+magna, a egestas est ornare vel. Fusce quis luctus orci, eget congue
+dolor. Morbi luctus est justo, quis porttitor lacus facilisis sit amet.
+
+\backmatter
+
+\hypertarget{gazetteer}{%
+\chapter{Gazetteer}\label{gazetteer}}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed justo
+nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et
+orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit
+amet sapien consequat fringilla. Praesent pretium aliquet ante, eu
+maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis,
+ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea
+dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque
+ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia,
+diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna
+justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit
+sit amet lacus nec, mattis commodo neque. Cras vel felis sed purus
+sollicitudin pharetra eu eget arcu. In volutpat eleifend mauris, sed
+porta nunc dapibus a. Suspendisse fringilla tempus quam a fermentum.
+Morbi quis lacus nec eros maximus interdum. Nullam venenatis vehicula
+magna, a egestas est ornare vel. Fusce quis luctus orci, eget congue
+dolor. Morbi luctus est justo, quis porttitor lacus facilisis sit amet.
+
+\printindex
+
+% \bibliography{references.bib}
+
+
+\end{document}
