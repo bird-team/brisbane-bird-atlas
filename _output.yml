@@ -10,7 +10,10 @@ bookdown::gitbook:
     download: [pdf]
     edit: https://github.com/bird-team/brisbane-bird-atlas/edit/master/%s
 bookdown::pdf_book:
-  keep_tex: false
-  pandoc_args: [--wrap=none]
-  include:
+  toc_depth: 1
+  citation_package: natbib
+  includes:
     in_header: preamble.tex
+  keep_tex: yes
+  template: template.tex
+  pandoc_args: ["--top-level-division=chapter", "--variable=subparagraph"]

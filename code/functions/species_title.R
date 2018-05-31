@@ -8,6 +8,8 @@
 #'
 #' @return \code{character} markdown formatted title.
 species_title <- function(x, data) {
-  cat("##", paste0(data$species_common_name[
-    which(data$species_scientific_name == x)[1]], " _", x, "_\n"), "\n")
+  y <- data$species_common_name[which(data$species_scientific_name == x)[1]]
+  cat("##", paste0(y, " _", x, "_\n"), "\n")
+  if (!isTRUE(knitr:::is_html_output()))
+    cat(paste0("\\index{", y, "}\n"))
 }

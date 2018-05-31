@@ -1,15 +1,58 @@
 % load packages
-\usepackage{amsmath,amsfonts,float,makecell,hyperref}
+\usepackage{amsmath,amsfonts,float,makecell,hyperref,natbib,changepage}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[utf8]{inputenc}
-\usepackage[doublespacing]{setspace}
+\usepackage[onehalfspacing]{setspace}
+\usepackage[explicit]{titlesec}
+\usepackage[titles]{tocloft}
+\usepackage{makeidx}
+\usepackage{etoolbox}
+\usepackage{atbegshi}% http://ctan.org/pkg/atbegshi
 
 % format captions
 \usepackage[labelfont={small,bf}, labelsep=space, font={small}]{caption}
 
 % allow breaks in equations
 \allowdisplaybreaks
+
+% format chapter + section headings
+\titleformat{\chapter}[display]{\Large\bfseries}{}{0.5em}{#1}
+\titleformat{\section}[display]{\large\bfseries}{}{0.5em}{#1}
+
+% set page headings to only show page numbers
+\pagestyle{plain}
+
+% format table of contents
+\renewcommand{\contentsname}{Contents}
+\renewcommand{\cfttoctitlefont}{\normalfont\Large\bfseries}
+\renewcommand{\chaptername}{}
+\renewcommand{\thechapter}{}
+\renewcommand{\thesection}{}
+\renewcommand{\numberline}{}
+\renewcommand{\cftdot}{}
+
+% rename table of contents function
+\let\stdtableofcontents\tableofcontents
+\renewcommand{\tableofcontents}{}
+
+% rename bibliography function
+\let\stdbibliography\bibliography
+\renewcommand{\bibsection}{}
+\renewcommand{\bibliography}{}
+\setcitestyle{super}
+
+% set up book index
+\makeindex
+
+% enable roman numerals for backmatter
+\makeatletter
+\patchcmd{\backmatter}
+{\@mainmatterfalse}
+{\@mainmatterfalse\pagenumbering{roman}}
+{}
+{}
+\makeatother
 
 % make figures static
 \let\origfigure\figure
@@ -19,3 +62,9 @@
 } {
   \endorigfigure
 }
+
+% initialize front matter
+\frontmatter
+
+% skip fist page
+\AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}

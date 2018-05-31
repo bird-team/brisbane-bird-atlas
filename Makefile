@@ -105,9 +105,9 @@ pull_image:
 rm_image:
 	@docker image rm 'brisbanebirdteam/build-env:latest'
 
-## spin up container
-spin_container:
-	@docker run --name=bba -dt 'brisbanebirdteam/build-env:latest'
+## start container
+start_container:
+	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest'
 
 ## kill container
 stop_container:
