@@ -64,6 +64,9 @@ start_page <- function() {
 #'
 #' @return None.
 reference_list <- function() {
-  if (!isTRUE(knitr:::is_html_output()))
+  if (!isTRUE(knitr:::is_html_output())) {
     cat("\\stdbibliography{references.bib}\n")
+  } else {
+    cat("<div id=\"refs\"></div>\n")
+  }
 }
