@@ -26,6 +26,7 @@ source("code/functions/format_species_data.R")
 source("code/functions/species_graph.R")
 source("code/functions/species_map.R")
 source("code/functions/species_widget.R")
+source("code/functions/species_table.R")
 
 # Preliminary processing
 ## load parameters
@@ -113,6 +114,16 @@ file_names <- gsub(" ", "-", file_names, fixed = TRUE)
 file_names <- gsub(".", "", file_names, fixed = TRUE)
 
 # Exports
+## create tables
+result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
+                 function(i) {
+  p <- species_table(species_data$species_scientific_name[i], species_data,
+                     record_data, grid_data)
+  saveRDS(p, paste0("assets/tables/", file_names[i], ".rds"),
+          compress = "xz")
+  TRUE
+})
+
 ## create interactive maps for each species
 result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {

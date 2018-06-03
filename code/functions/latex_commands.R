@@ -67,6 +67,6 @@ reference_list <- function() {
   if (!isTRUE(knitr:::is_html_output())) {
     cat("\\stdbibliography{references.bib}\n")
   } else {
-    cat("<div id=\"refs\"></div>\n")
+    cat("<div id=\"refs\" class=\"references\"></div>\n")
   }
 }

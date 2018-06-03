@@ -9,7 +9,8 @@ classoption:
   - oneside
 fontsize: 12pt
 bibliography: references.bib
-biblio-style: apalike
+csl: reference-style.csl
+biblio-style: reference-style
 link-citations: yes
 github-repo: bird-team/brisbane-bird-atlas
 url: "https\\://brisbanebirds.com/"

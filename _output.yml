@@ -1,6 +1,7 @@
 bookdown::gitbook:
   css: style.css
   split_by: section
+  split_bib: true
   number_sections: false
   include:
     in_header: preamble.html
@@ -10,8 +11,8 @@ bookdown::gitbook:
     download: [pdf]
     edit: https://github.com/bird-team/brisbane-bird-atlas/edit/master/%s
 bookdown::pdf_book:
-  toc_depth: 1
   citation_package: natbib
+  toc_depth: 1
   includes:
     in_header: preamble.tex
   keep_tex: yes

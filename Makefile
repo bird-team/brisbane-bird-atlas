@@ -61,16 +61,20 @@ assets:
 	&& docker exec bba sh -c "cd assets; zip -r maps.zip maps" \
 	&& docker exec bba sh -c "cd assets; zip -r widgets.zip widgets" \
 	&& docker exec bba sh -c "cd assets; zip -r graphs.zip graphs" \
+	&& docker exec bba sh -c "cd assets; zip -r tables.zip tables" \
 	&& docker cp bba:/tmp/assets/maps.zip assets \
 	&& docker cp bba:/tmp/assets/widgets.zip assets \
 	&& docker cp bba:/tmp/assets/graphs.zip assets \
+	&& docker cp bba:/tmp/assets/tables.zip assets \
 	&& cd assets \
 	&& unzip -o maps.zip \
 	&& unzip -o widgets.zip \
 	&& unzip -o graphs.zip \
+	&& unzip -o tables.zip \
 	&& rm maps.zip \
 	&& rm widgets.zip \
-	&& rm graphs.zip || true
+	&& rm graphs.zip \
+	&& rm tables.zip || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 ## build book

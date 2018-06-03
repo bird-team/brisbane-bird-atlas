@@ -9,9 +9,11 @@
 \usepackage{makeidx}
 \usepackage{etoolbox}
 \usepackage{atbegshi}% http://ctan.org/pkg/atbegshi
+\usepackage{tabu}
+\usepackage{caption}
 
 % format captions
-\usepackage[labelfont={small,bf}, labelsep=space, font={small}]{caption}
+ \captionsetup[figure]{labelformat=empty}
 
 % allow breaks in equations
 \allowdisplaybreaks
@@ -40,7 +42,7 @@
 \let\stdbibliography\bibliography
 \renewcommand{\bibsection}{}
 \renewcommand{\bibliography}{}
-\setcitestyle{super}
+\setlength{\bibhang}{0pt}
 
 % set up book index
 \makeindex

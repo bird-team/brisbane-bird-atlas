@@ -13,6 +13,7 @@ source("code/functions/species_title.R")
 source("code/functions/render_species_graph.R")
 source("code/functions/render_species_map.R")
 source("code/functions/render_species_widget.R")
+source("code/functions/render_species_table.R")
 source("code/functions/render_species_audio.R")
 source("code/functions/latex_commands.R")
 

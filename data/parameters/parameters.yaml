@@ -12,6 +12,9 @@ species:                                             # parameters for species da
   scientific_column_name: species_scientific_name    # column name for species' scientific name
   common_column_name: species_preferred_English_name # column name for species' common name
   key_column_name: species_order                     # column name for value indicating order in atlas
+  iucn_column_name: iucn_threat_status               # column name for species' IUCN Red List status
+  national_column_name: national_threat_status       # column name for species' national threat status
+  qld_column_name: qld_threat_status                 # column name for species' Queensland threat status
 
 records:                                             # parameters for eBird record data
   scientific_column_name: SCIENTIFIC_NAME            # column name for species' scientific name

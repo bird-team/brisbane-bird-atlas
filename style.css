@@ -12,3 +12,28 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+/* ensure that tables are not striped */
+.book .book-body .page-wrapper .page-inner section.normal table tr:nth-child(2n) {
+  background-color: rgb(255, 255, 255);
+}
+
+/* style table header lines */
+.book .book-body .page-wrapper .page-inner section.normal table th {
+  border-top-color: #ddd;
+  border-top-width: 2px;
+  border-bottom-color: #ddd;
+  border-bottom-width: 1px;
+}
+
+/* make row lines white */
+.book .book-body .page-wrapper .page-inner section.normal table td {
+  border-top-color: rgb(255, 255, 255);
+  border-bottom-color: rgb(255, 255, 255);
+}
+
+/* style last row of table */
+.book .book-body .page-wrapper .page-inner section.normal table tr:last-child td {
+    border-bottom-color: #ddd;
+    border-bottom-width: 2px;
+}
