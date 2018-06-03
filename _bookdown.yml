@@ -1,6 +1,10 @@
 book_filename: brisbane-bird-atlas
 chapter_name: ''
-delete_merged_file: 'true'
+delete_merged_file: yes
+language:
+  label:
+    fig: ''
+    tab: ''
 rmd_files:
 - index.Rmd
 - acknowledgements.Rmd

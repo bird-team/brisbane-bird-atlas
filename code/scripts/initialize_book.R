@@ -65,7 +65,8 @@ rmd_texts <- vapply(species_data$species_scientific_name,
 bookdown_list <- list()
 bookdown_list$book_filename <- "brisbane-bird-atlas"
 bookdown_list$chapter_name <- ""
-bookdown_list$delete_merged_file <- "true"
+bookdown_list$delete_merged_file <- TRUE
+bookdown_list$language <- list(label = list(fig = "", tab = ""))
 bookdown_list$rmd_files <- c("index.Rmd",
                              "acknowledgements.Rmd",
                              "toc.Rmd",
