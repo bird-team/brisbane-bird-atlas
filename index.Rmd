@@ -20,7 +20,7 @@ geometry: "left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm"
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE,
-                      results = "asis", fig.align = "centre")
+                      results = "asis", fig.align = "center")
 ```
 
 ```{r, include = FALSE}

@@ -8,7 +8,9 @@ species_title(species_name, species_data)
 
 **Insert header text here**
 
-![_Insert image caption here_](assets/profile/missing.png)
+```{r}
+render_species_profile(species_name, caption = "Insert caption here.")
+```
 
 ```{r}
 render_species_table(species_name)
