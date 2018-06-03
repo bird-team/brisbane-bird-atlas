@@ -37,3 +37,17 @@ pre code {
     border-bottom-color: #ddd;
     border-bottom-width: 2px;
 }
+
+/* make captions italics */
+p.caption {
+  font-style: italic;
+}
+
+/* force inserted images to be cetered */
+div.figure {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  text-align: center;
+}
