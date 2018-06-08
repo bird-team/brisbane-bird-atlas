@@ -15,7 +15,7 @@ link-citations: yes
 github-repo: bird-team/brisbane-bird-atlas
 url: "https\\://brisbanebirds.com/"
 description: "Community bird atlas for Brisbane, Australia"
-geometry: "left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm"
+geometry: "left=2.54cm, right=2.54cm, top=2.54cm, bottom=2.54cm"
 ---
 
 ```{r, include = FALSE}
