@@ -47,7 +47,7 @@ species_table <- function(x, species_data, record_data, grid_data) {
     record_data$event[record_data$is_checklist &
                       record_data$species_scientific_name == x]))
   reporting_rate <- paste0("_Reporting rate:_ ",
-                           round(spp_checklists / total_checklists * 100), "%")
+                           round((spp_checklists / total_checklists) * 100), "%")
   # return result
   data.frame(threat_status = c(iucn_threat_status, national_threat_status,
                                qld_threat_status),
