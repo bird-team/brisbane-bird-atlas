@@ -39,6 +39,7 @@ records:                                             # parameters for eBird reco
   latitude_column_name: LAT                          # column name for record latitudes data
   start_date: 01/01/2005                             # omit records collected before this date
   event_column_name: SAMPLING_EVENT_IDENTIFIER       # column name for sampling event identifier
+  locality_column_name: LOCALITY_ID                  # column name for the locality identifier
   all_species_column_name: ALL_SPECIES_REPORTED      # column name indicating if all species reported
   protocol_column_name: PROTOCOL_TYPE                # column name for methdology used for sampling
   omit_protocol_names:                               # list of sampling protocols to exclude from reporting rate

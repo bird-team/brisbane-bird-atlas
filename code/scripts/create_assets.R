@@ -56,11 +56,6 @@ if (!identical(parameters$number_species, "all"))
   species_data <- species_data[seq_len(parameters$number_species), ,
                                drop = FALSE]
 
-## discard unused species
-record_data <- record_data[record_data$species_scientific_name %in%
-                           species_data$species_scientific_name, ,
-                           drop = FALSE]
-
 ## create spatial data representing landmasses around Brisbane
 land_data <- rnaturalearth::ne_countries(country = "australia", scale = 10,
                                          returnclass = "sf")
@@ -83,29 +78,39 @@ grid_data <- raster::raster(xmn = grid_extent[1], xmx = grid_extent[3],
                             res = rep(parameters$grid_resolution, 2))
 grid_data <- raster::setValues(grid_data, NA_real_)
 
-## extract elevation data
+## extract spatial attributes
+locality_data <- record_data[!duplicated(record_data$locality), "locality"]
+
+### extract elevation data
 elevation_data <- raster::crop(elevation_data,
   raster::extent(as(sf::st_as_sfc(sf::st_bbox(sf::st_transform(sf::st_buffer(
     study_area_data, 200000), 4326))), "Spatial")))
-record_pts <- as(record_data[, c("year")], "Spatial")
+locality_pts <- as(locality_data, "Spatial")
 elevation_data <- raster::projectRaster(elevation_data, method = "bilinear",
-                                        crs = record_pts@proj4string)
+                                        crs = locality_pts@proj4string)
 elevation_data[raster::Which(elevation_data < 0)] <- 0
-record_data$elevation <- raster::extract(elevation_data, record_pts)
-rm(record_pts, elevation_data)
+elevation_data[raster::Which(is.na(elevation_data))] <- 0
+locality_data$elevation <- raster::extract(elevation_data, locality_data)
+rm(locality_pts, elevation_data)
 
-## extract vegetation data
-pos <- max.col(cbind(as.matrix(sf::st_intersects(record_data,
-                                                 vegetation_data)), FALSE),
-               ties.method = "last")
-record_data$vegetation_class <- vegetation_data[[
-  parameters$vegetation$class_column_name]][pos]
-assertthat::assert_that(assertthat::noNA(record_data$vegetation_class),
+### extract vegetation data
+locality_pos <- max.col(cbind(as.matrix(sf::st_intersects(locality_data,
+                                                          vegetation_data)),
+                              FALSE), ties.method = "last")
+locality_data$vegetation_class <- vegetation_data[[
+  parameters$vegetation$class_column_name]][locality_pos]
+assertthat::assert_that(assertthat::noNA(locality_data$vegetation_class),
   msg = "all eBird records must overlap with vegetation data")
+
+### merge event data with record data
+locality_data <- as.data.frame(locality_data)
+locality_data <- locality_data[, names(locality_data) != "geometry"]
+record_data <- left_join(record_data, locality_data, by = "locality")
 record_data$vegetation_class <- factor(record_data$vegetation_class,
   levels = parameters$vegetation$classes)
 
 ## create file names to save images/widgets
+print("here 4")
 file_names <- species_data$species_scientific_name
 file_names <- gsub("(", "", file_names, fixed = TRUE)
 file_names <- gsub(")", "", file_names, fixed = TRUE)

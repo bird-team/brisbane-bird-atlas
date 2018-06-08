@@ -41,13 +41,14 @@ species_table <- function(x, species_data, record_data, grid_data) {
                                cellnumbers = TRUE)[, 1]
   atlas_squares <- paste("_Atlas squares:_", length(unique(na.omit(spp_cells))))
   ## reporting rate
-  total_checklists <- length(unique(
-                        record_data$event[record_data$is_checklist]))
-  spp_checklists <- length(unique(
+  total_checklists <- dplyr::n_distinct(
+    record_data$event[record_data$is_checklist])
+  spp_checklists <- dplyr::n_distinct(
     record_data$event[record_data$is_checklist &
-                      record_data$species_scientific_name == x]))
+                      (record_data$species_scientific_name == x)])
   reporting_rate <- paste0("_Reporting rate:_ ",
-                           round((spp_checklists / total_checklists) * 100), "%")
+                           round((spp_checklists / total_checklists) * 100),
+                           "%")
   # return result
   data.frame(threat_status = c(iucn_threat_status, national_threat_status,
                                qld_threat_status),

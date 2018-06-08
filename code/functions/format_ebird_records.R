@@ -27,6 +27,9 @@
 #' @param event_column_name \code{character} name of column with the
 #'   unique identifier for each sampling event.
 #'
+#' @param locality_column_name \code{character} name of column with the
+#'   unique identifier for each locality in the data set.
+#'
 #' @param protocol_column_name \code{character} name of column with the
 #'   name of the sampling methodology.
 #'
@@ -43,8 +46,8 @@
 format_ebird_records <- function(x, scientific_column_name, date_column_name,
                                  date_column_format, longitude_column_name,
                                  latitude_column_name, start_date,
-                                 event_column_name, protocol_column_name,
-                                 all_species_column_name,
+                                 event_column_name, locality_column_name,
+                                 protocol_column_name, all_species_column_name,
                                  omit_protocol_names, study_area) {
    # assert that arguments are valid
    assertthat::assert_that(inherits(x, "data.frame"),
@@ -66,6 +69,9 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
                            assertthat::is.string(event_column_name),
                            assertthat::has_name(x, event_column_name),
                            is.character(x[[event_column_name]]),
+                           assertthat::is.string(locality_column_name),
+                           assertthat::has_name(x, locality_column_name),
+                           is.character(x[[locality_column_name]]),
                            assertthat::is.string(protocol_column_name),
                            assertthat::has_name(x, protocol_column_name),
                            is.character(x[[protocol_column_name]]),
@@ -84,9 +90,10 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
   data.table::setnames(x,
                        c(scientific_column_name, date_column_name,
                          longitude_column_name, latitude_column_name,
-                         event_column_name, protocol_column_name),
+                         event_column_name, locality_column_name,
+                         protocol_column_name),
                       c("species_scientific_name", "date", "longitude",
-                        "latitude", "event", "protocol"))
+                        "latitude", "event", "locality", "protocol"))
 
   # create is_checklist column indicating if data corresponds to a "true"
   # checklist for calculating reporting rates
@@ -122,7 +129,7 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
 
   # convert data.frame to sf object
   x <- sf::st_as_sf(x, coords = c("longitude", "latitude"), crs = 4326,
-                agr = "constant")
+                    agr = "constant")
 
   # transform to specified crs
   x <- sf::st_transform(x, sf::st_crs(study_area_data))
