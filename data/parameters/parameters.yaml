@@ -3,10 +3,24 @@ title: atlas parameters
 crs: 3857                                            # coordinate reference system for mapping
 number_species: 3                                    # number of species to include in atlas
 grid_resolution: 2000                                # resolution for altlas grids in meters
-map_width: 4.5                                       # map image width in inches
-map_height: 4.5                                      # map image height in inches
-graph_width: 5.0                                     # graph image width in inches
-graph_height: 4.5                                    # graph image height in inches
+
+map_size:                                            # map image dimensions
+  width: 4.5                                         # map image width in inches
+  height: 4.5                                        # map image height in inches
+
+graph_size:                                          # graph image dimensions
+  1:                                                 # dimensions for image containing 1 panel
+    height: 2.0                                      # graph image height in inches
+    width: 2.75                                      # graph image width in inches
+  2:                                                 # dimensions for image containing 2 panels
+    height: 2.0                                      # graph image height in inches
+    width: 5.5                                       # graph image width in inches
+  3:                                                 # dimensions for image containing 3 panels
+    height: 2.0                                      # graph image height in inches
+    width: 8.25                                      # graph image width in inches
+  4:                                                 # dimensions for image containing 4 panels
+    height: 4.0                                      # graph image height in inches
+    width: 5.5                                       # graph image width in inches
 
 species:                                             # parameters for species data
   scientific_column_name: species_scientific_name    # column name for species' scientific name
@@ -15,6 +29,7 @@ species:                                             # parameters for species da
   iucn_column_name: iucn_threat_status               # column name for species' IUCN Red List status
   national_column_name: national_threat_status       # column name for species' national threat status
   qld_column_name: qld_threat_status                 # column name for species' Queensland threat status
+  graphs_column_name: graphs                         # column name indicating which graphs should be displayed
 
 records:                                             # parameters for eBird record data
   scientific_column_name: SCIENTIFIC_NAME            # column name for species' scientific name

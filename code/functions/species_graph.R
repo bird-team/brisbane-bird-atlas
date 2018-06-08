@@ -4,14 +4,28 @@
 #'
 #' @param x \code{character} scientific name of species.
 #'
+#' @param species_data \code{data.frame} containing the scientific name and
+#'   data indicating which graphs should be created. The argument to
+#'   \code{species_data} must have the columns
+#'   \code{"species_scientific_name"} and \code{"graphs"}.
+#'
 #' @param record_data \code{sf} object containing the records for the species.
 #'   This object must have the following fields:
 #'   \code{"species_scientific_name"}, \code{"year"}, \code{"month"}, and
 #'   \code{"elevation"}.
 #'
 #' @return \code{gg} pkg{ggplot2} plot.
-species_graph <- function(x, record_data) {
+species_graph <- function(x, species_data, record_data) {
   # initialization
+  ## determine which graphs to create
+  graph_numbers <- species_data$graphs[species_data$species_scientific_name ==
+                                       x]
+  graph_numbers <- as.numeric(strsplit(graph_numbers, "-")[[1]])
+  if (min(graph_numbers, na.rm = TRUE) < 1 ||
+      max(graph_numbers, na.rm = TRUE) > 4 ||
+      any(is.na(graph_numbers)))
+    stop(paste0("processing ", x, "\ndata in graphs column must contain ",
+                "integers between 1 and 4 separated by dashes (e.g. 1-2-3-4"))
   ## coerce data to tabular format
   record_data <- as.data.frame(record_data)
   ## extract elevational limits
@@ -115,7 +129,16 @@ species_graph <- function(x, record_data) {
           axis.text.x = ggplot2::element_text(angle = 45, hjust = 1,
                                                           vjust = 0.8))
   ## assemble plot
-  p <- {p1 + p2} / {p3 + p4}
+  p <- list(p1, p2, p3, p4)[graph_numbers]
+  if (length(p) == 1) {
+    p <- p[[1]]
+  } else if (length(p) == 2) {
+    p <- {p[[1]] + p[[2]]}
+  } else if (length(p) == 3) {
+    p <- {p[[1]] + p[[2]] + p[[3]]}
+  } else {
+    p <- {p[[1]] + p[[2]]} / {p[[3]] + p[[4]]}
+  }
   # Exports
   ## return result
   p

@@ -140,7 +140,8 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
   p <- species_map(species_data$species_scientific_name[i], record_data,
                    grid_data, land_data, study_area_data)
   ggplot2::ggsave(paste0("assets/maps/", file_names[i], ".png"), p,
-                  width = parameters$map_width, height = parameters$map_width,
+                  width = parameters$map_size$width,
+                  height = parameters$map_size$height,
                   units = "in")
   TRUE
 })
@@ -148,9 +149,12 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
 ## create graphs for each species
 result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {
-  p <- species_graph(species_data$species_scientific_name[i], record_data)
+  p <- species_graph(species_data$species_scientific_name[i], species_data,
+                     record_data)
+  n <- stringr::str_count(species_data$graphs[i], "-") + 1
   ggplot2::ggsave(paste0("assets/graphs/", file_names[i], ".png"), p,
-                  width = parameters$graph_width,
-                  height = parameters$graph_height, units = "in")
+                  width = parameters$graph_size[[n]]$width,
+                  height = parameters$graph_size[[n]]$height,
+                  units = "in")
   TRUE
 })
