@@ -34,7 +34,7 @@ species:                                             # parameters for species da
 records:                                             # parameters for eBird record data
   scientific_column_name: SCIENTIFIC_NAME            # column name for species' scientific name
   date_column_name: OBSERVATION_DATE                 # column name for record date data
-  date_column_format: "%d/%m/%Y"                     # date format for record dates
+  date_column_format: "%Y-%m-%d"                     # date format for record dates
   longitude_column_name: LON                         # column name for record longitude data
   latitude_column_name: LAT                          # column name for record latitudes data
   start_date: 01/01/2005                             # omit records collected before this date
