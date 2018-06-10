@@ -110,7 +110,6 @@ record_data$vegetation_class <- factor(record_data$vegetation_class,
   levels = parameters$vegetation$classes)
 
 ## create file names to save images/widgets
-print("here 4")
 file_names <- species_data$species_scientific_name
 file_names <- gsub("(", "", file_names, fixed = TRUE)
 file_names <- gsub(")", "", file_names, fixed = TRUE)

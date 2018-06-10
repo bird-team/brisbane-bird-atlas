@@ -63,31 +63,27 @@ species_widget <- function(x, record_data, grid_data, study_area_data) {
       }
     }
   }
+  ## convert proportions to percentages
+  grid_data <- grid_data * 100
   ## create group names
   group_names <- c("Summer", "Autumn", "Winter", "Spring")
   names(grid_data) <- group_names
   ## create checklist data to show in widget
-  chk_widget_data <- record_data[record_data$is_checklist &
-                                 record_data$species_scientific_name == x,
-                                c("event"), drop = FALSE]
-  chk_widget_data <- chk_widget_data[!duplicated(chk_widget_data$event), ,
-                                     drop = FALSE]
-  chk_widget_data <- as(sf::st_transform(chk_widget_data, 4326), "Spatial")
-  ## create observation data to show in widget
-  obs_widget_data <- record_data[!record_data$is_checklist &
-                                 record_data$species_scientific_name == x,
-                                 c("event"), drop = FALSE]
-  obs_widget_data <- obs_widget_data[!duplicated(obs_widget_data$event), ,
-                                     drop = FALSE]
-  obs_widget_data <- as(sf::st_transform(obs_widget_data, 4326), "Spatial")
+  point_data <- record_data[record_data$species_scientific_name == x,
+                            c("event"), drop = FALSE]
+  point_data <- as(sf::st_transform(point_data, 4326), "Spatial")
   # main processing
   ## initialize leaflet map
   l <- leaflet::leaflet()
-  ## create palette
+  ## create palettes
   palette <- leaflet::colorNumeric("viridis",
     range(c(c(raster::cellStats(grid_data, "min")),
             c(raster::cellStats(grid_data, "max")))),
     na.color = "transparent")
+  palette_rev <- leaflet::colorNumeric("viridis",
+    range(c(c(raster::cellStats(grid_data, "min")),
+            c(raster::cellStats(grid_data, "max")))),
+    na.color = "transparent", reverse = TRUE)
   ## add tiles
   l <- leaflet::addProviderTiles(l, "Esri.WorldImagery")
   ## add rasters
@@ -99,24 +95,21 @@ species_widget <- function(x, record_data, grid_data, study_area_data) {
                             data = as(sf::st_transform(study_area_data, 4326),
                                       "Spatial"),
                             group = "Brisbane extent")
-  ## add checklist points
-  l <- leaflet::addMarkers(l, data = chk_widget_data,
-                           group = "Checklists",
-                           clusterOptions = leaflet::markerClusterOptions())
-  ## add observations points
-  l <- leaflet::addMarkers(l, data = obs_widget_data,
+  ## add record points
+  l <- leaflet::addMarkers(l, data = point_data,
                            group = "Observations",
                            clusterOptions = leaflet::markerClusterOptions())
   ## add layer control
   l <- leaflet::addLayersControl(l,
-    baseGroups = group_names,
-    overlayGroups = c("Checklists", "Observations", "Brisbane extent"),
+    baseGroups = c("Observations", group_names),
+    overlayGroups = "Brisbane extent",
     options = leaflet::layersControlOptions(collapsed = FALSE))
   ## add legend
-  l <- leaflet::addLegend(l, pal = palette, opacity = 1,
+  l <- leaflet::addLegend(l, pal = palette_rev, opacity = 1,
                           values = na.omit(c(raster::values(grid_data))),
-                          title = "Rate",
-                          position = "topright")
+                          title = "Rate (%)",
+                          position = "topright",
+                          labFormat = leaflet::labelFormat(transform = rev))
   # exports
   ## return widget
   l
