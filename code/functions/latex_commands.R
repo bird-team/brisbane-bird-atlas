@@ -70,3 +70,26 @@ reference_list <- function() {
     cat("<div id=\"refs\" class=\"references\"></div>\n")
   }
 }
+
+#' Two-column page layout
+#'
+#' Specify that text should be presented in a two-column layout in the offline
+#' pdf version of the atlas.
+#'
+#' @return None.
+#'
+#' @name twocolumn
+
+#' @rdname twocolumn
+start_two_column_layout <- function() {
+  if (!isTRUE(knitr:::is_html_output())) {
+    cat("\\Begin{multicols}{2}\n")
+  }
+}
+
+#' @rdname twocolumn
+end_two_column_layout <- function() {
+  if (!isTRUE(knitr:::is_html_output())) {
+    cat("\\End{multicols}\n")
+  }
+}

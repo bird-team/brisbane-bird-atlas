@@ -31,5 +31,8 @@ render_species_table <- function(x) {
   x <- kableExtra::kable_styling(x, bootstrap_options = c("basic", "collapse"),
                                  latex_options = c("basic"),
                                  full_width = TRUE)
-  cat(as.character(x))
+  x <- as.character(x)
+  if (!isTRUE(knitr:::is_html_output()))
+    x <- c(x, "\n\\vspace{0.25cm}\n")
+  cat(x)
 }

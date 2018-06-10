@@ -81,6 +81,7 @@ species_map <- function(x, record_data, grid_data, land_data,
   plot_data$cell <- seq_len(nrow(plot_data))
   plot_data <- tidyr::gather(plot_data, name, value, -x, -y, -cell)
   plot_data$name <- factor(plot_data$name, levels = group_names)
+  plot_data$value <- plot_data$value * 100
   ## create plot
   p <- ggplot2::ggplot() +
        ggplot2::geom_sf(data = land_data, color = "grey90",
@@ -91,9 +92,8 @@ species_map <- function(x, record_data, grid_data, land_data,
                           ggplot2::aes(x = x, y = y, fill = value)) +
        ggplot2::coord_sf(xlim = bb[c(1, 3)], ylim = bb[c(2, 4)]) +
        ggplot2::facet_wrap(~ name) +
-       viridis::scale_fill_viridis(name = "Reporting rate",
-                                   labels = scales::percent,
-                                   limits = c(0, 1),
+       viridis::scale_fill_viridis(name = "Rate (%)",
+                                   limits = c(0, 100),
                                    option = "C") +
        ggplot2::theme(
          axis.ticks = ggplot2::element_blank(),
@@ -102,12 +102,11 @@ species_map <- function(x, record_data, grid_data, land_data,
          axis.title = ggplot2::element_blank(),
          axis.line = ggplot2::element_blank(),
          axis.ticks.length = ggplot2::unit(0, "null"),
-         axis.ticks.margin = ggplot2::unit(0, "null"),
          panel.background = ggplot2::element_rect(color = "black", fill = NA),
          panel.border = ggplot2::element_rect(color = "black", fill = NA),
          panel.grid = ggplot2::element_blank(),
          panel.grid.major = ggplot2::element_line(colour = "transparent"),
-         #legend.margin = ggplot2::unit(0, "null"),
+         legend.position = "right",
          legend.key.height = ggplot2::unit(1.0, "cm"),
          legend.text = ggplot2::element_text(size = 10),
          legend.title = ggplot2::element_text(size = 10),

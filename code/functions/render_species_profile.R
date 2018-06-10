@@ -23,14 +23,14 @@ render_species_profile <- function(x, caption) {
     out <- paste0(
 "\\begin{figure}
 \\centering
-\\includegraphics[width=63px,height=120px]{", path, "}
+\\includegraphics[width=\\textwidth,height=",parameters$profile_size$height,"in,keepaspectratio=false]{", path, "}
 \\caption{", caption, "}
 \\end{figure}
 ")
   } else {
     out <- paste0(
 "<div class=\"figure\" style=\"text-align: center\">
-<img src=\"", path, "\" alt=\"", caption, "\" width=\"63px\" height=\"120px\">
+<img src=\"", path, "\" alt=\"", caption, "\" style=\"max-width: 100%;\">
 <p class=\"caption\">
 ", caption, "
 </p>

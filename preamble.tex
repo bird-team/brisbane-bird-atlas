@@ -1,5 +1,5 @@
 % load packages
-\usepackage{amsmath,amsfonts,float,makecell,hyperref,natbib,changepage}
+\usepackage{amsmath,amsfonts,float,makecell,hyperref,natbib,changepage,graphicx,multicol}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[utf8]{inputenc}
@@ -70,3 +70,8 @@
 
 % skip fist page
 \AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+
+% create custom Begin and End cmds to ensure that Pandoc parses references
+% see https://stackoverflow.com/a/41005796/3483791
+\let\Begin\begin
+\let\End\end
