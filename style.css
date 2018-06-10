@@ -51,3 +51,8 @@ div.figure {
   width: 50%;
   text-align: center;
 }
+
+/* force white background for zoom controls */
+.book .book-body .page-wrapper .page-inner section.normal a {
+  background-color: #fff;
+}
