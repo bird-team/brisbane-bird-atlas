@@ -43,16 +43,36 @@ p.caption {
   font-style: italic;
 }
 
-/* force inserted images to be cetered */
+/* style profile picture */
+div.profile {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  text-align: center;
+}
+
+/* style figures */
 div.figure {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 100%;
   text-align: center;
 }
 
 /* force white background for zoom controls */
-.book .book-body .page-wrapper .page-inner section.normal a {
-  background-color: #fff;
+a.leaflet-control-zoom-in {
+  background-color: #fff !important;
+}
+
+a.leaflet-control-zoom-out {
+  background-color: #fff !important;
+}
+
+/* make leaflet fit window */
+div.leaflet-container {
+  width: 100% !important;
+}
+	
 }
