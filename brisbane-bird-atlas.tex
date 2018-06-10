@@ -31,15 +31,6 @@
 \usepackage{natbib}
 \bibliographystyle{reference-style}
 \usepackage{longtable,booktabs}
-\usepackage{graphicx,grffile}
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 \IfFileExists{parskip.sty}{%
 \usepackage{parskip}
 }{% else
@@ -77,7 +68,7 @@
 %   \date{2018-06-10}
 % 
 % load packages
-\usepackage{amsmath,amsfonts,float,makecell,hyperref,natbib,changepage}
+\usepackage{amsmath,amsfonts,float,makecell,hyperref,natbib,changepage,graphicx,multicol}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[utf8]{inputenc}
@@ -148,6 +139,11 @@
 
 % skip fist page
 \AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+
+% create custom Begin and End cmds to ensure that Pandoc parses references
+% see https://stackoverflow.com/a/41005796/3483791
+\let\Begin\begin
+\let\End\end
 
 \newcommand{\adjustimg}{% Horizontal adjustment of image
   \checkoddpage%
@@ -308,11 +304,11 @@ semipalmata}}{Magpie Goose Anseranas semipalmata}}\label{magpie-goose-anseranas-
 
 \index{Magpie Goose}
 
-\textbf{Insert header text here}
+Insert header text here.
 
 \begin{figure}
 \centering
-\includegraphics[width=63px,height=120px]{assets/profile/missing.png}
+\includegraphics[width=\textwidth,height=2.5in,keepaspectratio=false]{assets/profile/missing.png}
 \caption{Insert caption here.}
 \end{figure}
 
@@ -324,7 +320,10 @@ Threat status & Brisbane status\\
 \textit{National:} Marine, not threatened & \textit{Atlas squares:} 41\\
 \textit{Queensland:} Not Listed & \textit{Reporting rate:} 7\%\\
 \bottomrule
-\end{tabu}
+\end{tabu} 
+\vspace{0.25cm}
+
+\Begin{multicols}{2}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit
 \citep{rexample1, rexample2, rexample3}. Donec sed justo nunc. In in
@@ -337,11 +336,25 @@ dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque
 ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia,
 diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna
 justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit
-sit amet lacus nec, mattis commodo neque. Cras vel felis sed purus
-sollicitudin pharetra eu eget arcu. In volutpat eleifend mauris, sed
-porta nunc dapibus a.
+sit amet lacus nec, mattis commodo neque.
 
-\includegraphics{assets/maps/Anseranas-semipalmata.png}
+\End{multicols}
+
+\clearpage
+
+\begin{figure}
+\centering
+\includegraphics[height=0.47\textheight,width=\textwidth,keepaspectratio=true]{assets/maps/Anseranas-semipalmata.png}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[height=0.47\textheight,width=\textwidth,keepaspectratio=true]{assets/graphs/Anseranas-semipalmata.png}
+\end{figure}
+
+\clearpage
+
+\Begin{multicols}{2}
 
 In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum
 primis in faucibus orci luctus et ultrices posuere cubilia Curae;
@@ -355,7 +368,17 @@ aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit
 amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed
 vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
 
-\includegraphics{assets/graphs/Anseranas-semipalmata.png}
+In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum
+primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+Phasellus ullamcorper eros at magna malesuada, ac maximus nibh
+imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit
+neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio
+pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur
+tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet
+auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem
+aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit
+amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed
+vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
 
 In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum
 primis in faucibus orci luctus et ultrices posuere cubilia Curae;
@@ -368,6 +391,20 @@ auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem
 aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit
 amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed
 vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+
+In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum
+primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+Phasellus ullamcorper eros at magna malesuada, ac maximus nibh
+imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit
+neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio
+pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur
+tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet
+auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem
+aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit
+amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed
+vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+
+\End{multicols}
 
 \clearpage
 
@@ -377,11 +414,11 @@ eytoni}}{Plumed Whistling-Duck Dendrocygna eytoni}}\label{plumed-whistling-duck-
 
 \index{Plumed Whistling-Duck}
 
-\textbf{Insert header text here}
+Insert header text here.
 
 \begin{figure}
 \centering
-\includegraphics[width=63px,height=120px]{assets/profile/missing.png}
+\includegraphics[width=\textwidth,height=2.5in,keepaspectratio=false]{assets/profile/missing.png}
 \caption{Insert caption here.}
 \end{figure}
 
@@ -393,7 +430,10 @@ Threat status & Brisbane status\\
 \textit{National:} TODO & \textit{Atlas squares:} 33\\
 \textit{Queensland:} TODO & \textit{Reporting rate:} 2\%\\
 \bottomrule
-\end{tabu}
+\end{tabu} 
+\vspace{0.25cm}
+
+\Begin{multicols}{2}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit
 \citep{rexample1, rexample2, rexample3}. Donec sed justo nunc. In in
@@ -406,11 +446,25 @@ dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque
 ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia,
 diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna
 justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit
-sit amet lacus nec, mattis commodo neque. Cras vel felis sed purus
-sollicitudin pharetra eu eget arcu. In volutpat eleifend mauris, sed
-porta nunc dapibus a.
+sit amet lacus nec, mattis commodo neque.
 
-\includegraphics{assets/maps/Dendrocygna-eytoni.png}
+\End{multicols}
+
+\clearpage
+
+\begin{figure}
+\centering
+\includegraphics[height=0.47\textheight,width=\textwidth,keepaspectratio=true]{assets/maps/Dendrocygna-eytoni.png}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[height=0.47\textheight,width=\textwidth,keepaspectratio=true]{assets/graphs/Dendrocygna-eytoni.png}
+\end{figure}
+
+\clearpage
+
+\Begin{multicols}{2}
 
 In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum
 primis in faucibus orci luctus et ultrices posuere cubilia Curae;
@@ -424,7 +478,17 @@ aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit
 amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed
 vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
 
-\includegraphics{assets/graphs/Dendrocygna-eytoni.png}
+In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum
+primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+Phasellus ullamcorper eros at magna malesuada, ac maximus nibh
+imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit
+neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio
+pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur
+tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet
+auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem
+aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit
+amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed
+vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
 
 In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum
 primis in faucibus orci luctus et ultrices posuere cubilia Curae;
@@ -437,6 +501,20 @@ auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem
 aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit
 amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed
 vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+
+In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum
+primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+Phasellus ullamcorper eros at magna malesuada, ac maximus nibh
+imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit
+neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio
+pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur
+tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet
+auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem
+aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit
+amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed
+vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+
+\End{multicols}
 
 \clearpage
 
@@ -446,11 +524,11 @@ arcuata}}{Wandering Whistling-Duck Dendrocygna arcuata}}\label{wandering-whistli
 
 \index{Wandering Whistling-Duck}
 
-\textbf{Insert header text here}
+Insert header text here.
 
 \begin{figure}
 \centering
-\includegraphics[width=63px,height=120px]{assets/profile/missing.png}
+\includegraphics[width=\textwidth,height=2.5in,keepaspectratio=false]{assets/profile/missing.png}
 \caption{Insert caption here.}
 \end{figure}
 
@@ -462,7 +540,10 @@ Threat status & Brisbane status\\
 \textit{National:} TODO & \textit{Atlas squares:} 25\\
 \textit{Queensland:} TODO & \textit{Reporting rate:} 7\%\\
 \bottomrule
-\end{tabu}
+\end{tabu} 
+\vspace{0.25cm}
+
+\Begin{multicols}{2}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit
 \citep{rexample1, rexample2, rexample3}. Donec sed justo nunc. In in
@@ -475,11 +556,25 @@ dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque
 ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia,
 diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna
 justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit
-sit amet lacus nec, mattis commodo neque. Cras vel felis sed purus
-sollicitudin pharetra eu eget arcu. In volutpat eleifend mauris, sed
-porta nunc dapibus a.
+sit amet lacus nec, mattis commodo neque.
 
-\includegraphics{assets/maps/Dendrocygna-arcuata.png}
+\End{multicols}
+
+\clearpage
+
+\begin{figure}
+\centering
+\includegraphics[height=0.47\textheight,width=\textwidth,keepaspectratio=true]{assets/maps/Dendrocygna-arcuata.png}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[height=0.47\textheight,width=\textwidth,keepaspectratio=true]{assets/graphs/Dendrocygna-arcuata.png}
+\end{figure}
+
+\clearpage
+
+\Begin{multicols}{2}
 
 In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum
 primis in faucibus orci luctus et ultrices posuere cubilia Curae;
@@ -493,7 +588,17 @@ aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit
 amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed
 vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
 
-\includegraphics{assets/graphs/Dendrocygna-arcuata.png}
+In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum
+primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+Phasellus ullamcorper eros at magna malesuada, ac maximus nibh
+imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit
+neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio
+pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur
+tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet
+auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem
+aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit
+amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed
+vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
 
 In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum
 primis in faucibus orci luctus et ultrices posuere cubilia Curae;
@@ -506,6 +611,20 @@ auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem
 aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit
 amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed
 vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+
+In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum
+primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+Phasellus ullamcorper eros at magna malesuada, ac maximus nibh
+imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit
+neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio
+pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur
+tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet
+auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem
+aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit
+amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed
+vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+
+\End{multicols}
 
 \clearpage
 
