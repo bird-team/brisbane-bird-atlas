@@ -4,9 +4,6 @@ crs: 3857                                            # coordinate reference syst
 number_species: 3                                    # number of species to include in atlas
 grid_resolution: 2000                                # resolution for altlas grids in meters
 
-profile_size:                                        # profile image dimensions
-  height: 2.5                                          # profile image height (width is fit to page)
-
 map_size:                                            # map image dimensions
   width: 4.5                                         # map image width in inches
   height: 4.0                                        # map image height in inches

@@ -33,6 +33,6 @@ render_species_table <- function(x) {
                                  full_width = TRUE)
   x <- as.character(x)
   if (!isTRUE(knitr:::is_html_output()))
-    x <- c(x, "\n\\vspace{0.25cm}\n")
+    x <- c(x, "\n\\vspace{0.15cm}\n")
   cat(x)
 }

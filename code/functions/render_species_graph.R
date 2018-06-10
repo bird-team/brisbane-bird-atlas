@@ -23,8 +23,8 @@ render_species_graph <- function(x) {
 ")
   } else {
     out <- paste0(
-"<div class=\"figure\" style=\"text-align: center\">
-<img src=\"", path, "\" style=\"max-width: 100%;\">
+"<div class=\"figure\">
+<img src=\"", path, "\" class=\"figure\">
 </div>
 ")
   }

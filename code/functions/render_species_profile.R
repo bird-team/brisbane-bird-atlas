@@ -17,20 +17,20 @@ render_species_profile <- function(x, caption) {
   path <- paste0("assets/profile/", x, ".png")
   # if image not found then default to missing picutre
   if (!file.exists(path))
-    path <- "assets/profile/missing.png"
+    path <- "assets/misc/missing-profile.png"
   # create code to render image
   if (!isTRUE(knitr:::is_html_output())) {
     out <- paste0(
 "\\begin{figure}
 \\centering
-\\includegraphics[width=\\textwidth,height=",parameters$profile_size$height,"in,keepaspectratio=false]{", path, "}
+\\includegraphics[width=\\textwidth,keepaspectratio=true]{", path, "}
 \\caption{", caption, "}
 \\end{figure}
 ")
   } else {
     out <- paste0(
-"<div class=\"figure\" style=\"text-align: center\">
-<img src=\"", path, "\" alt=\"", caption, "\" style=\"max-width: 100%;\">
+"<div class=\"profile\" style=\"text-align: center\">
+<img src=\"", path, "\" alt=\"", caption, "\" class=\"profile\">
 <p class=\"caption\">
 ", caption, "
 </p>
