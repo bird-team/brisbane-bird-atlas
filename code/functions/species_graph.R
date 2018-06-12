@@ -60,8 +60,8 @@ species_graph <- function(x, species_data, record_data) {
   p1 <- d1 %>%
         ggplot2::ggplot(mapping = ggplot2::aes(x = vegetation_class,
                                                y = rate)) +
-        ggplot2::geom_bar(stat = "identity", fill = "black",
-                          color = "black") +
+        ggplot2::geom_bar(stat = "identity", fill = "white",
+                          color = "black", width = 0.75) +
         ggplot2::xlab("") +
         ggplot2::ylab("Reporting rate (%)") +
         ggplot2::scale_y_continuous(limits = c(0, ymax(d1$rate))) +
@@ -102,8 +102,8 @@ species_graph <- function(x, species_data, record_data) {
         dplyr::mutate(rate = rate * 100)
   p3 <- d3 %>%
         ggplot2::ggplot(mapping = ggplot2::aes(x = Month, y = rate)) +
-        ggplot2::geom_bar(stat = "identity", fill = "black",
-                          color = "black") +
+        ggplot2::geom_bar(stat = "identity", fill = "white",
+                          color = "black", width = 0.75) +
         ggplot2::xlab("") +
         ggplot2::ylab("Reporting rate (%)") +
         ggplot2::scale_y_continuous(limits = c(0, ymax(d3$rate))) +
@@ -144,8 +144,8 @@ species_graph <- function(x, species_data, record_data) {
         dplyr::mutate(rate = rate * 100)
   p5 <- d5 %>%
         ggplot2::ggplot(mapping = ggplot2::aes(x = Month, y = rate)) +
-        ggplot2::geom_bar(stat = "identity", fill = "black",
-                          color = "black") +
+        ggplot2::geom_bar(stat = "identity", fill = "white",
+                          color = "black", width = 0.75) +
         ggplot2::xlab("") +
         ggplot2::ylab("Breeding reported (%)") +
         ggplot2::scale_y_continuous(limits = c(0, ymax(d5$rate))) +
@@ -169,8 +169,8 @@ species_graph <- function(x, species_data, record_data) {
         dplyr::mutate(rate = rate * 100)
   p6 <- d6 %>%
         ggplot2::ggplot(mapping = ggplot2::aes(x = Year, y = rate)) +
-        ggplot2::geom_bar(stat = "identity", fill = "black",
-                          color = "black") +
+        ggplot2::geom_bar(stat = "identity", fill = "white",
+                          color = "black", width = 0.75) +
         ggplot2::xlab("") +
         ggplot2::ylab("Reporting rate (%)") +
         ggplot2::scale_y_continuous(limits = c(0, ymax(d6$rate))) +
