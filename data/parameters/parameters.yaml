@@ -1,7 +1,7 @@
 title: atlas parameters
 
 crs: 3857                                            # coordinate reference system for mapping
-number_species: 5                                    # number of species to include in atlas
+number_species: 6                                    # number of species to include in atlas
 grid_resolution: 2000                                # resolution for altlas grids in meters
 
 map_size:                                            # map image dimensions
@@ -24,6 +24,9 @@ graph_size:                                          # graph image dimensions
   5:                                                 # dimensions for image containing 5 panels
     height: 4.0                                      # graph image height in inches
     width: 7.5                                       # graph image width in inches
+  6:                                                 # dimensions for image containing 6 panels
+    height: 4.0                                      # graph image height in inches
+    width: 7.5                                       # graph image width in inches
 
 species:                                             # parameters for species data
   scientific_column_name: species_scientific_name    # column name for species' scientific name
@@ -44,6 +47,7 @@ records:                                             # parameters for eBird reco
   event_column_name: SAMPLING_EVENT_IDENTIFIER       # column name for sampling event identifier
   locality_column_name: LOCALITY_ID                  # column name for the locality identifier
   all_species_column_name: ALL_SPECIES_REPORTED      # column name indicating if all species reported
+  count_column_name: OBSERVATION_COUNT               # column name incdicating the number of individuals counted
   protocol_column_name: PROTOCOL_TYPE                # column name for methdology used for sampling
   omit_protocol_names:                               # list of sampling protocols to exclude from reporting rate
     - "Incidental"

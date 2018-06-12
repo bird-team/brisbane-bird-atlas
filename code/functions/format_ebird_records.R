@@ -36,6 +36,9 @@
 #' @param all_species_column_name \code{character} name of column indicating if
 #'   all the species observed in a sampling event were reported.
 #'
+#' @param count_column_name \code{character} name of column with number
+#'   of individuals observed during a sampling event.
+#'
 #'@param omit_protocol_names \code{character} vector with names of
 #'   sampling protocols to omit from reporting rate calculations.
 #'
@@ -54,8 +57,8 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
                                  latitude_column_name, start_date,
                                  event_column_name, locality_column_name,
                                  protocol_column_name, all_species_column_name,
-                                 omit_protocol_names, breeding_column_name,
-                                 breeding_activity_names, study_area) {
+                                 count_column_name, omit_protocol_names,
+                                 breeding_column_name, breeding_activity_names, study_area) {
    # assert that arguments are valid
    assertthat::assert_that(inherits(x, "data.frame"),
                            nrow(x) > 0,
@@ -85,6 +88,9 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
                            assertthat::is.string(all_species_column_name),
                            assertthat::has_name(x, all_species_column_name),
                            is.numeric(x[[all_species_column_name]]),
+                           assertthat::is.string(count_column_name),
+                           assertthat::has_name(x, count_column_name),
+                           is.numeric(x[[count_column_name]]),
                            is.character(omit_protocol_names),
                            assertthat::noNA(omit_protocol_names),
                            assertthat::is.string(breeding_column_name),
@@ -102,10 +108,10 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
   data.table::setnames(x,
                        c(scientific_column_name, date_column_name,
                          longitude_column_name, latitude_column_name,
-                         event_column_name, locality_column_name,
-                         protocol_column_name),
+                         event_column_name, count_column_name,
+                         locality_column_name, protocol_column_name),
                       c("species_scientific_name", "date", "longitude",
-                        "latitude", "event", "locality", "protocol"))
+                        "latitude", "event", "count", "locality", "protocol"))
 
   # create is_checklist column indicating if data corresponds to a "true"
   # checklist for calculating reporting rates

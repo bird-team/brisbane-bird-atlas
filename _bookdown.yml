@@ -18,6 +18,7 @@ rmd_files:
 - Dendrocygna-arcuata.Rmd
 - Malacorhynchus-membranaceus.Rmd
 - Cygnus-atratus.Rmd
+- Tadorna-radjah.Rmd
 - references.Rmd
 - contributing.Rmd
 - gazetteer.Rmd
