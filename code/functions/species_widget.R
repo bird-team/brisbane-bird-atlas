@@ -68,10 +68,6 @@ species_widget <- function(x, record_data, grid_data, study_area_data) {
   ## create group names
   group_names <- c("Summer", "Autumn", "Winter", "Spring")
   names(grid_data) <- group_names
-  ## create checklist data to show in widget
-  point_data <- record_data[record_data$species_scientific_name == x,
-                            c("event"), drop = FALSE]
-  point_data <- as(sf::st_transform(point_data, 4326), "Spatial")
   # main processing
   ## initialize leaflet map
   l <- leaflet::leaflet()
@@ -95,13 +91,9 @@ species_widget <- function(x, record_data, grid_data, study_area_data) {
                             data = as(sf::st_transform(study_area_data, 4326),
                                       "Spatial"),
                             group = "Brisbane extent")
-  ## add record points
-  l <- leaflet::addMarkers(l, data = point_data,
-                           group = "Observations",
-                           clusterOptions = leaflet::markerClusterOptions())
   ## add layer control
   l <- leaflet::addLayersControl(l,
-    baseGroups = c("Observations", group_names),
+    baseGroups = group_names,
     overlayGroups = "Brisbane extent",
     options = leaflet::layersControlOptions(collapsed = FALSE))
   ## add legend
