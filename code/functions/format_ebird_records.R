@@ -39,6 +39,12 @@
 #'@param omit_protocol_names \code{character} vector with names of
 #'   sampling protocols to omit from reporting rate calculations.
 #'
+#' @param breeding_column_name \code{character} name of column with breeding
+#'   activity information.
+#'
+#' @param breeding_activity_names \code{character} name of breeding activity
+#'   values that count as confirmed breeding activity.
+#'
 #' @param study_area \code{sf} object delineating the extent of the study area.
 #'   Records that do not overlap with the study area will be omitted.
 #'
@@ -48,7 +54,8 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
                                  latitude_column_name, start_date,
                                  event_column_name, locality_column_name,
                                  protocol_column_name, all_species_column_name,
-                                 omit_protocol_names, study_area) {
+                                 omit_protocol_names, breeding_column_name,
+                                 breeding_activity_names, study_area) {
    # assert that arguments are valid
    assertthat::assert_that(inherits(x, "data.frame"),
                            nrow(x) > 0,
@@ -80,6 +87,11 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
                            is.numeric(x[[all_species_column_name]]),
                            is.character(omit_protocol_names),
                            assertthat::noNA(omit_protocol_names),
+                           assertthat::is.string(breeding_column_name),
+                           assertthat::has_name(x, breeding_column_name),
+                           is.character(x[[breeding_column_name]]),
+                           is.character(breeding_activity_names),
+                           assertthat::noNA(breeding_activity_names),
                            inherits(study_area, "sf"))
   # parse record start date
   start_date <- as.POSIXct(strptime(start_date, "%d/%m/%Y"))
@@ -99,6 +111,10 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
   # checklist for calculating reporting rates
   x$is_checklist <- (x[[all_species_column_name]] == 1) &
                     (!x$protocol %in% omit_protocol_names)
+
+  # create is_breeding column indicating if data corresponds to an event
+  # with confirmed breeding activity
+  x$is_breeding <- x[[breeding_column_name]] %in% breeding_activity_names
 
   # create formatted date data
   record_original_na_dates <- sum(is.na(x$date))

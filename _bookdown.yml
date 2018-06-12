@@ -16,6 +16,8 @@ rmd_files:
 - Anseranas-semipalmata.Rmd
 - Dendrocygna-eytoni.Rmd
 - Dendrocygna-arcuata.Rmd
+- Malacorhynchus-membranaceus.Rmd
+- Cygnus-atratus.Rmd
 - references.Rmd
 - contributing.Rmd
 - gazetteer.Rmd

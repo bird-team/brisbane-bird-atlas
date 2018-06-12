@@ -28,20 +28,19 @@ species_graph <- function(x, species_data, record_data) {
   ## determine which graphs to create
   graph_numbers <- species_data$graphs[species_data$species_scientific_name ==
                                        x]
-  graph_numbers <- as.numeric(strsplit(graph_numbers, "-")[[1]])
+  graph_numbers <- as.numeric(strsplit(graph_numbers, "_")[[1]])
   if (min(graph_numbers, na.rm = TRUE) < 1 ||
-      max(graph_numbers, na.rm = TRUE) > 4 ||
+      max(graph_numbers, na.rm = TRUE) > 6 ||
       any(is.na(graph_numbers)))
     stop(paste0("processing ", x, "\ndata in graphs column must contain ",
-                "integers between 1 and 4 separated by dashes (e.g. 1-2-3-4"))
+                "integers between 1 and 4 separated by underscores ",
+                "(e.g. 1_2_3_4"))
   ## coerce data to tabular format
   record_data <- as.data.frame(record_data)
   ## subset to valid years (i.e. where year has records in December)
   max_year <- max(record_data$year[record_data$month == "Dec"])
   record_data <- record_data[record_data$year <= max_year, , drop = FALSE]
   years <- unique(record_data$year)
-  ## subset to checklist data
-  record_data <- record_data[record_data$is_checklist, , drop = FALSE]
   ## create month and year columns
   record_data$Month <- factor(record_data$month,
                               levels = c("Jan", "Feb", "Mar", "Apr", "May",
@@ -51,6 +50,7 @@ species_graph <- function(x, species_data, record_data) {
   # main processing
   ## vegetation
   d1 <- record_data %>%
+        dplyr::filter(is_checklist) %>%
         dplyr::group_by(vegetation_class) %>%
         dplyr::summarize(
           total = dplyr::n_distinct(event),
@@ -72,24 +72,9 @@ species_graph <- function(x, species_data, record_data) {
           panel.spacing.y = ggplot2::unit(0, "pt"),
           axis.text.x = ggplot2::element_text(angle = 45, hjust = 1,
                                                           vjust = 0.7))
-  ## elevation by month
-  d2 <- record_data %>%
-        dplyr::filter(species_scientific_name == x)
-  p2 <- d2 %>%
-        ggplot2::ggplot(mapping = ggplot2::aes(x = Month, y = elevation)) +
-        ggplot2::geom_boxplot() +
-        ggplot2::xlab("") +
-        ggplot2::ylab("Elevation (m)") +
-        ggplot2::scale_x_discrete(drop = FALSE) +
-        ggplot2::scale_y_continuous(limits = c(0, ymax(d2$elevation))) +
-        ggplot2::theme(
-          plot.title = ggplot2::element_blank(),
-          plot.margin = ggplot2::unit(c(5.5, 5.5, 0, 5.5), "pt"),
-          panel.spacing.y = ggplot2::unit(0, "pt"),
-          axis.text.x = ggplot2::element_text(angle = 45, hjust = 1,
-                                                          vjust = 0.8))
   ## reporting rate by year
-  d3 <- record_data %>%
+  d2 <- record_data %>%
+        dplyr::filter(is_checklist) %>%
         dplyr::group_by(Year) %>%
         dplyr::summarize(
           total = dplyr::n_distinct(event),
@@ -98,13 +83,13 @@ species_graph <- function(x, species_data, record_data) {
         dplyr::mutate(rate = spp / total) %>%
         dplyr::mutate(rate = dplyr::if_else(is.finite(rate), rate, 0)) %>%
         dplyr::mutate(rate = rate * 100)
-  p3 <- d3 %>%
+  p2 <- d2 %>%
         ggplot2::ggplot(mapping = ggplot2::aes(x = Year, y = rate)) +
         ggplot2::geom_bar(stat = "identity", fill = "black",
                           color = "black") +
         ggplot2::xlab("") +
         ggplot2::ylab("Reporting rate (%)") +
-        ggplot2::scale_y_continuous(limits = c(0, ymax(d3$rate))) +
+        ggplot2::scale_y_continuous(limits = c(0, ymax(d2$rate))) +
         ggplot2::scale_x_discrete(drop = FALSE) +
         ggplot2::theme(
           plot.title = ggplot2::element_blank(),
@@ -112,8 +97,26 @@ species_graph <- function(x, species_data, record_data) {
           panel.spacing.y = ggplot2::unit(0, "pt"),
           axis.text.x = ggplot2::element_text(angle = 45, hjust = 1,
                                               vjust = 0.8))
+  ## elevation by month
+  d3 <- record_data %>%
+        dplyr::filter(is_checklist) %>%
+        dplyr::filter(species_scientific_name == x)
+  p3 <- d3 %>%
+        ggplot2::ggplot(mapping = ggplot2::aes(x = Month, y = elevation)) +
+        ggplot2::geom_boxplot() +
+        ggplot2::xlab("") +
+        ggplot2::ylab("Elevation (m)") +
+        ggplot2::scale_x_discrete(drop = FALSE) +
+        ggplot2::scale_y_continuous(limits = c(0, ymax(d3$elevation))) +
+        ggplot2::theme(
+          plot.title = ggplot2::element_blank(),
+          plot.margin = ggplot2::unit(c(5.5, 5.5, 0, 5.5), "pt"),
+          panel.spacing.y = ggplot2::unit(0, "pt"),
+          axis.text.x = ggplot2::element_text(angle = 45, hjust = 1,
+                                                          vjust = 0.8))
   ## reporting rate by month
   d4 <- record_data %>%
+        dplyr::filter(is_checklist) %>%
         dplyr::group_by(Month) %>%
         dplyr::summarize(
           total = dplyr::n_distinct(event),
@@ -136,16 +139,43 @@ species_graph <- function(x, species_data, record_data) {
           panel.spacing.y = ggplot2::unit(0, "pt"),
           axis.text.x = ggplot2::element_text(angle = 45, hjust = 1,
                                                           vjust = 0.8))
+  ## breeding activity by month
+  d5 <- record_data %>%
+        dplyr::group_by(Month) %>%
+        dplyr::filter(species_scientific_name == x) %>%
+        dplyr::summarize(
+          total = dplyr::n_distinct(event),
+          breeding = dplyr::n_distinct(event[is_breeding])) %>%
+        dplyr::ungroup() %>%
+        dplyr::mutate(rate = breeding / total) %>%
+        dplyr::mutate(rate = dplyr::if_else(is.finite(rate), rate, 0)) %>%
+        dplyr::mutate(rate = rate * 100)
+  p5 <- d5 %>%
+        ggplot2::ggplot(mapping = ggplot2::aes(x = Month, y = rate)) +
+        ggplot2::geom_bar(stat = "identity", fill = "black",
+                          color = "black") +
+        ggplot2::xlab("") +
+        ggplot2::ylab("Breeding reported (%)") +
+        ggplot2::scale_y_continuous(limits = c(0, ymax(d5$rate))) +
+        ggplot2::scale_x_discrete(drop = FALSE) +
+        ggplot2::theme(
+          plot.title = ggplot2::element_blank(),
+          plot.margin = ggplot2::unit(c(5.5, 5.5, 0, 5.5), "pt"),
+          panel.spacing.y = ggplot2::unit(0, "pt"),
+          axis.text.x = ggplot2::element_text(angle = 45, hjust = 1,
+                                                          vjust = 0.8))
   ## assemble plot
-  p <- list(p1, p2, p3, p4)[graph_numbers]
+  p <- list(p1, p2, p3, p4, p5)[graph_numbers]
   if (length(p) == 1) {
     p <- p[[1]]
   } else if (length(p) == 2) {
     p <- {p[[1]] + p[[2]]}
   } else if (length(p) == 3) {
     p <- {p[[1]] + p[[2]] + p[[3]]}
-  } else {
+  } else if (length(p) == 4) {
     p <- {p[[1]] + p[[2]]} / {p[[3]] + p[[4]]}
+  } else {
+    p <- {p[[1]] + p[[2]]} / {p[[3]] + p[[4]] + p[[5]]}
   }
   # Exports
   ## return result
