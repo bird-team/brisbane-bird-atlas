@@ -2,17 +2,32 @@
 ## set default options
 options(stringsAsFactors = FALSE)
 
+## create temporary directories
+tmp1 <- file.path(tempdir(), basename(tempfile(fileext = "")))
+tmp2 <- file.path(tempdir(), tempfile(fileext = ""))
+tmp3 <- file.path(tempdir(), tempfile(fileext = ""))
+tmp4 <- file.path(tempdir(), tempfile(fileext = ""))
+dir.create(tmp1, showWarnings = FALSE, recursive = TRUE)
+dir.create(tmp2, showWarnings = FALSE, recursive = TRUE)
+dir.create(tmp3, showWarnings = FALSE, recursive = TRUE)
+dir.create(tmp4, showWarnings = FALSE, recursive = TRUE)
+
 ## set parameters
 species_template_path <- "templates/species-template.txt"
 species_path <- dir("data/species", "^.*\\.xlsx", full.names = TRUE)[1]
-study_area_path <- dir("data/study-area", "^.*\\.shp$", full.names = TRUE)[1]
+unzip(dir("data/study-area", "^.*\\.zip$", full.names = TRUE),
+          exdir = tmp1)
+study_area_path <- dir(tmp1, "^.*\\.shp$", full.names = TRUE)[1]
 unzip(dir("data/vegetation", "^.*\\.zip$", full.names = TRUE),
-          exdir = tempdir())
-vegetation_path <- dir(tempdir(), "^.*\\.shp$", full.names = TRUE)[1]
+          exdir = tmp2)
+vegetation_path <- dir(tmp2, "^.*\\.shp$", full.names = TRUE)[1]
 vegetation_class_path <- dir("data/vegetation", "^.*\\.xlsx$",
                              full.names = TRUE)[1]
-unzip(dir("data/records", "^.*\\.zip$", full.names = TRUE), exdir = tempdir())
-record_path <- dir(tempdir(), "^.*\\.csv$", full.names = TRUE)
+unzip(dir("data/records", "^.*\\.zip$", full.names = TRUE), exdir = tmp3)
+record_path <- dir(tmp3, "^.*\\.csv$", full.names = TRUE)
+unzip(dir("data/land", "^.*\\.zip$", full.names = TRUE),
+          exdir = tmp4)
+land_path <- dir(tmp4, "^.*\\.shp$", full.names = TRUE)[1]
 elevation_path <- dir("data/elevation", "^.*\\.grd$", full.names = TRUE)[1]
 
 ## load packages
@@ -35,11 +50,37 @@ parameters <- yaml::read_yaml("data/parameters/parameters.yaml")
 ## load data
 study_area_data <- sf::st_transform(sf::st_read(study_area_path),
                                     parameters$crs)
+land_data <- sf::st_transform(sf::st_read(land_path), parameters$crs)
 record_data <- data.table::fread(record_path, data.table = FALSE)
 species_data <- readxl::read_excel(species_path, sheet = 1)
 elevation_data <- raster::raster(elevation_path)
 vegetation_data <- sf::st_transform(sf::st_read(vegetation_path),
                                     parameters$crs)
+
+## format study area and land data
+study_area_data <- study_area_data %>%
+                   sf::st_union() %>%
+                   lwgeom::st_make_valid() %>%
+                   lwgeom::st_snap_to_grid(1) %>%
+                   sf::st_simplify(100) %>%
+                   sf::st_collection_extract(type = "POLYGON") %>%
+                   lwgeom::st_make_valid()
+study_area_data <- sf::st_sf(name = "Brisbane", geometry = study_area_data)
+
+## format land data
+bbox_data <- sf::st_as_sfc(sf::st_bbox(sf::st_buffer(study_area_data, 200000)))
+land_data <- land_data[as.matrix(sf::st_intersects(land_data, bbox_data))[, 1], ]
+land_data <- land_data %>%
+             lwgeom::st_make_valid() %>%
+             lwgeom::st_snap_to_grid(1) %>%
+             sf::st_simplify(100) %>%
+             sf::st_collection_extract(type = "POLYGON") %>%
+             lwgeom::st_make_valid() %>%
+             sf::st_intersection(bbox_data) %>%
+             sf::st_collection_extract(type = "POLYGON") %>%
+             lwgeom::st_make_valid() %>%
+             sf::st_union()
+land_data <- sf::st_sf(name = "Land", geometry = land_data)
 
 ## format species data
 species_data <- do.call(format_species_data,
@@ -55,13 +96,6 @@ record_data <- do.call(format_ebird_records,
 if (!identical(parameters$number_species, "all"))
   species_data <- species_data[seq_len(parameters$number_species), ,
                                drop = FALSE]
-
-## create spatial data representing landmasses around Brisbane
-land_data <- rnaturalearth::ne_countries(country = "australia", scale = 10,
-                                         returnclass = "sf")
-land_data <- sf::st_transform(land_data, sf::st_crs(study_area_data))
-land_data <- sf::st_intersection(land_data,
-  sf::st_as_sfc(sf::st_bbox(sf::st_buffer(study_area_data, 200000))))
 
 ## create grid overlay for plotting distribution of records
 grid_extent <- c(sf::st_bbox(study_area_data))
