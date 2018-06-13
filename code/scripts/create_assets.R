@@ -57,7 +57,7 @@ elevation_data <- raster::raster(elevation_path)
 vegetation_data <- sf::st_transform(sf::st_read(vegetation_path),
                                     parameters$crs)
 
-## format study area and land data
+## format study area
 study_area_data <- study_area_data %>%
                    sf::st_union() %>%
                    lwgeom::st_make_valid() %>%
