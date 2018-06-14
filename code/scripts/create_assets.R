@@ -141,7 +141,7 @@ locality_data <- as.data.frame(locality_data)
 locality_data <- locality_data[, names(locality_data) != "geometry"]
 record_data <- left_join(record_data, locality_data, by = "locality")
 record_data$vegetation_class <- factor(record_data$vegetation_class,
-  levels = parameters$vegetation$classes)
+  levels = unique(vegetation_data[[parameters$vegetation$class_column_name]]))
 
 ## create file names to save images/widgets
 file_names <- species_data$species_scientific_name

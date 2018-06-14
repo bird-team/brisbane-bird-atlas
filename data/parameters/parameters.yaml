@@ -52,7 +52,7 @@ records:                                             # parameters for eBird reco
   omit_protocol_names:                               # list of sampling protocols to exclude from reporting rate
     - "Incidental"
   breeding_column_name: BREEDING_BIRD_ATLAS_CODE     # column name descirbing breeding activity
-  breeding_activity_names:                          # list of breeding activity codes that count as breeding activity
+  breeding_activity_names:                           # list of breeding activity codes that count as breeding activity
     - "NY"
     - "NE"
     - "ON"
@@ -70,18 +70,4 @@ audio:                                               # parameters for audio file
     copyright_url_column_name: copyright_url         # column name with the copyright url to provide
 
 vegetation:                                          # parameters for vegetation data
-  class_column_name: name                            # column iname for vegetation class name
-  classes:                                           # order for vegetation classes to appear in graph
-    - "Rainforest"
-    - "Eucalypt"
-    - "Acacia"
-    - "Melaleuca"
-    - "Mixed"
-    - "Small-remnant"
-    - "Non-remnant"
-    - "Urban"
-    - "Wetlands"
-    - "Water"
-    - "Mangroves"
-    - "Estuary"
-    - "Ocean"
+  class_column_name: atlas_name                      # column name for vegetation class name
