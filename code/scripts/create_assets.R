@@ -24,7 +24,7 @@ vegetation_path <- dir(tmp2, "^.*\\.shp$", full.names = TRUE)[1]
 vegetation_class_path <- dir("data/vegetation", "^.*\\.xlsx$",
                              full.names = TRUE)[1]
 unzip(dir("data/records", "^.*\\.zip$", full.names = TRUE), exdir = tmp3)
-record_path <- dir(tmp3, "^.*\\.csv$", full.names = TRUE)
+record_path <- dir(tmp3, "^.*\\.txt$", full.names = TRUE)
 unzip(dir("data/land", "^.*\\.zip$", full.names = TRUE),
           exdir = tmp4)
 land_path <- dir(tmp4, "^.*\\.shp$", full.names = TRUE)[1]

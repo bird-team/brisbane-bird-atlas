@@ -55,20 +55,20 @@ species:                                             # parameters for species da
   maps_column_name: maps                             # column name indicating which maps should be displayed
 
 records:                                             # parameters for eBird record data
-  scientific_column_name: SCIENTIFIC_NAME            # column name for species' scientific name
-  date_column_name: OBSERVATION_DATE                 # column name for record date data
+  scientific_column_name: SCIENTIFIC NAME            # column name for species' scientific name
+  date_column_name: OBSERVATION DATE                 # column name for record date data
   date_column_format: "%Y-%m-%d"                     # date format for record dates
-  longitude_column_name: LON                         # column name for record longitude data
-  latitude_column_name: LAT                          # column name for record latitudes data
+  longitude_column_name: LONGITUDE                   # column name for record longitude data
+  latitude_column_name: LATITUDE                     # column name for record latitudes data
   start_date: 01/01/2005                             # omit records collected before this date
-  event_column_name: SAMPLING_EVENT_IDENTIFIER       # column name for sampling event identifier
-  locality_column_name: LOCALITY_ID                  # column name for the locality identifier
-  all_species_column_name: ALL_SPECIES_REPORTED      # column name indicating if all species reported
-  count_column_name: OBSERVATION_COUNT               # column name incdicating the number of individuals counted
-  protocol_column_name: PROTOCOL_TYPE                # column name for methdology used for sampling
+  event_column_name: SAMPLING EVENT IDENTIFIER       # column name for sampling event identifier
+  locality_column_name: LOCALITY ID                  # column name for the locality identifier
+  all_species_column_name: ALL SPECIES REPORTED      # column name indicating if all species reported
+  count_column_name: OBSERVATION COUNT               # column name incdicating the number of individuals counted
+  protocol_column_name: PROTOCOL TYPE                # column name for methdology used for sampling
   omit_protocol_names:                               # list of sampling protocols to exclude from reporting rate
     - "Incidental"
-  breeding_column_name: BREEDING_BIRD_ATLAS_CODE     # column name descirbing breeding activity
+  breeding_column_name: BREEDING BIRD ATLAS CODE     # column name descirbing breeding activity
   breeding_activity_names:                           # list of breeding activity codes that count as breeding activity
     - "NY"
     - "NE"

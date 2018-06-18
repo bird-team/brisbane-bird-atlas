@@ -90,7 +90,8 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
                            is.numeric(x[[all_species_column_name]]),
                            assertthat::is.string(count_column_name),
                            assertthat::has_name(x, count_column_name),
-                           is.numeric(x[[count_column_name]]),
+                           inherits(x[[count_column_name]],
+                                    c("numeric", "character")),
                            is.character(omit_protocol_names),
                            assertthat::noNA(omit_protocol_names),
                            assertthat::is.string(breeding_column_name),
@@ -112,6 +113,9 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
                          locality_column_name, protocol_column_name),
                       c("species_scientific_name", "date", "longitude",
                         "latitude", "event", "count", "locality", "protocol"))
+
+  # coerce count column to numeric
+  x$count <- as.numeric(x$count)
 
   # create is_checklist column indicating if data corresponds to a "true"
   # checklist for calculating reporting rates
