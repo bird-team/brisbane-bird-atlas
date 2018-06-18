@@ -19,6 +19,7 @@ rmd_files:
 - Malacorhynchus-membranaceus.Rmd
 - Cygnus-atratus.Rmd
 - Tadorna-radjah.Rmd
+- Aythya-australis.Rmd
 - references.Rmd
 - contributing.Rmd
 - gazetteer.Rmd

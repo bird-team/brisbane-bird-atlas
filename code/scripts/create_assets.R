@@ -69,7 +69,8 @@ study_area_data <- sf::st_sf(name = "Brisbane", geometry = study_area_data)
 
 ## format land data
 bbox_data <- sf::st_as_sfc(sf::st_bbox(sf::st_buffer(study_area_data, 200000)))
-land_data <- land_data[as.matrix(sf::st_intersects(land_data, bbox_data))[, 1], ]
+land_data <- land_data[as.matrix(sf::st_intersects(land_data,
+                                                   bbox_data))[, 1], ]
 land_data <- land_data %>%
              lwgeom::st_make_valid() %>%
              lwgeom::st_snap_to_grid(1) %>%
@@ -175,11 +176,18 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
 ## create static maps for each species
 result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {
-  p <- species_map(species_data$species_scientific_name[i], record_data,
-                   grid_data, land_data, study_area_data)
+  p <- species_map(species_data$species_scientific_name[i], species_data,
+                   record_data, grid_data, land_data, study_area_data)
+  map_numbers <- species_data$maps[i]
+  map_numbers <- as.numeric(strsplit(map_numbers, "_")[[1]])
+  if (5 %in% map_numbers && any(seq_len(4) %in% map_numbers)) {
+    n <- "2"
+  } else {
+    n <- "1"
+  }
   ggplot2::ggsave(paste0("assets/maps/", file_names[i], ".png"), p,
-                  width = parameters$map_size$width,
-                  height = parameters$map_size$height,
+                  width = parameters$map_size[[n]]$width,
+                  height = parameters$map_size[[n]]$height,
                   units = "in")
   TRUE
 })

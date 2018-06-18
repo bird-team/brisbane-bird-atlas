@@ -1,12 +1,16 @@
 title: atlas parameters
 
 crs: 3857                                            # coordinate reference system for mapping
-number_species: 6                                    # number of species to include in atlas
+number_species: 7                                    # number of species to include in atlas
 grid_resolution: 2000                                # resolution for altlas grids in meters
 
 map_size:                                            # map image dimensions
-  width: 4.5                                         # map image width in inches
-  height: 4.0                                        # map image height in inches
+  1:                                                 # dimensions for image contaning 1 panel
+    width: 4.5                                       # map image width in inches
+    height: 4.0                                      # map image height in inches
+  2:                                                 # dimensions for image contaning 2 panels
+    width: 9.5                                       # map image width in inches
+    height: 5.0                                      # map image height in inches
 
 graph_size:                                          # graph image dimensions
   1:                                                 # dimensions for image containing 1 panel
@@ -36,6 +40,7 @@ species:                                             # parameters for species da
   national_column_name: national_threat_status       # column name for species' national threat status
   qld_column_name: qld_threat_status                 # column name for species' Queensland threat status
   graphs_column_name: graphs                         # column name indicating which graphs should be displayed
+  maps_column_name: maps                             # column name indicating which maps should be displayed
 
 records:                                             # parameters for eBird record data
   scientific_column_name: SCIENTIFIC_NAME            # column name for species' scientific name
