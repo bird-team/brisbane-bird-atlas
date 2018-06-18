@@ -21,15 +21,21 @@
 #'
 #' @param graphs_column_name \code{character} name of column indicating
 #'   which graphs should be displayed for each species in \code{character}
-#'   format. The data in this cell should be integers separated by dashes,
-#'   for example \code{"4-1"} means that graph 4 and graph 1 should be
+#'   format. The data in this cell should be integers separated by underscores,
+#'   for example \code{"4_1"} means that graph 4 and graph 1 should be
+#'   plotted for a particular species.
+#'
+#' @param maps_column_name \code{character} name of column indicating
+#'   which graphs should be displayed for each species in \code{character}
+#'   format. The data in this cell should be integers separated by underscores,
+#'   for example \code{"4_1"} means that graph 4 and graph 1 should be
 #'   plotted for a particular species.
 #'
 #' @return \code{data.frame} with formatted data.
 format_species_data <- function(x, scientific_column_name, common_column_name,
                                 key_column_name, iucn_column_name,
                                 national_column_name, qld_column_name,
-                                graphs_column_name) {
+                                graphs_column_name, maps_column_name) {
   # assert arguments are valid
   assertthat::assert_that(inherits(x, "data.frame"),
                           nrow(x) > 0,
@@ -54,17 +60,20 @@ format_species_data <- function(x, scientific_column_name, common_column_name,
                           is.character(x[[qld_column_name]]),
                           assertthat::is.string(graphs_column_name),
                           assertthat::has_name(x, graphs_column_name),
-                          is.character(x[[graphs_column_name]]))
+                          is.character(x[[graphs_column_name]]),
+                          assertthat::is.string(maps_column_name),
+                          assertthat::has_name(x, maps_column_name),
+                          is.character(x[[maps_column_name]]))
   # rename columns
   data.table::setnames(x,
                        c(scientific_column_name, common_column_name,
                          key_column_name, iucn_column_name,
                          national_column_name, qld_column_name,
-                         graphs_column_name),
+                         graphs_column_name, maps_column_name),
                        c("species_scientific_name", "species_common_name",
                          "species_key", "iucn_threat_status",
                          "national_threat_status", "qld_threat_status",
-                         "graphs"))
+                         "graphs", "maps"))
 
   # remove rows with missing values
   x <- x[!is.na(x$species_scientific_name), , drop = FALSE]
@@ -72,7 +81,7 @@ format_species_data <- function(x, scientific_column_name, common_column_name,
   # select relevant columns
   x <- x[, c("species_scientific_name", "species_common_name", "species_key",
              "iucn_threat_status", "national_threat_status",
-             "qld_threat_status", "graphs"),
+             "qld_threat_status", "graphs", "maps"),
          drop = FALSE]
 
   # sort data

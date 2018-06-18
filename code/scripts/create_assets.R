@@ -69,7 +69,8 @@ study_area_data <- sf::st_sf(name = "Brisbane", geometry = study_area_data)
 
 ## format land data
 bbox_data <- sf::st_as_sfc(sf::st_bbox(sf::st_buffer(study_area_data, 200000)))
-land_data <- land_data[as.matrix(sf::st_intersects(land_data, bbox_data))[, 1], ]
+land_data <- land_data[as.matrix(sf::st_intersects(land_data,
+                                                   bbox_data))[, 1], ]
 land_data <- land_data %>%
              lwgeom::st_make_valid() %>%
              lwgeom::st_snap_to_grid(1) %>%
@@ -165,8 +166,8 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
 ## create interactive maps for each species
 result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {
-  p <- species_widget(species_data$species_scientific_name[i], record_data,
-                      grid_data, study_area_data)
+  p <- species_widget(species_data$species_scientific_name[i], species_data,
+                      record_data, grid_data, study_area_data)
   saveRDS(p, paste0("assets/widgets/", file_names[i], ".rds"),
           compress = "xz")
   TRUE
@@ -175,11 +176,12 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
 ## create static maps for each species
 result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {
-  p <- species_map(species_data$species_scientific_name[i], record_data,
-                   grid_data, land_data, study_area_data)
+  p <- species_map(species_data$species_scientific_name[i], species_data,
+                   record_data, grid_data, land_data, study_area_data)
+  n <- as.character(stringr::str_count(species_data$maps[i], "_") + 1)
   ggplot2::ggsave(paste0("assets/maps/", file_names[i], ".png"), p,
-                  width = parameters$map_size$width,
-                  height = parameters$map_size$height,
+                  width = parameters$map_size[[n]]$width,
+                  height = parameters$map_size[[n]]$height,
                   units = "in")
   TRUE
 })
@@ -189,7 +191,7 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {
   p <- species_graph(species_data$species_scientific_name[i], species_data,
                      record_data)
-  n <- stringr::str_count(species_data$graphs[i], "_") + 1
+  n <- as.character(stringr::str_count(species_data$graphs[i], "_") + 1)
   ggplot2::ggsave(paste0("assets/graphs/", file_names[i], ".png"), p,
                   width = parameters$graph_size[[n]]$width,
                   height = parameters$graph_size[[n]]$height,
