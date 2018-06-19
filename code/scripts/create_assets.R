@@ -42,6 +42,7 @@ source("code/functions/species_graph.R")
 source("code/functions/species_map.R")
 source("code/functions/species_widget.R")
 source("code/functions/species_table.R")
+source("code/functions/color_numeric_palette.R")
 
 # Preliminary processing
 ## load parameters

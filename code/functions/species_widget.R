@@ -22,6 +22,8 @@
 species_widget <- function(x, species_data, record_data, grid_data,
                            study_area_data) {
   # Initialization
+  ## coerce grid data NAs to zeros
+  grid_data[is.na(grid_data)] <- 0
   ## remove name column in study_area_data
   study_area_data$name <- NULL
   ## determine which maps to create
@@ -36,7 +38,6 @@ species_widget <- function(x, species_data, record_data, grid_data,
   if (length(map_numbers) == 0)
     stop(paste("processing ", x, "\ndata in maps column must specify at least",
                "one map"))
-  ## create check list data with all check lists
   ## create check list data with all check lists
   chk_data <- record_data[record_data$is_checklist &
                           record_data$is_after_start_year &
@@ -77,8 +78,8 @@ species_widget <- function(x, species_data, record_data, grid_data,
     if (nrow(chk_tbl) > 0) {
       chk_tbl[[1]] <- as.integer(as.character(chk_tbl[[1]]))
       if (nrow(spp_tbl) == 0) {
-        # assign zeros to calls with checklists for other species
-        grid_data[[l]][chk_tbl[[1]]] <- 0
+        # assign zeros to cells with checklists for other species
+        grid_data[[l]][chk_tbl[[1]]] <- NA_real_
       } else {
         # assign total number of check lists to grid cells
         chk_tbl[[1]] <- as.integer(as.character(chk_tbl[[1]]))
@@ -87,9 +88,9 @@ species_widget <- function(x, species_data, record_data, grid_data,
         spp_tbl[[1]] <- as.integer(as.character(spp_tbl[[1]]))
         grid_data[[l]][spp_tbl[[1]]] <- spp_tbl[[2]] /
                                         grid_data[[l]][spp_tbl[[1]]]
-        # assign zeros to cells with checklists where thiss species wasn't
+        # assign zeros to cells with checklists where this species wasn't
         # detected
-        grid_data[[l]][setdiff(chk_tbl[[1]], spp_tbl[[1]])] <- 0
+        grid_data[[l]][setdiff(chk_tbl[[1]], spp_tbl[[1]])] <- NA_real_
       }
     }
   }
@@ -104,22 +105,25 @@ species_widget <- function(x, species_data, record_data, grid_data,
   ## initialize leaflet map
   l <- leaflet::leaflet()
   ## create palettes
-  palette <- leaflet::colorNumeric("viridis",
-    range(c(c(raster::cellStats(grid_data, "min")),
-            c(raster::cellStats(grid_data, "max")))),
-    na.color = "transparent")
-  palette_rev <- leaflet::colorNumeric("viridis",
-    range(c(c(raster::cellStats(grid_data, "min")),
-            c(raster::cellStats(grid_data, "max")))),
-    na.color = "transparent", reverse = TRUE)
+  grid_data2 <- grid_data
+  for (i in seq_len(raster::nlayers(grid_data2)))
+    grid_data2[[i]][grid_data2[[i]] < 1e-10] <- NA_real_
+  palette <- color_numeric_palette("viridis",
+    range(c(c(raster::cellStats(grid_data2, "min")),
+            c(raster::cellStats(grid_data2, "max")))),
+    na.color = "grey70", outside.color = "transparent")
+  palette_rev <- color_numeric_palette("viridis",
+    range(c(c(raster::cellStats(grid_data2, "min")),
+            c(raster::cellStats(grid_data2, "max")))),
+    na.color = "grey70", outside.color = "transparent", reverse = TRUE)
   ## add tiles
-  l <- leaflet::addProviderTiles(l, "Esri.WorldImagery")
+  l <- leaflet::addProviderTiles(l, "Esri.WorldGrayCanvas", group = "Thematic")
   ## add rasters
   for (i in names(grid_data))
     l <- leaflet::addRasterImage(l, x = grid_data[[i]], project = FALSE,
                                  colors = palette, opacity = 0.6, group = i)
   ## add polygons
-  l <- leaflet::addPolygons(l, color = "black",
+  l <- leaflet::addPolygons(l, color = "black", fillColor = "transparent",
                             data = as(sf::st_transform(study_area_data, 4326),
                                       "Spatial"),
                             group = "Brisbane extent")
