@@ -9,7 +9,9 @@
 #'
 #' @param record_data \code{sf} object containing the records for the species.
 #'   This object must have the following fields:
-#'   \code{"species_scientific_name"} and \code{"season"}.
+#'   \code{"species_scientific_name"}, \code{"season"}, \code{"is_checklist"},
+#'   \code{"is_after_start_year"}, \code{"is_fully_sampled_year"}, and
+#'   \code{"maps"}.
 #'
 #' @param grid_data \code{\link[raster]{RasterLayer} object containing the grid
 #'   cells for displaying data on the map.
@@ -36,7 +38,9 @@ species_widget <- function(x, species_data, record_data, grid_data,
                "one map"))
   ## create check list data with all check lists
   ## create check list data with all check lists
-  chk_data <- record_data[record_data$is_checklist,
+  chk_data <- record_data[record_data$is_checklist &
+                          record_data$is_after_start_year &
+                          record_data$is_fully_sampled_year,
                           c("species_scientific_name", "season", "event"),
                           drop = FALSE]
   ## create check list data with check list for species

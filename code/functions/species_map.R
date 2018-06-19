@@ -11,7 +11,9 @@
 #'
 #' @param record_data \code{sf} object containing the records for the species.
 #'   This object must have the following fields:
-#'   \code{"species_scientific_name"} and \code{"season"}.
+#'   \code{"species_scientific_name"}, \code{"season"}, \code{"is_checklist"},
+#'   \code{"is_after_start_year"}, \code{"is_fully_sampled_year"}, and
+#'   \code{"maps"}.
 #'
 #' @param grid_data \code{\link[raster]{RasterLayer} object containing the grid
 #'   cells for displaying data on the map.
@@ -30,16 +32,18 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
   map_numbers <- species_data$maps[species_data$species_scientific_name == x]
   map_numbers <- as.numeric(strsplit(map_numbers, "_")[[1]])
   if (min(map_numbers, na.rm = TRUE) < 1 ||
-      max(map_numbers, na.rm = TRUE) > 5 ||
+      max(map_numbers, na.rm = TRUE) > 6 ||
       any(is.na(map_numbers)))
     stop(paste0("processing ", x, "\ndata in maps column must contain ",
-                "integers between 1 and 5 separated by underscores ",
-                "(e.g. 1_2_3_4_5"))
+                "integers between 1 and 6 separated by underscores ",
+                "(e.g. 1_2_3_4_5_6"))
   if (length(map_numbers) == 0)
     stop(paste("processing ", x, "\ndata in maps column must specify at least",
                "one map"))
   ## create check list data with all check lists
-  chk_data <- record_data[record_data$is_checklist,
+  chk_data <- record_data[record_data$is_checklist &
+                          record_data$is_after_start_year &
+                          record_data$is_fully_sampled_year,
                           c("species_scientific_name", "season", "event"),
                           drop = FALSE]
   ## create check list data with check list for species

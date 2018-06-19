@@ -41,6 +41,9 @@ species_table <- function(x, species_data, record_data, grid_data) {
                                cellnumbers = TRUE)[, 1]
   atlas_squares <- paste("_Atlas squares:_", length(unique(na.omit(spp_cells))))
   ## reporting rate
+  record_data <- record_data[record_data$is_checklist &
+                             record_data$is_fully_sampled_year &
+                             record_data$is_after_start_year, , drop = FALSE]
   total_checklists <- dplyr::n_distinct(
     record_data$event[record_data$is_checklist])
   spp_checklists <- dplyr::n_distinct(

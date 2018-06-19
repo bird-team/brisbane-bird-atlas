@@ -12,7 +12,7 @@
 #'
 #' @param date_column_format \code{character} format of the dates in the
 #'   argument to \code{x}.
-
+#'
 #' @param longitude_column_name \code{character} name of column with the
 #'   \code{numeric} longitude where each record was observed.
 #'
@@ -147,8 +147,12 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
   assertthat::assert_that(sum(is.na(x$date)) == record_original_na_dates,
                           msg = "error formatting dates in recorded data")
 
-  # subset records to only those after the start date
-  x <- x[na.omit(record_posix_dates >= start_date), , drop = FALSE]
+  # create column indicating if records after start date
+  x$is_after_start_year <- record_posix_dates >= start_date
+
+  # create column indicating if record in fully sampled year
+  # (i.e. latest year with records in December)
+  x$is_fully_sampled_year <- x$year <= max(x$year[x$month == "Dec"])
 
   # remove records not identified to species level
   x <- x[!grepl("sp.", x$species_scientific_name, fixed = TRUE), , drop = FALSE]

@@ -7,7 +7,9 @@
 #' @param species_data \code{data.frame} containing the scientific name and
 #'   data indicating which graphs should be created. The argument to
 #'   \code{species_data} must have the columns
-#'   \code{"species_scientific_name"} and \code{"graphs"}.
+#'   \code{"species_scientific_name"},  \code{"is_checklist"},
+#'   \code{"is_after_start_year"}, \code{"is_fully_sampled_year"}, and
+#'   \code{"graphs"}.
 #'
 #' @param record_data \code{sf} object containing the records for the species.
 #'   This object must have the following fields:
@@ -37,9 +39,6 @@ species_graph <- function(x, species_data, record_data) {
                 "(e.g. 1_2_3_4"))
   ## coerce data to tabular format
   record_data <- as.data.frame(record_data)
-  ## subset to valid years (i.e. where year has records in December)
-  max_year <- max(record_data$year[record_data$month == "Dec"])
-  record_data <- record_data[record_data$year <= max_year, , drop = FALSE]
   years <- unique(record_data$year)
   ## create month and year columns
   record_data$Month <- factor(record_data$month,
@@ -50,7 +49,7 @@ species_graph <- function(x, species_data, record_data) {
   # main processing
   ## vegetation
   d1 <- record_data %>%
-        dplyr::filter(is_checklist) %>%
+        dplyr::filter(is_checklist, is_after_start_year) %>%
         dplyr::group_by(vegetation_class) %>%
         dplyr::summarize(
           total = dplyr::n_distinct(event),
@@ -74,7 +73,7 @@ species_graph <- function(x, species_data, record_data) {
                                                           vjust = 0.7))
   ## elevation by month
   d2 <- record_data %>%
-        dplyr::filter(is_checklist) %>%
+        dplyr::filter(is_checklist, is_after_start_year) %>%
         dplyr::filter(species_scientific_name == x)
   p2 <- d2 %>%
         ggplot2::ggplot(mapping = ggplot2::aes(x = Month, y = elevation)) +
@@ -91,7 +90,8 @@ species_graph <- function(x, species_data, record_data) {
                                                           vjust = 0.8))
   ## reporting rate by month
   d3 <- record_data %>%
-        dplyr::filter(is_checklist) %>%
+        dplyr::filter(is_checklist, is_after_start_year,
+                      is_fully_sampled_year) %>%
         dplyr::group_by(Month) %>%
         dplyr::summarize(
           total = dplyr::n_distinct(event),
@@ -116,8 +116,8 @@ species_graph <- function(x, species_data, record_data) {
                                                           vjust = 0.8))
   ## counts by month
   d4 <- record_data %>%
-        dplyr::group_by(Month) %>%
-        dplyr::filter(species_scientific_name == x, !is.na(count))
+        dplyr::filter(species_scientific_name == x, !is.na(count),
+                      is_after_start_year)
   p4 <- d4 %>%
         ggplot2::ggplot(mapping = ggplot2::aes(x = Month, y = count)) +
         ggplot2::geom_boxplot() +
@@ -133,8 +133,9 @@ species_graph <- function(x, species_data, record_data) {
                                                           vjust = 0.8))
   ## breeding activity by month
   d5 <- record_data %>%
+        dplyr::filter(species_scientific_name == x, is_after_start_year,
+                      is_fully_sampled_year) %>%
         dplyr::group_by(Month) %>%
-        dplyr::filter(species_scientific_name == x) %>%
         dplyr::summarize(
           total = dplyr::n_distinct(event),
           breeding = dplyr::n_distinct(event[is_breeding])) %>%
@@ -158,7 +159,11 @@ species_graph <- function(x, species_data, record_data) {
                                                           vjust = 0.8))
   ## reporting rate by year
   d6 <- record_data %>%
-        dplyr::filter(is_checklist) %>%
+        dplyr::filter(is_checklist, is_after_start_year,
+                      is_fully_sampled_year) %>%
+        dplyr::mutate(
+          Year = factor(as.character(Year),
+                        levels = sort(unique(as.character(Year))))) %>%
         dplyr::group_by(Year) %>%
         dplyr::summarize(
           total = dplyr::n_distinct(event),
