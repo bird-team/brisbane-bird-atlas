@@ -19,14 +19,6 @@
 #' @return \code{gg} pkg{ggplot2} plot.
 species_graph <- function(x, species_data, record_data) {
   # initialization
-  ## define function for ymax calculations
-  ymax <- function(x) {
-    if (max(x) < 1) return(1)
-    if (max(x) < 5) return(5)
-    if (max(x) < 10) return(10)
-    if (max(x) < 50) return(plyr::round_any(max(x), 5, f = ceiling))
-    return(plyr::round_any(max(x), 10, f = ceiling))
-  }
   ## determine which graphs to create
   graph_numbers <- species_data$graphs[species_data$species_scientific_name ==
                                        x]

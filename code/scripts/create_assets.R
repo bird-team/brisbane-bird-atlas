@@ -43,6 +43,8 @@ source("code/functions/species_map.R")
 source("code/functions/species_widget.R")
 source("code/functions/species_table.R")
 source("code/functions/color_numeric_palette.R")
+source("code/functions/ymax.R")
+source("code/functions/breaks.R")
 
 # Preliminary processing
 ## load parameters
@@ -113,6 +115,8 @@ grid_data <- raster::raster(xmn = grid_extent[1], xmx = grid_extent[3],
                             crs = as(study_area_data, "Spatial")@proj4string,
                             res = rep(parameters$grid_resolution, 2))
 grid_data <- raster::setValues(grid_data, NA_real_)
+grid_data[raster::extract(grid_data, as(study_area_data, "Spatial"),
+                          cellnumbers = TRUE)[[1]][, 1]] <- 1
 
 ## extract spatial attributes
 locality_data <- record_data[!duplicated(record_data$locality), "locality"]
@@ -165,24 +169,28 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
 })
 
 ## create interactive maps for each species
-result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
-                 function(i) {
-  p <- species_widget(species_data$species_scientific_name[i], species_data,
-                      record_data, grid_data, study_area_data)
-  saveRDS(p, paste0("assets/widgets/", file_names[i], ".rds"),
-          compress = "xz")
-  TRUE
-})
+# result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
+#                  function(i) {
+#   p <- species_widget(species_data$species_scientific_name[i], species_data,
+#                       record_data, grid_data, study_area_data,
+#                       parameters$maps$minimum_required_checklists,
+#                       parameters$maps$minimum_required_records)
+#   saveRDS(p, paste0("assets/widgets/", file_names[i], ".rds"),
+#           compress = "xz")
+#   TRUE
+# })
 
 ## create static maps for each species
 result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {
   p <- species_map(species_data$species_scientific_name[i], species_data,
-                   record_data, grid_data, land_data, study_area_data)
+                   record_data, grid_data, land_data, study_area_data,
+                   parameters$maps$minimum_required_checklists,
+                   parameters$maps$minimum_required_records)
   n <- as.character(stringr::str_count(species_data$maps[i], "_") + 1)
   ggplot2::ggsave(paste0("assets/maps/", file_names[i], ".png"), p,
-                  width = parameters$map_size[[n]]$width,
-                  height = parameters$map_size[[n]]$height,
+                  width = parameters$maps$size[[n]]$width,
+                  height = parameters$maps$size[[n]]$height,
                   units = "in")
   TRUE
 })
@@ -194,8 +202,8 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                      record_data)
   n <- as.character(stringr::str_count(species_data$graphs[i], "_") + 1)
   ggplot2::ggsave(paste0("assets/graphs/", file_names[i], ".png"), p,
-                  width = parameters$graph_size[[n]]$width,
-                  height = parameters$graph_size[[n]]$height,
+                  width = parameters$graphs$size[[n]]$width,
+                  height = parameters$graphs$size[[n]]$height,
                   units = "in")
   TRUE
 })

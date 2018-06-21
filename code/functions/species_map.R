@@ -22,10 +22,21 @@
 #'
 #' @param study_area_data \code{sf} object showing the study area.
 #'
+#' @param minimum_required_checklists \code{numeric} number of checklists
+#'   required for a grid cell to be adequately sampled for reporting rates.
+#'
+#' @param minimum_required_records \code{numeric} number of records required
+#'   for a grid cell to be adequately sampled for range estimates.
+#'
 #' @return \code{gg} pkg{ggplot2} plot.
 species_map <- function(x, species_data, record_data, grid_data, land_data,
-                        study_area_data) {
+                        study_area_data, minimum_required_checklists,
+                        minimum_required_records) {
   # Initialization
+  ## set all values outside grid to zero and set values inside grid to NA
+  tmp_data <- grid_data
+  grid_data[is.na(tmp_data)] <- 0
+  grid_data[!is.na(tmp_data)] <- NA_real_
   ## remove name column in study_area_data
   study_area_data$name <- NULL
   ## determine which maps to create
@@ -75,21 +86,28 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
       spp_tbl <- as.data.frame(table(spp_cells[spp_data$season == l]))
       chk_tbl <- as.data.frame(table(chk_cells[chk_data$season == l]))
     }
+    # coerce factors to integers (safely)
+    chk_tbl[[1]] <- as.integer(as.character(chk_tbl[[1]]))
+    spp_tbl[[1]] <- as.integer(as.character(spp_tbl[[1]]))
+    # identify cells with inadequate numbers of checklists
+    poorly_sampled <- chk_tbl[[2]] < minimum_required_checklists
+    # set poorly sampled cells as NA in grid_data[[l]]
+    grid_data[[l]][chk_tbl[[1]][poorly_sampled]] <- NA_real_
+    # remove cells with inadequate numbers of checklists
+    chk_tbl <- chk_tbl[!poorly_sampled, , drop = FALSE]
+    spp_tbl <- spp_tbl[spp_tbl[[1]] %in% chk_tbl[[1]], , drop = FALSE]
     # skip if no checklists at all in this season for this species
     if (nrow(chk_tbl) > 0) {
-      chk_tbl[[1]] <- as.integer(as.character(chk_tbl[[1]]))
       if (nrow(spp_tbl) == 0) {
         # assign zeros to calls with checklists for other species
         grid_data[[l]][chk_tbl[[1]]] <- 0
       } else {
         # assign total number of check lists to grid cells
-        chk_tbl[[1]] <- as.integer(as.character(chk_tbl[[1]]))
         grid_data[[l]][chk_tbl[[1]]] <- chk_tbl[[2]]
         # calculate reporting rate for cells with checklists
-        spp_tbl[[1]] <- as.integer(as.character(spp_tbl[[1]]))
         grid_data[[l]][spp_tbl[[1]]] <- spp_tbl[[2]] /
                                         grid_data[[l]][spp_tbl[[1]]]
-        # assign zeros to cells with checklists where thiss species wasn't
+        # assign zeros to cells with checklists where this species wasn't
         # detected
         grid_data[[l]][setdiff(chk_tbl[[1]], spp_tbl[[1]])] <- 0
       }
@@ -106,24 +124,39 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
   ## format land data
   land_data$name <- NULL
   ## format data for plotting
-  plot_data <- raster::as.data.frame(grid_data, xy = TRUE, na.rm = TRUE)
+  plot_data <- raster::as.data.frame(grid_data, xy = TRUE, na.rm = FALSE)
   plot_data$cell <- seq_len(nrow(plot_data))
   plot_data <- tidyr::gather(plot_data, name, value, -x, -y, -cell)
   plot_data$name <- factor(plot_data$name, levels = group_names)
   plot_data$value <- plot_data$value * 100
+  plot_data <- plot_data[plot_data$value > 1e-100 | is.na(plot_data$value), ]
+  ## create colors
+  palette <- color_numeric_palette("viridis",
+    c(1, 100), na.color = "grey70", outside.color = "transparent")
   ## create plot
   p <- ggplot2::ggplot() +
+       ggplot2::geom_point(data = data.frame(x = c(0, 0), y = c(0, 0),
+                                             label = c("Absent",
+                                                       "Not sampled")),
+                          ggplot2::aes(x = x, y = y, color = label),
+                          shape = 22, size = 8) +
        ggplot2::geom_sf(data = land_data, color = "grey90",
                         fill = "grey90") +
-       ggplot2::geom_sf(data = study_area_data, color = "grey70",
-                        fill = "grey70") +
-       ggplot2::geom_tile(data = plot_data,
+       ggplot2::geom_sf(data = study_area_data, color = "white",
+                        fill = "white") +
+       ggplot2::geom_tile(data = plot_data, na.rm = FALSE,
                           ggplot2::aes(x = x, y = y, fill = value)) +
        ggplot2::coord_sf(xlim = bb[c(1, 3)], ylim = bb[c(2, 4)]) +
        ggplot2::facet_wrap(~ name) +
-       viridis::scale_fill_viridis(name = "Rate (%)",
-                                   limits = c(0, 100),
-                                   option = "C") +
+       ggplot2::scale_fill_gradientn(colors = palette(seq(1, 100)),
+       na.value = "grey70", name = "Rate (%)", limits = c(0, NA_real_),
+       labels = function(x) {
+         z <- which(abs(x) < 1e-30)
+         if (length(z) == 0) return(as.character(x))
+         x <- as.character(x)
+         x[z] <- paste0(">0")
+         x
+       }) +
        ggplot2::theme(
          axis.ticks = ggplot2::element_blank(),
          axis.text.y = ggplot2::element_blank(),
@@ -131,17 +164,23 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
          axis.title = ggplot2::element_blank(),
          axis.line = ggplot2::element_blank(),
          axis.ticks.length = ggplot2::unit(0, "null"),
-         panel.background = ggplot2::element_rect(color = "black", fill = NA),
+         panel.background = ggplot2::element_rect(color = "black",
+                                                  fill = "lightcyan"),
          panel.border = ggplot2::element_rect(color = "black", fill = NA),
          panel.grid = ggplot2::element_blank(),
          panel.grid.major = ggplot2::element_line(colour = "transparent"),
          legend.position = "right",
+         legend.key = ggplot2::element_blank(),
          legend.key.height = ggplot2::unit(ifelse(length(map_numbers) < 4,
                                                   0.4, 1.0), "cm"),
          legend.text = ggplot2::element_text(size = 10),
          legend.title = ggplot2::element_text(size = 10),
          strip.background = ggplot2::element_blank(),
-         strip.text = ggplot2::element_text(color = "black", size = 12))
+         strip.text = ggplot2::element_text(color = "black", size = 12)) +
+        ggplot2::guides(color = ggplot2::guide_legend(
+          title = NULL,
+          override.aes = list(color = c("black", "black"),
+                              fill = c("white", "grey70"))))
   # return result
   p
 }
