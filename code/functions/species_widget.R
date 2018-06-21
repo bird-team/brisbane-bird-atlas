@@ -135,6 +135,7 @@ species_widget <- function(x, species_data, record_data, grid_data,
                                  colors = palette, opacity = 0.6, group = i)
   ## add polygons
   l <- leaflet::addPolygons(l, color = "black", fillColor = "transparent",
+                            weight = 2.5, smoothFactor = 0.5,
                             data = as(sf::st_transform(study_area_data, 4326),
                                       "Spatial"),
                             group = "Brisbane extent")
