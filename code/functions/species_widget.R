@@ -18,12 +18,21 @@
 #'
 #' @param study_area_data \code{sf} object showing the study area.
 #'
+#' @param minimum_required_checklists \code{numeric} number of checklists
+#'   required for a grid cell to be adequately sampled for reporting rates.
+#'
+#' @param minimum_required_records \code{numeric} number of records required
+#'   for a grid cell to be adequately sampled for range estimates.
+#'
+#'
 #' @return interactive widget.
 species_widget <- function(x, species_data, record_data, grid_data,
-                           study_area_data) {
+                           study_area_data, minimum_required_checklists,
+                           minimum_required_records) {
   # Initialization
-  ## coerce grid data NAs to zeros
-  grid_data[is.na(grid_data)] <- 0
+  tmp_data <- grid_data
+  grid_data[is.na(tmp_data)] <- 0
+  grid_data[!is.na(tmp_data)] <- NA_real_
   ## remove name column in study_area_data
   study_area_data$name <- NULL
   ## determine which maps to create
@@ -64,7 +73,6 @@ species_widget <- function(x, species_data, record_data, grid_data,
   chk_cells <- raster::extract(grid_data[[1]],
                                as(chk_data[, "season"], "Spatial"),
                                cellnumbers = TRUE)[, 1]
-  ### seasons calculations
   for (l in layer_names) {
     # extract grid cells
     if (l == "annual") {
@@ -74,23 +82,30 @@ species_widget <- function(x, species_data, record_data, grid_data,
       spp_tbl <- as.data.frame(table(spp_cells[spp_data$season == l]))
       chk_tbl <- as.data.frame(table(chk_cells[chk_data$season == l]))
     }
+    # coerce factors to integers (safely)
+    chk_tbl[[1]] <- as.integer(as.character(chk_tbl[[1]]))
+    spp_tbl[[1]] <- as.integer(as.character(spp_tbl[[1]]))
+    # identify cells with inadequate numbers of checklists
+    poorly_sampled <- chk_tbl[[2]] < minimum_required_checklists
+    # set poorly sampled cells as NA in grid_data[[l]]
+    grid_data[[l]][chk_tbl[[1]][poorly_sampled]] <- NA_real_
+    # remove cells with inadequate numbers of checklists
+    chk_tbl <- chk_tbl[!poorly_sampled, , drop = FALSE]
+    spp_tbl <- spp_tbl[spp_tbl[[1]] %in% chk_tbl[[1]], , drop = FALSE]
     # skip if no checklists at all in this season for this species
     if (nrow(chk_tbl) > 0) {
-      chk_tbl[[1]] <- as.integer(as.character(chk_tbl[[1]]))
       if (nrow(spp_tbl) == 0) {
-        # assign zeros to cells with checklists for other species
-        grid_data[[l]][chk_tbl[[1]]] <- NA_real_
+        # assign zeros to calls with checklists for other species
+        grid_data[[l]][chk_tbl[[1]]] <- 0
       } else {
         # assign total number of check lists to grid cells
-        chk_tbl[[1]] <- as.integer(as.character(chk_tbl[[1]]))
         grid_data[[l]][chk_tbl[[1]]] <- chk_tbl[[2]]
         # calculate reporting rate for cells with checklists
-        spp_tbl[[1]] <- as.integer(as.character(spp_tbl[[1]]))
         grid_data[[l]][spp_tbl[[1]]] <- spp_tbl[[2]] /
                                         grid_data[[l]][spp_tbl[[1]]]
         # assign zeros to cells with checklists where this species wasn't
         # detected
-        grid_data[[l]][setdiff(chk_tbl[[1]], spp_tbl[[1]])] <- NA_real_
+        grid_data[[l]][setdiff(chk_tbl[[1]], spp_tbl[[1]])] <- 0
       }
     }
   }
@@ -105,17 +120,13 @@ species_widget <- function(x, species_data, record_data, grid_data,
   ## initialize leaflet map
   l <- leaflet::leaflet()
   ## create palettes
-  grid_data2 <- grid_data
-  for (i in seq_len(raster::nlayers(grid_data2)))
-    grid_data2[[i]][grid_data2[[i]] < 1e-10] <- NA_real_
-  palette <- color_numeric_palette("viridis",
-    range(c(c(raster::cellStats(grid_data2, "min")),
-            c(raster::cellStats(grid_data2, "max")))),
-    na.color = "grey70", outside.color = "transparent")
-  palette_rev <- color_numeric_palette("viridis",
-    range(c(c(raster::cellStats(grid_data2, "min")),
-            c(raster::cellStats(grid_data2, "max")))),
-    na.color = "grey70", outside.color = "transparent", reverse = TRUE)
+  br <- pretty(na.omit(c(raster::values(grid_data))))
+  palette <- color_numeric_palette("viridis", domain = range(br),
+                                   na.color = "#b3b3b3",
+                                   zero.color = "transparent")
+  palette_rev <- color_numeric_palette("viridis", domain = range(br),
+                                       na.color = "#b3b3b3",
+                                       reverse = TRUE)
   ## add tiles
   l <- leaflet::addProviderTiles(l, "Esri.WorldGrayCanvas", group = "Thematic")
   ## add rasters
@@ -133,10 +144,12 @@ species_widget <- function(x, species_data, record_data, grid_data,
     overlayGroups = "Brisbane extent",
     options = leaflet::layersControlOptions(collapsed = FALSE))
   ## add legend
-  l <- leaflet::addLegend(l, pal = palette_rev, opacity = 1,
-                          values = na.omit(c(raster::values(grid_data))),
-                          title = "Rate (%)",
-                          position = "topright",
+  l <- leaflet::addLegend(l, opacity = 1, colors = c("#fff", "#b3b3b3"),
+                          labels = c("Absent", "Unknown"),
+                          title = NULL, position = "topright")
+  l <- addLegend_custom(l, pal = palette_rev, opacity = 1, bins = br,
+                          values = seq(min(br), max(br), length.out = 100),
+                          title = "Rate (%)", position = "topright",
                           labFormat = leaflet::labelFormat(transform = rev))
   # exports
   ## return widget

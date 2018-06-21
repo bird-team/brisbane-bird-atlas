@@ -45,6 +45,7 @@ source("code/functions/species_table.R")
 source("code/functions/color_numeric_palette.R")
 source("code/functions/ymax.R")
 source("code/functions/breaks.R")
+source("code/functions/addLegend_custom.R")
 
 # Preliminary processing
 ## load parameters
@@ -169,16 +170,16 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
 })
 
 ## create interactive maps for each species
-# result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
-#                  function(i) {
-#   p <- species_widget(species_data$species_scientific_name[i], species_data,
-#                       record_data, grid_data, study_area_data,
-#                       parameters$maps$minimum_required_checklists,
-#                       parameters$maps$minimum_required_records)
-#   saveRDS(p, paste0("assets/widgets/", file_names[i], ".rds"),
-#           compress = "xz")
-#   TRUE
-# })
+result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
+                 function(i) {
+  p <- species_widget(species_data$species_scientific_name[i], species_data,
+                      record_data, grid_data, study_area_data,
+                      parameters$maps$minimum_required_checklists,
+                      parameters$maps$minimum_required_records)
+  saveRDS(p, paste0("assets/widgets/", file_names[i], ".rds"),
+          compress = "xz")
+  TRUE
+})
 
 ## create static maps for each species
 result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),

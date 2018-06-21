@@ -74,5 +74,10 @@ a.leaflet-control-zoom-out {
 div.leaflet-container {
   width: 100% !important;
 }
-	
+
+/* make border around leaflet legend black */
+div.info > i {
+  border-style: solid !important;
+  border-color: #555 !important;
+  vertical-align: middle !important;
 }

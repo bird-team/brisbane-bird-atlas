@@ -131,13 +131,12 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
   plot_data$value <- plot_data$value * 100
   plot_data <- plot_data[plot_data$value > 1e-100 | is.na(plot_data$value), ]
   ## create colors
-  palette <- color_numeric_palette("viridis",
-    c(1, 100), na.color = "grey70", outside.color = "transparent")
+  palette <- color_numeric_palette("viridis", c(1, 100), na.color = "grey70")
   ## create plot
   p <- ggplot2::ggplot() +
        ggplot2::geom_point(data = data.frame(x = c(0, 0), y = c(0, 0),
                                              label = c("Absent",
-                                                       "Not sampled")),
+                                                       "Unknown")),
                           ggplot2::aes(x = x, y = y, color = label),
                           shape = 22, size = 8) +
        ggplot2::geom_sf(data = land_data, color = "grey90",
@@ -170,6 +169,8 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
          panel.grid = ggplot2::element_blank(),
          panel.grid.major = ggplot2::element_line(colour = "transparent"),
          legend.position = "right",
+         legend.spacing.y = ggplot2::unit(ifelse(length(map_numbers) < 4,
+                                                  1, 1), "pt"),
          legend.key = ggplot2::element_blank(),
          legend.key.height = ggplot2::unit(ifelse(length(map_numbers) < 4,
                                                   0.4, 1.0), "cm"),
@@ -177,10 +178,11 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
          legend.title = ggplot2::element_text(size = 10),
          strip.background = ggplot2::element_blank(),
          strip.text = ggplot2::element_text(color = "black", size = 12)) +
-        ggplot2::guides(color = ggplot2::guide_legend(
-          title = NULL,
-          override.aes = list(color = c("black", "black"),
-                              fill = c("white", "grey70"))))
+        ggplot2::guides(
+          color = ggplot2::guide_legend(title = NULL, order = 98,
+            override.aes = list(color = c("black", "black"),
+                                fill = c("white", "grey70"))),
+          fill = ggplot2::guide_colorbar(order = 97))
   # return result
   p
 }
