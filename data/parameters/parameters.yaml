@@ -2,24 +2,24 @@ title: atlas parameters
 
 crs: 3857                                            # coordinate reference system for mapping
 grid_resolution: 2000                                # resolution for atlas grid cells in meters
-number_species: 7                                    # number of species to include in atlas
+number_species: 13                                   # number of species to include in atlas
 
 maps:                                                # parameters controlling appearance of the maps
   minimum_required_checklists: 5                     # number of checklists required for a grid cell to be adequately sampled for reporting rates
-  minimum_required_records: 100                      # number of records required for a grid cell to be adequately sampled for range estimates
+  minimum_required_events: 10                        # number of sampling events required for a grid cell to be adequately sampled for range estimates
   size:                                              # map image dimensions
     1:                                               # dimensions for image containing 1 panel
       height: 2.25                                   # map image height in inches
       width: 3.5                                     # map image width in inches
     2:                                               # dimensions for image containing 2 panels
-      height: 2.25                                   # map image height in inches
-      width: 5.5                                     # map image width in inches
+      height: 2.5                                    # map image height in inches
+      width: 6.0                                     # map image width in inches
     3:                                               # dimensions for image containing 3 panels
-      height: 2.25                                   # map image height in inches
+      height: 2.5                                    # map image height in inches
       width: 8.0                                     # map image width in inches
     4:                                               # dimensions for image containing 4 panels
-      height: 3.75                                    # map image height in inches
-      width: 4.5                                     # map image width in inches
+      height: 4.0                                    # map image height in inches
+      width: 5.5                                     # map image width in inches
     5:                                               # dimensions for image containing 5 panels
       height: 4.0                                    # map image height in inches
       width: 6.75                                    # map image width in inches

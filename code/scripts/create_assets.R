@@ -175,7 +175,7 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
   p <- species_widget(species_data$species_scientific_name[i], species_data,
                       record_data, grid_data, study_area_data,
                       parameters$maps$minimum_required_checklists,
-                      parameters$maps$minimum_required_records)
+                      parameters$maps$minimum_required_events)
   saveRDS(p, paste0("assets/widgets/", file_names[i], ".rds"),
           compress = "xz")
   TRUE
@@ -187,7 +187,7 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
   p <- species_map(species_data$species_scientific_name[i], species_data,
                    record_data, grid_data, land_data, study_area_data,
                    parameters$maps$minimum_required_checklists,
-                   parameters$maps$minimum_required_records)
+                   parameters$maps$minimum_required_events)
   n <- as.character(stringr::str_count(species_data$maps[i], "_") + 1)
   ggplot2::ggsave(paste0("assets/maps/", file_names[i], ".png"), p,
                   width = parameters$maps$size[[n]]$width,
