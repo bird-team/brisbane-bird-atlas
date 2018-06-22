@@ -124,7 +124,6 @@ species_widget <- function(x, species_data, record_data, grid_data,
   chk_tbl2[[1]] <- as.integer(as.character(chk_tbl2[[1]]))
   spp_tbl2[[1]] <- as.integer(as.character(spp_tbl2[[1]]))
   # identify cells with inadequate numbers of checklists
-  hist(chk_tbl2[[2]])
   poorly_sampled2 <- chk_tbl2[[2]] < minimum_required_events
   # set poorly sampled cells as NA in detection_data[[l]]
   detection_data[chk_tbl2[[1]][poorly_sampled2]] <- NA_real_
@@ -141,9 +140,14 @@ species_widget <- function(x, species_data, record_data, grid_data,
   names(complete_data) <- group_names
   ## subset data to specified map numbers
   complete_data <- complete_data[[map_numbers]]
+  ## calculate initial view settings
+  inital_view <- sf::st_transform(sf::st_centroid(study_area_data), 4326)
+  inital_view <- c(as(inital_view, "Spatial")@coords)
   # main processing
   ## initialize leaflet map
   l <- leaflet::leaflet()
+  l <- leaflet::setView(l, lng = inital_view[[1]], lat = inital_view[[2]],
+                        zoom = 10)
   ## create palettes
   br <- pretty(na.omit(c(raster::values(rate_data))))
   palette <- color_numeric_palette("viridis", domain = range(br),
