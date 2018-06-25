@@ -31,6 +31,15 @@
 \usepackage{natbib}
 \bibliographystyle{reference-style}
 \usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 \IfFileExists{parskip.sty}{%
 \usepackage{parskip}
 }{% else
@@ -65,7 +74,7 @@
 %   \postauthor{\par}
 % % %   \predate{\centering\large\emph}
 %   \postdate{\par}
-%   \date{2018-06-22}
+%   \date{2018-06-25}
 % 
 % load packages
 \usepackage{amsmath,amsfonts,float,makecell,hyperref,natbib,changepage,graphicx,multicol}
@@ -189,6 +198,10 @@
 
 \textbf{Please note that this project is still very much under active
 construction and is not yet ready for contributions.}
+
+This atlas is generously supported by Birds Queensland.
+
+\includegraphics{assets/misc/bq-logo.png}
 
 \hypertarget{acknowledgements}{%
 \chapter{Acknowledgements}\label{acknowledgements}}
