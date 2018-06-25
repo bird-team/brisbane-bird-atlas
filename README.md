@@ -7,3 +7,9 @@
 The Atlas of the Birds of Brisbane is a community driven bird atlas for Brisbane, Australia. [Visit and contribute to the atlas online](http://brisbanebirds.com), or [download a copy to your computer](https://github.com/bird-team/brisbane-bird-atlas/raw/gh-pages/brisbane-bird-atlas.pdf).
 
 **Please note that this project is still very much under active construction and is not yet ready for contributions.**
+
+---
+
+Generously supported by Birds Queensland.
+
+![](assets/misc/bq-logo.png)

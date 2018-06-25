@@ -34,3 +34,7 @@ start_page()
 # Preface
 
 **Please note that this project is still very much under active construction and is not yet ready for contributions.**
+
+This atlas is generously supported by Birds Queensland.
+
+![](assets/misc/bq-logo.png)
