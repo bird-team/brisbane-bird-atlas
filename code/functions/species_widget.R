@@ -10,7 +10,7 @@
 #' @param record_data \code{sf} object containing the records for the species.
 #'   This object must have the following fields:
 #'   \code{"species_scientific_name"}, \code{"season"}, \code{"is_checklist"},
-#'   \code{"is_after_start_year"}, \code{"is_fully_sampled_year"}, and
+#'   \code{"year"}, \code{"is_fully_sampled_year"}, and
 #'   \code{"maps"}.
 #'
 #' @param grid_data \code{\link[raster]{RasterLayer} object containing the grid
@@ -35,7 +35,8 @@ species_widget <- function(x, species_data, record_data, grid_data,
   ## remove name column in study_area_data
   study_area_data$name <- NULL
   ## determine which maps to create
-  map_numbers <- species_data$maps[species_data$species_scientific_name == x]
+  spp_index <- species_data$species_scientific_name == x
+  map_numbers <- species_data$maps[spp_index]
   map_numbers <- as.numeric(strsplit(map_numbers, "_")[[1]])
   if (min(map_numbers, na.rm = TRUE) < 1 ||
       max(map_numbers, na.rm = TRUE) > 6 ||
@@ -46,10 +47,14 @@ species_widget <- function(x, species_data, record_data, grid_data,
   if (length(map_numbers) == 0)
     stop(paste("processing ", x, "\ndata in maps column must specify at least",
                "one map"))
+  ## determine starting years for records and checklists
+  curr_checklists_starting_year <- species_data$checklists_starting_year[
+                                    spp_index]
+  curr_records_starting_year <- species_data$records_starting_year[spp_index]
   ## create check list data with all check lists
   chk_data <- record_data[record_data$is_checklist &
-                          record_data$is_after_start_year &
-                          record_data$is_fully_sampled_year,
+                          record_data$is_fully_sampled_year &
+                          record_data$year >= curr_checklists_starting_year,
                           c("species_scientific_name", "season", "event"),
                           drop = FALSE]
   ## create check list data with check list for species
@@ -111,11 +116,15 @@ species_widget <- function(x, species_data, record_data, grid_data,
   rate_data <- rate_data * 100
   ## create detection data
   detection_data <- grid_data[[1]]
+  record_subset_data <- record_data %>%
+                        dplyr::filter(year >= curr_records_starting_year)
   chk_cells2 <- raster::extract(grid_data[[1]],
-    as(record_data[!duplicated(record_data$event), "season"], "Spatial"),
+    as(record_subset_data[!duplicated(record_subset_data$event), "season"],
+       "Spatial"),
     cellnumbers = TRUE)[, 1]
   spp_cells2 <- raster::extract(grid_data[[1]],
-    as(record_data[record_data$species_scientific_name == x, "season"],
+    as(record_subset_data[record_subset_data$species_scientific_name == x,
+                          "season"],
        "Spatial"), cellnumbers = TRUE)[, 1]
   # coerce to table
   chk_tbl2 <- as.data.frame(table(chk_cells2))

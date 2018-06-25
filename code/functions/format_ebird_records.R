@@ -19,11 +19,6 @@
 #' @param latitude_column_name \code{character} name of column with the
 #'   \code{numeric} latitude where each record was observed.
 #'
-#' @param start_date \code{character} earliest possible date for records.
-#'   Records that correspond to observations prior to this date will be
-#'   omitted. The argument to \code{start_date} must be in the
-#'   \code{"%d/%m/%Y"} format (e.g. \code{"30/01/1990"}).
-#'
 #' @param event_column_name \code{character} name of column with the
 #'   unique identifier for each sampling event.
 #'
@@ -54,11 +49,12 @@
 #' @return \code{\link[sf]{sf}} with the observation records and meta-data.
 format_ebird_records <- function(x, scientific_column_name, date_column_name,
                                  date_column_format, longitude_column_name,
-                                 latitude_column_name, start_date,
+                                 latitude_column_name,
                                  event_column_name, locality_column_name,
                                  protocol_column_name, all_species_column_name,
                                  count_column_name, omit_protocol_names,
-                                 breeding_column_name, breeding_activity_names, study_area) {
+                                 breeding_column_name, breeding_activity_names,
+                                 study_area) {
    # assert that arguments are valid
    assertthat::assert_that(inherits(x, "data.frame"),
                            nrow(x) > 0,
@@ -75,7 +71,6 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
                            assertthat::is.string(latitude_column_name),
                            assertthat::has_name(x, latitude_column_name),
                            is.numeric(x[[latitude_column_name]]),
-                           assertthat::is.string(start_date),
                            assertthat::is.string(event_column_name),
                            assertthat::has_name(x, event_column_name),
                            is.character(x[[event_column_name]]),
@@ -100,10 +95,6 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
                            is.character(breeding_activity_names),
                            assertthat::noNA(breeding_activity_names),
                            inherits(study_area, "sf"))
-  # parse record start date
-  start_date <- as.POSIXct(strptime(start_date, "%d/%m/%Y"))
-  assertthat::assert_that(all(!is.na(start_date)),
-    msg = "argument to start_date must be formatted as %d/%m/%Y")
 
   # rename columns in the table
   data.table::setnames(x,
@@ -131,7 +122,7 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
   record_posix_dates <- as.POSIXct(strptime(x$date, date_column_format))
   x$date <- format(record_posix_dates, "%d/%m/%Y")
   x$month <- format(record_posix_dates, "%b")
-  x$year <- format(record_posix_dates, "%Y")
+  x$year <- as.numeric(format(record_posix_dates, "%Y"))
 
   # create column with season data
   month <- as.integer(format(record_posix_dates, "%m"))
@@ -146,9 +137,6 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
   # check date conversions worked
   assertthat::assert_that(sum(is.na(x$date)) == record_original_na_dates,
                           msg = "error formatting dates in recorded data")
-
-  # create column indicating if records after start date
-  x$is_after_start_year <- record_posix_dates >= start_date
 
   # create column indicating if record in fully sampled year
   # (i.e. latest year with records in December)

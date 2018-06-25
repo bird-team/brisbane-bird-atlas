@@ -22,6 +22,10 @@ species_table <- function(x, species_data, record_data, grid_data) {
   # Initialization
   spp_row <- which(species_data$species_scientific_name == x)
   spp_data <- record_data[record_data$species_scientific_name == x, ]
+  ## determine starting years for records and checklists
+  curr_checklists_starting_year <-
+    species_data$checklists_starting_year[spp_row]
+  curr_records_starting_year <- species_data$records_starting_year[spp_row]
   # Main processing
   ## iucn threat status
   iucn_threat_status <- paste("_IUCN:_",
@@ -33,17 +37,23 @@ species_table <- function(x, species_data, record_data, grid_data) {
   qld_threat_status <- paste("_Queensland:_",
                              species_data$qld_threat_status[spp_row])
   ## ebird records
-  ebird_records <- paste("_eBird records:_", formatC(nrow(spp_data),
-                                                     big.mark = ","))
+  ebird_records <- paste("_eBird records:_",
+    formatC(as.integer(sum(spp_data$year >= curr_records_starting_year,
+                           na.rm = TRUE)), big.mark = ","))
   ## atlas squares
   spp_cells <- raster::extract(grid_data[[1]],
-                               as(spp_data[, "season"], "Spatial"),
+                               spp_data %>%
+                               filter(year >= curr_checklists_starting_year,
+                                      is_checklist) %>%
+                               select(season) %>%
+                               as("Spatial"),
                                cellnumbers = TRUE)[, 1]
   atlas_squares <- paste("_Atlas squares:_", length(unique(na.omit(spp_cells))))
   ## reporting rate
-  record_data <- record_data[record_data$is_checklist &
-                             record_data$is_fully_sampled_year &
-                             record_data$is_after_start_year, , drop = FALSE]
+  record_data <- record_data[
+    record_data$is_checklist &
+    record_data$year >= curr_checklists_starting_year &
+    record_data$is_fully_sampled_year, , drop = FALSE]
   total_checklists <- dplyr::n_distinct(
     record_data$event[record_data$is_checklist])
   spp_checklists <- dplyr::n_distinct(

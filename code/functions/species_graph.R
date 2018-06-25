@@ -8,7 +8,7 @@
 #'   data indicating which graphs should be created. The argument to
 #'   \code{species_data} must have the columns
 #'   \code{"species_scientific_name"},  \code{"is_checklist"},
-#'   \code{"is_after_start_year"}, \code{"is_fully_sampled_year"}, and
+#'   \code{"year"}, \code{"is_fully_sampled_year"}, and
 #'   \code{"graphs"}.
 #'
 #' @param record_data \code{sf} object containing the records for the species.
@@ -20,8 +20,8 @@
 species_graph <- function(x, species_data, record_data) {
   # initialization
   ## determine which graphs to create
-  graph_numbers <- species_data$graphs[species_data$species_scientific_name ==
-                                       x]
+  spp_index <- which(species_data$species_scientific_name == x)
+  graph_numbers <- species_data$graphs[spp_index]
   graph_numbers <- as.numeric(strsplit(graph_numbers, "_")[[1]])
   if (min(graph_numbers, na.rm = TRUE) < 1 ||
       max(graph_numbers, na.rm = TRUE) > 7 ||
@@ -32,6 +32,10 @@ species_graph <- function(x, species_data, record_data) {
   ## coerce data to tabular format
   record_data <- as.data.frame(record_data)
   years <- unique(record_data$year)
+  ## determine starting years for records and checklists
+  curr_checklists_starting_year <- species_data$checklists_starting_year[
+                                    spp_index]
+  curr_records_starting_year <- species_data$records_starting_year[spp_index]
   ## create month and year columns
   record_data$Month <- factor(record_data$month,
                               levels = c("Jan", "Feb", "Mar", "Apr", "May",
@@ -41,7 +45,7 @@ species_graph <- function(x, species_data, record_data) {
   # main processing
   ## vegetation
   d1 <- record_data %>%
-        dplyr::filter(is_checklist, is_after_start_year) %>%
+        dplyr::filter(is_checklist, year >= curr_checklists_starting_year) %>%
         dplyr::group_by(vegetation_class) %>%
         dplyr::summarize(
           total = dplyr::n_distinct(event),
@@ -65,7 +69,7 @@ species_graph <- function(x, species_data, record_data) {
                                                           vjust = 0.7))
   ## elevation by month
   d2 <- record_data %>%
-        dplyr::filter(is_checklist, is_after_start_year) %>%
+        dplyr::filter(is_checklist, year >= curr_checklists_starting_year) %>%
         dplyr::filter(species_scientific_name == x)
   p2 <- d2 %>%
         ggplot2::ggplot(mapping = ggplot2::aes(x = Month, y = elevation)) +
@@ -82,7 +86,7 @@ species_graph <- function(x, species_data, record_data) {
                                                           vjust = 0.8))
   ## reporting rate by month
   d3 <- record_data %>%
-        dplyr::filter(is_checklist, is_after_start_year,
+        dplyr::filter(is_checklist, year >= curr_checklists_starting_year,
                       is_fully_sampled_year) %>%
         dplyr::group_by(Month) %>%
         dplyr::summarize(
@@ -109,7 +113,7 @@ species_graph <- function(x, species_data, record_data) {
   ## counts by month
   d4 <- record_data %>%
         dplyr::filter(species_scientific_name == x, !is.na(count),
-                      is_after_start_year)
+                      year >= curr_records_starting_year)
   p4 <- d4 %>%
         ggplot2::ggplot(mapping = ggplot2::aes(x = Month, y = count)) +
         ggplot2::geom_boxplot() +
@@ -125,8 +129,8 @@ species_graph <- function(x, species_data, record_data) {
                                                           vjust = 0.8))
   ## breeding activity by month
   d5 <- record_data %>%
-        dplyr::filter(species_scientific_name == x, is_after_start_year,
-                      is_fully_sampled_year) %>%
+        dplyr::filter(species_scientific_name == x, is_fully_sampled_year,
+                      year >= curr_records_starting_year) %>%
         dplyr::group_by(Month) %>%
         dplyr::summarize(
           total = dplyr::n_distinct(event),
@@ -151,7 +155,8 @@ species_graph <- function(x, species_data, record_data) {
                                                           vjust = 0.8))
   ## reporting rate by year
   d6 <- record_data %>%
-        dplyr::filter(is_checklist, is_after_start_year,
+        dplyr::filter(is_checklist,
+                      year >= curr_checklists_starting_year,
                       is_fully_sampled_year) %>%
         dplyr::mutate(
           Year = factor(as.character(Year),
