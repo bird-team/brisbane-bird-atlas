@@ -1,7 +1,6 @@
 ---
 title: "Atlas of the Birds of Brisbane"
-author: |
-  | Richard A. Fuller, Jeffrey O. Hanson
+author: "Insert authors here"
 date: "`r Sys.Date()`"
 documentclass: book
 classoption:
