@@ -23,9 +23,9 @@ species_table <- function(x, species_data, record_data, grid_data) {
   spp_row <- which(species_data$species_scientific_name == x)
   spp_data <- record_data[record_data$species_scientific_name == x, ]
   ## determine starting years for records and checklists
-  curr_checklists_starting_year <-
+  checklists_starting_year <-
     species_data$checklists_starting_year[spp_row]
-  curr_records_starting_year <- species_data$records_starting_year[spp_row]
+  records_starting_year <- species_data$records_starting_year[spp_row]
   # Main processing
   ## iucn threat status
   iucn_threat_status <- paste("_IUCN:_",
@@ -38,12 +38,12 @@ species_table <- function(x, species_data, record_data, grid_data) {
                              species_data$qld_threat_status[spp_row])
   ## ebird records
   ebird_records <- paste("_eBird records:_",
-    formatC(as.integer(sum(spp_data$year >= curr_records_starting_year,
+    formatC(as.integer(sum(spp_data$year >= records_starting_year,
                            na.rm = TRUE)), big.mark = ","))
   ## atlas squares
   spp_cells <- raster::extract(grid_data[[1]],
                                spp_data %>%
-                               filter(year >= curr_checklists_starting_year,
+                               filter(year >= checklists_starting_year,
                                       is_checklist) %>%
                                select(season) %>%
                                as("Spatial"),
@@ -52,7 +52,7 @@ species_table <- function(x, species_data, record_data, grid_data) {
   ## reporting rate
   record_data <- record_data[
     record_data$is_checklist &
-    record_data$year >= curr_checklists_starting_year &
+    record_data$year >= checklists_starting_year &
     record_data$is_fully_sampled_year, , drop = FALSE]
   total_checklists <- dplyr::n_distinct(
     record_data$event[record_data$is_checklist])

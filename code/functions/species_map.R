@@ -32,14 +32,37 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
                         study_area_data, minimum_required_checklists,
                         minimum_required_events) {
   # Initialization
-  ## set all values outside grid to zero and set values inside grid to NA
-  tmp_data <- grid_data
-  grid_data[is.na(tmp_data)] <- 0
-  grid_data[!is.na(tmp_data)] <- NA_real_
+  ## determine if grid should be land, marine, or both
+  spp_index <- which(species_data$species_scientific_name == x)
+  spp_type <- species_data$distribution[spp_index]
+  ## set up grid
+  if (spp_type == "land") {
+    tmp_data <- grid_data
+    grid_data[] <- 0
+    grid_data[tmp_data == 1] <- NA_real_
+    grid_data <- raster::trim(grid_data, values = 0)
+  } else if (spp_type == "marine") {
+    tmp_data <- grid_data
+    grid_data[] <- 0
+    grid_data[tmp_data == 2] <- NA_real_
+    grid_data <- raster::trim(grid_data, values = 0)
+  } else {
+    tmp_data <- grid_data
+    grid_data[is.na(tmp_data)] <- 0
+    grid_data[!is.na(tmp_data)] <- NA_real_
+    grid_data <- raster::trim(grid_data, values = 0)
+  }
+  ## set up study area data
+  if (spp_type == "land") {
+    study_area_data <- study_area_data %>%
+                       filter(name == "land")
+  } else if (spp_type == "marine") {
+    study_area_data <- study_area_data %>%
+                       filter(name == "marine")
+  }
   ## remove name column in study_area_data
   study_area_data$name <- NULL
   ## determine which maps to create
-  spp_index <- species_data$species_scientific_name == x
   map_numbers <- species_data$maps[spp_index]
   map_numbers <- as.numeric(strsplit(map_numbers, "_")[[1]])
   if (min(map_numbers, na.rm = TRUE) < 1 ||
@@ -52,13 +75,13 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
     stop(paste("processing ", x, "\ndata in maps column must specify at least",
                "one map"))
   ## determine starting years for records and checklists
-  curr_checklists_starting_year <- species_data$checklists_starting_year[
+  checklists_starting_year <- species_data$checklists_starting_year[
                                     spp_index]
-  curr_records_starting_year <- species_data$records_starting_year[spp_index]
+  records_starting_year <- species_data$records_starting_year[spp_index]
   ## create check list data with all check lists
   chk_data <- record_data[record_data$is_checklist &
                           record_data$is_fully_sampled_year &
-                          record_data$year >= curr_checklists_starting_year,
+                          record_data$year >= checklists_starting_year,
                           c("species_scientific_name", "season", "event"),
                           drop = FALSE]
   ## create check list data with check list for species
@@ -121,7 +144,7 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
   ## create detection data
   detection_data <- grid_data[[1]]
   record_subset_data <- record_data %>%
-                        dplyr::filter(year >= curr_records_starting_year)
+                        dplyr::filter(year >= records_starting_year)
   chk_cells2 <- raster::extract(grid_data[[1]],
     as(record_subset_data[!duplicated(record_subset_data$event), "season"],
        "Spatial"),

@@ -39,13 +39,18 @@
 #'  the earliest records that should be used for making species graphs
 #'  and maps.
 #'
+#' @param distribution_column_name \code{character} name of column describing
+#'   if the species' distribution covers \code{"land"}, \code{"marine"},
+#'   or \code{"both"} habitats.
+#'
 #' @return \code{data.frame} with formatted data.
 format_species_data <- function(x, scientific_column_name, common_column_name,
                                 key_column_name, iucn_column_name,
                                 national_column_name, qld_column_name,
                                 graphs_column_name, maps_column_name,
                                 checklist_year_column_name,
-                                record_year_column_name) {
+                                record_year_column_name,
+                                distribution_column_name) {
   # assert arguments are valid
   assertthat::assert_that(inherits(x, "data.frame"),
                           nrow(x) > 0,
@@ -79,7 +84,12 @@ format_species_data <- function(x, scientific_column_name, common_column_name,
                           is.numeric(x[[checklist_year_column_name]]),
                           assertthat::is.string(record_year_column_name),
                           assertthat::has_name(x, record_year_column_name),
-                          is.numeric(x[[record_year_column_name]]))
+                          is.numeric(x[[record_year_column_name]]),
+                          assertthat::is.string(distribution_column_name),
+                          assertthat::has_name(x, distribution_column_name),
+                          is.character(x[[distribution_column_name]]),
+                          all(x[[distribution_column_name]] %in%
+                              c("land", "marine","both")))
   # rename columns
   data.table::setnames(x,
                        c(scientific_column_name, common_column_name,
@@ -87,12 +97,13 @@ format_species_data <- function(x, scientific_column_name, common_column_name,
                          national_column_name, qld_column_name,
                          graphs_column_name, maps_column_name,
                          checklist_year_column_name,
-                         record_year_column_name),
+                         record_year_column_name,
+                         distribution_column_name),
                        c("species_scientific_name", "species_common_name",
                          "species_key", "iucn_threat_status",
                          "national_threat_status", "qld_threat_status",
                          "graphs", "maps", "checklists_starting_year",
-                         "records_starting_year"))
+                         "records_starting_year", "distribution"))
 
   # remove rows with missing values
   x <- x[!is.na(x$species_scientific_name), , drop = FALSE]
@@ -101,7 +112,7 @@ format_species_data <- function(x, scientific_column_name, common_column_name,
   x <- x[, c("species_scientific_name", "species_common_name", "species_key",
              "iucn_threat_status", "national_threat_status",
              "qld_threat_status", "graphs", "maps", "checklists_starting_year",
-             "records_starting_year"),
+             "records_starting_year", "distribution"),
          drop = FALSE]
 
   # sort data

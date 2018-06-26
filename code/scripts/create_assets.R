@@ -63,13 +63,11 @@ vegetation_data <- sf::st_transform(sf::st_read(vegetation_path),
 
 ## format study area
 study_area_data <- study_area_data %>%
-                   sf::st_union() %>%
                    lwgeom::st_make_valid() %>%
                    lwgeom::st_snap_to_grid(1) %>%
                    sf::st_simplify(100) %>%
                    sf::st_collection_extract(type = "POLYGON") %>%
                    lwgeom::st_make_valid()
-study_area_data <- sf::st_sf(name = "Brisbane", geometry = study_area_data)
 
 ## format land data
 bbox_data <- sf::st_as_sfc(sf::st_bbox(sf::st_buffer(study_area_data, 200000)))
@@ -116,7 +114,15 @@ grid_data <- raster::raster(xmn = grid_extent[1], xmx = grid_extent[3],
                             crs = as(study_area_data, "Spatial")@proj4string,
                             res = rep(parameters$grid_resolution, 2))
 grid_data <- raster::setValues(grid_data, NA_real_)
-grid_data[raster::extract(grid_data, as(study_area_data, "Spatial"),
+grid_data[raster::extract(grid_data,
+                          study_area_data %>%
+                            filter(name == "marine") %>%
+                            as("Spatial"),
+                          cellnumbers = TRUE)[[1]][, 1]] <- 2
+grid_data[raster::extract(grid_data,
+                          study_area_data %>%
+                            filter(name == "land") %>%
+                            as("Spatial"),
                           cellnumbers = TRUE)[[1]][, 1]] <- 1
 
 ## extract spatial attributes
