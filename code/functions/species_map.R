@@ -238,9 +238,9 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
                           ggplot2::aes(x = x, y = y, color = label),
                           shape = 22, size = 8) +
        ggplot2::geom_sf(data = land_data, color = "grey85",
-                        fill = "grey90") +
+                        fill = "grey90", size = 0.3) +
        ggplot2::geom_sf(data = study_area_data, color = NA,
-                        fill = "white")
+                        fill = "white", size = 0.3)
   ## add all year or seasonal tiles if required
   if (any(seq_len(5) %in% map_numbers)) {
     p <- p +
@@ -273,8 +273,8 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
   }
   ## style maps
   p <- p +
-       ggplot2::geom_sf(data = study_area_data, color = "black",
-                        fill = NA) +
+       ggplot2::geom_sf(data = study_area_data, color = "grey50",
+                        fill = NA, size = 0.3) +
        ggplot2::coord_sf(xlim = bb[c(1, 3)], ylim = bb[c(2, 4)]) +
        ggplot2::facet_wrap(~ name) +
        ggplot2::theme(
