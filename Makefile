@@ -87,7 +87,8 @@ book:
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 ## backup book
-backup: @set -e
+backup:
+	@set -e
 	@if [ -z "${GITLAB_PAT}" ]; then exit 0; fi;
 	@if [ "${TRAVIS_BRANCH}" != "master" ]; then exit 0; fi;
 	@git config --global user.email "jeff.o.hanson+bot@gmail.com"
