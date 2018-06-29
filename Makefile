@@ -91,7 +91,7 @@ backup:
 	@set -e
 	@if [ -z "${GITLAB_PAT}" ]; then exit 0; fi;
 	@if [ "${TRAVIS_BRANCH}" != "master" ]; then exit 0; fi;
-	@git fetch --unshallow upstream
+	@git fetch --unshallow
 	@git config --global user.email "jeff.o.hanson+bot@gmail.com"
 	@git config --global user.name "bird-team-bot"
 	@git remote add backup https://bird-team-bot:${GITLAB_PAT}@gitlab.com/bird-team/brisbane-bird-atlas-backup.git
