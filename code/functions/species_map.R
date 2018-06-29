@@ -52,6 +52,7 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
     grid_data[!is.na(tmp_data)] <- NA_real_
     grid_data <- raster::trim(grid_data, values = 0)
   }
+  study_area_cells <- raster::Which(is.na(grid_data), cells = TRUE)
   ## set up study area data
   if (spp_type == "land") {
     study_area_data <- study_area_data %>%
@@ -97,12 +98,17 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
   rate_data <- grid_data[[rep(1, 5)]]
   names(rate_data) <- layer_names
   ## calculate frequency of checklists in grid cells
+  # extract cell indices for all checklists and those for just the species
   spp_cells <- raster::extract(rate_data[[1]],
                                as(spp_data[, "season"], "Spatial"),
                                cellnumbers = TRUE)[, 1]
   chk_cells <- raster::extract(rate_data[[1]],
                                as(chk_data[, "season"], "Spatial"),
                                cellnumbers = TRUE)[, 1]
+  # remove cell indices that are not inside the study area
+  spp_cells <- spp_cells[spp_cells %in% study_area_cells]
+  chk_cells <- chk_cells[chk_cells %in% study_area_cells]
+  # calculate reporting rates for annual + seasonal maps
   for (l in layer_names) {
     # extract grid cells
     if (l == "all_year") {
@@ -142,6 +148,7 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
   ## convert proportions to percentages
   rate_data <- rate_data * 100
   ## create detection data
+  ### extract cell indices for all records and records with the species
   detection_data <- grid_data[[1]]
   record_subset_data <- record_data %>%
                         dplyr::filter(year >= records_starting_year)
@@ -153,17 +160,20 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
     as(record_subset_data[record_subset_data$species_scientific_name == x,
                           "season"],
        "Spatial"), cellnumbers = TRUE)[, 1]
-  # coerce to table
+  ### remove cell indices that are not inside the study area
+  chk_cells2 <- chk_cells2[chk_cells2 %in% study_area_cells]
+  spp_cells2 <- spp_cells2[spp_cells2 %in% study_area_cells]
+  ### coerce to table
   chk_tbl2 <- as.data.frame(table(chk_cells2))
   spp_tbl2 <- as.data.frame(table(spp_cells2))
-  # coerce factors to integers (safely)
+  ### coerce factors to integers (safely)
   chk_tbl2[[1]] <- as.integer(as.character(chk_tbl2[[1]]))
   spp_tbl2[[1]] <- as.integer(as.character(spp_tbl2[[1]]))
-  # identify cells with inadequate numbers of checklists
+  ### identify cells with inadequate numbers of checklists
   poorly_sampled2 <- chk_tbl2[[2]] < minimum_required_events
-  # set poorly sampled cells as NA in detection_data[[l]]
+  ### set poorly sampled cells as NA in detection_data[[l]]
   detection_data[chk_tbl2[[1]][poorly_sampled2]] <- NA_real_
-  # remove cells with inadequate numbers of checklists
+  ### remove cells with inadequate numbers of checklists
   chk_tbl2 <- chk_tbl2[!poorly_sampled2, , drop = FALSE]
   spp_tbl2 <- spp_tbl2[spp_tbl2[[1]] %in% chk_tbl2[[1]], , drop = FALSE]
   # assign values
