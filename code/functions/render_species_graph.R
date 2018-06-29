@@ -6,6 +6,11 @@
 #'
 #' @return \code{gg} pkg{ggplot2} plot.
 render_species_graph <- function(x) {
+  # exit early if no graph required
+  spp_index <- which(species_data$species_scientific_name == x)
+  if (is.na(species_data$graphs[spp_index]))
+    return(invisible(TRUE))
+  # otherwise render graph
   x <- gsub("(", "", x, fixed = TRUE)
   x <- gsub(")", "", x, fixed = TRUE)
   x <- gsub("/", "", x, fixed = TRUE)

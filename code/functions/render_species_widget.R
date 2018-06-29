@@ -6,6 +6,11 @@
 #'
 #' @return interactive widget.
 render_species_widget <- function(x) {
+  # exit early if no widget required
+  spp_index <- which(species_data$species_scientific_name == x)
+  if (is.na(species_data$maps[spp_index]))
+    return(invisible(TRUE))
+  # otherwise render widget
   x <- gsub("(", "", x, fixed = TRUE)
   x <- gsub(")", "", x, fixed = TRUE)
   x <- gsub("/", "", x, fixed = TRUE)

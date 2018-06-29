@@ -182,8 +182,10 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                       record_data, grid_data, study_area_data,
                       parameters$maps$minimum_required_checklists,
                       parameters$maps$minimum_required_events)
+  if (!is.null(p)) {
   saveRDS(p, paste0("assets/widgets/", file_names[i], ".rds"),
           compress = "xz")
+  }
   TRUE
 })
 
@@ -194,11 +196,13 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                    record_data, grid_data, land_data, study_area_data,
                    parameters$maps$minimum_required_checklists,
                    parameters$maps$minimum_required_events)
-  n <- as.character(stringr::str_count(species_data$maps[i], "_") + 1)
-  ggplot2::ggsave(paste0("assets/maps/", file_names[i], ".png"), p,
-                  width = parameters$maps$size[[n]]$width,
-                  height = parameters$maps$size[[n]]$height,
-                  units = "in")
+  if (!is.null(p)) {
+    n <- as.character(stringr::str_count(species_data$maps[i], "_") + 1)
+    ggplot2::ggsave(paste0("assets/maps/", file_names[i], ".png"), p,
+                    width = parameters$maps$size[[n]]$width,
+                    height = parameters$maps$size[[n]]$height,
+                    units = "in")
+  }
   TRUE
 })
 
@@ -207,10 +211,12 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {
   p <- species_graph(species_data$species_scientific_name[i], species_data,
                      record_data)
-  n <- as.character(stringr::str_count(species_data$graphs[i], "_") + 1)
-  ggplot2::ggsave(paste0("assets/graphs/", file_names[i], ".png"), p,
-                  width = parameters$graphs$size[[n]]$width,
-                  height = parameters$graphs$size[[n]]$height,
-                  units = "in")
+  if (!is.null(p)) {
+    n <- as.character(stringr::str_count(species_data$graphs[i], "_") + 1)
+    ggplot2::ggsave(paste0("assets/graphs/", file_names[i], ".png"), p,
+                    width = parameters$graphs$size[[n]]$width,
+                    height = parameters$graphs$size[[n]]$height,
+                    units = "in")
+  }
   TRUE
 })

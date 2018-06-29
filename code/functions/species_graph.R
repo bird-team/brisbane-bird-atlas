@@ -22,6 +22,7 @@ species_graph <- function(x, species_data, record_data) {
   ## determine which graphs to create
   spp_index <- which(species_data$species_scientific_name == x)
   graph_numbers <- species_data$graphs[spp_index]
+  if (is.na(graph_numbers)) return(NULL)
   graph_numbers <- as.numeric(strsplit(graph_numbers, "_")[[1]])
   if (min(graph_numbers, na.rm = TRUE) < 1 ||
       max(graph_numbers, na.rm = TRUE) > 7 ||

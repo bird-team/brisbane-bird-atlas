@@ -35,6 +35,19 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
   ## determine if grid should be land, marine, or both
   spp_index <- which(species_data$species_scientific_name == x)
   spp_type <- species_data$distribution[spp_index]
+  ## determine which maps to create
+  map_numbers <- species_data$maps[spp_index]
+  if (is.na(map_numbers)) return(NULL)
+  map_numbers <- as.numeric(strsplit(map_numbers, "_")[[1]])
+  if (min(map_numbers, na.rm = TRUE) < 1 ||
+      max(map_numbers, na.rm = TRUE) > 6 ||
+      any(is.na(map_numbers)))
+    stop(paste0("processing ", x, "\ndata in maps column must contain ",
+                "integers between 1 and 6 separated by underscores ",
+                "(e.g. 1_2_3_4_5_6"))
+  if (length(map_numbers) == 0)
+    stop(paste("processing ", x, "\ndata in maps column must specify at least",
+               "one map"))
   ## set up grid
   if (spp_type == "land") {
     tmp_data <- grid_data
@@ -63,18 +76,6 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
   }
   ## remove name column in study_area_data
   study_area_data$name <- NULL
-  ## determine which maps to create
-  map_numbers <- species_data$maps[spp_index]
-  map_numbers <- as.numeric(strsplit(map_numbers, "_")[[1]])
-  if (min(map_numbers, na.rm = TRUE) < 1 ||
-      max(map_numbers, na.rm = TRUE) > 6 ||
-      any(is.na(map_numbers)))
-    stop(paste0("processing ", x, "\ndata in maps column must contain ",
-                "integers between 1 and 6 separated by underscores ",
-                "(e.g. 1_2_3_4_5_6"))
-  if (length(map_numbers) == 0)
-    stop(paste("processing ", x, "\ndata in maps column must specify at least",
-               "one map"))
   ## determine starting years for records and checklists
   checklists_starting_year <- species_data$checklists_starting_year[
                                     spp_index]
