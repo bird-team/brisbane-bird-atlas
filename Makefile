@@ -86,6 +86,18 @@ book:
 	&& docker cp bba:/tmp/_book . || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
+## backup book
+backup: @set -e
+	@if [ -z "${GITLAB_PAT}" ]; then exit 0; fi;
+	@if [ "${TRAVIS_BRANCH}" != "master" ]; then exit 0; fi;
+	@git config --global user.email "jeff.o.hanson+bot@gmail.com"
+	@git config --global user.name "bird-team-bot"
+	@git remote add backup https://${GITLAB_PAT}@gitlab.com/bird-team/brisbane-bird-atlas-backup.git
+	@git add --all *
+	@git commit -m "Automagic backup"
+	@git push -q backup master
+	@git remote remove backup
+
 ## deploy book
 deploy: book
 	@set -e
