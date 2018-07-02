@@ -2,7 +2,7 @@ title: atlas parameters
 
 crs: 3857                                              # coordinate reference system for mapping
 grid_resolution: 2000                                  # resolution for atlas grid cells in meters
-number_species: 13                                     # number of species to include in atlas
+number_species: "all"                                  # number of species to include in atlas
 
 maps:                                                  # parameters controlling appearance of the maps
   minimum_required_checklists: 5                       # number of checklists required for a grid cell to be adequately sampled for reporting rates
