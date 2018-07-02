@@ -99,87 +99,132 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
   rate_data <- grid_data[[rep(1, 5)]]
   names(rate_data) <- layer_names
   ## calculate frequency of checklists in grid cells
-  # extract cell indices for all checklists and those for just the species
-  spp_cells <- raster::extract(rate_data[[1]],
-                               as(spp_data[, "season"], "Spatial"),
-                               cellnumbers = TRUE)[, 1]
-  chk_cells <- raster::extract(rate_data[[1]],
-                               as(chk_data[, "season"], "Spatial"),
-                               cellnumbers = TRUE)[, 1]
-  # remove cell indices that are not inside the study area
-  spp_cells <- spp_cells[spp_cells %in% study_area_cells]
-  chk_cells <- chk_cells[chk_cells %in% study_area_cells]
-  # calculate reporting rates for annual + seasonal maps
-  for (l in layer_names) {
-    # extract grid cells
-    if (l == "all_year") {
-      spp_tbl <- as.data.frame(table(spp_cells))
-      chk_tbl <- as.data.frame(table(chk_cells))
-    } else {
-      spp_tbl <- as.data.frame(table(spp_cells[spp_data$season == l]))
-      chk_tbl <- as.data.frame(table(chk_cells[chk_data$season == l]))
-    }
-    # coerce factors to integers (safely)
-    chk_tbl[[1]] <- as.integer(as.character(chk_tbl[[1]]))
-    spp_tbl[[1]] <- as.integer(as.character(spp_tbl[[1]]))
-    # identify cells with inadequate numbers of checklists
-    poorly_sampled <- chk_tbl[[2]] < minimum_required_checklists
-    # set poorly sampled cells as NA in rate_data[[l]]
-    rate_data[[l]][chk_tbl[[1]][poorly_sampled]] <- NA_real_
-    # remove cells with inadequate numbers of checklists
-    chk_tbl <- chk_tbl[!poorly_sampled, , drop = FALSE]
-    spp_tbl <- spp_tbl[spp_tbl[[1]] %in% chk_tbl[[1]], , drop = FALSE]
-    # skip if no checklists at all in this season for this species
-    if (nrow(chk_tbl) > 0) {
-      if (nrow(spp_tbl) == 0) {
-        # assign zeros to calls with checklists for other species
-        rate_data[[l]][chk_tbl[[1]]] <- 0
+  if (nrow(spp_data) > 0) {
+    ### extract cell indices for all checklists and those for just the species
+    spp_cells <- raster::extract(grid_data[[1]],
+                                 as(spp_data[, "season"], "Spatial"),
+                                 cellnumbers = TRUE)[, 1]
+    chk_cells <- raster::extract(grid_data[[1]],
+                                 as(chk_data[, "season"], "Spatial"),
+                                 cellnumbers = TRUE)[, 1]
+    ### remove cell indices that are not inside the study area
+    spp_cells <- spp_cells[spp_cells %in% study_area_cells]
+    chk_cells <- chk_cells[chk_cells %in% study_area_cells]
+    ### calculate reporting rates for annual + seasonal maps
+    for (l in layer_names) {
+      #### extract grid cells
+      if (l == "all_year") {
+        spp_tbl <- as.data.frame(table(spp_cells))
+        chk_tbl <- as.data.frame(table(chk_cells))
       } else {
-        # assign total number of check lists to grid cells
-        rate_data[[l]][chk_tbl[[1]]] <- chk_tbl[[2]]
-        # calculate reporting rate for cells with checklists
-        rate_data[[l]][spp_tbl[[1]]] <- spp_tbl[[2]] /
-                                        rate_data[[l]][spp_tbl[[1]]]
-        # assign zeros to cells with checklists where this species wasn't
-        # detected
-        rate_data[[l]][setdiff(chk_tbl[[1]], spp_tbl[[1]])] <- 0
+        spp_tbl <- as.data.frame(table(spp_cells[spp_data$season == l]))
+        chk_tbl <- as.data.frame(table(chk_cells[chk_data$season == l]))
       }
+      #### coerce factors to integers (safely)
+      chk_tbl[[1]] <- as.integer(as.character(chk_tbl[[1]]))
+      spp_tbl[[1]] <- as.integer(as.character(spp_tbl[[1]]))
+      #### identify cells with inadequate numbers of checklists
+      poorly_sampled <- chk_tbl[[2]] < minimum_required_checklists
+      #### set poorly sampled cells as NA in rate_data[[l]]
+      rate_data[[l]][chk_tbl[[1]][poorly_sampled]] <- NA_real_
+      #### remove cells with inadequate numbers of checklists
+      chk_tbl <- chk_tbl[!poorly_sampled, , drop = FALSE]
+      spp_tbl <- spp_tbl[spp_tbl[[1]] %in% chk_tbl[[1]], , drop = FALSE]
+      #### skip if no checklists at all in this season for this species
+      if (nrow(chk_tbl) > 0) {
+        if (nrow(spp_tbl) == 0) {
+          #### assign zeros to calls with checklists for other species
+          rate_data[[l]][chk_tbl[[1]]] <- 0
+        } else {
+          #### assign total number of check lists to grid cells
+          rate_data[[l]][chk_tbl[[1]]] <- chk_tbl[[2]]
+          #### calculate reporting rate for cells with checklists
+          rate_data[[l]][spp_tbl[[1]]] <- spp_tbl[[2]] /
+                                          rate_data[[l]][spp_tbl[[1]]]
+          #### assign zeros to cells with checklists where this species wasn't
+          #### detected
+          rate_data[[l]][setdiff(chk_tbl[[1]], spp_tbl[[1]])] <- 0
+        }
+      }
+    }
+  } else {
+    for (l in layer_names) {
+      ### extract cell indices for all checklists
+      chk_cells <- raster::extract(grid_data[[1]],
+                                   as(chk_data[, "season"], "Spatial"),
+                                   cellnumbers = TRUE)[, 1]
+      #### extract grid cells
+      if (l == "all_year") {
+        chk_tbl <- as.data.frame(table(chk_cells))
+      } else {
+        chk_tbl <- as.data.frame(table(chk_cells[chk_data$season == l]))
+      }
+      #### coerce factors to integers (safely)
+      chk_tbl[[1]] <- as.integer(as.character(chk_tbl[[1]]))
+      #### identify cells with inadequate numbers of checklists
+      poorly_sampled <- chk_tbl[[2]] < minimum_required_checklists
+      #### set poorly sampled cells as NA in rate_data[[l]]
+      rate_data[[l]][chk_tbl[[1]][poorly_sampled]] <- NA_real_
+      #### assign zeros to calls with checklists for other species
+      rate_data[[l]][chk_tbl[[1]]] <- 0
     }
   }
   ## convert proportions to percentages
   rate_data <- rate_data * 100
   ## create detection data
-  ### extract cell indices for all records and records with the species
   detection_data <- grid_data[[1]]
   record_subset_data <- record_data %>%
                         dplyr::filter(year >= records_starting_year)
-  chk_cells2 <- raster::extract(grid_data[[1]],
-    as(record_subset_data[!duplicated(record_subset_data$event), "season"],
-       "Spatial"),
-    cellnumbers = TRUE)[, 1]
-  spp_cells2 <- raster::extract(grid_data[[1]],
-    as(record_subset_data[record_subset_data$species_scientific_name == x,
-                          "season"],
-       "Spatial"), cellnumbers = TRUE)[, 1]
-  ### remove cell indices that are not inside the study area
-  chk_cells2 <- chk_cells2[chk_cells2 %in% study_area_cells]
-  spp_cells2 <- spp_cells2[spp_cells2 %in% study_area_cells]
-  ### coerce to table
-  chk_tbl2 <- as.data.frame(table(chk_cells2))
-  spp_tbl2 <- as.data.frame(table(spp_cells2))
-  ### coerce factors to integers (safely)
-  chk_tbl2[[1]] <- as.integer(as.character(chk_tbl2[[1]]))
-  spp_tbl2[[1]] <- as.integer(as.character(spp_tbl2[[1]]))
-  ### identify cells with inadequate numbers of checklists
-  poorly_sampled2 <- chk_tbl2[[2]] < minimum_required_events
-  ### set poorly sampled cells as NA in detection_data[[l]]
-  detection_data[chk_tbl2[[1]][poorly_sampled2]] <- NA_real_
-  ### remove cells with inadequate numbers of checklists
-  chk_tbl2 <- chk_tbl2[!poorly_sampled2, , drop = FALSE]
-  spp_tbl2 <- spp_tbl2[spp_tbl2[[1]] %in% chk_tbl2[[1]], , drop = FALSE]
-  # assign values
-  detection_data[spp_tbl2[[1]]] <- 1
-  detection_data[setdiff(chk_tbl2[[1]], spp_tbl2[[1]])] <- 0
+  if (sum(record_subset_data$species_scientific_name == x) > 0) {
+    ### extract cell indices for all records and records with the species
+    chk_cells2 <- raster::extract(grid_data[[1]],
+      as(record_subset_data[!duplicated(record_subset_data$event), "season"],
+         "Spatial"),
+      cellnumbers = TRUE)[, 1]
+    spp_cells2 <- raster::extract(grid_data[[1]],
+      as(record_subset_data[record_subset_data$species_scientific_name == x,
+                            "season"],
+         "Spatial"), cellnumbers = TRUE)[, 1]
+    ### remove cell indices that are not inside the study area
+    chk_cells2 <- chk_cells2[chk_cells2 %in% study_area_cells]
+    spp_cells2 <- spp_cells2[spp_cells2 %in% study_area_cells]
+    ### coerce to table
+    chk_tbl2 <- as.data.frame(table(chk_cells2))
+    spp_tbl2 <- as.data.frame(table(spp_cells2))
+    ### coerce factors to integers (safely)
+    chk_tbl2[[1]] <- as.integer(as.character(chk_tbl2[[1]]))
+    spp_tbl2[[1]] <- as.integer(as.character(spp_tbl2[[1]]))
+    ### identify cells with inadequate numbers of checklists
+    poorly_sampled2 <- chk_tbl2[[2]] < minimum_required_events
+    ### set poorly sampled cells as NA in detection_data[[l]]
+    detection_data[chk_tbl2[[1]][poorly_sampled2]] <- NA_real_
+    ### remove cells with inadequate numbers of checklists
+    chk_tbl2 <- chk_tbl2[!poorly_sampled2, , drop = FALSE]
+    spp_tbl2 <- spp_tbl2[spp_tbl2[[1]] %in% chk_tbl2[[1]], , drop = FALSE]
+    ### assign values
+    detection_data[spp_tbl2[[1]]] <- 1
+    detection_data[setdiff(chk_tbl2[[1]], spp_tbl2[[1]])] <- 0
+  } else {
+    ### extract cell indices for all records and records with the species
+    chk_cells2 <- raster::extract(grid_data[[1]],
+      as(record_subset_data[!duplicated(record_subset_data$event), "season"],
+         "Spatial"),
+      cellnumbers = TRUE)[, 1]
+    ### remove cell indices that are not inside the study area
+    chk_cells2 <- chk_cells2[chk_cells2 %in% study_area_cells]
+    ### coerce to table
+    chk_tbl2 <- as.data.frame(table(chk_cells2))
+    ### coerce factors to integers (safely)
+    chk_tbl2[[1]] <- as.integer(as.character(chk_tbl2[[1]]))
+    ### identify cells with inadequate numbers of checklists
+    poorly_sampled2 <- chk_tbl2[[2]] < minimum_required_events
+    ### set poorly sampled cells as NA in detection_data[[l]]
+    detection_data[chk_tbl2[[1]][poorly_sampled2]] <- NA_real_
+    ### remove cells with inadequate numbers of checklists
+    chk_tbl2 <- chk_tbl2[!poorly_sampled2, , drop = FALSE]
+    #### assign zeros to calls with checklists for other species
+    detection_data[chk_tbl2[[1]]] <- 0
+  }
   ## create group names
   group_names <- c("All year", "Summer", "Autumn", "Winter", "Spring",
                    "Detection")

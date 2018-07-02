@@ -43,6 +43,11 @@ species_graph <- function(x, species_data, record_data) {
                                          "Jun", "Jul", "Aug", "Sep", "Oct",
                                          "Nov", "Dec"))
   record_data$Year <- factor(record_data$year, levels = sort(years))
+  ## return null if insufficient records to make graphs
+  if (sum((record_data$year >= checklists_starting_year) &
+          (record_data$species_scientific_name == x) &
+           record_data$is_checklist) == 0)
+    return(NULL)
   # main processing
   ## vegetation
   d1 <- record_data %>%

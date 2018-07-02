@@ -60,14 +60,18 @@ species_table <- function(x, species_data, record_data, grid_data) {
     formatC(as.integer(sum(spp_data$year >= records_starting_year,
                            na.rm = TRUE)), big.mark = ","))
   ## atlas squares
-  spp_cells <- raster::extract(grid_data[[1]],
-                               spp_data %>%
-                               filter(year >= records_starting_year) %>%
-                               select(season) %>%
-                               as("Spatial"),
-                               cellnumbers = TRUE)[, 1]
-  spp_cells <- spp_cells[spp_cells %in% study_area_cells]
-  atlas_squares <- paste("_Atlas squares:_", length(unique(na.omit(spp_cells))))
+  if (sum(spp_data$year >= records_starting_year) > 0) {
+    spp_cells <- raster::extract(grid_data[[1]],
+                                 spp_data %>%
+                                 filter(year >= records_starting_year) %>%
+                                 select(season) %>%
+                                 as("Spatial"),
+                                 cellnumbers = TRUE)[, 1]
+    spp_cells <- spp_cells[spp_cells %in% study_area_cells]
+    atlas_squares <- paste("_Atlas squares:_", length(unique(na.omit(spp_cells))))
+  } else {
+    atlas_squares <- "_Atlas squares:_ 0"
+  }
   ## reporting rate
   record_data <- record_data[
     record_data$is_checklist &
