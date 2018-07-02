@@ -17,6 +17,7 @@ species_template_path <- "templates/species-template.txt"
 species_path <- dir("data/species", "^.*\\.xlsx", full.names = TRUE)[1]
 unzip(dir("data/study-area", "^.*\\.zip$", full.names = TRUE),
           exdir = tmp1)
+
 study_area_path <- dir(tmp1, "^.*\\.shp$", full.names = TRUE)[1]
 unzip(dir("data/vegetation", "^.*\\.zip$", full.names = TRUE),
           exdir = tmp2)
@@ -166,8 +167,10 @@ file_names <- gsub(".", "", file_names, fixed = TRUE)
 
 # Exports
 ## create tables
+message("starting tables...")
 result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {
+  message("  ", species_data$species_scientific_name[i])
   p <- species_table(species_data$species_scientific_name[i], species_data,
                      record_data, grid_data)
   saveRDS(p, paste0("assets/tables/", file_names[i], ".rds"),
@@ -176,8 +179,10 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
 })
 
 ## create interactive maps for each species
+message("starting widgets...")
 result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {
+  message("  ", species_data$species_scientific_name[i])
   p <- species_widget(species_data$species_scientific_name[i], species_data,
                       record_data, grid_data, study_area_data,
                       parameters$maps$minimum_required_checklists,
@@ -190,8 +195,10 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
 })
 
 ## create static maps for each species
+message("starting maps...")
 result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {
+  message("  ", species_data$species_scientific_name[i])
   p <- species_map(species_data$species_scientific_name[i], species_data,
                    record_data, grid_data, land_data, study_area_data,
                    parameters$maps$minimum_required_checklists,
@@ -207,8 +214,10 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
 })
 
 ## create graphs for each species
+message("starting graphs...")
 result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
                  function(i) {
+  message("  ", species_data$species_scientific_name[i])
   p <- species_graph(species_data$species_scientific_name[i], species_data,
                      record_data)
   if (!is.null(p)) {
