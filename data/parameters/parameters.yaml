@@ -5,6 +5,11 @@ grid_resolution: 2000                                  # resolution for atlas gr
 number_species: 13                                     # number of species to include in atlas
 
 maps:                                                  # parameters controlling appearance of the maps
+  colors:                                              # colors for making color ramps
+    - "#bae4b3"
+    - "#74c476"
+    - "#31a354"
+    - "#006d2c"
   minimum_required_checklists: 5                       # number of checklists required for a grid cell to be adequately sampled for reporting rates
   minimum_required_events: 10                          # number of sampling events required for a grid cell to be adequately sampled for range estimates
   size:                                                # map image dimensions
