@@ -310,6 +310,8 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
     p <- p +
          ggplot2::geom_tile(data = plot_data[plot_data$name != "Detection", ],
                             na.rm = FALSE,
+                            width = raster::res(grid_data)[1],
+                            height = raster::res(grid_data)[2],
                             ggplot2::aes(x = x, y = y, fill = value)) +
          ggplot2::scale_fill_gradientn(
            colors = palette(seq(1, 100)),
@@ -327,12 +329,18 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
     p <- p +
          ggplot2::geom_tile(
            data = plot_data[which(plot_data$name == "Detection" &
-                                  plot_data$value > 0.5), ], na.rm = FALSE,
+                                  plot_data$value > 0.5), ], 
+           na.rm = FALSE,
+           width = raster::res(grid_data)[1],
+           height = raster::res(grid_data)[2],
            ggplot2::aes(x = x, y = y), fill = "red")
     p <- p +
          ggplot2::geom_tile(
            data = plot_data[which(plot_data$name == "Detection" &
-                            is.na(plot_data$value)), ], na.rm = FALSE,
+                            is.na(plot_data$value)), ],
+           na.rm = FALSE,
+           width = raster::res(grid_data)[1],
+           height = raster::res(grid_data)[2],
            ggplot2::aes(x = x, y = y), fill = "grey70")
   }
   ## style maps
