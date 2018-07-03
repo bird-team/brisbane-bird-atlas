@@ -77,8 +77,7 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
   ## remove name column in study_area_data
   study_area_data$name <- NULL
   ## determine starting years for records and checklists
-  checklists_starting_year <- species_data$checklists_starting_year[
-                                    spp_index]
+  checklists_starting_year <- species_data$checklists_starting_year[spp_index]
   records_starting_year <- species_data$records_starting_year[spp_index]
   ## create check list data with all check lists
   chk_data <- record_data[record_data$is_checklist &
