@@ -179,6 +179,8 @@ species_widget <- function(x, species_data, record_data, grid_data,
       poorly_sampled <- chk_tbl[[2]] < minimum_required_checklists
       #### set poorly sampled cells as NA in rate_data[[l]]
       rate_data[[l]][chk_tbl[[1]][poorly_sampled]] <- NA_real_
+      #### remove cells with inadequate numbers of checklists
+      chk_tbl <- chk_tbl[!poorly_sampled, , drop = FALSE]
       #### assign zeros to calls with checklists for other species
       rate_data[[l]][chk_tbl[[1]]] <- 0
     }
