@@ -245,7 +245,8 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
   plot_data$name <- factor(plot_data$name, levels = group_names[map_numbers])
   plot_data <- plot_data[plot_data$value > 1e-100 | is.na(plot_data$value), ]
   ## create colors
-  palette <- color_numeric_palette("viridis", c(1, 100), na.color = "grey70")
+  palette_colors <- colorRampPalette(RColorBrewer::brewer.pal(9, "Greens"))(100)
+  palette <- color_numeric_palette(palette_colors, c(1, 100), na.color = "grey70")
   ## create data for legend
   if (6 %in% map_numbers) {
     legend_data <- data.frame(x = 0, y = 0,

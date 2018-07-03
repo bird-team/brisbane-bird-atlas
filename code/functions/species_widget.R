@@ -250,11 +250,12 @@ species_widget <- function(x, species_data, record_data, grid_data,
                           zoom = inital_view[[3]])
   }
   ## create palettes
+  palette_colors <- colorRampPalette(RColorBrewer::brewer.pal(9, "Greens"))(100)
   br <- pretty(na.omit(c(raster::values(rate_data))))
-  palette <- color_numeric_palette("viridis", domain = range(br),
+  palette <- color_numeric_palette(palette_colors, domain = range(br),
                                    na.color = "#b3b3b3",
                                    zero.color = "transparent")
-  palette_rev <- color_numeric_palette("viridis", domain = range(br),
+  palette_rev <- color_numeric_palette(palette_colors, domain = range(br),
                                        na.color = "#b3b3b3",
                                        reverse = TRUE)
   bin_palette <- function(x) {
