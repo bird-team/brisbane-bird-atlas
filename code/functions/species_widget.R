@@ -117,6 +117,8 @@ species_widget <- function(x, species_data, record_data, grid_data,
                                  as(chk_data[, "season"], "Spatial"),
                                  cellnumbers = TRUE)[, 1]
     ### remove cell indices that are not inside the study area
+    spp_season <- spp_data$season[spp_cells %in% study_area_cells]
+    chk_season <- chk_data$season[chk_cells %in% study_area_cells]
     spp_cells <- spp_cells[spp_cells %in% study_area_cells]
     chk_cells <- chk_cells[chk_cells %in% study_area_cells]
     ### calculate reporting rates for annual + seasonal maps
@@ -126,8 +128,8 @@ species_widget <- function(x, species_data, record_data, grid_data,
         spp_tbl <- as.data.frame(table(spp_cells))
         chk_tbl <- as.data.frame(table(chk_cells))
       } else {
-        spp_tbl <- as.data.frame(table(spp_cells[spp_data$season == l]))
-        chk_tbl <- as.data.frame(table(chk_cells[chk_data$season == l]))
+        spp_tbl <- as.data.frame(table(spp_cells[spp_season == l]))
+        chk_tbl <- as.data.frame(table(chk_cells[chk_season == l]))
       }
       #### coerce factors to integers (safely)
       chk_tbl[[1]] <- as.integer(as.character(chk_tbl[[1]]))
@@ -162,11 +164,14 @@ species_widget <- function(x, species_data, record_data, grid_data,
       chk_cells <- raster::extract(grid_data[[1]],
                                    as(chk_data[, "season"], "Spatial"),
                                    cellnumbers = TRUE)[, 1]
+      ### remove cell indices that are not inside the study area
+      chk_season <- chk_data$season[chk_cells %in% study_area_cells]
+      chk_cells <- chk_cells[chk_cells %in% study_area_cells]
       #### extract grid cells
       if (l == "all_year") {
         chk_tbl <- as.data.frame(table(chk_cells))
       } else {
-        chk_tbl <- as.data.frame(table(chk_cells[chk_data$season == l]))
+        chk_tbl <- as.data.frame(table(chk_cells[chk_season == l]))
       }
       #### coerce factors to integers (safely)
       chk_tbl[[1]] <- as.integer(as.character(chk_tbl[[1]]))
