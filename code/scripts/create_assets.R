@@ -111,7 +111,7 @@ if (any((species_record_count == 0) &
         !is.na(species_data$graphs))) {
   stop(paste("The following species do not have a single record after the",
              "specified starting year but require maps and/or graphs:",
-             paste(species_data$species_scientific_name[species_valid == 0],
+             paste(species_data$species_scientific_name[species_record_count == 0],
                    collapse = ",")))
 }
 
@@ -185,10 +185,25 @@ file_names <- gsub(" ", "-", file_names, fixed = TRUE)
 file_names <- gsub(".", "", file_names, fixed = TRUE)
 
 # Exports
+## spawn cluster workers
+is_parallel <- isTRUE(parameters$threads > 1)
+if (is_parallel) {
+  cl <- parallel::makeCluster(parameters$threads, type = "PSOCK")
+  parallel::clusterEvalQ(cl, {library(raster); library(dplyr); library(sf);
+                              library(patchwork)})
+  parallel::clusterExport(cl, envir = environment(),
+                           c("species_data", "record_data", "grid_data",
+                             "study_area_data", "land_data", "parameters",
+                             "species_graph", "species_map", "species_table",
+                             "species_widget", "color_numeric_palette", "ymax",
+                             "breaks", "addLegend_custom", "file_names"))
+  doParallel::registerDoParallel(cl)
+}
+
 ## create tables
 message("starting tables...")
-result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
-                 function(i) {
+result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
+                      function(i) {
   message("  ", species_data$species_scientific_name[i])
   p <- species_table(species_data$species_scientific_name[i], species_data,
                      record_data, grid_data)
@@ -199,8 +214,8 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
 
 ## create interactive maps for each species
 message("starting widgets...")
-result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
-                 function(i) {
+result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
+                      function(i) {
   message("  ", species_data$species_scientific_name[i])
   p <- species_widget(species_data$species_scientific_name[i], species_data,
                       record_data, grid_data, study_area_data,
@@ -216,8 +231,8 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
 
 ## create static maps for each species
 message("starting maps...")
-result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
-                 function(i) {
+result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
+                      function(i) {
   message("  ", species_data$species_scientific_name[i])
   p <- species_map(species_data$species_scientific_name[i], species_data,
                    record_data, grid_data, land_data, study_area_data,
@@ -236,8 +251,8 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
 
 ## create graphs for each species
 message("starting graphs...")
-result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
-                 function(i) {
+result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
+                      function(i) {
   message("  ", species_data$species_scientific_name[i])
   p <- species_graph(species_data$species_scientific_name[i], species_data,
                      record_data)
@@ -250,3 +265,9 @@ result <- vapply(seq_len(nrow(species_data)), FUN.VALUE = logical(1),
   }
   TRUE
 })
+
+## cleanup
+if (is_parallel) {
+  doParallel::stopImplicitCluster()
+  cl <- parallel::stopCluster(cl)
+}
