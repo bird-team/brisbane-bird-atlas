@@ -65,6 +65,11 @@ species_widget <- function(x, species_data, record_data, grid_data,
     grid_data <- raster::trim(grid_data, values = 0)
   }
   study_area_cells <- raster::Which(is.na(grid_data), cells = TRUE)
+  grid_overlay_data <- raster::Which(is.na(grid_data))
+  grid_overlay_data[grid_overlay_data == 0] <- NA
+  grid_overlay_data <- raster::rasterToPolygons(grid_overlay_data,
+                                                dissolve = FALSE)
+  grid_overlay_data <- as(grid_overlay_data, "sf")
   ## set up study area data
   if (spp_type == "land") {
     study_area_data <- study_area_data %>%
@@ -288,10 +293,16 @@ species_widget <- function(x, species_data, record_data, grid_data,
                             data = as(sf::st_transform(study_area_data, 4326),
                                       "Spatial"),
                             group = "Brisbane extent")
+  l  <- leaflet::addPolygons(l, color = "black", fillColor = "transparent",
+                            weight = 2.5, smoothFactor = 0.5,
+                            data = as(sf::st_transform(grid_overlay_data, 4326),
+                                      "Spatial"),
+                            group = "Grid")
+  l <- leaflet::hideGroup(l, "Grid")
   ## add layer control
   l <- leaflet::addLayersControl(l,
     baseGroups = gsub(".", " ", names(complete_data), fixed = TRUE),
-    overlayGroups = "Brisbane extent",
+    overlayGroups = c("Brisbane extent", "Grid"),
     options = leaflet::layersControlOptions(collapsed = FALSE))
   ## add legend
   if (6 %in% map_numbers) {
