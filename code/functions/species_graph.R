@@ -75,7 +75,7 @@ species_graph <- function(x, species_data, record_data) {
                                                           vjust = 0.7))
   ## elevation by month
   d2 <- record_data %>%
-        dplyr::filter(is_checklist, year >= checklists_starting_year) %>%
+        dplyr::filter(year >= records_starting_year) %>%
         dplyr::filter(species_scientific_name == x)
   p2 <- d2 %>%
         ggplot2::ggplot(mapping = ggplot2::aes(x = Month, y = elevation)) +
@@ -189,8 +189,6 @@ species_graph <- function(x, species_data, record_data) {
           panel.spacing.y = ggplot2::unit(0, "pt"),
           axis.text.x = ggplot2::element_text(angle = 45, hjust = 1,
                                               vjust = 0.8))
-
-
   ## assemble plot
   p <- list(p1, p2, p3, p4, p5, p6)[graph_numbers]
   if (length(p) == 1) {
