@@ -217,18 +217,17 @@ species_widget <- function(x, species_data, record_data, grid_data,
     ### coerce factors to integers (safely)
     chk_tbl2[[1]] <- as.integer(as.character(chk_tbl2[[1]]))
     spp_tbl2[[1]] <- as.integer(as.character(spp_tbl2[[1]]))
-    ### identify cells with inadequate numbers of checklists
+    ### identify cells with inadequate numbers of events
     poorly_sampled2 <- chk_tbl2[[2]] < minimum_required_events
     ### set poorly sampled cells as NA in detection_data[[l]]
     detection_data[chk_tbl2[[1]][poorly_sampled2]] <- NA_real_
-    ### remove cells with inadequate numbers of checklists
+    ### remove cells with inadequate numbers of events
     chk_tbl2 <- chk_tbl2[!poorly_sampled2, , drop = FALSE]
-    spp_tbl2 <- spp_tbl2[spp_tbl2[[1]] %in% chk_tbl2[[1]], , drop = FALSE]
     ### assign values
     detection_data[spp_tbl2[[1]]] <- 1
     detection_data[setdiff(chk_tbl2[[1]], spp_tbl2[[1]])] <- 0
   } else {
-    ### extract cell indices for all records and records with the species
+    ### extract cell indices for all events and events with the species
     chk_cells2 <- raster::extract(grid_data[[1]],
       as(record_subset_data[!duplicated(record_subset_data$event), "season"],
          "Spatial"),
@@ -239,13 +238,13 @@ species_widget <- function(x, species_data, record_data, grid_data,
     chk_tbl2 <- as.data.frame(table(chk_cells2))
     ### coerce factors to integers (safely)
     chk_tbl2[[1]] <- as.integer(as.character(chk_tbl2[[1]]))
-    ### identify cells with inadequate numbers of checklists
+    ### identify cells with inadequate numbers of events
     poorly_sampled2 <- chk_tbl2[[2]] < minimum_required_events
     ### set poorly sampled cells as NA in detection_data[[l]]
     detection_data[chk_tbl2[[1]][poorly_sampled2]] <- NA_real_
-    ### remove cells with inadequate numbers of checklists
+    ### remove cells with inadequate numbers of events
     chk_tbl2 <- chk_tbl2[!poorly_sampled2, , drop = FALSE]
-    #### assign zeros to calls with checklists for other species
+    #### assign zeros to calls with events for other species
     detection_data[chk_tbl2[[1]]] <- 0
   }
   ## create group names

@@ -202,13 +202,12 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
     ### coerce factors to integers (safely)
     chk_tbl2[[1]] <- as.integer(as.character(chk_tbl2[[1]]))
     spp_tbl2[[1]] <- as.integer(as.character(spp_tbl2[[1]]))
-    ### identify cells with inadequate numbers of checklists
+    ### identify cells with inadequate numbers of events
     poorly_sampled2 <- chk_tbl2[[2]] < minimum_required_events
     ### set poorly sampled cells as NA in detection_data[[l]]
     detection_data[chk_tbl2[[1]][poorly_sampled2]] <- NA_real_
-    ### remove cells with inadequate numbers of checklists
+    ### remove cells with inadequate numbers of events
     chk_tbl2 <- chk_tbl2[!poorly_sampled2, , drop = FALSE]
-    spp_tbl2 <- spp_tbl2[spp_tbl2[[1]] %in% chk_tbl2[[1]], , drop = FALSE]
     ### assign values
     detection_data[spp_tbl2[[1]]] <- 1
     detection_data[setdiff(chk_tbl2[[1]], spp_tbl2[[1]])] <- 0
@@ -224,13 +223,13 @@ species_map <- function(x, species_data, record_data, grid_data, land_data,
     chk_tbl2 <- as.data.frame(table(chk_cells2))
     ### coerce factors to integers (safely)
     chk_tbl2[[1]] <- as.integer(as.character(chk_tbl2[[1]]))
-    ### identify cells with inadequate numbers of checklists
+    ### identify cells with inadequate numbers of events
     poorly_sampled2 <- chk_tbl2[[2]] < minimum_required_events
     ### set poorly sampled cells as NA in detection_data[[l]]
     detection_data[chk_tbl2[[1]][poorly_sampled2]] <- NA_real_
-    ### remove cells with inadequate numbers of checklists
+    ### remove cells with inadequate numbers of events
     chk_tbl2 <- chk_tbl2[!poorly_sampled2, , drop = FALSE]
-    #### assign zeros to calls with checklists for other species
+    #### assign zeros
     detection_data[chk_tbl2[[1]]] <- 0
   }
   ## create group names
