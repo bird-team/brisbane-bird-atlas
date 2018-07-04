@@ -96,6 +96,25 @@ record_data <- do.call(format_ebird_records,
                                    study_area = study_area_data),
                               parameters$records))
 
+## verify that species have sufficient data
+species_record_count <- sapply(seq_len(nrow(species_data)), function(i) {
+  ### initialization
+  records_starting_year <- species_data$records_starting_year[i]
+  ### count number of records
+  sum((record_data$species_scientific_name ==
+       species_data$species_scientific_name[i]) &
+      (record_data$is_fully_sampled_year) &
+      (record_data$year >= records_starting_year))
+})
+if (any((species_record_count == 0) &
+        !is.na(species_data$maps) &
+        !is.na(species_data$graphs))) {
+  stop(paste("The following species do not have a single record after the",
+             "specified starting year but require maps and/or graphs:",
+             paste(species_data$species_scientific_name[species_valid == 0],
+                   collapse = ",")))
+}
+
 ## subset data if required
 if (!identical(parameters$number_species, "all"))
   species_data <- species_data[seq_len(parameters$number_species), ,
