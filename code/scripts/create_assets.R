@@ -97,6 +97,7 @@ record_data <- do.call(format_ebird_records,
                               parameters$records))
 
 ## verify that species have sufficient data
+### verify that species have at least a minimum number of records
 species_record_count <- sapply(seq_len(nrow(species_data)), function(i) {
   ### initialization
   records_starting_year <- species_data$records_starting_year[i]
@@ -106,13 +107,33 @@ species_record_count <- sapply(seq_len(nrow(species_data)), function(i) {
       (record_data$is_fully_sampled_year) &
       (record_data$year >= records_starting_year))
 })
-if (any((species_record_count == 0) &
-        !is.na(species_data$maps) &
-        !is.na(species_data$graphs))) {
+species_invalid_settings <- (species_record_count == 0) &
+                            !is.na(species_data$maps) &
+                            !is.na(species_data$graphs)
+if (any(species_invalid_settings)) {
   stop(paste("The following species do not have a single record after the",
              "specified starting year but require maps and/or graphs:",
-             paste(species_data$species_scientific_name[species_record_count == 0],
-                   collapse = ",")))
+             paste(species_data$species_scientific_name[species_invalid_settings],
+                   collapse = ", ")))
+}
+
+### verify that species have at least one record with abundance data
+species_abundance_count <- sapply(seq_len(nrow(species_data)), function(i) {
+  ### initialization
+  records_starting_year <- species_data$records_starting_year[i]
+  ### count number of records
+  sum((record_data$species_scientific_name ==
+       species_data$species_scientific_name[i]) &
+      (record_data$year >= records_starting_year) &
+       !is.na(record_data$count))
+})
+species_invalid_settings <- (species_abundance_count == 0) &
+                             grepl("4", species_data$graphs)
+if (any(species_invalid_settings)) {
+  stop(paste("The following species do not have a single record with abundance",
+             "data after the specified starting year but require graphs:",
+             paste(species_data$species_scientific_name[species_invalid_settings],
+                   collapse = ", ")))
 }
 
 ## subset data if required
@@ -200,6 +221,23 @@ if (is_parallel) {
   doParallel::registerDoParallel(cl)
 }
 
+## create graphs for each species
+message("starting graphs...")
+result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
+                      function(i) {
+  message("  ", species_data$species_scientific_name[i])
+  p <- species_graph(species_data$species_scientific_name[i], species_data,
+                     record_data)
+  if (!is.null(p)) {
+    n <- as.character(stringr::str_count(species_data$graphs[i], "_") + 1)
+    ggplot2::ggsave(paste0("assets/graphs/", file_names[i], ".png"), p,
+                    width = parameters$graphs$size[[n]]$width,
+                    height = parameters$graphs$size[[n]]$height,
+                    units = "in")
+  }
+  TRUE
+})
+
 ## create tables
 message("starting tables...")
 result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
@@ -244,23 +282,6 @@ result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
     ggplot2::ggsave(paste0("assets/maps/", file_names[i], ".png"), p,
                     width = parameters$maps$size[[n]]$width,
                     height = parameters$maps$size[[n]]$height,
-                    units = "in")
-  }
-  TRUE
-})
-
-## create graphs for each species
-message("starting graphs...")
-result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
-                      function(i) {
-  message("  ", species_data$species_scientific_name[i])
-  p <- species_graph(species_data$species_scientific_name[i], species_data,
-                     record_data)
-  if (!is.null(p)) {
-    n <- as.character(stringr::str_count(species_data$graphs[i], "_") + 1)
-    ggplot2::ggsave(paste0("assets/graphs/", file_names[i], ".png"), p,
-                    width = parameters$graphs$size[[n]]$width,
-                    height = parameters$graphs$size[[n]]$height,
                     units = "in")
   }
   TRUE
