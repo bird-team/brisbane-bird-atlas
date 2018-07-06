@@ -136,6 +136,27 @@ if (any(species_invalid_settings)) {
                    collapse = ", ")))
 }
 
+### verify that species have at least one checklist for making a graph
+species_checklists_count <- sapply(seq_len(nrow(species_data)), function(i) {
+  ### initialization
+  checklists_starting_year <- 1700
+  ### count number of records
+  sum((record_data$species_scientific_name ==
+       species_data$species_scientific_name[i]) &
+      (record_data$year >= checklists_starting_year) &
+      (record_data$is_checklist))
+})
+species_invalid_settings <- (species_checklists_count == 0) &
+                            (grepl("1", species_data$graphs) |
+                             grepl("3", species_data$graphs) |
+                             grepl("6", species_data$graphs))
+if (any(species_invalid_settings)) {
+  stop(paste("The following species do not have a single complete checklist",
+             "after the specified starting year but require graphs:",
+             paste(species_data$species_scientific_name[species_invalid_settings],
+                   collapse = ", ")))
+}
+
 ## subset data if required
 if (!identical(parameters$number_species, "all"))
   species_data <- species_data[seq_len(parameters$number_species), ,
