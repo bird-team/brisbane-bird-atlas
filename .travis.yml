@@ -16,7 +16,7 @@ before_script:
 
 script:
   - make backup
-  - travis_wait make deploy
+  - travis_wait 120 make deploy
 
 notifications:
   email:
