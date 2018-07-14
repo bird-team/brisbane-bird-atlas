@@ -6,7 +6,7 @@ species_name <- "Anseranas semipalmata"
 species_title(species_name, species_data)
 ```
 
-Category A; Uncommon breeding resident.
+Category A; Locally common breeding resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Widespread but patchy breeding resident and perhaps partial immigrant in freshwater swamps across the city. More records in the summer months, but not known if regular migratory movement occurs. Occurrence fluctuates from year to year, and there is a possible increase in occurrence since 2005. Not of conservation concern, but dependent on wetlands, which are a declining habitat type. Photo by Richard Fuller, Dowse Lagoon, 2 Jan 2018.")
@@ -72,7 +72,7 @@ There are 21 reports of Magpie Goose breeding activity, spanning Jan-Apr, althou
 
 **Trends**
 
-Reporting rate for Magpie Goose has remained relatively stable between 2005 and 2017, perhaps increasingly slightly over the period. Notably, there was a clear drop in reporting rate in 2010 and 2011, both very wet years in Australia’s interior, suggesting some connectivity between Brisbane and inland breeding colonies. The species is not of any significant conservation concern in the sense that Brisbane’s population is rather peripheral to the main distribution of the species in Australia, and appears to be fairly stable over time.
+Reporting rate for Magpie Goose has remained relatively stable between 2005 and 2017, perhaps increasingly slightly over the period. Notably, there was a clear drop in reporting rate in 2010 and 2011, both very wet years in Australia’s interior, suggesting some connectivity between Brisbane and inland breeding colonies. The species is not of any significant conservation concern nationally, although it has declined in many places, and south-eastern Australian populations are especially vulnerable, with the species having been re-introduced into Victoria and South Australia (Traill 2009), and the species is listed as Vulnerable in New South Wales (http://www.environment.nsw.gov.au/threatenedspeciesapp/profile.aspx?id=10056). As such, the Brisbane population represents an interesting example of the species thriving outside the tropics.
 
 **Information Gaps**
 
