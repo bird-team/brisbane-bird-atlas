@@ -76,15 +76,15 @@ Reporting rate for Magpie Goose has remained relatively stable between 2005 and 
 
 **Information Gaps**
 
-•	Collect more breeding data expanding on the 21 records currently, so that the full breeding schedule in Brisbane can be assessed
-•	Conduct frequent comprehensive counts at the main sites for the species to understand patterns of fluctuations in numbers
-•	Understand whether individuals are moving around Brisbane
-•	Understand whether Brisbane birds move inland to breed in wet years
+•	Collect more breeding data expanding on the 21 records currently, so that the full breeding schedule in Brisbane can be assessed  
+•	Conduct frequent comprehensive counts at the main sites for the species to understand patterns of fluctuations in numbers  
+•	Understand whether individuals are moving around Brisbane  
+•	Understand whether Brisbane birds move inland to breed in wet years  
 
 **Key Conservation Needs**
 
-•	Protect wetlands from being drained
-•	Protect wetlands from loss of fringing vegetation
+•	Protect wetlands from being drained  
+•	Protect wetlands from loss of fringing vegetation  
 
 ```{r}
 end_two_column_layout()
