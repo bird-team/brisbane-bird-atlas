@@ -14,7 +14,13 @@ render_species_table <- function(x) {
   path <- paste0("assets/tables/", x, ".rds")
   if (!file.exists(path)) stop(paste(path, "does not exist"))
   x <- readRDS(path)
-  if (!isTRUE(knitr:::is_html_output())) {
+  if (isTRUE(knitr:::is_html_output())) {
+    # manually replace underscores with html em tags
+    for (i in seq_len(ncol(x))) {
+      x[[i]] <- gsub("^_", "<em>", x[[i]])
+      x[[i]] <- gsub(":_", "</em>", x[[i]], fixed = TRUE)
+    }
+  } else{
     # manually convert syntax to latex
     for (i in seq_len(ncol(x))) {
       x[[i]] <- gsub("^_", "\\\\textit{", x[[i]])
