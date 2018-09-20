@@ -107,11 +107,11 @@ push_assets:
 	&& docker exec bba sh -c "cd assets; zip -r widgets.zip widgets" \
 	&& docker exec bba sh -c "cd assets; zip -r graphs.zip graphs" \
 	&& docker exec bba sh -c "cd assets; zip -r tables.zip tables" \
-  && docker exec bba sh -c "Rscript /tmp/code/scripts/push_assets.R" \
-  && docker exec bba sh -c "rm assets/maps.zip" \
-  && docker exec bba sh -c "rm assets/widgets.zip" \
-  && docker exec bba sh -c "rm assets/graphs.zip" \
-  && docker exec bba sh -c "rm assets/tables.zip" || true
+	&& docker exec bba sh -c "Rscript /tmp/code/scripts/push_assets.R" \
+	&& docker exec bba sh -c "rm assets/maps.zip" \
+	&& docker exec bba sh -c "rm assets/widgets.zip" \
+	&& docker exec bba sh -c "rm assets/graphs.zip" \
+	&& docker exec bba sh -c "rm assets/tables.zip" || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 ## build book
