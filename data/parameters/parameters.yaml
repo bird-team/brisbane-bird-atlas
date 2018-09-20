@@ -3,7 +3,7 @@ title: atlas parameters
 crs: 3857                                              # coordinate reference system for mapping
 grid_resolution: 2000                                  # resolution for atlas grid cells in meters
 number_species: "all"                                  # number of species to include in atlas
-threads: 15                                            # number of threads to use when creating assets
+threads: 1                                            # number of threads to use when creating assets
 
 maps:                                                  # parameters controlling appearance of the maps
   colors:                                              # colors for making color ramps
