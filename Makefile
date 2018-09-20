@@ -1,6 +1,6 @@
 # Main instructions
 ## build and deploy book
-all: build deploy
+all: deploy
 
 # Define variables
 ifdef ComSpec
@@ -54,6 +54,7 @@ init:
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 ## build assets
+# rebuild assets locally
 assets:
 	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
 	&& docker cp . bba:/tmp/ \
@@ -75,6 +76,42 @@ assets:
 	&& rm widgets.zip \
 	&& rm graphs.zip \
 	&& rm tables.zip || true
+	@docker stop -t 1 bba || true && docker rm bba || true
+
+# pull assets from online storage
+pull_assets:
+	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
+	&& docker cp . bba:/tmp/ \
+	&& docker exec bba sh -c "Rscript code/scripts/pull_assets.R" \
+	&& docker cp bba:/tmp/assets/maps.zip assets \
+	&& docker cp bba:/tmp/assets/widgets.zip assets \
+	&& docker cp bba:/tmp/assets/graphs.zip assets \
+	&& docker cp bba:/tmp/assets/tables.zip assets \
+	&& cd assets \
+	&& unzip -o maps.zip \
+	&& unzip -o widgets.zip \
+	&& unzip -o graphs.zip \
+	&& unzip -o tables.zip \
+	&& rm maps.zip \
+	&& rm widgets.zip \
+	&& rm graphs.zip \
+	&& rm tables.zip || true
+	@docker stop -t 1 bba || true && docker rm bba || true
+
+# push assets to online storage
+push_assets:
+	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
+	&& docker cp . bba:/tmp/ \
+	&& docker cp "$(HOME)/.Renviron" bba:/root/.Renviron \
+	&& docker exec bba sh -c "cd assets; zip -r maps.zip maps" \
+	&& docker exec bba sh -c "cd assets; zip -r widgets.zip widgets" \
+	&& docker exec bba sh -c "cd assets; zip -r graphs.zip graphs" \
+	&& docker exec bba sh -c "cd assets; zip -r tables.zip tables" \
+  && docker exec bba sh -c "Rscript code/scripts/push_assets.R" \
+  && docker exec bba sh -c "rm assets/maps.zip" \
+  && docker exec bba sh -c "rm assets/widgets.zip" \
+  && docker exec bba sh -c "rm assets/graphs.zip" \
+  && docker exec bba sh -c "rm assets/tables.zip" || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 ## build book
@@ -101,7 +138,7 @@ backup:
 	@git remote remove backup
 
 ## deploy book
-deploy: book
+deploy: pull_assets book
 	@set -e
 	@if [ -z "${GITHUB_PAT}" ]; then exit 0; fi;
 	@if [ "${TRAVIS_BRANCH}" != "master" ]; then exit 0; fi;
