@@ -152,8 +152,12 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
   # transform to specified crs
   x <- sf::st_transform(x, sf::st_crs(study_area_data))
 
-  # remove records not inside study area
-  x <- x[as.matrix(sf::st_intersects(x, study_area_data))[, 1], ]
+  # create subset with unique localities
+  l <- x[!duplicated(x$locality), "locality"]
+  l <- l[as.matrix(sf::st_intersects(l, study_area_data))[, 1], ]
+
+  # remove records not inside study area using localities
+  x <- x[x$locality %in% l$locality, ]
 
   # return result
   x
