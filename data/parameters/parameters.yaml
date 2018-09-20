@@ -67,6 +67,7 @@ species:                                               # parameters for species 
   checklist_year_column_name: checklists_starting_year # column name indicating the earliest year for checklists
   record_year_column_name: records_starting_year       # column name indicating the earliest year for records
   distribution_column_name: distribution               # column name describing if the species' distribution covers "land", "marine", or "both" habitats
+  profile_url_column_name: profile_url                 # column name contianing the web link (URL) for the species' profile picture
 
 records:                                               # parameters for eBird record data
   scientific_column_name: SCIENTIFIC NAME              # column name for species' scientific name

@@ -8,21 +8,22 @@
 #'
 #' @return \code{character}.
 render_species_profile <- function(x, caption) {
+  # find url
+  path <- species_data$profile_url[species_data$species_scientific_name == x]
   # parse species name to file name
   x <- gsub("(", "", x, fixed = TRUE)
   x <- gsub(")", "", x, fixed = TRUE)
   x <- gsub("/", "", x, fixed = TRUE)
   x <- gsub(" ", "-", x, fixed = TRUE)
   x <- gsub(".", "", x, fixed = TRUE)
-  # find url
-  path <- species_data$url[species_data$species_scientific_name == x]
   # if URL is NA, then set path as default missing image
   if (is.na(path))
     path <- "assets/misc/missing-profile.png"
   # create code to render image
   if (!isTRUE(knitr:::is_html_output())) {
     # download the file since latex can't read images from online sources
-    if (startsWith(path, "www.") || startsWith(path, "http://")) {
+    if (startsWith(path, "www.") || startsWith(path, "http://") ||
+        startsWith(path, "https://") || startsWith(path, "ftp://")) {
       new_path <- paste0("assets/profile/", x, ".", tools::file_ext(path))
       download.file(path, new_path, quiet = TRUE)
       path <- new_path
