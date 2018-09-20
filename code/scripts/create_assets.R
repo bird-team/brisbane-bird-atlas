@@ -142,8 +142,7 @@ if (any(species_invalid_settings)) {
 ### verify that species have at least one checklist for making a graph
 species_checklists_count <- sapply(seq_len(nrow(species_data)), function(i) {
   ### initialization
-  checklists_starting_year <- 1700
-  ### count number of records
+  checklists_starting_year <- species_data$checklists_starting_year[i]
   sum((record_data$species_scientific_name ==
        species_data$species_scientific_name[i]) &
       (record_data$year >= checklists_starting_year) &
