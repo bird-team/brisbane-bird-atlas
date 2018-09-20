@@ -53,13 +53,13 @@ source("code/functions/addLegend_custom.R")
 parameters <- yaml::read_yaml("data/parameters/parameters.yaml")
 
 ## load data
-study_area_data <- sf::st_transform(sf::st_read(study_area_path),
+study_area_data <- sf::st_transform(sf::read_sf(study_area_path),
                                     parameters$crs)
-land_data <- sf::st_transform(sf::st_read(land_path), parameters$crs)
+land_data <- sf::st_transform(sf::read_sf(land_path), parameters$crs)
 record_data <- data.table::fread(record_path, data.table = FALSE)
 species_data <- readxl::read_excel(species_path, sheet = 1)
 elevation_data <- raster::raster(elevation_path)
-vegetation_data <- sf::st_transform(sf::st_read(vegetation_path),
+vegetation_data <- sf::st_transform(sf::read_sf(vegetation_path),
                                     parameters$crs)
 
 ## format study area
@@ -67,7 +67,8 @@ study_area_data <- study_area_data %>%
                    lwgeom::st_make_valid() %>%
                    lwgeom::st_snap_to_grid(1) %>%
                    sf::st_simplify(100) %>%
-                   sf::st_collection_extract(type = "POLYGON") %>%
+                   {suppressWarnings(
+                     sf::st_collection_extract(., type = "POLYGON"))} %>%
                    lwgeom::st_make_valid()
 
 ## format land data
@@ -78,10 +79,12 @@ land_data <- land_data %>%
              lwgeom::st_make_valid() %>%
              lwgeom::st_snap_to_grid(1) %>%
              sf::st_simplify(100) %>%
-             sf::st_collection_extract(type = "POLYGON") %>%
+             {suppressWarnings(sf::st_collection_extract(.,
+                                                         type = "POLYGON"))} %>%
              lwgeom::st_make_valid() %>%
-             sf::st_intersection(bbox_data) %>%
-             sf::st_collection_extract(type = "POLYGON") %>%
+             {suppressWarnings(sf::st_intersection(., bbox_data))} %>%
+             {suppressWarnings(sf::st_collection_extract(.,
+                                                         type = "POLYGON"))} %>%
              lwgeom::st_make_valid() %>%
              sf::st_union()
 land_data <- sf::st_sf(name = "Land", geometry = land_data)
@@ -113,7 +116,7 @@ species_invalid_settings <- (species_record_count == 0) &
 if (any(species_invalid_settings)) {
   stop(paste("The following species do not have a single record after the",
              "specified starting year but require maps and/or graphs:",
-             paste(species_data$species_scientific_name[species_invalid_settings],
+       paste(species_data$species_scientific_name[species_invalid_settings],
                    collapse = ", ")))
 }
 
@@ -132,7 +135,7 @@ species_invalid_settings <- (species_abundance_count == 0) &
 if (any(species_invalid_settings)) {
   stop(paste("The following species do not have a single record with abundance",
              "data after the specified starting year but require graphs:",
-             paste(species_data$species_scientific_name[species_invalid_settings],
+       paste(species_data$species_scientific_name[species_invalid_settings],
                    collapse = ", ")))
 }
 
@@ -153,7 +156,7 @@ species_invalid_settings <- (species_checklists_count == 0) &
 if (any(species_invalid_settings)) {
   stop(paste("The following species do not have a single complete checklist",
              "after the specified starting year but require graphs:",
-             paste(species_data$species_scientific_name[species_invalid_settings],
+       paste(species_data$species_scientific_name[species_invalid_settings],
                    collapse = ", ")))
 }
 
@@ -226,6 +229,44 @@ file_names <- gsub("/", "", file_names, fixed = TRUE)
 file_names <- gsub(" ", "-", file_names, fixed = TRUE)
 file_names <- gsub(".", "", file_names, fixed = TRUE)
 
+# Set up variables for caching
+## graphs hashes
+tmp_hash <- digest::digest(list(record_data, parameters$graphs))
+tmp_df <- dplyr::select(species_data, graphs, checklists_starting_year,
+                        records_starting_year, distribution)
+species_data$graphs_hash <- plyr::laply(
+  seq_len(nrow(species_data)), function(i) {
+   digest::digest(list(tmp_df[i, ], tmp_hash))
+})
+
+## tables hashes
+tmp_hash <- digest::digest(record_data)
+tmp_df <- dplyr::select(species_data, graphs, checklists_starting_year,
+                        records_starting_year, distribution, iucn_threat_status,
+                        national_threat_status, qld_threat_status)
+species_data$table_hash <- plyr::laply(
+  seq_len(nrow(species_data)), function(i) {
+    digest::digest(list(tmp_df[i, ], tmp_hash))
+})
+
+## maps hashes
+tmp_hash <- digest::digest(list(record_data, parameters$maps))
+tmp_df <- dplyr::select(species_data, maps, checklists_starting_year,
+                        records_starting_year, distribution)
+species_data$maps_hash <- plyr::laply(
+  seq_len(nrow(species_data)), function(i) {
+    digest::digest(list(tmp_df[i, ], tmp_hash))
+})
+
+## widget hashes
+tmp_hash <- digest::digest(list(record_data, parameters$maps))
+tmp_df <- dplyr::select(species_data, maps, checklists_starting_year,
+                        records_starting_year, distribution)
+species_data$widget_hash <- plyr::laply(
+  seq_len(nrow(species_data)), function(i) {
+    digest::digest(list(tmp_df[i, ], tmp_hash))
+})
+
 # Exports
 ## spawn cluster workers
 is_parallel <- isTRUE(parameters$threads > 1)
@@ -246,9 +287,26 @@ if (is_parallel) {
 message("starting graphs...")
 result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
                       function(i) {
+  # display progress
   message("  ", species_data$species_scientific_name[i])
+  # create file names
+  asset_path <- paste0("assets/graphs/", file_names[i], ".png")
+  hash_path <- paste0("assets/graphs/", file_names[i], ".hash")
+  # check if processing needed if hash file already exists
+  if (file.exists(hash_path)) {
+    # load hash
+    curr_hash <- readLines(hash_path)
+    # check if hash is the same the hash for this species
+    if (identical(species_data$graphs_hash[i], curr_hash)) {
+      # if the hash is the same then skip this species
+      message("    reusing cache")
+      return(TRUE)
+    }
+  }
+  # create species graphs
   p <- species_graph(species_data$species_scientific_name[i], species_data,
                      record_data)
+  # save graphs
   if (!is.null(p)) {
     n <- as.character(stringr::str_count(species_data$graphs[i], "_") + 1)
     ggplot2::ggsave(paste0("assets/graphs/", file_names[i], ".png"), p,
@@ -256,6 +314,9 @@ result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
                     height = parameters$graphs$size[[n]]$height,
                     units = "in")
   }
+  # save hash
+  writeLines(species_data$graphs_hash[i], hash_path)
+  # return logical indicating success
   TRUE
 })
 
@@ -263,11 +324,30 @@ result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
 message("starting tables...")
 result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
                       function(i) {
+  # display progress
   message("  ", species_data$species_scientific_name[i])
+  # create file names
+  asset_path <- paste0("assets/tables/", file_names[i], ".rds")
+  hash_path <- paste0("assets/tables/", file_names[i], ".hash")
+  # check if processing needed if hash file already exists
+  if (file.exists(hash_path)) {
+    # load hash
+    curr_hash <- readLines(hash_path)
+    # check if hash is the same the hash for this species
+    if (identical(species_data$table_hash[i], curr_hash)) {
+      # if the hash is the same then skip this species
+      message("    reusing cache")
+      return(TRUE)
+    }
+  }
+  # create species tables
   p <- species_table(species_data$species_scientific_name[i], species_data,
                      record_data, grid_data)
-  saveRDS(p, paste0("assets/tables/", file_names[i], ".rds"),
-          compress = "xz")
+  # save tables
+  saveRDS(p, asset_path, compress = "xz")
+  # save hash
+  writeLines(species_data$table_hash[i], hash_path)
+  # return logical indicating success
   TRUE
 })
 
@@ -275,16 +355,35 @@ result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
 message("starting widgets...")
 result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
                       function(i) {
+  # display progress
   message("  ", species_data$species_scientific_name[i])
+  # create file names
+  asset_path <- paste0("assets/widgets/", file_names[i], ".rds")
+  hash_path <- paste0("assets/widgets/", file_names[i], ".hash")
+  # check if processing needed if hash file already exists
+  if (file.exists(hash_path)) {
+    # load hash
+    curr_hash <- readLines(hash_path)
+    # check if hash is the same the hash for this species
+    if (identical(species_data$widget_hash[i], curr_hash)) {
+      # if the hash is the same then skip this species
+      message("    reusing cache")
+      return(TRUE)
+    }
+  }
+  # create species widget
   p <- species_widget(species_data$species_scientific_name[i], species_data,
                       record_data, grid_data, study_area_data,
                       parameters$maps$minimum_required_checklists,
                       parameters$maps$minimum_required_events,
                       parameters$maps$colors)
+  # save widget
   if (!is.null(p)) {
-  saveRDS(p, paste0("assets/widgets/", file_names[i], ".rds"),
-          compress = "xz")
+    saveRDS(p, asset_path, compress = "xz")
   }
+  # save hash
+  writeLines(species_data$widget_hash[i], hash_path)
+  # return logical indicating success
   TRUE
 })
 
@@ -292,12 +391,29 @@ result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
 message("starting maps...")
 result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
                       function(i) {
+  # display progress
   message("  ", species_data$species_scientific_name[i])
+  # create file names
+  asset_path <- paste0("assets/maps/", file_names[i], ".png")
+  hash_path <- paste0("assets/maps/", file_names[i], ".hash")
+  # check if processing needed if hash file already exists
+  if (file.exists(hash_path)) {
+    # load hash
+    curr_hash <- readLines(hash_path)
+    # check if hash is the same the hash for this species
+    if (identical(species_data$maps_hash[i], curr_hash)) {
+      # if the hash is the same then skip this species
+      message("    reusing cache")
+      return(TRUE)
+    }
+  }
+  # create species maps
   p <- species_map(species_data$species_scientific_name[i], species_data,
                    record_data, grid_data, land_data, study_area_data,
                    parameters$maps$minimum_required_checklists,
                    parameters$maps$minimum_required_events,
                    parameters$maps$colors)
+  # save species maps
   if (!is.null(p)) {
     n <- as.character(stringr::str_count(species_data$maps[i], "_") + 1)
     ggplot2::ggsave(paste0("assets/maps/", file_names[i], ".png"), p,
@@ -305,6 +421,9 @@ result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
                     height = parameters$maps$size[[n]]$height,
                     units = "in")
   }
+  # save hash
+  writeLines(species_data$maps_hash[i], hash_path)
+  # return logical indicating success
   TRUE
 })
 
