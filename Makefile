@@ -83,10 +83,10 @@ pull_assets:
 	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
 	&& docker cp . bba:/tmp/ \
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/pull_assets.R" \
-	&& docker cp bba:/tmp/assets/maps.zip assets \
-	&& docker cp bba:/tmp/assets/widgets.zip assets \
-	&& docker cp bba:/tmp/assets/graphs.zip assets \
-	&& docker cp bba:/tmp/assets/tables.zip assets \
+	&& docker cp bba:/tmp/assets/assets-maps.zip assets/maps.zip \
+	&& docker cp bba:/tmp/assets/assets-widgets.zip assets/widgets.zip \
+	&& docker cp bba:/tmp/assets/assets-graphs.zip assets/graphs.zip \
+	&& docker cp bba:/tmp/assets/assets-tables.zip assets/tables.zip \
 	&& cd assets \
 	&& unzip -o maps.zip \
 	&& unzip -o widgets.zip \
