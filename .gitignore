@@ -25,3 +25,6 @@ assets/graphs/*
 assets/tables/*
 assets/widgets/*
 assets/maps/*
+
+# profile pictures
+assets/profile/*
