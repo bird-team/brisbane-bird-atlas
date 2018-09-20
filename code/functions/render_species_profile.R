@@ -14,12 +14,19 @@ render_species_profile <- function(x, caption) {
   x <- gsub("/", "", x, fixed = TRUE)
   x <- gsub(" ", "-", x, fixed = TRUE)
   x <- gsub(".", "", x, fixed = TRUE)
-  path <- paste0("assets/profile/", x, ".png")
-  # if image not found then default to missing picutre
-  if (!file.exists(path))
+  # find url
+  path <- species_data$url[species_data$species_scientific_name == x]
+  # if URL is NA, then set path as default missing image
+  if (is.na(path))
     path <- "assets/misc/missing-profile.png"
   # create code to render image
   if (!isTRUE(knitr:::is_html_output())) {
+    # download the file since latex can't read images from online sources
+    if (startsWith(path, "www.") || startsWith(path, "http://")) {
+      new_path <- paste0("assets/profile/", x, ".", tools::file_ext(path))
+      download.file(path, new_path, quiet = TRUE)
+      path <- new_path
+    }
     out <- paste0(
 "\\begin{figure}
 \\centering
