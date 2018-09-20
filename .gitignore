@@ -19,3 +19,9 @@
 
 # raw book files
 _book
+
+# assets
+assets/graphs/*
+assets/tables/*
+assets/widgets/*
+assets/maps/*
