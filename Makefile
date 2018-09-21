@@ -116,7 +116,7 @@ push_assets:
 
 ## build book
 book:
-	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
+	docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
 	&& docker cp . bba:/tmp/ \
 	&& docker exec bba sh -c "rm -rf /tmp/_book" \
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/build_book.R" \
