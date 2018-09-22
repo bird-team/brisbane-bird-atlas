@@ -6,8 +6,8 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Preparing codde
-        command: 'chmod +x ./Makefile && rm -rf _book'
+          name: Preparing codde
+          command: 'chmod +x ./Makefile && rm -rf _book'
       - run:
           name: Backing up repository
           command: 'make backup'
