@@ -1,5 +1,5 @@
 [![lifecycle](https://img.shields.io/badge/Lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![Build Status](https://img.shields.io/travis/bird-team/brisbane-bird-atlas/master.svg?label=build)](https://circleci.com/gh/bird-team/brisbane-bird-atlas/tree/master)
+[![Build Status](https://img.shields.io/circleci/project/github/bird-team/brisbane-bird-atlas/master.svg)](https://circleci.com/gh/bird-team/brisbane-bird-atlas/tree/master)
 [![License (GPL version 3)](https://img.shields.io/badge/license-GNU%20GPL%20version%203-brightgreen.svg)](http://opensource.org/licenses/GPL-3.0)
 
 # Atlas of the Birds of Brisbane

@@ -17,6 +17,7 @@ jobs:
       - run:
           name: Building book
           command: 'Rscript code/scripts/build_book.R'
+          no_output_timeout: 2h
       - run:
           name: Deploying atlas
           command: 'make deploy'
