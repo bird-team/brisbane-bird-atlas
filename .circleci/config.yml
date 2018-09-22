@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Preparing codde
+          name: Preparing code
           command: 'chmod +x ./Makefile && rm -rf _book'
       - run:
           name: Backing up repository
