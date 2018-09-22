@@ -8,14 +8,14 @@ jobs:
       - run: 'chmod +x ./Makefile'
       - run: 'rm -rf _book'
       - run:
-        name: Backing up repository
-        command: 'make backup'
+          name: Backing up repository
+          command: 'make backup'
       - run:
-        name: Fetching assets
-        command: 'Rscript code/scripts/pull_assets.R && cd assets && unzip -o "*.zip"'
+          name: Fetching assets
+          command: 'Rscript code/scripts/pull_assets.R && cd assets && unzip -o "*.zip"'
       - run:
-        name: Building book
-        command: 'Rscript code/scripts/build_book.R'
+          name: Building book
+          command: 'Rscript code/scripts/build_book.R'
       - run:
-        name: Deploying atlas
-        command: 'make deploy'
+          name: Deploying atlas
+          command: 'make deploy'
