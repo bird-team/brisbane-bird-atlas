@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Preparing code
-          command: 'chmod +x ./Makefile && rm -rf _book'
+          command: 'rm -rf _book'
       - run:
           name: Backing up repository
           command: 'make backup'
