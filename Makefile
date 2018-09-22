@@ -131,7 +131,7 @@ backup:
 	@git fetch --unshallow
 	@git config --global user.email "jeff.o.hanson+bot@gmail.com"
 	@git config --global user.name "bird-team-bot"
-	@git remote add backup https://bird-team-bot:${GITLAB_PAT}@gitlab.com/bird-team/${CIRCLE_PROJECT_REPONAME}.git
+	@git remote add backup https://bird-team-bot:${GITLAB_PAT}@gitlab.com/${CIRCLE_PROJECT_REPONAME}/${CIRCLE_PROJECT_REPONAME}.git
 	@git add --all *
 	@git commit -m "Automagic backup"
 	@git push -q backup master
