@@ -116,7 +116,7 @@ push_assets:
 
 ## build book
 book:
-	docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
+	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
 	&& docker cp . bba:/tmp/ \
 	&& docker exec bba sh -c "rm -rf /tmp/_book" \
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/build_book.R" \
@@ -127,11 +127,11 @@ book:
 backup:
 	@set -e
 	@if [ -z "${GITLAB_PAT}" ]; then exit 0; fi;
-	@if [ "${TRAVIS_BRANCH}" != "master" ]; then exit 0; fi;
+	@if [ "${CIRCLE_BRANCH}" != "master" ]; then exit 0; fi;
 	@git fetch --unshallow
 	@git config --global user.email "jeff.o.hanson+bot@gmail.com"
 	@git config --global user.name "bird-team-bot"
-	@git remote add backup https://bird-team-bot:${GITLAB_PAT}@gitlab.com/bird-team/brisbane-bird-atlas-backup.git
+	@git remote add backup https://bird-team-bot:${GITLAB_PAT}@gitlab.com/bird-team/${CIRCLE_PROJECT_REPONAME}.git
 	@git add --all *
 	@git commit -m "Automagic backup"
 	@git push -q backup master
@@ -141,10 +141,10 @@ backup:
 deploy: pull_assets book
 	@set -e
 	@if [ -z "${GITHUB_PAT}" ]; then exit 0; fi;
-	@if [ "${TRAVIS_BRANCH}" != "master" ]; then exit 0; fi;
+	@if [ "${CIRCLE_BRANCH}" != "master" ]; then exit 0; fi;
 	@git config --global user.email "jeff.o.hanson+bot@gmail.com"
 	@git config --global user.name "bird-team-bot"
-	@git clone -b gh-pages https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git book-output
+	@git clone -b gh-pages https://${GITHUB_PAT}@github.com/${CIRCLE_PROJECT_REPONAME}.git book-output
 	@cd book-output \
 	&& cp -r ../_book/* ./ \
 	&& git add --all * \
