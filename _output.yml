@@ -19,4 +19,4 @@ bookdown::pdf_book:
     in_header: preamble.tex
   keep_tex: yes
   template: template.tex
-  pandoc_args: ["+RTS", "-K4G", "-RTS", "--top-level-division=chapter", "--variable=subparagraph"]
+  pandoc_args: ["+RTS", "-K8G", "-RTS", "--top-level-division=chapter", "--variable=subparagraph"]
