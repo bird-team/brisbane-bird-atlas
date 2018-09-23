@@ -20,4 +20,4 @@ jobs:
           no_output_timeout: 2h
       - run:
           name: Deploying atlas
-          command: 'make deploy'
+          command: 'make deploy_book_website'

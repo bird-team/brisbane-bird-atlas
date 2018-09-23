@@ -122,14 +122,6 @@ book_pdf:
 	&& docker cp bba:/tmp/_book/brisbane-bird-atlas.pdf _book || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
-push_book_pdf:
-	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
-	&& docker cp . bba:/tmp/ \
-	&& docker cp "$(HOME)/.Renviron" bba:/root/.Renviron \
-	&& docker exec bba sh -c "Rscript /tmp/code/scripts/push_book_pdf.R" \
-	&& docker cp bba:/tmp/_book . || true
-	@docker stop -t 1 bba || true && docker rm bba || true
-
 book_website:
 	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
 	&& docker cp . bba:/tmp/ \
@@ -149,7 +141,7 @@ backup:
 	@git remote remove backup
 
 ## deploy book
-deploy:
+deploy_book_website:
 	@set -e
 	@if [ -z "${GITHUB_PAT}" ]; then exit 0; fi;
 	@if [ "${CIRCLE_BRANCH}" != "master" ]; then exit 0; fi;
@@ -161,6 +153,14 @@ deploy:
 	&& git add --all * \
 	&& git commit -m"Automagic book update" \
 	&& git push -q origin gh-pages
+
+deploy_book_pdf:
+	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
+	&& docker cp . bba:/tmp/ \
+	&& docker cp "$(HOME)/.Renviron" bba:/root/.Renviron \
+	&& docker exec bba sh -c "Rscript /tmp/code/scripts/push_book_pdf.R" \
+	&& docker cp bba:/tmp/_book . || true
+	@docker stop -t 1 bba || true && docker rm bba || true
 
 # docker container commands
 ## pull image
