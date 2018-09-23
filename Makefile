@@ -115,11 +115,25 @@ push_assets:
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 ## build book
-book:
+book_pdf:
 	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
 	&& docker cp . bba:/tmp/ \
-	&& docker exec bba sh -c "rm -rf /tmp/_book" \
-	&& docker exec bba sh -c "Rscript /tmp/code/scripts/build_book.R" \
+	&& docker exec bba sh -c "Rscript /tmp/code/scripts/build_book_pdf.R" \
+	&& docker cp bba:/tmp/_book/brisbane-bird-atlas.pdf _book || true
+	@docker stop -t 1 bba || true && docker rm bba || true
+
+push_book_pdf:
+	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
+	&& docker cp . bba:/tmp/ \
+	&& docker cp "$(HOME)/.Renviron" bba:/root/.Renviron \
+	&& docker exec bba sh -c "Rscript /tmp/code/scripts/push_book_pdf.R" \
+	&& docker cp bba:/tmp/_book . || true
+	@docker stop -t 1 bba || true && docker rm bba || true
+
+book_website:
+	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
+	&& docker cp . bba:/tmp/ \
+	&& docker exec bba sh -c "Rscript /tmp/code/scripts/build_book_website.R" \
 	&& docker cp bba:/tmp/_book . || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 

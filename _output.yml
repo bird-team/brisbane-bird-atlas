@@ -9,7 +9,7 @@ bookdown::gitbook:
   config:
     toc:
       collapse: section
-    download: [pdf]
+    download: [["https://github.com/bird-team/brisbane-bird-atlas/releases/download/v.0.0.1/brisbane-bird-atlas.pdf", "PDF"]]
     edit: https://github.com/bird-team/brisbane-bird-atlas/edit/master/%s
   pandoc_args: ["+RTS", "-K4G", "-RTS", "--from", "markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash+smart+markdown_attribute"]
 bookdown::pdf_book:

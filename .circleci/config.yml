@@ -16,7 +16,7 @@ jobs:
           command: 'Rscript code/scripts/pull_assets.R && cd assets && unzip -o "*.zip"'
       - run:
           name: Building book
-          command: 'Rscript code/scripts/build_book.R'
+          command: 'Rscript code/scripts/build_book_website.R'
           no_output_timeout: 2h
       - run:
           name: Deploying atlas
