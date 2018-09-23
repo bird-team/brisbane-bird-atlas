@@ -9,9 +9,6 @@ jobs:
           name: Preparing code
           command: 'rm -rf _book'
       - run:
-          name: Creating swap-space partition
-          command: 'fallocate -l 5G /mnt/hdd.swap && mkswap /mnt/hdd.swap && swapon /mnt/hdd.swap'
-      - run:
           name: Backing up repository
           command: 'make backup'
       - run:
