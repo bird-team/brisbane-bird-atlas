@@ -149,7 +149,7 @@ backup:
 	@git remote remove backup
 
 ## deploy book
-deploy: pull_assets book
+deploy:
 	@set -e
 	@if [ -z "${GITHUB_PAT}" ]; then exit 0; fi;
 	@if [ "${CIRCLE_BRANCH}" != "master" ]; then exit 0; fi;

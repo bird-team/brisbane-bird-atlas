@@ -16,9 +16,9 @@ before_script:
 
 script:
   - echo GITHUB_PAT=$GITHUB_PAT >> $HOME/.Renviron
-  - travis_wait 120 make pull_assets
+  - make pull_assets
   - travis_wait 120 make book_pdf
-  - travis_wait 120 make push_book_pdf
+  - make push_book_pdf
 
 notifications:
   email:
