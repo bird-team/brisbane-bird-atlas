@@ -6,6 +6,7 @@
 #'
 #' @return \code{gg} pkg{ggplot2} plot.
 render_species_map <- function(x) {
+  return(NULL)
   # exit early if no map required
   spp_index <- which(species_data$species_scientific_name == x)
   if (is.na(species_data$maps[spp_index]))
