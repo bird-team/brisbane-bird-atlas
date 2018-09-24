@@ -121,6 +121,7 @@ book_pdf:
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/build_book_pdf.R" \
 	&& docker cp bba:/tmp/_book/brisbane-bird-atlas.pdf _book || true
 	@docker stop -t 1 bba || true && docker rm bba || true
+	@ls -la _book/brisbane-bird-atlas.pdf
 
 book_website:
 	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
