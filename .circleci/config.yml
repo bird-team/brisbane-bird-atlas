@@ -4,9 +4,6 @@ jobs:
   build:
     docker:
       - image: brisbanebirdteam/build-env:latest
-    branches:
-      only:
-        - master
     steps:
       - checkout
       - run:
@@ -25,3 +22,9 @@ jobs:
       - run:
           name: Deploying atlas
           command: 'make deploy_book_website'
+
+workflows:
+  version: 2
+  branches:
+        only:
+          - master
