@@ -20,7 +20,6 @@
 #' @return \code{data.frame}.
 species_table <- function(x, species_data, record_data, grid_data) {
   # Initialization
-  return(NULL)
   spp_index <- which(species_data$species_scientific_name == x)
   spp_data <- record_data[record_data$species_scientific_name == x, ]
   spp_type <- species_data$distribution[spp_index]
