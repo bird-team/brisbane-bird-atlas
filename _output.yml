@@ -19,4 +19,4 @@ bookdown::pdf_book:
     in_header: preamble.tex
   keep_tex: yes
   template: template.tex
-  pandoc_args: ["markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash+smart+markdown_attribute"]
+  pandoc_args: ["+RTS", "-K4G", "-RTS", "--from", "markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash+smart+markdown_attribute"]
