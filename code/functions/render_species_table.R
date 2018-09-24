@@ -6,7 +6,6 @@
 #'
 #' @return \code{character}.
 render_species_table <- function(x) {
-  return(NULL)
   x <- gsub("(", "", x, fixed = TRUE)
   x <- gsub(")", "", x, fixed = TRUE)
   x <- gsub("/", "", x, fixed = TRUE)
