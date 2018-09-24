@@ -116,7 +116,7 @@ push_assets:
 
 ## build book
 book_pdf:
-	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
+	@docker run --name=bba --memory="6g" and --memory-swap="6g" -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
 	&& docker cp . bba:/tmp/ \
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/build_book_pdf.R" \
 	&& docker cp bba:/tmp/_book/brisbane-bird-atlas.pdf _book || true
