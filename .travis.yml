@@ -14,7 +14,6 @@ before_script:
 
 script:
   - echo GITHUB_PAT=$GITHUB_PAT >> $HOME/.Renviron
-  - sudo fallocate -l 9G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
   - make pull_assets
   - travis_wait 120 make book_pdf
   - make deploy_book_pdf

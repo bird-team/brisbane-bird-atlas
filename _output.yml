@@ -19,4 +19,4 @@ bookdown::pdf_book:
     in_header: preamble.tex
   keep_tex: yes
   template: template.tex
-  pandoc_args: ["+RTS", "-K7G", "-RTS", "--top-level-division=chapter", "--variable=subparagraph", "--from", "markdown+raw_tex"]
+  pandoc_args: ["--top-level-division=chapter", "--variable=subparagraph", "--from", "markdown-escaped_line_breaks-blank_before_header-space_in_atx_header-header_attributes-implicit_header_references-blank_before_blockquote-fenced_code_blocks-backtick_code_blocks-fenced_code_attributes-line_blocks-fancy_lists-startnum-definition_lists-example_lists-table_captions-simple_tables-multiline_tables-grid_tables-pipe_tables-pandoc_title_block-yaml_metadata_block-all_symbols_escapable-intraword_underscores-strikeout-superscript-subscript-inline_code_attributes-tex_math_dollars-raw_html-markdown_in_html_blocks-native_divs-native_spans+raw_tex-raw_attribute-latex_macros-shortcut_reference_links-implicit_figures-link_attributes-fenced_divs-bracketed_spans-footnotes-inline_notes+citations"]
