@@ -2,11 +2,11 @@ version: 2
 
 jobs:
   build:
+    docker:
+      - image: brisbanebirdteam/build-env:latest
     branches:
       only:
         - master
-    docker:
-      - image: brisbanebirdteam/build-env:latest
     steps:
       - checkout
       - run:
