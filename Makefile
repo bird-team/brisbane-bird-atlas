@@ -161,6 +161,7 @@ deploy_book_pdf:
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/push_book_pdf.R" \
 	&& docker cp bba:/tmp/_book . || true
 	@docker stop -t 1 bba || true && docker rm bba || true
+	ls -la _book/brisbane-bird-atlas.pdf
 
 # docker container commands
 ## pull image
