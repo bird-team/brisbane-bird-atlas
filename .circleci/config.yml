@@ -25,9 +25,10 @@ jobs:
 
 workflows:
   version: 2
-  branches:
-        only:
-          - master
   main:
     jobs:
       - build
+        filters:
+          branches:
+            only:
+              - master
