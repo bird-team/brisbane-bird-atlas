@@ -11,6 +11,7 @@ env:
 
 before_script:
   - docker pull "brisbanebirdteam/build-env:latest"
+  - sudo fallocate -l 9G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
 
 script:
   - echo GITHUB_PAT=$GITHUB_PAT >> $HOME/.Renviron
