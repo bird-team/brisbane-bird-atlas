@@ -276,7 +276,9 @@ if (is_parallel) {
                              "study_area_data", "land_data", "parameters",
                              "species_graph", "species_map", "species_table",
                              "species_widget", "color_numeric_palette", "ymax",
-                             "breaks", "addLegend_custom", "file_names"))
+                             "breaks", "addLegend_custom", "file_names",
+                             "add_reporting_rate_columns", 
+                             "add_detection_columns"))
   doParallel::registerDoParallel(cl)
 }
 
