@@ -53,6 +53,18 @@ init:
 	&& rm -f README.Rmd || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
+## generate sampling grid (warning: this will reset all grid names)
+grid:
+	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
+	&& docker cp . bba:/tmp/ \
+	&& docker exec bba sh -c "Rscript code/scripts/create_grid.R" \
+	&& docker exec bba sh -c "cd data && zip -r grid.zip grid-data" \
+	&& docker cp bba:/tmp/data/grid.zip data \
+	&& cd data \
+	&& unzip -o grid.zip \
+	&& rm grid.zip || true
+	@docker stop -t 1 bba || true && docker rm bba || true
+
 ## build assets
 # rebuild assets locally
 assets:

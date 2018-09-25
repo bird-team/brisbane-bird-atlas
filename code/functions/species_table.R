@@ -12,14 +12,12 @@
 #'
 #' @param record_data \code{sf} object containing the records for the species.
 #'   This object must have the following fields:
-#'   \code{"species_scientific_name"} and \code{"season"}.
-#'
-#' @param grid_data \code{\link[raster]{RasterLayer} object containing the grid
-#'   cells for displaying data on the map.
+#'   \code{"species_scientific_name"}, \code{"season"}, and \code{"grid_id}.
 #'
 #' @return \code{data.frame}.
-species_table <- function(x, species_data, record_data, grid_data) {
+species_table <- function(x, species_data, record_data) {
   # Initialization
+  record_data <- as.data.frame(record_data) %>% dplyr::select(-geometry)
   spp_index <- which(species_data$species_scientific_name == x)
   spp_data <- record_data[record_data$species_scientific_name == x, ]
   spp_type <- species_data$distribution[spp_index]
@@ -29,22 +27,12 @@ species_table <- function(x, species_data, record_data, grid_data) {
   records_starting_year <- species_data$records_starting_year[spp_index]
   ## set up grid
   if (spp_type == "land") {
-    tmp_data <- grid_data
-    grid_data[] <- 0
-    grid_data[tmp_data == 1] <- NA_real_
-    grid_data <- raster::trim(grid_data, values = 0)
+    study_area_cells <- grid_data$id[grid_data$type == "land"]
   } else if (spp_type == "marine") {
-    tmp_data <- grid_data
-    grid_data[] <- 0
-    grid_data[tmp_data == 2] <- NA_real_
-    grid_data <- raster::trim(grid_data, values = 0)
+    study_area_cells <- grid_data$id[grid_data$type == "marine"]
   } else {
-    tmp_data <- grid_data
-    grid_data[is.na(tmp_data)] <- 0
-    grid_data[!is.na(tmp_data)] <- NA_real_
-    grid_data <- raster::trim(grid_data, values = 0)
+    study_area_cells <- grid_data$id
   }
-  study_area_cells <- raster::Which(is.na(grid_data), cells = TRUE)
   # Main processing
   ## iucn threat status
   iucn_threat_status <- paste("_IUCN:_",
@@ -61,14 +49,12 @@ species_table <- function(x, species_data, record_data, grid_data) {
                            na.rm = TRUE)), big.mark = ","))
   ## atlas squares
   if (sum(spp_data$year >= records_starting_year) > 0) {
-    spp_cells <- raster::extract(grid_data[[1]],
-                                 spp_data %>%
-                                 filter(year >= records_starting_year) %>%
-                                 select(season) %>%
-                                 as("Spatial"),
-                                 cellnumbers = TRUE)[, 1]
-    spp_cells <- spp_cells[spp_cells %in% study_area_cells]
-    atlas_squares <- paste("_Atlas squares:_", length(unique(na.omit(spp_cells))))
+    spp_cells <- spp_data %>%
+                 filter(year >= records_starting_year,
+                        grid_id %in% study_area_cells) %>%
+                 `[[`("grid_id")
+    atlas_squares <- paste("_Atlas squares:_",
+                           length(unique(na.omit(spp_cells))))
   } else {
     atlas_squares <- "_Atlas squares:_ 0"
   }

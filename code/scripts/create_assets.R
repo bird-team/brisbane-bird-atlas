@@ -17,7 +17,6 @@ species_template_path <- "templates/species-template.txt"
 species_path <- dir("data/species", "^.*\\.xlsx", full.names = TRUE)[1]
 unzip(dir("data/study-area", "^.*\\.zip$", full.names = TRUE),
           exdir = tmp1)
-
 study_area_path <- dir(tmp1, "^.*\\.shp$", full.names = TRUE)[1]
 unzip(dir("data/vegetation", "^.*\\.zip$", full.names = TRUE),
           exdir = tmp2)
@@ -30,6 +29,7 @@ unzip(dir("data/land", "^.*\\.zip$", full.names = TRUE),
           exdir = tmp4)
 land_path <- dir(tmp4, "^.*\\.shp$", full.names = TRUE)[1]
 elevation_path <- dir("data/elevation", "^.*\\.grd$", full.names = TRUE)[1]
+grid_path <- dir("data/grid-data", "^.*\\.shp$", full.names = TRUE)[1]
 
 ## load packages
 library(dplyr)
@@ -37,8 +37,11 @@ library(sf)
 library(patchwork)
 
 ## source functions
+source("code/functions/format_grid_data.R")
 source("code/functions/format_ebird_records.R")
 source("code/functions/format_species_data.R")
+source("code/functions/add_reporting_rate_columns.R")
+source("code/functions/add_detection_columns.R")
 source("code/functions/species_graph.R")
 source("code/functions/species_map.R")
 source("code/functions/species_widget.R")
@@ -55,6 +58,7 @@ parameters <- yaml::read_yaml("data/parameters/parameters.yaml")
 ## load data
 study_area_data <- sf::st_transform(sf::read_sf(study_area_path),
                                     parameters$crs)
+grid_data <- sf::read_sf(grid_path)
 land_data <- sf::st_transform(sf::read_sf(land_path), parameters$crs)
 record_data <- data.table::fread(record_path, data.table = FALSE)
 species_data <- readxl::read_excel(species_path, sheet = 1)
@@ -89,6 +93,12 @@ land_data <- land_data %>%
              sf::st_union()
 land_data <- sf::st_sf(name = "Land", geometry = land_data)
 
+## format grid data
+grid_data <- do.call(format_grid_data,
+                     append(list(x = grid_data,
+                                 study_area_data = study_area_data),
+                            parameters["grid_resolution"]))
+
 ## format species data
 species_data <- do.call(format_species_data,
                         append(list(x = species_data), parameters$species))
@@ -96,7 +106,9 @@ species_data <- do.call(format_species_data,
 ## format record data
 record_data <- do.call(format_ebird_records,
                        append(list(x = record_data,
-                                   study_area = study_area_data),
+                                   study_area = grid_data %>%
+                                                sf::st_union() %>%
+                                                sf::st_sf(id = 1)),
                               parameters$records))
 
 ## verify that species have sufficient data
@@ -164,31 +176,6 @@ if (!identical(parameters$number_species, "all"))
   species_data <- species_data[seq_len(parameters$number_species), ,
                                drop = FALSE]
 
-## create grid overlay for plotting distribution of records
-grid_extent <- c(sf::st_bbox(study_area_data))
-grid_extent <- c(grid_extent[1], grid_extent[2],
-                 grid_extent[1] + round(abs(grid_extent[3] - grid_extent[1]) /
-                                        parameters$grid_resolution) *
-                                        parameters$grid_resolution,
-                 grid_extent[2] + round(abs(grid_extent[4] - grid_extent[2]) /
-                                        parameters$grid_resolution) *
-                                        parameters$grid_resolution)
-grid_data <- raster::raster(xmn = grid_extent[1], xmx = grid_extent[3],
-                            ymn = grid_extent[2], ymx = grid_extent[4],
-                            crs = as(study_area_data, "Spatial")@proj4string,
-                            res = rep(parameters$grid_resolution, 2))
-grid_data <- raster::setValues(grid_data, NA_real_)
-grid_data[raster::extract(grid_data,
-                          study_area_data %>%
-                            filter(name == "marine") %>%
-                            as("Spatial"),
-                          cellnumbers = TRUE)[[1]][, 1]] <- 2
-grid_data[raster::extract(grid_data,
-                          study_area_data %>%
-                            filter(name == "land") %>%
-                            as("Spatial"),
-                          cellnumbers = TRUE)[[1]][, 1]] <- 1
-
 ## extract spatial attributes
 locality_data <- record_data[!duplicated(record_data$locality), "locality"]
 
@@ -212,6 +199,17 @@ locality_data$vegetation_class <- vegetation_data[[
   parameters$vegetation$class_column_name]][locality_pos]
 assertthat::assert_that(assertthat::noNA(locality_data$vegetation_class),
   msg = "all eBird records must overlap with vegetation data")
+
+## extract grid cell id
+grid_pos <- max.col(cbind(as.matrix(sf::st_intersects(locality_data,
+                                                      grid_data)),
+                          FALSE), ties.method = "last")
+locality_data$grid_id <- grid_data$id[grid_pos]
+locality_data$grid_type <- grid_data$type[grid_pos]
+assertthat::assert_that(
+  assertthat::noNA(locality_data$grid_id),
+  assertthat::noNA(locality_data$grid_type),
+  msg = "something went wrong subsetting records...")
 
 ### merge event data with record data
 locality_data <- as.data.frame(locality_data)
@@ -239,7 +237,7 @@ species_data$graphs_hash <- plyr::laply(
 })
 
 ## tables hashes
-tmp_hash <- digest::digest(record_data)
+tmp_hash <- digest::digest(list(record_data, grid_data))
 tmp_df <- dplyr::select(species_data, graphs, checklists_starting_year,
                         records_starting_year, distribution, iucn_threat_status,
                         national_threat_status, qld_threat_status)
@@ -249,7 +247,7 @@ species_data$table_hash <- plyr::laply(
 })
 
 ## maps hashes
-tmp_hash <- digest::digest(list(record_data, parameters$maps))
+tmp_hash <- digest::digest(list(record_data, grid_data, parameters$maps))
 tmp_df <- dplyr::select(species_data, maps, checklists_starting_year,
                         records_starting_year, distribution)
 species_data$maps_hash <- plyr::laply(
@@ -258,7 +256,7 @@ species_data$maps_hash <- plyr::laply(
 })
 
 ## widget hashes
-tmp_hash <- digest::digest(list(record_data, parameters$maps))
+tmp_hash <- digest::digest(list(record_data, grid_data, parameters$maps))
 tmp_df <- dplyr::select(species_data, maps, checklists_starting_year,
                         records_starting_year, distribution)
 species_data$widget_hash <- plyr::laply(
@@ -341,7 +339,7 @@ result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
   }
   # create species tables
   p <- species_table(species_data$species_scientific_name[i], species_data,
-                     record_data, grid_data)
+                     record_data)
   # save tables
   saveRDS(p, asset_path, compress = "xz")
   # save hash
