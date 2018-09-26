@@ -7,6 +7,7 @@
 #' @return interactive widget.
 render_species_widget <- function(x) {
   # exit early if no widget required
+  return(invisible(NULL))
   spp_index <- which(species_data$species_scientific_name == x)
   if (is.na(species_data$maps[spp_index]))
     return(invisible(TRUE))
