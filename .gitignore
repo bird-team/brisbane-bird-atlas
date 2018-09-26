@@ -25,6 +25,7 @@ assets/graphs/*
 assets/tables/*
 assets/widgets/*
 assets/maps/*
+assets/sampling-grid-maps
 
 # profile pictures
 assets/profile/*
