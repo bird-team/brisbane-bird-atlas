@@ -1,6 +1,6 @@
 # Main instructions
 ## build and deploy book
-all: deploy
+all: pull_image pull_assets book_pdf book_website
 
 # Define variables
 ifdef ComSpec
@@ -58,7 +58,7 @@ grid:
 	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
 	&& docker cp . bba:/tmp/ \
 	&& docker exec bba sh -c "Rscript code/scripts/create_grid.R" \
-	&& docker exec bba sh -c "cd data && zip -r grid.zip grid-data" \
+	&& docker exec bba sh -c "cd data && zip -r grid.zip grid" \
 	&& docker cp bba:/tmp/data/grid.zip data \
 	&& cd data \
 	&& unzip -o grid.zip \

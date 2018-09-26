@@ -29,7 +29,7 @@ unzip(dir("data/land", "^.*\\.zip$", full.names = TRUE),
           exdir = tmp4)
 land_path <- dir(tmp4, "^.*\\.shp$", full.names = TRUE)[1]
 elevation_path <- dir("data/elevation", "^.*\\.grd$", full.names = TRUE)[1]
-grid_path <- dir("data/grid-data", "^.*\\.shp$", full.names = TRUE)[1]
+grid_path <- dir("data/grid", "^.*\\.shp$", full.names = TRUE)[1]
 
 ## load packages
 library(dplyr)

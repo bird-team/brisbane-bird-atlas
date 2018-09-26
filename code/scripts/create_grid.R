@@ -77,7 +77,7 @@ grid_data$id <- seq_len(nrow(grid_data))
 grid_data$name <- paste ("Grid cell:", grid_data$id)
 
 ## format columns
-grid_data <- grid_data %>% select(id, type, name)
+grid_data <- grid_data %>% select(id, name)
 
 # Exports
-sf::write_sf(grid_data, "data/grid-data/grid.shp", delete_layer = TRUE)
+sf::write_sf(grid_data, "data/grid/grid.shp", delete_layer = TRUE)
