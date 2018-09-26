@@ -147,10 +147,10 @@ book_website:
 backup:
 	@set -e
 	@if [ -z "${GITLAB_PAT}" ]; then exit 0; fi;
-	@if [ "${BRANCH_NAME}" != "master" ]; then exit 0; fi;
+	@if [ "${CIRCLE_BRANCH}" != "master" ]; then exit 0; fi;
 	@git config --global user.email "jeff.o.hanson+bot@gmail.com"
 	@git config --global user.name "bird-team-bot"
-	@git remote add backup https://bird-team-bot:${GITLAB_PAT}@gitlab.com/${SEMAPHORE_REPO_SLUG}-backup.git
+	@git remote add backup https://bird-team-bot:${GITLAB_PAT}@gitlab.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}-backup.git
 	@git push -q backup master
 	@git remote remove backup
 
@@ -158,10 +158,10 @@ backup:
 deploy_book_website:
 	@set -e
 	@if [ -z "${GITHUB_PAT}" ]; then exit 0; fi;
-	@if [ "${BRANCH_NAME}" != "master" ]; then exit 0; fi;
+	@if [ "${CIRCLE_BRANCH}" != "master" ]; then exit 0; fi;
 	@git config --global user.email "jeff.o.hanson+bot@gmail.com"
 	@git config --global user.name "bird-team-bot"
-	@git clone -b gh-pages https://${GITHUB_PAT}@github.com/${SEMAPHORE_REPO_SLUG}.git book-output
+	@git clone -b gh-pages https://${GITHUB_PAT}@github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git book-output
 	@cd book-output \
 	&& cp -r ../_book/* ./ \
 	&& git add --all * \

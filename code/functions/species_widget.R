@@ -96,11 +96,25 @@ species_widget <- function(x, species_data, record_data, grid_data,
                                      records_starting_year,
                                      minimum_required_events)
   grid_data <- grid_data %>%
-               sf::st_transform(4326) %>%
                as("Spatial")
   names(grid_data@data) <- gsub(".", " ", names(grid_data@data), fixed = TRUE)
   plot_names <- c("All year", "Summer", "Autumn", "Winter", "Spring",
                   "Detection")[map_numbers]
+  ## rasterize the grid data
+  grid_raster_raw_data <- raster::raster(
+    xmn = raster::xmin(grid_data), ymn = raster::ymin(grid_data),
+    xmx = raster::xmax(grid_data), ymx = raster::ymax(grid_data),
+    res = sqrt(rgeos::gArea(grid_data[1, ])),
+    crs = grid_data@proj4string)
+  grid_raster_raw_data <- raster::setValues(grid_raster_raw_data, 0)
+  ## convert grid_data to points for easier overlay with raster data
+  grid_pts_data <- sp::SpatialPointsDataFrame(
+                     rgeos::gCentroid(grid_data, byid = TRUE)@coords,
+                     data = data.frame(id = seq_len(nrow(grid_data))),
+                     proj4string = grid_data@proj4string)
+  grid_pts_data@data <- grid_data@data
+  grid_pts_data@data$cell <- raster::cellFromXY(grid_raster_raw_data,
+                                                grid_pts_data@coords)
   # main processing
   ## initialize leaflet map
   l <- leaflet::leaflet()
@@ -126,25 +140,27 @@ species_widget <- function(x, species_data, record_data, grid_data,
   }
   ## add tiles
   l <- leaflet::addProviderTiles(l, "Esri.WorldGrayCanvas", group = "Thematic")
-  ## add rasters
+  ## add reporting rate and detection maps (as required)
   for (i in plot_names) {
     curr_palette <- palette
     if (i == "Detection") curr_palette <- bin_palette
-    l <- leaflet::addPolygons(l, data = grid_data,
-                              popup = htmltools::htmlEscape(grid_data$name),
-                              color = curr_palette(grid_data[[i]]),
-                              opacity = 0.6, fillOpacity = 0.6, stroke = FALSE,
-                              group = i)
+    r <- grid_raster_raw_data
+    r[grid_pts_data$cell] <- grid_pts_data@data[[i]]
+    l <- leaflet::addRasterImage(l, r, project = FALSE,
+                                 colors = curr_palette, opacity = 0.6,
+                                 group = i)
   }
   ## add Brisbane extent
   l <- leaflet::addPolygons(l, color = "black", fillColor = "transparent",
-                            weight = 2.5, smoothFactor = 0.5,
+                            weight = 2.5, smoothFactor = 0.4,
                             data = as(sf::st_transform(study_area_data, 4326),
                                       "Spatial"),
                             group = "Brisbane extent")
   ## add sampling grid
   l  <- leaflet::addPolygons(l, color = "black", fillColor = "transparent",
-                            weight = 2.5, data = grid_data,
+                            weight = 2.5,
+                            data = sp::spTransform(grid_data,
+                                                   sp::CRS("+init=epsg:4326")),
                             popup = htmltools::htmlEscape(grid_data$name),
                             group = "Grid")
   l <- leaflet::hideGroup(l, "Grid")
