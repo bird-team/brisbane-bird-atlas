@@ -164,7 +164,7 @@ deploy_book_website:
 	@git clone -b gh-pages https://${GITHUB_PAT}@github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git book-output
 	@cd book-output \
 	&& cp -r ../_book/* ./ \
-	&& cp -r ../.circleci ./ \
+	&& cp -rf ../.circleci . \
 	&& git add --all * \
 	&& git commit -m"Automagic book update" \
 	&& git push -q origin gh-pages
