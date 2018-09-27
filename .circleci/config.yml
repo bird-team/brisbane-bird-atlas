@@ -1,0 +1,34 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: brisbanebirdteam/build-env:latest
+    steps:
+      - checkout
+      - run:
+          name: Preparing code
+          command: 'rm -rf _book'
+      - run:
+          name: Backing up repository
+          command: 'make backup'
+      - run:
+          name: Fetching assets
+          command: 'Rscript code/scripts/pull_assets.R && cd assets && unzip -o "*.zip"'
+      - run:
+          name: Building book
+          command: 'Rscript code/scripts/build_book_website.R'
+          no_output_timeout: 2h
+      - run:
+          name: Deploying atlas
+          command: 'make deploy_book_website'
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
