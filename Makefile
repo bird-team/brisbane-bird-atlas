@@ -4,15 +4,11 @@ all: pull_image pull_assets book_pdf book_website
 
 # Define variables
 ifdef ComSpec
-	RM=del /F /Q
-	RMDIR=rmdir
-	PATHSEP2=\\
-	MV=MOVE
+	PATHSEP2=//
+	USRHOME=$(USERPROFILE)
 else
-	RM=rm -f
-	RMDIR=rm -rf
 	PATHSEP2=/
-	MV=mv
+	USRHOME=$(HOME)
 endif
 
 # Individual instructions
@@ -29,12 +25,12 @@ reset_pages: clean
 
 ## add new pages for species in file
 update_pages:
-	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
-	&& docker cp . bba:/tmp/ \
+	@docker run --name=bba -w /tmp -dt brisbanebirdteam/build-env:latest \
+	&& docker cp . bba:$(PATHSEP2)tmp/ \
 	&& docker exec bba sh -c "Rscript code/scripts/initialize_book.R FALSE" \
-	&& docker cp bba:/tmp/_bookdown.yml . \
+	&& docker cp bba:$(PATHSEP2)tmp/_bookdown.yml . \
 	&& docker exec bba sh -c "zip -r rmd.zip *.Rmd" \
-	&& docker cp bba:/tmp/rmd.zip . \
+	&& docker cp bba:$(PATHSEP2)tmp/rmd.zip . \
 	&& unzip -o rmd.zip \
 	&& rm rmd.zip || true
 	@docker stop -t 1 bba || true && docker rm bba || true
@@ -42,12 +38,12 @@ update_pages:
 # book commands
 ## generate initial book with no text (warning: this will reset all the pages)
 init:
-	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
-	&& docker cp . bba:/tmp/ \
+	@docker run --name=bba -w /tmp -dt brisbanebirdteam/build-env:latest \
+	&& docker cp . bba:$(PATHSEP2)tmp/ \
 	&& docker exec bba sh -c "Rscript code/scripts/initialize_book.R TRUE" \
-	&& docker cp bba:/tmp/_bookdown.yml . \
+	&& docker cp bba:$(PATHSEP2)tmp/_bookdown.yml . \
 	&& docker exec bba sh -c "zip -r rmd.zip *.Rmd" \
-	&& docker cp bba:/tmp/rmd.zip . \
+	&& docker cp bba:$(PATHSEP2)tmp/rmd.zip . \
 	&& unzip -o rmd.zip \
 	&& rm rmd.zip \
 	&& rm -f README.Rmd || true
@@ -55,11 +51,11 @@ init:
 
 ## generate sampling grid (warning: this will reset all grid names)
 grid:
-	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
-	&& docker cp . bba:/tmp/ \
+	@docker run --name=bba -w /tmp -dt brisbanebirdteam/build-env:latest \
+	&& docker cp . bba:$(PATHSEP2)tmp/ \
 	&& docker exec bba sh -c "Rscript code/scripts/create_grid.R" \
 	&& docker exec bba sh -c "cd data && zip -r grid.zip grid" \
-	&& docker cp bba:/tmp/data/grid.zip data \
+	&& docker cp bba:$(PATHSEP2)tmp/data/grid.zip data \
 	&& cd data \
 	&& unzip -o grid.zip \
 	&& rm grid.zip || true
@@ -68,17 +64,17 @@ grid:
 ## build assets
 # rebuild assets locally
 assets:
-	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
-	&& docker cp . bba:/tmp/ \
+	@docker run --name=bba -w /tmp -dt brisbanebirdteam/build-env:latest \
+	&& docker cp . bba:$(PATHSEP2)tmp/ \
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/create_assets.R" \
 	&& docker exec bba sh -c "cd assets; zip -r maps.zip maps" \
 	&& docker exec bba sh -c "cd assets; zip -r widgets.zip widgets" \
 	&& docker exec bba sh -c "cd assets; zip -r graphs.zip graphs" \
 	&& docker exec bba sh -c "cd assets; zip -r tables.zip tables" \
-	&& docker cp bba:/tmp/assets/maps.zip assets \
-	&& docker cp bba:/tmp/assets/widgets.zip assets \
-	&& docker cp bba:/tmp/assets/graphs.zip assets \
-	&& docker cp bba:/tmp/assets/tables.zip assets \
+	&& docker cp bba:$(PATHSEP2)tmp/assets/maps.zip assets \
+	&& docker cp bba:$(PATHSEP2)tmp/assets/widgets.zip assets \
+	&& docker cp bba:$(PATHSEP2)tmp/assets/graphs.zip assets \
+	&& docker cp bba:$(PATHSEP2)tmp/assets/tables.zip assets \
 	&& cd assets \
 	&& unzip -o maps.zip \
 	&& unzip -o widgets.zip \
@@ -92,13 +88,13 @@ assets:
 
 # pull assets from online storage
 pull_assets:
-	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
-	&& docker cp . bba:/tmp/ \
+	@docker run --name=bba -w /tmp -dt brisbanebirdteam/build-env:latest \
+	&& docker cp . bba:$(PATHSEP2)tmp/ \
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/pull_assets.R" \
-	&& docker cp bba:/tmp/assets/assets-maps.zip assets/maps.zip \
-	&& docker cp bba:/tmp/assets/assets-widgets.zip assets/widgets.zip \
-	&& docker cp bba:/tmp/assets/assets-graphs.zip assets/graphs.zip \
-	&& docker cp bba:/tmp/assets/assets-tables.zip assets/tables.zip \
+	&& docker cp bba:$(PATHSEP2)tmp/assets/assets-maps.zip assets/maps.zip \
+	&& docker cp bba:$(PATHSEP2)tmp/assets/assets-widgets.zip assets/widgets.zip \
+	&& docker cp bba:$(PATHSEP2)tmp/assets/assets-graphs.zip assets/graphs.zip \
+	&& docker cp bba:$(PATHSEP2)tmp/assets/assets-tables.zip assets/tables.zip \
 	&& cd assets \
 	&& unzip -o maps.zip \
 	&& unzip -o widgets.zip \
@@ -112,9 +108,9 @@ pull_assets:
 
 # push assets to online storage
 push_assets:
-	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
-	&& docker cp . bba:/tmp/ \
-	&& docker cp "$(HOME)/.Renviron" bba:/root/.Renviron \
+	@docker run --name=bba -w /tmp -dt brisbanebirdteam/build-env:latest \
+	&& docker cp . bba:$(USRHOME)tmp/ \
+	&& docker cp "$(HOME)/.Renviron" bba:$(PATHSEP2)root/.Renviron \
 	&& docker exec bba sh -c "cd assets; zip -r maps.zip maps" \
 	&& docker exec bba sh -c "cd assets; zip -r widgets.zip widgets" \
 	&& docker exec bba sh -c "cd assets; zip -r graphs.zip graphs" \
@@ -129,18 +125,18 @@ push_assets:
 ## build book
 book_pdf:
 	@mkdir -p _book \
-	&& docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
-	&& docker cp . bba:/tmp/ \
+	&& docker run --name=bba -w /tmp -dt brisbanebirdteam/build-env:latest \
+	&& docker cp . bba:$(PATHSEP2)tmp/ \
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/build_book_pdf.R" \
-	&& docker cp bba:/tmp/_book/brisbane-bird-atlas.pdf _book || true
+	&& docker cp bba:$(PATHSEP2)tmp/_book/brisbane-bird-atlas.pdf _book || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 	@ls -la _book/brisbane-bird-atlas.pdf
 
 book_website:
-	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
-	&& docker cp . bba:/tmp/ \
+	@docker run --name=bba -w /tmp -dt brisbanebirdteam/build-env:latest \
+	&& docker cp . bba:$(PATHSEP2)tmp/ \
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/build_book_website.R" \
-	&& docker cp bba:/tmp/_book . || true
+	&& docker cp bba:$(PATHSEP2)tmp/_book . || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 ## backup book
@@ -169,26 +165,26 @@ deploy_book_website:
 	&& git push -q origin gh-pages
 
 deploy_book_pdf:
-	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest' \
-	&& docker cp . bba:/tmp/ \
-	&& docker cp "$(HOME)/.Renviron" bba:/root/.Renviron \
+	@docker run --name=bba -w /tmp -dt brisbanebirdteam/build-env:latest \
+	&& docker cp . bba:$(PATHSEP2)tmp/ \
+	&& docker cp "$(HOME)/.Renviron" bba:$(PATHSEP2)root/.Renviron \
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/push_book_pdf.R" \
-	&& docker cp bba:/tmp/_book . || true
+	&& docker cp bba:$(PATHSEP2)tmp/_book . || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 	@ls -la _book/brisbane-bird-atlas.pdf
 
 # docker container commands
 ## pull image
 pull_image:
-	@docker pull 'brisbanebirdteam/build-env:latest'
+	@docker pull brisbanebirdteam/build-env:latest
 
 ## remove image
 rm_image:
-	@docker image rm 'brisbanebirdteam/build-env:latest'
+	@docker image rm brisbanebirdteam/build-env:latest
 
 ## start container
 start_container:
-	@docker run --name=bba -w /tmp -dt 'brisbanebirdteam/build-env:latest'
+	@docker run --name=bba -w /tmp -dt brisbanebirdteam/build-env:latest
 
 ## kill container
 stop_container:
