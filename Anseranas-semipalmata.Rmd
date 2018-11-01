@@ -6,7 +6,7 @@ species_name <- "Anseranas semipalmata"
 species_title(species_name, species_data)
 ```
 
-Category A; Locally common breeding resident.
+Category A; Locally fairly common breeding resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")
