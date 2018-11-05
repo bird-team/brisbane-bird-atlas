@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The Magpie Goose is a large, distinctive waterbird with striking black and white plumage and yellowish legs. It is a member of the order Anseriformes, but is the sole member of the family Anseranatidae. A gregarious species, it is frequently found in flocks numbering several hundred in northern Australia, where it is an abundant species, but numbers in the Brisbane region are typically lower [@nye2007wild1], although counts of up to 400 have been recorded. It is easily identified, with no similar species in the region; the black and white plumage and size rule out all other options, although Black Swan in flight may appear superficially similar from a distance. Within Brisbane, Magpie Geese are locally common and patchily distributed, with only a handful of regular sites, although given their propensity for wandering [@frith1961ecology1] they may occur anywhere with suitable habitat or as flyovers.
+The Magpie Goose is a large, distinctive waterbird with striking black and white plumage and yellowish legs. It is a member of the order Anseriformes, but is the sole member of the family Anseranatidae. A gregarious species, it is frequently found in flocks numbering several hundred in northern Australia, where it is an abundant species, but numbers in the Brisbane region are typically lower [@nye2007wild], although counts of up to 400 have been recorded. It is easily identified, with no similar species in the region; the black and white plumage and size rule out all other options, although Black Swan in flight may appear superficially similar from a distance. Within Brisbane, Magpie Geese are locally common and patchily distributed, with only a handful of regular sites, although given their propensity for wandering [@frith1961ecology] they may occur anywhere with suitable habitat or as flyovers.
 
 ```{r}
 end_two_column_layout()
@@ -53,13 +53,13 @@ clear_page()
 ```{r}
 start_two_column_layout()
 ```
-A colonial species of wetland habitats, the Magpie Goose can reach high abundance, and has a broad distribution across northern, eastern and southeastern Australia, yet it has become scarce in many southern districts with the draining of wetland habitats on which it depends [@nye2007wild1].
+A colonial species of wetland habitats, the Magpie Goose can reach high abundance, and has a broad distribution across northern, eastern and southeastern Australia, yet it has become scarce in many southern districts with the draining of wetland habitats on which it depends [@nye2007wild].
 
 The Magpie Goose is widely distributed across lowland regions of Brisbane, but it occurs  patchily, favouring well-vegetated freshwater swamps. Although never occurring in big numbers in Brisbane, breeding has been reported from several locations, and counts over 100 birds have been reported from Kianawah Road Wetland, Metroplex Wetlands, Murarrie Swamp and Ox Bow Lake, and Sandy Camp Road Wetlands. The largest counts are both of 400 birds at Metroplex Wetlands on 20 Jul 2015 (Callan Alexander 2015) and Sandy Camp Road Wetlands on 28 Apr 2017 (Chris Attewell 2017).
 
 Magpie Geese are present in Brisbane year-round, although there is a clear peak in reporting rate in Oct-Jan, prior to the main onset of breeding activity in Jan-Apr.
 
-As a species dependent on wetland habitats [@frith1961ecology1], which are under pressure from modification and loss, care is needed to maintain high quality wetlands fringed with emergent vegetation preferred by Magpie Geese. Of particular importance are the major sites in which this species is concentrated (Kianawah Road Wetland, Metroplex Wetlands, Murarrie Swamp and Ox Bow Lake, and Sandy Camp Road Wetlands).
+As a species dependent on wetland habitats [@frith1961ecology], which are under pressure from modification and loss, care is needed to maintain high quality wetlands fringed with emergent vegetation preferred by Magpie Geese. Of particular importance are the major sites in which this species is concentrated (Kianawah Road Wetland, Metroplex Wetlands, Murarrie Swamp and Ox Bow Lake, and Sandy Camp Road Wetlands).
 
 **Distribution and Habitat**
 
@@ -70,8 +70,6 @@ The distribution of Magpie Goose shows no clear seasonal variation, with approxi
 **Seasonality**
 
 There are 21 reports of Magpie Goose breeding activity, spanning Jan-Apr, although nests with young are known only from Jan and Feb, suggesting a mid-summer peak to breeding activity. The main peak in reporting rate occurs prior to this, in Oct-Jan, when the species is reported from 8-10% of all checklists in Brisbane. This perhaps suggests that birds are moving into the Brisbane area to breed, and wandering and being recorded at a number of locations before concentrating into their breeding colonies. Breeding is only so far reported from three locations (Metroplex Wetlands, Sandy Camp Road Wetlands and Sherwood Arboretum; only the first two sites have significant numbers of breeding pairs. It would be good to collect more breeding data for this species so the full timing and geographical extent of breeding activity is understood.
-
-Outside of the Brisbane region, several studies have investigated the breeding patterns of Magpie Geese and found similar patterns [@whitehead1990eggs1].
 
 **Trends**
 
