@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Locally common breeding resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Magpie Goose in flight. Credit: Richard Fuller")
+render_species_profile(species_name, caption = "Widespread but patchy breeding resident and perhaps partial immigrant in freshwater swamps across the city. More records in the summer months, but not known if regular migratory movement occurs. Occurrence fluctuates from year to year, and there is a possible increase in occurrence since 2005. Not of conservation concern, but dependent on wetlands, which are a declining habitat type. Photo by Richard Fuller, Dowse Lagoon, 2 Jan 2018.")
 ```
 
 ```{r}
