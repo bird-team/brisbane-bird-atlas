@@ -18,7 +18,7 @@ rmd_files:
 - Dendrocygna-arcuata.Rmd
 - Malacorhynchus-membranaceus.Rmd
 - Cygnus-atratus.Rmd
-- Tadorna-radjah.Rmd
+- Radjah-radjah.Rmd
 - Aythya-australis.Rmd
 - Spatula-rhynchotis.Rmd
 - Anas-superciliosa.Rmd
@@ -401,4 +401,3 @@ rmd_files:
 - contributing.Rmd
 - gazetteer.Rmd
 - species-index.Rmd
-
