@@ -24,5 +24,6 @@ notifications:
     recipients:
       - jeffrey.hanson@uqconnect.edu.au
       - r.fuller@uq.edu.au
+      - louis.backstrom@gmail.com
     on_success: change
-    on_failure: always 
+    on_failure: always
