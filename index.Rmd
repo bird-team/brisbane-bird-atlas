@@ -1,6 +1,6 @@
 ---
 title: "Atlas of the Birds of Brisbane"
-author: "Insert authors here"
+author: "The distribution, abundance and seasonality of Brisbane's birds. An open-access resource prepared by the birding community of Brisbane, based on eBird data contributed by hundreds of observers."
 date: "`r Sys.Date()`"
 documentclass: book
 classoption:
