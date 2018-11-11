@@ -125,7 +125,7 @@ species_widget <- function(x, species_data, record_data, grid_data,
   }
   ## create palettes
   br <- pretty(na.omit(unlist(
-    grid_data@data[, plot_names[seq_len(5)]], use.names = FALSE)))
+    grid_data@data[, plot_names, drop = FALSE], use.names = FALSE)))
   palette <- color_numeric_palette(colors, domain = range(br),
                                    na.color = "#b3b3b3",
                                    zero.color = "transparent")
@@ -181,7 +181,7 @@ species_widget <- function(x, species_data, record_data, grid_data,
                             title = NULL, position = "topright")
   }
   if (any(seq_len(5) %in% map_numbers) &
-      (max(unlist(grid_data@data[, plot_names[seq_len(5)]],
+      (max(unlist(grid_data@data[, plot_names, drop = FALSE],
                   use.names = FALSE), na.rm = TRUE) > 1e-10)) {
     l <- addLegend_custom(l, pal = palette_rev, opacity = 1, bins = br,
                             values = seq(min(br), max(br), length.out = 100),
