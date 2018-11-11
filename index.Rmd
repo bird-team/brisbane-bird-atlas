@@ -1,6 +1,5 @@
 ---
 title: "Atlas of the Birds of Brisbane"
-author: "The distribution, abundance and seasonality of Brisbane's birds. An open-access resource prepared by the birding community of Brisbane, based on eBird data contributed by hundreds of observers."
 date: "`r Sys.Date()`"
 documentclass: book
 classoption:
@@ -32,6 +31,8 @@ start_page()
 ```
 
 # Preface
+
+**The distribution, abundance and seasonality of Brisbane’s birds. An open-access resource prepared by the birding community of Brisbane, based on eBird data contributed by hundreds of observers.**
 
 **Please note that this project is still very much under active construction and is not yet ready for contributions.**
 
