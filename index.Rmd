@@ -2,7 +2,7 @@
 title: "Atlas of the Birds of Brisbane"
 date: "`r Sys.Date()`"
 documentclass: book
-author: "An open-access resource prepared by the birding community of Brisbane, based on eBird data contributed by 1,200 observers."
+author: "Prepared by the birdwatching community of Brisbane."
 classoption:
   - openany
   - oneside
