@@ -29,7 +29,7 @@ render_species_profile <- function(x, caption, n_tries = 20) {
         startsWith(path, "https://") || startsWith(path, "ftp://")) {
       new_path <- paste0("assets/profile/", x, ".", tools::file_ext(path))
       # try to download the file, and if it fails attempt this a number of times
-      curr_n_tries = 0
+      curr_n_tries <- 0
       out <- structure(list(), class="try-error")
       while(inherits(out, "try-error") & isTRUE(curr_n_tries < n_tries)) {
         out <- try(download.file(path, new_path, quiet = TRUE), silent = TRUE)
