@@ -30,16 +30,16 @@ source("code/scripts/index.R")
 ```{r}
 start_page()
 ```
-# Welcome to the Brisbane Bird Atlas
+# Welcome!
 
-The _Atlas_ provides information on the distribution, abundance, breeding, seasonality and trends for every bird species known to have occurred within the Brisbane Local Government Area boundary. Brisbane is one of the most biodiverse cities in the world, and the Atlas is a way to keep track of its avian inhabitants, ensuring they continue to have space to thrive alongside our bustling human communities. This project officially launches on 1 January 2019, at which point it will be open for public participation. The goal is to draw on the collective expertise of birdwatchers throughout the city, and those who have visited from across the world, and record in one place all the information we have about Brisbane's birds. The _Atlas_ is a living, online, open-access resource that will continue to grow over the coming years. The plan is to have the first full draft of the _Atlas_ completed by 2020, and then continue to produce annual editions thereafter.
+The _Atlas_ provides information on the distribution, abundance, breeding, seasonality and trends for every bird species known to have occurred within the Brisbane Local Government Area boundary, and the adjacent coastal waters and Coral Sea. Brisbane is one of the most biodiverse cities in the world, and the Atlas is a way to keep track of its avian inhabitants, ensuring they continue to have space to thrive alongside our bustling human communities. This project officially launches on 1 January 2019, at which point it will be open for public participation. The goal is to draw on the collective expertise of birdwatchers throughout the city, and those who have visited from across the world, and record in one place all the information we have about Brisbane's birds. The _Atlas_ is a living, online, open-access resource that will continue to grow through community input as the years go by. The plan is to have the first full draft of the _Atlas_ completed by 2020, and then continue to produce annual editions thereafter.
 
-We hope you enjoy looking through the content - check back frequently as the _Atlas_ grows. If you can, please also donate your time and expertise to help make the _Atlas_ the best it can be. For full details of how you can contribute, please see the Contributing section. Here are some of the key things you can do to help create this landmark resource:
+We hope you enjoy looking through the content - check back frequently as the _Atlas_ grows. If you can, please also donate your time and expertise to help make the _Atlas_ the best it can be. For full details of how you can contribute, please see the [Contributing](https://brisbanebirds.com/contributing.html) section. Here are some of the key things you can do to help create this landmark resource:
 
 1. Go birdwatching in the city of Brisbane (see [here](http://www.dlgrma.qld.gov.au/resources/map/reform/brisbane-map.pdf) for a map) and enter your observations on [eBird](http://www.ebird.org), a free online tool for recording bird observations. The eBird records for Brisbane will be automatically included in the _Atlas_.
 
-2. Write some text for the _Atlas_. See [here](https://github.com/bird-team/brisbane-bird-atlas/wiki/Frequently-asked-questions#how-can-i-contribute-to-this-atlas) for details, noting that full supporting documentation will be available from 1 January 2019 onwards.
+2. Write some text for the _Atlas_. See [here](https://github.com/bird-team/brisbane-bird-atlas/wiki/Frequently-asked-questions#how-can-i-contribute-to-this-atlas) for details. Full instructions on how to edit _Atlas_ pages will be available in the [Contributing](https://brisbanebirds.com/contributing.html) section from 1 January 2019 onwards.
 
-3. Contact the editors of the _Atlas_ if you have any suggestions for content or resources of information about Brisbane's birds that you think would be helpful for the _Atlas_. Please email [Richard Fuller](mailto:r.fuller@uq.edu.au).
+3. Contact the editors of the _Atlas_ if you have any suggestions for content, or information about Brisbane's birds that you think would be helpful for the _Atlas_. Please email [Richard Fuller](mailto:r.fuller@uq.edu.au).
 
 Above all, enjoy Brisbane's birds!
