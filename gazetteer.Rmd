@@ -18,7 +18,7 @@ Local Experts: Hugh Possingham, Mat Gilfedder.
 
 **[3. Sandy Camp Road Wetlands](https://ebird.org/australia/hotspot/L1788977)**  
 207 Species | [27°26'05.8"S 153°08'50.4"E](https://goo.gl/maps/kxuEihD44V12)  
-Another very popular site within Brisbane, Sandy Camp is a large area of freshwater wetlands in the middle of the industrial centre east of Brisbane. Crakes and Rails are highly sought after here, and can be found early most mornings in the reeds fringing the ponds. Australian Little Bitterns are very secretive but are present at the site over summer, and Black Bitterns are rare visitors and are very difficult to find.
+Another very popular site within Brisbane, Sandy Camp is a large area of freshwater wetlands in the middle of the industrial centre east of Brisbane. Crakes and Rails are highly sought after here, and can be found early most mornings in the reeds fringing the ponds. Australian Little Bitterns are very secretive but are present at the site over summer, and Black Bitterns are rare visitors and are very difficult to find.  
 Local Experts: Chris Attewell, Richard Miller, Andrew Naumann.
 
 **[4. Lake Manchester](https://ebird.org/australia/hotspot/L2558202)**  
@@ -55,3 +55,28 @@ Local Experts: Matteo Grilli.
 189 Species  |  [27°20'25.8"S 153°04'40.8"E](https://goo.gl/maps/jBRzTZogJS32)  
 A large area of mangroves and coastal paperbark forest in Brisbane's north east, the Boondall Wetlands have long been protected as an important site for Moreton Bay's migratory birds. While not as intensely birded as some of the other major wetland sites along the coast, Boondall nonetheless has many species of birds that call it home. Migratory shorebirds roost along the banks of mangrove-lined creeks, while common woodland birds call in the trees behind. This is one of the best locations in Brisbane for Shining Flycatcher, but these birds are not easy to find hidden among the mangroves.  
 Local Experts: Steve Murray, Rick Franks, Felicia Chan.
+
+**[11. Minnippi Parklands](https://ebird.org/australia/hotspot/L1161973)**  
+189 Species | [27°28'59.5"S 153°06'53.9"E](https://goo.gl/maps/f7LgSbDY4HT2)  
+A productive area of parkland to the south east of the city, Minnippi is a varied area with wetlands, forest and grassy verges and hosts a large variety of species. In the past the site has turned up rare vagrants including Freckled Duck, Spotted Harrier, Sooty Tern (following Cyclone Oswald) and Scaly-breasted Munia.  
+Local Experts: Stuart Pickering.
+
+**[12. D'Aigular National Park - Araucaria Circuit](https://ebird.org/australia/hotspot/L2177590)**  
+180 Species | [27°26'27.7"S 152°55'16.7"E](https://goo.gl/maps/a2Ni6StXqht)  
+Enoggera Reservoir, situated to in The Gap in the west of Brisbane, is one of the most varied sites in Brisbane. Araucaria Circuit covers the north east section of the dam, starting and finishing at the Walkabout Creek Discovery Centre. The reservoir is one of the best locations in Brisbane for White-bellied Cuckooshrike, Crested Shrike-tit and Hardhead, with the latter being found in vast numbers across the lake. Rare vagrants or difficult species that have occurred at the site include Regent Honeyeater, Black-breasted Buttonquail, Musk Duck and Dusky Woodswallow.  
+Local Experts: Colin Reid, Brad Woodworth, Steve Murray, Lucas Brook.
+
+**[13. Nudgee Beach Reserve](https://ebird.org/australia/hotspot/L1172123)**  
+176 Species  |  [27°20'39.8"S 153°05'53.2"E](https://goo.gl/maps/mcA3bxK56RR2)  
+A large area of mudflats on the edge of Moreton Bay to the north east of the city, Nudgee Beach is adjacent to Boondall Wetlands and hosts thousands of migratory shorebirds each year. Bar-tailed Godwits, Curlew Sandpipers, Red-necked Stints and Pacific Golden-Plovers are all common here. Rarer shorebirds have turned up on occasion but nothing of major significance. The site is also excellent for Little Terns in summer, with counts of over 100 recorded.  
+Local Experts: Malcolm Graham, Louis Backstrom, Matteo Grilli.
+
+**[14. Prior's Pocket](https://ebird.org/australia/hotspot/L2558779)**  
+174 Species  |  [27°35'45.9"S 152°53'59.2"E](https://goo.gl/maps/QjrD5spexYx)  
+On the upper banks of Brisbane River near the Moggill Ferry crossing is Prior's Pocket, a Brisbane City Council Park that has a rich variety of birdlife. Yellow-rumped Thornbill, Brown and Rufous Songlark, Yellow-billed Spoonbill and various Woodswallow species are all rare Brisbane birds which occur relatively commonly at Prior's Pocket, and even rarer birds such as Freckled Duck, Hoary-headed Grebe, Spotted Harrier, Red-backed Kingfisher and Red-backed Buttonquail have also occurred - anything can turn up at Prior's Pocket. Be sure to look up every once in a while too, as raptors are common circling overhead. Black Kites feature commonly, as do Black-Shouldered Kites.  
+Local Experts: Rod Gardner.
+
+**[15. Port of Brisbane Island](https://ebird.org/australia/hotspot/L2559161)**  
+164 Species  |  [27°22'43.6"S 153°10'29.3"E](https://goo.gl/maps/52R3QPttp2R2)  
+The Port of Brisbane, situated on Fisherman Island at the mouth of the Brisbane River, is a bustling port with large amounts of industrial activity, but is somewhat unique among busy ports in that it has numerous areas dedicated to birds and the environment. The Port of Brisbane has a large shorebird roost (encompassed by a [separate eBird hotspot](https://ebird.org/australia/hotspot/L984917)) as well as [several large lakes](https://ebird.org/australia/hotspot/L1367805) but the island itself also hosts a great variety of species. Access to the island itself is straightforward - the Port of Brisbane Motorway leads right there - but access into the majority of areas in the Port is strictly controlled due to maritime regulations. Contact the [Port Office](https://www.portbris.com.au/) for advice on access to such areas.  
+Local Experts: Richard Miller, Rae Clark.
