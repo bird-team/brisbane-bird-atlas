@@ -13,6 +13,11 @@ pre code {
   white-space: inherit;
 }
 
+/* justify text in book */
+p {
+  text-align: justify;
+}
+
 /* ensure that tables are not striped */
 .book .book-body .page-wrapper .page-inner section.normal table tr:nth-child(2n) {
   background-color: rgb(255, 255, 255);
