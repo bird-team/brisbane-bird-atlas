@@ -30,6 +30,7 @@ source("code/scripts/index.R")
 ```{r}
 start_page()
 ```
+# Welcome to the Brisbane Bird Atlas
 
 The _Atlas_ provides information on the distribution, abundance, breeding, seasonality and trends for every bird species known to have occurred within the Brisbane Local Government Area boundary. Brisbane is one of the most biodiverse cities in the world, and the Atlas is a way to keep track of its avian inhabitants, ensuring they continue to have space to thrive alongside our bustling human communities. This project officially launches on 1 January 2019, at which point it will be open for public participation. The goal is to draw on the collective expertise of birdwatchers throughout the city, and those who have visited from across the world, and record in one place all the information we have about Brisbane's birds. The _Atlas_ is a living, online, open-access resource that will continue to grow over the coming years. The plan is to have the first full draft of the _Atlas_ completed by 2020, and then continue to produce annual editions thereafter.
 
