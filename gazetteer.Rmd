@@ -4,7 +4,7 @@ back_matter()
 
 # Gazetteer
 
-Brisbane's birdlife is varied and abundant. All across the region there are sites which host scores of species. This page is intended to showcase some of the very best birding hotspots Brisbane has to offer. Initially, this comprises those eBird hotspots with over 150 recorded species:
+Brisbane's birdlife is varied and abundant. All across the region there are sites which host scores of species. This page is intended to showcase some of the very best birding hotspots Brisbane has to offer. Initially, this comprises those [eBird](https://ebird.org/home) hotspots with over 150 recorded species:
 
 **[1. Tinchi Tamba Wetlands Reserve](https://ebird.org/australia/hotspot/L960635)**  
 236 Species | [27°17'56.9"S 153°02'12.0"E](https://goo.gl/maps/sjWBv5DSmoT2)  
