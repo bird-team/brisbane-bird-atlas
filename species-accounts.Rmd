@@ -1,6 +1,6 @@
 # Species Accounts
 
-The following pages contain complete species accounts for all birds known to have occurred in the Brisbane LGA and accompanying offshore waters. Currently these accounts lack text, please see the [contributing](https://brisbanebirds.com/contributing.html) page for details on how to help build the atlas.
+The following pages contain species accounts for all birds known to have occurred in Brisbane and the adjacent offshore waters. Currently only the Magpie Goose account has draft text. Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas.
 
 ```{r}
 clear_page()
