@@ -4,4 +4,29 @@ back_matter()
 
 # Gazetteer
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque. Cras vel felis sed purus sollicitudin pharetra eu eget arcu. In volutpat eleifend mauris, sed porta nunc dapibus a. Suspendisse fringilla tempus quam a fermentum. Morbi quis lacus nec eros maximus interdum. Nullam venenatis vehicula magna, a egestas est ornare vel. Fusce quis luctus orci, eget congue dolor. Morbi luctus est justo, quis porttitor lacus facilisis sit amet.
+Brisbane's birdlife is varied and abundant. All across the region there are sites which host scores of species. This page is intended to showcase some of the very best birding hotspots Brisbane has to offer. Initially, this comprises those eBird hotspots with over 150 recorded species:
+
+**[1. Tinchi Tamba Wetlands Reserve](https://ebird.org/australia/hotspot/L960635)**  
+236 Species | [27°17'56.9"S 153°02'12.0"E](https://goo.gl/maps/sjWBv5DSmoT2)  
+Brisbane's most abundant birding hotspot, the Tinchi Tamba Wetlands are a large expanse of intertidal mudflats and wetlands in the far north of the city. The mudflats provide a high tide roost for dozens of wader species, including rare vagrant shorebirds such as Long-toed Stint and Pectoral Sandpiper. The freshwater lagoons offer a different habitat and consequently have different birds, including on occasion Brolga, Black-Necked Stork, Little Grassbird and Australian Spotted Crake, all rare species within the Brisbane boundary.  
+Local Experts: Ged Tranter, Steve Murray, Rick Franks.
+
+**[2. Oxley Creek Common](https://ebird.org/australia/hotspot/L967148)**  
+214 Species  |  [27°32'09.2"S 152°59'34.2"E](https://goo.gl/maps/pDD3an4XLg12)  
+By far Brisbane's most visited birding location, Oxley Creek Common is a vast expanse of grazing fields, woodland and wetlands nestled between the industrial suburbs of Rocklea, Oxley and Sherwood in the inner south west of the city. As many as 70 species of bird can be found in one hour at the Common, including the odd rarity. Brown Quails are a staple and can be easily found scurrying in large groups along the side of the path - a favourite of many visiting birders.  
+Local Experts: Hugh Possingham, Mat Gilfedder.
+
+**[3. Sandy Camp Road Wetlands](https://ebird.org/australia/hotspot/L1788977)**  
+207 Species | [27°26'05.8"S 153°08'50.4"E](https://goo.gl/maps/kxuEihD44V12)  
+Another very popular site within Brisbane, Sandy Camp is a large area of freshwater wetlands in the middle of the industrial centre east of Brisbane. Crakes and Rails are highly sought after here, and can be found early most mornings in the reeds fringing the ponds. Australian Little Bitterns are very secretive but are present at the site over summer, and Black Bitterns are rare visitors and are very difficult to find.
+Local Experts: Chris Attewell, Richard Miller, Andrew Naumann.
+
+**[4. Lake Manchester](https://ebird.org/australia/hotspot/L2558202)**  
+201 Species | [27°29'23.8"S 152°44'44.0"E](https://goo.gl/maps/RwiU3siiF3p)  
+Much less visited than the sites above, Lake Manchester makes up for a lack of popularity with a plethora of birds. Situated on the far west edge of Brisbane out near Ipswich, Lake Manchester provides habitat for many inland birds not found anywhere else in the region. It is one of the best sites in Brisbane for nocturnal birds, with Powerful Owl, Southern Boobook, Australian Owlet-Nightjar, White-throated Nightjar and Barn Owl all being commonly encountered at night. King Quail are a scarce resident among rank grasses fringing the lake and nearby Cabbage Tree Creek, and the site has played host to a large number of rare inland birds, particularly during dry years in the interior.  
+Local Experts: Richard Fuller, Ged Tranter, Steve Murray.
+
+**[5. Kedron Brook Wetlands Reserve](https://ebird.org/australia/hotspot/L1176744)**  
+200 Species | [27°24'03.7"S 153°04'45.7"E](https://goo.gl/maps/HDzBGFjrUzv)  
+Another fantastic set of wetlands in the coastal region of Brisbane are the Kedron Brook Wetlands, situated by the banks of Kedron Brook at the end of Toombul Rd. Perhaps best known to Brisbane birders as being by far the most reliable site for Australasian Grass-Owls in the city, the wetlands are also home to many other rare and enchanting birds. Shorebirds are common in summer, with Sharp-tailed Sandpipers being the most abundant migratory bird, although rare Brisbane vagrants also turn up. The site is also particularly good for raptors, and notably has recorded Black Falcons on many occasions, as well as most other Brisbane birds of prey.  
+Local Experts: Dezmond Wells, Steve Murray, Chris Attewell, Louis Backstrom.
