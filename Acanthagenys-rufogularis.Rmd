@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Insert header text here.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Rare vagrant to the Brisbane region, with only a handful of records, all in winter months indicating seasonal movements. Common throughout the interior of Australia but rarely makes it to the coast.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+The Spiny-cheeked Honeyeater is a large, distinctive species of honeyeater similar (and closely related) to wattlebirds, but with a distinctive tawny breast and throat. It is gregarious in its normal range, although the majority of records in Brisbane have been on single birds or occasionally pairs. It is nomadic across much of its range, particularly in the north of Australia, although the provenance of all Brisbane birds is unknown. It is readily identified by its size (large compared to most honeyeaters), distinctive call and plumage pattern. Further birds may turn up anywhere across Brisbane, although there appears to be a preference for open woodland and dry forest, habitat similar to that found in their normal breeding range.
 
 ```{r}
 end_two_column_layout()
