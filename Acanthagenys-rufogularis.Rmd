@@ -81,6 +81,10 @@ As the species is a rare vagrant, no clear trends in the reporting have been ide
 - Protect remnant bushland habitat that favours the birds
 - Ensure that there are enough flowering trees to provide adequate food.
 
+**Contributors to Species Account**
+
+- Louis Backstrom
+
 ```{r}
 end_two_column_layout()
 ```
