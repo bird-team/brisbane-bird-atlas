@@ -6,7 +6,7 @@ species_name <- "Acanthagenys rufogularis"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Vagrant.
 
 ```{r}
 render_species_profile(species_name, caption = "Rare vagrant to the Brisbane region, with only a handful of records, all in winter months indicating seasonal movements. Common throughout the interior of Australia but rarely makes it to the coast.")
