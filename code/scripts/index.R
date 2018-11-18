@@ -16,6 +16,7 @@ source("code/functions/render_species_widget.R")
 source("code/functions/render_species_table.R")
 source("code/functions/render_species_audio.R")
 source("code/functions/render_species_profile.R")
+source("code/functions/render_image.R")
 source("code/functions/latex_commands.R")
 
 ## load packages
