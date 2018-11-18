@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Sparse breeding resident and possible winter immigrant.
 
 ```{r}
-render_species_profile(species_name, caption = "Patchy distribution within the Brisbane region, with only a handful of regular sites but many more locations where the species has occurred, often only as one-off records. Present in Brisbane throughout the year, but with a substantial increase in the winter months. No clear trend over the past decade, although rather few records in the last 4-5 years, and its abundance fluctuates from year to year. Yellow-rumped Thornbill is generally scarce in Brisbane, and while it is probably not of major conservation concern in Brisbane, it is a species worth monitoring signs of population declines.")
+render_species_profile(species_name, caption = "Patchy distribution within the Brisbane region, with only a handful of regular sites but many more locations where the species has occurred, often only as one-off records. Present in Brisbane throughout the year, but with a substantial increase in the winter months. No clear trend over the past decade, although rather few records in the last 4-5 years, and its abundance fluctuates from year to year. Yellow-rumped Thornbill is scarce and localised, and while it is probably not of major conservation concern in Brisbane, it is worth monitoring for signs of population decline or reduction in distribution.")
 ```
 
 ```{r}
