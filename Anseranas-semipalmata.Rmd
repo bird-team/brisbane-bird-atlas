@@ -87,6 +87,10 @@ Reporting rate for Magpie Goose has remained relatively stable between 2005 and 
 - Protect wetlands from being drained
 - Protect wetlands from loss of fringing vegetation
 
+**Contributors to Species Accout**
+
+Louis Backstrom
+Richard Fuller
 
 ```{r}
 end_two_column_layout()
