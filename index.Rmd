@@ -12,6 +12,7 @@ csl: reference-style.csl
 biblio-style: reference-style
 link-citations: yes
 github-repo: bird-team/brisbane-bird-atlas
+favicon: "assets/misc/favicon.ico"
 url: "https\\://brisbanebirds.com/"
 description: "Community bird atlas for Brisbane, Australia"
 geometry: "left=2.54cm, right=2.54cm, top=2.54cm, bottom=2.54cm"
