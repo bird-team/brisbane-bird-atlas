@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Insert header text here.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Limited to the wetter rainforests of the inland ranges of Brisbane, a patchy resident and possible partial migrant. Slightly more records in cooler months, but no clear indication of local movements. Occurrence varies widely from year to year with no clear long term trend. Not of conservation concern, but dependent on the cooler wet sclerophyll and rainforests of the Brisbane ranges, which are under threat.")
 ```
 
 ```{r}
