@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The Magpie Goose is a large, distinctive waterbird with striking black and white plumage and yellowish legs. A gregarious species, counts of up to 400 have been recorded in Brisbane. It is easily identified, with no similar species in the region; the black and white plumage and size rule out all other options, although Black Swan in flight may appear superficially similar from a distance. The Magpie Goose is locally common and patchily distributed across Brisbane, with only a handful of regular sites, although given their propensity for wandering [@frith1961ecology] it can occur anywhere with suitable habitat or as a flyover.
+The Magpie Goose is a large, distinctive waterbird with striking black and white plumage and yellowish legs. A gregarious species, counts of up to 400 have been recorded in Brisbane. The Magpie Goose is locally common but patchily distributed across Brisbane, mostly at a handful of regular sites, although given its propensity for wandering [@frith1961ecology], it can occur anywhere with suitable habitat or as a flyover.
 
 ```{r}
 end_two_column_layout()
