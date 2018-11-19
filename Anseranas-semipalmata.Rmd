@@ -55,7 +55,7 @@ start_two_column_layout()
 ```
 A colonial species of wetland habitats, the Magpie Goose can reach high abundance, and has a broad distribution across northern, eastern and southeastern Australia, yet it has become scarce in many southern districts with the draining of wetland habitats on which it depends [@nye2007wild].
 
-The Magpie Goose is widely distributed across lowland regions of Brisbane, but it occurs  patchily, favouring well-vegetated freshwater swamps. Although never occurring in big numbers in Brisbane, breeding has been reported from several locations, and counts over 100 birds have been reported from Kianawah Road Wetland, Metroplex Wetlands, Murarrie Swamp and Ox Bow Lake, and Sandy Camp Road Wetlands. The largest counts are both of 400 birds at Metroplex Wetlands on 20 Jul 2015 [@alexander2015ebirdS24319461] and Sandy Camp Road Wetlands on 28 Apr 2017 [@attewell2017ebirdS36317694].
+The Magpie Goose is widely distributed across lowland regions of Brisbane, but it occurs patchily, favouring well-vegetated freshwater swamps. Although never occurring in big numbers in Brisbane, breeding has been reported from several locations, and counts over 100 birds have been reported from Kianawah Road Wetland, Metroplex Wetlands, Murarrie Swamp and Ox Bow Lake, and Sandy Camp Road Wetlands. The largest counts are both of 400 birds at Metroplex Wetlands on 20 Jul 2015 [@alexander2015ebirdS24319461] and Sandy Camp Road Wetlands on 28 Apr 2017 [@attewell2017ebirdS36317694].
 
 Magpie Geese are present in Brisbane year-round, although there is a clear peak in reporting rate in Oct-Jan, prior to the main onset of breeding activity in Jan-Apr.
 
