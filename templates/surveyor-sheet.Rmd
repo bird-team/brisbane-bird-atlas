@@ -1,0 +1,106 @@
+---
+output:
+  rmarkdown::pdf_document:
+    toc: false
+    keep_tex: false
+    fig_caption: yes
+    include:
+      surveyor-sheet-preamble.tex
+fontsize: 12pt
+documentclass: article
+subparagraph: true
+params:
+  grid_id: !r NULL
+  grid_name: !r NULL
+  grid_checklist_target: !r NULL
+  grid_minute_target: !r NULL
+  grid_km_target: !r NULL
+  grid_description: !r NULL
+  grid_map: !r NULL
+  grid_checklist: !r NULL
+  grid_summary: !r NULL
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE,
+                      results = "asis", fig.align = "center")
+knitr::opts_knit$set(progress = FALSE, verbose = FALSE)
+source("code/scripts/index.R")
+```
+
+```{r, include = FALSE}
+assertthat::assert_that(!is.null())
+```
+
+\chead{`r paste0("Atlas of the Birds of Brisbane ", grid_name, "Grid Square, ", format(as.POSIXct(Sys.time()), "%b %Y"))}
+\cfoot{`r paste0("Grid square target for each season: ", grid_checklist_target, " complete checklists, ", grid_minute_target, " minutes, ", grid_km_target, " km")`}
+
+```{r}
+print(grid_map)
+```
+
+```{r}
+cat(grid_description, sep = " ")
+```
+
+```{r}
+grid_summary_names <- names(grid_summary)
+grid_summary_names <- gsub("_", "\n", grid_summary_names, fixed = TRUE)
+grid_summary_names <- gsub("2", "", grid_summary_names, fixed = TRUE)
+grid_summary_names <- gsub("3", "", grid_summary_names, fixed = TRUE)
+grid_summary_names[grepl("blank", grid_summary_names)] <- ""
+knitr::kable(grid_summary, col.names = grid_summary_names)
+```
+
+```{r}
+# convert TRUE and FALSE to text for table
+grid_checklist$summer <- c("", "$\\times$")[grid_checklist$summer + 1]
+grid_checklist$winter <- c("", "$\\times$")[grid_checklist$winter + 1]
+grid_checklist$autumn <- c("", "$\\times$")[grid_checklist$autumn + 1]
+grid_checklist$spring <- c("", "$\\times$")[grid_checklist$spring + 1]
+# render table using pseudotabular environment defined in preamble
+cat(sep = "\n", paste0(
+  "\\begin{pseudotabular}\n",
+  "\\entry{}{Su}{Au}{Wi}{Sp}\n",
+  paste(paste0("\\entry{", grid_checklist$name, "}{",
+               grid_checklist$summer, "}{", grid_checklist$autumn, "}{",
+               grid_checklist$winter, "}{", grid_checklist$spring, "}"),
+        collapse = "\n"), "\n",
+  "\\end{pseudotabular}")
+```
+
+```{r}
+begin_two_column_layout()
+```
+
+# Contributing to the Atlas
+
+## What is the Atlas of the Birds of Brisbane?
+
+This Atlas seeks to document the distribution, abundance and seasonality of all recorded species of Brisbane birds and is based on data from eBird, an open-access citizen science project dedicated to furthering our knowledge of birds and their behaviour.
+
+You can view the Atlas online at http://brisbanebirds.com
+
+## How do I go about atlassing?
+
+The Atlas uses data from eBird, the online bird databasing tool. Simply go birdwatching within this grid square, record your sightings in eBird, and the records will be automatically transferred from eBird into the Atlas.
+
+To join eBird today and start contributing your observations to the Atlas, visit www.ebird.org. There’s no need to do anything special within eBird to make your records count - all eBird observations from Brisbane will automatically be pulled into the atlas.
+
+Plan your trip to the square by perusing the maps, identifying some suitable locations to visit, and deciding which time of year to visit. Consider nocturnal trips as needed – many squares are short of nocturnal visits.
+
+## Can I set up new locations?
+
+You can set up new personal locations via the eBird website or mobile app, and if a location meets the criteria for a hotspot, by all means suggest it so it can assessed by a hotspot reviewer.
+
+## How much effort is enough?
+
+We have set an initial goal of achieving 12 complete checklists within each season in each grid square. This is 12 lists over the course of the entire Atlas period (currently 1 Jan 2005 – 31 Dec 2019). This initial target will be increased in future, but for now the priority is to improve our knowledge of very poorly-surveyed squares before we set a higher target.
+
+## Ethical birding
+
+The Atlas endorses ethical birding. The welfare of our birds is the highest priority so please engage in birding practices which do not adversely impact the birds around you. Nesting and migratory birds are particularly vulnerable to disturbances.
+
+```{r}
+end_two_column_layout()
+```

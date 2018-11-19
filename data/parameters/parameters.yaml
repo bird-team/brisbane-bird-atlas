@@ -3,6 +3,7 @@ title: atlas parameters
 crs: 3857                                              # coordinate reference system for mapping
 grid_resolution: 2000                                  # resolution for atlas grid cells in meters
 number_species: "all"                                  # number of species to include in atlas
+number_surveyor_sheets: 5                              # number of surveyor sheets to produce
 threads: 1                                             # number of threads to use when creating assets
 
 maps:                                                  # parameters controlling appearance of the maps
@@ -80,6 +81,9 @@ records:                                               # parameters for eBird re
   all_species_column_name: ALL SPECIES REPORTED        # column name indicating if all species reported
   count_column_name: OBSERVATION COUNT                 # column name incdicating the number of individuals counted
   protocol_column_name: PROTOCOL TYPE                  # column name for methdology used for sampling
+  distance_km_column: EFFORT DISTANCE KM               # column name with the distance travelled per sampling event
+  duration_minutes_column: DURATION MINUTES            # column name with the  duration of the sampling event in minutes
+  observer_id_column: OBSERVER ID                      # column name with the observer's unique identifier
   omit_protocol_names:                                 # list of sampling protocols to exclude from reporting rate
     - "Incidental"
   breeding_column_name: BREEDING BIRD ATLAS CODE       # column name descirbing breeding activity
@@ -102,3 +106,11 @@ audio:                                                # parameters for audio fil
 
 vegetation:                                           # parameters for vegetation data
   class_column_name: atlas_name                       # column name for vegetation class name
+
+grid_metadata:                                        # parameters for grid metadata
+  id_column_name: id                                  # name of column in attribute table with unique grid cell identifier
+  name_column_name: name                              # name of column in attribute table with grid cell name
+  checklist_target_column_name: checklist_target      # name of column with the checklist target for each grid cell
+  minute_target_column_name: minute_target            # name of column with the minute target for each grid cell
+  km_target_column_name: km_target                    # name of column with the km target for each grid cell
+  description_column_name: description                # name of column with the description for each grid cell

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This directory contains the sampling grid data for Brisbane. It is used to define the sampling grid cells depicted in the maps, tables, graphs, and figures that shown in the atlas.
+This directory contains the sampling grid data for Brisbane. It is used to define the sampling grid cells depicted in the maps, tables, graphs, and figures that shown in the atlas. The metadata file contains additional information for each grid cell, including names, descriptions, and targets.
 
 ## Data origin
 

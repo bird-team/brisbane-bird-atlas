@@ -73,6 +73,7 @@ assets:
 	&& docker exec bba sh -c "cd assets; zip -r widgets.zip widgets" \
 	&& docker exec bba sh -c "cd assets; zip -r graphs.zip graphs" \
 	&& docker exec bba sh -c "cd assets; zip -r tables.zip tables" \
+	&& docker exec bba sh -c "cd assets; zip -r suveyor-sheets.zip suveyor-sheets" \
 	&& docker cp bba:$(PATHSEP2)tmp/assets/maps.zip assets \
 	&& docker cp bba:$(PATHSEP2)tmp/assets/widgets.zip assets \
 	&& docker cp bba:$(PATHSEP2)tmp/assets/graphs.zip assets \
