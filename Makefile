@@ -64,8 +64,21 @@ grid:
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 ## build assets
+# pull grid maps from external repository
+pull_grid_maps:
+	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
+	&& docker cp . bba:$(PATHSEP2)tmp/ \
+	&& docker exec bba sh -c "Rscript /tmp/code/scripts/pull_grid_maps.R" \
+	&& docker cp bba:$(PATHSEP2)tmp/assets/maps.zip assets \
+	&& cd assets \
+	&& unzip -o maps.zip -d grid-maps \
+	&& mv grid-maps/exports/* grid-maps \
+	&& rm -rf grid-maps/exports \
+	&& rm maps.zip || true
+	@docker stop -t 1 bba || true && docker rm bba || true
+
 # rebuild assets locally
-assets:
+assets: pull_grid_maps
 	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
 	&& docker cp . bba:$(PATHSEP2)tmp/ \
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/create_assets.R" \
