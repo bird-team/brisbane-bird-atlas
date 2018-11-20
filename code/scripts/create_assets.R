@@ -48,7 +48,6 @@ source("code/functions/species_graph.R")
 source("code/functions/species_map.R")
 source("code/functions/species_widget.R")
 source("code/functions/species_table.R")
-source("code/functions/grid_map.R")
 source("code/functions/grid_summary_table.R")
 source("code/functions/grid_checklist_table.R")
 source("code/functions/find_observer_name.R")
@@ -305,7 +304,7 @@ if (is_parallel) {
                              "species_widget", "color_numeric_palette", "ymax",
                              "breaks", "addLegend_custom", "file_names",
                              "add_reporting_rate_columns",
-                             "add_detection_columns", "grid_map",
+                             "add_detection_columns",
                              "find_observer_name", "grid_summary_table",
                              "grid_checklist_table"))
   doParallel::registerDoParallel(cl)
@@ -313,7 +312,7 @@ if (is_parallel) {
 
 ## create surveyor sheet for each grid cell
 message("starting surveyor sheets...")
-result <- plyr::laply(seq_len(nrow(grid_data)), .parallel = is_parallel,
+result <- plyr::laply(which(grid_data$type == "land"), .parallel = is_parallel,
                       function(i) {
   # display progress
   message("  ", grid_data$id[i])
@@ -332,7 +331,8 @@ result <- plyr::laply(seq_len(nrow(grid_data)), .parallel = is_parallel,
     }
   }
   # create image for grid
-  grid_map <- grid_map(grid_data[i, ])
+  grid_map <- normalizePath(paste0("assets/grid-maps/grid-", grid_data$id[i],
+                                   ".png"), mustWork = TRUE)
   # create checklist table for grid
   grid_summary <- grid_summary_table(i, grid_data, species_data,
                                      record_data)
@@ -340,8 +340,9 @@ result <- plyr::laply(seq_len(nrow(grid_data)), .parallel = is_parallel,
   grid_checklist <- grid_checklist_table(grid_data$id[i], species_data,
                                          record_data)
   # make rmarkdown document
-  markdown::render("templates/surveyor-sheet.Rmd",
-    output_file = asset_path,
+  rmarkdown::render("templates/surveyor-sheet.Rmd",
+    output_file = basename(asset_path),
+    output_dir = dirname(asset_path),
     params = list(grid_id = grid_data$id[i],
                   grid_name = grid_data$name[i],
                   grid_checklist_target = grid_data$checklist_target[i],
@@ -349,7 +350,8 @@ result <- plyr::laply(seq_len(nrow(grid_data)), .parallel = is_parallel,
                   grid_km_target = grid_data$km_target[i],
                   grid_map = grid_map,
                   grid_summary = grid_summary,
-                  grid_description = grid_checklist))
+                  grid_checklist = grid_checklist,
+                  grid_description = grid_data$description[i]))
   # save hash
   writeLines(grid_data$sheet_hash[i], hash_path)
   # return logical indicating success
