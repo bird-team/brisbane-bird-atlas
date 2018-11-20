@@ -138,9 +138,14 @@ grid_summary_table <- function(x, grid_data, species_data, record_data) {
     dplyr::summarize(
       number_species = dplyr::n_distinct(species_scientific_name),
       number_complete_checklists = sum(is_checklist),
-      number_incomplete_checklists = sum(!is_checklist)) %>%
+      number_incomplete_checklists = sum(!is_checklist),
+      event_id = dplyr::last(event)) %>%
     dplyr::ungroup() %>%
     dplyr::arrange(dplyr::desc(number_species))
+  # find observer names using their ids
+  ldr_checklist_data$observer_name <- vapply(ldr_checklist_data$event_id,
+                                             "find_observer_name",
+                                             character(1))
   # output table
   data.frame(
     blank = c("Summer (Dec--Feb)", "Autumn (Mar--May)",
@@ -151,7 +156,7 @@ grid_summary_table <- function(x, grid_data, species_data, record_data) {
     Total_km = chk_total_km,
     Species = chk_species,
     blank2 = rep(""),
-    blank3 = ldr_checklist_data$observer_id,
+    blank3 = ldr_checklist_data$observer_name,
     Species2 = ldr_checklist_data$number_species,
     Complete_checklists2 = ldr_checklist_data$number_complete_checklists,
     Incomplete_checklists = ldr_checklist_data$number_incomplete_checklists)

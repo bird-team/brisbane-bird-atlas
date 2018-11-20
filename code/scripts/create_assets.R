@@ -51,6 +51,7 @@ source("code/functions/species_table.R")
 source("code/functions/grid_map.R")
 source("code/functions/grid_summary_table.R")
 source("code/functions/grid_checklist_table.R")
+source("code/functions/find_observer_name.R")
 source("code/functions/color_numeric_palette.R")
 source("code/functions/ymax.R")
 source("code/functions/breaks.R")
@@ -304,7 +305,9 @@ if (is_parallel) {
                              "species_widget", "color_numeric_palette", "ymax",
                              "breaks", "addLegend_custom", "file_names",
                              "add_reporting_rate_columns",
-                             "add_detection_columns", "grid_map", "grid_summary_table", "grid_checklist_table"))
+                             "add_detection_columns", "grid_map",
+                             "find_observer_name", "grid_summary_table",
+                             "grid_checklist_table"))
   doParallel::registerDoParallel(cl)
 }
 
