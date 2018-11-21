@@ -46,7 +46,7 @@ assertthat::assert_that(!is.null(params$grid_id),
 ```{r}
 cat(paste0("\\chead{\\Large \\bfseries Atlas of the Birds of Brisbane\\\\",
            params$grid_name,
-           "Grid Square, ",
+           " Grid Square, ",
            format(as.POSIXct(Sys.time()), "%b %Y"), "}"),
      sep = "\n")
 ```
