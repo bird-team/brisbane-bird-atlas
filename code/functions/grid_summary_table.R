@@ -66,13 +66,21 @@ grid_summary_table <- function(x, grid_data, species_data, record_data) {
   ## total minutes
   chk_total_minutes <- c(
     sum(grid_checklist_data$duration_minutes[
-      grid_checklist_data$season == "summer"], na.rm = TRUE),
+          grid_checklist_data$season == "summer" &
+          !duplicated(grid_checklist_data$event)],
+        na.rm = TRUE),
     sum(grid_checklist_data$duration_minutes[
-      grid_checklist_data$season == "autumn"], na.rm = TRUE),
+          grid_checklist_data$season == "autumn" &
+          !duplicated(grid_checklist_data$event)],
+        na.rm = TRUE),
     sum(grid_checklist_data$duration_minutes[
-      grid_checklist_data$season == "winter"], na.rm = TRUE),
+          grid_checklist_data$season == "winter" &
+          !duplicated(grid_checklist_data$event)],
+        na.rm = TRUE),
     sum(grid_checklist_data$duration_minutes[
-      grid_checklist_data$season == "spring"], na.rm = TRUE))
+          grid_checklist_data$season == "spring" &
+          !duplicated(grid_checklist_data$event)],
+        na.rm = TRUE))
   chk_total_minutes_bold <- c(chk_total_minutes < g$minute_target, TRUE)
   chk_total_minutes <- c(chk_total_minutes, sum(chk_total_minutes))
   chk_total_minutes[-5] <- paste0(chk_total_minutes[-5], "/", g$minute_target)
@@ -81,15 +89,23 @@ grid_summary_table <- function(x, grid_data, species_data, record_data) {
   ## total km
   chk_total_km <- c(
     sum(grid_checklist_data$distance_km[
-      grid_checklist_data$season == "summer"], na.rm = TRUE),
+          grid_checklist_data$season == "summer" &
+          !duplicated(grid_checklist_data$event)],
+        na.rm = TRUE),
     sum(grid_checklist_data$distance_km[
-      grid_checklist_data$season == "autumn"], na.rm = TRUE),
+          grid_checklist_data$season == "autumn" &
+          !duplicated(grid_checklist_data$event)],
+        na.rm = TRUE),
     sum(grid_checklist_data$distance_km[
-      grid_checklist_data$season == "winter"], na.rm = TRUE),
+          grid_checklist_data$season == "winter" &
+          !duplicated(grid_checklist_data$event)],
+        na.rm = TRUE),
     sum(grid_checklist_data$distance_km[
-      grid_checklist_data$season == "spring"], na.rm = TRUE))
+          grid_checklist_data$season == "spring" &
+          !duplicated(grid_checklist_data$event)],
+        na.rm = TRUE))
   chk_total_km_bold <- c(chk_total_km < g$km_target, TRUE)
-  chk_total_km <- c(chk_total_km, sum(chk_total_km))
+  chk_total_km <- round(c(chk_total_km, sum(chk_total_km)), 1)
   chk_total_km[-5] <- paste0(chk_total_km[-5], "/", g$km_target)
   chk_total_km[chk_total_km_bold] <- paste0("\\textbf{",
     chk_total_km[chk_total_km_bold], "}")
@@ -137,8 +153,8 @@ grid_summary_table <- function(x, grid_data, species_data, record_data) {
     dplyr::group_by(observer_id) %>%
     dplyr::summarize(
       number_species = dplyr::n_distinct(species_scientific_name),
-      number_complete_checklists = sum(is_checklist),
-      number_incomplete_checklists = sum(!is_checklist),
+      number_complete_checklists = sum(is_checklist[!duplicated(event)]),
+      number_incomplete_checklists = sum(!is_checklist[!duplicated(event)]),
       event_id = dplyr::last(event)) %>%
     dplyr::ungroup() %>%
     dplyr::arrange(dplyr::desc(number_species))
