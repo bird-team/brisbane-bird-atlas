@@ -2,13 +2,14 @@
 
 The following pages contain species accounts for all birds known to have occurred in Brisbane and the adjacent offshore waters. Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas.
 
-Species with full accounts written: 5 (1.3%)
+Species with full accounts written: 6 (1.5%)
 
 - Magpie Goose
 - Spiny-cheeked Honeyeater
 - Yellow-rumped Thornbill
 - Striated Thornbill
 - Eastern Spinebill
+- Pacific Black Duck
 
 ```{r}
 clear_page()
