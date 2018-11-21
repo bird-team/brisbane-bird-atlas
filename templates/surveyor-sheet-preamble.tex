@@ -1,5 +1,5 @@
 % load packages
-\usepackage{amsmath,amsfonts,float,makecell,titletoc,titlesec,tocloft,lineno,booktabs,subfiles,textcomp,tabularx,etoolbox,fancyhdr,multicol,capt-of,siunitx,xcolor,hyperref}
+\usepackage{amsmath,amsfonts,float,makecell,titletoc,titlesec,tocloft,lineno,booktabs,subfiles,textcomp,tabularx,etoolbox,fancyhdr,multicol,capt-of,siunitx,xcolor,hyperref,xtab,chngpage}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[utf8]{inputenc}
@@ -43,15 +43,3 @@
 
 % align headers for table
 \renewcommand\theadalign{tc}
-
-% create new environment for table
-% modified from https://tex.stackexchange.com/a/322036/174997
-\newcommand{\entry}[5]{%
-  \makebox[\columnwidth][s]{#1\hfil#2\hfil#3\hfil#4\hfil#5} \par
-}
-\newenvironment{pseudotabular}%
- {\setlength\columnsep{1cm}%
-  \begin{multicols}{3}
-  \footnotesize
-  \setlength\parindent{0pt}}
- {\end{multicols}}

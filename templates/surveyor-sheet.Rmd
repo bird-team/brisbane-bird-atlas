@@ -110,20 +110,60 @@ cat(paste(l, collapse = "\n"))
 
 \clearpage
 
-```{r, eval=F}
+```{r}
 # convert TRUE and FALSE to text for table
-# render table using pseudotabular environment defined in preamble
-cat(sep = "\n", paste0(
-  "\\begin{pseudotabular}\n",
-  "\\entry{}{Su}{Au}{Wi}{Sp}\n",
-  paste(paste0("\\entry{", grid_checklist$species_common_name, "}{",
-               params$grid_checklist$summer, "}{",
-               params$grid_checklist$autumn, "}{",
-               params$grid_checklist$winter, "}{",
-               params$grid_checklist$spring, "}"),
-        collapse = "\n"), "\n",
-  "\\end{pseudotabular}"))
+chk <- params$grid_checklist
+chk$summer <- dplyr::if_else(chk$summer, "$\\times$", "")
+chk$winter <- dplyr::if_else(chk$winter, "$\\times$", "")
+chk$autumn <- dplyr::if_else(chk$autumn, "$\\times$", "")
+chk$spring <- dplyr::if_else(chk$spring, "$\\times$", "")
+names(chk) <- c(names(chk)[1], substr(names(chk)[-1], 1, 2))
+names(chk) <- tools::toTitleCase(names(chk))
+
+# assign starting rows and ending rows for each table
+chk_row_starts <- c(1, ceiling(nrow(chk) / 3) + 1,
+                    ceiling(nrow(chk) / 3) + ceiling(nrow(chk) / 3) + 1)
+chk_row_ends <- c(ceiling(nrow(chk) / 3),
+                 (ceiling(nrow(chk) / 3) * 2),
+                 nrow(chk))
+
+# split table into three subsets
+chk_list <- lapply(seq_along(chk_row_starts),
+              function(i) chk[seq(chk_row_starts[i], chk_row_ends[i]), ,
+                             drop = FALSE])
+
+# output table
+cat(sep = "",
+"\\AtBeginEnvironment{tabular}{\\footnotesize}{}{}
+\\AtBeginEnvironment{tabular}{\\singlespacing}
+\\begin{table}[!htbp]
+\\vspace{-3.0em}%
+\\begin{adjustwidth}{-.5in}{-.2in}
+\\begin{center}
+", paste(collapse = "",
+vapply(chk_list, FUN.VALUE = character(1), function(x) {
+  ## create table
+  l <- as.character(knitr::kable(x,
+    col.names = c(paste0("\\phantom{", chk[[1]][which.max(nchar(chk[[1]]))],
+                         "}", collapse = ""), names(x)[-1]),
+    align = c("l", rep("c", ncol(x) - 1)), format = "latex"))
+  ## remove escaping of characters to enforce custom formatting
+  l <- gsub("\\textbackslash{}", "\\", l, fixed = TRUE)
+  l <- gsub("\\textasciitilde{}", "~", l, fixed = TRUE)
+  ## remove escaped symbols
+  l <- gsub("\\{", "{", l, fixed = TRUE)
+  l <- gsub("\\}", "}", l, fixed = TRUE)
+  l <- gsub("\\$", "$", l, fixed = TRUE)
+  paste0("
+\\noindent\\begin{minipage}[t]{0.3\\linewidth}
+\\centering
+\\setlength{\\tabcolsep}{0.05em}", l,
+"\\end{minipage}\\hfill")
+})),
+"\\end{center}\\end{adjustwidth}\\end{table}")
 ```
+
+\setlength{\footskip}{0.2\footskip}
 
 \clearpage
 

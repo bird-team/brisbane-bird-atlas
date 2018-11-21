@@ -7,7 +7,8 @@
 #' @param species_data \code{data.frame} containing the scientific name and
 #'   threat status information about the species. The argument to \code{data}
 #'   must have the columns: \code{"species_scientific_name"},
-#'   \code{"species_common_name"}, \code{"checklists_starting_year"}.
+#'   \code{"species_common_name"}, \code{"checklists_starting_year"},
+#'   and \code{"surveyor_sheet"}.
 #'
 #' @param record_data \code{sf} object containing the records for the species.
 #'   This object must have the following fields:
@@ -26,7 +27,10 @@ grid_checklist_table <- function(x, species_data, record_data) {
   grid_record_data <-
     record_data %>%
     as.data.frame() %>%
-    dplyr::filter(grid_id == x) %>%
+    dplyr::filter(grid_id == x,
+                  species_scientific_name %in%
+                    species_data$species_scientific_name[
+                      species_data$surveyor_sheet_checklist]) %>%
     dplyr::select(species_scientific_name, season, year, is_checklist) %>%
     dplyr::group_by(species_scientific_name, season) %>%
     dplyr::summarize(most_recent_event = max(year),
@@ -43,6 +47,7 @@ grid_checklist_table <- function(x, species_data, record_data) {
     dplyr::filter(most_recent_event >= year_threshold)
   # make table
   out <- species_data %>%
+         dplyr::filter(surveyor_sheet_checklist) %>%
          dplyr::select(species_common_name) %>%
          dplyr::mutate(summer = FALSE, spring = FALSE, winter = FALSE,
                        autumn = FALSE)
