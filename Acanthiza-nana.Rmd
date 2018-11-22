@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Insert header text here.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Rare visitor to wet forests across Brisbane. More records over winter, suggesting seasonal movements into the region, but very sporadic abundance year-by-year. Not of any conservation in Brisbane or across Australia.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+The Yellow Thornbill is a brightly coloured, small thornbill that is found across eastern Australia but is vanishingly rare in Brisbane. As with most thornbills, it is gregarious, occurring in Brisbane in small flocks (although individuals have turned up). The species is common further inland west of the Great Dividing Range but is rare in South East Queensland. It may turn up anywhere in Brisbane there is suitable habitat available.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,40 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+A rare visitor to Brisbane city, Yellow Thornbills are widespread across eastern Austalia, occurring from Cairns to Adelaide and up to 500km inland. They occur somewhat patchily, requiring significant tree cover - this species is much more arboreal than other species of thornbill, and is only rarely found in lower shrubs or on the ground. Yellow Thornbills prefer open forests and woodlands, where they feed on small invertebrates among the foliage.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+The species has never occurred in large numbers in Brisbane, with a high count of 8 birds in D'Aguilar National Park in August 2017 [@steven2017ebirdS38566781]. Most reports are of between 1-3 birds, and even outside of Brisbane where the species is more common, typical counts are below half a dozen, although counts of over 100 have occurred [@wood2012ebirdS16570139], indicating that while the species is somewhat gregarious, it does not form overly large flocks. Yellow Thornbills have been reported in Brisbane in most months, although there are no records in January, September or October, and the species is much more common over winter than summer.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Yellow Thornbills have been reported from 32 locations across Brisbane, with the majority coming from the western half of the LGA, although there are very few records from the western border itself, which seems surprising given the suitable habitat widely available and the proximity to areas of SEQ where the species is more common. A likely reason for this is the lack of overall birding effort recorded in much of the western half of the Brisbane area, in places such as the Camel's Head and Lake Manchester. Within Brisbane it has been found at a wide range of elevations, occurring from sea level all the way up to 500m. There is no clear elevational trend to their occurrence, although given the lack of data available for this species it is possible birds do exhibit elevational movement patterns.
+
+The distribution of Yellow Thornbill records across Brisbane shows no clear seasonal pattern, but birds appear to move in and out of Brisbane and South East Queensland over the year, with significantly more winter records than summer. Given the inland regions where this species is more common typically dry out over winter, resulting in fewer food sources for the birds, it is not surprising that this species exhibits a degree of nomadism in search of food and occasionally turns up closer to the coast.
+
+Yellow Thornbills are strongly arboreal, preferring open woodlands dominated by Casuarinas or Acacias. The species is not typically found in eucalypt forests although it does occur in this habitat on occasion. The birds avoid rainforests and open habitats as these do not typically have the right food sources available to them. Within Brisbane, the species is by far most common in wet sclerophyll, where it has been recorded on nearly 15% of all checklists, however it is not known whether the species occurs regularly outside of these habitats given the paucity of data. Studies have shown this species to be negatively affected by the presence of Noisy Miners [@bowen2009age], similar to many other small woodland birds, and given the abundance of Miners across much of Brisbane this likely explains why the species has not been recorded regularly.
+
+**Seasonality**
+
+Yellow Thornbills have never been recorded breeding in Brisbane, which is not surprising given the species' breeding period is between July and March, months over which birds are almost always absent, indicating that the population moves back inland to breed. Any birds that are recorded in summer are most likely non-breeders, although it is possible that some may be resident in some of the more remote parts of Brisbane and have not yet been recorded at their breeding sites, however much more work is needed in these regions and with this species in particular to determine this.
+
+**Trends**
+
+As this species is only a rare visitor to Brisbane, no clear temporal trend to its abundance in Brisbane is present, although there have been more reports in the past 5 years than in the 5 preceding. Notably, there are several records from before the _Atlas_ period, dating back to 1975, indicating that the species has been occurring in Brisbane for many years, and is not a recent vagrant. The species is not of any conservation concern as the population is very widely distributed across eastern Australia and numbers are stable across the range.
+
+**Information Gaps**
+
+- Determine whether this species is only a rare vagrant to Brisbane, or if birds are regular visitors or breeders within the region
+- Find out where Brisbane birds come from
+- Extensively survey suitable habitat in the west of Brisbane to measure abundance in that part of the LGA
+
+**Key Conservation Needs**
+
+- Protect the woodland habitat this species depends on
+- Monitor Noisy and Bell Miner abundance and determine effect of these species on thornbill occurrence
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()
