@@ -2,16 +2,16 @@
 
 The following pages contain species accounts for all birds known to have occurred in Brisbane and the adjacent offshore waters. Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas.
 
-Species with full accounts written: 8
+Species with draft accounts: 8
 
-- Magpie Goose
-- Spiny-cheeked Honeyeater
-- Yellow-rumped Thornbill
-- Striated Thornbill
-- Eastern Spinebill
-- Pacific Black Duck
-- White-breasted Woodswallow
-- Yellow Thornbill
+- [Magpie Goose](https://brisbanebirds.com/magpie-goose-anseranas-semipalmata.html)
+- [Pacific Black Duck](https://brisbanebirds.com/pacific-black-duck-anas-superciliosa.html)
+- [Eastern Spinebill](https://brisbanebirds.com/eastern-spinebill-acanthorhynchus-tenuirostris.html)
+- [Spiny-cheeked Honeyeater](https://brisbanebirds.com/spiny-cheeked-honeyeater-acanthagenys-rufogularis.html)
+- [Yellow-rumped Thornbill](https://brisbanebirds.com/yellow-rumped-thornbill-acanthiza-chrysorrhoa.html)
+- [Yellow Thornbill](https://brisbanebirds.com/yellow-thornbill-acanthiza-nana.html)
+- [Striated Thornbill](https://brisbanebirds.com/striated-thornbill-acanthiza-lineata.html)
+- [White-breasted Woodswallow](https://brisbanebirds.com/white-breasted-woodswallow-artamus-leucorynchus.html)
 
 ```{r}
 clear_page()
