@@ -14,58 +14,517 @@ Species: Pacific Gull
   Observer: S. Bang
   Notes: Sunbird vol. 3 no. 1
 
-  Species: Brush Bronzewing
-    Date: 5 September 1972
-    Location: Near Capalaba [follow up location - may not be Brisbane]
-    Count: 1
-    Observer: Greg Roberts
-    Notes: Sunbird vol. 3 no. 3
+Species: Brush Bronzewing
+  Date: 5 September 1972
+  Location: Near Capalaba [follow up location - may not be Brisbane]
+  Count: 1
+  Observer: Greg Roberts
+  Notes: Sunbird vol. 3 no. 3
 
-  Species: White Tern
-    Date: 30 April 1973
-    Location: Meeandah [mouth of Brisbane River]
-    Count: 1
-    Observer: J. Liddy
-    Notes: Sunbird vol. 4 no. 2
+Species: White Tern
+  Date: 30 April 1973
+  Location: Meeandah [mouth of Brisbane River]
+  Count: 1
+  Observer: J. Liddy
+  Notes: Sunbird vol. 4 no. 2
 
-  Species: Southern Fulmar [Antarctic Fulmar / Silver-grey Petrel]
-    Date: 9 October 1972
-    Location: Eager Beach, Moreton Island
-    Count: 1
-    Observer: J. S. McEvoy
-    Notes: [Dead] Sunbird vol. 5 no. 3
+Species: Southern Fulmar [Antarctic Fulmar / Silver-grey Petrel]
+  Date: 9 October 1972
+  Location: Eager Beach, Moreton Island
+  Count: 1
+  Observer: J. S. McEvoy
+  Notes: [Dead] Sunbird vol. 5 no. 3
 
-  Species: Asian Dowitcher
-    Date: 11 January 1976
-    Location: Wynnum
-    Count: 1
-    Observer: T. Gardner and P. Gardner
-    Notes: ABW vol. 6 no. 6
+Species: Asian Dowitcher
+  Date: 11 January 1976
+  Location: Wynnum
+  Count: 1
+  Observer: T. Gardner and P. Gardner
+  Notes: ABW vol. 6 no. 6
 
-  Species: Little Curlew
-    Date: 13 November 1994
-    Location: Archerfield Airport
-    Count: 34
-    Observer: Tom Tarrant and Graham Palmer
-    Notes: Sunbird vol. 25 no. 4
+Species: Little Curlew
+  Date: 13 November 1994
+  Location: Archerfield Airport
+  Count: 34
+  Observer: Tom Tarrant and Graham Palmer
+  Notes: Sunbird vol. 25 no. 4
 
-  Species: Oriental Plover
-    Date: 13 November 1994
-    Location: Archerfield Airport
-    Count: 14
-    Observer: Tom Tarrant and Graham Palmer
-    Notes: Sunbird vol. 25 no. 4
+Species: Oriental Plover
+  Date: 13 November 1994
+  Location: Archerfield Airport
+  Count: 14
+  Observer: Tom Tarrant and Graham Palmer
+  Notes: Sunbird vol. 25 no. 4
 
-  Species: Little Curlew
-    Date: 13 November 1994
-    Location: Archerfield Airport
-    Count: 34
-    Observer: Ian Gynther
-    Notes: Sunbird vol. 25 no. 4
+Species: Little Curlew
+  Date: 13 November 1994
+  Location: Archerfield Airport
+  Count: 34
+  Observer: Ian Gynther
+  Notes: Sunbird vol. 25 no. 4
 
-  Species: Oriental Plover
-    Date: 13 November 1994
-    Location: Archerfield Airport
-    Count: 14
-    Observer: Ian Gynther
-    Notes: Sunbird vol. 25 no. 4
+Species: Oriental Plover
+  Date: 13 November 1994
+  Location: Archerfield Airport
+  Count: 14
+  Observer: Ian Gynther
+  Notes: Sunbird vol. 25 no. 4
+
+Species: White-browed Babbler
+  Date: 24 February 2005
+  Location: McDowall
+  Count: 1
+  Observer: B. Green
+  Notes: BQ Sightings Page "One seen feeding in suburban yard near Downfall Creek Reserve, for about 20 minutes. Escapee?"
+
+Species: Australasian Bittern
+  Date: 12 January 2012
+  Location: Indooroopilly
+  Count: 1
+  Observer: Peter Jones
+  Notes: BQ Sightings Page "Circling over the Brisbane river in the late afternoon, providing good veiws"
+
+Species: Black Bittern
+  Date: 27 May 2006
+  Location: Villanova College Playing Fields
+  Count: 1
+  Observer: Hugh Possingham
+  Notes: BQ Sightings Page "One flushed from a very filthy drain"
+
+Species: Black Bittern
+  Date: 9 August 2008
+  Location: Sherwood Arboretum
+  Count: 1
+  Observer: Hugh Possingham
+  Notes: BQ Sightings Page "Harassed by Noisy Miners"
+
+Species: Black Bittern
+  Date: 2 October 2008
+  Location: Sherwood Arboretum
+  Count: 1
+  Observer: Hugh Possingham
+  Notes: BQ Sightings Page
+
+Species: Black Bittern
+  Date: 2 August 2009
+  Location: Sherwood Arboretum
+  Count: 1
+  Observer: Lee Halasz
+  Notes: BQ Sightings Page
+
+Species: Common Blackbird
+  Date: 3 October 2004
+  Location: Bracken Ridge
+  Count: 1
+  Observer: K. Pettit
+  Notes: BQ Sightings Page "Male blackbird fossicking for insects in garden mulch. Positive identification, no binoculars needed. Have never before seen one so far north"
+
+Species: Common Blackbird
+  Date: 12 February 2005
+  Location: Jindalee
+  Count:  1
+  Observer: T. Goode
+  Notes: BQ Sightings Page "One female (?)"
+
+Species: Brush Bronzewing
+  Date: 3 April 2002
+  Location: Pullenvale
+  Count: 1
+  Observer: C. Northcote
+  Notes: BQ Sightings Page "1st sighting of Bronzewing"
+
+Species: Black-breasted Buttonquail
+  Date: 14 August 2002
+  Location: Moggill State Forest
+  Count: 2
+  Observer: R. Jaensch
+  Notes: BQ Sightings Page "2 bird feeding in vine scrub"
+
+Species: Black-breasted Buttonquail
+  Date: 15 April 2007
+  Location: Gold Creek Reservoir
+  Count: X
+  Observer: C. Read
+  Notes: BQ Sightings Page "several seen"
+
+Species: Black-breasted Buttonquail
+  Date: 17 June 2007
+  Location: Gold Creek Reservoir
+  Count: 1
+  Observer: C. Clark
+  Notes: BQ Sightings Page
+
+Species: Black-breasted Buttonquail
+  Date: 14 June 2008
+  Location: Enoggera Reservoir
+  Count: 3
+  Observer: J. Hammond
+  Notes: BQ Sightings Page "Three birds sighted and viewed for about 15 minutes. Two males and one female turning around in circles and scratching in the undergrowth. Area they were found in had recently been lightly burnt.The two males were also sighted by another birder Tony Eales on the day and I have since learnt that Mike West managed to find them today the 15th."
+
+Species: Red-backed Buttonquail
+  Date: 5 July 2005
+  Location: Upper Brookfield
+  Count: 10
+  Observer: D. Dow
+  Notes: BQ Sightings Page "10-12 Birds. 5th sighting in 5 months"
+
+Species: Red-backed Buttonquail
+  Date: 28 December 2006
+  Location: Oxley Creek Common
+  Count:1
+  Observer: Hugh Possingham
+  Notes: BQ Sightings Page "One bird flushed on 28th and 29th, probably male. Also seen 30th by M. & C. Gilfedder"
+
+Species: Red-backed Buttonquail
+  Date: 16 July 2011
+  Location: Mt Coot-tha Forest
+  Count: 1
+  Observer: Rod Browm
+  Notes: BQ Sightings Page
+
+Species: Red-chested Buttonquail
+  Date: 2 May 2005
+  Location: Toohey Forest
+  Count: 1
+  Observer: A. Walter
+  Notes: BQ Sightings Page
+
+Species: Glossy Black-Cockatoo
+  Date: 19 February 2003
+  Location: Gold Creek Reservoir
+  Count: 3
+  Observer: David Niland and R. Wallace and R. Brown and J. Miller
+  Notes: BQ Sightings Page "At least 3 birds flushed from casuarinas(?) and regular calling for about 5 minutes."
+
+Species: Glossy Black-Cockatoo
+  Date: 29 January 2005
+  Location: Raven St Reserve
+  Count: X
+  Observer: R. Woodford
+  Notes: "No[t] often seen here"
+
+Species: Glossy Black-Cockatoo
+  Date: 21 May 2005
+  Location: JC Trotter Memorial Reserve
+  Count: 4
+  Observer: J. Evans per Roy Sonnenburg
+  Notes: BQ Sightings Page
+
+Species: Glossy Black-Cockatoo
+  Date: 2 April 2007
+  Location: JC Trotter Memorial Reserve
+  Count: 2
+  Observer: J. Evans
+  Notes: BQ Sightings Page
+
+Species: Glossy Black-Cockatoo
+  Date: 9 May 2007
+  Location: JC Trotter Memorial Reserve
+  Count: 2
+  Observer: J. Sneddon
+  Notes: BQ Sightings Page
+
+Species: Australian Spotted Crake
+  Date: 2 October 2010
+  Location: Ekibin Park
+  Count: 1
+  Observer: Russel Yong
+  Notes: BQ Sightings Page "One immature [id'd through dark colour, yellowish bill, apparent streaking on breast and back] in thick low growth bordering the creek. Appears to be out of normal habitat range but is in reasonable vicinity to swamps and mangroves up and downstream."
+
+Species: Australian Spotted Crake
+  Date: 7 November 2015
+  Location: Sandy Camp Road Wetlands
+  Count: 1
+  Observer: C. Wills
+  Notes: BQ Sightings Page "Seen crossing the pathway between ponds"
+
+Species: Barred Cuckooshrike
+  Date: 3 February 2002
+  Location: Gold Creek Reservoir
+  Count: 1
+  Observer: D. Beck
+  Notes: BQ Sightings Page "Feeding on fig trees at end of road, along with hundreds of Green Figbirds and Olive-backed Orioles and a few Rose-crowned Fruit-doves"
+
+Species: Barred Cuckooshrike
+  Date: 14 December 2002
+  Location: Moggil State Forest
+  Count: 3
+  Observer: R. Jaensch
+  Notes: BQ Sightings Page
+
+Species: Barred Cuckooshrike
+  Date: 6 November 2004
+  Location: Sherwood Arboretum
+  Count: 2
+  Observer: P. Kyne
+  Notes: BQ Sightings Page "2 birds in fig trees Aggressive towards Figbirds"
+
+Species: Barred Cuckooshrike
+  Date: 15 October 2005
+  Location: Sherwood Arboretum
+  Count: 6
+  Observer: J. Giles and M. Roberts and E. Townsend
+  Notes: BQ Sightings Page "At least 6 birds"
+
+Species: Barred Cuckooshrike
+  Date: 10 April 2006
+  Location: Sherwood Arboretum
+  Count: 6
+  Observer: Hugh Possingham
+  Notes: BQ Sightings Page "2 adults and 4 young, no doubt a successful breeding year. Birds sitting next to river near large fruiting small-leaved fig."
+
+Species: Barred Cuckooshrike
+  Date: 25 November 2007
+  Location: Gold Creek Reservoir
+  Count: X
+  Observer: C. Read
+  Notes: BQ Sightings Page "Flying around top of Eucalytus harrassed by boisterous Spangled Drongos"
+
+Species: Barred Cuckooshrike
+  Date: 11 December 2008
+  Location: Gold Creek Reservoir
+  Count: 1
+  Observer: George Chapman
+  Notes: BQ Sightings Page "Single bird spotted high in a tall gum tree near the Reservoir end of the road at 7.30am"
+
+Species: Barred Cuckooshrike
+  Date: 1 March 2009
+  Location: Sherwood Arboretum
+  Count: 1
+  Observer: Hugh Possingham
+  Notes: BQ Sightings Page "1 in figs by Brisbane River"
+
+Species: Barred Cuckooshrike
+  Date: 10 December 2009
+  Location: Gold Creek Reservoir
+  Count: 1
+  Observer: M. Clark and L. Cooper and M. Cooper
+  Notes: BQ Sightings Page "1 bird seen close to nursery"
+
+Species: Barred Cuckooshrike
+  Date: 8 January 2011
+  Location: Gold Creek Reservoir
+  Count: 1
+  Observer: Rod Gardner
+  Notes: BQ Sightings Page "One about 400 metres from the end of the road"
+
+Species: Barred Cuckooshrike
+  Date: 26 April 2011
+  Location: Oxley Creek Common
+  Count: 3
+  Observer: Hugh Possingham
+  Notes: BQ Sightings Page
+
+Species: Black-eared Cuckoo
+  Date: 19 November 2006
+  Location: Lake Manchester
+  Count: 1
+  Observer: D. Beck and S. Gillman
+  Notes: BQ Sightings Page "Seen while with BASQ group, in open forest area"
+
+Species: Little Curlew
+  Date: 3 November 2002
+  Location: Archerfield Airport
+  Count: 1
+  Observer: R. Thomson
+  Notes: BQ Sightings Page
+
+Species: Little Curlew
+  Date: 11 December 2002
+  Location: Archerfield Airport
+  Count: 2
+  Observer: D. Redhead
+  Notes: BQ Sightings Page
+
+Species: Little Curlew
+  Date: 28 March 2004
+  Location: Lytton Wader Roost
+  Count: X
+  Observer: T. Bennett et al
+  Notes: BQ Sightings Page "Seen among eastern mangroves" [with BOCA]
+
+Species: Diamond Dove
+  Date: 12 February 2002
+  Location: Pinjarra Hills
+  Count: 1
+  Observer: M. Gilpin
+  Notes: BQ Sightings Page "1 bird feeding with Peaceful Doves"
+
+Species: Asian Dowitcher
+  Date: 17 February 2002
+  Location: Lytton Wader Roost
+  Count: 1
+  Observer: R. Dowling and L. Cross
+  Notes: BQ Sightings Page "Rare: With Godwits flushed by Marsh Harrier"
+
+Species: Asian Dowitcher
+  Date: 6 December 2009
+  Location: Port of Brisbane
+  Count: 1
+  Observer: Les Cooper and Mary Cooper
+  Notes: BQ Sightings Page "Single bird with six Curlew Sandpipers"
+
+Species: Musk Duck
+  Date: 15 August 2001
+  Location: Honeyeater Lake, Moreton Island
+  Count: 1
+  Observer: M. Keller
+  Notes: BQ Sightings Page "Male"
+
+Species: Musk Duck
+  Date: 5 May 2002
+  Location: Blue Lagoon, Moreton Island
+  Count: 2
+  Observer: S. Harding et al
+  Notes: BQ Sightings Page
+
+Species: Plum-headed Finch
+  Date: 13 May 2004
+  Location: Prior's Pocket
+  Count: 5
+  Observer: C. Fitzgerald and L. Cole and P. Cole
+  Notes: BQ Sightings Page "Seen also 07/5/04 - flock of 5 with Doublebar F. Red-browed F. & Chestnet-breasted M."
+
+Species: Plum-headed Finch
+  Date: 26 June 2004
+  Location: Hawkesbury Road
+  Count: X
+  Observer: D. Muir and L. Cole and P. Cole
+  Notes: BQ Sightings Page "Mostly young with some Double-bars"
+
+Species: Plum-headed Finch
+  Date: 1 May 2005
+  Location: Port of Brisbane Visitor Centre
+  Count: 40
+  Observer: D. Redhead
+  Notes: BQ Sightings Page "Flock of about 40"
+
+Species: Plum-headed Finch
+  Date: 28 May 2005
+  Location: Minnippi Parklands
+  Count: 1
+  Observer: Peter Woodall
+  Notes: BQ Sightings Page "Single bird feeding on grass seeds"
+
+Species: Plum-headed Finch
+  Date: 12 June 2005
+  Location: Port of Brisbane Visitor Centre
+  Count: 10
+  Observer: D. Redhead
+  Notes: BQ Sightings Page "10 birds with Chestnut breasted Mannikins"
+
+Species: Plum-headed Finch
+  Date: 14 July 2005
+  Location: Boondall Wetlands
+  Count: 30
+  Observer: B. Venables
+  Notes: BQ Sightings Page "About 30 birds at Anne Beasley Lookout"
+
+Species: Plum-headed Finch
+  Date: 14 April 2007
+  Location: Wynnum Mangrove Boardwalk
+  Count: 5
+  Observer: C. Clark
+  Notes: BQ Sightings Page "5 in the cut grass along path to hide"
+
+Species: Plum-headed Finch
+  Date: 21 October 2008
+  Location: Sir John Chandler Park, Indooroopilly
+  Count: X
+  Observer: Tom Oliver
+  Notes: BQ Sightings Page "photos taken"
+
+Species: Plum-headed Finch
+  Date: 16 July 2011
+  Location: Manly Wader Roost
+  Count: 15
+  Observer: Sandra Harding and David Milton and Joanna Morgan
+  Notes: BQ Sightings Page "About 15 birds feeding on seeds of dead weeds"
+
+# Note: no Plum-headed Finch sightings from Oxley Creek Common have been added here as most are already in eBird.
+
+Species: Diamond Firetail
+  Date: 14 May 2005
+  Location: Lake Manchester
+  Count: 1
+  Observer: I. Venables and L. Litz-Tyne and J. Boisen and D. Innis
+  Notes: BQ Sightings Page "One road just past the creek crossing on way to dam wall"
+
+Species: Satin Flycatcher
+  Date: 26 February 2002
+  Location: Gap Creek Reserve
+  Count: 1
+  Observer: T. Murphy
+  Notes: BQ Sightings Page "1 Female"
+
+Species: Satin Flycatcher
+  Date: 27 August 2009
+  Location: Sinnamon Park
+  Count: X
+  Observer: Peter Johnson
+  Notes: BQ Sightings Page
+
+Species: Shining Flycatcher
+  Date: 16 June 2006
+  Location: Boondall Wetlands
+  Count: 2
+  Observer: D. Fitzgibbon and R. Wallace
+  Notes: BQ Sightings Page "Female seen 23 March near the birdhide on the lower reaches of Nundah Creek within the Boondall Wetlands by Rod Wallace. This was confirmed by the Senior Interpretive Officer, David Fitz-Gibbon at the Environment Centre within the week. First reported sighting for the Boondall Wetlands. David Fitz-Gibbon saw the male Shining Flycatcher in mangroves a short distance upstream from the birdhide while conducting a canoe trip."
+
+Species: Shining Flycatcher
+  Date: 23 July 2006
+  Location: Boondall Wetlands
+  Count: 1
+  Observer: R. Wallace
+  Notes: BQ Sightings Page "A male Shining Flycatcher flew across from the shore to a mangrove island immediately in front of my (leading) canoe. This is a short distance up from the birdhide and in the vicinity where it had previously been sighted."
+
+Species: Great Frigatebird
+  Date: 8 September 2002
+  Location: Break Point, Moreton Island
+  Count: 1
+  Observer: A. Pagano
+  Notes: BQ Sightings Page "1 bird, male. Not usually this far South"
+
+Species: Great Frigatebird
+  Date: 8 September 2002
+  Location: North Point, Moreton Island
+  Count: 1
+  Observer: A. Pagano
+  Notes: BQ Sightings Page "1 male, not usually this far south."
+
+Species: Great Frigatebird
+  Date: 27 October 2002
+  Location: Tangalooma
+  Count: 1
+  Observer: J. Moore
+  Notes: BQ Sightings Page "1 bird, strong NW winds."
+
+Species: Lesser Frigatebird
+  Date: 20 February 2009
+  Location: Cape Moreton
+  Count: 5
+  Observer: Beth Smyth and Greg Miller and Leanne Bowden and Alan Genninges
+  Notes: BQ Sightings Page "5 seen ahead of a storm"
+
+Species: Superb Fruit-Dove
+  Date: 31 March 2005
+  Location: Moggill State Forest
+  Count: 1
+  Observer: C. Gosper
+  Notes: BQ Sightings Page "One adult male"
+
+Species: Superb Fruit-Dove
+  Date: 9 September 2007
+  Location: Camp Hill
+  Count: 1
+  Observer: K. Evans
+  Notes: BQ Sightings Page "Found dead in a back yard with torn flesh"
+
+# Finished BQ Sightings Page up to F
+
+Species:
+  Date:
+  Location:
+  Count:
+  Observer:
+  Notes:
