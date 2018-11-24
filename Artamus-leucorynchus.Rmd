@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The White-breasted Woodswallow is a small, two-toned woodswallow with distinctive a grey body and white breast. A gregarious species, they are well known for their tendency to perch tightly bunched together on branches or powerlines. Count of over 50 have been recorded, although average counts are much lower. Common at a number of sites across the city, and once-off records at many more indicates a degree of local movement or nomadism - a trait shared by other species within its genus.
+The White-breasted Woodswallow is a small, two-toned woodswallow with a distinctive grey body and white breast. A gregarious species, they are well known for their tendency to perch tightly bunched together on branches or powerlines. Count of over 50 have been recorded, although average counts are much lower. Common at a number of sites across the city, and once-off records at many more indicates a degree of local movement or nomadism - a trait shared by other species within its genus.
 
 ```{r}
 end_two_column_layout()

@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Insert header text here.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "The common thornbill species in Brisbane. Widespread across the remnant forests of the city, particularly in the north west slopes. No clear seasonal trend to records although slightly fewer records in the latter months of the year. Not of conservation concern and widely distributed beyond Brisbane environs.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+The Brown Thornbill is the most common species of thornbill in the _Atlas_ region. A plain, brown and greenish bird with grey and white streaking on the head, it is a small bird and can be difficult to identify without good views if its distinctive call is not heard. It is a gregarious species, being typically found in small family groups in Brisbane, although counts of nearly 50 have occurred. It is patchily distributed across most of the city, but can be found commonly in the wetter forests to the west of the CBD, in areas such as Gold Creek Reservoir, Mt Coot-tha and Enoggera Reservoir. It has occurred at a number of other sites with less suitable habitat, but is generally restricted to remnant wet forests.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,41 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Brown Thornbills are the abundant thornbill species in the forests of south east Australia, occurring from Mackay to Adelaide inland to about 200km, and also occurs in Tasmania alongside its sister species the Tasmanian Thornbill. Within Brisbane it can be found easily in the western forests, occurring widely from Anstead in the south to Mt Glorious in the north, and as far east as Mt Coot-tha.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Based on current data the thornbill is consistently distributed over this area, although many squares in the west are as yet unsurveyed and so the true distribution of this species in Brisbane is not yet confirmed. It occurs in strong numbers in many locations, with counts of over a dozen at a time being not uncommon and an all-time high count of 45 [@fuller2009ebirdS14957193], although typical counts are closer to 4-5. The species has only been recorded breeding a handful of times in Brisbane, and nearly all reports to date have been of nest building with only one checklist reporting young, suggesting that the species may not regularly breed in Brisbane, although more data are needed. The species is present in Brisbane all year round, although there is a slight drop off in reporting rate over the summer months.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Brown Thornbills have been reported widely across mainland Brisbane, having occurred in all regions of the city, although they are only common in the west. The species has never been recorded on Moreton Island, which is unsurprising given the lack of suitable habitat present and the paucity of data available. Birds have been reported in nearly every surveyed square in the north west and Camel's Head, but only rarely occur outside this area - see the map. They show a clear preference for elevated regions within the city, occurring at an average altitude of 120m with impressive seasonal consistency, although they have been reported from sea level all the way up to over 600m. Their habitat preference is for wet sclerophyll and rainforest, where the reporting rate is 35 and 25 percent respectively, although they do occur less commonly in drier woodland (12% of checklists). Birds only occasionally visit other habitats, with the odd record from wetlands and very few from non-remnant and estuarine areas.
+
+The geographic distribution of Brown Thornbills in Brisbane is presumably driven by the availability of suitable habitat, with much of the city's remnant forest in the western suburbs. Given the availability of isolated but large tracts of suitable forest in the southern regions at locations such as Toohey Forest and White's Hill it is surprising that birds do not occur more commonly here, but this would indicate that the species is reliant on woodland corridors to move through, and therefore is at risk of further fragmentation of its population as land is cleared.
+
+The distribution of the species does not show any clear seasonal variation, with birds appearing to be present year-round at the same locations. Average and high counts of the species are also relatively constant over the year, with no clear evidence of variation. The species has been reported from over 100 _Atlas_ squares, although given much of the western half of the city, where birds are known to be common, is unsurveyed, the true number of squares where birds occur is likely much higher.
+
+**Seasonality**
+
+There are only five breeding records of Brown Thornbills within Brisbane, with four being of nest building activities [@grilli2017ebirdS37991585, @humphris2017ebirdS38423216, @brook2018ebirdS47181157, @grilli2018ebirdS47180720] and only one of young [@grilli2018ebirdS48229452]. Furthermore, the species has only been reported breeding in two locations: Gold Creek Reservoir and Araucaria Circuit at Enoggera Reservoir. Given that the species appears to be resident and common in the western suburbs of the city, it is surprising that breeding has not been more widely reported. This is likely a case of underuse of the eBird breeding protocol rather than the birds not actually breeding in the area, although the latter is possible. Breeding has been reported in the months between July and September, although the season outside of Brisbane is known to stretch all the way into January. It would be good to collect more breeding data for this species to more accurately understand its movements.
+
+**Trends**
+
+Reporting rate for Brown Thornbills has remained quite steady over the past decade, with only limited variation. 2014 was a strong year for the species, where it was reported on 12% of checklists, while 2009 was a poor year, with only 1.5% abundance. Average reporting rate over this period is 5%, suggesting that there is a degree of variation each year in the species' abundance, but there is no long-term trend apparent. The reasons behind this fluctuation in reporting rate is not yet known, but could be linked to food availability or observer bias.
+
+**Information Gaps**
+
+- Collect more data from the species main stronghold in western Brisbane and the Camel's Head
+- Collect more breeding data for the birds and identify whether breeding regularly occurs in other locations
+- Understand the extent of individual's movements around Brisbane
+- Ascertain whether the species occurs at all on Moreton Island
+
+**Key Conservation Needs**
+
+- Protect the remnant forests where this species is restricted to
+- Create and preserve woodland corridors for the species to move through to prevent fragmentation of the population
+
+**Contributors to Species Accounts**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()
