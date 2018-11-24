@@ -1,4 +1,4 @@
-#' Find an observer's name
+#' Find an observer's name (raw version)
 #'
 #' Find an observer's name from a sampling event identifier.
 #'
@@ -7,7 +7,7 @@
 #' @param n_tries \code{integer} number of times to attempt before giving up.
 #'
 #' @return \code{character} name of observer.
-find_observer_name <- function(x, n_tries = 20) {
+raw_find_observer_name <- function(x, n_tries = 20) {
   # assert argument is valid
   assertthat::assert_that(assertthat::is.string(x),
                           !is.na(x))
@@ -25,3 +25,10 @@ find_observer_name <- function(x, n_tries = 20) {
   # extract observer name
   as.character(rvest::html_text(rvest::html_node(w, "dd strong"))[1])
 }
+
+#' Memoised version of of the find observer name function
+#'
+#' @inheritParams raw_find_observer_name
+#'
+#' @inherit raw_find_observer_name return
+find_observer_name <- memoise::memoise(raw_find_observer_name)
