@@ -124,7 +124,7 @@ surveyor_sheets:                                                 # parameters fo
     height: 4.5                                                  # map height in inches
     zoom_level: 15                                               # zoom-level for map background
     type: "satellite"                                            # type of map to use for the map background (available options are "terrain", "satellite", "roadmap", "hybrid")
-    label_character_width: 40                                    # maximum width for locality labels in the maps
+    label_character_width: 25                                    # maximum width for locality labels in the maps
   checklist:
     number_of_pages: 2                                           # number of pages to use for the checklists
     vertical_spacing: "-3.0em"                                   # spacing to vertically align the checklist tables with the page header
