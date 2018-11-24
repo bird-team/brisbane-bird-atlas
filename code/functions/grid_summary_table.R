@@ -164,6 +164,22 @@ grid_summary_table <- function(x, grid_data, species_data, record_data) {
   ldr_checklist_data$observer_name <- vapply(ldr_checklist_data$event_id,
                                              "find_observer_name",
                                              character(1))
+  # if leader board doesn't contain five people, then add in blanks
+  if (nrow(ldr_checklist_data) < 5) {
+    ldr_checklist_data <- dplyr::mutate(ldr_checklist_data,
+      observer_name = as.character(observer_name),
+      number_species = as.character(number_species),
+      event_id = as.character(number_species),
+      number_complete_checklists = as.character(number_complete_checklists),
+      number_incomplete_checklists = as.character(number_incomplete_checklists))
+    blank_ldr_data <- tibble::tibble(observer_name = "",
+                                    number_species = "",
+                                    event_id = "",
+                                    number_complete_checklists = "",
+                                    number_incomplete_checklists = "")
+    blank_ldr_data <- blank_ldr_data[rep(1, 5 - nrow(ldr_checklist_data)), ]
+    ldr_checklist_data <- dplyr::bind_rows(ldr_checklist_data, blank_ldr_data)
+  }
   # output table
   data.frame(
     blank = c("Summer (Dec--Feb)", "Autumn (Mar--May)",
