@@ -64,10 +64,10 @@ grid_map <- function(x, grid_data, locations_data, grid_resolution,
   # prepare text for plotting
   l <- locations_data %>%
        filter(c(as.matrix(sf::st_intersects(
-         locations_data, grid_data[x, ])))) %>%
-       sf::st_transform(4326)
+         locations_data, grid_data[x, ]))))
   if (nrow(l) > 0)
     l <- l %>%
+         sf::st_transform(4326) %>%
          as("Spatial") %>%
          as.data.frame() %>%
          dplyr::rename(x = coords.x1, y = coords.x2)
