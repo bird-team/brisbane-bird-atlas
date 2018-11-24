@@ -115,3 +115,15 @@ grid_metadata:                                                   # parameters fo
   minute_target_column_name: minute_target                       # name of column with the minute target for each grid cell
   km_target_column_name: km_target                               # name of column with the km target for each grid cell
   description_column_name: description                           # name of column with the description for each grid cell
+
+surveyor_sheets:                                                 # parameters for surveyor sheets
+  maps:                                                          # size of the maps in the surveyor sheets
+    width: 4.5                                                   # map width in inches
+    height: 4.5                                                  # map height in inches
+    zoom_level: 15                                               # zoom-level for map background
+    type: "satellite"                                            # type of map to use for the map background (available options are "terrain", "satellite", "roadmap", "hybrid")
+  checklist:
+    number_of_pages: 2                                           # number of pages to use for the checklists
+    vertical_spacing: "-3.0em"                                    # spacing to vertically align the checklist tables with the page header
+    left_margin: "-0.5in"                                        # padding for the checklist tables' left margin
+    right_margin: "-0.2in"                                       # padding for the checklist tables' right margin

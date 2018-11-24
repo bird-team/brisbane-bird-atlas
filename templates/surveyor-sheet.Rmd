@@ -18,8 +18,12 @@ params:
   grid_km_target: !r NULL
   grid_description: !r NULL
   grid_map: !r NULL
-  grid_checklist: !r NULL
   grid_summary: !r NULL
+  grid_checklist: !r NULL
+  grid_checklist_number_of_pages: 2
+  grid_checklist_vertical_spacing: "-3.0em"
+  grid_checklist_left_margin: "-0.5in"
+  grid_checklist_right_margin: "-0.2in"
 ---
 
 ```{r, include = FALSE}
@@ -110,6 +114,8 @@ cat(paste(l, collapse = "\n"))
 
 \clearpage
 
+\setlength{\footskip}{0.2\footskip}
+
 ```{r}
 # convert TRUE and FALSE to text for table
 chk <- params$grid_checklist
@@ -121,49 +127,55 @@ names(chk) <- c(names(chk)[1], substr(names(chk)[-1], 1, 2))
 names(chk) <- tools::toTitleCase(names(chk))
 
 # assign starting rows and ending rows for each table
-chk_row_starts <- c(1, ceiling(nrow(chk) / 3) + 1,
-                    ceiling(nrow(chk) / 3) + ceiling(nrow(chk) / 3) + 1)
-chk_row_ends <- c(ceiling(nrow(chk) / 3),
-                 (ceiling(nrow(chk) / 3) * 2),
-                 nrow(chk))
+n_pages <- params$grid_checklist_number_of_pages
+chk_row_inc <- ceiling(nrow(chk) / ((n_pages * 3)))
+chk_row_inc <- seq(1, (chk_row_inc * n_pages * 3) + 1, chk_row_inc)
+chk_row_starts <- chk_row_inc[-length(chk_row_inc)]
+chk_row_ends <- chk_row_inc[-1] - 1
+chk_row_ends[length(chk_row_ends)] <- nrow(chk)
+chk_row_starts <- split(chk_row_starts, rep(seq_len(n_pages), each = 3))
+chk_row_ends <- split(chk_row_ends, rep(seq_len(n_pages), each = 3))
 
 # split table into three subsets
-chk_list <- lapply(seq_along(chk_row_starts),
-              function(i) chk[seq(chk_row_starts[i], chk_row_ends[i]), ,
-                             drop = FALSE])
+chk_list <-
+  lapply(seq_len(n_pages), function(i) lapply(seq_len(3), function(j) {
+   chk[seq(chk_row_starts[[i]][j], chk_row_ends[[i]][j]), , drop = FALSE]
+}))
 
 # output table
 cat(sep = "",
 "\\AtBeginEnvironment{tabular}{\\footnotesize}{}{}
-\\AtBeginEnvironment{tabular}{\\singlespacing}
-\\begin{table}[!htbp]
-\\vspace{-3.0em}%
-\\begin{adjustwidth}{-.5in}{-.2in}
-\\begin{center}
-", paste(collapse = "",
-vapply(chk_list, FUN.VALUE = character(1), function(x) {
-  ## create table
-  l <- as.character(knitr::kable(x,
-    col.names = c(paste0("\\phantom{", chk[[1]][which.max(nchar(chk[[1]]))],
-                         "}", collapse = ""), names(x)[-1]),
-    align = c("l", rep("c", ncol(x) - 1)), format = "latex"))
-  ## remove escaping of characters to enforce custom formatting
-  l <- gsub("\\textbackslash{}", "\\", l, fixed = TRUE)
-  l <- gsub("\\textasciitilde{}", "~", l, fixed = TRUE)
-  ## remove escaped symbols
-  l <- gsub("\\{", "{", l, fixed = TRUE)
-  l <- gsub("\\}", "}", l, fixed = TRUE)
-  l <- gsub("\\$", "$", l, fixed = TRUE)
+\\AtBeginEnvironment{tabular}{\\singlespacing}",
+paste(collapse = "\n\\clearpage\n",
+      vapply(chk_list, FUN.VALUE = character(1), function(z) {
   paste0("
+\\begin{table}[!htbp]
+\\vspace{", params$grid_checklist_vertical_spacing, "}%
+\\begin{adjustwidth}{", params$grid_checklist_left_margin, "}{",
+                        params$grid_checklist_right_margin, "}
+\\begin{center}
+",
+  paste(collapse = "", vapply(z, FUN.VALUE = character(1), function(x) {
+    l <- as.character(knitr::kable(x,
+      col.names = c(paste0("\\phantom{", chk[[1]][which.max(nchar(chk[[1]]))],
+                           "}", collapse = ""), names(x)[-1]),
+      align = c("l", rep("c", ncol(x) - 1)), format = "latex"))
+    ## remove escaping of characters to enforce custom formatting
+    l <- gsub("\\textbackslash{}", "\\", l, fixed = TRUE)
+    l <- gsub("\\textasciitilde{}", "~", l, fixed = TRUE)
+    ## remove escaped symbols
+    l <- gsub("\\{", "{", l, fixed = TRUE)
+    l <- gsub("\\}", "}", l, fixed = TRUE)
+    l <- gsub("\\$", "$", l, fixed = TRUE)
+    paste0("
 \\noindent\\begin{minipage}[t]{0.3\\linewidth}
 \\centering
 \\setlength{\\tabcolsep}{0.05em}", l,
 "\\end{minipage}\\hfill")
-})),
+    })),
 "\\end{center}\\end{adjustwidth}\\end{table}")
+})))
 ```
-
-\setlength{\footskip}{0.2\footskip}
 
 \clearpage
 

@@ -54,11 +54,10 @@ grid_summary_table <- function(x, grid_data, species_data, record_data) {
     dplyr::n_distinct(grid_checklist_data$event[
       grid_checklist_data$season == "winter"]),
     dplyr::n_distinct(grid_checklist_data$event[
-      grid_checklist_data$season == "spring"]))
-  chk_complete_checklists_bold <- c(chk_complete_checklists <
+      grid_checklist_data$season == "spring"]),
+    dplyr::n_distinct(grid_checklist_data$event))
+  chk_complete_checklists_bold <- c(chk_complete_checklists[-5] <
                                     g$checklist_target, TRUE)
-  chk_complete_checklists <- c(chk_complete_checklists,
-                               sum(chk_complete_checklists))
   chk_complete_checklists[-5] <- paste0(chk_complete_checklists[-5], "/",
                                         g$checklist_target)
   chk_complete_checklists[chk_complete_checklists_bold] <- paste0(
@@ -118,8 +117,8 @@ grid_summary_table <- function(x, grid_data, species_data, record_data) {
     dplyr::n_distinct(grid_checklist_data$species_scientific_name[
       grid_checklist_data$season == "winter"]),
     dplyr::n_distinct(grid_checklist_data$species_scientific_name[
-      grid_checklist_data$season == "spring"]))
-  chk_species <- c(chk_species, sum(chk_species))
+      grid_checklist_data$season == "spring"]),
+    dplyr::n_distinct(grid_checklist_data$species_scientific_name))
   chk_species <- as.character(chk_species)
   chk_species[length(chk_species)] <- paste0("\\textbf{",
     chk_species[length(chk_species)], "}")

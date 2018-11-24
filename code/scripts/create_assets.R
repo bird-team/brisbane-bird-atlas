@@ -351,7 +351,15 @@ result <- plyr::laply(which(grid_data$type == "land"), .parallel = is_parallel,
                   grid_map = grid_map,
                   grid_summary = grid_summary,
                   grid_checklist = grid_checklist,
-                  grid_description = grid_data$description[i]))
+                  grid_description = grid_data$description[i],
+                  grid_checklist_number_of_pages =
+                    parameters$surveyor_sheets$checklist$number_of_pages,
+                  grid_checklist_vertical_spacing =
+                    parameters$surveyor_sheets$checklist$vertical_spacing,
+                  grid_checklist_left_margin =
+                    parameters$surveyor_sheets$checklist$left_margin,
+                  grid_checklist_right_margin =
+                    parameters$surveyor_sheets$checklist$right_margin))
   # save hash
   writeLines(grid_data$sheet_hash[i], hash_path)
   # return logical indicating success
