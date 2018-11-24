@@ -321,8 +321,6 @@ grid_data$sheet_hash <- plyr::laply(
     digest::digest(list(grid_data[i, ], tmp_hash))
 })
 
-stop("here")
-
 # Exports
 ## spawn cluster workers
 is_parallel <- isTRUE(parameters$threads > 1)
@@ -346,7 +344,12 @@ if (is_parallel) {
 
 ## create surveyor sheet for each grid cell
 message("starting surveyor sheets...")
-result <- plyr::laply(which(grid_data$type == "land"), .parallel = is_parallel,
+### determine which grids for which to make surveyor sheets
+grid_indices <- which(grid_data$type == "land")
+if (!identical(parameters$number_surveyor_sheets, "all"))
+  grid_indices <- grid_indices[seq_len(parameters$number_surveyor_sheets)]
+### make surveyor sheets
+result <- plyr::laply(grid_indices, .parallel = is_parallel,
                       function(i) {
   # display progress
   message("  ", grid_data$id[i])
