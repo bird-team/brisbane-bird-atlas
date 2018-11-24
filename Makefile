@@ -111,15 +111,18 @@ pull_assets:
 	&& docker cp bba:$(PATHSEP2)tmp/assets/assets-widgets.zip assets/widgets.zip \
 	&& docker cp bba:$(PATHSEP2)tmp/assets/assets-graphs.zip assets/graphs.zip \
 	&& docker cp bba:$(PATHSEP2)tmp/assets/assets-tables.zip assets/tables.zip \
+	&& docker cp bba:$(PATHSEP2)tmp/assets/assets-surveyor-sheets.zip  assets/surveyor-sheets.zip \
 	&& cd assets \
 	&& unzip -o maps.zip \
 	&& unzip -o widgets.zip \
 	&& unzip -o graphs.zip \
 	&& unzip -o tables.zip \
+	&& unzip -o surveyor-sheets.zip \
 	&& rm maps.zip \
 	&& rm widgets.zip \
 	&& rm graphs.zip \
-	&& rm tables.zip || true
+	&& rm tables.zip \
+	&& rm surveyor-sheets.zip || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 # push assets to online storage
@@ -131,11 +134,14 @@ push_assets:
 	&& docker exec bba sh -c "cd assets; zip -r widgets.zip widgets" \
 	&& docker exec bba sh -c "cd assets; zip -r graphs.zip graphs" \
 	&& docker exec bba sh -c "cd assets; zip -r tables.zip tables" \
+	&& docker exec bba sh -c "cd assets; zip -r surveyor-sheets.zip surveyor-sheets" \
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/push_assets.R" \
+	&& docker exec bba sh -c "Rscript /tmp/code/scripts/push_surveyor_sheets.R" \
 	&& docker exec bba sh -c "rm assets/maps.zip" \
 	&& docker exec bba sh -c "rm assets/widgets.zip" \
 	&& docker exec bba sh -c "rm assets/graphs.zip" \
 	&& docker exec bba sh -c "rm assets/tables.zip" || true
+	&& docker exec bba sh -c "rm assets/surveyor-sheets.zip" || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 ## build book

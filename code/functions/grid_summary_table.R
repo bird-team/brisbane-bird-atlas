@@ -23,7 +23,10 @@ grid_summary_table <- function(x, grid_data, species_data, record_data) {
                           inherits(species_data, "data.frame"),
                           inherits(record_data, "data.frame"))
   # subset grid data
-  g <- as.data.frame(grid_data[i, ])
+  g <- grid_data %>%
+       as.data.frame() %>%
+       dplyr::select(-geometry) %>%
+       dplyr::filter(id == x)
   # subset record data
   grid_record_data <-
     record_data %>%

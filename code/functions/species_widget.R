@@ -13,7 +13,7 @@
 #'   \code{"year"}, \code{"is_fully_sampled_year"}, and
 #'   \code{"maps"}.
 #'
-#' @param grid_data \code{\link[raster]{RasterLayer} object containing the grid
+#' @param grid_data \code{\link[sf]{sf} object containing the grid
 #'   cells for displaying data on the map.
 #'
 #' @param study_area_data \code{sf} object showing the study area.

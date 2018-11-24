@@ -79,6 +79,8 @@ records:                                                         # parameters fo
   latitude_column_name: LATITUDE                                 # column name for record latitudes data
   event_column_name: SAMPLING EVENT IDENTIFIER                   # column name for sampling event identifier
   locality_column_name: LOCALITY ID                              # column name for the locality identifier
+  locality_name_column_name: LOCALITY                            # column name for the locality name
+  locality_type_column_name: LOCALITY TYPE                       # column nmae with the locality type
   all_species_column_name: ALL SPECIES REPORTED                  # column name indicating if all species reported
   count_column_name: OBSERVATION COUNT                           # column name incdicating the number of individuals counted
   protocol_column_name: PROTOCOL TYPE                            # column name for methdology used for sampling
@@ -122,8 +124,9 @@ surveyor_sheets:                                                 # parameters fo
     height: 4.5                                                  # map height in inches
     zoom_level: 15                                               # zoom-level for map background
     type: "satellite"                                            # type of map to use for the map background (available options are "terrain", "satellite", "roadmap", "hybrid")
+    label_character_width: 40                                    # maximum width for locality labels in the maps
   checklist:
     number_of_pages: 2                                           # number of pages to use for the checklists
-    vertical_spacing: "-3.0em"                                    # spacing to vertically align the checklist tables with the page header
+    vertical_spacing: "-3.0em"                                   # spacing to vertically align the checklist tables with the page header
     left_margin: "-0.5in"                                        # padding for the checklist tables' left margin
     right_margin: "-0.2in"                                       # padding for the checklist tables' right margin

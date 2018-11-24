@@ -2,7 +2,7 @@
 output:
   rmarkdown::pdf_document:
     toc: false
-    keep_tex: true
+    keep_tex: false
     fig_caption: no
     includes:
       in_header: surveyor-sheet-preamble.tex
@@ -13,6 +13,7 @@ urlcolor: blue
 params:
   grid_id: !r NULL
   grid_name: !r NULL
+  grid_date: !r format(as.POSIXct(Sys.time()), "%b %Y")
   grid_checklist_target: !r NULL
   grid_minute_target: !r NULL
   grid_km_target: !r NULL
@@ -37,21 +38,24 @@ knitr::opts_knit$set(progress = FALSE, verbose = FALSE,
 # verify that all parameters have been set
 assertthat::assert_that(!is.null(params$grid_id),
                         !is.null(params$grid_name),
-                        !is.null(params$grid_name),
+                        !is.null(params$grid_date),
                         !is.null(params$grid_checklist_target),
                         !is.null(params$grid_minute_target),
                         !is.null(params$grid_km_target),
                         !is.null(params$grid_description),
                         !is.null(params$grid_map),
                         !is.null(params$grid_checklist),
-                        !is.null(params$grid_summary))
+                        !is.null(params$grid_summary),
+                        !is.null(params$grid_checklist_number_of_pages),
+                        !is.null(params$grid_checklist_vertical_spacing),
+                        !is.null(params$grid_checklist_left_margin))
 ```
 
 ```{r}
 cat(paste0("\\chead{\\Large \\bfseries Atlas of the Birds of Brisbane\\\\",
            params$grid_name,
            " Grid Square, ",
-           format(as.POSIXct(Sys.time()), "%b %Y"), "}"),
+           params$grid_date, "}"),
      sep = "\n")
 ```
 

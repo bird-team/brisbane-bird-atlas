@@ -2,6 +2,18 @@
 ## set default options
 options(stringsAsFactors = FALSE)
 
+### set slash symbol for printing
+slash_symbol <- "/"
+if (.Platform$OS.type == "windows")
+  slash_symbol <- "\\"
+
+## check that API settings configured for Google
+if (identical(Sys.getenv("GOOGLE_TOKEN"), "")) {
+  stop(paste0("'", Sys.getenv("HOME"), slash_symbol, ".Renviron' does not ",
+              "contain the credentials for Google (i.e. GOOGLE_TOKEN ",
+              "variable)"))
+}
+
 ## create temporary directories
 tmp1 <- file.path(tempdir(), basename(tempfile(fileext = "")))
 tmp2 <- file.path(tempdir(), tempfile(fileext = ""))
@@ -48,6 +60,7 @@ source("code/functions/species_graph.R")
 source("code/functions/species_map.R")
 source("code/functions/species_widget.R")
 source("code/functions/species_table.R")
+source("code/functions/grid_map.R")
 source("code/functions/grid_summary_table.R")
 source("code/functions/grid_checklist_table.R")
 source("code/functions/find_observer_name.R")
@@ -125,6 +138,24 @@ record_data <- do.call(format_ebird_records,
                                                 sf::st_union() %>%
                                                 sf::st_sf(id = 1)),
                               parameters$records))
+
+## format record data to extract locations
+locations_data <- record_data %>%
+                  select(locality, locality_name, locality_type, longitude,
+                         latitude) %>%
+                  filter(!duplicated(locality)) %>%
+                  filter(!is.na(locality), !is.na(locality_name),
+                         !is.na(locality_type), !is.na(locality_name)) %>%
+                  filter(nchar(locality_name) > 0) %>%
+                  mutate(locality_name =
+                    vapply(locality_name, FUN.VALUE = character(1), function(x)
+                        paste(strwrap(x, parameters$maps$label_character_width),
+                              collapse = "\n")))
+
+## extract month year for latest checklist
+latest_checklist_month_year <- max(as.POSIXct(strptime(record_data$date,
+                                                       "%d/%m/%Y")))
+latest_checklist_month_year <- format(latest_checklist_month_year, "%b %Y")
 
 ## verify that species have sufficient data
 ### verify that species have at least a minimum number of records
@@ -281,6 +312,8 @@ species_data$widget_hash <- plyr::laply(
 
 ## surveyor sheet hashes
 tmp_hash <- digest::digest(list(record_data, grid_data, species_data,
+              parameters$surveyor_sheets,
+              parameters$grid_resolution,
               readLines("templates/surveyor-sheet.Rmd"),
               readLines("templates/surveyor-sheet-preamble.tex")))
 grid_data$sheet_hash <- plyr::laply(
@@ -306,7 +339,8 @@ if (is_parallel) {
                              "add_reporting_rate_columns",
                              "add_detection_columns",
                              "find_observer_name", "grid_summary_table",
-                             "grid_checklist_table"))
+                             "grid_checklist_table", "grid_map",
+                             "locations_data", "latest_checklist_month_year"))
   doParallel::registerDoParallel(cl)
 }
 
@@ -331,10 +365,16 @@ result <- plyr::laply(which(grid_data$type == "land"), .parallel = is_parallel,
     }
   }
   # create image for grid
-  grid_map <- normalizePath(paste0("assets/grid-maps/grid-", grid_data$id[i],
-                                   ".png"), mustWork = TRUE)
+  grid_map_data <- grid_map(grid_data$id[i], grid_data, locations_data,
+                            parameters$grid_resolution,
+                            parameters$surveyor_sheets$maps$zoom_level,
+                            parameters$surveyor_sheets$maps$type)
+  grid_map_path <- tempfile(fileext = ".png")
+  ggplot2::ggsave(grid_map_data,filename = grid_map_path,
+                  width = parameters$surveyor_sheets$maps$width,
+                  height = parameters$surveyor_sheets$maps$height)
   # create checklist table for grid
-  grid_summary <- grid_summary_table(i, grid_data, species_data,
+  grid_summary <- grid_summary_table(grid_data$id[i], grid_data, species_data,
                                      record_data)
   # create summary table for grid
   grid_checklist <- grid_checklist_table(grid_data$id[i], species_data,
@@ -343,12 +383,14 @@ result <- plyr::laply(which(grid_data$type == "land"), .parallel = is_parallel,
   rmarkdown::render("templates/surveyor-sheet.Rmd",
     output_file = basename(asset_path),
     output_dir = dirname(asset_path),
+    clean = TRUE,
     params = list(grid_id = grid_data$id[i],
                   grid_name = grid_data$name[i],
+                  grid_date = latest_checklist_month_year,
                   grid_checklist_target = grid_data$checklist_target[i],
                   grid_minute_target = grid_data$minute_target[i],
                   grid_km_target = grid_data$km_target[i],
-                  grid_map = grid_map,
+                  grid_map = grid_map_path,
                   grid_summary = grid_summary,
                   grid_checklist = grid_checklist,
                   grid_description = grid_data$description[i],
@@ -360,6 +402,8 @@ result <- plyr::laply(which(grid_data$type == "land"), .parallel = is_parallel,
                     parameters$surveyor_sheets$checklist$left_margin,
                   grid_checklist_right_margin =
                     parameters$surveyor_sheets$checklist$right_margin))
+  # cleanup temp file
+  unlink(grid_map_path)
   # save hash
   writeLines(grid_data$sheet_hash[i], hash_path)
   # return logical indicating success

@@ -19,13 +19,6 @@
 \renewcommand{\headrulewidth}{0pt}
 \fancyheadoffset{40mm}
 
-% format captions
-\usepackage[labelfont={small,bf}, labelsep=space, font={small}]{caption}
-
-% format section headers
-\titleformat*{\section}{\large\bfseries}
-\titleformat*{\subsection}{\normalsize\itshape}
-
 % make figures static
 \let\origfigure\figure
 \let\endorigfigure\endfigure
@@ -34,6 +27,13 @@
 } {
 	\endorigfigure
 }
+
+% format captions
+\usepackage[labelfont={small,bf}, labelsep=space, font={small}]{caption}
+
+% format section headers
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\normalsize\itshape}
 
 % set fontsize for tables
 \AtBeginEnvironment{multicols}{\scriptsize}{}{}
