@@ -115,6 +115,13 @@ species_widget <- function(x, species_data, record_data, grid_data,
   grid_pts_data@data <- grid_data@data
   grid_pts_data@data$cell <- raster::cellFromXY(grid_raster_raw_data,
                                                 grid_pts_data@coords)
+  ## add popup html
+  grid_data$popup <- htmltools::htmlEscape(grid_data$name)
+  land_pos <- which(grid_data$type == "land")
+  grid_data$popup[land_pos] <-
+    paste0("<a href=\"http://github.com/bird-team/brisbane-bird-atlas/",
+           "releases/download/v.0.0.2/grid-", grid_data$id[land_pos],
+           ".pdf\">", grid_data$popup[land_pos], "</a>")
   # main processing
   ## initialize leaflet map
   l <- leaflet::leaflet()
@@ -161,7 +168,7 @@ species_widget <- function(x, species_data, record_data, grid_data,
                             weight = 2.5,
                             data = sp::spTransform(grid_data,
                                                    sp::CRS("+init=epsg:4326")),
-                            popup = htmltools::htmlEscape(grid_data$name),
+                            popup = grid_data$popup,
                             group = "Grid")
   l <- leaflet::hideGroup(l, "Grid")
   ## add layer control
