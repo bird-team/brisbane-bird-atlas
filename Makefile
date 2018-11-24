@@ -111,7 +111,7 @@ pull_assets:
 	&& docker cp bba:$(PATHSEP2)tmp/assets/assets-widgets.zip assets/widgets.zip \
 	&& docker cp bba:$(PATHSEP2)tmp/assets/assets-graphs.zip assets/graphs.zip \
 	&& docker cp bba:$(PATHSEP2)tmp/assets/assets-tables.zip assets/tables.zip \
-	&& docker cp bba:$(PATHSEP2)tmp/assets/assets-surveyor-sheets.zip  assets/surveyor-sheets.zip \
+	&& docker cp bba:$(PATHSEP2)tmp/assets/assets-surveyor-sheets.zip assets/surveyor-sheets.zip \
 	&& cd assets \
 	&& unzip -o maps.zip \
 	&& unzip -o widgets.zip \
