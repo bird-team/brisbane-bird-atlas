@@ -21,12 +21,13 @@ if (identical(Sys.getenv("GITHUB_TOKEN"), "")) {
 
 # Main processing
 ## iterate over the surveyor sheets and push them to GitHub
-lapply(dir("assets/surveyor-sheets", "^.*\\.pdf$", full.names = TRUE),
-       function(x) {
-  piggyback::pb_upload(basename(x),
+result <- lapply(dir("assets/surveyor-sheets", "^.*\\.pdf$", full.names = TRUE),
+                 function(x) {
+  piggyback::pb_upload(x,
                        repo = "bird-team/brisbane-bird-atlas",
-                       name = "assets-graphs.zip",
+                       name = basename(x),
                        overwrite = TRUE,
-                       tag = "v.0.0.2")
+                       tag = "v.0.0.2",
+                       use_timestamps = FALSE)
   invisible(TRUE)
 })

@@ -25,24 +25,29 @@ piggyback::pb_upload("assets/graphs.zip",
                      repo = "bird-team/brisbane-bird-atlas",
                      name = "assets-graphs.zip",
                      overwrite = TRUE,
-                     tag = "v.0.0.1")
+                     tag = "v.0.0.1",
+                     use_timestamps = FALSE)
 piggyback::pb_upload("assets/tables.zip",
                      repo = "bird-team/brisbane-bird-atlas",
                      name = "assets-tables.zip",
                      overwrite = TRUE,
-                     tag = "v.0.0.1")
+                     tag = "v.0.0.1",
+                     use_timestamps = FALSE)
 piggyback::pb_upload("assets/widgets.zip",
                      repo = "bird-team/brisbane-bird-atlas",
                      name = "assets-widgets.zip",
                      overwrite = TRUE,
-                     tag = "v.0.0.1")
+                     tag = "v.0.0.1",
+                     use_timestamps = FALSE)
 piggyback::pb_upload("assets/maps.zip",
                      repo = "bird-team/brisbane-bird-atlas",
                      name = "assets-maps.zip",
                      overwrite = TRUE,
-                     tag = "v.0.0.1")
+                     tag = "v.0.0.1",
+                     use_timestamps = FALSE)
 piggyback::pb_upload("assets/surveyor-sheets.zip",
                      repo = "bird-team/brisbane-bird-atlas",
                      name = "assets-surveyor-sheets.zip",
                      overwrite = TRUE,
-                     tag = "v.0.0.1")
+                     tag = "v.0.0.1",
+                     use_timestamps = FALSE)
