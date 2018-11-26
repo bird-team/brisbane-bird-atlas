@@ -2,6 +2,18 @@
 ## set default options
 options(stringsAsFactors = FALSE)
 
+### set slash symbol for printing
+slash_symbol <- "/"
+if (.Platform$OS.type == "windows")
+  slash_symbol <- "\\"
+
+## check that API settings configured for Google
+if (identical(Sys.getenv("GOOGLE_TOKEN"), "")) {
+  stop(paste0("'", Sys.getenv("HOME"), slash_symbol, ".Renviron' does not ",
+              "contain the credentials for Google (i.e. GOOGLE_TOKEN ",
+              "variable)"))
+}
+
 ## create temporary directories
 tmp1 <- file.path(tempdir(), basename(tempfile(fileext = "")))
 tmp2 <- file.path(tempdir(), tempfile(fileext = ""))
@@ -30,6 +42,7 @@ unzip(dir("data/land", "^.*\\.zip$", full.names = TRUE),
 land_path <- dir(tmp4, "^.*\\.shp$", full.names = TRUE)[1]
 elevation_path <- dir("data/elevation", "^.*\\.grd$", full.names = TRUE)[1]
 grid_path <- dir("data/grid", "^.*\\.shp$", full.names = TRUE)[1]
+grid_metadata_path <- dir("data/grid", "^.*\\.xlsx$", full.names = TRUE)[1]
 
 ## load packages
 library(dplyr)
@@ -38,6 +51,7 @@ library(patchwork)
 
 ## source functions
 source("code/functions/format_grid_data.R")
+source("code/functions/format_grid_metadata.R")
 source("code/functions/format_ebird_records.R")
 source("code/functions/format_species_data.R")
 source("code/functions/add_reporting_rate_columns.R")
@@ -46,6 +60,10 @@ source("code/functions/species_graph.R")
 source("code/functions/species_map.R")
 source("code/functions/species_widget.R")
 source("code/functions/species_table.R")
+source("code/functions/grid_map.R")
+source("code/functions/grid_summary_table.R")
+source("code/functions/grid_checklist_table.R")
+source("code/functions/find_observer_name.R")
 source("code/functions/color_numeric_palette.R")
 source("code/functions/ymax.R")
 source("code/functions/breaks.R")
@@ -59,6 +77,7 @@ parameters <- yaml::read_yaml("data/parameters/parameters.yaml")
 study_area_data <- sf::st_transform(sf::read_sf(study_area_path),
                                     parameters$crs)
 grid_data <- sf::read_sf(grid_path)
+grid_metadata <- readxl::read_excel(grid_metadata_path, sheet = 1)
 land_data <- sf::st_transform(sf::read_sf(land_path), parameters$crs)
 record_data <- data.table::fread(record_path, data.table = FALSE)
 species_data <- readxl::read_excel(species_path, sheet = 1)
@@ -99,6 +118,15 @@ grid_data <- do.call(format_grid_data,
                                  study_area_data = study_area_data),
                             parameters["grid_resolution"]))
 
+## format grid metadata
+grid_metadata <- do.call(format_grid_metadata,
+                     append(list(x = grid_metadata,
+                                 grid_data = grid_data),
+                            parameters[["grid_metadata"]]))
+
+## add in metadata columns
+grid_data <- dplyr::left_join(grid_data, grid_metadata, by = "id")
+
 ## format species data
 species_data <- do.call(format_species_data,
                         append(list(x = species_data), parameters$species))
@@ -110,6 +138,24 @@ record_data <- do.call(format_ebird_records,
                                                 sf::st_union() %>%
                                                 sf::st_sf(id = 1)),
                               parameters$records))
+
+## format record data to extract locations
+locations_data <- record_data %>%
+                  select(locality, locality_name, locality_type, longitude,
+                         latitude) %>%
+                  filter(!duplicated(locality)) %>%
+                  filter(!is.na(locality), !is.na(locality_name),
+                         !is.na(locality_type), !is.na(locality_name)) %>%
+                  filter(nchar(locality_name) > 0) %>%
+                  mutate(locality_name =
+                    vapply(locality_name, FUN.VALUE = character(1), function(x)
+                        paste(strwrap(x, parameters$maps$label_character_width),
+                              collapse = "\n")))
+
+## extract month year for latest checklist
+latest_checklist_month_year <- max(as.POSIXct(strptime(record_data$date,
+                                                       "%d/%m/%Y")))
+latest_checklist_month_year <- format(latest_checklist_month_year, "%b %Y")
 
 ## verify that species have sufficient data
 ### verify that species have at least a minimum number of records
@@ -264,6 +310,17 @@ species_data$widget_hash <- plyr::laply(
     digest::digest(list(tmp_df[i, ], tmp_hash))
 })
 
+## surveyor sheet hashes
+tmp_hash <- digest::digest(list(record_data, grid_data, species_data,
+              parameters$surveyor_sheets,
+              parameters$grid_resolution,
+              readLines("templates/surveyor-sheet.Rmd"),
+              readLines("templates/surveyor-sheet-preamble.tex")))
+grid_data$sheet_hash <- plyr::laply(
+  seq_len(nrow(grid_data)), function(i) {
+    digest::digest(list(grid_data[i, ], tmp_hash))
+})
+
 # Exports
 ## spawn cluster workers
 is_parallel <- isTRUE(parameters$threads > 1)
@@ -277,10 +334,84 @@ if (is_parallel) {
                              "species_graph", "species_map", "species_table",
                              "species_widget", "color_numeric_palette", "ymax",
                              "breaks", "addLegend_custom", "file_names",
-                             "add_reporting_rate_columns", 
-                             "add_detection_columns"))
+                             "add_reporting_rate_columns",
+                             "add_detection_columns",
+                             "find_observer_name", "grid_summary_table",
+                             "grid_checklist_table", "grid_map",
+                             "locations_data", "latest_checklist_month_year"))
   doParallel::registerDoParallel(cl)
 }
+
+## create surveyor sheet for each grid cell
+message("starting surveyor sheets...")
+### determine which grids for which to make surveyor sheets
+grid_indices <- which(grid_data$type == "land")
+if (!identical(parameters$number_surveyor_sheets, "all"))
+  grid_indices <- grid_indices[seq_len(parameters$number_surveyor_sheets)]
+### make surveyor sheets
+result <- plyr::laply(grid_indices, .parallel = is_parallel,
+                      function(i) {
+  # display progress
+  message("  ", grid_data$id[i])
+  # create file names
+  asset_path <- paste0("assets/surveyor-sheets/grid-", grid_data$id[i], ".pdf")
+  hash_path <- paste0("assets/surveyor-sheets/grid-", grid_data$id[i], ".hash")
+  # check if processing needed if hash file already exists
+  if (file.exists(hash_path)) {
+    # load hash
+    curr_hash <- readLines(hash_path)
+    # check if hash is the same the hash for this species
+    if (identical(grid_data$sheet_hash[i], curr_hash)) {
+      # if the hash is the same then skip this species
+      message("    reusing cache")
+      return(TRUE)
+    }
+  }
+  # create image for grid
+  grid_map_data <- grid_map(grid_data$id[i], grid_data, locations_data,
+                            parameters$grid_resolution,
+                            parameters$surveyor_sheets$maps$zoom_level,
+                            parameters$surveyor_sheets$maps$type)
+  grid_map_path <- tempfile(fileext = ".png")
+  ggplot2::ggsave(grid_map_data,filename = grid_map_path,
+                  width = parameters$surveyor_sheets$maps$width,
+                  height = parameters$surveyor_sheets$maps$height)
+  # create checklist table for grid
+  grid_summary <- grid_summary_table(grid_data$id[i], grid_data, species_data,
+                                     record_data)
+  # create summary table for grid
+  grid_checklist <- grid_checklist_table(grid_data$id[i], species_data,
+                                         record_data)
+  # make rmarkdown document
+  rmarkdown::render("templates/surveyor-sheet.Rmd",
+    output_file = basename(asset_path),
+    output_dir = dirname(asset_path),
+    clean = TRUE,
+    params = list(grid_id = grid_data$id[i],
+                  grid_name = grid_data$name[i],
+                  grid_date = latest_checklist_month_year,
+                  grid_checklist_target = grid_data$checklist_target[i],
+                  grid_minute_target = grid_data$minute_target[i],
+                  grid_km_target = grid_data$km_target[i],
+                  grid_map = grid_map_path,
+                  grid_summary = grid_summary,
+                  grid_checklist = grid_checklist,
+                  grid_description = grid_data$description[i],
+                  grid_checklist_number_of_pages =
+                    parameters$surveyor_sheets$checklist$number_of_pages,
+                  grid_checklist_vertical_spacing =
+                    parameters$surveyor_sheets$checklist$vertical_spacing,
+                  grid_checklist_left_margin =
+                    parameters$surveyor_sheets$checklist$left_margin,
+                  grid_checklist_right_margin =
+                    parameters$surveyor_sheets$checklist$right_margin))
+  # cleanup temp file
+  unlink(grid_map_path)
+  # save hash
+  writeLines(grid_data$sheet_hash[i], hash_path)
+  # return logical indicating success
+  TRUE
+})
 
 ## create graphs for each species
 message("starting graphs...")

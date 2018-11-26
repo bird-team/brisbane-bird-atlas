@@ -25,6 +25,12 @@
 #' @param locality_column_name \code{character} name of column with the
 #'   unique identifier for each locality in the data set.
 #'
+#' @param locality_name_column_name \code{character} name of column with the
+#'   name for each locality in the data set.
+#'
+#' @param locality_type_column_name \code{character} name of column with the
+#'   type for each locality in the data set.
+#'
 #' @param protocol_column_name \code{character} name of column with the
 #'   name of the sampling methodology.
 #'
@@ -34,7 +40,7 @@
 #' @param count_column_name \code{character} name of column with number
 #'   of individuals observed during a sampling event.
 #'
-#'@param omit_protocol_names \code{character} vector with names of
+#' @param omit_protocol_names \code{character} vector with names of
 #'   sampling protocols to omit from reporting rate calculations.
 #'
 #' @param breeding_column_name \code{character} name of column with breeding
@@ -42,6 +48,15 @@
 #'
 #' @param breeding_activity_names \code{character} name of breeding activity
 #'   values that count as confirmed breeding activity.
+#'
+#' @param distance_km_column_name \code{character} column name with the
+#'   distance travelled per sampling event.
+#'
+#' @param duration_minutes_column_name \code{character} column name with the
+#'   duration of the sampling event in minutes.
+#'
+#' @param observer_id_column_name \code{character} column name with the
+#'   observer's unique identifier.
 #'
 #' @param study_area \code{sf} object delineating the extent of the study area.
 #'   Records that do not overlap with the study area will be omitted.
@@ -51,9 +66,14 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
                                  date_column_format, longitude_column_name,
                                  latitude_column_name,
                                  event_column_name, locality_column_name,
+                                 locality_name_column_name,
+                                 locality_type_column_name,
                                  protocol_column_name, all_species_column_name,
                                  count_column_name, omit_protocol_names,
                                  breeding_column_name, breeding_activity_names,
+                                 distance_km_column_name,
+                                 duration_minutes_column_name,
+                                 observer_id_column_name,
                                  study_area) {
    # assert that arguments are valid
    assertthat::assert_that(inherits(x, "data.frame"),
@@ -77,6 +97,12 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
                            assertthat::is.string(locality_column_name),
                            assertthat::has_name(x, locality_column_name),
                            is.character(x[[locality_column_name]]),
+                           assertthat::is.string(locality_name_column_name),
+                           assertthat::has_name(x, locality_name_column_name),
+                           is.character(x[[locality_name_column_name]]),
+                           assertthat::is.string(locality_type_column_name),
+                           assertthat::has_name(x, locality_type_column_name),
+                           is.character(x[[locality_type_column_name]]),
                            assertthat::is.string(protocol_column_name),
                            assertthat::has_name(x, protocol_column_name),
                            is.character(x[[protocol_column_name]]),
@@ -87,6 +113,16 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
                            assertthat::has_name(x, count_column_name),
                            inherits(x[[count_column_name]],
                                     c("numeric", "character")),
+                           assertthat::is.string(distance_km_column_name),
+                           assertthat::has_name(x, distance_km_column_name),
+                           is.numeric(x[[distance_km_column_name]]),
+                           assertthat::is.string(duration_minutes_column_name),
+                           assertthat::has_name(x,
+                             duration_minutes_column_name),
+                           is.numeric(x[[duration_minutes_column_name]]),
+                           assertthat::is.string(observer_id_column_name),
+                           assertthat::has_name(x, observer_id_column_name),
+                           is.character(x[[observer_id_column_name]]),
                            is.character(omit_protocol_names),
                            assertthat::noNA(omit_protocol_names),
                            assertthat::is.string(breeding_column_name),
@@ -101,9 +137,14 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
                        c(scientific_column_name, date_column_name,
                          longitude_column_name, latitude_column_name,
                          event_column_name, count_column_name,
-                         locality_column_name, protocol_column_name),
+                         locality_column_name, locality_name_column_name,
+                         locality_type_column_name, protocol_column_name,
+                         distance_km_column_name, duration_minutes_column_name,
+                         observer_id_column_name),
                       c("species_scientific_name", "date", "longitude",
-                        "latitude", "event", "count", "locality", "protocol"))
+                        "latitude", "event", "count", "locality", "locality_name", "locality_type",
+                        "protocol", "distance_km", "duration_minutes",
+                        "observer_id"))
 
   # coerce count column to numeric
   x$count <- as.numeric(x$count)
@@ -145,9 +186,13 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
   # remove records not identified to species level
   x <- x[!grepl("sp.", x$species_scientific_name, fixed = TRUE), , drop = FALSE]
 
-  # convert data.frame to sf object
+  # convert data.frame to sf object and preserve longitudes and latitudes
+  lon <- x$longitude
+  lat <- x$latitude
   x <- sf::st_as_sf(x, coords = c("longitude", "latitude"), crs = 4326,
                     agr = "constant")
+  x$longitude <- lon
+  x$latitude <- lat
 
   # transform to specified crs
   x <- sf::st_transform(x, sf::st_crs(study_area_data))

@@ -46,6 +46,10 @@
 #' @param profile_url_column_name \code{character} name of column containing
 #'   the species' profile pictures.
 #'
+#' @param surveyor_sheet_checklist_column_name \code{character} name of column
+#'   name containing \code{TRUE}/\code{FALSE} if the species should be
+#'   included in the surveyor sheet checklists.
+#'
 #' @return \code{data.frame} with formatted data.
 format_species_data <- function(x, scientific_column_name, common_column_name,
                                 key_column_name, iucn_column_name,
@@ -54,7 +58,8 @@ format_species_data <- function(x, scientific_column_name, common_column_name,
                                 checklist_year_column_name,
                                 record_year_column_name,
                                 distribution_column_name,
-                                profile_url_column_name) {
+                                profile_url_column_name,
+                                surveyor_sheet_checklist_column_name) {
   # assert arguments are valid
   assertthat::assert_that(inherits(x, "data.frame"),
                           nrow(x) > 0,
@@ -96,7 +101,13 @@ format_species_data <- function(x, scientific_column_name, common_column_name,
                               c("land", "marine","both")),
                           assertthat::is.string(profile_url_column_name),
                           assertthat::has_name(x, profile_url_column_name),
-                          is.character(x[[profile_url_column_name]]))
+                          is.character(x[[profile_url_column_name]]),
+                          assertthat::is.string(
+                            surveyor_sheet_checklist_column_name),
+                          assertthat::has_name(x,
+                            surveyor_sheet_checklist_column_name),
+                          is.character(
+                            x[[surveyor_sheet_checklist_column_name]]))
   # rename columns
   data.table::setnames(x,
                        c(scientific_column_name, common_column_name,
@@ -106,13 +117,17 @@ format_species_data <- function(x, scientific_column_name, common_column_name,
                          checklist_year_column_name,
                          record_year_column_name,
                          distribution_column_name,
-                         profile_url_column_name),
+                         profile_url_column_name,
+                         surveyor_sheet_checklist_column_name),
                        c("species_scientific_name", "species_common_name",
                          "species_key", "iucn_threat_status",
                          "national_threat_status", "qld_threat_status",
                          "graphs", "maps", "checklists_starting_year",
                          "records_starting_year", "distribution",
-                         "profile_url"))
+                         "profile_url", "surveyor_sheet_checklist"))
+
+  # coerce surveyor checklist to logical
+  x$surveyor_sheet_checklist <- x$surveyor_sheet_checklist == "TRUE"
 
   # remove rows with missing values
   x <- x[!is.na(x$species_scientific_name), , drop = FALSE]
@@ -121,7 +136,8 @@ format_species_data <- function(x, scientific_column_name, common_column_name,
   x <- x[, c("species_scientific_name", "species_common_name", "species_key",
              "iucn_threat_status", "national_threat_status",
              "qld_threat_status", "graphs", "maps", "checklists_starting_year",
-             "records_starting_year", "distribution", "profile_url"),
+             "records_starting_year", "distribution", "profile_url",
+             "surveyor_sheet_checklist"),
          drop = FALSE]
 
   # sort data

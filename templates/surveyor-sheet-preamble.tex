@@ -1,0 +1,45 @@
+% load packages
+\usepackage{amsmath,amsfonts,float,makecell,titletoc,titlesec,tocloft,lineno,booktabs,subfiles,textcomp,tabularx,etoolbox,fancyhdr,multicol,capt-of,siunitx,xcolor,hyperref,xtab,chngpage}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[onehalfspacing]{setspace}
+\usepackage[autostyle]{csquotes}
+\usepackage{geometry}
+
+% set page margins
+\geometry{a4paper, includeheadfoot, top=6mm, left=19mm, right=19mm, bottom=5mm}
+
+% define color for footer
+\definecolor{footergrey}{rgb}{0.2, 0.2, 0.2}
+
+% set pagestyle
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyheadoffset{40mm}
+
+% make figures static
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][2] {
+	\expandafter\origfigure\expandafter[H]
+} {
+	\endorigfigure
+}
+
+% format captions
+\usepackage[labelfont={small,bf}, labelsep=space, font={small}]{caption}
+
+% format section headers
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\normalsize\itshape}
+
+% set fontsize for tables
+\AtBeginEnvironment{multicols}{\scriptsize}{}{}
+\AtBeginEnvironment{multicols}{\singlespacing}
+\AtBeginEnvironment{tabular}{\scriptsize}{}{}
+\AtBeginEnvironment{tabular}{\singlespacing}
+
+% align headers for table
+\renewcommand\theadalign{tc}

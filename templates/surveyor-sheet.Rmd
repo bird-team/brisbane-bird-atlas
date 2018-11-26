@@ -1,0 +1,227 @@
+---
+output:
+  rmarkdown::pdf_document:
+    toc: false
+    keep_tex: false
+    fig_caption: no
+    includes:
+      in_header: surveyor-sheet-preamble.tex
+fontsize: 11pt
+documentclass: article
+subparagraph: true
+urlcolor: blue
+params:
+  grid_id: !r NULL
+  grid_name: !r NULL
+  grid_date: !r format(as.POSIXct(Sys.time()), "%b %Y")
+  grid_checklist_target: !r NULL
+  grid_minute_target: !r NULL
+  grid_km_target: !r NULL
+  grid_description: !r NULL
+  grid_map: !r NULL
+  grid_summary: !r NULL
+  grid_checklist: !r NULL
+  grid_checklist_number_of_pages: 2
+  grid_checklist_vertical_spacing: "-3.0em"
+  grid_checklist_left_margin: "-0.5in"
+  grid_checklist_right_margin: "-0.2in"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE,
+                      results = "asis", fig.align = "center")
+knitr::opts_knit$set(progress = FALSE, verbose = FALSE,
+                     root.dir = normalizePath(".."))
+```
+
+```{r, include = FALSE}
+# verify that all parameters have been set
+assertthat::assert_that(!is.null(params$grid_id),
+                        !is.null(params$grid_name),
+                        !is.null(params$grid_date),
+                        !is.null(params$grid_checklist_target),
+                        !is.null(params$grid_minute_target),
+                        !is.null(params$grid_km_target),
+                        !is.null(params$grid_description),
+                        !is.null(params$grid_map),
+                        !is.null(params$grid_checklist),
+                        !is.null(params$grid_summary),
+                        !is.null(params$grid_checklist_number_of_pages),
+                        !is.null(params$grid_checklist_vertical_spacing),
+                        !is.null(params$grid_checklist_left_margin))
+```
+
+```{r}
+cat(paste0("\\chead{\\Large \\bfseries Atlas of the Birds of Brisbane\\\\",
+           params$grid_name,
+           " Grid Square, ",
+           params$grid_date, "}"),
+     sep = "\n")
+```
+
+```{r}
+cat(paste0("\\cfoot{\\large \\textcolor{footergrey}{",
+           "Grid square target for each season: ",
+           params$grid_checklist_target,
+           " complete checklists, ",
+           params$grid_minute_target, " minutes, ",
+           params$grid_km_target, " km", "}}"),
+    sep = "\n")
+```
+```{r}
+cat(paste0(
+"\\begin{figure}
+\\centering
+\\resizebox{\\textwidth}{!}{\\includegraphics{", params$grid_map, "}}
+\\end{figure}
+"), sep = "\n")
+```
+
+```{r}
+cat(params$grid_description, sep = " ")
+```
+
+```{r}
+# format table headers
+grid_summary_names <- names(params$grid_summary)
+grid_summary_names <- gsub("_", "\\\\", grid_summary_names, fixed = TRUE)
+grid_summary_names <- gsub("2", "", grid_summary_names, fixed = TRUE)
+grid_summary_names <- gsub("3", "", grid_summary_names, fixed = TRUE)
+grid_summary_names[grepl("blank", grid_summary_names)] <- ""
+grid_summary_names <- paste0("\\thead{", grid_summary_names, "}")
+# produce raw latex conversion
+l <- strsplit(as.character(knitr::kable(params$grid_summary,
+                           col.names = grid_summary_names,
+                           align = replace(rep("c",
+                                               length(grid_summary_names)),
+                                            c(1, 6), "l"),
+                           format = "latex")), "\n", fixed = TRUE)[[1]]
+# manually style raw latex output
+## remove lines between columns
+pos <- startsWith(l, "\\begin{tabular}")
+l[pos] <- gsub("|", "", l[pos], fixed = TRUE)
+## remove escaping of backslashes to enforce custom formatting
+l <- gsub("\\textbackslash{}", "\\", l, fixed = TRUE)
+## remove escaped braces
+l <- gsub("\\{", "{", l, fixed = TRUE)
+l <- gsub("\\}", "}", l, fixed = TRUE)
+## remove additional hlines
+hpos <- which(l == "\\hline")
+l[hpos[c(-1, -2, -max(hpos))]] <- ""
+## set space between column in table
+l <- c("\\setlength{\\tabcolsep}{0.4em}", l)
+## center table in page
+l <- c("\\begin{table}[H]\n\\centering\\", l, "\\end{table}")
+# dump table
+cat(paste(l, collapse = "\n"))
+```
+
+\clearpage
+
+\setlength{\footskip}{0.2\footskip}
+
+```{r}
+# convert TRUE and FALSE to text for table
+chk <- params$grid_checklist
+chk$summer <- dplyr::if_else(chk$summer, "$\\times$", "")
+chk$winter <- dplyr::if_else(chk$winter, "$\\times$", "")
+chk$autumn <- dplyr::if_else(chk$autumn, "$\\times$", "")
+chk$spring <- dplyr::if_else(chk$spring, "$\\times$", "")
+names(chk) <- c(names(chk)[1], substr(names(chk)[-1], 1, 2))
+names(chk) <- tools::toTitleCase(names(chk))
+
+# assign starting rows and ending rows for each table
+n_pages <- params$grid_checklist_number_of_pages
+chk_row_inc <- ceiling(nrow(chk) / ((n_pages * 3)))
+chk_row_inc <- seq(1, (chk_row_inc * n_pages * 3) + 1, chk_row_inc)
+chk_row_starts <- chk_row_inc[-length(chk_row_inc)]
+chk_row_ends <- chk_row_inc[-1] - 1
+chk_row_ends[length(chk_row_ends)] <- nrow(chk)
+chk_row_starts <- split(chk_row_starts, rep(seq_len(n_pages), each = 3))
+chk_row_ends <- split(chk_row_ends, rep(seq_len(n_pages), each = 3))
+
+# split table into three subsets
+chk_list <-
+  lapply(seq_len(n_pages), function(i) lapply(seq_len(3), function(j) {
+   chk[seq(chk_row_starts[[i]][j], chk_row_ends[[i]][j]), , drop = FALSE]
+}))
+
+# output table
+cat(sep = "",
+"\\AtBeginEnvironment{tabular}{\\footnotesize}{}{}
+\\AtBeginEnvironment{tabular}{\\singlespacing}",
+paste(collapse = "\n\\clearpage\n",
+      vapply(chk_list, FUN.VALUE = character(1), function(z) {
+  paste0("
+\\begin{table}[!htbp]
+\\vspace{", params$grid_checklist_vertical_spacing, "}%
+\\begin{adjustwidth}{", params$grid_checklist_left_margin, "}{",
+                        params$grid_checklist_right_margin, "}
+\\begin{center}
+",
+  paste(collapse = "", vapply(z, FUN.VALUE = character(1), function(x) {
+    l <- as.character(knitr::kable(x,
+      col.names = c(paste0("\\phantom{", chk[[1]][which.max(nchar(chk[[1]]))],
+                           "}", collapse = ""), names(x)[-1]),
+      align = c("l", rep("c", ncol(x) - 1)), format = "latex"))
+    ## remove escaping of characters to enforce custom formatting
+    l <- gsub("\\textbackslash{}", "\\", l, fixed = TRUE)
+    l <- gsub("\\textasciitilde{}", "~", l, fixed = TRUE)
+    ## remove escaped symbols
+    l <- gsub("\\{", "{", l, fixed = TRUE)
+    l <- gsub("\\}", "}", l, fixed = TRUE)
+    l <- gsub("\\$", "$", l, fixed = TRUE)
+    paste0("
+\\noindent\\begin{minipage}[t]{0.3\\linewidth}
+\\centering
+\\setlength{\\tabcolsep}{0.05em}", l,
+"\\end{minipage}\\hfill")
+    })),
+"\\end{center}\\end{adjustwidth}\\end{table}")
+})))
+```
+
+\clearpage
+
+\AtBeginEnvironment{multicols}{\normalsize}{}{}
+\AtBeginEnvironment{multicols}{\onehalfspacing}
+
+```{r}
+cat("\\begin{multicols}{2}\n\\setlength{\\columnsep}{4.5cm}
+\\setlength{\\columnseprule}{0.2pt}")
+```
+
+\section{Contributing to the Atlas}
+
+\subsection{What is the Atlas of the Birds of Brisbane?}
+
+This Atlas seeks to document the distribution, abundance and seasonality of all recorded species of Brisbane birds and is based on data from eBird, an open-access citizen science project dedicated to furthering our knowledge of birds and their behaviour.
+
+You can view the Atlas online at \url{http://brisbanebirds.com}.
+
+\subsection{How do I go about atlassing?}
+
+The Atlas uses data from eBird, the online bird databasing tool. Simply go birdwatching within this grid square, record your sightings in eBird, and the records will be automatically transferred from eBird into the Atlas.
+
+To join eBird today and start contributing your observations to the Atlas, visit \url{www.ebird.org}. There's no need to do anything special within eBird to make your records count -- all eBird observations from Brisbane will automatically be pulled into the atlas.
+
+Plan your trip to the square by perusing the maps, identifying some suitable locations to visit, and deciding which time of year to visit. Consider nocturnal trips as needed -- many squares are short of nocturnal visits.
+
+\subsection{Can I set up new locations?}
+
+You can set up new personal locations via the eBird website or mobile app, and if a location meets the criteria for a hotspot, by all means suggest it so it can assessed by a hotspot reviewer.
+
+\vfill\null
+\columnbreak
+
+\subsection{How much effort is enough?}
+
+We have set an initial goal of achieving 12 complete checklists within each season in each grid square. This is 12 lists over the course of the entire Atlas period (currently 1 Jan 2005 -- 31 Dec 2019). This initial target will be increased in future, but for now the priority is to improve our knowledge of very poorly-surveyed squares before we set a higher target.
+
+\subsection{Ethical birding}
+
+The Atlas endorses ethical birding. The welfare of our birds is the highest priority so please engage in birding practices which do not adversely impact the birds around you. Nesting and migratory birds are particularly vulnerable to disturbances.
+
+```{r}
+cat("\\end{multicols}\n")
+```

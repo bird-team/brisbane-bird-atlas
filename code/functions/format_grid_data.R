@@ -18,11 +18,8 @@ format_grid_data <- function(x, study_area_data, grid_resolution) {
   # validate arguments
   assertthat::assert_that(inherits(x, "sf"),
                           assertthat::has_name(x, "id"),
-                          assertthat::has_name(x, "name"),
                           is.numeric(x$id),
                           assertthat::noNA(x$id),
-                          is.character(x$name),
-                          assertthat::noNA(x$name),
                           anyDuplicated(x$id) == 0,
                           raster::compareCRS(
                             sp::CRS(sf::st_crs(study_area_data)[[2]]),
@@ -61,7 +58,7 @@ format_grid_data <- function(x, study_area_data, grid_resolution) {
   x$type[x$land] <- "land"
 
   ## select relevant columns
-  x <- x %>% select(id, type, name)
+  x <- x %>% select(id, type)
 
   # return result
   x
