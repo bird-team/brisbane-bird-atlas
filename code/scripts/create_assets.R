@@ -382,9 +382,13 @@ result <- plyr::laply(grid_indices, .parallel = is_parallel,
   # create summary table for grid
   grid_checklist <- grid_checklist_table(grid_data$id[i], species_data,
                                          record_data)
+  # create temporary intermediates
+  int_dir <- tempfile()
+  dir.create(int_dir, showWarnings = FALSE, recursive = TRUE)
   # make rmarkdown document
   rmarkdown::render("templates/surveyor-sheet.Rmd",
     output_file = basename(asset_path),
+    intermediates_dir = int_dir,
     output_dir = dirname(asset_path),
     clean = TRUE,
     params = list(grid_id = grid_data$id[i],
@@ -407,6 +411,7 @@ result <- plyr::laply(grid_indices, .parallel = is_parallel,
                     parameters$surveyor_sheets$checklist$right_margin))
   # cleanup temp file
   unlink(grid_map_path)
+  unlink(int_dir, recursive = TRUE, force = TRUE)
   # save hash
   writeLines(grid_data$sheet_hash[i], hash_path)
   # return logical indicating success
