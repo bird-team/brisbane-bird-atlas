@@ -140,17 +140,18 @@ record_data <- do.call(format_ebird_records,
                               parameters$records))
 
 ## format record data to extract locations
-locations_data <- record_data %>%
-                  select(locality, locality_name, locality_type, longitude,
-                         latitude) %>%
-                  filter(!duplicated(locality)) %>%
-                  filter(!is.na(locality), !is.na(locality_name),
-                         !is.na(locality_type), !is.na(locality_name)) %>%
-                  filter(nchar(locality_name) > 0) %>%
-                  mutate(locality_name =
-                    vapply(locality_name, FUN.VALUE = character(1), function(x)
-                        paste(strwrap(x, parameters$maps$label_character_width),
-                              collapse = "\n")))
+locations_data <-
+  record_data %>%
+  select(locality, locality_name, locality_type, longitude,
+         latitude) %>%
+  filter(!duplicated(locality)) %>%
+  filter(!is.na(locality), !is.na(locality_name),
+         !is.na(locality_type), !is.na(locality_name)) %>%
+  filter(nchar(locality_name) > 0) %>%
+  mutate(locality_name =
+    vapply(locality_name, FUN.VALUE = character(1), function(x)
+        paste(strwrap(x, parameters$surveyor_sheets$maps$label_character_width),
+              collapse = "\n")))
 
 ## extract month year for latest checklist
 latest_checklist_month_year <- max(as.POSIXct(strptime(record_data$date,
