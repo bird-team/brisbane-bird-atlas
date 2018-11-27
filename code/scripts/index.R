@@ -24,6 +24,10 @@ library(sf)
 library(ggplot2)
 library(leaflet)
 
+# create temporary directories
+tmp1 <- file.path(tempdir(), tempfile(fileext = ""))
+dir.create(tmp1, showWarnings = FALSE, recursive = TRUE)
+
 # Preliminary processing
 ## load parameters
 parameters <- yaml::read_yaml("data/parameters/parameters.yaml")
@@ -40,3 +44,13 @@ species_data <- do.call(format_species_data,
 ## format audio data
 audio_data <- do.call(format_audio_data,
                       append(list(x = audio_data), parameters$audio))
+
+## find month year for latest checklist
+unzip(dir("data/records", "^.*\\.zip$", full.names = TRUE), exdir = tmp1)
+record_path <- dir(tmp1, "^.*\\.txt$", full.names = TRUE)
+record_data <- data.table::fread(record_path, data.table = FALSE)
+record_data <- record_data[[parameters$records$date_column_name]]
+record_data <- as.POSIXct(strptime(record_data,
+                                   parameters$records$date_column_format))
+data_release_month_year <- format(max(record_data), "%B %Y")
+rm(record_data)
