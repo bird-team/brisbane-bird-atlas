@@ -42,7 +42,7 @@ render_species_profile <- function(x, caption, n_tries = 20) {
     out <- paste0(
 "\\begin{figure}
 \\centering
-\\includegraphics[width=\\linewidth]{", path, "}
+\\resizebox{\\textwidth}{!}{\\includegraphics{", path, "}}
 \\caption{", caption, "}
 \\end{figure}
 ")
