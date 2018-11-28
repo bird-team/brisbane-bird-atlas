@@ -360,7 +360,7 @@ result <- plyr::laply(grid_indices, .parallel = is_parallel,
                        ".pdf")
   hash_path <- paste0("assets/surveyor-sheets/grid-", grid_data$id[i], "-",
                       gsub(" ", "-", tolower(grid_data$name[i]), fixed = TRUE),
-                      ".pdf")
+                      ".hash")
   # check if processing needed if hash file already exists
   if (file.exists(hash_path)) {
     # load hash
