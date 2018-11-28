@@ -111,20 +111,6 @@ grid_summary_table <- function(x, grid_data, species_data, record_data) {
   chk_total_km[-5] <- paste0(chk_total_km[-5], "/", g$km_target)
   chk_total_km[chk_total_km_bold] <- paste0("\\textbf{",
     chk_total_km[chk_total_km_bold], "}")
-  ## species
-  chk_species <- c(
-    dplyr::n_distinct(grid_checklist_data$species_scientific_name[
-      grid_checklist_data$season == "summer"]),
-    dplyr::n_distinct(grid_checklist_data$species_scientific_name[
-      grid_checklist_data$season == "autumn"]),
-    dplyr::n_distinct(grid_checklist_data$species_scientific_name[
-      grid_checklist_data$season == "winter"]),
-    dplyr::n_distinct(grid_checklist_data$species_scientific_name[
-      grid_checklist_data$season == "spring"]),
-    dplyr::n_distinct(grid_checklist_data$species_scientific_name))
-  chk_species <- as.character(chk_species)
-  chk_species[length(chk_species)] <- paste0("\\textbf{",
-    chk_species[length(chk_species)], "}")
   # grid cell leader board
   ## prepare data for leader board calculations
   ldr_checklist_data <-
@@ -188,7 +174,6 @@ grid_summary_table <- function(x, grid_data, species_data, record_data) {
     Complete_checklists = chk_complete_checklists,
     Total_minutes = chk_total_minutes,
     Total_km = chk_total_km,
-    Species = chk_species,
     blank2 = rep(""),
     blank3 = ldr_checklist_data$observer_name,
     Species2 = ldr_checklist_data$number_species,

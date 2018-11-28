@@ -52,10 +52,12 @@ assertthat::assert_that(!is.null(params$grid_id),
 ```
 
 ```{r}
+n_spp <- sum(rowSums(as.matrix(params$grid_checklist[, -1])) > 0)
 cat(paste0("\\chead{\\Large \\bfseries Atlas of the Birds of Brisbane\\\\",
            params$grid_name,
            " Grid Square, ",
-           params$grid_date, "}"),
+           params$grid_date, " (",
+           formatC(as.integer(n_spp), big.mark = ","), " species recorded)}"),
      sep = "\n")
 ```
 
