@@ -102,7 +102,7 @@ grid_map <- function(x, grid_data, locations_data, grid_resolution,
              ggrepel::geom_label_repel(ggplot2::aes(x = x, y = y,
                                                     label = locality_name),
                                        data = l, color = "white",
-                                       size = 2.5, label.size = 0,
+                                       size = 2.0, label.size = 0,
                                        label.padding = 0.1, max.iter = 10000,
                                        fill = scales::alpha("black", 0.4),
                                        seed = 500, force = 10) +
