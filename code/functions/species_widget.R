@@ -120,7 +120,8 @@ species_widget <- function(x, species_data, record_data, grid_data,
   land_pos <- which(grid_data$type == "land")
   grid_data$popup[land_pos] <-
     paste0("<a href=\"http://github.com/bird-team/brisbane-bird-atlas/",
-           "releases/download/v.0.0.2/grid-", grid_data$id[land_pos],
+           "releases/download/v.0.0.2/grid-", grid_data$id[land_pos], "-",
+           gsub(" ", "-", tolower(grid_data$name[land_pos]), fixed = TRUE),
            ".pdf\">", grid_data$popup[land_pos], "</a>")
   # main processing
   ## initialize leaflet map
