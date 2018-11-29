@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Insert header text here.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Locally common patchy breeding resident mostly confined to the dry forests of D'Aguilar National Park in the west of the region. More records in winter, but no clear evidence of movements along temporal or elevational lines. Not of conservation concern, although records are perhaps decreasing in frequency so population should be monitored.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+The Buff-rumped Thornbill is a medium-sized, pale-plumaged thornbill with a dull brown back and buffy yellow rump and flanks blending into a pale front. It is a semi-gregarious species in Brisbane, being typically found in small family groups between 2 and 5 birds, although counts of over 10 have occurred. It is locally common within a restricted area in Brisbane, being found almost exclusively in dry woodlands in the western suburbs, although with increased surveying in the region more sites are likely to be found where this species occurs.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,36 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+A common species across much of eastern Australia's woodlands, the Buff-rumped Thornbill is only patchily distributed within the _Atlas_ region, despite a sizeable area of suitable habitat being available. It prefers large undisturbed tracts of dry woodland, and although it never occurs in large numbers (typically only small family groups of a few birds), counts of over a dozen have been reported on rare occasions, with high counts of 14 birds [@wood2015ebirdS23119756; @bruce2014ebirdS17896926].
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Birds are present in Brisbane all-year round and presumably breed in the area, although there is only one report of breeding behaviour. There is a moderate decrease in reporting rate over the warmer months of the year, with December and February particularly being much lower than most other months, but it is unclear whether this is due to seasonal movements or not. As a species dependent on well-preserved open woodland habitats, this species is at risk of further loss of suitable habitat and contractions of its range within Brisbane. Currently the majority of records are from protected areas, but care is needed to ensure any unprotected areas of habitat suitable for these birds are preserved into the future.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Buff-rumped Thornbills are almost exclusively restricted to the western woodlands of Brisbane, although records have occurred from less suitable habitat in the north and south, including records from Karawatha Forest [@birdsQLD1995ebirdS16588288], Raven Street Reserve [@whiting2013ebirdS16663093] and Sergeant Dan Stiller Memorial Reserve. It is only west of Mt Coot-tha that the species is common, with no clear stronghold locations, although birds are common at Enoggera Reservoir, Lake Manchester and the woodlands between these sites. Within Brisbane, they typically are found at elevations of around 100m, likely associated with the elevation of the habitats they prefer, although birds have been recorded all the way from sea level to 600m in altitude. There is no clear elevational trend, although there is a slight suggestion from the data that birds move slightly further down the hills in winter. More precise data is needed to determine whether this occurs or not. As much of this species' presumed habitat is poorly surveyed within the Brisbane region, the birds are likely more common than current data suggest, although even outside of Brisbane it is usually patchily distributed and generally only locally common, so it is unlikely the species exists in large numbers within Brisbane.
+
+There is no strong evidence of seasonal movements in and out of the city, or within its borders, although records of the thornbills drop off over summer, particularly in December and February. It is unclear whether this is due to the birds moving around or if it is a reflection of observer behaviour and bias within the city. Evidence of breeding has only occurred in one square (as there has only been one record of breeding), although there are a significant lack of data available to determine whether this is indicative of the species' behavior or not.
+
+**Seasonality**
+
+Buff-rumped Thornbills have only been reported as breeding in Brisbane once, at Bellbird Grove [@goodyear2012ebirdS11670044], although it is likely breeding occurs more widely. Outside of Brisbane, the breeding season is known to be in the latter half of the year between July and Feburary, and the September Brisbane record lies well-within this span, indicating that Brisbane's birds likely breed over a similar season. Much more breeding data is needed for the species in Brisbane.
+
+**Trends**
+
+Reporting rate for Buff-rumped Thornbills has been somewhat variable in Brisbane over the _Atlas_ period, with 2010 and 2014 in particular being strong years for the species. The overall trend since 2010 appears to be downward in reporting rate, indicating that the species may be declining within the region, but given there is very little data at all prior to 2010 this cannot be confidently stated. The species should be monitored closely to gauge whether or not it is declining in Brisbane and appropriate action taken.
+
+**Information Gaps**
+
+- Collect more data from the core of this species' presumed range in the western forests
+- Collect more breeding data on the birds
+
+**Key Conservation Needs**
+
+- Protect the undisturbed forests which this species is reliant on
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()

@@ -2,7 +2,7 @@
 
 The following pages contain species accounts for all birds known to have occurred in Brisbane and the adjacent offshore waters. Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas.
 
-Species with draft accounts: 8
+Species with draft accounts: 9
 
 - [Magpie Goose](https://brisbanebirds.com/magpie-goose-anseranas-semipalmata.html)
 - [Pacific Black Duck](https://brisbanebirds.com/pacific-black-duck-anas-superciliosa.html)
@@ -11,6 +11,7 @@ Species with draft accounts: 8
 - [Yellow-rumped Thornbill](https://brisbanebirds.com/yellow-rumped-thornbill-acanthiza-chrysorrhoa.html)
 - [Yellow Thornbill](https://brisbanebirds.com/yellow-thornbill-acanthiza-nana.html)
 - [Striated Thornbill](https://brisbanebirds.com/striated-thornbill-acanthiza-lineata.html)
+- [Brown Thornbill](http://brisbanebirds.com/brown-thornbill-acanthiza-pusilla.html)
 - [White-breasted Woodswallow](https://brisbanebirds.com/white-breasted-woodswallow-artamus-leucorynchus.html)
 
 ```{r}
