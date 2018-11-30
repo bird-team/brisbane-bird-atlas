@@ -53,13 +53,11 @@ clear_page()
 ```{r}
 start_two_column_layout()
 ```
-A colonial species of wetland habitats, the Magpie Goose can reach high abundance, and has a broad distribution across northern, eastern and southeastern Australia, yet it has become scarce in many southern districts with the draining of wetland habitats on which it depends [@nye2007wild].
+A colonial species of wetland habitats, the Magpie Goose can reach high abundance, and has a broad distribution across northern, eastern and southeastern Australia, yet it has become scarce in many southern districts with the draining of wetland habitats on which it depends, [@nye2007wild] with further population declines likely [@traill2010wetland].
 
-The Magpie Goose is widely distributed across lowland regions of Brisbane, but it occurs patchily, favouring well-vegetated freshwater swamps. Although never occurring in big numbers in Brisbane, breeding has been reported from several locations, and counts over 100 birds have been reported from Kianawah Road Wetland, Metroplex Wetlands, Murarrie Swamp and Ox Bow Lake, and Sandy Camp Road Wetlands. The largest counts are both of 400 birds at Metroplex Wetlands on 20 Jul 2015 [@alexander2015ebirdS24319461] and Sandy Camp Road Wetlands on 28 Apr 2017 [@attewell2017ebirdS36317694].
+The Magpie Goose is widely distributed across lowland regions of Brisbane, but it occurs patchily, favouring well-vegetated freshwater swamps. Although never occurring in big numbers in Brisbane, breeding has been reported from several locations, and counts over 100 birds have been reported from Kianawah Road Wetland, Metroplex Wetlands, Murarrie Swamp and Ox Bow Lake, and Sandy Camp Road Wetlands. The largest counts are both of 400 birds at Metroplex Wetlands on 20 Jul 2015 [@alexander2015ebirdS24319461] and Sandy Camp Road Wetlands on 28 Apr 2017 [@attewell2017ebirdS36317694]. Magpie Geese are present in Brisbane year-round, although there is a clear peak in reporting rate in Oct-Jan, prior to the main onset of breeding activity in Jan-Apr.
 
-Magpie Geese are present in Brisbane year-round, although there is a clear peak in reporting rate in Oct-Jan, prior to the main onset of breeding activity in Jan-Apr.
-
-As a species dependent on wetland habitats [@frith1961ecology], which are under pressure from modification and loss, care is needed to maintain high quality wetlands fringed with emergent vegetation preferred by Magpie Geese. Of particular importance are the major sites in which this species is concentrated (Kianawah Road Wetland, Metroplex Wetlands, Murarrie Swamp and Ox Bow Lake, and Sandy Camp Road Wetlands).
+As a species dependent on wetland habitats [@frith1961ecology], which are under pressure from modification and loss, care is needed to maintain high quality wetlands fringed with emergent vegetation preferred by Magpie Geese [@corbett1996experimental]. Of particular importance are the major sites in which this species is concentrated (Kianawah Road Wetland, Metroplex Wetlands, Murarrie Swamp and Ox Bow Lake, and Sandy Camp Road Wetlands).
 
 **Distribution and Habitat**
 
@@ -73,7 +71,7 @@ There are 21 reports of Magpie Goose breeding activity, spanning Jan-Apr, althou
 
 **Trends**
 
-Reporting rate for Magpie Goose has remained relatively stable between 2005 and 2017, perhaps increasingly slightly over the period. Notably, there was a clear drop in reporting rate in 2010 and 2011, both very wet years in Australia’s interior, suggesting some connectivity between Brisbane and inland breeding colonies. The species is not of any significant conservation concern in the sense that Brisbane’s population is rather peripheral to the main distribution of the species in Australia, and appears to be fairly stable over time.
+Reporting rate for Magpie Goose has remained relatively stable between 2005 and 2017, perhaps increasingly slightly over the period. Notably, there was a clear drop in reporting rate in 2010 and 2011, both very wet years in Australia’s interior, suggesting some connectivity between Brisbane and inland breeding colonies. The species is not of any significant conservation concern in the sense that Brisbane’s population is rather peripheral to the main distribution of the species in Australia, and appears to be fairly stable over time. However, significant decreases in the southern populations as a result of land clearing, habitat destabilisation and other threats do pose a risk to this species, and similar losses of populations could occur in Brisbane if not monitored.
 
 **Information Gaps**
 
