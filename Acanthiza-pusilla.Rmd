@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The Brown Thornbill is the most common species of thornbill in the _Atlas_ region. A plain, brown and greenish bird with grey and white streaking on the head, it is a small bird and can be difficult to identify without good views if its distinctive call is not heard. It is a gregarious species, being typically found in small family groups in Brisbane, although counts of nearly 50 have occurred. It is patchily distributed across most of the city, but can be found commonly in the wetter forests to the west of the CBD, in areas such as Gold Creek Reservoir, Mt Coot-tha and Enoggera Reservoir. It has occurred at a number of other sites with less suitable habitat, but is generally restricted to remnant wet forests.
+The Brown Thornbill is the most common species of thornbill in the _Atlas_ region. A plain, brown and greenish bird with grey and white streaking on the head, it is small and can be difficult to identify without good views if its distinctive call is not heard [@ABG]. It is a gregarious species, being typically found in small family groups in Brisbane, although counts of nearly 50 have occurred. It is patchily distributed across most of the city, but can be found commonly in the wetter forests to the west of the CBD, in areas such as Gold Creek Reservoir, Mt Coot-tha and Enoggera Reservoir. It has occurred at a number of other sites with less suitable habitat, but is generally restricted to remnant wet forests.
 
 ```{r}
 end_two_column_layout()

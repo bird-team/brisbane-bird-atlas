@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The Spiny-cheeked Honeyeater is a large, distinctive species of honeyeater similar (and closely related) to wattlebirds, but with a distinctive tawny breast and throat. It is gregarious in its normal range, although the majority of records in Brisbane have been on single birds or occasionally pairs. It is nomadic across much of its range [@HANZAB5], particularly in the north of Australia, although the provenance of all Brisbane birds is unknown. It is readily identified by its size (large compared to most honeyeaters), distinctive call and plumage pattern. Further birds may turn up anywhere across Brisbane, although there appears to be a preference for open woodland and dry forest, habitat similar to that found in their normal breeding range [@HANZAB5].
+The Spiny-cheeked Honeyeater is a large, distinctive species of honeyeater similar (and closely related) to wattlebirds, but with a distinctive tawny breast and throat [@ABG]. It is gregarious in its normal range, although the majority of records in Brisbane have been on single birds or occasionally pairs. It is nomadic across much of its distribution [@HANZAB5], particularly in the north of Australia, although the provenance of all Brisbane birds is unknown. It is readily identified by its size (large compared to most honeyeaters), distinctive call and plumage pattern. Further birds may turn up anywhere across Brisbane, although there appears to be a preference for open woodland and dry forest, habitat similar to that found in their normal breeding range [@HANZAB5].
 
 ```{r}
 end_two_column_layout()

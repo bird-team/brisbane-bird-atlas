@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The Yellow-rumped Thornbill is a distinctive small passerine with a bright yellow rump and conspicuous facial markings. It is a member of the family Acanthizidae, which includes other thornbills, gerygones and scrubwrens. It is the largest species of thornbill, up to 12cm in length [@HANZAB6] and diverged early from other thornbills [@marki2017supermatrix], resulting in a species quite distinct from the rest within its genus. If seen well it can be identified easily, and its distinctive tinkling calls further differentiate it from other thornbills. Yellow-rumped Thornbill is patchily distributed in Brisbane and are only common at a few sites. Yet it wanders widely and can turn up anywhere with suitable habitat. Most commonly found in small groups of 2-4, although flocks of up to a dozen have been recorded rarely.
+The Yellow-rumped Thornbill is a distinctive small passerine with a bright yellow rump and conspicuous facial markings [@ABG]. It is a member of the family Acanthizidae, which includes other thornbills, gerygones and scrubwrens. It is the largest species of thornbill, up to 12cm in length [@HANZAB6] and diverged early from other thornbills [@marki2017supermatrix], resulting in a species quite distinct from the rest within its genus. If seen well it can be identified easily, and its distinctive tinkling calls further differentiate it from other thornbills. Yellow-rumped Thornbill is patchily distributed in Brisbane and are only common at a few sites. Yet it wanders widely and can turn up anywhere with suitable habitat. Most commonly found in small groups of 2-4, although flocks of up to a dozen have been recorded rarely.
 
 ```{r}
 end_two_column_layout()
