@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Insert header text here.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Widespread breeding resident across varied habitats. Perhaps more common during breeding period in spring but no clear long-term trends apparent. Not of conservation concern but faces similar threats to most other raptors in the region.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+The Brown Goshawk is a medium-sized _Accipiter_ hawk with ruddy red-grey plumage and a powerful build. Similar in appearance to its relative the [Collared Sparrowhawk](http://brisbanebirds.com/collared-sparrowhawk-accipiter-cirrocephalus.html), but differs from it in identification in having a rounded tail, thickset legs and a short middle toe. Good views are often needed to separate the two species, and care should be taken when viewing _Accipiters_ to prevent misidentification. Within Brisbane, Goshawks are typically found alone, although there are several records of multiple birds, with counts up to 4 being not unheard of. Birds can be found all over Brisbane, including on Moreton Island and the north west forests (where Collared Sparrowhawks appear to be mostly absent), but are not common in any given location.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,36 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+The most common _Accipiter_ species within Brisbane, Brown Goshawks can be found in nearly any habitat provided there is suitable prey available to them. However, they never reach particularly high abundances in any given site, although there are a few areas where they can be found relatively regularly. Additionally, birds may hang around at a given site as long as there is suitable prey available for them to feed on.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Birds are present in Brisbane all-year round with no abundantly clear trend to their frequency, although they most are most often found in the spring with a secondary peak in autumn (see graphs), perhaps indicating an element of migratory behaviour. Much more work is needed to determine this properly. The species has been recorded breeding in Brisbane several times, all in the months between August and December, but never at high frequencies.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Brown Goshawks are found all across Brisbane in nearly every habitat, with the exception of heathland (which is poorly surveyed, so the species may occur here too) and oceanic regions. Birds have been recorded from every corner of the LGA, from Lake Manchester in the west to the Port of Brisbane in the east, including in the elevated forests of the Camel's Head. Birds have been several times on Moreton Island, although they do not appear to be common there. In Brisbane they are mostly a lowland species, occuring close to sea level, although birds have been recorded over 400m in elevation at Mount Glorious and Mount Nebo. The species does not appear to move around with climatic or seasonal changes; more likely birds move around the city in response to local prey abundances. Birds are most often found in dry woodland and non-remnant habitats, with secondary preferences for wetlands, wet sclerophyll and estuaries. They are only rarely found in rainforests or heavily built-up areas, although this is not unheard of.
+
+Sites where this species is regularly recorded include, Lake Manchester, Shelley Road, Sandy Camp Road, Kedron Brook Wetlands and Banks Street Reserve, amongst many others. It is however not unusual for birds to be absent from any given site for extended periods of time before turning up again.
+
+**Seasonality**
+
+There are nearly 40 reports of Brown Goshawks breeding in Brisbane, all from the months between August and December, indicating that this species is a spring breeder within Brisbane, which is in line with its reported season across the rest of its range [@HANZAB2]. Birds have been reported breeding from 12 sites, with the most reports coming from Dutton Park Cemetery and Tinchi Tamba Wetlands. Unlike Collared Sparrowhawks, these birds do not appear to be particularly cryptic when breeding, as evidenced by their willingness to nest even in well built-up areas such as Dutton Park. It would be good to locate more breeding sites for this species, and to determine whether birds come back to the same locations each year to breed or whether they move around.
+
+**Trends**
+
+The reporting rate for Brown Goshawks over the _Atlas_ period has remained quite stable, with most years having birds reported on approximately 6% of checklists. Interestingly, 2005, 2007 and 2009 were poor years for the birds, with the frequency being less than half of the usual rate, while 2011 was a strong year, with birds being reported on over 8% of checklists. It would be good to determine the causes for these variations, although it is possible there is just natural variation in the birds' abundance within Brisbane. This species is not of any conservation concern in the sense that it is not threatened across its range, nor does its abundance appear to be decreasing within Brisbane, although there is some threat posed by clearing of habitat across much of south east Australia, and the species has likely been affected by the same in Brisbane.
+
+**Information Gaps**
+
+- Determine whether birds return to the same sites each year to breed
+- Ascertain how common birds are on Moreton Island and if they are resident or nomads to the region
+
+**Key Conservation Needs**
+
+- Protect open woodland habitats that the birds prefer
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()
