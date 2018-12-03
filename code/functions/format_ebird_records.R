@@ -130,7 +130,7 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
                            is.character(x[[breeding_column_name]]),
                            is.character(breeding_activity_names),
                            assertthat::noNA(breeding_activity_names),
-                           inherits(study_area, "sf"))
+                           inherits(study_area_data, "sf"))
 
   # rename columns in the table
   data.table::setnames(x,
@@ -195,11 +195,11 @@ format_ebird_records <- function(x, scientific_column_name, date_column_name,
   x$latitude <- lat
 
   # transform to specified crs
-  x <- sf::st_transform(x, sf::st_crs(study_area_data))
+  x <- sf::st_transform(x, sf::st_crs(study_area))
 
   # create subset with unique localities
   l <- x[!duplicated(x$locality), "locality"]
-  l <- l[as.matrix(sf::st_intersects(l, study_area_data))[, 1], ]
+  l <- l[as.matrix(sf::st_intersects(l, study_area))[, 1], ]
 
   # remove records not inside study area using localities
   x <- x[x$locality %in% l$locality, ]

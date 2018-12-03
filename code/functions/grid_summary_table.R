@@ -42,10 +42,7 @@ grid_summary_table <- function(x, grid_data, species_data, record_data) {
                                    checklists_starting_year,
                                    records_starting_year),
                      by = "species_scientific_name") %>%
-    dplyr::mutate(year_threshold = dplyr::if_else(is_checklist,
-                                                  checklists_starting_year,
-                                                  records_starting_year)) %>%
-    dplyr::filter(year >= year_threshold) %>%
+    dplyr::filter(year >= checklists_starting_year) %>%
     dplyr::select(event, season, species_scientific_name, duration_minutes,
                   distance_km)
   ## complete checklists
@@ -126,26 +123,16 @@ grid_summary_table <- function(x, grid_data, species_data, record_data) {
                                                   checklists_starting_year,
                                                   records_starting_year)) %>%
     dplyr::filter(year >= year_threshold) %>%
-    dplyr::select(observer_id, event, is_checklist,
-                  species_scientific_name) %>%
-    dplyr::filter(observer_id %in%
-                  {z <- .;
-                   z %>%
-                   dplyr::group_by(observer_id) %>%
-                   dplyr::summarize(n =
-                     dplyr::n_distinct(species_scientific_name)) %>%
-                   dplyr::ungroup() %>%
-                   dplyr::arrange(dplyr::desc(n)) %>%
-                   head(5) %>%
-                   `[[`("observer_id")}) %>%
+    dplyr::select(observer_id, event, is_checklist, species_scientific_name) %>%
     dplyr::group_by(observer_id) %>%
     dplyr::summarize(
-      number_species = dplyr::n_distinct(species_scientific_name),
+      number_species = dplyr::n_distinct(species_scientific_name[is_checklist]),
       number_complete_checklists = sum(is_checklist[!duplicated(event)]),
       number_incomplete_checklists = sum(!is_checklist[!duplicated(event)]),
       event_id = dplyr::last(event)) %>%
     dplyr::ungroup() %>%
-    dplyr::arrange(dplyr::desc(number_species))
+    dplyr::arrange(dplyr::desc(number_species)) %>%
+    head(5)
   # find observer names using their ids
   ldr_checklist_data$observer_name <- vapply(ldr_checklist_data$event_id,
                                              "find_observer_name",

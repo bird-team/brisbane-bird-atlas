@@ -125,6 +125,10 @@ surveyor_sheets:                                                 # parameters fo
     zoom_level: 15                                               # zoom-level for map background
     type: "satellite"                                            # type of map to use for the map background (available options are "terrain", "satellite", "roadmap", "hybrid")
     label_character_width: 25                                    # maximum width for locality labels in the maps
+    grid_line_color: "#ffffff"                                   # color of the sampling grid lines
+    grid_line_width: 0.5                                         # width of the sampling grid lines
+    study_area_line_color: "#838282"                             # color of the study area (i.e. Brisbane LGA) lines
+    study_area_line_width: 0.75                                  # width of the study area lines
   checklist:
     number_of_pages: 2                                           # number of pages to use for the checklists
     vertical_spacing: "-3.0em"                                   # spacing to vertically align the checklist tables with the page header
