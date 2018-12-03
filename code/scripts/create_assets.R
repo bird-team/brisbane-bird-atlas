@@ -170,7 +170,6 @@ species_record_count <- sapply(seq_len(nrow(species_data)), function(i) {
   ### count number of records
   sum((record_data$species_scientific_name ==
        species_data$species_scientific_name[i]) &
-      (record_data$is_fully_sampled_year) &
       (record_data$year >= records_starting_year))
 })
 species_invalid_settings <- (species_record_count == 0) &
