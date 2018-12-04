@@ -126,7 +126,7 @@ grid_summary_table <- function(x, grid_data, species_data, record_data) {
     dplyr::select(observer_id, event, is_checklist, species_scientific_name) %>%
     dplyr::group_by(observer_id) %>%
     dplyr::summarize(
-      number_species = dplyr::n_distinct(species_scientific_name[is_checklist]),
+      number_species = dplyr::n_distinct(species_scientific_name),
       number_complete_checklists = sum(is_checklist[!duplicated(event)]),
       number_incomplete_checklists = sum(!is_checklist[!duplicated(event)]),
       event_id = dplyr::last(event)) %>%
