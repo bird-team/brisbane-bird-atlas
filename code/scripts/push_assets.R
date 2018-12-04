@@ -20,6 +20,9 @@ if (identical(Sys.getenv("GITHUB_TOKEN"), "")) {
 }
 
 # Main processing
+## message
+message("Starting to push assets to storage..")
+
 ## push zip files
 piggyback::pb_upload("assets/graphs.zip",
                      repo = "bird-team/brisbane-bird-atlas",
@@ -51,3 +54,6 @@ piggyback::pb_upload("assets/surveyor-sheets.zip",
                      overwrite = TRUE,
                      tag = "v.0.0.1",
                      use_timestamps = FALSE)
+
+## message
+message("Finished pushing assets to storage!")
