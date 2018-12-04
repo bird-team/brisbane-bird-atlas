@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Insert header text here.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "The rarest of Brisbane's three _Accipiter_ hawks. Confined to dense forests much of the time but regularly turns up in odd locations and has a propensity for wandering widely. More common in winter than in summer, suggesting that birds move in and out of Brisbane with seasonal changes.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+The Grey Goshawk is Brisbane's rarest species of _Accipiter_ hawk, and is a tricky species to locate, being only intermittent at most locations where it has been recorded. It is a distinctive bird, with fully grey or white plumage and yellow cere and legs. It is almost always found singly in Brisbane, with only a handful of records of multiple birds and a high count of three. It has been recorded all across mainland Brisbane but favours the dense forests of the west, although it regularly irrupts into wide-ranging habitats to feed and can occur almost anywhere.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,41 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+A rare raptor of dense forests and woodlands, the Grey Goshawk is one of the harder to find resident raptors in Brisbane despite its broad distribution across much of the city. It occurs patchily, appearing at a site where conditions are favourable for an extended of period of time then disappearing again to an unknown location, with no likely date for its return. Very few reliable sites are known within the LGA, although some areas of the western forests (Upper Brookfield and Gold Creek in particular) have regular records.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+The species never occurs in large numbers in Brisbane, with only a handful of pairs recorded and only two reports of three birds [@antram2015ebirdS22266664; @murray2014ebirdS20522442], both from the region around Gold Creek Reservoir. The species is present in Brisbane all year round, although there is a clear increase in records in the winter months, which is surprising given this species is described as resident in most literature [@ABG; @HANZAB2].
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+As a species mostly dependent on prime undisturbed forests to feed and breed in, Grey Goshawks are under threat from continuing land clearance across much of their range and face similar threats in Brisbane. Care is needed especially around known breeding sites, but also suitable habitat must be present across a large area for the birds to move around in to ensure their population remains stable.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
+
+Within Brisbane, Grey Goshawks are most commonly found in wet sclerophyll and rainforests, with occasional birds occurring in dry woodland, wetland and non-remnant areas. Even in wet sclerophyll where they are most abundant, Goshawks are only reported on 4% of checklists, indicating that they are definitely a rare bird within Brisbane. They are most common in the western suburbs at sites such as Gold Creek Reservoir and D'Aguilar National Park, but even at these sites they are secretive and hard to find. They have occurred at many further locations across the mainland, from Tinchi Tamba in the north to Karawatha Forest in the south, and as far west as Lake Manchester, but most sites are only single records, with birds disappearing as spontaneously as they appeared. The species has never occurred on Moreton Island, which is not particularly surprising given the geographical separation and the lack of suitable habitat available to them there.
+
+Birds occur in Brisbane at a mean elevation of about 100m, but have been recorded from sea level all the way up to over 600m, which is not surprising given their propensity for wandering. There is no clear seasonal pattern in their elevational preferences. Additionally, the species shows no clear geographical trends in its distribution in Brisbane over the seasons, occurring widely throughout the year with no significant pattern present. This is surprising given the seasonal pattern of abundance present in the reporting data, but there are probable reasons for this.
+
+**Seasonality**
+
+There are three reports of Grey Goshawks breeding in Brisbane, in the months of September, October and November. Two records are of occupied nests [@murray2014ebirdS20283445; @murray2014ebirdS19953145] and one of a nest with young [@murray2014ebirdS20522442]. However, all these records are of the same birds at the same site in the same season by the same year, so there is a clear lack of comprehensive data available for this species' breeding habits in Brisbane. It is not known at this stage whether Brisbane's population is in fact resident, or whether it moves in and out of the city environs. The data suggests the latter, as there is a clear trend present of birds being less abundant over summer and more over winter, but the reason for this is unknown, as birds are resident across the rest of Australia [@HANZAB2]. Much more work is needed on this species to determine its movements and breeding patterns.
+
+**Trends**
+
+The reporting rate for Grey Goshawk in Brisbane has shown no clear trend over the _Atlas_ period, with very variable annual abundances. 2014 saw nearly 1% of checklists reporting the species, while birds were not reported at all in 2005 or 2010, and only on 0.3% of checklists in 2009 and 2013. With such variation in reporting rates it is impossible to determine any long-term trends in abundance for this species in Brisbane. The birds are not of any significant conservation concern in the sense that they are relatively widespread across north and east Australia and Brisbane's population does not make up a significant portion of the whole, but it is important to monitor all Brisbane birds as they are so patchy and uncommon that the loss of one or two pairs may drastically decrease the overall Brisbane population. Additionally, they are threatened by land clearing and nest disturbance by humans, but neither of these are of particularly significant impact currently.
+
+**Information Gaps**
+
+- Collect breeding data on more birds
+- Determine what happens to this species in summer
+- Find more locations where birds are regular
+- Determine what drives the movements of this species
+
+**Key Conservation Needs**
+
+- Protect the core habitat of this species in dense forests
+- Limit any nest disturbance where nests are known
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()
