@@ -7,7 +7,7 @@
 #' @param species_data \code{data.frame} containing the scientific name and
 #'   data indicating which graphs should be created. The argument to
 #'   \code{species_data} must have the columns
-#'   \code{"species_scientific_name"},  \code{"is_checklist"},
+#'   \code{"species_scientific_name"}, \code{"is_checklist"},
 #'   \code{"year"}, \code{"is_fully_sampled_year"}, and
 #'   \code{"graphs"}.
 #'

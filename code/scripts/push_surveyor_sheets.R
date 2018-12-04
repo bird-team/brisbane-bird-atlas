@@ -21,11 +21,11 @@ if (identical(Sys.getenv("GITHUB_TOKEN"), "")) {
 
 # Main processing
 ## delete all surveyor sheets currently stored on GitHub
-result <- piggyback::pb_delete(
+result <- try(piggyback::pb_delete(
   piggyback::pb_list("bird-team/brisbane-bird-atlas",
                      tag = "v.0.0.2")$file_name,
   repo = "bird-team/brisbane-bird-atlas",
-  tag = "v.0.0.2")
+  tag = "v.0.0.2"), silent = TRUE)
 
 ## iterate over the surveyor sheets and push them to GitHub
 result <- lapply(dir("assets/surveyor-sheets", "^.*\\.pdf$", full.names = TRUE),
