@@ -49,8 +49,8 @@ grid_checklist_table <- function(x, species_data, record_data) {
   out <- species_data %>%
          dplyr::filter(surveyor_sheet_checklist) %>%
          dplyr::select(species_common_name) %>%
-         dplyr::mutate(summer = FALSE, spring = FALSE, winter = FALSE,
-                       autumn = FALSE)
+         dplyr::mutate(summer = FALSE, autumn = FALSE, winter = FALSE,
+                       spring = FALSE)
   for (i in c("summer", "autumn", "winter", "spring"))
     out[[i]][out$species_common_name %in%
              grid_record_data$species_common_name[
