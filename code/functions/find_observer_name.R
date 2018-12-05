@@ -18,6 +18,7 @@ raw_find_observer_name <- function(x, n_tries = 20) {
     w <- try(xml2::read_html(paste0("https://ebird.org/view/checklist/", x)),
              silent = TRUE)
     curr_n_tries <- curr_n_tries + 1
+    if (inherits(w, "try-error")) Sys.sleep(60) # wait for a minute if fetching failed
   }
   # if failed to fetch checklist print nice error message
   if (inherits(w, "try-error"))
