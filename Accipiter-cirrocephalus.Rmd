@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Insert header text here.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Widespread but very patchy presumed breeding resident and perhaps local nomad. No clear trends in abundance, but birds have never been reported breeding in the region and so may move outside the area to breed. Not of conservation concern although population in Brisbane should be monitored as it is so low.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+The Collared Sparrowhawk is a small-medium sized _Accipiter_ hawk with a grey and rufous body and yellow legs. Very similar in appearance to its relative the [Brown Goshawk](http://brisbanebirds.com/brown-goshawk-accipiter-fasciatus.html), but differs in having a typically squarer tail (sometimes notched), thinner legs and a long middle toe [@ABG; @HANZAB2]. Good views are generally needed to separate these two species definitively. It is almost exclusively found alone, with only a few records of pairs and only one of a trio [@reid2012ebirdS16653002]. Birds can be found all over Brisbane, but are typically not resident at any particular sites and may occur anywhere there is suitable prey to be found.  
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,36 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+The less common of the brown _Accipiter_ species in Brisbane, Collared Sparrowhawks can be found across the region everywhere except the north west forests and Moreton Island (where the species has never been recorded), but never reach high abundance at any given site, although birds may hang around for extended stretches of time where there are favourable conditions for them.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Collared Sparrowhawks are present in Brisbane all year round, with no clear trends in their abundance or distribution, and while juvenile birds are regularly sighted, the species has never been recorded breeding in Brisbane so it is unclear whether the species is cryptic in its nesting habits (quite likely) or whether birds breed outside of the region and move into the city to feed where food is available (also possible).
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Collared Sparrowhawks are found all across Brisbane, particularly in the lowland regions east of the city, although the species has been recorded as far west as Lake Manchester. In Brisbane it is mostly a lowland species, almost always occurring at elevations below 50m, although the odd bird has been seen over 400m at Mt Glorious [@graham2018ebirdS44922381]. There is no evident seasonal variation in their elevation or geographic distribution within the LGA; most likely birds move according to the availability of prey rather than with climatic or other conditions. They are typically found in dry woodland, wetland, estuarine and non-remnant habitats, with only a handful of records from rainforests and built-up areas. Habitat outside of Brisbane is similar, although with preference for lightly wooded regions, avoiding open plains [@HANZAB2], so it is perhaps a little surprising that birds turn up in wetlands and estuaries in Brisbane as often as they do; this may be due to imprecise location reporting or it may be indicative of birds adapting to available habitats.
+
+**Seasonality**
+
+Somewhat surprisingly, this species has never been reported as breeding in Brisbane, and there is no clear reason from this that can be discerned from current data. Birds are present in Brisbane all year-round, including during their breeding season as reported in the literature (spring-summer) [@HANZAB2], and there is no clear drop in abundance over this period either. It is likely that the birds are cryptic when nesting and probably breed in the more remote regions of the city, avoiding the more built-up areas to the east where they can often be found, but much more work is needed to confirm this.
+
+**Trends**
+
+The reporting rate for Collared Sparrowhawks in Brisbane has remained quite stable over the _Atlas_ period, with some strong and some weak years but no clear trend. Presumably these variations in abundance (e.g. 2005 and 2007) were due to differences in the abundance of prey but this has not been proven. The species is not of any conservation in the sense that it is common across much of Australia and New Guinea, and Brisbane's birds do not appear to be declining in population (despite being distinctly uncommon), although there are a couple of threats to the general population, including pesticide use resulting in loss of eggshell integrity and land clearing [@olsen1993pesticide]. Fortunately, neither of these threats have significantly impacted the Brisbane or wider Australian populations, and as such the species is considered stable.
+
+**Information Gaps**
+
+- Determine the movements of this species in and around Brisbane
+- Ascertain whether birds breed in Brisbane and where
+- Find any key locations for the birds
+
+**Key Conservation Needs**
+
+- Protect birds from further land clearing
+- Monitor population for any declines
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()

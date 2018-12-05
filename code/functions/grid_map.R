@@ -10,6 +10,11 @@
 #' @param locations_data \code{\link[sf]{sf}} object that contains the
 #'   sample locality data (e.g. eBird hotspots).
 #'
+#' @param study_area_data \code{\link[sf]{sf}} object that outlines the
+#'   the study area.
+#'
+#' @param grid_resolution \code{numeric} resolution of the sampling grid.
+#'
 #' @param google_zoom_level \code{integer} zoom level for map background.
 #'   Defaults to 15.
 #'
@@ -17,16 +22,37 @@
 #'  Available options are: \code{"terrain"}, \code{"satellite"},
 #'  \code{"roadmap"}, \code{"hybrid"}. Defaults to \code{"satellite"}.
 #'
+#' @param grid_line_color \code{character} color of the sampling grid lines.
+#'
+#' @param grid_line_width \code{numeric} width of the sampling grid lines.
+#'
+#' @param study_area_line_color \code{character} color of the study area
+#'   extent lines.
+#'
+#' @param study_area_line_width \code{numeric} width of the study area
+#'   extent lines.
+#'
 #' @return \code{\link[ggplot2]{gg}} ggplot2 plot object.
-grid_map <- function(x, grid_data, locations_data, grid_resolution,
+grid_map <- function(x, grid_data, locations_data,
+                     study_area_data,
+                     grid_resolution,
                      google_zoom_level = 15,
-                     google_map_type = "satellite") {
+                     google_map_type = "satellite",
+                     grid_line_color = "#ffffff",
+                     grid_line_width = 0.5,
+                     study_area_line_color = "#cfcfcf",
+                     study_area_line_width = 0.75) {
   # assert that arguments are valid
   assertthat::assert_that(assertthat::is.number(x),
                           inherits(grid_data, "sf"),
                           inherits(locations_data, "sf"),
+                          inherits(study_area_data, "sf"),
                           assertthat::is.number(google_zoom_level),
-                          assertthat::is.string(google_map_type))
+                          assertthat::is.string(google_map_type),
+                          assertthat::is.string(grid_line_color),
+                          assertthat::is.number(grid_line_width),
+                          assertthat::is.string(study_area_line_color),
+                          assertthat::is.number(study_area_line_width))
   # find extent of grid_cell
   curr_extent <- grid_data %>%
                  filter(id == x) %>%
@@ -58,9 +84,14 @@ grid_map <- function(x, grid_data, locations_data, grid_resolution,
   pl <- grid_data %>%
         `[`(neighboring_indices, ) %>%
         sf::st_transform(4326) %>%
-        as("Spatial")  %>%
+        as("Spatial") %>%
         {suppressMessages(ggplot2::fortify(.))} %>%
         dplyr::rename(x = long, y = lat)
+  std <- study_area_data %>%
+         sf::st_transform(4326) %>%
+         as("Spatial") %>%
+         {suppressMessages(ggplot2::fortify(.))} %>%
+         dplyr::rename(x = long, y = lat)
   # prepare text for plotting
   l <- locations_data %>%
        filter(c(as.matrix(sf::st_intersects(
@@ -89,10 +120,15 @@ grid_map <- function(x, grid_data, locations_data, grid_resolution,
   # create map
   p <- suppressWarnings({
     ggmap::ggmap(bg, extent = "normal", maprange = FALSE) +
-     ggplot2::geom_polygon(ggplot2::aes(x = x, y = y, group = id),
-                           data = pl, color = "white", fill = NA) +
-     ggplot2::coord_cartesian(xlim = curr_xlim, ylim = curr_ylim) +
-     ggmap::theme_nothing()
+      ggplot2::geom_polygon(ggplot2::aes(x = x, y = y, group = group),
+                            data = std, color = study_area_line_color,
+                            fill = NA,
+                            size = 0.75) +
+      ggplot2::geom_polygon(ggplot2::aes(x = x, y = y, group = id),
+                            data = pl, color = grid_line_color, fill = NA,
+                            size = grid_line_width) +
+      ggplot2::coord_fixed(xlim = curr_xlim, ylim = curr_ylim) +
+      ggmap::theme_nothing()
   })
   # add labels
   if (nrow(l) > 0) {

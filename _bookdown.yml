@@ -112,6 +112,7 @@ rmd_files:
 - Calidris-subminuta.Rmd
 - Calidris-ruficollis.Rmd
 - Calidris-alba.Rmd
+- Calidris-subruficollis.Rmd
 - Calidris-melanotos.Rmd
 - Limnodromus-semipalmatus.Rmd
 - Gallinago-hardwickii.Rmd
@@ -293,6 +294,7 @@ rmd_files:
 - Gerygone-mouki.Rmd
 - Gerygone-olivacea.Rmd
 - Gerygone-levigaster.Rmd
+- Gerygone-fusca.Rmd
 - Smicrornis-brevirostris.Rmd
 - Pyrrholaemus-sagittatus.Rmd
 - Sericornis-citreogularis.Rmd

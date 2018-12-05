@@ -87,15 +87,19 @@ vegetation_data <- sf::st_transform(sf::read_sf(vegetation_path),
 
 ## format study area
 study_area_data <- study_area_data %>%
-                   lwgeom::st_make_valid() %>%
-                   lwgeom::st_snap_to_grid(1) %>%
-                   sf::st_simplify(100) %>%
-                   {suppressWarnings(
-                     sf::st_collection_extract(., type = "POLYGON"))} %>%
+                   sf::st_set_precision(1000) %>%
                    lwgeom::st_make_valid()
 
+study_area_simple_data <- study_area_data %>%
+                          sf::st_simplify(100) %>%
+                          sf::st_set_precision(1000) %>%
+                          lwgeom::st_make_valid() %>%
+                          {suppressWarnings(sf::st_collection_extract(.,
+                            type = "POLYGON"))}
+
 ## format land data
-bbox_data <- sf::st_as_sfc(sf::st_bbox(sf::st_buffer(study_area_data, 200000)))
+bbox_data <- sf::st_as_sfc(sf::st_bbox(sf::st_buffer(study_area_simple_data,
+                                                     200000)))
 land_data <- land_data[as.matrix(sf::st_intersects(land_data,
                                                    bbox_data))[, 1], ]
 land_data <- land_data %>%
@@ -115,7 +119,7 @@ land_data <- sf::st_sf(name = "Land", geometry = land_data)
 ## format grid data
 grid_data <- do.call(format_grid_data,
                      append(list(x = grid_data,
-                                 study_area_data = study_area_data),
+                                 study_area_data = study_area_simple_data),
                             parameters["grid_resolution"]))
 
 ## format grid metadata
@@ -166,7 +170,6 @@ species_record_count <- sapply(seq_len(nrow(species_data)), function(i) {
   ### count number of records
   sum((record_data$species_scientific_name ==
        species_data$species_scientific_name[i]) &
-      (record_data$is_fully_sampled_year) &
       (record_data$year >= records_starting_year))
 })
 species_invalid_settings <- (species_record_count == 0) &
@@ -229,7 +232,7 @@ locality_data <- record_data[!duplicated(record_data$locality), "locality"]
 ### extract elevation data
 elevation_data <- raster::crop(elevation_data,
   raster::extent(as(sf::st_as_sfc(sf::st_bbox(sf::st_transform(sf::st_buffer(
-    study_area_data, 200000), 4326))), "Spatial")))
+    study_area_simple_data, 200000), 4326))), "Spatial")))
 locality_pts <- as(locality_data, "Spatial")
 elevation_data <- raster::projectRaster(elevation_data, method = "bilinear",
                                         crs = locality_pts@proj4string)
@@ -331,7 +334,8 @@ if (is_parallel) {
                               library(patchwork)})
   parallel::clusterExport(cl, envir = environment(),
                            c("species_data", "record_data", "grid_data",
-                             "study_area_data", "land_data", "parameters",
+                             "study_area_data", "study_area_simple_data",
+                             "land_data", "parameters",
                              "species_graph", "species_map", "species_table",
                              "species_widget", "color_numeric_palette", "ymax",
                              "breaks", "addLegend_custom", "file_names",
@@ -373,12 +377,18 @@ result <- plyr::laply(grid_indices, .parallel = is_parallel,
     }
   }
   # create image for grid
-  grid_map_data <- grid_map(grid_data$id[i], grid_data, locations_data,
-                            parameters$grid_resolution,
-                            parameters$surveyor_sheets$maps$zoom_level,
-                            parameters$surveyor_sheets$maps$type)
+  grid_map_data <- grid_map(
+    grid_data$id[i], grid_data, locations_data,
+    study_area_data,
+    parameters$grid_resolution,
+    parameters$surveyor_sheets$maps$zoom_level,
+    parameters$surveyor_sheets$maps$type,
+    parameters$surveyor_sheets$maps$grid_line_color,
+    parameters$surveyor_sheets$maps$grid_line_width,
+    parameters$surveyor_sheets$maps$study_area_line_color,
+    parameters$surveyor_sheets$maps$study_area_line_width)
   grid_map_path <- tempfile(fileext = ".png")
-  ggplot2::ggsave(grid_map_data,filename = grid_map_path,
+  ggplot2::ggsave(grid_map_data, filename = grid_map_path,
                   width = parameters$surveyor_sheets$maps$width,
                   height = parameters$surveyor_sheets$maps$height)
   # create checklist table for grid
@@ -513,7 +523,7 @@ result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
   }
   # create species widget
   p <- species_widget(species_data$species_scientific_name[i], species_data,
-                      record_data, grid_data, study_area_data,
+                      record_data, grid_data, study_area_simple_data,
                       parameters$maps$minimum_required_checklists,
                       parameters$maps$minimum_required_events,
                       parameters$maps$colors)
@@ -549,7 +559,7 @@ result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
   }
   # create species maps
   p <- species_map(species_data$species_scientific_name[i], species_data,
-                   record_data, grid_data, land_data, study_area_data,
+                   record_data, grid_data, land_data, study_area_simple_data,
                    parameters$maps$minimum_required_checklists,
                    parameters$maps$minimum_required_events,
                    parameters$maps$colors)
