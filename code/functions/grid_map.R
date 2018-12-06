@@ -32,6 +32,9 @@
 #' @param study_area_line_width \code{numeric} width of the study area
 #'   extent lines.
 #'
+#' @param n_tries \code{integer} number of times to attempt downloading the
+#'   Google Map imagery. Defaults to 20.
+#'
 #' @return \code{\link[ggplot2]{gg}} ggplot2 plot object.
 grid_map <- function(x, grid_data, locations_data,
                      study_area_data,
@@ -41,7 +44,8 @@ grid_map <- function(x, grid_data, locations_data,
                      grid_line_color = "#ffffff",
                      grid_line_width = 0.5,
                      study_area_line_color = "#cfcfcf",
-                     study_area_line_width = 0.75) {
+                     study_area_line_width = 0.75,
+                     n_tries = 20) {
   # assert that arguments are valid
   assertthat::assert_that(assertthat::is.number(x),
                           inherits(grid_data, "sf"),
@@ -52,7 +56,8 @@ grid_map <- function(x, grid_data, locations_data,
                           assertthat::is.string(grid_line_color),
                           assertthat::is.number(grid_line_width),
                           assertthat::is.string(study_area_line_color),
-                          assertthat::is.number(study_area_line_width))
+                          assertthat::is.number(study_area_line_width),
+                          assertthat::is.number(n_tries))
   # find extent of grid_cell
   curr_extent <- grid_data %>%
                  filter(id == x) %>%
@@ -103,20 +108,30 @@ grid_map <- function(x, grid_data, locations_data,
          as.data.frame() %>%
          dplyr::rename(x = coords.x1, y = coords.x2)
   # download background of grid cell
-  bg <- suppressMessages({
-    ggmap::get_googlemap(center = curr_wgs1984_centroid,
-                         zoom = google_zoom_level,
-                         maptype = google_map_type,
-                         scale = 2,
-                         messaging = FALSE,
-                         urlonly = FALSE,
-                         force = TRUE,
-                         filename = tempfile(fileext = ".png"),
-                         language = "en-EN",
-                         color = "color",
-                         size = c(640, 640),
-                         key = Sys.getenv("GOOGLE_TOKEN"))
-  })
+  bg <- structure(list(), class = "try-error")
+  counter <- 0
+  while(inherits(bg, "try-error") && (counter < n_tries)) {
+    # try to download map
+    bg <- try(suppressMessages({
+      ggmap::get_googlemap(center = curr_wgs1984_centroid,
+                           zoom = google_zoom_level,
+                           maptype = google_map_type,
+                           scale = 2,
+                           messaging = FALSE,
+                           urlonly = FALSE,
+                           force = TRUE,
+                           filename = tempfile(fileext = ".png"),
+                           language = "en-EN",
+                           color = "color",
+                           size = c(640, 640),
+                           key = Sys.getenv("GOOGLE_TOKEN"))
+    }), silent = TRUE)
+    # increment counter
+    counter <- counter + 1
+    # sleep for 60 seconds if failed
+    if (inherits(bg, "try-error")) Sys.sleep(60)
+  }
+  if (inherits(bg, "try-error")) stop("downloading imagery failed.")
   # create map
   p <- suppressWarnings({
     ggmap::ggmap(bg, extent = "normal", maprange = FALSE) +
