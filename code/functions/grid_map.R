@@ -131,7 +131,10 @@ grid_map <- function(x, grid_data, locations_data,
     # sleep for 60 seconds if failed
     if (inherits(bg, "try-error")) Sys.sleep(60)
   }
-  if (inherits(bg, "try-error")) stop("downloading imagery failed.")
+  if (inherits(bg, "try-error")) {
+    cat(bg)
+    stop("downloading imagery failed.")
+  }
   # create map
   p <- suppressWarnings({
     ggmap::ggmap(bg, extent = "normal", maprange = FALSE) +
