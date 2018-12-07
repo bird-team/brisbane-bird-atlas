@@ -387,7 +387,7 @@ result <- plyr::laply(grid_indices, .parallel = is_parallel,
     parameters$surveyor_sheets$maps$grid_line_width,
     parameters$surveyor_sheets$maps$study_area_line_color,
     parameters$surveyor_sheets$maps$study_area_line_width)
-  grid_map_path <- tempfile(fileext = ".png")
+  grid_map_path <- tempfile(fileext = ".jpg")
   ggplot2::ggsave(grid_map_data, filename = grid_map_path,
                   width = parameters$surveyor_sheets$maps$width,
                   height = parameters$surveyor_sheets$maps$height)
