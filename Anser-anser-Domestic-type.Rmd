@@ -6,7 +6,7 @@ species_name <- "Anser anser (Domestic type)"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category E; rare escape or deliberate release, no stable breeding population.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")
