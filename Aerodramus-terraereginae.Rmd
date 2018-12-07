@@ -6,7 +6,7 @@ species_name <- "Aerodramus terraereginae"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category Pending; Reported vagrant, but no documented records.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")

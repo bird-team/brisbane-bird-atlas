@@ -6,7 +6,7 @@ species_name <- "Aegotheles cristatus"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Scarce resident, presumed breeding; under-surveyed.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")

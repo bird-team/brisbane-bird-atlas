@@ -6,7 +6,7 @@ species_name <- "Acanthiza nana"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Rare visitor.
 
 ```{r}
 render_species_profile(species_name, caption = "Rare visitor to wet forests across Brisbane. More records over winter, suggesting seasonal movements into the region, but very sporadic abundance year-by-year. Not of any conservation in Brisbane or across Australia.")
