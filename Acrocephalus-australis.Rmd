@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Locally common breeding resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Locally common breeding resident and perhaps partial migrant of wetland verges. More records in spring and summer but possible birds are simply more conspicuous during this time through calls and displays, rather than more abundant. Not of conservation concern and population appears to be stable.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+The Australian Reed-Warbler is a small, brown species of Old World warbler with drab plumage but a distinctive call. Often found in small groups calling together in reed-beds around the city, the birds can be found almost anywhere there is suitable cover for them to hide in, but are not abundant across any large stretch of habitat.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,43 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+A cryptic species almost exclusively restricted to the grassy verges of swamps and lakes, Australian Reed-Warblers are much more easily heard than seen. They have a broad distribution across the entirety of Australia barring the most arid regions and are common across much of their range, including in Brisbane.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Birds are distributed widely around the lowland regions of the LGA, but occur somewhat patchily, although there are records from almost every section of suitable habitat. Their preferred cover is (as the name suggests) reed beds and grassy swamp verges, and nearly every section of reed will have its local Reed-Warbler hidden away. Viewing a bird can be difficult unless it is perched on the top of a blade of grass or reed, but birds will flush from one stand to another if disturbed or to feed. The species never occurs in large numbers in Brisbane, with a mean count of just under 3, but reports of over 10 birds at one site are not uncommon, with the high count being 40 birds at Sandy Camp Wetlands on 4 Feb 2014 [@ringma2014ebirdS16784764]. Birds are present in Brisbane all year round, although there is a noticeable increase in the reporting rate over spring and summer, coinciding with the advent of the breeding season.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+As a species dependent on wetland and riparian habitats with suitable cover, Reed-Warblers are slightly threatened by the loss of wetlands across Brisbane. Of particular importance are the major sites at which this species can be found, but all riparian and wetland areas in Brisbane should be preserved for their biodiversity.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+_**Note:** the astute Atlasser would be aware that Reed-Warblers across the Old World are migratory and that other species may occur in Australia as vagrants. In particular, the [Oriental Reed-Warbler](https://ebird.org/australia/species/orrwar1/AU) has occurred rarely in the north of Australia and may turn up some time in Brisbane. Care should be taken with any bird that sounds or looks slightly different to other Australian Reed-Warblers - it may just be a different species!_
+
+**Distribution and Habitat**
+
+Australian Reed-Warblers are found all across Brisbane, but predominately in the north east of the LGA and in the creeks along the Brisbane River down to Moggill. The birds avoid forested areas, being almost exclusively restricted to non-remnant and wetland habitats, with the odd record from estuaries and dry woodlands - most likely birds in small stands of reeds near a creek. The species has never been recorded on Moreton Island or in the densely-forested Camel's Head. It is likely birds are more widely distributed than currently indicated, and that further dedicated surveys along creek banks and small stands of wetlands would turn up more records.
+
+The distribution of Reed-Warblers within Brisbane shows no clear seasonal variation, with birds being present at the same sites roughly all year round, although the reporting frequency does increase over spring and summer. It is possible that birds move into the Brisbane region to breed and disperse somewhat across varied sites, although it is perhaps equally likely that birds are present year-round at the same locations but are simply more obvious when breeding over spring and summer as the birds typically sing more and for extended periods of time [@HANZAB7].
+
+**Seasonality**
+
+There are ten reports of Australian Reed-Warblers confirmed to be breeding in Brisbane, with the majority of these records being of birds carrying nesting materials and nest building. Breeding has been reported from only two sites - Sandy Camp Road (9 reports) and Tinchi Tamba Wetlands (1 report). All reports are between August and January, with the only occupied nest report being in September [@attewell2016ebirdS31552178]. This is in line with the breeding season reported in the literature [@HANZAB7].
+
+The peak in reporting rate also occurs during the breeding season, with birds being reported approximately twice as often between August-January as February-July. This suggests that either birds move into the Brisbane region to breed, indicating that they are partially migratory (which is reported in the literature), or that birds are simply reported more during this period as they call more and are therefore more obvious to observers (this is also well-supported in the literature). Given both outcomes are likely, and a combination of the two is probable, more work on the movements and patterns of this species in Brisbane would be ideal. It would also be good to collect more breeding data for this species and identify further sites where birds breed.
+
+**Trends**
+
+The reporting rate for Australian Reed-Warblers has remained relatively stable over the _Atlas_ period, although some years have had nearly double the frequency of records as other years. The period from 2010-2012 in particular was good for this species, where they were reported on approximately 12% of checklists, while the last 5 years have seen lower frequencies of reporting, sitting at around 7-10%. It is possible that the species fluctuates according to local conditions, and no clear decline is evident, although the population should be monitored for any potential losses. The birds are not of any significant conservation concern in the sense that Brisbane's population is not under major threat currently and is quite peripheral to the overall population of this species.
+
+**Information Gaps**
+
+- Find out more about this species' movements
+- Collect more data from smaller, less-birded sections of habitat
+- Collect more breeding data
+
+**Key Conservation Needs**
+
+- Protect the wetland and riparian habitats this species depends on
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()
