@@ -9,6 +9,8 @@ The Atlas of the Birds of Brisbane is a community driven bird atlas for Brisbane
 
 **Please note that this project is still very much under active construction and is not yet ready for contributions.**
 
+Official launch date: 1 January 2019.
+
 ---
 
 Generously supported by Birds Queensland.

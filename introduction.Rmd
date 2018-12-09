@@ -6,4 +6,8 @@ main_matter()
 
 The [City of Brisbane](https://www.brisbane.qld.gov.au/) is Australia's most populous Local Government Area, with over 1 million inhabitants. A city of lush green spaces scattered between vibrant suburbs, Brisbanites are fortunate to live in a region with diverse flora and fauna that can be found right on their doorsteps. Home to nearly 400 species of birds, 120 mammals and countless other species of plants and animals, the Brisbane region is a true biodiversity hotspot within South East Queensland and Australia.
 
+```{r}
+render_image("https://c2.staticflickr.com/6/5203/5275318079_9592d461f1_b_d.jpg", caption = "An aerial view of Brisbane City. Photo by Brisbane City Council, 19 November 2010.")
+```
+
 This atlas seeks to document the distribution, abundance and seasonality of all recorded species of Brisbane birds and is based on data from [eBird](http://www.ebird.org), an open-access citizen science project dedicated to furthering our knowledge of birds and their behaviour. Please enjoy reading through the _Atlas_, and if you would like to assist in improving the project, see the [contributing](https://brisbanebirds.com/contributing.html) page.

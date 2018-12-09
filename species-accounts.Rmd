@@ -1,6 +1,8 @@
 # Species Accounts
 
-The following pages contain species accounts for all birds known to have occurred in Brisbane and the adjacent offshore waters. Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas.
+The following pages contain species accounts for all birds known to have occurred in Brisbane and the adjacent offshore waters. Species accounts include details on the bird's distribution and occurrence patterns within the LGA, as well as audio and images of the birds. Brief descriptive notes and information on conservation needs for each species are also included.
+
+Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas. Currently only a handful of species have draft accounts written - we need more writers!
 
 Species with draft accounts: 14
 

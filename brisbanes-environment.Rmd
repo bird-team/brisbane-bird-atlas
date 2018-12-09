@@ -27,3 +27,7 @@ Altogether, just under 400 bird species have been recorded in Brisbane, with sev
 Throughout this _Atlas_ you are likely to encounter references to a region known as the "Camel's Head" (or various other locations named after the animal's anatomy). A term coined by Brisbane birders, the Camel's Head refers to the portion of the Brisbane LGA north west of about Jolly's Lookout, including Mount Nebo and and Mount Glorious. Most of the Camel's Head (and regions south of it towards Lake Manchester) are very poorly surveyed by birders, and there is much still to learn about the region's ecology. Access to areas off the Mount Nebo-Mount Glorious Road is difficult, with only tracks and fire breaks providing walking entry into this part of D'Aguilar National Park.
 
 Habitats inside the Camel's Head and Chest are varied, ranging from rainforest to dry woodland with even small areas of mountain heath - a habitat not found anywhere else in Brisbane. Fortunately, most of the area is remnant old-growth vegetation, and as such provides excellent habitat for many species of birds. There is much still to be known about the Camel!
+
+```{r}
+render_image("https://www.fullerlab.org/wp-content/uploads/2018/01/20180129_Brisbane_LGA_Boundary_North-west_Camels-head.jpg", caption = "The border of Brisbane LGA, showing the "Camel's Head". Image by Richard Fuller using Google Earth imagery.")
+```
