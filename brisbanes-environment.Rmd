@@ -29,5 +29,5 @@ Throughout this _Atlas_ you are likely to encounter references to a region known
 Habitats inside the Camel's Head and Chest are varied, ranging from rainforest to dry woodland with even small areas of mountain heath - a habitat not found anywhere else in Brisbane. Fortunately, most of the area is remnant old-growth vegetation, and as such provides excellent habitat for many species of birds. There is much still to be known about the Camel!
 
 ```{r}
-render_image("https://www.fullerlab.org/wp-content/uploads/2018/01/20180129_Brisbane_LGA_Boundary_North-west_Camels-head.jpg", caption = "The border of Brisbane LGA, showing the "Camel's Head". Image by Richard Fuller using Google Earth imagery.")
+render_image("https://www.fullerlab.org/wp-content/uploads/2018/01/20180129_Brisbane_LGA_Boundary_North-west_Camels-head.jpg", caption = "The border of Brisbane LGA, showing the Camel's Head. Image by Richard Fuller using Google Earth imagery.")
 ```
