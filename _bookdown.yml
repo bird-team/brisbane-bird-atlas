@@ -12,6 +12,8 @@ rmd_files:
 - introduction.Rmd
 - brisbanes-environment.Rmd
 - methods.Rmd
+- contributing.Rmd
+- gazetteer.Rmd
 - species-accounts.Rmd
 - Anseranas-semipalmata.Rmd
 - Dendrocygna-eytoni.Rmd
@@ -399,6 +401,4 @@ rmd_files:
 - Psittacula-krameri.Rmd
 - Numida-meleagris-Domestic-type.Rmd
 - references.Rmd
-- contributing.Rmd
-- gazetteer.Rmd
 - species-index.Rmd
