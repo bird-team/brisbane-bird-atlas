@@ -4,4 +4,4 @@ The Atlas is built around data pulled from [eBird](https://ebird.org/home), an o
 
 Data analysis is predominately done in the [R programming language](https://www.r-project.org/). The Atlas is built around [R Markdown](https://rmarkdown.rstudio.com/), with additional sections in other languages - see the [GitHub](https://github.com/bird-team/brisbane-bird-atlas) and [wiki](https://github.com/bird-team/brisbane-bird-atlas/wiki/Frequently-asked-questions#what-is-github) for more details. The _Atlas_ is updated with the latest version of the [eBird](https://ebird.org/home) dataset every few months or so, and is currently based on the `r data_release_month_year` release.
 
-For more information on the methodology of the _Atlas_, please contact one of the editors.
+For further detailed information on the methodology of the _Atlas_, please contact one of the editors.
