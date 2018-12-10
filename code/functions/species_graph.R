@@ -140,13 +140,14 @@ species_graph <- function(x, species_data, record_data) {
         dplyr::mutate(rate = breeding / total) %>%
         dplyr::mutate(rate = dplyr::if_else(is.finite(rate), rate, 0)) %>%
         dplyr::mutate(rate = rate * 100)
+  breeding_ymax <- ymax(d5$rate)
   p5 <- d5 %>%
         ggplot2::ggplot(mapping = ggplot2::aes(x = Month, y = rate)) +
         ggplot2::geom_bar(stat = "identity", fill = "white",
                           color = "black", width = 0.75) +
         ggplot2::xlab("") +
         ggplot2::ylab("Breeding reported (%)") +
-        ggplot2::scale_y_continuous(limits = c(0, ymax(d5$rate))) +
+        ggplot2::scale_y_continuous(limits = c(0, ifelse(breeding_ymax < 1e-15, 1, breeding_ymax))) +
         ggplot2::scale_x_discrete(drop = FALSE) +
         ggplot2::theme(
           plot.title = ggplot2::element_blank(),
