@@ -117,13 +117,13 @@ grid_metadata:                                                   # parameters fo
   minute_target_column_name: minute_target                       # name of column with the minute target for each grid cell
   km_target_column_name: km_target                               # name of column with the km target for each grid cell
   description_column_name: description                           # name of column with the description for each grid cell
+  map_type_column_name: map_type                                 # name of map type to display for the surveyor sheets, available are: "terrain", "satellite", "roadmap", "hybrid"
 
 surveyor_sheets:                                                 # parameters for surveyor sheets
   maps:                                                          # size of the maps in the surveyor sheets
     width: 4.5                                                   # map width in inches
     height: 4.5                                                  # map height in inches
     zoom_level: 15                                               # zoom-level for map background
-    type: "hybrid"                                            # type of map to use for the map background (available options are "terrain", "satellite", "roadmap", "hybrid")
     label_character_width: 25                                    # maximum width for locality labels in the maps
     grid_line_color: "#ffffff"                                   # color of the sampling grid lines
     grid_line_width: 0.5                                         # width of the sampling grid lines
