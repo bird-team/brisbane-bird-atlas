@@ -43,6 +43,8 @@ land_path <- dir(tmp4, "^.*\\.shp$", full.names = TRUE)[1]
 elevation_path <- dir("data/elevation", "^.*\\.grd$", full.names = TRUE)[1]
 grid_path <- dir("data/grid", "^.*\\.shp$", full.names = TRUE)[1]
 grid_metadata_path <- dir("data/grid", "^.*\\.xlsx$", full.names = TRUE)[1]
+exclude_locality_path <- dir("data/localities", "^.*\\.xlsx$",
+                             full.names = TRUE)[1]
 
 ## load packages
 library(dplyr)
@@ -78,6 +80,7 @@ study_area_data <- sf::st_transform(sf::read_sf(study_area_path),
                                     parameters$crs)
 grid_data <- sf::read_sf(grid_path)
 grid_metadata <- readxl::read_excel(grid_metadata_path, sheet = 1)
+exclude_locality_data <- readxl::read_excel(exclude_locality_path, sheet = 1)
 land_data <- sf::st_transform(sf::read_sf(land_path), parameters$crs)
 record_data <- data.table::fread(record_path, data.table = FALSE)
 species_data <- readxl::read_excel(species_path, sheet = 1)
@@ -142,6 +145,15 @@ record_data <- do.call(format_ebird_records,
                                                 sf::st_union() %>%
                                                 sf::st_sf(id = 1)),
                               parameters$records))
+
+## exclude localities
+exclude_column_name <-
+  parameters$exclude_locality_list$locality_name_column_name
+assertthat::assert_that(assertthat::has_name(exclude_locality_data,
+                                             exclude_column_name))
+record_data <- record_data %>%
+               filter(!locality %in%
+                      exclude_locality_data[[exclude_column_name]])
 
 ## format record data to extract locations
 locations_data <-

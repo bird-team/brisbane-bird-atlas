@@ -134,3 +134,6 @@ surveyor_sheets:                                                 # parameters fo
     vertical_spacing: "-3.0em"                                   # spacing to vertically align the checklist tables with the page header
     left_margin: "-0.5in"                                        # padding for the checklist tables' left margin
     right_margin: "-0.2in"                                       # padding for the checklist tables' right margin
+
+exclude_locality_list:
+    locality_name_column_name: locality_id                       # column name with locality identifiers to exclude
