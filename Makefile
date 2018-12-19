@@ -135,6 +135,14 @@ push_assets:
 	&& docker exec bba sh -c "rm assets/surveyor-sheets.zip" || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
+## remove surveyor sheets
+rm_gh_surveyor_sheets:
+	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
+	&& docker cp . bba:$(PATHSEP2)tmp/ \
+	&& docker cp "$(USRHOME)/.Renviron" bba:$(PATHSEP2)root/.Renviron \
+	&& docker exec bba sh -c "Rscript /tmp/code/scripts/rm_gh_surveyor_sheets.R" || true
+	@docker stop -t 1 bba || true && docker rm bba || true
+
 ## build book
 book_pdf:
 	@mkdir -p _book \
