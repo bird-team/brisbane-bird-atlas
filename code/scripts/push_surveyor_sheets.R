@@ -55,6 +55,8 @@ result <- lapply(dir("assets/surveyor-sheets", "^.*\\.pdf$", full.names = TRUE),
                                  overwrite = TRUE,
                                  tag = "v.0.0.2",
                                  use_timestamps = FALSE), silent = TRUE)
+    #### sleep for 5 seconds
+    Sys.sleep(5)
   }
   ### if we have still failed after set number of times then throw error
   if (inherits(u, "try-error")) {
