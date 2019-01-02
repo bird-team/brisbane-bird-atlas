@@ -1,4 +1,4 @@
-[![lifecycle](https://img.shields.io/badge/Lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![Website Build Status](https://img.shields.io/circleci/project/github/bird-team/brisbane-bird-atlas/master.svg?label=website)](https://circleci.com/gh/bird-team/brisbane-bird-atlas/tree/master)
 [![Document Build Status](https://img.shields.io/travis/bird-team/brisbane-bird-atlas/master.svg?label=document)](https://travis-ci.org/bird-team/brisbane-bird-atlas)
 [![License (GPL version 3)](https://img.shields.io/badge/license-GNU%20GPL%20version%203-brightgreen.svg)](http://opensource.org/licenses/GPL-3.0)
