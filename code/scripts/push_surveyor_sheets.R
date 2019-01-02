@@ -57,8 +57,10 @@ result <- lapply(dir("assets/surveyor-sheets", "^.*\\.pdf$", full.names = TRUE),
                                  use_timestamps = FALSE), silent = TRUE)
   }
   ### if we have still failed after set number of times then throw error
-  if (inherits(u, "try-error"))
+  if (inherits(u, "try-error")) {
+    cat(u)
     stop(paste("uploading file failed:", basename(x)))
+  }
   ### if we succeeded, then return TRUE
   invisible(TRUE)
 })
