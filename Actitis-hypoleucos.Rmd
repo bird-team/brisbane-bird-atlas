@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Rare but regular summer visitor.
 
 ```{r}
-render_species_profile(species_name, caption = "Photo by Louis Backstrom, Kedron Brook Wetlands, 4 Feb 2018")
+render_species_profile(species_name, caption = "Rare summer migrant to muddy wetlands across the city. Some birds may occasionally overwinter but no records as yet of such behaviour. Birds are typically inconspicuous and may be more common than reporting rate indicates. Not of significant conservation concern in Australia. Photo by Louis Backstrom, Kedron Brook Wetlands, 4 Feb 2018")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+The Common Sandpiper is a small species of sandpiper with plain brown and white plumage and greenish-grey legs. A rare visitor to Brisbane, it is typically found by itself, although there have been a handful of records of multiple birds. The birds prefer the muddy banks of waterways, but also occasionally visit traditional wetlands and swamps, mudflats and grasslands.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,41 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+A shy species of muddy riverbanks and verges, the Common Sandpiper, despite its name, is anything but common in the Brisbane region. A migratory species like most other Calidrids, the birds breed in the Palaearctic over the Boreal summer before migrating south to their wintering grounds in Africa, Asia and Australasia.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Within the Brisbane LGA, Common Sandpipers have only occurred at a handful of locations, almost exclusively in the eastern half of the region, although the odd bird does turn up in the Lockyer Valley inland, so it is likely birds may visit suitable habitat in western Brisbane too. While superficially similar to certain other shorebirds, Common Sandpipers have a very distinctive feeding behaviour, with birds dashing from spot to spot, bobbing their head and tail while pausing to feed. The species has never occurred in large numbers in Brisbane (unlike many other shorebird species), with a high count of just 4 birds at once [@wright2018ebirdS49455717], and only a handful of multiples.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Birds have only been recorded in Brisbane in the warmer months from September to March, although it is possible that some (particularly younger or non-breeding) birds may overwinter. As a species dependent on suitable muddy riparian habitat, Common Sandpipers are somewhat threatened by habitat destruction in Brisbane and more broadly across their range, although they do not appear to be as threatened as many other shorebird species thanks to their decreased reliance on large mudflats and their versatility in adapting to less ideal habitats.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+_**Note:** the astute Atlasser would be aware that there are a handful of other sandpiper species that share ID similarities with Common Sandpipers. The most likely of these species in Brisbane is the [Wood Sandpiper](http://brisbanebirds.com/wood-sandpiper-tringa-glareola.html#wood-sandpiper-tringa-glareola), which probably turns up most years but, like this species, is underreported. Other species, such as the [Green](https://ebird.org/species/grnsan), [Solitary](https://ebird.org/species/solsan) and [Spotted](https://ebird.org/species/sposan) Sandpipers, share a number of features with the Common Sandpiper, but all of these constitute nationally significant rarities and are highly unlikely to occur. It pays to check though!_
+
+**Distribution and Habitat**
+
+Common Sandpipers are broadly distributed across much of the world, although within Australia they are more patchy, occurring mostly around the coastline with a few records further inland. They are quite rare in South East Queensland, and within Brisbane have almost exclusively been recorded on the eastern shores of the city, with the westernmost record being a single bird at Oxley Creek Common in 2013 [@wunsch2013ebirdS16595273]. It is probable that the odd bird visits suitable habitat in the western suburbs, especially given birds occur farther west in the Lockyer Valley, although given the paucity of data recorded from this area and the comparatively poorer shorebird habitat present it is not surprising that there are no records to date.
+
+The distribution of birds within Brisbane shows a clear seasonal trend, with the species only being present over the summer months, as would be expected given their migratory behaviour. There are no records of overwintering birds, although if birds were to stay year-round it is plausible they would remain in the same locations and not move between sites within the LGA without external pressures.
+
+**Seasonality**
+
+Common Sandpipers have never been reported breeding in Brisbane, which is unsurprising given they are long-distance migrants and almost exclusively breed at high latitudes in the northern hemisphere. The peak in reporting rate, both in Australia and in Brisbane, coincides with the Austral summer / Boreal winter, as birds leave the breeding grounds to avoid the harsh winter weather, wintering in the temperate Brisbane (and more broadly subtropical or tropical) climate before returning to the Palaearctic to breed.
+
+**Trends**
+
+Given the species rarity in Brisbane, there are no clear trends apparent within the data to suggest whether this species is declining, stable or increasing locally. Given that the worldwide population is quite stable, although with some small declines, the population is probably stable within Brisbane, although with local habitat changes this may change. More data is needed to verify this either way.
+
+**Information Gaps**
+
+- Determine whether this species is underreported
+- Collect more data for this species
+- Identify the flight paths and breeding sites of Brisbane birds to aid in conservation
+
+**Key Conservation Needs**
+
+- Protect key habitat all along the flyway, from Brisbane to Lapland
+
+**Contributors to Species Account**
+
+Louis Backstrom 
 
 ```{r}
 end_two_column_layout()
