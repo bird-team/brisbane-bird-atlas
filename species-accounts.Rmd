@@ -4,10 +4,12 @@ The following pages contain species accounts for all birds known to have occurre
 
 Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas. Currently only a handful of species have draft accounts written - we need more writers!
 
-Species with draft accounts: 15
+Species with draft accounts: 17
 
 - [Magpie Goose](https://brisbanebirds.com/magpie-goose-anseranas-semipalmata.html)
 - [Pacific Black Duck](https://brisbanebirds.com/pacific-black-duck-anas-superciliosa.html)
+- [Australian Owlet-nightjar](http://brisbanebirds.com/australian-owlet-nightjar-aegotheles-cristatus.html)
+- [Common Sandpiper](http://brisbanebirds.com/common-sandpiper-actitis-hypoleucos.html)
 - [Grey Goshawk](https://brisbanebirds.com/grey-goshawk-accipiter-novaehollandiae.html)
 - [Brown Goshawk](http://brisbanebirds.com/brown-goshawk-accipiter-fasciatus.html)
 - [Collared Sparrowhawk](http://brisbanebirds.com/collared-sparrowhawk-accipiter-cirrocephalus.html)
