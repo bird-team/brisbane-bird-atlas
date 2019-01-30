@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category Pending; Reported vagrant, but no documented records.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Endemic swiftlet of north east Queensland. One report from Brisbane region but no documentation, unverified. Not of conservation concern, but range somewhat restricted.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+The Australian Swiftlet is a medium-sized swiftlet endemic to coastal north east Queensland where it breeds in caves and gorges. It is the only regular species of swiftlet in Australia and is readily separable with decent views from needletails and swifts. A sedentary species, there are very few confirmed records south of the edge of this species' breeding range in Mackay, and all reports to date have been unverified.
 
 ```{r}
 end_two_column_layout()
@@ -53,6 +53,12 @@ clear_page()
 ```{r}
 start_two_column_layout()
 ```
+
+A colonial species of savannas and open woodland, Australian Swiftlets can reach high abundances within their breeding range, but are quite sedentary and rarely move beyond their favoured locations. Within Brisbane, there is one record of the species, from 2014 at Sandy Camp Road [@ringma2014ebirdS16784764], indicating that at best they are a very rare vagrant.
+
+**Distribution and Habitat**
+
+Australian Swiftlets are typically found in north east Queensland from the Iron Range to Mackay and inland to Chillagoe (where there is a separate subspecies). They favour open savanna woodlands mainly, but can be found in a variety of habitats at most lowland elevations. They are sedentary within their home range and there are very few vagrant records on eBird, indicating that despite being highly mobile and adept fliers, birds do not tend to move very far to feed. The closest records from outside Brisbane are in the Lockyer Valley and south of Tweed Heads.
 
 In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
 
