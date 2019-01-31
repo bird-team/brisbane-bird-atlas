@@ -4,7 +4,7 @@ back_matter()
 
 # Gazetteer
 
-Brisbane's birdlife is varied and abundant. All across the region there are sites which host scores of species. This page is intended to showcase some of the very best birding hotspots Brisbane has to offer. Initially, this comprises the top 30 [eBird](https://ebird.org/home) hotspots in Brisbane:
+Brisbane's birdlife is varied and abundant. All across the region there are sites which host scores of species. This page is intended to showcase some of the very best birding hotspots Brisbane has to offer. Initially, this comprises the top 35 [eBird](https://ebird.org/home) hotspots in Brisbane:
 
 **[1. Tinchi Tamba Wetlands Reserve](https://ebird.org/australia/hotspot/L960635)**  
 237 Species | [27°17'56.9"S 153°02'12.0"E](https://goo.gl/maps/sjWBv5DSmoT2)  
@@ -121,7 +121,7 @@ Local Experts: Steve Cunningham, Richard Miller.
 Just down the road from Sandy Camp, these wetlands are smaller than their more famous neighbour but nonetheless host a wide variety of birdlife and have an equal capacity for vagrants to occur. Red-kneed and Black-fronted Dotterels are common here, and this is one of the better locations in Brisbane to find Red-necked Avocets. Past rarities include Ruff, Plum-headed Finch, Painted Honeyeater and Pectoral Sandpiper.  
 Local Experts: Chris Attewell.
 
-**[24. Sherwood Arboretum](https://ebird.org/australia/hotspot/L1007610)**
+**[24. Sherwood Arboretum](https://ebird.org/australia/hotspot/L1007610)**  
 153 Species |  [27°31'53.0"S 152°58'28.9"E](https://goo.gl/maps/w4BUbsaghrP2)  
 A small pocket of Bushland on the Brisbane River, the Arboretum is a productive site with a decent variety of birdlife. Pale-vented Bush-hens are common here, as are White-headed Pigeons and Little Lorikeets - all uncommon species within Brisbane. Every now and then the site does turn up a rarity, although it is not as prone to such occurrences as other nearby sites.
 Local Experts: Hugh Possingham, Mat Gilfedder.
@@ -156,5 +156,30 @@ Local Experts: Chris Wiley, Elliot Leach.
 147 Species | [27°31'15.3"S 152°51'41.7"E](https://goo.gl/maps/5WfUzTNtEqC2)  
 A large area of remnant bushland habitat in the western suburb of Moggill, this is a site which would almost certainly benefit from increased survey effort by Brisbane's birders. Easily accessible off Mt Crosby Rd, it is near several other fantastic birding locations, including Anstead Bushland, Anstead SES Depot and Hawkesbury Rd Nature Reserve. Past notable species include Black-breasted Buttonquail (which may still be present in small numbers), Turquoise Parrot, Barred Cuckooshrike, Major Mitchell's Cockatoo and Red-winged Parrot. This is an excellent site for inland vagrants to turn up during dry conditions!  
 Local Experts: Rod Gardner, Jane Turnbull, Mat Gilfedder.
+
+**[31. Manly Wader Roost](https://ebird.org/australia/hotspot)**  
+146 Species | [27°27'16.6"S 153°11'37.6"E](https://goo.gl/maps/9Jqcv7SZMqy)  
+An excellent artificial shorebird roost built onto the end of the Manly RQYS Marina, access to this site is strictly controlled by the state government. The best option for access is through Birds Queensland and the QWSG; the Wader Studies Group run monthly shorebird surveys here as well as regular introductory wader ID days etc. which are open to BQ/QWSG members. There are many great birds regularly at this site, including Broad-billed Sandpiper, Grey Plover, Red Knot and Black-tailed Godwit, while vagrants in the past have included White-winged Black Tern, Asian Dowitcher, South Island Pied Oystercatcher, Wandering Tattler and Gould's Petrel.  
+Local Experts: Sandra Harding, Colin Reid, Brad Woodworth.
+
+**[32. Mookin-Bah Reserve](https://ebird.org/australia/hotspot/L3807542)**  
+146 Species | [27°28'49.6"S 153°10'38.8"E](https://goo.gl/maps/Yae3fVSCJ2B2)  
+At the extreme south east edge of Brisbane, near the border with the Redlands lies Mookin-Bah Reserve, a large expanse of wetland and woodland habitat that is quickly proving to be an excellent birding hotspot. Aside from Sandy Camp, this is the only other regular location in Brisbane for Black Bittern, although the species has not been seen recently at the site. Other notable birds include crakes and rails, Little Wattlebird and Little Grassbird. This site is a relatively new birding discovery - there's plenty more to be found!  
+Local Experts: Michael Daley.
+
+**[33. Bellbird Grove](https://ebird.org/australia/hotspot/L1517847)**  
+144 Species | [27°25'27.0"S 152°54'10.0"E](https://goo.gl/maps/chqtRepvYiE2)  
+Situated at the end of the Camel's Back in north west Brisbane, just up the road from the Gap is Bellbird Grove, an excellent wet sclerophyll birding location with a great variety of species. This is the only reliable location in Brisbane for Spotted Quail-thrush, which can be found with some planning and diligent effort. Other good birds regularly seen include Little Lorikeet, White-bellied Cuckooshrike and Rose Robin; notable rarities include Oriental Cuckoo, Square-tailed Kite, Satin Flycatcher and Yellow Thornbill. This is a great site for rare birds to turn up on the odd occasion.  
+Local Experts: Alan Boardman, Sue Lee.
+
+**[34. Hawkesbury Rd Nature Refuge](https://ebird.org/australia/hotspot/L2715036)**  
+144 Species | [27°31'51.7"S 152°51'59.9"E](https://goo.gl/maps/Rfx5c6oxtqs)  
+Adjacent to Moggill Conservation Park, the much smaller Hawkesbury Rd Nature Reserve nonetheless packs quite the birding punch, with many otherwise rare Brisbane species found here. An excellent network of trails runs through the park, although be prepared for quite the walk as the area is very hilly. Notable species include Rose-crowned Fruit-Dove, Square-tailed Kite, Spotted Quail-thrush, Painted Buttonquail, Little Bronze-Cuckoo, Russet-tailed Thrush, Oriental Cuckoo, Grey Goshawk and Black-chinned Honeyeater - quite the list!  
+Local Experts: Rod Gardner.
+
+**[35. Cliveden Reserve](https://ebird.org/australia/hotspot/L1204082)**  
+141 Species | [27°33'03.7"S 152°59'30.1"E](https://goo.gl/maps/Dcm1vsod1kH2)  
+Across Oxley Creek from the Common lies Cliveden Reserve, a smaller sibling to the massive OCC, but a nonetheless great birding location. Past rare species at the site include White-bellied Cuckooshrike, Black-necked Stork, Scaly-breasted Munia and Rose-crowned Fruit-Dove.  
+Local Experts: Hugh Possingham.
 
 _Species counts last updated 31st January 2019._
