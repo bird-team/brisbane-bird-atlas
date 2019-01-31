@@ -7,12 +7,12 @@ back_matter()
 Brisbane's birdlife is varied and abundant. All across the region there are sites which host scores of species. This page is intended to showcase some of the very best birding hotspots Brisbane has to offer. Initially, this comprises those [eBird](https://ebird.org/home) hotspots with over 150 recorded species:
 
 **[1. Tinchi Tamba Wetlands Reserve](https://ebird.org/australia/hotspot/L960635)**  
-236 Species | [27°17'56.9"S 153°02'12.0"E](https://goo.gl/maps/sjWBv5DSmoT2)  
+237 Species | [27°17'56.9"S 153°02'12.0"E](https://goo.gl/maps/sjWBv5DSmoT2)  
 Brisbane's most abundant birding hotspot, the Tinchi Tamba Wetlands are a large expanse of intertidal mudflats and wetlands in the far north of the city. The mudflats provide a high tide roost for dozens of wader species, including rare vagrant shorebirds such as Long-toed Stint and Pectoral Sandpiper. The freshwater lagoons offer a different habitat and consequently have different birds, including on occasion Brolga, Black-Necked Stork, Little Grassbird and Australian Spotted Crake, all rare species within the Brisbane boundary.  
 Local Experts: Ged Tranter, Steve Murray, Rick Franks.
 
 **[2. Oxley Creek Common](https://ebird.org/australia/hotspot/L967148)**  
-214 Species  |  [27°32'09.2"S 152°59'34.2"E](https://goo.gl/maps/pDD3an4XLg12)  
+213 Species  |  [27°32'09.2"S 152°59'34.2"E](https://goo.gl/maps/pDD3an4XLg12)  
 By far Brisbane's most visited birding location, Oxley Creek Common is a vast expanse of grazing fields, woodland and wetlands nestled between the industrial suburbs of Rocklea, Oxley and Sherwood in the inner south west of the city. As many as 70 species of bird can be found in one hour at the Common, including the odd rarity. Brown Quails are a staple and can be easily found scurrying in large groups along the side of the path - a favourite of many visiting birders.  
 Local Experts: Hugh Possingham, Mat Gilfedder.
 
@@ -22,7 +22,7 @@ Another very popular site within Brisbane, Sandy Camp is a large area of freshwa
 Local Experts: Chris Attewell, Richard Miller, Andrew Naumann.
 
 **[4. Lake Manchester](https://ebird.org/australia/hotspot/L2558202)**  
-201 Species | [27°29'23.8"S 152°44'44.0"E](https://goo.gl/maps/RwiU3siiF3p)  
+203 Species | [27°29'23.8"S 152°44'44.0"E](https://goo.gl/maps/RwiU3siiF3p)  
 Much less visited than the sites above, Lake Manchester makes up for a lack of popularity with a plethora of birds. Situated on the far west edge of Brisbane out near Ipswich, Lake Manchester provides habitat for many inland birds not found anywhere else in the region. It is one of the best sites in Brisbane for nocturnal birds, with Powerful Owl, Southern Boobook, Australian Owlet-Nightjar, White-throated Nightjar and Barn Owl all being commonly encountered at night. King Quail are a scarce resident among rank grasses fringing the lake and nearby Cabbage Tree Creek, and the site has played host to a large number of rare inland birds, particularly during dry years in the interior.  
 Local Experts: Richard Fuller, Ged Tranter, Steve Murray.
 
@@ -47,27 +47,27 @@ A large area of woodland habitat in Brisbane's west, Anstead Bushland Reserve is
 Local Experts: Rod Gardner.
 
 **[9. Lytton Wader Roost and Wynnum Mangrove Boardwalk](https://ebird.org/australia/hotspot/L1177500)**  
-190 Species | [27°25'20.6"S 153°10'03.7"E](https://goo.gl/maps/1LuTrVvQDbn)  
+192 Species | [27°25'20.6"S 153°10'03.7"E](https://goo.gl/maps/1LuTrVvQDbn)  
 The Lytton Wader Roost is a large claypan near the Wynnum Mudflats that holds large numbers of shorebirds at high tide when they come into roost. The nearby Wynnum Mangrove Boardwalk is a good spot for finding the birds at low tides as they feed out on the mudflats, as well as for mangrove specialist species such as Torresian Kingfisher, Mangrove Gerygone and Mangrove Honeyeater. The roost is an excellent spot for Pied Stilt, Chestnut Teal, Common Greenshank and Grey-tailed Tattler, among other species, and has in the past had vagrants visit including Asian Dowitcher, White-winged Black Tern, Long-toed Stint and Ruff.  
 Local Experts: Matteo Grilli.
 
-**[10. Boondall Wetlands Reserve](https://ebird.org/australia/hotspot/L921912)**  
-189 Species  |  [27°20'25.8"S 153°04'40.8"E](https://goo.gl/maps/jBRzTZogJS32)  
-A large area of mangroves and coastal paperbark forest in Brisbane's north east, the Boondall Wetlands have long been protected as an important site for Moreton Bay's migratory birds. While not as intensely birded as some of the other major wetland sites along the coast, Boondall nonetheless has many species of birds that call it home. Migratory shorebirds roost along the banks of mangrove-lined creeks, while common woodland birds call in the trees behind. This is one of the best locations in Brisbane for Shining Flycatcher, but these birds are not easy to find hidden among the mangroves.  
-Local Experts: Steve Murray, Rick Franks, Felicia Chan.
-
-**[11. Minnippi Parklands](https://ebird.org/australia/hotspot/L1161973)**  
-189 Species | [27°28'59.5"S 153°06'53.9"E](https://goo.gl/maps/f7LgSbDY4HT2)  
+**[10. Minnippi Parklands](https://ebird.org/australia/hotspot/L1161973)**  
+190 Species | [27°28'59.5"S 153°06'53.9"E](https://goo.gl/maps/f7LgSbDY4HT2)  
 A productive area of parkland to the south east of the city, Minnippi is a varied area with wetlands, forest and grassy verges and hosts a large variety of species. In the past the site has turned up rare vagrants including Freckled Duck, Spotted Harrier, Sooty Tern (following Cyclone Oswald) and Scaly-breasted Munia.  
 Local Experts: Stuart Pickering.
 
+**[11. Boondall Wetlands Reserve](https://ebird.org/australia/hotspot/L921912)**  
+186 Species  |  [27°20'25.8"S 153°04'40.8"E](https://goo.gl/maps/jBRzTZogJS32)  
+A large area of mangroves and coastal paperbark forest in Brisbane's north east, the Boondall Wetlands have long been protected as an important site for Moreton Bay's migratory birds. While not as intensely birded as some of the other major wetland sites along the coast, Boondall nonetheless has many species of birds that call it home. Migratory shorebirds roost along the banks of mangrove-lined creeks, while common woodland birds call in the trees behind. This is one of the best locations in Brisbane for Shining Flycatcher, but these birds are not easy to find hidden among the mangroves.  
+Local Experts: Steve Murray, Rick Franks, Felicia Chan.
+
 **[12. D'Aigular National Park - Araucaria Circuit](https://ebird.org/australia/hotspot/L2177590)**  
-180 Species | [27°26'27.7"S 152°55'16.7"E](https://goo.gl/maps/a2Ni6StXqht)  
+181 Species | [27°26'27.7"S 152°55'16.7"E](https://goo.gl/maps/a2Ni6StXqht)  
 Enoggera Reservoir, situated to in The Gap in the west of Brisbane, is one of the most varied sites in Brisbane. Araucaria Circuit covers the north east section of the dam, starting and finishing at the Walkabout Creek Discovery Centre. The reservoir is one of the best locations in Brisbane for White-bellied Cuckooshrike, Crested Shrike-tit and Hardhead, with the latter being found in vast numbers across the lake. Rare vagrants or difficult species that have occurred at the site include Regent Honeyeater, Black-breasted Buttonquail, Musk Duck and Dusky Woodswallow.  
 Local Experts: Colin Reid, Brad Woodworth, Steve Murray, Lucas Brook.
 
 **[13. Nudgee Beach Reserve](https://ebird.org/australia/hotspot/L1172123)**  
-176 Species  |  [27°20'39.8"S 153°05'53.2"E](https://goo.gl/maps/mcA3bxK56RR2)  
+177 Species  |  [27°20'39.8"S 153°05'53.2"E](https://goo.gl/maps/mcA3bxK56RR2)  
 A large area of mudflats on the edge of Moreton Bay to the north east of the city, Nudgee Beach is adjacent to Boondall Wetlands and hosts thousands of migratory shorebirds each year. Bar-tailed Godwits, Curlew Sandpipers, Red-necked Stints and Pacific Golden-Plovers are all common here. Rarer shorebirds have turned up on occasion but nothing of major significance. The site is also excellent for Little Terns in summer, with counts of over 100 recorded.  
 Local Experts: Malcolm Graham, Louis Backstrom, Matteo Grilli.
 
@@ -87,7 +87,7 @@ Situated an the extreme west edge of Brisbane across the road from Lake Manchest
 Local Experts: Richard Fuller.
 
 **[17. Fitzgibbon Bushland](https://ebird.org/australia/hotspot/L2559485)**  
-160 Species | [27°20'07.6"S 153°01'41.2"E](https://goo.gl/maps/dVhaia4LFSG2)  
+161 Species | [27°20'07.6"S 153°01'41.2"E](https://goo.gl/maps/dVhaia4LFSG2)  
 An area of preserved bushland situated in the modern Fitzgibbon Chase estate, Fitzgibbon Bushland hosts a wide variety of species and has turned up a number of interesting birds over the years. It has been in recent times one of the best locations in Brisbane for Painted Buttonquail, although the birds are still very cryptic and difficult to find. Other local specialties include Little Wattlebird (scarce throughout much of mainland Brisbane), Common Cicadabird and Grey Goshawk. Many species turn up for a short while and then disappear again, so be sure to check back regularly at the site for new birds.  
 Local Experts: Ged Tranter, Ross Smith.
 
@@ -97,37 +97,39 @@ A small area of wetlands near the end of Moggill Road at the Moggill Ferry, this
 Local Experts: Rod Gardner, Jo Culican.
 
 **[19. Metroplex Wetlands](https://ebird.org/australia/hotspot/L1177484)**  
-158 Species  |  [27°27'12.7"S 153°06'03.6"E](https://goo.gl/maps/kzTedgzr66P2)  
+159 Species  |  [27°27'12.7"S 153°06'03.6"E](https://goo.gl/maps/kzTedgzr66P2)  
 Situated just to the west of the Gateway Bridge in Murarrie, Metroplex Wetlands are home to perhaps Brisbane's best-known pair of Peregrine Falcons, which nest high up on the bridge. Aside from the falcons, the site hosts a nice variety of waterbirds and is a real gem nestled within the surrounding industrial centres.  
 Local Experts: Chris Attewell, Richard Miller.  
 
-**[20. Sergeant Dan Stiller Memorial Reserve](https://ebird.org/australia/hotspot/L3185687)**  
+**[20. Tingalpa Creek Reserve](https://ebird.org/australia/hotspot/L2559604)**  
+159 Species | [27°33'03.7"S 153°10'20.1"E](https://goo.gl/maps/sTmxiiKeVqN2)  
+This hotspot, which includes the nearby JC Trotter Memorial Reserve, is a scarcely-birded section of bushland on the south edge of Tingalpa Reservoir near the border with Redland City Council. Similar to nearby wetland/bushland hotspots, it boasts a wide variety of birds, with waterbirds and passerines being represented in good numbers. Australasian Grebes are common here (and there are also several records of Great-Crested), as well as Comb-crested Jacana, Royal Spoonbill and many species of honeyeater. Past rarities have included Yellow-billed Spoonbill, Cotton Pygmy-Goose and Red Wattlebird.  
+Local Experts: Colin Reid.
+
+**[21. Sergeant Dan Stiller Memorial Reserve](https://ebird.org/australia/hotspot/L3185687)**  
 158 Species | [27°38'38.2"S 153°00'11.3"E](https://goo.gl/maps/JCUfTLggKDJ2)  
 Located in the extreme south of Brisbane near the border with Logan, Sergeant Dan Stiller Memorial Reserve is an area visited less than many of the sites above it on this list but nonetheless has a fantastic variety of birdlife. With increased visitation it is sure to turn up some interesting rarities, but already the site has boasted birds such as Cotton Pygmy-Goose, Glossy Black-Cockatoo and Jacky Winter.  
 Local Experts: Tim and Marg Roberts.
 
-**[21. Wynnum to Manly Foreshore](https://ebird.org/australia/hotspot/L2558660)**  
-157 Species | [27°26'37.6"S 153°10'32.9"E](https://goo.gl/maps/ZNH2rAjrcCG2)  
+**[22. Wynnum to Manly Foreshore](https://ebird.org/australia/hotspot/L2558660)**  
+156 Species | [27°26'37.6"S 153°10'32.9"E](https://goo.gl/maps/ZNH2rAjrcCG2)  
 Covering a large area of foreshore in Brisbane's south east, this site is excellent for shorebirds at low tide during summer, as well as several other species that inhabit the parks and esplanade along the shore. Pied Stilt, Australian Pied Oystercatcher and Masked Lapwing are all resident here, while migratory species including Eastern Curlew, Bar-tailed Godwit, Whimbrel and Pacific Golden-Plover are common in summer. Past vagrants include Radjah Shelduck, Sooty Tern and Australasian Gannet.  
 Local Experts: Steve Cunningham, Richard Miller.
 
-**[22. Kianawah Road Wetland](https://ebird.org/australia/hotspot/L2278383)**  
-154 Species | [27°26'50.6"S 153°08'25.5"E](https://goo.gl/maps/BKdt8fKCNBU2)  
+**[23. Kianawah Road Wetland](https://ebird.org/australia/hotspot/L2278383)**  
+155 Species | [27°26'50.6"S 153°08'25.5"E](https://goo.gl/maps/BKdt8fKCNBU2)  
 Just down the road from Sandy Camp, these wetlands are smaller than their more famous neighbour but nonetheless host a wide variety of birdlife and have an equal capacity for vagrants to occur. Red-kneed and Black-fronted Dotterels are common here, and this is one of the better locations in Brisbane to find Red-necked Avocets. Past rarities include Ruff, Plum-headed Finch, Painted Honeyeater and Pectoral Sandpiper.  
 Local Experts: Chris Attewell.
 
-**[23. Wynnum Mangrove Boardwalk](https://ebird.org/australia/hotspot/L5009902)**  
-154 Species | [27°25'30.4"S 153°10'08.2"E](https://goo.gl/maps/EH77dr4FjFk)  
+**[24. Sherwood Arboretum](https://ebird.org/australia/hotspot/L1007610)**
+153 Species |  [27°31'53.0"S 152°58'28.9"E](https://goo.gl/maps/w4BUbsaghrP2)  
+A small pocket of Bushland on the Brisbane River, the Arboretum is a productive site with a decent variety of birdlife. Pale-vented Bush-hens are common here, as are White-headed Pigeons and Little Lorikeets - all uncommon species within Brisbane. Every now and then the site does turn up a rarity, although it is not as prone to such occurrences as other nearby sites.
+Local Experts: Hugh Possingham, Mat Gilfedder.
+
+**[25. Wynnum Mangrove Boardwalk](https://ebird.org/australia/hotspot/L5009902)**  
+153 Species | [27°25'30.4"S 153°10'08.2"E](https://goo.gl/maps/EH77dr4FjFk)  
 _Note: This site has significant overlap with two other hotspots - Wynnum to Manly Foreshore and Lytton Wader Roost and Wynnum Mangrove Boardwalk. It is only treated here as a separate hotspot as this is how the sites are treated in eBird._  
 The Wynnum Mangrove Boardwalk is an excellent location in south east Brisbane for observing shorebirds and mangrove specialist species, particularly at low tides when the waders are out feeding on the mudflats. Past rarities have included Cotton Pygmy-Goose, Asian Dowitcher and Jacky Winter.  
 Local Experts: See overlapping hotspots.  
 
-**[24. Tingalpa Creek Reserve](https://ebird.org/australia/hotspot/L2559604)**  
-153 Species | [27°33'03.7"S 153°10'20.1"E](https://goo.gl/maps/sTmxiiKeVqN2)  
-This hotspot, which includes the nearby JC Trotter Memorial Reserve, is a scarcely-birded section of bushland on the south edge of Tingalpa Reservoir near the border with Redland City Council. Similar to nearby wetland/bushland hotspots, it boasts a wide variety of birds, with waterbirds and passerines being represented in good numbers. Australasian Grebes are common here (and there are also several records of Great-Crested), as well as Comb-crested Jacana, Royal Spoonbill and many species of honeyeater. Past rarities have included Yellow-billed Spoonbill, Cotton Pygmy-Goose and Red Wattlebird.  
-Local Experts: Colin Reid.
-
-**[25. Sherwood Arboretum](https://ebird.org/australia/hotspot/L1007610)**
-152 Species |  [27°31'53.0"S 152°58'28.9"E](https://goo.gl/maps/w4BUbsaghrP2)  
-A small pocket of Bushland on the Brisbane River, the Arboretum is a productive site with a decent variety of birdlife. Pale-vented Bush-hens are common here, as are White-headed Pigeons and Little Lorikeets - all uncommon species within Brisbane. Every now and then the site does turn up a rarity, although it is not as prone to such occurrences as other nearby sites. 
-Local Experts: Hugh Possingham, Mat Gilfedder.
+_Species counts last updated 31st January 2019._
