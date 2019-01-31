@@ -4,11 +4,11 @@ back_matter()
 
 # Gazetteer
 
-Brisbane's birdlife is varied and abundant. All across the region there are sites which host scores of species. This page is intended to showcase some of the very best birding hotspots Brisbane has to offer. Initially, this comprises those [eBird](https://ebird.org/home) hotspots with over 150 recorded species:
+Brisbane's birdlife is varied and abundant. All across the region there are sites which host scores of species. This page is intended to showcase some of the very best birding hotspots Brisbane has to offer. Initially, this comprises the top 30 [eBird](https://ebird.org/home) hotspots in Brisbane:
 
 **[1. Tinchi Tamba Wetlands Reserve](https://ebird.org/australia/hotspot/L960635)**  
 237 Species | [27°17'56.9"S 153°02'12.0"E](https://goo.gl/maps/sjWBv5DSmoT2)  
-Brisbane's most abundant birding hotspot, the Tinchi Tamba Wetlands are a large expanse of intertidal mudflats and wetlands in the far north of the city. The mudflats provide a high tide roost for dozens of wader species, including rare vagrant shorebirds such as Long-toed Stint and Pectoral Sandpiper. The freshwater lagoons offer a different habitat and consequently have different birds, including on occasion Brolga, Black-Necked Stork, Little Grassbird and Australian Spotted Crake, all rare species within the Brisbane boundary.  
+Brisbane's most abundant birding hotspot, the Tinchi Tamba Wetlands are a large expanse of intertidal mudflats and wetlands in the far north of the city. The mudflats provide a high tide roost for dozens of wader species, including rare vagrant shorebirds such as Buff-breasted Sandpiper, Ruff, Long-toed Stint and Pectoral Sandpiper. The freshwater lagoons offer a different habitat and consequently have different birds, including on occasion Brolga, Black-Necked Stork, Little Grassbird and Australian Spotted Crake, all rare species within the Brisbane boundary.  
 Local Experts: Ged Tranter, Steve Murray, Rick Franks.
 
 **[2. Oxley Creek Common](https://ebird.org/australia/hotspot/L967148)**  
@@ -131,5 +131,30 @@ Local Experts: Hugh Possingham, Mat Gilfedder.
 _Note: This site has significant overlap with two other hotspots - Wynnum to Manly Foreshore and Lytton Wader Roost and Wynnum Mangrove Boardwalk. It is only treated here as a separate hotspot as this is how the sites are treated in eBird._  
 The Wynnum Mangrove Boardwalk is an excellent location in south east Brisbane for observing shorebirds and mangrove specialist species, particularly at low tides when the waders are out feeding on the mudflats. Past rarities have included Cotton Pygmy-Goose, Asian Dowitcher and Jacky Winter.  
 Local Experts: See overlapping hotspots.  
+
+**[26. Shorncliffe](https://ebird.org/australia/hotspot/L2559491)**  
+153 Species | [27°19'41.5"S 153°05'05.1"E](https://goo.gl/maps/aV55tdU4n4z)  
+North east Brisbane's sleepy seaside suburb, Shorncliffe boasts large expanses of mudflats suitable for migratory waders, a couple of suburban parks and the magnificent Shorncliffe Pier, a 350m long historic pier that juts out into the bay, providing one of the best seawatching locations on the mainland. Past rarities include numerous tern species, Lesser Frigatebird, Broad-billed Sandpiper and Australasian Gannet.  
+Local Experts: Steve Murray, Jack Whiting.
+
+**[27. Swan Lake](https://ebird.org/australia/hotspot/L1367805)**  
+152 Species | [27°23'29.8"S 153°10'04.4"E](https://goo.gl/maps/tMLsM2i88mE2)  
+This aptly named lake, part of the Port of Brisbane, is home to hundreds of Black Swans, among many other wetland specialists. It is less frequently visited than the nearby shorebird roost, but nonetheless boasts a significant site list and several past vagrants. These include Black-necked Stork, Radjah Shelduck, Yellow-billed Spoonbill and White-winged Black Tern. The QWSG regularly conducts surveys here as well.  
+Local Experts: Peter and Leith Woodall.
+
+**[28. Anstead SES Depot](https://ebird.org/australia/hotspot/L3667263)**  
+148 Species |  [27°33'27.3"S 152°51'24.7"E](https://goo.gl/maps/J7oHT388xcP2)  
+An excellent example of how even the most unlikely locations can be birding gems, the SES Depot on Hawkesbury Rd in Anstead boasts quite the site list, with a number of vagrant species. In the past it has turned up Plum-headed Finch, Oriental Cuckoo and Scaly-breasted Munia, among other woodland species not commonly seen.  
+Local Experts: Rod Gardner.
+
+**[29. Port of Brisbane Shorebird Roost](https://ebird.org/australia/hotspot/L984917)**  
+148 Species | [27°22'32.4"S 153°11'02.3"E](https://goo.gl/maps/FQmF2145Va22)  
+The fantastic Port of Brisbane Roost, maintained by the Port Authority, is a large open permanent roost that holds thousands of migratory shorebirds over summer and many more resident species as well. Access can be organised by visiting the Port's Visitor Centre and requesting a key (open during the week, weekend access is more difficult). It boasts quite the vagrant list, including Buff-breasted Sandpiper, Asian Dowitcher, Long-toed Stint, White-winged Black Tern and Australasian Shoveler. The QWSG regularly conducts surveys here as well.  
+Local Experts: Chris Wiley, Elliot Leach.  
+
+**[30. Moggill Conservation Park](https://ebird.org/australia/hotspot/L956652)**  
+147 Species | [27°31'15.3"S 152°51'41.7"E](https://goo.gl/maps/5WfUzTNtEqC2)  
+A large area of remnant bushland habitat in the western suburb of Moggill, this is a site which would almost certainly benefit from increased survey effort by Brisbane's birders. Easily accessible off Mt Crosby Rd, it is near several other fantastic birding locations, including Anstead Bushland, Anstead SES Depot and Hawkesbury Rd Nature Reserve. Past notable species include Black-breasted Buttonquail (which may still be present in small numbers), Turquoise Parrot, Barred Cuckooshrike, Major Mitchell's Cockatoo and Red-winged Parrot. This is an excellent site for inland vagrants to turn up during dry conditions!  
+Local Experts: Rod Gardner, Jane Turnbull, Mat Gilfedder.
 
 _Species counts last updated 31st January 2019._
