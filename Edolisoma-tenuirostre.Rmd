@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Insert header text here.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Moderately common summer migrant to remnant bushland habitats across the city environs. Probably breeds within our region but only a handful of records. Not of conservation concern and numbers are possibly increasing slightly.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+The Cicadabird (aka Common or Slender-billed Cicadabird) is a small, sexually dimorphic species of cuckooshrike found across north and east Australia, New Guinea, Indonesia and numerous islands in the south Pacific. Adult males are a striking slate-grey colour all over, while females and younger birds are a lighter grey across the back with white, barred underparts. They are often first located by their distinctive call, which sounds very much like that of a cicada, for which they are named. Birds are locally common across the city throughout summer, and may turn up anywhere, although they show a clear preference for remnant habitats rather than urban parks and gardens.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,43 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+A typically solitary species of wooded habitats, the Cicadabird does not reach high abundance in Brisbane but nonetheless can be seen or heard quite regularly in certain parts of Brisbane over summer. Birds occur quite patchily within the LGA but appear to particularly favour the western woodlands where there are large tracts of connected forest for them to move through while feeding.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Birds have been found at all altitudes within Brisbane, from sea level to above 600m, but are typically found in more low-lying areas, with an average elevation of just under 100m. They never occur in particularly large flocks, with a high count of 12 birds at Gold Creek Reservoir [@fuller2011ebirdS15530415] and only a handful of further records of more than 5 birds on a checklist. Cicadabirds are full summer migrants in south east Queensland, with peak numbers across November-February, dropping off to almost no records between May and September.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+As a species seemingly quite reliant on undisturbed woodland habitats, Cicadabirds are at risk of habitat loss due to deforestation across much of their range. Fortunately, most of the remnant woodland in the Brisbane LGA is protected land (e.g. in D'Aguilar National Park) and so at less of a risk of logging and destruction.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
+
+Cicadabirds are found across most of Brisbane including on Moreton Island, but are patchy and do not occur anywhere regularly in large numbers. The most records come from the mid-western suburbs , from Moggill in the south to Mt Nebo in the north, although it is likely the species also occurs regularly further west and in the Camel's Head but is underreported due to a lack of data. Similarly over on Moreton Island; there is plenty of suitable habitat for birds, particularly in the forested south half, so it is likely that birds are present (and may also breed) across summer on the island. More survey work is needed to determine this.
+
+Within Brisbane, birds are found almost exclusively in remnant forested habitats: rainforest, wet sclerophyll and dry woodland. They are most common in wet sclerophyll, here the reporting rate is 13% across the whole year. Birds are also occasionally found in wetland and heath habitats (~5% of checklists), and are only rarely found in non-remnant, built-up and estuarine areas. Such low reporting rates across all habitats indicate that even over summer, this is not a particularly frequently encountered species.
+
+Seasonally, the distribution of Cicadabirds shows a clear migratory pattern, with birds being almost completely absent from the city in the cooler months. The very few records of overwintering birds are spread out across the city from Nudgee in the north east to Anstead in the south west, indicating that the location within the LGA of birds does not change significantly, but the majority of birds migrate north toward Cape York and New Guinea over winter.
+
+**Seasonality**
+
+There are only 4 breeding records of Cicadabirds in Brisbane, 3 from Tinchi Tamba and 1 from Fitzgibbon Bushland. This is somewhat surprising given that the species breeds over the summer months (i.e. while it is in Brisbane). These four records are from mid-December to early January, in line with the season reported more widely across the range. It would be good to collect more breeding data for this species within Brisbane.
+
+**Trends**
+
+The reporting rate of Cicadabirds in Brisbane has remained somewhat stable throughout the Atlas period, with perhaps a slight overall increase in reports in the past decade. The average reporting rate is 5%, with 2014 being the best year so far for the species, where birds were reported on over 7.5% of checklists. There is a noticeable amount of annual variation in the reporting rate however, which may indicate migration patterns or birds following climate conditions as they move down the east coast of Australia in Spring and back again in Autumn. More work across several years would be helpful to further determine the nature of this species' abundance year-to-year.
+
+Cicadabirds are not of significant conservation concern within Brisbane in the sense that their population appears to be relatively stable, if not increasing, and their key habitats are somewhat well-protected under already-established bushland reserves and parks. They are still at risk of some habitat loss due to deforestation, which may impact the population, and - being a migratory species - could be affected by long-term climate change modifying their range. It would be good to monitor this species particularly, as the population health is likely indicative of the wider health of Brisbane's bushland and migratory birds.
+
+**Information Gaps**
+
+- Collect more information on this species' distribution in the western forests and Moreton Island
+- Collect more breeding data for the birds
+- Determine the causes of year-to-year abundance variation
+
+**Key Conservation Needs**
+
+- Protect bushland habitats which this species frequents
+
+**Contributors to Species Account**
+
+Louis Backstrom 
 
 ```{r}
 end_two_column_layout()
