@@ -4,7 +4,7 @@ The following pages contain species accounts for all birds known to have occurre
 
 Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas. Currently only a handful of species have draft accounts written - we need more writers!
 
-Species with draft accounts: 19
+Species with draft accounts: 20
 
 - [Magpie Goose](https://brisbanebirds.com/magpie-goose-anseranas-semipalmata.html)
 - [Pacific Black Duck](https://brisbanebirds.com/pacific-black-duck-anas-superciliosa.html)
@@ -23,6 +23,7 @@ Species with draft accounts: 19
 - [Buff-rumped Thornbill](http://brisbanebirds.com/buff-rumped-thornbill-acanthiza-reguloides.html)
 - [Cicadabird](http://brisbanebirds.com/cicadabird-edolisoma-tenuirostre.html)
 - [White-breasted Woodswallow](https://brisbanebirds.com/white-breasted-woodswallow-artamus-leucorynchus.html)
+- [Spangled Drongo](http://brisbanebirds.com/spangled-drongo-dicrurus-bracteatus.html)
 - [Australian Reed-Warbler](http://brisbanebirds.com/australian-reed-warbler-acrocephalus-australis.html)
 - [Common Myna](http://brisbanebirds.com/common-myna-acridotheres-tristis.html)
 
