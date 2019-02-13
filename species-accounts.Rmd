@@ -4,9 +4,10 @@ The following pages contain species accounts for all birds known to have occurre
 
 Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas. Currently only a handful of species have draft accounts written - we need more writers!
 
-Species with draft accounts: 20
+Species with draft accounts: 21
 
 - [Magpie Goose](https://brisbanebirds.com/magpie-goose-anseranas-semipalmata.html)
+- [Black Swan](http://brisbanebirds.com/black-swan-cygnus-atratus.html)
 - [Pacific Black Duck](https://brisbanebirds.com/pacific-black-duck-anas-superciliosa.html)
 - [Australian Owlet-nightjar](http://brisbanebirds.com/australian-owlet-nightjar-aegotheles-cristatus.html)
 - [Australian Swiftlet](http://brisbanebirds.com/australian-swiftlet-aerodramus-terraereginae.html)

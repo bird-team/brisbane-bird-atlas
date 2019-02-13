@@ -6,10 +6,10 @@ species_name <- "Cygnus atratus"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Locally common breeding resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Widespread but patchy breeding resident of wetlands across much of Brisbane. Occurrence year-to-year fluctuates but not known if regular migratory movements or nomadism occurs. Not of conservation concern, but dependent on wetlands, which are vulnerable to habitat degradation. Photo by Louis Backstrom, Kedron Brook Wetlands, 15 Mar 2018.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+Australia's distinctive native swan, the Black Swan is a gregarious species found in flocks of up to 200 birds across Brisbane's wetlands and waterways. The species is locally common but very patchily distributed within the area, being typically restricted to a number of regular sites, although given its mobility and propensity for wandering could occur anywhere with suitable habitat or as a flyover.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,43 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+A colonial gregarious species of wetlands and lakes, Black Swans can be found in large numbers across nearly all of Australia and seem quite well-adapted to life in a human-dominated world, although they do face some conservation pressures, with local population declines recorded at various locations.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Black Swans are distributed across most of Brisbane but are concentrated in the eastern lowlands, with only a handful of records from the west or Moreton Island. They occur patchily, favouring large lakes and well-vegetated wetlands. Although they never occur in very large numbers in Brisbane, they have been reported breeding from quite a few locations around Brisbane, and large counts of 100 or more birds have been reported from 6 locations, all near the south east coast. The largest counts are both of 200 birds, one from Tingalpa Creek Reserve on the 2nd of February 2003 [@reid2003ebirdS16639920] and the other from Lytton Wader Roost and Wynnum Mangrove Boardwalk on the 2nd of September 2012 [@fuller2012ebirdS15949309]. Black Swans are present in Brisbane year-round, with no clear seasonal trend to their abundance.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+As a species quite dependent on wetland habitats, which are under threat from modification and destruction, care is needed to preserve the remaining high quality habitats across Brisbane which this species frequents. Additionally, the significant numbers of this species at the artificial Swan Lake at the Port of Brisbane shows that man-made habitats can be suitable for this species as well, if carefully designed to suit the birds.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
+
+Black Swans have been reported from all across Brisbane, except in the higher altitude forests of the D'Aguilar Range in the Camel's Head; there are very few records from Moreton Island either, although it is possible birds are present but underreported. It is a lowland species within Brisbane, occurring up to 150m in altitude at a mean height of approximately 10m. There is no clear seasonal pattern in the elevation of records. Black Swans have been reported from a number of different habitats, but only reach a 10% reporting rate in two: heath and wetland. Given that heathland is not a common habitat for this species in the literature [@HANZAB1] and there are very few data from heathland habitats in Brisbane (as the habitat is restricted almost exclusively to Moreton Island, which is severely underbirded), it is likely this is a statistical anomaly and not indicative of actual habitat preference exhibited by the birds. Disregarding this, the species show a clear preference for wetland habitats, with secondary preference for non-remnant areas and estuaries. Birds have never been reported from rainforest, sclerophyll or woodland habitats, even as flyovers.
+
+Within Brisbane, the geographic distribution of Black Swans is likely driven by their requirement for particular wetland habitats with suitable aquatic vegetation available to them as food, and while these types of lakes and waterways are more common in the east of the city than the west, it is somewhat surprising that birds are not reported more frequently at well-watched sites such as Priors Pocket, Gold Creek Reservoir and Lake Manchester, especially given the species is more common further west in the Lockyer Valley and on Lake Wivenhoe. The seasonal distribution of Black Swans shows no clear variation, indicating that birds are resident year-round at the same sites and do no exhibit regular movements or migratory behaviour, although there is perhaps some evidence of broader nomadism (see Trends).
+
+**Seasonality**
+
+There are 48 reports of Black Swan confirmed breeding activity from Brisbane, spanning nearly every month of the year. The only month without breeding activity is March, with a clear peak in the season over July, where nearly 10% of reporting checklists have breeding activity as well. This indicates that birds within Brisbane seem to breed whenever there are suitable conditions rather than following a clear breeding season, although it is likely they more often than not breed in late winter - early spring; this is in line with the season as reported in the literature across Australia [@HANZAB1]. It would be good to collect more breeding data for this species (even though this is one of the better surveyed breeding birds in the _Atlas_) to determine the true breeding season.
+
+**Trends**
+
+The reporting rate for Black Swans in Brisbane has been highly variable over the _Atlas_ period, with annual rates varying from 2% to 12% over the past decade. This may be indicative of wider climatic conditions resulting in birds moving around the state and country in response to habitat availability, but more work is needed to determine this. Interestingly, the three best years for this species, 2010, 2011 and 2012 were all quite wet years in the interior of Australia, so perhaps there is some relation between the regions - this is yet to be confirmed. Swans are known to wander extensively during dry conditions; this is seemingly well supported by the _Atlas_ data.
+
+The species is not of any significant conservation concern in the sense that Brisbane's birds are quite peripheral to the majority of Australia's population (flocks of tens of thousands of birds are not uncommon further south), but they are nonetheless at a level of risk of habitat degradation and loss. Birds are also hunted during the shooting season in Australia's southern states, and while this is not an issue in Queensland it nonetheless presents a risk to the species as a whole. Given the likely connection between Brisbane's birds and broader Australian populations and habitats, Black Swans should be monitored closely to check for any long-term population declines that may be indicative of broader threats to the species' survival.
+
+**Information Gaps**
+
+- Collect data on this species in suburban lakes and over on Moreton Island
+- Determine if there is any connectivity between Brisbane's birds and inland populations
+- Understand the impact of climatic conditions on abundance and location of our birds
+
+**Key Conservation Needs**
+
+- Protect wetlands from being drained
+- Protect wetlands from loss of requisite vegetation
+- Prevent hunting of this species across its range
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()
