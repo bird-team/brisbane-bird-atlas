@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A. Very localised breeding resident and wanderer.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Highly localised patchy breeding resident and likely migrant to wetlands and swamps in Brisbane. More records in summer and very few in winter, but birds are likely in the area all year-round. Not of conservation concern, but the small size of Brisbane's population means this species is at greater risk of population disturbance.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+The Plumed Whistling-Duck is a medium-sized species of duck with a drab pale-brown body and distinctive feathered plumes on its sides. It is a gregarious species, with flocks of hundreds or thousands being relatively common further to the north in the Top End and Cape York, within Brisbane it is typically found in smaller flocks of a dozen birds or less. Its distribution is mostly restricted to a handful of regular or occasional sites, but given the birds' propensity for nomadism they may turn up on any suitable water body in Brisbane.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,45 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+A colonial species of wetlands and swamps across northern and eastern Australia, Plumed Whistling-Ducks can reach very high abundances further north in the state, but within our region they are significantly rarer and form much smaller flocks. Despite this, the population of this species appears stable, even in the south where they are significantly less common.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Plumed Whistling-Ducks are generally restricted to a handful of sites scattered around Brisbane, although they have been recorded as once-offs at a large number of locations across 39 Atlas squares, indicating that they roam widely despite showing clear preferences for long-term sites. They have never occurred in particularly large numbers in Brisbane, with a high count of 120 birds in a flock [@culican2017ebirdS39504022] in October 2017 at their stronghold on Adavale St, Brookfield, and an average of 10.6 birds per reporting checklist. Counts of over 50 birds in one flock have been reported from a further 3 locations. Birds are present in the area year-round, although they are significantly more common over summer (there are only 7 records from July), indicating that they are likely a breeding migrant to our area.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+As a species dependent on particular freshwater swamp and wetland habitats, which are under pressure from modification and loss, care is needed to maintain high quality wetlands fringed with emergent vegetation preferred by Magpie Geese [@corbett1996experimental]. Of particular importance are the major sites in which this species is concentrated - especially the Adavale St Dams in Brookfield, where this species is almost certain to be found.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
+
+Plumed Whistling-Ducks have been found nearly all across Brisbane, with records from 39 Atlas squares. They have never been recorded in the north west nor Moreton Island and are very scarce across the southside, with most records being concentrated around the western suburbs between Moggill and the city. There are also a handful of sites in the east of the city where they are somewhat regular, including Sandy Camp Rd Wetlands and Dowse Lagoon. By far the best location for this species in Brisbane are the Adavale St Dams in Brookfield, which are part of the [Pisces Enterprises](https://www.piscesenterprises.com/) property but can be easily viewed from the road. Birds are resident here seemingly year-round, and can be found without much difficulty. Other good sites for the species include Kholo and Moggill, where flocks regularly turn up on suitable farm dams and the like.
+
+Within Brisbane, Whistling-Ducks are a lowland species, occurring almost exclusively under 100m with no clear seasonal patterns visible in their altitudinal preference. Birds have only been reported from 2 habitats at significant levels - non-remnant (2%) and wetland (2%). Such low reporting rates indicate that at best this is a rarely encountered species within Brisbane. Presumably their geographic distribution is mainly driven by the availability of adequate wetland, swamp or similar aquatic habitats for them to feed and roost near. It is perhaps a little surprising that birds do not turn up more regularly at more sites around Brisbane, particularly in the west, given that they are common in neighbouring regions to the north (Moreton Bay) and west (Somerset).
+
+The distribution of Plumed Whistling-Ducks in Brisbane shows quite a clear seasonal pattern, with birds being mostly absent from the region in the cooler months. Records from autumn-spring are nearly all from Brookfield and other key sites, while summer is the most frequent period for birds to turn up at scattered locations around the city. Given that the species breeds during the wet season [@HANZAB1] - summer - this result might be explained by wandering juvenile or supernumerary birds.
+
+**Seasonality**
+
+There are only 7 reports of Plumed Whistling-Duck breeding activity in Brisbane: 1 from January and 3 each from March and April. These are all of recently fledged young (downy ducklings), indicating that autumn is the end of the breeding period, with nesting likely happening earlier in the summer. This aligns with the breeding season as reported in the wider literature, which describes the species as nesting over the wet season [@HANZAB1]. Interestingly, while breeding has been reported from 5 locations - Anstead Bushland, Moggill Wetlands, Shelley Rd, Lake Manchester and a record of a family crossing the Gateway Motorway - there are no records of birds breeding at the Adavale St Dams, despite this being the most regular site for the birds. This may be a simple result of not enough data, or it may be indicative of a more notable pattern in this species' breeding habits. Clearly, much more work is needed to determine the breeding activity of this species in Brisbane.
+
+**Trends**
+
+The reporting rate of Plumed Whistling-Ducks in Brisbane has been very varied from year-to-year across the Atlas period, with several years having no reports at all of the species, and one year (2015) having birds reported on over 3% of all checklists. This result is probably partly explained by many of the sites that this species frequents (such as those in the western suburbs, including the Adavale St Dams) being only recently "discovered" by birders; indeed, the first checklist from Adavale St Dams is from October 2015 [@culican2015ebirdS25533196] and many other sites have only been visited intensely or at all in the past 5 years. The other explanation for this result - and for the possible increase in records, is the warming of Brisbane's climate resulting in more suitable conditions for this species, with a consequent range extension southwards down the east coast of Australia. Clearly, more work is needed on this species (and many others like it), to determine the impact that climate change is having on our birdlife.
+
+The species is not of any significant conservation concern in the sense that Brisbane’s population is rather peripheral to the main distribution of the species in Australia, and appears to be fairly stable over time. However, decreases in populations as a result of land clearing, habitat destabilisation and other threats do pose a small risk to this species, and given the presently small population size of the species in Brisbane, our birds should be monitored closely for any trends in either direction.
+
+**Information Gaps**
+
+- Identify breeding habits of this species
+- Find more regular locations for the birds (e.g. in the western regions)
+- Understand the seasonal movements of this species
+- Determine whether birds regularly breed in Brisbane or move elsewhere to breed
+
+**Key Conservation Needs**
+
+- Monitor this species population for any increases or decreases
+- Determine the impact that climate change may have on the species' distribution across Australia
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()
