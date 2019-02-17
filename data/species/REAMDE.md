@@ -11,5 +11,7 @@ B: Redundant & unused
 C: Naturalised / introduced
 D: A species that likely only occurred as an escapee, but could in theory turn up wild
 E: Definite escapee
-F: Fossil records or records pre-1800 
+F: Fossil records or records pre-1800
+G: Domestic types, regardless of wild/escapee status
+H: Hybrids 
 X: Category pending
