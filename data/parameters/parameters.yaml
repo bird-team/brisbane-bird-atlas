@@ -91,12 +91,19 @@ records:                                                         # parameters fo
     - "Incidental"
   breeding_column_name: BREEDING BIRD ATLAS CODE                 # column name descirbing breeding activity
   breeding_activity_names:                                       # list of breeding activity codes that count as breeding activity
-    - "NY"
+    - "NY"                                                       # these six are the original breeding codes used up until 270219
     - "NE"
     - "ON"
     - "FL"
     - "FY"
     - "NB"
+
+    - "PE"                                                       # these six are the additional breeding codes used, in order to follow the eBird BREEDING BIRD ATLAS CATEGORY
+    - "CN"
+    - "DD"
+    - "UN"
+    - "CF"
+    - "FS"
 
 audio:                                                           # parameters for audio files
     scientific_column_name: species_scientific_name              # column name with the species' names of the audio files
