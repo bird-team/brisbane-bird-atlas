@@ -6,7 +6,7 @@ species_name <- "Myzomela sanguinolenta"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Scarce resident and common winter visitor.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")
