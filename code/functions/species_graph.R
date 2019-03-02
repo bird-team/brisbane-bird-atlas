@@ -147,7 +147,9 @@ species_graph <- function(x, species_data, record_data) {
                           color = "black", width = 0.75) +
         ggplot2::xlab("") +
         ggplot2::ylab("Breeding reported (%)") +
-        ggplot2::scale_y_continuous(limits = c(0, ifelse(breeding_ymax < 1e-15, 1, breeding_ymax))) +
+        ggplot2::scale_y_continuous(
+          limits = c(0, ifelse(max(d5$rate, na.rm = TRUE) < 1e-15, 
+                               100, breeding_ymax))) +
         ggplot2::scale_x_discrete(drop = FALSE) +
         ggplot2::theme(
           plot.title = ggplot2::element_blank(),
