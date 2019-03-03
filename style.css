@@ -75,9 +75,10 @@ a.leaflet-control-zoom-out {
   background-color: #fff !important;
 }
 
-/* make leaflet fit window */
-div.leaflet-container {
+/* make leaflet fit window and add spacing below the widget*/
+div.leaflet-touch-zoom {
   width: 100% !important;
+  margin-block-end: 1em;
 }
 
 /* make border around leaflet legend black */
