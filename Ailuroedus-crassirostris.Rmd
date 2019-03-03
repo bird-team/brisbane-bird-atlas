@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Common resident in rainforest, breeding unconfirmed.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Localised resident of elevated rainforest. Presumably present all year-round, but no confirmed breeding records as yet. Not of conservation concern, but quite range restricted within Brisbane and relies on remnant rainforest which is partially threatened.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+Best known for its cat-like wailing call, the Green Catbird is a medium-sized bowerbird of rainforest and wet sclerophyll forests, found from central Queensland down to southern New South Wales. Typically found in small groups, counts of up to 20 have been recorded in Brisbane. Green Catbirds are very localised, being almost exclusively found in the elevated rainforests of the Camel's Head, although there is some evidence for them moving around, and they may be more widely distributed within the area than current data suggest.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,43 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Plumaged in brilliant-green and armed with a piercing wailing call, Green Catbirds are almost always heard before they are seen. Distributed across the subtropical rainforests of south east Australia, they occur patchily across nearly all of their range (in part owing to the fragmentation of their habitat post European settlement), especially within the Brisbane region. It occurs exclusively within rainforest and wet sclerophyll habitats, typically above 400m although occasional birds are recorded at lower altitudes. It has never been reported in large numbers in Brisbane, with a high count of 20 birds [@turnbull2014ebirdS20528376] being a significant outlier. Counts of over 5 birds are quite rare, with most records being of between 1-3 individuals.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Green Catbirds are present in Brisbane year-round, but are yet to be recorded breeding in the area. This is likely due to the difficulty of nest location and the relative secrecy with which they conduct themselves during the breeding season compared to their relatives in the Bowerbird family (Catbirds do not build bowers). Furthermore, they are reported least frequently in the last few months of the year, coinciding with the start of the breeding season, so it is possible birds either move to less birded areas (or outside the Brisbane border) to breed, or that they are simply less conspicuous when they breed and therefore are reported less.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+As a species very much dependent on large areas of undisturbed subtropical rainforest or wet sclerophyll, this species is somewhat at threat from habitat modification and loss. Consequently, care is needed to ensure suitably large and well-connected areas of habitat remain for this species to live and breed in - of particular importance are the sites within Brisbane where this species is most commonly found; Mount Glorious and Mount Nebo.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
+
+Green Catbirds are very much a range-restricted species within Brisbane, being found mostly in the elevated subtropical rainforest found across the Camel's Head and Back. They have only been recorded from 13 Atlas Squares, although given that many unsurveyed Atlas squares in the Camel's Head contain suitable habitat for them they are likely more widely distributed and more common than the data currently suggest. Birds occasionally wander, with the odd record from the lowland rainforests around Brookfield and Gold Creek Reservoir, but stay within the confines of rainforest and wet sclerophyll habitats. Even in rainforest, where they are most abundant, the reporting rate is only a touch over 20%, indicating that this is an uncommonly-encountered species within Brisbane.
+
+The distribution of Green Catbirds does not show any clear seasonal variation, although there is some evidence to suggest that birds move down into lower altitudes over winter (see graph), but this needs more data from a wide set of locations to be verified. Such movements are common in other rainforest species though, so this would not be a surprising result. This could also be a result of wandering juvenile and immature birds, who would have left the nest at the end of summer and would be searching for areas to set up their territories over winter. Once again, this needs more data to be verified.
+
+**Seasonality**
+
+There are no confirmed reports of Green Catbirds breeding within Brisbane. This disappointing result is likely due to the difficulty of locating a nest within dense rainforest and the relatively inconspicuous nature of the Catbird's breeding activities - especially when compared to its Bowerbird relatives. Consequently, breeding data is needed for this species to determine whether its breeding behaviour is similar to that reported in the literature. Catbirds have been found to call more during the breeding season [@woodall1997seasonal], so locating birds and nests during this period should be achievable, albeit difficult.
+
+**Trends**
+
+The reporting rate for Green Catbirds has been quite variable over the _Atlas_ period, with some years having no reports at all while other years having quite a high reporting rate - over 2% in 2011. This is likely explained by small sample size variation and changes in eBird observer behaviours, as many of the best sites for this species (such as Lawton Road) have only been "discovered" recently. There is some evidence for a minor increase in abundance since 2013, although once again this is likely explained by more birders visiting the areas this species inhabits, rather than an actual increase in the population size.
+
+This species is not of any significant conservation concern in the sense that Brisbane's population only makes up a relatively small proportion of the wider distribution of this species within subtropical Australia, and it appears to be relatively stable over time. However, many subtropical species are threatened by climate change and Brisbane's Catbirds are likely to suffer somewhat as a result of this, but this needs further investigation. Additionally, population declines as a result of habitat loss, modification or fragmentation are likely to occur if this species' habitat is not protected properly. Fortunately, within Brisbane much of their range lies in the D'Aguilar National Park and as such is unlikely to be cleared.
+
+**Information Gaps**
+
+- Collect as much breeding data as possible
+- Survey the Camel's Head and surrounds to fill in distribution / knowledge gaps for this species
+- Understand whether individuals move around the city over the year
+- Determine the impact of environmental and climate change on this species
+
+**Key Conservation Needs**
+
+- Protect this species habitat from being destroyed or fragmented
+
+**Contributors to Species Account**
+
+Louis Backstrom
+
 
 ```{r}
 end_two_column_layout()

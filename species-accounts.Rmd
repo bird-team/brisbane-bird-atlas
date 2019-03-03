@@ -16,6 +16,7 @@ Species with draft accounts: 22
 - [Grey Goshawk](https://brisbanebirds.com/grey-goshawk-accipiter-novaehollandiae.html)
 - [Brown Goshawk](http://brisbanebirds.com/brown-goshawk-accipiter-fasciatus.html)
 - [Collared Sparrowhawk](http://brisbanebirds.com/collared-sparrowhawk-accipiter-cirrocephalus.html)
+- [Green Catbird](http://brisbanebirds.com/green-catbird-ailuroedus-crassirostris.html)
 - [Eastern Spinebill](https://brisbanebirds.com/eastern-spinebill-acanthorhynchus-tenuirostris.html)
 - [Spiny-cheeked Honeyeater](https://brisbanebirds.com/spiny-cheeked-honeyeater-acanthagenys-rufogularis.html)
 - [Yellow-rumped Thornbill](https://brisbanebirds.com/yellow-rumped-thornbill-acanthiza-chrysorrhoa.html)
