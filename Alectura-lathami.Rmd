@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Common and expanding breeding resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Widespread and increasing breeding resident. More records toward the end of the year, coinciding with the breeding season and building of incubation mounds. Not of conservation concern.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+The Australian Brushturkey is a common sight in parks and gardens for many Brisbane residents, with dark grey plumage set off wonderfully with yellow wattles and a red face and neck. They are well known for their impressive earthmoving abilities, capable of moving enormous quantities of leaf litter to form an incubation mound for their eggs. They are common across nearly all of Brisbane and appear to be increasing in abundance.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,41 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+A common species of mixed habitats across nearly all of Brisbane, Australian Brushturkeys are an excellent example of a species that has successfully adapted to suburban living. They are an increasingly common sight in parks and gardens, as well as remaining widespread across remnant habitats, including rainforest, wet sclerophyll and dry woodland.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Brushturkeys are widely distributed across all of mainland Brisbane, having been reported from nearly every surveyed _Atlas_ square. They never occur in large numbers, with most records being of single birds or pairs, although groups of up to ten are not uncommon. Breeding has been reported from more than two dozen locations, with the majority of these being of nest building (NB) behaviour or recently fledged young (FL), both conspicuous and easily detectable activities. Counts of over 15 birds are known from 4 locations, with a high count of 23 birds at Lone Pine Koala Sanctuary in January 2016 [@drucker2016ebirdS26751335].
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Brushturkeys are present in Brisbane all year-round, with a slight increase in reporting rate over spring and early summer, coinciding with the breeding season when adults are more active and conspicuous when mound-building, and chicks (which are precocious) and juveniles wandering widely in search of suitable habitat [@goth2003juvenile]. While Brushturkeys are somewhat less threatened by habitat loss and fragmentation than many other local species, they are at risk of predation by domestic pets, with newly hatched chicks especially vulnerable to cats and dogs [@jones1991australian]. Furthermore, human-animal conflict arising from this species propensity to dig up and destroy gardens continues to create problems for this species' survival in an urban environment [@goth2006present].
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
+
+Australian Brushturkeys are widely distributed across Brisbane, with the exception of Moreton Island, where the species has only been reported once. They occur across the entire elevational gradient, although most reports a from below 100m. Birds have been reported in all habitats except for ocean, but are most common in rainforest, wet sclerophyll and dry woodland (>20% of all checklists), and less common in non-remnant and wetland environs. They are only occasional visitors to heath, built-up and estuarine habitats.
+
+The geographic distribution of Brushturkeys in Brisbane is presumably driven by the availability of leaf-litter and ground scrub for the birds to use as a food source and as matter to be used in nest-building. This explains the species' absence on Moreton Island, although given the low number of checklists submitted for the Island it is possible there are localised populations of this species present there.
+
+The distribution of Australian Brushturkeys within Brisbane shows no discernible variation across the year, with the same areas inhabited in every season. Breeding has been reported from many sites around Brisbane.
+
+**Seasonality**
+
+Given the conspicuous nature of mound-building and the precociousness of Brushturkey chicks, it is not surprising that this species has more breeding records than most others within the Brisbane area. Breeding activity has been reported in nearly every month, with a small peak over Jul-Sep followed by a slightly larger one in Dec-Jan. The exact reasons for this are unclear, although it is possibly a peak in nest-building and associated activities followed by a peak in chicks hatching and wandering. Despite the relatively significant amount of breeding data already available for this species, it would be good to collect additional data to be able to make finer-scale conclusions about this species' breeding season and habits from within the LGA.
+
+**Trends**
+
+Over the _Atlas_ period, the reporting rate for Australia Brushturkeys has remained relatively stable, albeit with a noticeably low reporting rate in 2009 that is as yet unexplained. However, this species is widely reported in the literature, e.g. [@jones1991australian], to have significantly increased in abundance within Brisbane over the 1970s-1990s. It would seem that this explosion in population has now levelled out, with Brushturkeys now occupying most suburban parks and gardens as well as many bushland reserves.
+
+Despite this increase in population, these birds are still somewhat threatened by anthropogenic activities, with domestic pets being a key one. Loose cats and dogs will predate chicks (and sometimes even adults), threatening the long-term survival of the species. Furthermore, many landowners are increasingly irritated by adult Brushturkeys digging up their gardens for use in nesting mounds, creating human-wildlife conflict that can result in negative outcomes for the birds. However, for the moment these threats seem to be well-controlled and the population appears stable.
+
+**Information Gaps**
+- Determine the distribution of this species on Moreton Island
+- Collect some more breeding data
+
+**Key Conservation Needs**
+- Educate landowners about the threats to the species from pets
+- Protect bushland and remnant habitats from being cleared
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()
