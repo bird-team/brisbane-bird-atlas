@@ -125,13 +125,20 @@ push_assets:
 	&& docker exec bba sh -c "cd assets; zip -r widgets.zip widgets" \
 	&& docker exec bba sh -c "cd assets; zip -r graphs.zip graphs" \
 	&& docker exec bba sh -c "cd assets; zip -r tables.zip tables" \
-	&& docker exec bba sh -c "cd assets; zip -r surveyor-sheets.zip surveyor-sheets" \
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/push_assets.R" \
-	&& docker exec bba sh -c "Rscript /tmp/code/scripts/push_surveyor_sheets.R" \
 	&& docker exec bba sh -c "rm assets/maps.zip" \
 	&& docker exec bba sh -c "rm assets/widgets.zip" \
 	&& docker exec bba sh -c "rm assets/graphs.zip" \
-	&& docker exec bba sh -c "rm assets/tables.zip" \
+	&& docker exec bba sh -c "rm assets/tables.zip" || true
+	@docker stop -t 1 bba || true && docker rm bba || true
+
+# push surveyor sheets to online storage
+push_surveyor_sheets:
+	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
+	&& docker cp . bba:$(PATHSEP2)tmp/ \
+	&& docker cp "$(USRHOME)/.Renviron" bba:$(PATHSEP2)root/.Renviron \
+	&& docker exec bba sh -c "cd assets; zip -r surveyor-sheets.zip surveyor-sheets" \
+	&& docker exec bba sh -c "Rscript /tmp/code/scripts/push_surveyor_sheets.R" \
 	&& docker exec bba sh -c "rm assets/surveyor-sheets.zip" || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
