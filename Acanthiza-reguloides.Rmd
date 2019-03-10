@@ -6,7 +6,7 @@ species_name <- "Acanthiza reguloides"
 species_title(species_name, species_data)
 ```
 
-Category A; Locally common breeding resident.
+Category A; Uncommon localised resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Locally common patchy breeding resident mostly confined to the dry forests of D'Aguilar National Park in the west of the region. More records in winter, but no clear evidence of movements along temporal or elevational lines. Not of conservation concern, although records are perhaps decreasing in frequency so population should be monitored.")

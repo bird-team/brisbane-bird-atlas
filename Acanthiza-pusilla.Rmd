@@ -6,7 +6,7 @@ species_name <- "Acanthiza pusilla"
 species_title(species_name, species_data)
 ```
 
-Category A; Fairly common breeding resident in appropriate habitat.
+Category A; Locally common widespread resident.
 
 ```{r}
 render_species_profile(species_name, caption = "The common thornbill species in Brisbane. Widespread across the remnant forests of the city, particularly in the north west slopes. No clear seasonal trend to records although slightly fewer records in the latter months of the year. Not of conservation concern and widely distributed beyond Brisbane environs.")

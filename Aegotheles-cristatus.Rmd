@@ -6,7 +6,7 @@ species_name <- "Aegotheles cristatus"
 species_title(species_name, species_data)
 ```
 
-Category A; Scarce resident, presumed breeding; under-surveyed.
+Category A; Uncommon widespread resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Scarce resident and presumed breeder in remnant habitat around the city. Birds are typically inconspicuous at daytime roosts but can be heard calling at night when they are active. Likely underreported and more common than currently indicated in the data. Not of conservation concern.")

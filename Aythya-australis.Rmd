@@ -6,7 +6,7 @@ species_name <- "Aythya australis"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Common widespread partial winter migrant.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")

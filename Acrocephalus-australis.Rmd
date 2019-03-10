@@ -6,7 +6,7 @@ species_name <- "Acrocephalus australis"
 species_title(species_name, species_data)
 ```
 
-Category A; Locally common breeding resident.
+Category A; Locally common widespread resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Locally common breeding resident and perhaps partial migrant of wetland verges. More records in spring and summer but possible birds are simply more conspicuous during this time through calls and displays, rather than more abundant. Not of conservation concern and population appears to be stable.")

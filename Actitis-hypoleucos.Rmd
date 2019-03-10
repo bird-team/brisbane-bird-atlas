@@ -6,7 +6,7 @@ species_name <- "Actitis hypoleucos"
 species_title(species_name, species_data)
 ```
 
-Category A; Rare but regular summer visitor.
+Category A; Rare localised summer migrant.
 
 ```{r}
 render_species_profile(species_name, caption = "Rare summer migrant to muddy wetlands across the city. Some birds may occasionally overwinter but no records as yet of such behaviour. Birds are typically inconspicuous and may be more common than reporting rate indicates. Not of significant conservation concern in Australia. Photo by Louis Backstrom, Kedron Brook Wetlands, 4 Feb 2018")
@@ -88,7 +88,7 @@ Given the species rarity in Brisbane, there are no clear trends apparent within 
 
 **Contributors to Species Account**
 
-Louis Backstrom 
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()

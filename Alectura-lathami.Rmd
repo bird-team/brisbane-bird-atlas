@@ -6,7 +6,7 @@ species_name <- "Alectura lathami"
 species_title(species_name, species_data)
 ```
 
-Category A; Common and expanding breeding resident.
+Category A; Abundant widespread resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Widespread and increasing breeding resident. More records toward the end of the year, coinciding with the breeding season and building of incubation mounds. Not of conservation concern.")

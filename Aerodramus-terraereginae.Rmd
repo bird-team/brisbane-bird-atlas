@@ -6,7 +6,7 @@ species_name <- "Aerodramus terraereginae"
 species_title(species_name, species_data)
 ```
 
-Category Pending; Reported vagrant, but no documented records.
+Category Pending; Needs verification.
 
 ```{r}
 render_species_profile(species_name, caption = "Endemic swiftlet of north east Queensland. One report from Brisbane region but no documentation, unverified. Not of conservation concern, but range somewhat restricted.")

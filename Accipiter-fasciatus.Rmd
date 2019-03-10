@@ -6,7 +6,7 @@ species_name <- "Accipiter fasciatus"
 species_title(species_name, species_data)
 ```
 
-Category A; Fairly common breeding resident.
+Category A; Common widespread resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Widespread breeding resident across varied habitats. Perhaps more common during breeding period in spring but no clear long-term trends apparent. Not of conservation concern but faces similar threats to most other raptors in the region.")
