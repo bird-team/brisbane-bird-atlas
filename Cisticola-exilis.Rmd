@@ -6,7 +6,7 @@ species_name <- "Cisticola exilis"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Locally common widespread resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Photo by Louis Backstrom, Kedron Brook Wetlands, 11 Feb 2018")

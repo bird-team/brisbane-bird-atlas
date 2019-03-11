@@ -6,7 +6,7 @@ species_name <- "Coracina lineata"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Rare localised summer migrant.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")

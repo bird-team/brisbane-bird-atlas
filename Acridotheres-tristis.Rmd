@@ -6,7 +6,7 @@ species_name <- "Acridotheres tristis"
 species_title(species_name, species_data)
 ```
 
-Category D. Common widespread resident.
+Category C; Common widespread resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Widespread introduced pest species that appears to be declining within Brisbane despite rapid expansion across much of Australia. Appears to exhibit a degree of seasonal variation within Brisbane, being nearly twice as abundant over summer, but no clear reason for this pattern. Not of conservation concern owing to pest status.")

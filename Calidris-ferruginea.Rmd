@@ -6,7 +6,7 @@ species_name <- "Calidris ferruginea"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Common widespread summer migrant.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")

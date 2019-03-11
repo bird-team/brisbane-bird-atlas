@@ -6,7 +6,7 @@ species_name <- "Ceyx azureus"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Uncommon localised resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")

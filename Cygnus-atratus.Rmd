@@ -6,7 +6,7 @@ species_name <- "Cygnus atratus"
 species_title(species_name, species_data)
 ```
 
-Category A; Locally common breeding resident.
+Category A; Locally common localised resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Widespread but patchy breeding resident of wetlands across much of Brisbane. Occurrence year-to-year fluctuates but not known if regular migratory movements or nomadism occurs. Not of conservation concern, but dependent on wetlands, which are vulnerable to habitat degradation. Photo by Louis Backstrom, Kedron Brook Wetlands, 15 Mar 2018.")
