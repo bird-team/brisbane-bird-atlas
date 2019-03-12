@@ -6,7 +6,7 @@ species_name <- "Myzomela sanguinolenta"
 species_title(species_name, species_data)
 ```
 
-Category A; Scarce resident and common winter visitor.
+Category A; Common widespread partial winter migrant.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")

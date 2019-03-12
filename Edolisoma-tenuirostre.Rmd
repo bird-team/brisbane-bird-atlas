@@ -6,7 +6,7 @@ species_name <- "Edolisoma tenuirostre"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Locally common widespread summer migrant.
 
 ```{r}
 render_species_profile(species_name, caption = "Moderately common summer migrant to remnant bushland habitats across the city environs. Probably breeds within our region but only a handful of records. Not of conservation concern and numbers are possibly increasing slightly.")
@@ -90,7 +90,7 @@ Cicadabirds are not of significant conservation concern within Brisbane in the s
 
 **Contributors to Species Account**
 
-Louis Backstrom 
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()

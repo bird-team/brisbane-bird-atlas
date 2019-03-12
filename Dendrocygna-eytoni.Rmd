@@ -6,7 +6,7 @@ species_name <- "Dendrocygna eytoni"
 species_title(species_name, species_data)
 ```
 
-Category A. Very localised breeding resident and wanderer.
+Category A; Rare localised partial summer migrant.
 
 ```{r}
 render_species_profile(species_name, caption = "Highly localised patchy breeding resident and likely migrant to wetlands and swamps in Brisbane. More records in summer and very few in winter, but birds are likely in the area all year-round. Not of conservation concern, but the small size of Brisbane's population means this species is at greater risk of population disturbance.")

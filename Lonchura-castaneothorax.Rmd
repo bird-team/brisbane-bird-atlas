@@ -6,7 +6,7 @@ species_name <- "Lonchura castaneothorax"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Common widespread resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")
