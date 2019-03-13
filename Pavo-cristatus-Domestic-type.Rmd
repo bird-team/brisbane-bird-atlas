@@ -6,7 +6,7 @@ species_name <- "Pavo cristatus (Domestic type)"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category G; Domestic.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")

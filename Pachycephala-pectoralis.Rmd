@@ -6,7 +6,7 @@ species_name <- "Pachycephala pectoralis"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Common widespread partial winter migrant.
 
 ```{r}
 render_species_profile(species_name, caption = "Photo by Louis Backstrom, Mill Rd, 9 Sep 2018")

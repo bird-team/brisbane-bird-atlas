@@ -6,7 +6,7 @@ species_name <- "Numenius phaeopus"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Locally common widespread summer migrant.
 
 ```{r}
 render_species_profile(species_name, caption = "Photo by Louis Backstrom, Nudgee Beach, 6 Nov 2018")
