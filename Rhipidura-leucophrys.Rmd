@@ -6,7 +6,7 @@ species_name <- "Rhipidura leucophrys"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Abundant widespread resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Photo by Louis Backstrom, Keith Boden Wetlands, 20 Jan 2018")

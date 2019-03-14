@@ -6,7 +6,7 @@ species_name <- "Todiramphus sordidus"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Common localised resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Photo by Louis Backstrom, Nudgee Beach Reserve, 1 Mar 2018")

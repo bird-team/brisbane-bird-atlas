@@ -6,7 +6,7 @@ species_name <- "Threskiornis molucca"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Abundant widespread resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Photo by Louis Backstrom, Kedron Brook Wetlands, 1 Mar 2018")

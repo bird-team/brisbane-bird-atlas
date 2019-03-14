@@ -6,7 +6,7 @@ species_name <- "Todiramphus macleayii"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Uncommon widespread resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Photo by Louis Backstrom, Gold Creek Reservoir, 22 Feb 2018")

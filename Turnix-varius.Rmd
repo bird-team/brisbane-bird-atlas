@@ -6,7 +6,7 @@ species_name <- "Turnix varius"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Rare widespread resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Photo by Louis Backstrom, Enoggera Reservoir, 1 Jul 2018")

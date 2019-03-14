@@ -6,7 +6,7 @@ species_name <- "Tringa brevipes"
 species_title(species_name, species_data)
 ```
 
-Insert header text here.
+Category A; Locally common localised summer migrant.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")
