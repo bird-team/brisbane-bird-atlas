@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Uncommon localised resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Very localised presumed breeding resident of freshwater swamps and dams. Occurrence fluctuates over the year but no clear seasonal or long-term trend to abundance. Not of conservation concern, but resident population size in Brisbane is limited and prone to disturbance.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+A strikingly-plumaged native duck found across Australia, Pink-eared Ducks are a highly localised species within Brisbane, only regularly occurring at one site, although they have been reported quite widely as nomadic visitors across the region. They are generally found in small-to-medium sized flocks in Brisbane, with counts of up to 100 birds reported.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,43 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+With striking zebra-patterned plumage set off by a bright pink tuft behind the eye (for which they get their name), Pink-eared Ducks are one of Brisbane's most distinctive waterbird species. They are highly localised within the region, being resident at only one or two known sites, despite being visitors to several others across the LGA. Their preference seems to be for non-remnant water habitat, including farm dams, artificial wetlands and water treatment works. They never occur in enormous numbers in Brisbane, although birds are typically found in a flock ranging from 5-30 individuals. Counts of over 50 individuals have only been reported from two locations, Prior's Pocket and Dowse Lagoon, with high count of 106 birds at Prior's Pocket in September 2018 [@gardner2018ebirdS48766209].
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Pink-eared Ducks are present in Brisbane all-year round, although the reporting rate month-to-month is quite variable, with perhaps a slight decrease over late summer and autumn. Furthermore, the species is yet to be reported confirmed breeding in Brisbane, although there are a couple of possible reports involving possible courtship behaviour. It is not known if the species simply is yet to be reported breeding in our region, or whether breeding birds move elsewhere to nest and raise young.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Pink-eared Ducks are one of the most localised species regularly found in Brisbane, favouring only a small number of sites at which they can be regularly found. In particular, the farm dam on Prior's Pocket Road is the most reliable location for the birds in the _Atlas_ region, with birds being reported on approximately 75% of complete checklists from that particular _Atlas_ square. The only other somewhat reliable known site for them in Brisbane is at Dowse Lagoon, but birds are still only present there about 25% of the time. A flock may be present for months on end then disappear seemingly without cause overnight, and not be found again until months later.
+
+Despite being resident at a very limited number of sites, Pink-eared Ducks have occurred quite widely as nomadic visitors across the city, having been reported from over 20 _Atlas_ squares. These have all been mostly concentrated around the creeks and wetlands near the Brisbane River from Moggill in the west to the Port of Brisbane in the east, with a few records also coming from the north east wetlands at Tinchi Tamba, Nudgee and Northgate. The species has never been reported from the forested woodlands to the west of the CBD, nor from Moreton Island nor from the south eastern suburbs. The latter is perhaps slightly surprising, given the availability of suitable small lakes along Oxley Creek (the species is distinctly rare at Oxley Creek Common) and at Tingalpa Reservoir. There is some evidence to suggest this species is quite particular about its habitat choices [@hobbs1957notes]; this may explain the patchy distribution of our birds across the city.
+
+Pink-eared Ducks in Brisbane are very much a lowland species, occurring at an average elevation of just 15m, and are almost exclusively found in non-remnant and wetland habitats, with only a handful of records from estuaries. It would be good to determine the reasons why this species does not occur more widely within the region, given the seemingly large number of equally suitable sites available to the birds.
+
+**Seasonality**
+
+There are no confirmed reports of Pink-eared Ducks breeding in Brisbane, with just two records of probable breeding activity - one each from Prior's Pocket and Dowse Lagoon. It is currently unclear why this is the case; the most likely reason seems to be that given how rare this species is it is plausible that breeding activity has just not yet been reported, but does occur at low frequencies. Another possibility is that birds move elsewhere outside Brisbane to breed, but given that the population at Prior's Pocket seems to be somewhat resident, this seems unlikely. A combination of the two aforementioned options is also likely, and would account for this species' somewhat nomadic tendencies. Furthermore, this species, like many others across Australia, is something of a boom-and-bust breeder, tending to breed inland when conditions are right [@hobbs1957notes], and then dispersing widely once the water dries up, which would explain the lack of breeding records in Brisbane, being a region only usually visited by dispersing nomads. Much more investigation is needed to determine this.
+
+**Trends**
+
+Over the past decade the reporting rate for Pink-eared Ducks in Brisbane has been quite variable, with some years having no reports of the species and others reaching reporting rates of nearly 3% of all checklists. This result is presumably explained by the low population size being more prone to noise and fluctuations in observer preferences (ie variations in the number of people visiting known sites), as well as the nomadic behaviour this species clearly exhibits across most of Brisbane. Furthermore, the species is described as nomadic and opportunistic, so numbers of the species may be lower in Brisbane during wet years in the interior and vice versa. More data and research are needed to confirm if this is the case.
+
+The species is not of any significant conservation concern in the sense that Brisbane’s population is rather peripheral to the main distribution of the species in Australia, and appears to be fairly stable over time. More broadly across its range, this species is moderately threatened by hunting, but this is not an issue in Brisbane. Given the very low size of Brisbane's resident population and the concentration of the species at just two main sites, our birds, and by extension the status of this species in Brisbane, would be put at risk should anything happen to the dam at Prior's Pocket or to Dowse Lagoon. As such, attention is needed to ensure these sites remain viable for the birds to inhabit.
+
+**Information Gaps**
+
+- Identify any further regular sites for this species in Brisbane (perhaps private properties and farms out in the western suburbs)
+- Collect more breeding data
+- Determine whether individuals usually breed in Brisbane or if they move elsewhere
+- Understand the driving factors behind this species' movements in, out and around Brisbane
+
+**Key Conservation Needs**
+
+- Protect this species key sites at Dowse Lagoon and Prior's Pocket
+- Identify and protect any further regular locations for the birds
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()

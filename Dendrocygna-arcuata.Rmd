@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Uncommon localised resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Localised breeding resident of well-vegetated freshwater wetlands. Occurrence fluctuates year-to-year but the extent of any nomadic movement is unknown. Not of conservation concern, but dependent on wetlands, which are vulnerable to habitat change.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+The Wandering Whistling-Duck is a medium-sized duck with plain varied-brown plumage and a distinctive whistling call. A gregarious species, counts of over 100 have been recorded in Brisbane, and flocks numbering thousands are not uncommon further north where this species is abundant. Birds are locally common at a small number of sites but otherwise are patchily distributed across the region.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,43 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+A specialist wetland species of tropical north Australian and south east Asia, Wandering Whistling-Ducks can reach enormous numbers in prime habitat, but are much less common in Brisbane, which lies at the southern end of their global range. Some populations have declined but overall the species appears to be stable, and this is reflected in the abundance of Brisbane's birds.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Wandering Whistling-Ducks are very patchily distributed across Brisbane, only occurring regularly at a handful of sites. They show a clear preference for well-vegetated wetland swamps, natural or artificial, with nearly all counts of more than 50 birds coming from Dowse Lagoon at Sandgate. The highest count recorded for this species in Brisbane is 112 at Dowse Lagoon on the 28th Jun 2015 [@tranter2015ebirdS24076907], a far cry from the counts of tens of thousands sometimes recorded in the Top End. Wandering Whistling-Ducks are present in Brisbane all-year round and do not appear to change in frequency over the seasons, although there is some evidence to suggest that birds may be present in larger numbers during the winter months.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+As a species dependent on wetland habitats, which are under pressure from modification and loss, care is needed to maintain high quality wetlands fringed with emergent vegetation preferred by Wandering Whistling-Ducks. Of particular importance are the major sites in which this species is concentrated, especially Dowse Lagoon and Sandy Camp Road Wetlands.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
+
+Wandering Whistling-Ducks are quite patchily-distributed across Brisbane, and while they have been reported from over 40 _Atlas_ squares they are only common in a handful of them. By far the most regular sites for the birds are at Sandy Camp Road Wetlands and Dowse Lagoon, while other regular locations include Minnippi Parklands, GJ Fuller Oval Lagoons and Lindum Wetlands. At all other locations around the city they are at best an irregular visitor. They are almost never recorded in the built-up suburbs of the city, nor the elevated forests to the west of the city nor Moreton Island (where the species has never been recorded). Furthermore, Whistling-Ducks are very much a lowland species in Brisbane, occurring at an average elevation of 10m and never above 70m. There is (unsurprisingly) no seasonal variation in the elevation of records. Even in non-remnant and wetland areas, this species' preferred habitats, the reporting rate only reaches 8%, indicating that this species is not commonly encountered around Brisbane.
+
+The geographic distribution of Wandering Whistling-Ducks across Brisbane is presumably driven by the limited availability of suitable wetland habitat with relatively deep water and fringing vegetation, which this species prefers. It is perhaps somewhat surprising that certain seemingly-suitable locations (such as the fringes of Gold Creek and Enoggera Reservoirs) are not more regularly visited by these birds, although it is possible the birds are simply well-suited to their current favoured sites and do not regularly move around.
+
+**Seasonality**
+
+There are 8 reports of Wandering Whistling-Ducks breeding in Brisbane, from 5 different locations. All of these are from the first 3 months of the year, indicating a late summer breeding period, somewhat in line with the reported literature, which states a wet season breeding period [@HANZAB1]. Interestingly, barring an anomaly in the month of July, the average and maximum counts for this species follow a somewhat cyclical trend, with numbers over winter being higher than those during summer. Given that this pattern is not reflected in the frequency data, this would suggest that birds are more spread out or less conspicuous over summer. Given that this species generally nests in signle pairs [@HANZAB1], it seems likely that birds are in smaller breeding groups over summer but coalesce into larger flocks over the drier winter season when they are not breeding. More data and research are needed to determine the validity of this hypothesis.
+
+**Trends**
+
+The overall long-term reporting rate for Wandering Whistling-Ducks in Brisbane has been quite varied, with the last 5 years having significantly more records than the five years preceding. Furthermore, individual years can be quite variable, indicating that this species is prone to a degree of nomadism, with birds perhaps dispersing inland in times of flood and rain and returning to Brisbane in drier years. Once again, more data and investigation are needed to determine the validity of this. The species is not of any major conservation concern in the sense that Brisbane’s population is rather peripheral to the main distribution of the species across the Asian tropics and Australia, and appears to be fairly stable over time. However, decreases as a result of land clearing, habitat destabilisation and other threats do pose a risk to this species, and population decreases could occur in Brisbane if not monitored.
+
+**Information Gaps**
+
+- Determine if Brisbane's birds move locally around the region
+- Determine if populations move inland during wetter years, in line with the published literature
+- Collect more breeding data
+- Ascertain the reason for any variation in average and high counts for this species over the year
+- Conduct more comprehensive counts of this species at their main sites and monitor any changes
+- Find out the causes for this species' localised distribution within the region
+
+**Key Conservation Needs**
+
+- Protect wetlands from being drained
+- Protect wetlands from loss of fringing vegetation
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()
