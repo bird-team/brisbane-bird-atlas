@@ -4,13 +4,14 @@ The following pages contain species accounts for all birds known to have occurre
 
 Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas. Currently only a handful of species have draft accounts written - we need more writers!
 
-Species with draft accounts: 27
+Species with draft accounts: 28
 
 - [Magpie Goose](https://brisbanebirds.com/magpie-goose-anseranas-semipalmata.html)
 - [Plumed Whistling-Duck](http://brisbanebirds.com/plumed-whistling-duck-dendrocygna-eytoni.html)
 - [Wandering Whistling-Duck](http://brisbanebirds.com/wandering-whistling-duck-dendrocygna-arcuata.html)
 - [Pink-eared Duck](http://brisbanebirds.com/pink-eared-duck-malacorhynchus-membranaceus.html)
 - [Black Swan](http://brisbanebirds.com/black-swan-cygnus-atratus.html)
+- [Radjah Shelduck](http://brisbanebirds.com/radjah-shelduck-radjah-radjah.html)
 - [Pacific Black Duck](https://brisbanebirds.com/pacific-black-duck-anas-superciliosa.html)
 - [Australian Brushturkey](http://brisbanebirds.com/australian-brush-turkey-alectura-lathami.html)
 - [Australian Owlet-nightjar](http://brisbanebirds.com/australian-owlet-nightjar-aegotheles-cristatus.html)
