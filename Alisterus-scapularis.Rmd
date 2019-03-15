@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Uncommon widespread resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Photo by Louis Backstrom, Gold Creek Reservoir, 22 Feb 2018")
+render_species_profile(species_name, caption = "Widespread resident of cooler, dense forests around the city. Occasionally ventures into urban parks and gardens, but prefers remnant habitat. Not of conservation concern, but vulnerable to habitat modifi1cation and rising temperatures. Photo by Louis Backstrom, Gold Creek Reservoir, 22 Feb 2018")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+A familiar parrot to many Australians, both birders and non-birders alike, the Australian King-Parrot is a large, distinctive endemic with bright red and green plumaged males and vibrant green females. They are typically found in pairs or small family groups, although counts of up to 20 have been recorded. They are widely distributed across suitable habitat in Brisbane, and do wander occasionally.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,49 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+A widespread species of parrot, the Australian King-Parrot is a familiar site to birders from Cooktown in the north to Melbourne in the south, with some evidence for local increases in abundance across its range. Within Brisbane, they are an uncommon yet widely distributed species, although they can be moderately common in the right habitat. There is no apparent trend in their population size currently.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+King-Parrots are widely distributed across much of the city, but are mostly concentrated around the forested western suburbs north of the river, from Enoggera in the north east to Anstead in the south west; there is also evidence to suggest they are common throughout the Camel's Head and Body, but currently very little data exist for this region so this is unverified. Although never occuring in large numbers in Brisbane, counts of up to 20 birds have been reported, with a high count in July 2015 at Gold Creek Reservoir [@prowse2015ebirdS24221887], a key location for this species. Counts of over a dozen birds have been recorded from a further 8 locations, including Anstead Bushland Reserve, Sherwood Arboretum and Araucaria Circuit at Enoggera Reservoir.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Birds are present in Brisbane year-round, with no clear seasonal changes in their abundance. Currently very few breeding data exist for the species, with only one report of nest-building activity at Bellbird Grove in late October. As a species somewhat dependent on remnant denser forest habitats this species is at a low risk of habitat loss and degradation across its range in Brisbane, but given the large amount of habitat still available to them, as well as their ability to adapt to urban habitats across other parts of their range, e birds are not currently of any significant conservation concern.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
+
+Australian King-Parrots are found across a large area of Brisbane, but are mostly found in the western forests of the D'Aguilar Range. They are also occasionally reported from the remnant tracts of bushland on the Southside, including White's Hill, Forest Lake and Toohey Forest. They are mostly absent from the lowlands near the coast and on Moreton Island, where the species has never been reported.
+
+With regard to elevational distribution, King-Parrots are a mid-range species withing Brisbane, occurring at an average elevation of approximately 100m, although they have been reported from sea level all the way up to the highest parts of the LGA over 600m. Birds do not appear to move across elevational gradients on a seasonal scale.
+
+King-Parrots have been recorded from a variety of different habitats, but are by far the most common in wet sclerophyll, where they are reported on over 50% of checklists, with a secondary preference shown for rainforest (28% of complete checklists). They are rarely reported from dry woodland, and only scarcely from anywhere else; presumably such records are of birds moving through an area in search of food or new habitat.
+
+King-Parrots have been reported from nearly every filled _Atlas_ grid square west of the city, indicating that the species is likely common across the whole of the D'Aguilar and Taylor Ranges, including the sections of the Camel's Head and Body which currently have no data available from them. As such, the species is likely more common in Brisbane than the data suggest, but is typically found further away from human disturbance.
+
+The distribution of King-Parrots in Brisbane shows no clear seasonal variation, with birds being found in roughly the same areas across the year, and at the same elevations as discussed above. Given the scarcity of breeding data currently available, it is possible that birds move to less-surveyed areas (or regions beyond Brisbane) to breed, but this seems less likely than the alternative that birds are simply less conspicuous when nesting, as with most species. More data are needed to confirm this.
+
+**Seasonality**
+
+Not much is currently known from the data regarding Australian King-Parrot's breeding habits within Brisbane. The current limited data suggest a spring-summer nesting period, in line with the broader literature [@HANZAB4]. Interestingly, the two months with the lowest reporting rate for this species, November and December, are during this period, so it is possible that birds are more difficult to observe or simply less abundant during the breeding period. However, more data are needed to ascertain the nature and cause of this minor pattern.
+
+**Trends**
+
+The annual reporting rate for King-Parrots has been quite variable over the last decade, with some years having birds reported on nearly 15% of all complete checklist and others having fewer than 5% of all checklists reporting the species. Additionally, over the past 5 years each successive year has had a lower reporting rate than the previous, indicating that these birds may be declining somewhat. Given the overall variation seen in the long-term data it is hard to be sure of this, but the abundance of these birds should be monitored into the future to ensure no large-scale population decline is occurring.
+
+The species is not of any broader conservation concern across Australia, and given Brisbane's population is somewhat peripheral to the bulk of this species range along the forests of the Great Dividing Range it is unlikely that local declines in Brisbane, if they are occurring, are necessarily related to broader declines across the entire population. Nonetheless, large-scale deforestation and land clearing do threaten this species, as with many others.
+
+**Information Gaps**
+
+- Collect more breeding data
+- Determine whether birds remain in Brisbane to breed, and if so why they are more difficult to detect
+- Ascertain the reason behind the slight dip in reporting rate toward the end of the year
+- Collect distribution data from within unsurveyed _Atlas_ squares in the western forests
+
+**Key Conservation Needs**
+
+- Protect old growth forests from being cleared
+- Monitor population size for any local or large-scale declines
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()

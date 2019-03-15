@@ -4,7 +4,7 @@ The following pages contain species accounts for all birds known to have occurre
 
 Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas. Currently only a handful of species have draft accounts written - we need more writers!
 
-Species with draft accounts: 24
+Species with draft accounts: 25
 
 - [Magpie Goose](https://brisbanebirds.com/magpie-goose-anseranas-semipalmata.html)
 - [Plumed Whistling-Duck](http://brisbanebirds.com/plumed-whistling-duck-dendrocygna-eytoni.html)
@@ -17,6 +17,7 @@ Species with draft accounts: 24
 - [Grey Goshawk](https://brisbanebirds.com/grey-goshawk-accipiter-novaehollandiae.html)
 - [Brown Goshawk](http://brisbanebirds.com/brown-goshawk-accipiter-fasciatus.html)
 - [Collared Sparrowhawk](http://brisbanebirds.com/collared-sparrowhawk-accipiter-cirrocephalus.html)
+- [Australian King-Parrot](http://brisbanebirds.com/australian-king-parrot-alisterus-scapularis.html)
 - [Green Catbird](http://brisbanebirds.com/green-catbird-ailuroedus-crassirostris.html)
 - [Eastern Spinebill](https://brisbanebirds.com/eastern-spinebill-acanthorhynchus-tenuirostris.html)
 - [Spiny-cheeked Honeyeater](https://brisbanebirds.com/spiny-cheeked-honeyeater-acanthagenys-rufogularis.html)
