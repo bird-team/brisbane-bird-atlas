@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Common widespread partial winter migrant.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Common and widespread resident and perhaps partial winter migrant to wetlands and lakes across Brisbane. Not of conservatin concern, although abundance year-to-year fluctuates, indicating that birds may be partially nomadic.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+A plain brown, unassuming species of duck, the Hardhead is one of Brisbane's most common waterbirds. A generally gregarious species, counts of up to 500 have been recorded in Brisbane, although typical numbers are much lower. Hardheads may occur on nearly any suitable expanse of water, from small suburban ponds to large wetlands.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,37 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+A widespread species of mixed aquatic habitats across Brisbane, the Hardhead is Australia's only representative of the true diving ducks (Aythyini). They are common across nearly the entire continent, including within Brisbane, where birds are reported on over 15% of complete checklists. These ducks are quite well-adapted to suburban living, being common in non-remnant aquatic habitats as well as remnant wetlands, provided there is suitable aquatic vegetation and invertebrates for them to feed on.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Birds can occur in quite large numbers in Brisbane, with a high count of 500 birds in February 2003 at Tingalpa Creek Reserve [@reid2003ebirdS16615536], although typical counts are much lower, with an average count of 8 birds. Counts of over 100 individuals are known from 4 locations; Enoggera Reservoir, Dowse Lagoon, Tingalpa and Swan Lake. Birds are present in Brisbane all-year round, although there is a noticeable increase in records over the winter period, with birds being reported on nearly twice as many checklists over Jun-Aug as over summer. The reasons for this are currently unknown.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Hardheads are widely distributed across the bulk of mainland Brisbane, although they are restricted mostly to aquatic environments, remnant or artificial. They also occur occasionally in other habitats (such as dry woodland) as flyovers, but are by far most common in non-remnant (20%) and wetland (30%) environs. They are mostly absent from the densely-forested north west of the city, and appear to also be absent from Moreton Island and others in the Bay, although there are very few data currently available for these islands. Within Brisbane, Hardheads are mostly a lowland species, occurring at a mean elevation of approximately 10m, although records up to 200m are attested.
+
+The geographic and altitudinal variation of Hardheads in Brisbane shows no apparent seasonal variation, with birds seemingly present in the same areas all year-round, although as noted above the species is more common in the region over winter, so perhaps birds move inland or elsewhere over summer. Furthermore, breeding has never been confirmed for this species in Brisbane; given the widespread distribution of birds across the region it therefore seems unlikely that birds are simply undetected when breeding and that instead birds move elsewhere to breed. More data and research are needed to confirm this.
+
+**Seasonality**
+
+As noted above, there are no confirmed reports of Hardhead breeding activity in Brisbane, a somewhat surprising result given how common this species is. Furthermore, there are only two reports of any possible breeding activity; one of courtship, display or copulation at the Botanic Gardens in 2011, and another of birds in suitable nesting habitat at Oxley Creek Common in 2018. Such scarcity of records, even accounting for the overall lack of breeding data available for Brisbane's birds, would tend to indicate that birds do not regularly breed within Brisbane. This is supported by the apparent decrease in birds within the region over summer, during which this species may breed, although the exact breeding season is quite variable and poorly understood [@HANZAB1]. Birds are also quite nomadic, and may well move inland during times of flood in the Murray-Darling Basin, suggesting some possible connectivity between Brisbane's birds and the inland population. More work is needed in this area to confirm such a hypothesis.
+
+**Trends**
+
+ The reporting rate of Hardheads in Brisbane has been very variable over the _Atlas_ period, with some years having birds reported on 30% of all checklists, while others have had reporting rates as low as 5%. This is likely explained by the species' nomadic behaviours, with birds moving according to climactic conditions, both within Brisbane but also across the interior. The species is not of any significant conservation concern in the sense that Brisbane’s population is rather peripheral to the main distribution of the species in Australia, and appears to be fairly stable over time. Furthermore, the species is widespread across Brisbane and does not appear to be decreasing in numbers, suggesting that this species is not currently under threat.
+
+ **Information Gaps**
+
+ - Collect any breeding data available
+ - Determine the nature of any link between Brisbane's birds and the interior
+ - Understand whether Brisbane's birds move around the city
+
+ **Key Conservation Needs**
+
+ - Protect wetlands from being drained
+
+ **Contributors to Species Account**
+
+ Louis Backstrom
 
 ```{r}
 end_two_column_layout()
