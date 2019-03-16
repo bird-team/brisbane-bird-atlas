@@ -31,3 +31,8 @@ Habitats inside the Camel's Head and Chest are varied, ranging from rainforest t
 ```{r}
 render_image("https://www.fullerlab.org/wp-content/uploads/2018/01/20180129_Brisbane_LGA_Boundary_North-west_Camels-head.jpg", caption = "The border of Brisbane LGA, showing the Camel's Head. Image by Richard Fuller using Google Earth imagery.")
 ```
+
+```{r}
+render_image("https://farm5.staticflickr.com/4853/32017618018_95f9a96e6e_b_d.jpg
+", caption = "The view from Northbrook Mountain, which lies at the top of the Camel's Head.")
+```
