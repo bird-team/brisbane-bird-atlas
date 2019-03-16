@@ -1,0 +1,15 @@
+# Newsletter - _Birding Brisbane_
+
+Alongside the _Atlas_ project, a monthly newsletter has been launched. _Birding Brisbane_ is all about birds and birdwatching in the River City, and is written by Brisbane Birders, for Brisbane Birders. It may be downloaded from this page, or from the [Fuller Lab website](https://www.fullerlab.org/category/blog/). Please email [Richard Fuller](mailto:r.fuller@uq.edu.au) or [Louis Backstrom](mailto:louis.backstrom@gmail.com) with comments, story ideas, or even better – draft material for the next issue!
+
+Happy reading, and enjoy your birding!
+
+[Volume 1 Issue 1 - January 2019](https://www.fullerlab.org/wp-content/uploads/2019/01/Birding-Brisbane-v1-n1.pdf)
+
+[Volume 1 Issue 2 - February 2019](https://www.fullerlab.org/wp-content/uploads/2019/02/Birding-Brisbane-v1-n2-1.pdf)
+
+[Volume 1 Issue 3 - March 2019](https://www.fullerlab.org/wp-content/uploads/2018/12/Birding-Brisbane-v1-n3.pdf)
+
+```{r}
+render_image("https://www.fullerlab.org/wp-content/uploads/2019/03/Capture-768x530.jpg", caption = "Birding Brisbane is a monthly magazine about Birds and Birdwatching in the River City")
+```
