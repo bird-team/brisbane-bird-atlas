@@ -2,7 +2,6 @@ version: 2
 
 jobs:
   init:
-    machine: true
     steps:
       - run:
           name: Creating build environment
