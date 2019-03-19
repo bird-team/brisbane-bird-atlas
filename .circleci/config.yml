@@ -7,8 +7,8 @@ jobs:
     steps:
       - checkout
       - run:
-        - name: Creating build environment
-        - command: sudo fallocate -l 10G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
+          name: Creating build environment
+          command: sudo fallocate -l 10G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
       - run:
           name: Preparing code
           command: 'rm -rf _book'
