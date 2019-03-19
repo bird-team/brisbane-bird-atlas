@@ -33,6 +33,5 @@ render_image("https://www.fullerlab.org/wp-content/uploads/2018/01/20180129_Bris
 ```
 
 ```{r}
-render_image("https://farm5.staticflickr.com/4853/32017618018_95f9a96e6e_b_d.jpg
-", caption = "The view from Northbrook Mountain, which lies at the top of the Camel's Head.")
+render_image("https://farm5.staticflickr.com/4853/32017618018_95f9a96e6e_b_d.jpg", caption = "The view from Northbrook Mountain, which lies at the top of the Camel's Head.")
 ```
