@@ -1,6 +1,7 @@
-# Study area
+Study Area
+==========
 
-This directory contains spatial data delineating the study area for the atlas. It was derived using the "Local Government Areas ASGS Ed 2016 Digital Boundaries" in ESRI Shapefile Format dataset.
+This directory contains spatial data delineating the study area for the _Atlas_. It was derived using the "Local Government Areas ASGS Ed 2016 Digital Boundaries" in ESRI Shapefile Format dataset.
 
 ## Reference
 

@@ -1,4 +1,5 @@
-# Elevation data
+Elevation Data
+==========
 
 This directory contains 90 m digital elevation data for Australia.
 

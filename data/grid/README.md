@@ -1,4 +1,5 @@
-# Sampling grid data
+Sampling Grid Data
+==========
 
 ## Overview
 

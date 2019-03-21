@@ -1,4 +1,5 @@
-# Land data
+Land Data
+==========
 
 This directory contains spatial data delineating the local government areas in Australia. It was derived using the "Local Government Areas ASGS Ed 2016 Digital Boundaries" in ESRI Shapefile Format dataset and is used for delineating the terrestrial areas in Australia.
 
