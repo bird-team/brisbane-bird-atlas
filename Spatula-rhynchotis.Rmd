@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Rare localised nomadic visitor.
 
 ```{r}
-render_species_profile(species_name, caption = "Photo by Louis Backstrom, Kedron Brook Wetlands, 6 Jun 2018")
+render_species_profile(species_name, caption = "Rare nomadic visitor to waterways and lakes across the city during autumn and winter. Occurrence fluctuates year-to-year, likely as a result of conditions further inland where this species is more common. Not of conservation concern. Photo by Louis Backstrom, Kedron Brook Wetlands, 6 Jun 2018")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+Australia's only resident representative of the Shoveler genus, the Australasian Shoveler is a distinctive duck with a spatula-shaped beak, which it uses to feed by filtering water and mud through in search of small invertebrates. Within Brisbane, they are a rare nomad typically found in small groups or pairs, with a high count of ten birds. They have only been recorded from a handful of sites, but given how widely birds wander they could be found at any suitable site.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,43 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+A widely-ranging nomad across southern Australia and Tasmania, Australasian Shovelers are only a rare visitor to the Brisbane area. Breeding males are distinctively plumaged, while eclipse males and females are more dull, with mottled-brown plumage. The species is not globally threatened, although numbers may be declining, and hunting threatens the population of birds in Victoria.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Within Brisbane, Australasian Shovelers have occurred widely but patchily, with a clear preference for wetlands. Breeding has never been reported from within Brisbane, further indicating that this species is a nomadic visitor rather than a resident. Birds never occur in large numbers, with a high count of ten birds at Dowse Lagoon in August 2014 [@tranter2014ebirdS19422500]. Birds have been reported in all months of the year, but are by far the most common over autumn and winter.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+As a species dependent on wetlands habitats, which are under pressure from modification across Brisbane, care is needed to ensure high quality wetlands remain for Shovelers to use while present. Of particular importance are the major sites in which this species appears to frequent, particularly Dowse Lagoon. The species' occurrence should be monitored to ensure that birds continue to regularly (if rarely) visit Brisbane, noting any potential declines.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
+
+Australasian Shovelers have occurred widely accross Brisbane, but are very much localised to only a handful of sites; birds have been reported from 21 _Atlas_ squares. Most records come from the wetlands along the north east coast, from Dowse Lagoon in the north to Wynnum and the Port of Brisbane in the south. A handful of further records come from further inland, at sites such as Oxley Creek Common and Moggill Wetlands; the species has never been reported from further west or the heavily forested forests of the north west, the former being somewhat surprising given birds are regular throughout the Lockyer Valley. The species has also never been reported from Moreton Island, but given the lack of suitable habitat present this is not particularly surprising.
+
+Shovelers are very much a lowland species within Brisbane, occuring at a mean elevation of 10m with no records significantly above 50m. Birds are almost exclusively reported from wetlands, with only a handful of records from other habitats such as non-remnant sites and estuaries. The geographic distribution of this species within Brisbane is presumably partly driven by proximity to areas where this species is regular or resident (such as the Lockyer Valley), and by the availability of suitable aquatic habitat. However, birds appear to turn up almost anywhere, despite being more regular at some sites than others; birds should be treated as a possibility at any site within Brisbane with permanent water. The distribution of Australasian Shovelers shows no clear seasonal variation, with birds visiting the same sites across the year, although more regularly in autumn and winter.
+
+**Seasonality**
+
+As mentioned above, Australasian Shovelers are typically nomadic visitors during autumn and winter, with more than 80% of records coming from between March and August. There are occasional records of birds outside this time, indicating that birds are not migrants so much as nomadic visitors during their non-breeding period. Further to this, breeding has never been reported from within Brisbane. In the literature, the breeding season is reported to be from August to November [@HANZAB1], coinciding with the months during which this species is very rare in the region, indicating that birds are typically non-breeding visitors; any records from spring and summer are probably of non-breeding individuals. However, the breeding season and more specific behaviours of this species during breeding are not particularly well-known, so more investigation would be useful to determine where Brisbane's birds go to breed.
+
+**Trends**
+
+The reporting rate for Australasian Shovelers has been quite variable over the past decade and a half, with some years having birds reported on over 1% of checklists, while others had no reports of birds at all; this supports the hypothesis that Brisbane's birds are nomadic and only rare visitors. Furthermore, most records are of widely-twitched birds, perhaps somewhat inflating the reporting rate for those years with long-staying birds (e.g. 2013 and 2017). Notably, there were no reports during 2010 and 2011, both very wet years in Australia’s interior [@BOM2011], suggesting some connectivity between Brisbane and inland populations; several waterbird species, such as the [Magpie Goose](https://brisbanebirds.com/magpie-goose-anseranas-semipalmata.html) have shown similar patterns. Conversely, there were also no reports of Shovelers in 2009, a drier than average year across much of inland Queensland and New South Wales [@BOM2009], so the trend may not be particularly clear.
+
+The species is not of any significant conservation concern in the sense that Brisbane’s population very much peripheral to the main distribution of the species in Australia and New Zealand, and appears to be fairly stable over time, accounting for regular variation in nomadic abundance. However, decreases in the southern populations as a result of hunting, habitat destabilisation and other threats do pose a risk to this species, and these losses could affect the abundance of birds in Brisbane if not monitored.
+
+**Information Gaps**
+
+- Monitor the regular sites for this species
+- Understand where Brisbane birds move inland to breed in wet years
+- Locate any regular locations for this species in the western suburbs e.g. Lake Manchester
+
+**Key Conservation Needs**
+
+- Protect wetlands from being drained
+- Protect wetlands from loss of fringing vegetation
+
+**Contributors to Species Account**
+
+Louis Backstrom
+
 
 ```{r}
 end_two_column_layout()

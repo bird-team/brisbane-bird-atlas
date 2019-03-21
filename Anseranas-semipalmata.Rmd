@@ -71,7 +71,7 @@ There are 21 reports of Magpie Goose breeding activity, spanning Jan-Apr, althou
 
 **Trends**
 
-Reporting rate for Magpie Goose has remained relatively stable between 2005 and 2017, perhaps increasingly slightly over the period. Notably, there was a clear drop in reporting rate in 2010 and 2011, both very wet years in Australia’s interior, suggesting some connectivity between Brisbane and inland breeding colonies. The species is not of any significant conservation concern in the sense that Brisbane’s population is rather peripheral to the main distribution of the species in Australia, and appears to be fairly stable over time. However, significant decreases in the southern populations as a result of land clearing, habitat destabilisation and other threats do pose a risk to this species, and similar losses of populations could occur in Brisbane if not monitored.
+Reporting rate for Magpie Goose has remained relatively stable between 2005 and 2017, perhaps increasingly slightly over the period. Notably, there was a clear drop in reporting rate in 2010 and 2011, both very wet years in Australia’s interior [@BOM2011], suggesting some connectivity between Brisbane and inland breeding colonies. The species is not of any significant conservation concern in the sense that Brisbane’s population is rather peripheral to the main distribution of the species in Australia, and appears to be fairly stable over time. However, significant decreases in the southern populations as a result of land clearing, habitat destabilisation and other threats do pose a risk to this species, and similar losses of populations could occur in Brisbane if not monitored.
 
 **Information Gaps**
 
