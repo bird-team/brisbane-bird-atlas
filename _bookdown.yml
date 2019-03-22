@@ -6,8 +6,8 @@ language:
     fig: ''
     tab: ''
 rmd_files:
-- toc.Rmd
 - index.Rmd
+- toc.Rmd
 - introduction.Rmd
 - brisbanes-environment.Rmd
 - methods.Rmd
