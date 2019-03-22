@@ -1,7 +1,3 @@
-```{r}
-back_matter()
-```
-
 # References
 
 ```{r}

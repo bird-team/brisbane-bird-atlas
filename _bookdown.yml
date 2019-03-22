@@ -6,9 +6,8 @@ language:
     fig: ''
     tab: ''
 rmd_files:
-- index.Rmd
-- acknowledgements.Rmd
 - toc.Rmd
+- index.Rmd
 - introduction.Rmd
 - brisbanes-environment.Rmd
 - methods.Rmd
@@ -407,5 +406,6 @@ rmd_files:
 - Phasianus-colchicus.Rmd
 - Psittacula-krameri.Rmd
 - Numida-meleagris-Domestic-type.Rmd
+- acknowledgements.Rmd
 - references.Rmd
 - species-index.Rmd
