@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The Pacific Black Duck is one of Australia's most common duck species and can be found all across the country except in the most arid regions of the interior. A plain, brown (not black as the name suggests) duck, identification is straightforward, with the only confusion species being female domesticated Mallards and intergrades between the two species. A gregarious species, the average count in Brisbane is around a dozen, but counts of over 150 have been recorded. Can occur anywhere there is even small amounts of water, or as a flyover.
+The Pacific Black Duck is one of Australia's most common duck species and can be found all across the country. A plain, brown duck, identification is straightforward, with the only confusion species being female domesticated Mallards and intergrades between the two species. Birds are gregarious, and the average count in Brisbane is around a dozen, but counts of over 150 have been recorded. Birds may occur anywhere there is water.
 
 ```{r}
 end_two_column_layout()

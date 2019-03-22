@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The Plumed Whistling-Duck is a medium-sized species of duck with a drab pale-brown body and distinctive feathered plumes on its sides. It is a gregarious species, with flocks of hundreds or thousands being relatively common further to the north in the Top End and Cape York, within Brisbane it is typically found in smaller flocks of a dozen birds or less. Its distribution is mostly restricted to a handful of regular or occasional sites, but given the birds' propensity for nomadism they may turn up on any suitable water body in Brisbane.
+The Plumed Whistling-Duck is a medium-sized species of duck with a drab pale-brown body and distinctive feathered plumes on its sides. It is a gregarious species, with large flocks being relatively common further to the north; within Brisbane it is typically found in small flocks of a dozen birds or less. Its distribution is mostly restricted to a handful of regular sites, but birds may turn up on any suitable water body in Brisbane.
 
 ```{r}
 end_two_column_layout()

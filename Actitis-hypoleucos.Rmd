@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Rare localised summer migrant.
 
 ```{r}
-render_species_profile(species_name, caption = "Rare summer migrant to muddy wetlands across the city. Some birds may occasionally overwinter but no records as yet of such behaviour. Birds are typically inconspicuous and may be more common than reporting rate indicates. Not of significant conservation concern in Australia. Photo by Louis Backstrom, Kedron Brook Wetlands, 4 Feb 2018")
+render_species_profile(species_name, caption = "Rare summer migrant to muddy wetlands across the city. Typically inconspicuous and may be more common than reporting rate indicates. Not of significant conservation concern in Australia. Photo by Louis Backstrom, Kedron Brook Wetlands, 4 Feb 2018")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The Common Sandpiper is a small species of sandpiper with plain brown and white plumage and greenish-grey legs. A rare visitor to Brisbane, it is typically found by itself, although there have been a handful of records of multiple birds. The birds prefer the muddy banks of waterways, but also occasionally visit traditional wetlands and swamps, mudflats and grasslands.
+The Common Sandpiper is a small species of sandpiper with plain brown and white plumage and greenish-grey legs. A rare visitor to Brisbane, almost all records are of solitary birds. The species prefers the muddy banks of waterways, but also occasionally visits traditional wetlands and swamps, mudflats and grasslands.
 
 ```{r}
 end_two_column_layout()
