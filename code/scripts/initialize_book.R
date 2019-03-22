@@ -67,17 +67,18 @@ bookdown_list$book_filename <- "brisbane-bird-atlas"
 bookdown_list$chapter_name <- ""
 bookdown_list$delete_merged_file <- TRUE
 bookdown_list$language <- list(label = list(fig = "", tab = ""))
-bookdown_list$rmd_files <- c("index.Rmd",
-                             "acknowledgements.Rmd",
-                             "toc.Rmd",
+bookdown_list$rmd_files <- c("toc.Rmd",
+                             "index.Rmd",
                              "introduction.Rmd",
                              "brisbanes-environment.Rmd",
                              "methods.Rmd",
+                             "contributing.Rmd",
+                             "gazetteer.Rmd",
+                             "newsletter.Rmd",
+                             "acknowledgements.Rmd",
                              "species-accounts.Rmd",
                              rmd_paths,
                              "references.Rmd",
-                             "contributing.Rmd",
-                             "gazetteer.Rmd",
                              "species-index.Rmd")
 
 # Exports
