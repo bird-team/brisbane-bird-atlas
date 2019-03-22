@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Australia's only resident representative of the Shoveler genus, the Australasian Shoveler is a distinctive duck with a spatula-shaped beak, which it uses to feed by filtering water and mud through in search of small invertebrates. Within Brisbane, they are a rare nomad typically found in small groups or pairs, with a high count of ten birds. They have only been recorded from a handful of sites, but given how widely birds wander they could be found at any suitable site.
+Australia's only resident Shoveler, the Australasian Shoveler is a distinctive duck with a spatula-shaped beak, which it uses to feed by filtering water and mud through in search of small invertebrates. Within Brisbane, they are a rare nomad typically found in small groups or pairs. Birds have only been recorded from a handful of sites, but could be found in any suitable habitat.
 
 ```{r}
 end_two_column_layout()
