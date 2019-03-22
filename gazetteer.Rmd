@@ -1,7 +1,3 @@
-```{r}
-back_matter()
-```
-
 # Gazetteer
 
 Brisbane's birdlife is varied and abundant. All across the region there are sites which host scores of species. This page is intended to showcase some of the very best birding hotspots Brisbane has to offer. Initially, this comprises the top 35 [eBird](https://ebird.org/home) hotspots in Brisbane:
