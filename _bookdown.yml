@@ -6,15 +6,15 @@ language:
     fig: ''
     tab: ''
 rmd_files:
-- toc.Rmd
 - index.Rmd
+- acknowledgements.Rmd
+- toc.Rmd
 - introduction.Rmd
 - brisbanes-environment.Rmd
 - methods.Rmd
 - contributing.Rmd
 - gazetteer.Rmd
 - newsletter.Rmd
-- acknowledgements.Rmd
 - species-accounts.Rmd
 - Anseranas-semipalmata.Rmd
 - Dendrocygna-eytoni.Rmd
