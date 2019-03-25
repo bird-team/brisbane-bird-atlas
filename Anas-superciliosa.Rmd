@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Abundant widespread resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Abundant breeding resident in freshwater habitats but well adapted to life nearly anywhere there is water. Records all throughout the year with no clear pattern, although some variation in abundance across the previous decade. Not of conservation concern, although some minor threats to the population both in Brisbane and across range. Photo by Richard Fuller, Mookin-Bah Reserve, 7 Feb 2018. ")
+render_species_profile(species_name, caption = "Abundant breeding resident in freshwater habitats. Records all throughout the year with no clear pattern, although some variation in abundance across the previous decade. Not of conservation concern, although some minor threats to the population both in Brisbane and across range. Photo by Richard Fuller, Mookin-Bah Reserve, 7 Feb 2018. ")
 ```
 
 ```{r}
