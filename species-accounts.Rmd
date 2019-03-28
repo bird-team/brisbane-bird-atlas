@@ -10,34 +10,34 @@ Please see the [Contributing](https://brisbanebirds.com/contributing.html) page 
 
 Species with draft accounts: 32
 
-- [Magpie Goose](https://brisbanebirds.com/magpie-goose-anseranas-semipalmata.html)
-- [Plumed Whistling-Duck](http://brisbanebirds.com/plumed-whistling-duck-dendrocygna-eytoni.html)
-- [Wandering Whistling-Duck](http://brisbanebirds.com/wandering-whistling-duck-dendrocygna-arcuata.html)
-- [Pink-eared Duck](http://brisbanebirds.com/pink-eared-duck-malacorhynchus-membranaceus.html)
-- [Black Swan](http://brisbanebirds.com/black-swan-cygnus-atratus.html)
-- [Radjah Shelduck](http://brisbanebirds.com/radjah-shelduck-radjah-radjah.html)
-- [Hardhead](http://brisbanebirds.com/hardhead-aythya-australis.html)
-- [Australasian Shoveler](http://brisbanebirds.com/australasian-shoveler-spatula-rhynchotis.html)
-- [Pacific Black Duck](https://brisbanebirds.com/pacific-black-duck-anas-superciliosa.html)
-- [Grey Teal](http://brisbanebirds.com/grey-teal-anas-gracilis.html)
-- [Chestnut Teal](http://brisbanebirds.com/chestnut-teal-anas-castanea.html)
-- [Australian Brushturkey](http://brisbanebirds.com/australian-brush-turkey-alectura-lathami.html)
-- [Australian Owlet-nightjar](http://brisbanebirds.com/australian-owlet-nightjar-aegotheles-cristatus.html)
-- [Australian Swiftlet](http://brisbanebirds.com/australian-swiftlet-aerodramus-terraereginae.html)
-- [Common Sandpiper](http://brisbanebirds.com/common-sandpiper-actitis-hypoleucos.html)
-- [Grey Goshawk](https://brisbanebirds.com/grey-goshawk-accipiter-novaehollandiae.html)
-- [Brown Goshawk](http://brisbanebirds.com/brown-goshawk-accipiter-fasciatus.html)
-- [Collared Sparrowhawk](http://brisbanebirds.com/collared-sparrowhawk-accipiter-cirrocephalus.html)
-- [Australian King-Parrot](http://brisbanebirds.com/australian-king-parrot-alisterus-scapularis.html)
-- [Green Catbird](http://brisbanebirds.com/green-catbird-ailuroedus-crassirostris.html)
-- [Eastern Spinebill](https://brisbanebirds.com/eastern-spinebill-acanthorhynchus-tenuirostris.html)
-- [Spiny-cheeked Honeyeater](https://brisbanebirds.com/spiny-cheeked-honeyeater-acanthagenys-rufogularis.html)
-- [Acanthiza - 5 Species](https://brisbanebirds.com/yellow-rumped-thornbill-acanthiza-chrysorrhoa.html)
-- [Cicadabird](http://brisbanebirds.com/cicadabird-edolisoma-tenuirostre.html)
-- [White-breasted Woodswallow](https://brisbanebirds.com/white-breasted-woodswallow-artamus-leucorynchus.html)
-- [Spangled Drongo](http://brisbanebirds.com/spangled-drongo-dicrurus-bracteatus.html)
-- [Australian Reed-Warbler](http://brisbanebirds.com/australian-reed-warbler-acrocephalus-australis.html)
-- [Common Myna](http://brisbanebirds.com/common-myna-acridotheres-tristis.html)
+- [Magpie Goose]
+- [Plumed Whistling-Duck]
+- [Wandering Whistling-Duck]
+- [Pink-eared Duck]
+- [Black Swan]
+- [Radjah Shelduck]
+- [Hardhead]
+- [Australasian Shoveler]
+- [Pacific Black Duck]
+- [Grey Teal]
+- [Chestnut Teal]
+- [Australian Brushturkey]
+- [Australian Owlet-nightjar]
+- [Australian Swiftlet]
+- [Common Sandpiper]
+- [Grey Goshawk]
+- [Brown Goshawk]
+- [Collared Sparrowhawk]
+- [Australian King-Parrot]
+- [Green Catbird]
+- [Eastern Spinebill]
+- [Spiny-cheeked Honeyeater]
+- _Acanthiza_ - 5 Species, see [Yellow-rumped Thornbill]
+- [Cicadabird]
+- [White-breasted Woodswallow]
+- [Spangled Drongo]
+- [Australian Reed-Warbler]
+- [Common Myna]
 
 ```{r}
 clear_page()

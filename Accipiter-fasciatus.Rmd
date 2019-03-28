@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The Brown Goshawk is a medium-sized _Accipiter_ hawk with ruddy red-grey plumage and a powerful build. Similar in appearance to its relative the [Collared Sparrowhawk](http://brisbanebirds.com/collared-sparrowhawk-accipiter-cirrocephalus.html), but differs from it in identification in having a rounded tail, thickset legs and a short middle toe. Good views are often needed to separate the two species, and care should be taken when viewing _Accipiters_ to prevent misidentification. Within Brisbane, Goshawks are typically found alone, although there are several records of multiple birds, with counts up to 4 being not unheard of. Birds can be found all over Brisbane, including on Moreton Island and the north west forests (where Collared Sparrowhawks appear to be mostly absent), but are not common in any given location.
+The Brown Goshawk is a medium-sized _Accipiter_ hawk with ruddy red-grey plumage and a powerful build. Similar in appearance to its relative the [Collared Sparrowhawk], but differs from it in identification in having a rounded tail, thickset legs and a short middle toe. Good views are often needed to separate the two species, and care should be taken when viewing _Accipiters_ to prevent misidentification. Within Brisbane, Goshawks are typically found alone, although there are several records of multiple birds, with counts up to 4 being not unheard of. Birds can be found all over Brisbane, including on Moreton Island and the north west forests (where Collared Sparrowhawks appear to be mostly absent), but are not common in any given location.
 
 ```{r}
 end_two_column_layout()

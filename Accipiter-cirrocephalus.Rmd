@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The Collared Sparrowhawk is a small-medium sized _Accipiter_ hawk with a grey and rufous body and yellow legs. Very similar in appearance to its relative the [Brown Goshawk](http://brisbanebirds.com/brown-goshawk-accipiter-fasciatus.html), but differs in having a typically squarer tail (sometimes notched), thinner legs and a long middle toe [@ABG; @HANZAB2]. Good views are generally needed to separate these two species definitively. It is almost exclusively found alone, with only a few records of pairs and only one of a trio [@reid2012ebirdS16653002]. Birds can be found all over Brisbane, but are typically not resident at any particular sites and may occur anywhere there is suitable prey to be found.  
+The Collared Sparrowhawk is a small-medium sized _Accipiter_ hawk with a grey and rufous body and yellow legs. Very similar in appearance to its relative the [Brown Goshawk], but differs in having a typically squarer tail (sometimes notched), thinner legs and a long middle toe [@ABG; @HANZAB2]. Good views are generally needed to separate these two species definitively. It is almost exclusively found alone, with only a few records of pairs and only one of a trio [@reid2012ebirdS16653002]. Birds can be found all over Brisbane, but are typically not resident at any particular sites and may occur anywhere there is suitable prey to be found.  
 
 ```{r}
 end_two_column_layout()
