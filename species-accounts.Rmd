@@ -8,7 +8,7 @@ The following pages contain species accounts for all birds known to have occurre
 
 Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas. Currently only a handful of species have draft accounts written - we need more writers!
 
-Species with draft accounts: 32
+Species with draft accounts: 33
 
 - [Magpie Goose]
 - [Plumed Whistling-Duck]
@@ -21,6 +21,7 @@ Species with draft accounts: 32
 - [Pacific Black Duck]
 - [Grey Teal]
 - [Chestnut Teal]
+- [Freckled Duck]
 - [Australian Brushturkey]
 - [Australian Owlet-nightjar]
 - [Australian Swiftlet]

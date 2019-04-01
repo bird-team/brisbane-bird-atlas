@@ -54,7 +54,7 @@ clear_page()
 start_two_column_layout()
 ```
 
-Brown Thornbills are the abundant thornbill species in the forests of south east Australia, occurring from Mackay to Adelaide inland to about 200km, and also occurs in Tasmania alongside its sister species the Tasmanian Thornbill. Within Brisbane it can be found easily in the western forests, occurring widely from Anstead in the south to Mt Glorious in the north, and as far east as Mt Coot-tha.
+Brown Thornbills are the abundant thornbill species in the forests of south east Australia, occurring from Mackay to Adelaide inland to about 200km, and also occurs in Tasmania alongside its sister species the Tasmanian Thornbill. Within Brisbane they can be found easily in the western forests, occurring widely from Anstead in the south to Mt Glorious in the north, and as far east as Mt Coot-tha.
 
 Based on current data the thornbill is consistently distributed over this area, although many squares in the west are as yet unsurveyed and so the true distribution of this species in Brisbane is not yet confirmed. It occurs in strong numbers in many locations, with counts of over a dozen at a time being not uncommon and an all-time high count of 45 [@fuller2009ebirdS14957193], although typical counts are closer to 4-5. The species has only been recorded breeding a handful of times in Brisbane, and nearly all reports to date have been of nest building with only one checklist reporting young, suggesting that the species may not regularly breed in Brisbane, although more data are needed. The species is present in Brisbane all year round, although there is a slight drop off in reporting rate over the summer months.
 

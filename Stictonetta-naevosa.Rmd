@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Vagrant.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Rare vagrant to Brisbane environs. Several records from a wide variety of locations but birds are not regular anywhere in the city. Australia's rarest species of duck, but not significantly endangered in Queensland.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+A distinctive species of duck with mottled grey plumage, the Freckled Duck is a rare vagrant to Brisbane, with only a handful of records from a wide array of sites around the city. Birds are gregarious and nomadic within their normal range, although most records within Brisbane are of individuals or small flocks. Within Brisbane, all records are of birds on wetlands or swampy lakes, suggesting a strict habitat reference displayed by Brisbane's birds.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,33 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+A vagrant nomad to Brisbane's wetlands, Freckled Duck are a rare species of waterfowl found across much of Australia. Nomadic across much of their range, birds disperse widely in search of water, and it is likely this dispersal that has led to several records of vagrant birds in Brisbane. Records of the species have been distributed widely over a number of sites in Brisbane, although all of these sites are characterised by swampy wetlands, a habitat favoured by this species. There are records of birds from nearly all months of the year; April-February, suggesting nomadism rather than migratory vagrancy for Brisbane's birds.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Freckled Ducks are distributed widely across Australia, being regularly recorded from nearly all regions of the nation excluding Tasmania and north west Western Australia, but they are distinctly rare and patchily distributed. They favour freshwater swamps with suitable fringing vegetation, similar to many other species of waterfowl. Within Brisbane, all records have come from well-vegetated swamps and wetlands, with a wide geographic range displayed; records have come from as far west as Moggill and as far east as Wynnum. Further records could come from nearly any wetland with suitable habitat in Brisbane.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Seasonality**
+
+Freckled Ducks have occurred in Brisbane in most months of the year, with the exception of March, suggesting no clear seasonal pattern to their occurrence. This is likely a result of birds being nomadic, and choosing to stay in Brisbane as long as the habitat is suitable for them - several records of birds have been particularly long-staying. More analysis of existing and future records would be beneficial to further determine any seasonal patterns in abundance. The species has never been recorded breeding in Brisbane.
+
+**Trends**
+
+Freckled Ducks are not nationally threatened, but are rare and patchy, and may be at risk of population declines as a result of land clearing and hunting. Given this species is only a vagrant in Brisbane, it is difficult to determine the extent of the impact any local activities might have on this species. Records over the past decade have been somewhat irregular, and may be linked to prevailing climatic conditions further inland where this species is common; more work is needed to validate this.
+
+**Information Gaps**
+
+- Collect more records for this species
+
+**Key Conservation Needs**
+
+- Protect wetlands from loss of fringing vegetation
+- Protect wetlands from being drained
+- Monitor the wider population and abundance status of this species
+
+**Contributors to Species Account**
+
+Louis Backstrom 
 
 ```{r}
 end_two_column_layout()
