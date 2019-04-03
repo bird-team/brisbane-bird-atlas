@@ -6,10 +6,10 @@ species_name <- "Anas gracilis"
 species_title(species_name, species_data)
 ```
 
-Category A; Common widespread partial winter migrant.
+Category A; Common and widespread resident and winter visitor.
 
 ```{r}
-render_species_profile(species_name, caption = "Common resident of wetlands and waterways across Brisbane. More records in winter, indicating a degree of migratory behaviour; occurrence fluctuates year-to-year. Breeds during spring and summer. Not of conservation concern.")
+render_species_profile(species_name, caption = "Common resident of wetlands and waterways across Brisbane. More records in winter, suggesting a degree of migratory behaviour, although occurrence fluctuates year-to-year. Breeds during spring and summer. Not of conservation concern.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-One of Australia's commonest ducks, Grey Teal are a plainly-plumaged species and are often difficult to distinguish from the closely-related Chestnut Teal. They are a gregarious species, with counts of up to 350 birds reported. Grey Teal are best described as widespread and common within Brisbane, although their distribution is usually limited to large stretches of water. This being said, they can wander widely and may occur almost anywhere as a flyover.
+One of Australia's commonest ducks, Grey Teal is a plainly-plumaged species, often difficult to distinguish from the closely-related Chestnut Teal. It is e a gregarious species, with counts of up to 350 birds reported. Grey Teal are common and widespread within Brisbane, although their distribution is usually limited to large stretches of water. This being said, they can wander widely and may occur almost anywhere as a straggler.
 
 ```{r}
 end_two_column_layout()
@@ -54,9 +54,9 @@ clear_page()
 start_two_column_layout()
 ```
 
-An abundant species across much of Australia, Grey Teal are a common bird across riparian and aquatic habitats throughout Brisbane. Very difficult to distinguish at times from the near-identical [Chestnut Teal] [@joseph2009tangled], this species is best identified by being slightly paler overall, with a lighter coloured neck and face; these features are not always definitive [@HANZAB1; @ABG]. Care should be taken when reporting either of these two species, and it must be noted that they are not always identifiable to species level; hybrids between this species and other ducks are rare, but not unheard of, and can further complicate matters [@guay2015direction; @mccarthy2006handbook].
+An abundant species across much of Australia, Grey Teal is common across riparian and aquatic habitats throughout Brisbane. Very difficult to distinguish at times from the near-identical [Chestnut Teal] [@joseph2009tangled], this species is best identified by being slightly paler overall, with a lighter coloured neck and face; these features are not always definitive [@HANZAB1; @ABG]. Care should be taken when reporting either of these two species, and it must be noted that they are not always identifiable to species level; hybrids between this species and other ducks are rare, but not unheard of, can further complicate matters [@guay2015direction; @mccarthy2006handbook].
 
-Grey Teal are a gregarious species, with counts of up to 350 birds having been reported [@attewell2018ebirdS41796025]. The species is widely distributed across the lowlands of Brisbane up to about 150m, and counts of over 200 birds have been reported from 4 locations: Kedron Brook Wetlands, Dowse Lagoon, GJ Fuller Oval Lagoons and Swan Lake at the Port of Brisbane. Birds breed in Brisbane, and breeding has been reported from 6 locations across the region, with most records being of recently fledged young. Teal are present in Brisbane all year-round, although there is a marked increase in reporting rate over the cooler months from May-September, indicating that this species may be a partial winter immigrant.
+Grey Teal is a gregarious species, with counts of up to 350 birds having been reported [@attewell2018ebirdS41796025]. The species is widely distributed across the lowlands of Brisbane up to about 150m, and counts of over 200 birds have been reported from 4 locations: Kedron Brook Wetlands, Dowse Lagoon, GJ Fuller Oval Lagoons and Swan Lake at the Port of Brisbane. Birds breed in Brisbane, and breeding has been reported from 6 locations across the region, with most records being of recently fledged young. Teal are present in Brisbane all year-round, although there is a marked increase in reporting rate over the cooler months from May-September, indicating that this species may be a partial winter immigrant.
 
 Although this species appears somewhat dependent on wetland habitats, which are threatened by modification and destruction, birds appear to be quite well-adapted to artificial environments and well-suited to suburban living. As a result, this species' status within Brisbane appears stable at this time. Nonetheless, care is needed to maintain high quality wetlands, natural or artificial, that are suitable for waterfowl. Of particular importance are the sites this species is most common at, for example Kedron Brook Wetlands, Dowse Lagoon and Prior's Pocket.
 
