@@ -475,6 +475,11 @@ result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
                     width = parameters$graphs$size[[n]]$width,
                     height = parameters$graphs$size[[n]]$height,
                     units = "in")
+    ggplot2::ggsave(paste0("assets/graphs/", file_names[i], ".jpeg"), p,
+                    width = parameters$graphs$size[[n]]$width,
+                    height = parameters$graphs$size[[n]]$height,
+                    units = "in")
+    system(paste0("jpegoptim ", paste0("assets/graphs/", file_names[i], ".jpeg")))
   }
   # save hash
   writeLines(species_data$graphs_hash[i], hash_path)

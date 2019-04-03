@@ -16,7 +16,7 @@ render_species_graph <- function(x) {
   x <- gsub("/", "", x, fixed = TRUE)
   x <- gsub(" ", "-", x, fixed = TRUE)
   x <- gsub(".", "", x, fixed = TRUE)
-  path <- paste0("assets/graphs/", x, ".png")
+  path <- paste0("assets/graphs/", x, ifelse(isTRUE(knitr:::is_html_output()), ".jpeg", ".png"))
   if(!file.exists(path)) stop(paste(path, "does not exist"))
   # create code to render image
   if (!isTRUE(knitr:::is_html_output())) {
