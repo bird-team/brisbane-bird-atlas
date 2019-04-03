@@ -1,11 +1,6 @@
 version: 2
 
 jobs:
-  init:
-    steps:
-      - run:
-          name: Creating build environment
-          command: fallocate -l 10G /swapfile && chmod 600 /swapfile && mkswap /swapfile && swapon -a && swapon /swapfile
   build:
     docker:
       - image: brisbanebirdteam/build-env:latest
@@ -32,11 +27,8 @@ workflows:
   version: 2
   main:
     jobs:
-      - init:
+      - build:
           filters:
             branches:
               only:
                 - master
-      - build:
-          requires:
-            - init
