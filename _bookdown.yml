@@ -95,12 +95,12 @@ rmd_files:
 - Charadrius-leschenaultii.Rmd
 - Charadrius-bicinctus.Rmd
 - Charadrius-ruficapillus.Rmd
-- Numenius-phaeopus.Rmd
-- Numenius-minutus.Rmd
 - Erythrogonys-cinctus.Rmd
 - Elseyornis-melanops.Rmd
 - Rostratula-australis.Rmd
 - Irediparra-gallinacea.Rmd
+- Numenius-phaeopus.Rmd
+- Numenius-minutus.Rmd
 - Numenius-madagascariensis.Rmd
 - Limosa-lapponica.Rmd
 - Limosa-limosa.Rmd
@@ -153,7 +153,6 @@ rmd_files:
 - Thalassarche-chlororhynchos.Rmd
 - Thalassarche-melanophris.Rmd
 - Oceanites-oceanicus.Rmd
-- Ardenna-pacifica.Rmd
 - Pelagodroma-marina.Rmd
 - Fregetta-grallaria.Rmd
 - Fregetta-tropica.Rmd
@@ -171,6 +170,7 @@ rmd_files:
 - Pseudobulweria-rostrata.Rmd
 - Calonectris-leucomelas.Rmd
 - Ardenna-bulleri.Rmd
+- Ardenna-pacifica.Rmd
 - Ardenna-tenuirostris.Rmd
 - Ardenna-carneipes.Rmd
 - Puffinus-huttoni.Rmd
