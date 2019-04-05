@@ -137,7 +137,7 @@ surveyor_sheets:                                                 # parameters fo
     study_area_line_color: "#838282"                             # color of the study area (i.e. Brisbane LGA) lines
     study_area_line_width: 0.75                                  # width of the study area lines
   checklist:
-    number_of_pages: 2                                           # number of pages to use for the checklists
+    number_of_pages: 3                                           # number of pages to use for the checklists
     vertical_spacing: "-3.0em"                                   # spacing to vertically align the checklist tables with the page header
     left_margin: "-0.5in"                                        # padding for the checklist tables' left margin
     right_margin: "-0.2in"                                       # padding for the checklist tables' right margin
