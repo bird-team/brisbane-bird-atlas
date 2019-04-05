@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Rare localised winter migrant.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Rare visitor to wetlands across the city in winter. Occurrence fluctuates year-to-year, and presence may be associated with wider climactic conditions. Not of significant conservation, and Brisbane's birds only a fraction of the total Australian population.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+A moderately common bird on wetlands and waterways across eastern Queensland, the Cotton Pygmy-Goose is a distinctive small species of waterfowl native found across much of Asia and along the Queensland coast from Port Douglas down to the Gold Coast. Birds are sexually dimorphic, with males being slightly more boldly-plumaged than females; birds are distinctive in all plumages and easily separable from any other local ducks, although the potentially vagrant [Green Pygmy-Goose](https://ebird.org/species/grnpyg1) is superficially similar.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,37 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+One of the world's smallest species of waterfowl, Cotton Pygmy-Geese are a moderately common species of duck across eastern Queensland, but are only rare winter visitors to the Brisbane region, although there are records from all months of the year. They are almost exclusively restricted to wetland habitats within Brisbane, and are typically found in small numbers up to flocks of a dozen birds; the highest Brisbane count is of 14 birds at Dowse Lagoon in July 2018 [@tranter2018ebirdS47127283].
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+The Cotton Pygmy-Goose is widely distributed across Brisbane, with records from all regions in the city excluding the densely-forested north west, and Moreton Island. By far the most regular location for birds is at Dowse Lagoon, with consistent annual records dating back to at least 2012. Other nearby locations on the northside are somewhat regularly visited by birds; these are probably the same birds as at Dowse Lagoon wandering locally.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Cotton Pygmy-Geese are almost exclusively restricted to wetland habitats in Brisbane, with only a handful of records coming from other habitats such as estuaries or non-remnant areas. However, even in wetlands the total reporting rate only approaches 3%, indicating that the species is distinctly rare within Brisbane. They are mostly found at very low altitudes, with an average elevation of approximately 10m; the highest records are from 150m, indicating that Pygmy-Geese are a lowland species within Brisbane.
+
+**Seasonality**
+
+Brisbane's birds are strongly migratory, being a clear winter immigrant into the region, although there are records from all months of the year. There are no breeding records from within Brisbane, although this is unsurprising as birds typically breed during summer with the wet season [@HANZAB1], during which birds are typically absent from the region. It would be good to collect more information about the seasonal movements of this species and to determine where Brisbane's birds migrate to during summer and where they breed.
+
+**Trends**
+
+The reporting rate of Cotton Pygmy-Geese in Brisbane has been quite variable across the _Atlas_ period, with some years having no records and others having birds reported on as many as 3% of all checklists. Most recent years, however, have had birds reported on approximately 1% of all checklists, with no clear trend apparent. It is likely that these birds are somewhat nomadic, and as such their presence in the city is driven by extralimital climactic conditions, although more work is needed to verify this.
+
+Outside Brisbane, the species is moderately common across most of its range in Australia, although has experienced severe declines in northern New South Wales and is now only a rare visitor to the state; the southern populations of this species, including Brisbane's, should therefore be monitored for signs of any further declines.
+
+**Information Gaps**
+
+- Collect information on where Brisbane's birds go over summer
+- Collect any breeding information for this species
+- Identify any other regular locations where birds visit over winter
+
+**Key Conservation Needs**
+
+- Monitor southern populations for any declines
+
+**Contributors to Species Account**
+
+Louis Backstrom 
 
 ```{r}
 end_two_column_layout()

@@ -8,7 +8,7 @@ The following pages contain species accounts for all birds known to have occurre
 
 Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas. Currently only a handful of species have draft accounts written - we need more writers!
 
-Species with draft accounts: 33
+Species with draft accounts: 35
 
 - [Magpie Goose]
 - [Plumed Whistling-Duck]
@@ -16,6 +16,7 @@ Species with draft accounts: 33
 - [Pink-eared Duck]
 - [Black Swan]
 - [Radjah Shelduck]
+- [Cotton Pygmy-Goose]
 - [Hardhead]
 - [Australasian Shoveler]
 - [Pacific Black Duck]
@@ -39,6 +40,7 @@ Species with draft accounts: 33
 - [Spangled Drongo]
 - [Australian Reed-Warbler]
 - [Common Myna]
+- [Mandarin Duck]
 
 ```{r}
 clear_page()
