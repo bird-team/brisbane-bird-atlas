@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Abundant widespread resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Abundant breeding resident across nearly all of Brisbane. Present in Brisbane across the whole year; recent decline in annual reporting rate possibly suggests a local decline in abundance. Not currently of conservation concern.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+One of Australia's most common species of duck, the Australian Wood Duck (also known as Maned Duck) is a distinctively-plumaged species; birds are easily identifiable by the unique combination of pale grey and rich chestnut brown in their plumage. Birds are widespread and abundant across Brisbane, and can be found in a variety of aquatic habitats. They may be found anywhere near water, or as flyovers and stragglers.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,37 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+An abundant species across much of Australia, Australian Wood Ducks are very common in aquatic habitats throughout Brisbane. Known internationally as Maned Ducks (to prevent confusion with the American [Wood Duck](https://ebird.org/species/wooduc)), birds are quite distinctively plumaged, with black and grey bodies punctuated by a rich chestnut head. Hybrids between this species and other ducks are known, but so far restricted to aviculture [@mccarthy2006handbook].
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Australian Wood Ducks are a gregarious species, with counts of up to 150 birds having been reported [@burgess2019ebirdS53269243]. The species is widely distributed across the low-and-midlands of Brisbane up to about 200m, and counts of 100 or more birds have been reported from 4 locations: Prior's Pocket, Kianawah Rd Wetlands, Tingalpa Creek and Swan Lake at the Port of Brisbane. Birds breed in Brisbane, and breeding has been reported from more than two dozen locations across the region, with most records being of recently fledged young. Birds are present in Brisbane all year-round.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Australian Wood Ducks are found all across Brisbane wherever there is water, being only absent from the densely-forested north west of the city (although more survey effort in this area may turn up further records), and are probably best described as rare on Moreton Island. Wood Ducks are more or less a lowland species within Brisbane, occurring at a mean elevation of under 20m; the highest records come from the Kholo region, with birds being reported up to 220m in altitude. This species' altitudinal distribution is presumably driven by the availability of suitable waterways and wetlands, which are more or less absent in the elevated parts of the city, and are usually close to sea level.
+
+Birds have been reported from a wide variety of habitats, but are by far the most common in non-remnant and wetland environments, where the reporting rate is approximately 30%. Their geographic distribution across Brisbane is presumably mostly driven by the availability of such habitats. The species' distribution within the city shows no clear seasonal variation, with approximately the same areas occupied throughout the year.
+
+**Seasonality**
+
+This species is a resident in Brisbane, with very little variation in reporting rate over the course of each year, although birds are perhaps slightly more common from June-November than they are during the rest of the year, with approximately a 3% difference in reporting rate. The reason for this is currently unknown. Birds breed during spring, with most breeding reports during August-December. The vast majority of these records are of recently fledged young, as the downy ducklings are conspicuous once fledged and semi-independent. A smaller number of records are of birds feeding young, while other unconfirmed reports of breeding include birds visiting probable nest sites and occupying suitable territory. Confirmed breeding events have been reported from more than two dozen locations around Brisbane, and this species has more breeding data currently than most other species, although it would still be good to collect more breeding information for our local birds, especially about the nesting and courtship stage of the breeding season, for which there are currently few data available.
+
+**Trends**
+
+Despite being a very common species across nearly all of Brisbane, there is some evidence to suggest that there may be a local decline in the abundance of Australian Wood Ducks. The annual reporting rate for this species has been consistently decreasing each year since 2012; the reporting rate in 2018 was only half that of 2012. More detailed analysis of trends and other data are needed to truly determine the nature of this decline and to know whether it is cause for concern, but certainly the local population of Wood Ducks should be closely monitored. Fortunately, Australian Wood Ducks are not nationally threatened, and Brisbane's population makes up only a small fraction of the wider distribution of this species, so even if there is a local decline it is unlikely to negatively impact the overall status of this widespread and abundant endemic.
+
+**Information Gaps**
+
+- Monitor this species closely for any evidence of further population declines
+- Collect more breeding data
+
+**Key Conservation Needs**
+
+- Protect this species further should any declines become more apparent
+- Protect suitable habitat for this species in Brisbane
+
+**Contributors to Species Account**
+
+Louis Backstrom 
 
 ```{r}
 end_two_column_layout()
