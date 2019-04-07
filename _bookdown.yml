@@ -409,7 +409,6 @@ rmd_files:
 - Taeniopygia-guttata.Rmd
 - Aix-galericulata.Rmd
 - Anas-platyrhynchos.Rmd
-- Pavo-cristatus.Rmd
 - Phasianus-colchicus.Rmd
 - Polytelis-swainsonii.Rmd
 - Psittacula-eupatria.Rmd
@@ -421,7 +420,6 @@ rmd_files:
 - Pycnonotus-jocosus.Rmd
 - Anser-anser-Domestic-type.Rmd
 - Anser-cygnoides-Domestic-type.Rmd
-- Anser-sp.-Domestic-type.Rmd
 - Cairina-moschata-Domestic-type.Rmd
 - Anas-platyrhynchos-Domestic-type.Rmd
 - Numida-meleagris-Domestic-type.Rmd
