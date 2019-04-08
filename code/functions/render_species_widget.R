@@ -10,8 +10,9 @@ render_species_widget <- function(x) {
   spp_index <- which(species_data$species_scientific_name == x)
   if (is.na(species_data$maps[spp_index]))
     return(invisible(TRUE))
-  # skip rendering widget to see how this affects CircleCI build
-  return(invisible(TRUE))
+  # skip for all species bar magpie goose for debugging
+  if (!identical(x, "Anseranas semipalmata"))
+    return(invisible(TRUE))
   # otherwise render widget
   x <- gsub("(", "", x, fixed = TRUE)
   x <- gsub(")", "", x, fixed = TRUE)
@@ -20,5 +21,16 @@ render_species_widget <- function(x) {
   x <- gsub(".", "", x, fixed = TRUE)
   path <- paste0("assets/widgets/", x, ".rds")
   if(!file.exists(path)) stop(paste(path, "does not exist"))
-  readRDS(path)
+  # create html widget
+  dir.create("assets/widgets_html", showWarnings = FALSE,
+             recursive = TRUE)
+  w <- readRDS(path)
+  out <- paste0("assets/widgets_html/", x, ".html")
+  htmlwidgets::saveWidget(w, out, libdir = "assets/widgets_html/lib",
+                          selfcontained = FALSE)
+  # dump html widget into iframe to avoid being ingested by pandoc
+  paste0("<iframe src=\"assets/widgets_html/", x, ".html",
+         "\" height=\"", w$sizingPolicy$defaultHeight,
+         "\" width=\"", w$sizingPolicy$defaultWidth,
+         "\"></iframe>")
 }
