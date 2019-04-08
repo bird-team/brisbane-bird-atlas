@@ -10,9 +10,6 @@ render_species_widget <- function(x) {
   spp_index <- which(species_data$species_scientific_name == x)
   if (is.na(species_data$maps[spp_index]))
     return(invisible(TRUE))
-  # skip for all species bar magpie goose for debugging
-  if (!identical(x, "Anseranas semipalmata"))
-    return(invisible(TRUE))
   # otherwise render widget
   x <- gsub("(", "", x, fixed = TRUE)
   x <- gsub(")", "", x, fixed = TRUE)
