@@ -188,7 +188,7 @@ deploy_book_website:
 	@git clone -b gh-pages https://${GITHUB_PAT}@github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git book-output
 	ls _book
 	ls _book/assets
-	ls _book/assets/widget_html
+	ls _book/assets/widgets_html
 	@cd book-output \
 	&& cp -r ../_book/* ./ \
 	&& git add --all * \
