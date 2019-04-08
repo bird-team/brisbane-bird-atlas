@@ -14,14 +14,14 @@ blocks:
       jobs:
         - name: setup-env
           commands:
-            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; checkout; fi
-            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; docker pull "brisbanebirdteam/build-env:latest"; 
-            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; sudo fallocate -l 5G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
-            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; echo GITHUB_PAT=$GITHUB_PAT >> $HOME/.Renviron; fi
-            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; make pull_assets; fi
+            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then checkout; fi
+            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then docker pull "brisbanebirdteam/build-env:latest"; 
+            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then sudo fallocate -l 5G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
+            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then echo GITHUB_PAT=$GITHUB_PAT >> $HOME/.Renviron; fi
+            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then make pull_assets; fi
         - name: build-website
           commands:
-            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; make book_website; fi
+            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then make book_website; fi
         - name: deploy-website
           commands:
-            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; make deploy_book_pdf; fi
+            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then make deploy_book_pdf; fi
