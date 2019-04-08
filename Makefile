@@ -197,7 +197,8 @@ deploy_book_website:
 	&& echo "here 4" \
 	&& git add --all * \
 	&& echo "here 5" \
-	&& ls _book/assets \
+	&& ls assets \
+	&& ls assets/widget_html \
 	&& git commit -m"Automagic book update" \
 	&& echo "here 6" \
 	&& git push -q origin gh-pages
