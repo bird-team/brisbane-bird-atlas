@@ -20,4 +20,4 @@ blocks:
             - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then echo GITHUB_PAT=$GITHUB_PAT >> $HOME/.Renviron; fi
             - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then make pull_assets; fi
             - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then make book_website; fi
-            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then make deploy_book_pdf; fi
+            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then make deploy_book_website; fi
