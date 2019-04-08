@@ -187,11 +187,17 @@ deploy_book_website:
 	@git config --global user.name "bird-team-bot"
 	@git clone -b gh-pages https://${GITHUB_PAT}@github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git book-output
 	@mkdir -p assets/widget_html
+	echo "here 1"
 	@cp -Rp assets/widget_html _book/assets
+	echo "here 2"
 	@cd book-output \
+	&& echo "here 3" \
 	&& cp -r ../_book/* ./ \
+	&& echo "here 4" \
 	&& git add --all * \
+	&& echo "here 5" \
 	&& git commit -m"Automagic book update" \
+	&& echo "here 6" \
 	&& git push -q origin gh-pages
 
 deploy_book_pdf:
