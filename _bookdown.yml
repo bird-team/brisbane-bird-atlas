@@ -95,7 +95,6 @@ rmd_files:
 - Charadrius-leschenaultii.Rmd
 - Charadrius-bicinctus.Rmd
 - Charadrius-ruficapillus.Rmd
-- Charadrius-veredus.Rmd
 - Erythrogonys-cinctus.Rmd
 - Elseyornis-melanops.Rmd
 - Rostratula-australis.Rmd
@@ -141,7 +140,6 @@ rmd_files:
 - Larus-dominicanus.Rmd
 - Anous-stolidus.Rmd
 - Anous-minutus.Rmd
-- Anous-albivitta.Rmd
 - Gygis-alba.Rmd
 - Onychoprion-fuscatus.Rmd
 - Onychoprion-anaethetus.Rmd
@@ -175,7 +173,6 @@ rmd_files:
 - Pterodroma-cookii.Rmd
 - Pterodroma-leucoptera.Rmd
 - Pachyptila-turtur.Rmd
-- Pachyptila-salvini.Rmd
 - Pachyptila-desolata.Rmd
 - Pachyptila-belcheri.Rmd
 - Pseudobulweria-rostrata.Rmd
@@ -391,7 +388,6 @@ rmd_files:
 - Zosterops-lateralis.Rmd
 - Zoothera-heinei.Rmd
 - Turdus-merula.Rmd
-- Aplonis-metallica.Rmd
 - Sturnus-vulgaris.Rmd
 - Acridotheres-tristis.Rmd
 - Dicaeum-hirundinaceum.Rmd
