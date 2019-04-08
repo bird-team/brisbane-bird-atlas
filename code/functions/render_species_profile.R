@@ -13,15 +13,15 @@
 render_species_profile <- function(x, caption, n_tries = 20) {
   # find url
   path <- species_data$profile_url[species_data$species_scientific_name == x]
+  # verify if species is spelled correctly?
+  if (length(path) == 0)
+    stop(paste0(x, " is not found in atlas_list.xlsx, is this spelled correctly?"))
   # parse species name to file name
   x <- gsub("(", "", x, fixed = TRUE)
   x <- gsub(")", "", x, fixed = TRUE)
   x <- gsub("/", "", x, fixed = TRUE)
   x <- gsub(" ", "-", x, fixed = TRUE)
   x <- gsub(".", "", x, fixed = TRUE)
-  # verify if species is spelled correctly?
-  if (length(path == 0))
-    stop(paste0(x, " is not found in atlas_list.xlsx, is this spelled correctly?"))
   # if URL is NA, then set path as default missing image
   if (is.na(path))
     path <- "assets/misc/missing-profile.png"
