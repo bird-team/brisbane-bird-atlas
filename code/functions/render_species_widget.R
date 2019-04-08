@@ -22,12 +22,14 @@ render_species_widget <- function(x) {
   path <- paste0("assets/widgets/", x, ".rds")
   if(!file.exists(path)) stop(paste(path, "does not exist"))
   # create html widget
-  dir.create("assets/widgets_html", showWarnings = FALSE,
+  dir.create("_book/assets/widgets_html", showWarnings = FALSE,
              recursive = TRUE)
   w <- readRDS(path)
   out <- paste0("assets/widgets_html/", x, ".html")
-  htmlwidgets::saveWidget(w, out, libdir = "assets/widgets_html/lib",
-                          selfcontained = FALSE)
+  withr::with_dir("_book", {
+    htmlwidgets::saveWidget(w, out, libdir = "assets/widgets_html/lib",
+                            selfcontained = FALSE)
+  })
   # dump html widget into iframe to avoid being ingested by pandoc
   paste0("<iframe src=\"assets/widgets_html/", x, ".html",
          "\" height=\"", w$sizingPolicy$defaultHeight,
