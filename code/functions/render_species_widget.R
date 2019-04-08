@@ -32,8 +32,7 @@ render_species_widget <- function(x) {
   })
   # dump html widget into iframe to avoid being ingested by pandoc
   cat(paste0("<iframe src=\"assets/widgets_html/assets/widgets_html/", x,
-             ".html",
-             "\" height=\"", w$sizingPolicy$defaultHeight,
-             "\" width=\"", w$sizingPolicy$defaultWidth,
-             "\"></iframe>"))
+             ".html\" height=\"500\" width=\"100%\" frameBorder=\"0\">",
+             "Interactive maps cannot be viewed with your current browser.",
+             "</iframe>"))
 }
