@@ -31,7 +31,7 @@ render_species_widget <- function(x) {
                             selfcontained = FALSE)
   })
   # dump html widget into iframe to avoid being ingested by pandoc
-  paste0("<iframe src=\"assets/widgets_html/", x, ".html",
+  paste0("<iframe src=\"assets/widgets_html/assets/widgets_html/", x, ".html",
          "\" height=\"", w$sizingPolicy$defaultHeight,
          "\" width=\"", w$sizingPolicy$defaultWidth,
          "\"></iframe>")
