@@ -1,0 +1,27 @@
+version: v1.0
+name: Atlas website
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+execution_time_limit:
+  hours: 2
+blocks:
+  - name: "Atlas website"
+    task:
+      secrets:
+        - name: GITHUB_PAT
+      jobs:
+        - name: setup-env
+          commands:
+            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; checkout; fi
+            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; docker pull "brisbanebirdteam/build-env:latest"; 
+            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; sudo fallocate -l 5G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
+            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; echo GITHUB_PAT=$GITHUB_PAT >> $HOME/.Renviron; fi
+            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; make pull_assets; fi
+        - name: build-website
+          commands:
+            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; make book_website; fi
+        - name: deploy-website
+          commands:
+            - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; make deploy_book_pdf; fi
