@@ -12,16 +12,12 @@ blocks:
       secrets:
         - name: GITHUB_PAT
       jobs:
-        - name: setup-env
+        - name: main
           commands:
             - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then checkout; fi
             - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then docker pull "brisbanebirdteam/build-env:latest"; 
             - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then sudo fallocate -l 5G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
             - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then echo GITHUB_PAT=$GITHUB_PAT >> $HOME/.Renviron; fi
             - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then make pull_assets; fi
-        - name: build-website
-          commands:
             - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then make book_website; fi
-        - name: deploy-website
-          commands:
             - if [ $SEMAPHORE_GIT_BRANCH == "master" ]; then make deploy_book_pdf; fi
