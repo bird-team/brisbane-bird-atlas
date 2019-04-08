@@ -186,13 +186,6 @@ deploy_book_website:
 	@git config --global user.email "jeff.o.hanson+bot@gmail.com"
 	@git config --global user.name "bird-team-bot"
 	@git clone -b gh-pages https://${GITHUB_PAT}@github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git book-output
-	@mkdir -p assets/widget_html
-	echo "here 1"
-	@cp -Rp assets/widget_html _book/assets
-	echo "here 2"
-	ls _book/assets
-	echo "here 3"
-	ls _book/assets/widget_html
 	@cd book-output \
 	&& cp -r ../_book/* ./ \
 	&& git add --all * \
