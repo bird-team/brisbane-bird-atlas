@@ -190,12 +190,14 @@ deploy_book_website:
 	echo "here 1"
 	@cp -Rp assets/widget_html _book/assets
 	echo "here 2"
+	ls _book/assets
 	@cd book-output \
 	&& echo "here 3" \
 	&& cp -r ../_book/* ./ \
 	&& echo "here 4" \
 	&& git add --all * \
 	&& echo "here 5" \
+	&& ls _book/assets \
 	&& git commit -m"Automagic book update" \
 	&& echo "here 6" \
 	&& git push -q origin gh-pages
