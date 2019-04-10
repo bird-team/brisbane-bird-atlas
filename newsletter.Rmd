@@ -10,6 +10,8 @@ Happy reading, and enjoy your birding!
 
 [Volume 1 Issue 3 - March 2019](https://www.fullerlab.org/wp-content/uploads/2018/12/Birding-Brisbane-v1-n3.pdf)
 
+[Volume 1 Issue 4 - April 2019](https://www.fullerlab.org/wp-content/uploads/2019/04/Birding-Brisbane-v1-n4.pdf)
+
 ```{r}
 render_image("https://www.fullerlab.org/wp-content/uploads/2019/03/Capture-768x530.jpg", caption = "Birding Brisbane is a monthly magazine about Birds and Birdwatching in the River City")
 ```
