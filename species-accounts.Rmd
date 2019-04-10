@@ -12,13 +12,13 @@ Species with draft accounts: 37
 
 - All _Anseriformes_
 - [australian-brushturkey-alectura-lathami]
-- [Australian Owlet-nightjar]
-- [Australian Swiftlet]
-- [Common Sandpiper]
-- [Grey Goshawk]
-- [Brown Goshawk]
-- [Collared Sparrowhawk]
-- [Australian King-Parrot]
+- [Australian Owlet-nightjar](australian-owlet-nightjar-aegotheles-cristatus)
+- [Australian Swiftlet][Australian Swiftlet]
+- [Common Sandpiper][common-sandpiper-actitis-hypoleucos]
+- [Grey Goshawk](#grey-goshawk-accipiter-novaehollandiae)
+- [Brown Goshawk][#Brown Goshawk]
+- [Collared Sparrowhawk](#Collared Sparrowhawk)
+- [Australian King-Parrot](Australian King-Parrot)
 - [Green Catbird]
 - [Eastern Spinebill]
 - [Spiny-cheeked Honeyeater]
