@@ -10,25 +10,25 @@ Please see the [Contributing](https://brisbanebirds.com/contributing.html) page 
 
 Species with draft accounts: 37
 
-- All _Anseriformes_
-- [australian-brushturkey-alectura-lathami]
-- [Australian Owlet-nightjar](australian-owlet-nightjar-aegotheles-cristatus)
-- [Australian Swiftlet][Australian Swiftlet]
-- [Common Sandpiper][common-sandpiper-actitis-hypoleucos]
+- _Anseriformes_ - 15 Species, see [Magpie Goose](#magpie-goose-anseranas-semipalmata)
+- [Australian Brushturkey](#australian-brushturkey-alectura-lathami)
+- [Australian Owlet-nightjar](#australian-owlet-nightjar-aegotheles-cristatus)
+- [Australian Swiftlet](#australian-swiftlet-aerodramus-terraereginae)
+- [Common Sandpiper](#common-sandpiper-actitis-hypoleucos)
 - [Grey Goshawk](#grey-goshawk-accipiter-novaehollandiae)
-- [Brown Goshawk][#Brown Goshawk]
-- [Collared Sparrowhawk](#Collared Sparrowhawk)
-- [Australian King-Parrot](Australian King-Parrot)
-- [Green Catbird]
-- [Eastern Spinebill]
-- [Spiny-cheeked Honeyeater]
-- _Acanthiza_ - 5 Species, see [Yellow-rumped Thornbill]
-- [Cicadabird]
-- [White-breasted Woodswallow]
-- [Spangled Drongo]
-- [Australian Reed-Warbler]
-- [Common Myna]
-- [Mandarin Duck]
+- [Brown Goshawk](#brown-goshawk-accipiter-fasciatus)
+- [Collared Sparrowhawk](#collared-sparrowhawk-accipiter-cirrocephalus.html)
+- [Australian King-Parrot](#australian-king-parrot-alisterus-scapularis)
+- [Green Catbird](#green-catbird-ailuroedus-crassirostris)
+- [Eastern Spinebill](#eastern-spinebill-acanthorhynchus-tenuirostris)
+- [Spiny-cheeked Honeyeater](#spiny-cheeked-honeyeater-acanthagenys-rufogularis)
+- _Acanthiza_ - 5 Species, see [Yellow-rumped Thornbill](#yellow-rumped-thornbill-acanthiza-chrysorrhoa)
+- [Cicadabird](#common-cicadabird-edolisoma-tenuirostre)
+- [White-breasted Woodswallow](#white-breasted-woodswallow-artamus-leucorynchus)
+- [Spangled Drongo](#spangled-drongo-dicrurus-bracteatus)
+- [Australian Reed-Warbler](#australian-reed-warbler-acrocephalus-australis)
+- [Common Myna](#common-myna-acridotheres-tristis)
+- [Mandarin Duck (Esc.)](#mandarin-duck-esc.-aix-galericulata)
 
 ```{r}
 clear_page()
