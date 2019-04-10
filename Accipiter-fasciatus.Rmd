@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The Brown Goshawk is a medium-sized _Accipiter_ hawk with ruddy red-grey plumage and a powerful build. Similar in appearance to its relative the [Collared Sparrowhawk], but differs from it in identification in having a rounded tail, thickset legs and a short middle toe. Good views are often needed to separate the two species, and care should be taken when viewing _Accipiters_ to prevent misidentification. Within Brisbane, Goshawks are typically found alone, although there are several records of multiple birds, with counts up to 4 being not unheard of. Birds can be found all over Brisbane, including on Moreton Island and the north west forests (where Collared Sparrowhawks appear to be mostly absent), but are not common in any given location.
+The Brown Goshawk is a medium-sized _Accipiter_ hawk with ruddy red-grey plumage and a powerful build. Within Brisbane, Goshawks are typically found alone, although there are several records of multiple birds, with counts up to 4 being not unheard of. Birds can be found all over Brisbane, including on Moreton Island and the north west forests (where Collared Sparrowhawks appear to be mostly absent), but are not common in any given location.
 
 ```{r}
 end_two_column_layout()
@@ -54,7 +54,7 @@ clear_page()
 start_two_column_layout()
 ```
 
-The most common _Accipiter_ species within Brisbane, Brown Goshawks can be found in nearly any habitat provided there is suitable prey available to them. However, they never reach particularly high abundances in any given site, although there are a few areas where they can be found relatively regularly. Additionally, birds may hang around at a given site as long as there is suitable prey available for them to feed on.
+The most common _Accipiter_ species within Brisbane, Brown Goshawks can be found in nearly any habitat provided there is suitable prey available to them. However, they never reach particularly high abundances in any given site, although there are a few areas where they can be found relatively regularly. Additionally, birds may hang around at a given site as long as there is suitable prey available for them to feed on. Similar in appearance to their relative the [Collared Sparrowhawk], Brown Goshawks differ in identification in having a rounded tail, thickset legs and a short middle toe. Good views are often needed to separate the two species, and care should be taken when viewing _Accipiters_ to prevent misidentification.
 
 Birds are present in Brisbane all-year round with no abundantly clear trend to their frequency, although they most are most often found in the spring with a secondary peak in autumn (see graphs), perhaps indicating an element of migratory behaviour. Much more work is needed to determine this properly. The species has been recorded breeding in Brisbane several times, all in the months between August and December, but never at high frequencies.
 
