@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Rare localised resident.
 
 ```{r}
-render_species_profile(species_name, caption = "The rarest of Brisbane's three \{_Accipiter_} hawks. Confined to dense forests much of the time but regularly turns up in odd locations and has a propensity for wandering widely. More common in winter than in summer, suggesting that birds move in and out of Brisbane with seasonal changes.")
+render_species_profile(species_name, caption = "The rarest of Brisbane's three Accipiter hawks. Confined to dense forests much of the time but regularly turns up in odd locations and has a propensity for wandering widely. More common in winter than in summer, suggesting that birds move in and out of Brisbane with seasonal changes.")
 ```
 
 ```{r}
