@@ -22,7 +22,7 @@ Species with draft accounts: 37
 - [Green Catbird](#green-catbird-ailuroedus-crassirostris)
 - [Eastern Spinebill](#eastern-spinebill-acanthorhynchus-tenuirostris)
 - [Spiny-cheeked Honeyeater](#spiny-cheeked-honeyeater-acanthagenys-rufogularis)
-- _Acanthiza_ - 5 Species, see [Yellow-rumped Thornbill](#yellow-rumped-thornbill-acanthiza-chrysorrhoa)
+- _Acanthiza_ - 5 Species, see [Buff-rumped Thornbill](#buff-rumped-thornbill-acanthiza-reguloides)
 - [Cicadabird](#common-cicadabird-edolisoma-tenuirostre)
 - [White-breasted Woodswallow](#white-breasted-woodswallow-artamus-leucorynchus)
 - [Spangled Drongo](#spangled-drongo-dicrurus-bracteatus)
