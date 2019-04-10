@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The Collared Sparrowhawk is a small-medium sized _Accipiter_ hawk with a grey and rufous body and yellow legs. Very similar in appearance to its relative the [Brown Goshawk], but differs in having a typically squarer tail (sometimes notched), thinner legs and a long middle toe [@ABG; @HANZAB2]. Good views are generally needed to separate these two species definitively. It is almost exclusively found alone, with only a few records of pairs and only one of a trio [@reid2012ebirdS16653002]. Birds can be found all over Brisbane, but are typically not resident at any particular sites and may occur anywhere there is suitable prey to be found.  
+The Collared Sparrowhawk is a small-medium sized _Accipiter_ hawk with a grey and rufous body and yellow legs. Birds can be found all over Brisbane, but are typically not resident at any particular sites and may occur anywhere there is suitable prey to be found.  
 
 ```{r}
 end_two_column_layout()
@@ -54,7 +54,7 @@ clear_page()
 start_two_column_layout()
 ```
 
-The less common of the brown _Accipiter_ species in Brisbane, Collared Sparrowhawks can be found across the region everywhere except the north west forests and Moreton Island (where the species has never been recorded), but never reach high abundance at any given site, although birds may hang around for extended stretches of time where there are favourable conditions for them.
+The less common of the brown _Accipiter_ species in Brisbane, Collared Sparrowhawks can be found across the region everywhere except the north west forests and Moreton Island (where the species has never been recorded), but never reach high abundance at any given site, although birds may hang around for extended stretches of time where there are favourable conditions for them. Very similar in appearance to its relative the [Brown Goshawk](#brown-goshawk-accipiter-fasciatus), this species differs in having a typically squarer tail (sometimes notched), thinner legs and a long middle toe [@ABG; @HANZAB2]. Good views are generally needed to separate these two species definitively. It is almost exclusively found alone, with only a few records of pairs and only one of a trio [@reid2012ebirdS16653002].
 
 Collared Sparrowhawks are present in Brisbane all year round, with no clear trends in their abundance or distribution, and while juvenile birds are regularly sighted, the species has never been recorded breeding in Brisbane so it is unclear whether the species is cryptic in its nesting habits (quite likely) or whether birds breed outside of the region and move into the city to feed where food is available (also possible).
 
