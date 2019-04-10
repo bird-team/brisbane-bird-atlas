@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Uncommon localised resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Limited to the wetter rainforests of the inland ranges of Brisbane, a patchy resident and possible partial migrant. Slightly more records in cooler months, but no clear indication of local movements. Occurrence varies widely from year to year with no clear long term trend. Not of conservation concern, but dependent on the cooler wet sclerophyll and rainforests of the Brisbane ranges, which are under threat.")
+render_species_profile(species_name, caption = "Limited to the wetter rainforests of Brisbane, a patchy resident and possible partial migrant. More records in cooler months, but no clear indication of local movements. Occurrence varies widely from year to year with no clear long term trend. Not of conservation concern, but dependent on the cooler forests of the Brisbane ranges, which are under threat.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The Striated Thornbill is a small, brightly-coloured thornbill with a distinctively streaked face and underparts [@ABG]. It is a member of the family Acanthizidae alongside other thornbills, gerygones and scrubwrens, and is in the genus _Acanthiza_ like all other thornbills. A gregarious species, it is found in pairs or small groups, with flocks of up to half a dozen being moderately common in the Brisbane region. Identification can be somewhat challenging without clear views, but their distinctive calls and brightly coloured bodies separate them from most other thornbill species in the area. Within Brisbane, Striated Thornbills are patchily distributed, occurring commonly at a number of sites with suitable wet forest habitat, but are absent at others. Given that the majority of the habitat within Brisbane in which they may occur is poorly surveyed, they may be more common than currently indicated.
+The Striated Thornbill is a small, brightly-coloured thornbill with a distinctively streaked face and underparts [@ABG]. Identification can be challenging without clear views, but their distinctive calls and brightly coloured bodies separate them from most other thornbill species in the area. Within Brisbane, Striated Thornbills are patchily distributed, occurring commonly at a number of sites with suitable wet forest habitat, but are absent at others. Given that the majority of the habitat within Brisbane in which they may occur is poorly surveyed, they may be more common than currently indicated.
 
 ```{r}
 end_two_column_layout()
