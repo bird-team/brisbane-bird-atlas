@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The Cicadabird (aka Common or Slender-billed Cicadabird) is a small, sexually dimorphic species of cuckooshrike found across north and east Australia, New Guinea, Indonesia and numerous islands in the south Pacific. Adult males are a striking slate-grey colour all over, while females and younger birds are a lighter grey across the back with white, barred underparts. They are often first located by their distinctive call, which sounds very much like that of a cicada, for which they are named. Birds are locally common across the city throughout summer, and may turn up anywhere, although they show a clear preference for remnant habitats rather than urban parks and gardens.
+The Common Cicadabird (aka Slender-billed Cicadabird) is a small, sexually dimorphic species of cuckooshrike found across north and east Australia, New Guinea, Indonesia and numerous islands in the south Pacific. Adult males are a striking slate-grey colour all over, while females and younger birds are a lighter grey across the back with white, barred underparts. They are often first located by their distinctive call, which sounds very much like that of a cicada, for which they are named. 
 
 ```{r}
 end_two_column_layout()
