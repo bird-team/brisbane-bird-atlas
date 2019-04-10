@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The Spiny-cheeked Honeyeater is a large, distinctive species of honeyeater similar (and closely related) to wattlebirds, but with a distinctive tawny breast and throat [@ABG]. It is gregarious in its normal range, although the majority of records in Brisbane have been on single birds or occasionally pairs. It is nomadic across much of its distribution [@HANZAB5], particularly in the north of Australia, although the provenance of all Brisbane birds is unknown. It is readily identified by its size (large compared to most honeyeaters), distinctive call and plumage pattern. Further birds may turn up anywhere across Brisbane, although there appears to be a preference for open woodland and dry forest, habitat similar to that found in their normal breeding range [@HANZAB5].
+The Spiny-cheeked Honeyeater is a large, distinctive species of honeyeater similar (and closely related) to wattlebirds, but with a distinctive tawny breast and throat [@ABG]. It is gregarious in its normal range, although the majority of records in Brisbane have been on single birds or occasionally pairs. Further birds may turn up anywhere across Brisbane, although there appears to be a preference for open woodland and dry forest, habitat similar to that found in their normal breeding range [@HANZAB5].
 
 ```{r}
 end_two_column_layout()
@@ -54,9 +54,9 @@ clear_page()
 start_two_column_layout()
 ```
 
-A gregarious and conspicuous honeyeater of inland Australia, Spiny-Cheeked Honeyeaters are but a rare vagrant within Brisbane's environs. In their normal range, they favour open habitats [@HANZAB5] including woodland and grassy savanna, a preference somewhat reflected in their occurrences so far in Brisbane. It is a little surprising that they have not yet turned up in the west of the city in areas such as Lake Manchester and Anstead, although given the higher activity by birders at Oxley Creek Common and Tinchi Tamba (where the most records have come from), it is perhaps simply a matter of time and favourable conditions.
+A gregarious and conspicuous honeyeater of inland Australia, Spiny-Cheeked Honeyeaters are but a rare vagrant within Brisbane's environs. In their normal range, they favour open habitats [@HANZAB5] including woodland and grassy savanna, a preference somewhat reflected in their occurrences so far in Brisbane. Birds are nomadic across much of its distribution [@HANZAB5], particularly in the north of Australia, although the provenance of all Brisbane birds is unknown. The species is readily identified by its size (large compared to most honeyeaters), distinctive call and plumage pattern.
 
-To date, this species is an exclusive winter vagrant to Brisbane, with the earliest record in mid-May [@hewson2016ebirdS29667767] and the last in mid-August [@possingham2016ebirdS31038450]. Given that the interior is drier in the winter months and food is scarcer due to decreased flowering, this is likely the driving force behind this species nomadic movements to the coast.
+Given their nomadic and irruptive nature, it is a little surprising that they have not yet turned up in the west of the city in areas such as Lake Manchester and Anstead, although due to the higher activity by birders at Oxley Creek Common and Tinchi Tamba (where the most records have come from), it is perhaps simply a matter of time and favourable conditions. To date, this species is an exclusive winter vagrant to Brisbane, with the earliest record in mid-May [@hewson2016ebirdS29667767] and the last in mid-August [@possingham2016ebirdS31038450]. Given that the interior is drier in the winter months and food is scarcer due to decreased flowering, this is likely the driving force behind this species nomadic movements to the coast.
 
 **Distribution and Habitat**
 
