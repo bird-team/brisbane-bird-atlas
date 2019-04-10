@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The Grey Goshawk is Brisbane's rarest species of _Accipiter_ hawk, and is a tricky species to locate, being only intermittent at most locations where it has been recorded. It is a distinctive bird, with fully grey or white plumage and yellow cere and legs. It is almost always found singly in Brisbane, with only a handful of records of multiple birds and a high count of three. It has been recorded all across mainland Brisbane but favours the dense forests of the west, although it regularly irrupts into wide-ranging habitats to feed and can occur almost anywhere.
+The Grey Goshawk is Brisbane's rarest species of _Accipiter_ hawk, and is a tricky species to locate, being only intermittent at most locations where it has been recorded. It is a distinctive bird, with fully grey or white plumage and yellow cere and legs. It is almost always found singly in Brisbane, with only a handful of records of multiple birds and a high count of three. It has been recorded all across the mainland but favours the dense forests of the west, although it regularly irrupts into wide-ranging habitats to feed and can occur almost anywhere.
 
 ```{r}
 end_two_column_layout()
