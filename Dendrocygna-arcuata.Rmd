@@ -64,7 +64,7 @@ As a species dependent on wetland habitats, which are under pressure from modifi
 
 Wandering Whistling-Ducks are quite patchily-distributed across Brisbane, and while they have been reported from over 40 _Atlas_ squares they are only common in a handful of them. By far the most regular sites for the birds are at Sandy Camp Road Wetlands and Dowse Lagoon, while other regular locations include Minnippi Parklands, GJ Fuller Oval Lagoons and Lindum Wetlands. At all other locations around the city they are at best an irregular visitor. They are almost never recorded in the built-up suburbs of the city, nor the elevated forests to the west of the city nor Moreton Island (where the species has never been recorded). Furthermore, Whistling-Ducks are very much a lowland species in Brisbane, occurring at an average elevation of 10m and never above 70m. There is (unsurprisingly) no seasonal variation in the elevation of records. Even in non-remnant and wetland areas, this species' preferred habitats, the reporting rate only reaches 8%, indicating that this species is not commonly encountered around Brisbane.
 
-The geographic distribution of Wandering Whistling-Ducks across Brisbane is presumably driven by the limited availability of suitable wetland habitat with relatively deep water and fringing vegetation, which this species prefers. It is perhaps somewhat surprising that certain seemingly-suitable locations (such as the fringes of Gold Creek and Enoggera Reservoirs) are not more regularly visited by these birds, although it is possible the birds are simply well-suited to their current favoured sites and do not regularly move around.
+The geographic distribution of Wandering Whistling-Ducks across Brisbane is presumably driven by the limited availability of suitable wetland habitat with deep water and fringing vegetation, which this species prefers. It is somewhat surprising that certain seemingly-suitable locations (such as the fringes of Gold Creek and Enoggera Reservoirs) are not more regularly visited by these birds, although it is possible the birds are simply well-suited to their current favoured sites and do not regularly move around.
 
 **Seasonality**
 
@@ -80,7 +80,7 @@ The overall long-term reporting rate for Wandering Whistling-Ducks in Brisbane h
 - Determine if populations move inland during wetter years, in line with the published literature
 - Collect more breeding data
 - Ascertain the reason for any variation in average and high counts for this species over the year
-- Conduct more comprehensive counts of this species at their main sites and monitor any changes
+- Conduct more comprehensive counts of this species at their main sites
 - Find out the causes for this species' localised distribution within the region
 
 **Key Conservation Needs**
