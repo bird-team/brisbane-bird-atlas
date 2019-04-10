@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Uncommon widespread resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Patchy distribution within the Brisbane region, with only a handful of regular sites but many more locations where the species has occurred, often only as one-off records. Present in Brisbane throughout the year, but with a substantial increase in the winter months. No clear trend over the past decade, although rather few records in the last 4-5 years, and its abundance fluctuates from year to year. Yellow-rumped Thornbill is scarce and localised, and while it is probably not of major conservation concern in Brisbane, it is worth monitoring for signs of population decline or reduction in distribution. Photo by Richard Fuller, Priors Pocket, 17 Jun 2018")
+render_species_profile(species_name, caption = "Patchy distribution within the Brisbane region, with only a handful of regular sites but many more locations where the species has occurred, often only as one-off records. While probably not of major conservation concern in Brisbane, it is worth monitoring for signs of population decline or reduction in distribution. Photo by Richard Fuller, Priors Pocket, 17 Jun 2018")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The Yellow-rumped Thornbill is a distinctive small passerine with a bright yellow rump and conspicuous facial markings [@ABG]. It is a member of the family Acanthizidae, which includes other thornbills, gerygones and scrubwrens. It is the largest species of thornbill, up to 12cm in length [@HANZAB6] and diverged early from other thornbills [@marki2017supermatrix], resulting in a species quite distinct from the rest within its genus. If seen well it can be identified easily, and its distinctive tinkling calls further differentiate it from other thornbills. Yellow-rumped Thornbill is patchily distributed in Brisbane and are only common at a few sites. Yet it wanders widely and can turn up anywhere with suitable habitat. Most commonly found in small groups of 2-4, although flocks of up to a dozen have been recorded rarely.
+The Yellow-rumped Thornbill is a distinctive small passerine with a bright yellow rump and conspicuous facial markings [@ABG]. It is the largest species of thornbill, up to 12cm in length [@HANZAB6] and diverged early from other thornbills [@marki2017supermatrix], consequently it is quite distinct within the genus. If seen well it can be identified easily, and its distinctive tinkling calls further differentiate it from other thornbills. Birds are patchily distributed in Brisbane and are only common at a few sites, but wander widely. 
 
 ```{r}
 end_two_column_layout()
@@ -56,7 +56,7 @@ start_two_column_layout()
 
 A species of open habitats, the Yellow-rumped Thornbill occurs patchily across Brisbane, but beyond our border is common across much of Western Australia, South Australia, southern Northern Territory and the south east States. Yellow-rumped Thornbill has been recorded from most districts across mainland Brisbane excluding the wetter forests of the Camel's Head and the south east corner (and the species has never been recorded on Moreton Island), but it is never really common and typically occurs in small numbers. Strongholds are at Prior's Pocket, Oxley Creek Common and the open country near the mouth of the Brisbane River. The highest count is of 12 birds at Oxley Creek Common [@possingham2009ebirdS17747770] but typical counts are much lower, with only a handful of records over 5 birds.
 
-The species is present in Brisbane year-round, although there is a substantial increase in reporting rate over the winter months, suggesting that birds might move into the city during winter, or our local birds might wander more widely at that time of year. The biggest counts also tend to occur in winter, suggesting immigration is a possibility, but in the absence of banding data it is difficult to be sure.
+The species is present in Brisbane year-round, although there is a substantial increase in reporting rate over the winter months, suggesting that birds might move into the city during winter, or our local birds might wander more widely at that time of year. The biggest counts also tend to occur in winter, suggesting immigration is a possibility, but in the absence of banding data it is difficult to be sure. There is no clear trend in abundance over the past decade, although there have been rather few records in the last 4-5 years, and the species'  abundance fluctuates from year to year.
 
 **Distribution and Habitat**
 
