@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category C; Common widespread resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Widespread introduced pest species that appears to be declining within Brisbane despite rapid expansion across much of Australia. Appears to exhibit a degree of seasonal variation within Brisbane, being nearly twice as abundant over summer, but no clear reason for this pattern. Not of conservation concern owing to pest status.")
+render_species_profile(species_name, caption = "Widespread introduced pest species that may be declining locally despite rapid expansion nationwide. Appears to exhibit some seasonal variance within Brisbane, being twice as abundant over summer, but no clear reason for this pattern. Not of conservation concern owing to pest status.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-The Common Myna is an introduced species of Starling, native to south east Asia and the Indian Subcontinent. It is unmistakeable within the Brisbane region, with brown and black plumage and a striking yellow beak and bare eye skin. Mynas are common around the built-up areas of the city, being less common in densely vegetated areas with remnant habitat. Data from the past 15 years suggests this species is declining in Brisbane, with annual abundance dropping from 40% in 2005 to 20% in 2017, but reasons for this are unclear.
+The Common Myna is an introduced species of Starling, native to south east Asia and the Indian Subcontinent. It is unmistakeable within the Brisbane region, with brown and black plumage and a striking yellow beak and bare eye skin. Mynas are common around the built-up areas of the city, being less common in areas with remnant habitat. Recent data suggest this species is declining in Brisbane, but the reasons for this are unclear.
 
 ```{r}
 end_two_column_layout()
