@@ -80,7 +80,7 @@ Furthermore, the breeding data for this species currently is quite limited, with
 
 The reporting rate for Brown Quail in Brisbane has been somewhat variable although stable over the _Atlas_ period, excepting a curious boom year in 2008 immediately followed by a bust in 2009. Deeper analysis of the underlying data is needed to determine the cause of this variation, although it seems possible that (given the low use of eBird a decade ago) this is simply a result of minimal data being available.
 
-Grey Teal are not conservation concern locally or nationally. Furthermore, Brisbane’s population is rather peripheral to the main distribution of the species in Australia, and the overall population appears to be fairly stable over time, despite some local declines with land clearing and urbanisation. Nevertheless, the distribution and abundance of this species within Brisbane should be monitored closely for any signs of population declines, and this species' favoured habitats protected.
+Brown Quail are not conservation concern locally or nationally. Furthermore, Brisbane’s population is rather peripheral to the main distribution of the species in Australia, and the overall population appears to be fairly stable over time, despite some local declines with land clearing and urbanisation. Nevertheless, the distribution and abundance of this species within Brisbane should be monitored closely for any signs of population declines, and this species' favoured habitats protected.
 
 **Information Gaps**
 
@@ -97,7 +97,7 @@ Grey Teal are not conservation concern locally or nationally. Furthermore, Brisb
 
 **Contributors to Species Account**
 
-Louis Backstrom 
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()
