@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Common widespread resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Common resident of grasslands across Brisbane. Year-round resident, although local nomadic movement may occur in some areas. Not of conservation concern. Photo by Louis Backstrom, Kedron Brook Wetlands, 15 Mar 2018.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+By far the commonest and easiest to find of Brisbane's quail species, the Brown Quail is a plainly-plumaged species, with patterned-brown plumage and a dumpy body superficially similar to other species of quail. They are a gregarious species, almost always found in small-to-medium sized family groups or flocks, with counts of up to 50 recorded. Brown Quail are common across Brisbane in a wide variety of habitats, but are most common in non-remnant environments with plenty of grass.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,50 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+A common species of quail across much of Australasia, the Brown Quail is a familiar sight of damp grassland and low shrubbery within Brisbane. A plainly-plumaged bird, this species can be difficult to separate from [Stubble Quail](stubble-quail-coturnix-pectoralis) and female [King Quail](#king-quail-synoicus-chinensis), but given good views is usually readily identifiable; given the other species' rare and cryptic (at best) nature within Brisbane, most quail encountered are likely to be Brown.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Brown Quail are gregarious, and are regularly found in family groups or pairs, with an average count of just over 4 birds per reporting checklist. Larger flocks of birds are also not uncommon, and several flocks may be found within a relatively small patch of grassland resulting in large total counts - the highest in Brisbane being of 54 birds in one morning at Oxley Creek Common [@bennett2018ebirdS48790587]. Counts of more than 25 birds are known from just two locations, with 12 separate checklists from Oxley Creek Common and just the one from Kedron Brook Wetlands. Birds are present all year-round, and although there is some fluctuation in their monthly abundance this may or may not be indicative of any general seasonal patterns.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Although this species is seemingly quite reliant on a specific habitat (dry or damp, thick grassland), given that these habitats are not particularly threatened within Brisbane, this species is not particularly threatened. This is mostly thanks to the protection or preservation of several large expanses of grassland across Brisbane, in areas such as Oxley Creek Common, Lake Manchester, Kedron Brook Wetlands and the airport. Care should nevertheless be taken to ensure these areas of habitat remain suitable for this species, and others too which frequent such environments.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
+
+Brown Quail are found very widely across Brisbane, having been reported in more than 100 _Atlas_ squares at a total reporting rate of 9%. They have been reported from nearly every region of the city, perhaps with the exception of the heavily wooded forests of the Camel's Head, although more survey effort is needed in this region to confirm this. There are limited data for this species over on Moreton Island, but several widely-located records indicate that this species is probably widespread on the island. Additionally, this species is one of few that has been reported on a couple of the inner islands in the bay, with records from both Green and St Helena Islands.
+
+Quail are found across a relatively wide elevational gradient within the city, although there appears to be a relatively hard line at 150m, above which there are very few records. This is most likely a result of the birds' preferred habitat being scarce above this height, as grassland is typically found at low elevations locally within Brisbane. Birds have been reported from several habitat types, but are by far the most common in non-remnant areas. Given the broad variety of sub-habitat types that are contained within this category, more fine-scale investigation is needed to truly determine what habitats birds prefer, but it seems likely they are most abundant within grassland habitats. This is their preferred habitat as reported in the literature [@HANZAB2], and certainly the bulk of records in Brisbane come from locations such as Kedron Brook Wetlands and Oxley Creek Common, both of which have abundant stretches of grassland.
+
+The local distribution of Brown Quail shows very little seasonal variation, with the same sites occupied throughout the year and no clear evidence of any seasonal migration or nomadism. Birds are typically resident in the wetter parts of their range [@HANZAB2] so this trend (or lack thereof) in the data is unsurprising. More fine-scale work is needed to ascertain the nature and extent of any local movements that birds might display.
+
+**Seasonality**
+
+There is some degree of seasonal variation in the abundance of Brown Quail within Brisbane. Reporting rate is approximately 2-3% higher during spring and early summer (Aug-Jan) than during other months. Similarly, the average count of birds shows a similar pattern, although slightly earlier in the year - May through to October have the highest average number of birds per checklist (more than 6 in August), with a sharp drop off at the beginning of summer.
+
+This interesting result may be explained by the birds' breeding cycle. Birds breed from August to April in southern Queensland [@HANZAB2], and breeding has been reported in Brisbane from several months during this period (see the graphs). The lag between maximum counts and peak reporting rate may be a result of birds breeding during winter and rearing young in early spring (accompanied by high counts, as family groups coalesce together), followed by birds (in particular recently fledged juveniles and immatures) dispersing somewhat following the main breeding season in spring and early summer. However, much more fine-scale monitoring of this species' breeding behaviours is needed to confirm this.
+
+Furthermore, the breeding data for this species currently is quite limited, with only a handful of records, nearly all of which are of recently fledged young (with one record of feeding young). It would be good to collect records of this species nesting and mating, to determine more fine-scale trends and timings of this species' local breeding season. It would also be good to know whether birds may breed multiple times in good seasons, as is known to occur more widely in the literature [@HANZAB2].
+
+**Trends**
+
+The reporting rate for Brown Quail in Brisbane has been somewhat variable although stable over the _Atlas_ period, excepting a curious boom year in 2008 immediately followed by a bust in 2009. Deeper analysis of the underlying data is needed to determine the cause of this variation, although it seems possible that (given the low use of eBird a decade ago) this is simply a result of minimal data being available.
+
+Grey Teal are not conservation concern locally or nationally. Furthermore, Brisbane’s population is rather peripheral to the main distribution of the species in Australia, and the overall population appears to be fairly stable over time, despite some local declines with land clearing and urbanisation. Nevertheless, the distribution and abundance of this species within Brisbane should be monitored closely for any signs of population declines, and this species' favoured habitats protected.
+
+**Information Gaps**
+
+- More finely determine the nature and causes of seasonal patterns in abundance
+- Collect more breeding data
+- Determine whether this species occurs in the Camel's Head
+- Collect more data on this species on Moreton Island and the Bay
+- Determine whether Brisbane's birds move around locally, and what factors affect their local distribution   
+
+**Key Conservation Needs**
+
+- Protect sites where this species is concentrated
+- Protect large expanses of grassland for this species
+
+**Contributors to Species Account**
+
+Louis Backstrom 
 
 ```{r}
 end_two_column_layout()
