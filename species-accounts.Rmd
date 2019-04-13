@@ -13,6 +13,7 @@ Species with draft accounts: 38
 - _Anseriformes_ - 15 Species, see [Magpie Goose](#magpie-goose-anseranas-semipalmata)
 - [Australian Brushturkey](#australian-brushturkey-alectura-lathami)
 - [Brown Quail](#brown-quail-synoicus-ypsilophorus)
+- [King Quail](#king-quail-synoicus-chinensis)
 - [Australian Owlet-nightjar](#australian-owlet-nightjar-aegotheles-cristatus)
 - [Australian Swiftlet](#australian-swiftlet-aerodramus-terraereginae)
 - [Common Sandpiper](#common-sandpiper-actitis-hypoleucos)

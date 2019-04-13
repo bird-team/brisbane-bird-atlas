@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Rare localised resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Rare, patchy and cryptic resident of dank grassland around the city. Very difficult to observe but may be flushed or heard calling at night. Not of conservation concern.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+A tiny, cryptic and incredibly shy species of quail, the King Quail is a very rare resident found widely across Brisbane. Birds are sexually dimorphic, with males being an unmistakeable blue and rich red underneath, while females are much more plainly-plumaged. Birds are gregarious, usually being found in small groups in Brisbane of up to half a dozen individuals. King Quail are incredibly rare in any habitat, but are most common in estuarine environments, typically rank grassy marshland.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,48 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+A widely-distributed but steadfastly cryptic species, the King Quail (also known outside Australia as the Blue-Breasted or Asian Blue Quail) is a tiny species of bird found across Brisbane in rank grassland and swamps. Females and young birds are plainly-plumaged and can be difficult to separate from [Brown Quail](#brown-quail-synoicus-ypsilophorus), but given good views, or in the presence of an adult male, are usually identifiable.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+King Quail are moderately gregarious and are usually found in small family groups within Brisbane, with a high count of just 6 birds [@tranter2018ebirdS46888253] and an average of approximately 2 birds per reporting checklist. Counts of more than two birds are only currently known from two locations - Kholo Rd at Lake Manchester Rd (aka Jacky Winter Corner) and Kedron Brook Wetlands. Birds are present all year-round in Brisbane, and barring anomalies in July and August (following the discovery and twitching of the Kholo Rd birds) do not appear to exhibit any seasonal variation, although more data are probably needed to confirm this.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Although this species is quite reliant on a specific habitat, rank grassland, given that these habitats are not particularly threatened within Brisbane, this species is not major conservation concern. However, birds are cryptic and distinctly thin on the ground and so may be at risk of significant declines and local extinctions if specific habitats were to become unsuitable for them. It would be ideal to locate further sites where this species occurs around Brisbane and to more accurately determine the total population of this species in the region.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+King Quail are moderately common in aviculture, and there is a (very) slight chance that any birds found in unusual locations or recently deceased may have been escapees. Most cage birds in Brisbane are believed to be of the nominate subspecies _chinensis_ rather than the local _victoriae_, although the two are difficult to distinguish. Given this species' highly nomadic nature the vast majority of birds are likely wild, although the possibility of escapees should not be discounted, especially if birds seem tame or have clear plumage mutations.
+
+**Distribution and Habitat**
+
+Despite their rare nature, King Quail are moderately widespread around Brisbane, being found at a number of scattered sites around the city. They are, however, only reliable at a couple of locations: the aforementioned Jacky Winter Corner, Kedron Brook Wetlands (where they appear to be intermittent), and perhaps Cabbage Tree Creek at Lake Manchester. Nevertheless, birds have been recorded from a large number of further sites around the city, including a handful of sites in the northern suburbs between Kedron Brook Wetlands and Lake Samsonvale (a known stronghold for this species beyond the border), perhaps suggesting a degree of movement between the two sites. More work is needed to verify this.
+
+Habitat-wise, King Quail are almost exclusively found in rank grasslands (a sub-category within estuary for the most part), with only a handful of records coming from other habitats such as wetlands and non-remnant environs. This habitat preference presumably drives most of their geographic distribution within the region. No seasonal variation in habitat preference or distribution has been noted within Brisbane.
+
+**Seasonality**
+
+With the exception of currently anomalous months in July and August, almost certainly owing to the widespread twitching of the Kholo/Manchester Rd birds, there is very little seasonal variation in the abundance or distribution of Brisbane's King Quails. Somewhat interestingly, across the whole of south east Queensland there is a distinct annual trend of more records for this species in summer than in winter; it would be good to more intensively survey Brisbane's birds to determine whether this pattern holds locally as well.
+
+There are currently no breeding reports of King Quail in Brisbane, although given this species' incredibly cryptic nature this is almost certainly more the result of birds being difficult to detect (and likely even more so during the breeding season) rather than an absence of breeding activity within our region. More work is needed in this area.
+
+**Trends**
+
+The reporting rate for King Quail over the _Atlas_ period has been highly variable, as one would expect for such a cryptic species. Several years have no records and most years have very few, although the period between 2011-2013 was a good time for this species - probably thanks to a run of records from Kedron Brook Wetlands. Interestingly, this run of records has more or less dried up over the past five years, with only half a dozen records since 2014 - it would be good to comprehensively survey the wetlands and determine whether birds are still resident at the site or if they are now only intermittent visitors. This species is known to be highly nomadic, and there is a decent body of evidence currently to suggest that our local birds are moving around the city, so it would be good to track Brisbane's birds' movements around the city to determine which sites are favoured by these birds.
+
+King Quail are not of any conservation concern currently, despite their rare nature in Brisbane. Brisbane's birds are very peripheral to the broader distribution of this species in Australia and more broadly across Asia, and no clear trend is apparent, although it is possible the birds are declining. It would be good, as mentioned above, to more closely monitor Brisbane's populations in order to determine any longer-term trends.
+
+**Information Gaps**
+
+- Locate more sites for this species
+- Determine whether birds move around the city, and if so, why and where
+- Collect breeding information for this species
+- Determine any causes for the boom and bust years currently seen in the data
+- Verify any seasonal trends that may be present for this species
+
+**Key Conservation Needs**
+
+- Protect key sites and habitats for this species
+- Closely monitor populations for any declines
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()
