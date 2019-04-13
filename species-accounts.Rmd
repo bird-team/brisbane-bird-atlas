@@ -8,12 +8,10 @@ The following pages contain species accounts for all birds known to have occurre
 
 Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas. Currently only a handful of species have draft accounts written - we need more writers!
 
-Species with draft accounts: 38
+Species with draft accounts: 40
 
 - _Anseriformes_ - 15 Species, see [Magpie Goose](#magpie-goose-anseranas-semipalmata)
-- [Australian Brushturkey](#australian-brushturkey-alectura-lathami)
-- [Brown Quail](#brown-quail-synoicus-ypsilophorus)
-- [King Quail](#king-quail-synoicus-chinensis)
+- _Galliformes_ - 4 Species, see [Australian Brushturkey](#australian-brushturkey-alectura-lathami)
 - [Australian Owlet-nightjar](#australian-owlet-nightjar-aegotheles-cristatus)
 - [Australian Swiftlet](#australian-swiftlet-aerodramus-terraereginae)
 - [Common Sandpiper](#common-sandpiper-actitis-hypoleucos)

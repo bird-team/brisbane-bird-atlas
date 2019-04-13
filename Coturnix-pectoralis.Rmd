@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Vagrant.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Rare vagrant to Brisbane region, few verified records and as yet no conclusive proof, although some very well-documented sightings. Not of conservation concern.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+Brisbane's rarest species of quail, the Stubble Quail is a very rare vagrant to the Brisbane region, with few verified records and as yet no photos or audio to conclusively prove this species occurs locally, despite a number of well-documented sightings. Birds are relatively plainly-plumaged and may be difficult to distinguish from other species without proper views. Not particularly gregarious, and all records in Brisbane to date have been of single birds.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,38 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Australia's only endemic species of quail, the Stubble Quail can be found in stubble paddocks all across the country but is very rare within Brisbane, with only a handful of accepted records. In all plumages, birds are quite plain, albeit slightly more patterned than [Brown Quail](#brown-quail-synoicus-ypsilophorus), and can be difficult to positively identify without proper views. Given this species' incredibly rare status in Brisbane, birds should be assumed to be Brown Quail (or [King Quail](king-quail-synoicus-chinensis), if in the right habitat) unless proven otherwise.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+There are currently only four accepted records of this species within Brisbane, widely scattered across the city in open habitats. More records could concievably turn up from anywhere there is suitable habitat, although the extreme western suburbs seem most likely given the proximity to this species' core distribution in south east Queensland (birds are quite regular in the Lockyer Valley), and the preponderance of available habitat.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+All four current records of Stubble Quail have come from separate locations, quite scattered across the city, from Boondall Wetlands [@wells2008ebirdS16543265] in the north east down to Anstead Bushland Reserve [@robertson2017ebirdS40224855], with Pullenvale [@birdsQLD1970ebirdS16594510] and Oxley Creek Common [@gilfedder2010ebirdS8304548] in between. Further records could come from anywhere across Brisbane where there is suitable habitat - this species prefers drier grassland and stubble plains (thus the name), and is common in farmland and paddocks across much of its range [@HANZAB2], suggesting further records are most likely in the western suburbs where this habitat is most widespread.
+
+**Seasonality**
+
+There is no clear trend in the timing of Stubble Quail records, with records in all seasons except for autumn. Further records therefore could conceivably come at any time of the year, likely more as a result of prevailing conditions inland and favourable coastal habitat being available. A dry spell across much of this species' core range could push birds to the coast, and birds are known to be nomadic [@HANZAB2], suggesting widespread movements are more than possible.
+
+The species has never been recorded as breeding in Brisbane, although it is likely this is just as much a result of birds being incredibly rare as it is birds being cryptic at the best of times, and especially so when raising young. It is possible that a pair could breed in Brisbane if conditions were right, but given the current patterns of occurrence for this species in Brisbane this seems highly unlikely.
+
+**Trends**
+
+Stubble Quail are stable in population across their range, and there is no evidence of any regional declines in south east Queensland. Further records could come at any time and any year; there are not currently enough data to confidently draw any conclusions about the long-term occurrence patterns of this species in Brisbane.
+
+**Information Gaps**
+
+- Collect further records of this species in Brisbane
+- Survey poorly-birded regions of farmland in the western suburbs for this species
+- Determine the causes of any irruptions or movements into Brisbane
+- Find out where Brisbane's birds come from
+
+**Key Conservation Needs**
+
+- Collect more information for this species
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()
