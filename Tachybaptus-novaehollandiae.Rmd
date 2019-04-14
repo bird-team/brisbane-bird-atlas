@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Common widespread partial winter migrant.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Widespread and common resident of wetlands and lakes around the city. A partial winter immigrant, with birds being roughly 50% more abundant over the cooler months, cause currently unclear. Not of conservation concern.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+Brisbane's most widespread and abundant species of grebe, the Australasian Grebe is a common waterbird found across the city's lakes, wetlands and waterways. A distinctive species in its breeding plumage, non-breeding birds are slightly more drably-plumaged and harder to identify definitively. Birds are gregarious, with counts of over 100 recorded although typical numbers are much lower. Seasonal and annual variation are noted, although the specific causes for these fluctuations are as yet undefined.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,39 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Widely distributed across Australia and nearby islands of the Pacific and Indonesia, the Australasian Grebe is a small species of waterbird commonly found across nearly all of Brisbane. Breeding birds are distinctively plumaged, with dark grey bodies contrasted by red and yellow patterned heads, while non-breeding birds are more drably plumaged and at times difficult to separate from the closely related [Hoary-headed Grebe](#hoary-headed-grebe-poliocephalus-poliocephalus), a rare vagrant to the Brisbane region. The very closely related [Little Grebe](https://ebird.org/species/litgre1) is a very rare vagrant to Australia and may turn up in Brisbane sometime, so it's worth checking closely any Australasian Grebes that look strange!
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Australasian Grebes are gregarious, having been recorded in quite large numbers in Brisbane, up to a maximum of 156 birds in one flock at Kedron Brook Wetlands in April 2013 [@wells2013ebirdS15302561]. Average counts are much lower, at 4 birds per reporting checklist, although counts of over a dozen are not uncommon, and have been reported from more than two dozen locations. There is some seasonal variation in the average count, likely tied to the influx of birds seen in the reporting rate over winter. This species is very common across much of Brisbane, and seems quite well-adapted to non-remnant areas of wetland and urban lakes, and as such is not considered at risk locally.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Australasian Grebes are widely distributed across Brisbane, having occurred in more than 100 _Atlas_ squares from all parts of the mainland, with a handful of further records on Moreton Island, suggesting this species may be common on waterways over on the island as well. There are very few records from the Camel's Head, likely due to the lack of data currently available for the region and the similar lack of suitable lakes and wetlands available in the D'Aguilar Range.
+
+Grebes are distributed across a relatively wide elevational gradient in Brisbane, occurring up to 200m in elevation, although most records come from close to sea level. The geographic and altitudinal distribution of birds is likely driven by the availability of suitable habitat. The geographic distribution of birds shows slight seasonal variation, with seemingly more widely spread records over winter, during which period birds are more abundant in the city. Similarly, the average elevation of records shows a slight increase over the cooler months, possibly a result of birds dispersing widely throughout the city in winter. More detailed analysis of this species' movements in Brisbane would be beneficial.
+
+Habitat-wise, Australasian Grebes are more or less restricted to non-remnant and wetland aquatic habitats within Brisbane, with only a handful of reports coming from other habitats. Grebes can be found anywhere there is water with suitable prey available to them and adequate fringing vegetation, especially during the breeding season. This habitat is widespread and abundant across Brisbane, providing plenty of suitable habitat for this species.
+
+**Seasonality**
+
+Australasian Grebes appear to be a partial winter immigrant to the Brisbane region, with birds being reported on just under double the number of checklists over winter than over summer. The provenance of any immigrant birds is currently unknown, and certainly Brisbane appears to have a resident population that is present year-round and breeds locally too. The exact movements of Grebes in Brisbane is poorly known, and it would be good to undertake more detailed studies into this species' local movements to determine the nature of any migratory or nomadic behaviour.
+
+There are several records of Grebes breeding in Brisbane, from two dozen widely located sites around the city. Most records are of occupied nests, with further records of recently fledged young and birds feeding young. The breeding season for Brisbane's birds appears to be from about November to April, a period roughly in line with that known in the literature [@HANZAB1]. There are a handful of further records of breeding activity outside this period, suggesting that some birds may be opportunistic breeders, choosing to breed whenever local conditions are favourable. Some more work would be beneficial in this area, although this species is one of the better-documented local breeders in the _Atlas_.
+
+**Trends**
+
+The annual reporting rate for Australasian Grebes locally has been quite variable over the past decade or so, with some years having birds as regular as 30% of all checklists, and other years as low as 10%. This suggests an element of boom-and-bust or nomadism in this species' abundance in the region, although this is currently poorly understood. It would be good to track some birds and ascertain their movements around the area, especially during periods of flood inland, when this species may move to follow ideal conditions.
+
+Australasian Grebes are not of any conservation concern locally or nationally in that they are abundant across much of the country and are currently not endangered by any major threats. Birds are seemingly well-adapted to a variety of remnant and non-remnant habitats provided there is suitable water, vegetation and prey available to them. Furthermore, there is no apparent trend in either direction for this species' abundance locally, although as noted above, numbers fluctuate from year to year.
+
+**Information Gaps**
+
+- Determine the factors behind this species' annual variation
+- Identify where the migrant population goes over summer
+- Determine whether individuals are moving around Brisbane
+
+**Key Conservation Needs**
+
+- Protect wetlands from being drained
 
 ```{r}
 end_two_column_layout()
