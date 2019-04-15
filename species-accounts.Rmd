@@ -8,11 +8,12 @@ The following pages contain species accounts for all birds known to have occurre
 
 Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas. Currently only a handful of species have draft accounts written - we need more writers!
 
-Species with draft accounts: 41
+Species with draft accounts: 42
 
 - _Anseriformes_ - 15 Species, see [Magpie Goose](#magpie-goose-anseranas-semipalmata)
 - _Galliformes_ - 4 Species, see [Australian Brushturkey](#australian-brushturkey-alectura-lathami)
 - [Australasian Grebe](#australasian-grebe-tachybaptus-novaehollandiae)
+- [Hoary-headed Grebe](#hoary-headed-grebe-poliocephalus-poliocephalus)
 - [Australian Owlet-nightjar](#australian-owlet-nightjar-aegotheles-cristatus)
 - [Australian Swiftlet](#australian-swiftlet-aerodramus-terraereginae)
 - [Common Sandpiper](#common-sandpiper-actitis-hypoleucos)
