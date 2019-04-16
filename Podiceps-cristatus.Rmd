@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Uncommon localised resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Rare and localised resident of aquatic habitats on the edges of the city, occasional nomadic visitor more widely across the region. Not of conservation concern, but numbers in Brisbane are low and may be threatened with habitat loss.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+An uncommon and localised species of waterbird in Brisbane, the Great Crested Grebe is a distinctive species, much larger than our other two grebes, with a brown and white body and a beautiful rich brown-and-white head with distinctive black crest during the breeding season. Birds are gregarious, although most counts of Brisbane are of small flocks less than a dozen birds in size. Birds are very patchily disitrbuted and are only common at a handful of sites, although they occur more widely as nomads.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,51 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Widespread across much of Eurasia, Africa and Australasia, the Great Crested Grebe is an uncommon bird in Brisbane, and never reaches particularly high abundances at any given site, although counts of nearly 100 birds are known. Within Brisbane, birds are highly localised and generally restricted to a handful of regular sites, although further records outside these strongholds are not uncommon, suggesting an element of nomadic dispersion.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Counts of more than ten birds are known from only one location in Brisbane, Lake Manchester (where the average count is more than 5 birds per reporting checklist, compared with 3.8 for all of Brisbane), with a high count of 76 birds in one morning in December 2011 [@roberts2011ebirdS19303310]. Breeding has never been reported within the city, a somewhat surprising result given birds are mostly present year-round at their regular sites.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Although birds are present year-round, there is a significant increase in records between autumn and spring, suggesting these birds are at least partial winter immigrants, which may partly explain the lack of breeding records for this species locally, as birds generally breed over summer across Australia [@HANZAB1].
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+As a species somewhat dependent on waterbodies with plentiful fringing vegetation and sufficient prey, this species is somewhat threatened locally, especially given its already rare and localised nature. Of particular conservation importance are the sites at which this species is concentrated, such as Lake Manchester and other waterbodies in Brisbane's far west.
+
+**Distribution and Habitat**
+
+Great Crested Grebes are a highly localised species within Brisbane, having only occurred in just over two dozen _Atlas_ squares, and being regular at even fewer. The only location locally they can be described as common at is Lake Manchester, where birds are seen on more than 40% of complete checklists. Occasional birds are seen at other reservoirs around the city, such as Enoggera Reservoir and Gold Creek Dam, but are only occasional outside these waterbodies. The species has never been recorded on Moreton Island, likely due to the scarcity of open waterbodies with fringing vegetation.
+
+Birds are somewhat widely distributed across elevational gradients on the mainland, occurring from sea level to about 150m in elevation; this is presumably a result of Brisbane's large waterbodies being found at a range of elevations rather than birds having specific altitudinal preferences. There is some seasonal variation in the distribution of records within Brisbane, with most dispersive records of nomadic birds around the city coming from autumn and winter (when this species is more common locally), with records in spring and summer typically being restricted to this species' known strongholds on the western reservoirs. This suggests that birds disperse widely over the cooler months, and then congregate back together on large dams to breed over summer, with most (if not all) birds breeding extralimitally to Brisbane's borders.
+
+In terms of habitat, Great Crested Grebes are found generally across three habitat types in Brisbane, although within all three of these types they are almost exclusively found on or very near to water (despite a handful of flyover records from other habitats). Birds are most common on non-remnant waterbodies, which includes most of Brisbane's large reservoirs, with further records coming from wetlands and dry woodland environments. This suggests that birds may be somewhat well-adapted to anthropogenic habitats, but the lack of records from suburban parks and lakes suggests that this species is not as likely to cope with increased urbanisation as other waterbirds are, such as the [Australasian Grebe](#australasian-grebe-tachybaptus-novaehollandiae), which is seemingly well-adapated to urban living. This has important implications for the conservation of this species, both locally and more widely.
+
+**Seasonality**
+
+Great Crested Grebes exhibit a strong seasonal pattern of abundance, with birds significantly more common over the middle of the year than they are in summer. This suggests that our local birds are mostly migrants, choosing to spend the winter in Brisbane before dispersing elsewhere over summer, presumably to breed (as this species has never been reported as breeding within our region). Given that this species shows [relatively little seasonal variation](https://ebird.org/australia/barchart?r=AU-QLD-MRB,AU-QLD-RED,AU-QLD-SOM,AU-QLD-LOV,AU-QLD-GOL,AU-QLD-LOG,AU-QLD-SCE,AU-QLD-BRI,AU-QLD-IPS,AU-QLD-SUN&bmo=1&emo=12&byr=1900&eyr=2018&spp=grcgre1) across the entirety of south east Queensland, it would appear that birds do not disperse particularly widely, and may move inland to areas such as Somerset or the Lockyer Valley over summer. The exact nature of this behaviour, and the causes behind it, are currently unkown and merit further investigation.
+
+**Trends**
+
+The reporting rate for Great Crested Grebes in Brisbane has been quite variable over the _Atlas_ period, with certain years having individuals being relatively common, and other years having no records. This suggests that the annual abundance of birds in the region is quite variable, and likely driven by other factors both external and internal to Brisbane. Given the Brisbane population seems to be mostly (if not wholly) migratory, this may be driven by the suitability of habitat at this species' breeding sites, with birds choosing to remain local to the sites when conditions are favourable, and dispersing more widely when they are not. More work in this area would be beneficial.
+
+Great Crested Grebes are not of any conservation nationally or locally, although they are uncommon across nearly the entirety of Australia, and the total number of birds in Brisbane almost certainly is less than 100 (more detailed studies and analyses are needed to confirm this). It would be good to ensure the protection of key sites for this species, especially Lake Manchester, to protect our birds from any potential future declines.
+
+**Information Gaps**
+
+- Determine where Brisbane's birds go over summer
+- Find the breeding sites of Brisbane's birds (wherever they are)
+- Determine the underlying causes behind apparent seasonal variation
+- Determine the causes behind annual abundance variations
+- Conduct frequent comprehensive counts at the main sites for the species
+- Understand to what extent individuals move around Brisbane
+
+**Key Conservation Needs**
+
+- Protect wetlands from being drained
+- Protect wetlands from loss of fringing vegetation
+- Protect the key sites for this species
+- Conduct more comprehensive counts for this species' total population in Brisbane
+
+**Contributors to Species Account**
+
+Louis Backstrom 
 
 ```{r}
 end_two_column_layout()
