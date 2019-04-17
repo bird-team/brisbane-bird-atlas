@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Common widespread summer migrant.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Common summer immigrant to a wide variety of habitats across the city. Highly distinctive and easy to identify. Not of any conservation concern.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+A common summer migrant to mixed habitats around the city, the Pheasant Coucal is Australia's only non-parastic cuckoo and Brisbane's only species of coucal. It a large, distinctive and mostly ground-dwelling species, superficially similar to pheasants in several ways, which gives it its name. Birds in breeding plumage are a striking black with mottled brown wings, while non-breeding birds are less strikingly-plumaged and brown all over. Birds are common all across the city, including over on Moreton Island.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,57 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+A common species across nearly any habitat in Brisbane, the Pheasant Coucal is a distinctive species of cuckoo found across north and eastern Australia and several islands to the north. It is our only species of cuckoo that raises its own young, choosing to build its own nest rather than parasitise other species.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Coucals are very widely distributed across Brisbane, having been recorded from the vast majority of _Atlas_ squares and habitats, and birds are a common sight and sound over summer, when their distinctive booming calls can be heard as birds pair up for the breeding season. Birds are not particularly gregarious, with most counts being of single birds or pairs, with only a handful of reports of more than ten birds at once. The high count in Brisbane is of 14 birds at Anstead Bushland Reserve in November 2017 [@gardner2017ebirdS40455892]. Anstead is the only location where more than ten birds have been reported at once, with four records of 10+ individuals. Birds are present in Brisbane all year-round, but there is a significant increase in records over summer, suggesting that some birds are immigrants over the breeding season.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Pheasant Coucals seem well-adapted to a wide variety of landscapes and habitats across Brisbane and broader Australia, and consequently are not considered to be of any conservation concern. Reporting rate year-by-year shows some variation, but there is no clear long-term trend, suggesting that Brisbane's population is stable.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
+
+Pheasant Coucals are very widely distributed across Brisbane, having been recorded from about two hundred _Atlas_ squares. Birds have been reported from all regions of the city, including the densely-forested Camel's Head in the north west, all across the suburbs, Moreton Island and even St Helena Island in the bay. Birds seem to be common over on Moreton Island, with records from nearly ten squares, despite the island being poorly surveyed by birders. It is known historically from the island as well [@vernon1975birds], suggesting that birds are likely even more widespread than current data suggest.  
+
+Coucals are mostly a lowland species within Brisbane, occurring at a mean elevation of about 50m, although records above this height are not uncommon, and the species has been reported all the way up to the tops of the city above 600m. There is little seasonal variation in records, with perhaps a wider elevational gradient being employed by coucals over summer. This is perhaps due to birds moving up the mountains when it is warmer, or simply a result of more birds in the city dispersing more widely and occupying less traditionally favourable locations. More work is needed to determine whether birds exhibit seasonal variation in their elevational preferences, and if so, why this is so.
+
+The geographic distribution of coucals in our region shows a moderate degree of seasonal variation, with more sites being occupied over spring and summer than autumn and winter. The exact causes behind this are unclear, but it seems likely that an influx of birds over this period (as is seen in the abundance data) results in more sites being occupied, with birds possibly competing over territories. More work in this field would be helpful to confirm this.
+
+Habitat-wise, Pheasant Coucals appear to be very much generalist in their preferences, having been recorded from every _Atlas_ habitat except for ocean. Birds are most common, however, in dry woodland, rainforest, non-remnant and wetland habitats. Such a wide variety of preferred habitats has likely resulted in this species being able to fill many ecological niches and led to this species' abundance across the entire city.
+
+**Seasonality**
+
+Pheasant Coucals show a large degree of seasonal variation, with significantly more records coming from spring and summer, before dropping of sharply at the beginning of autumn. There are two likely explanations for this: first, that birds are migratory within the region, and move into Brisbane over summer (presumably to breed, more on this below) resulting in a marked increase in reporting rate, as is seen; second, that birds are more conspicuous over the warmer months, as they call more and are more energetic in the lead-up to the breeding season, once again leading to more records. The pattern seen in their abundance is likely a combination of these two factors, but more detailed investigation would be helpful to confirm this.
+
+Similar seasonal patterns are seen in the average counts of birds seen on each reporting checklist, with approximately 50% more birds seen over summer than winter, and all high counts coming from the warmer months; between April and August the highest counts are only of 3 birds. This suggests a considerable influx of birds into the region over summer, likely in conjunction with the breeding season. It is not, however, known where these immigrant birds come from; more work is needed here.
+
+Despite birds being common and conspicuous in the region over this species' known breeding season [@HANZAB4] over summer, there are very few reports of coucal breeding activity in the _Atlas_. The only confirmed report is of birds carrying nesting material at Manly in August 2015 [@perrin2015ebirdS24772379], presumably right at the start of their breeding season. Further probable reports of breeding activity have come from a number of widely-scattered sites around the city. It would be very good to collect more information about the breeding habits of this species within Brisbane, even just to confirm that birds do in fact breed and raise young locally, and to confirm a summer breeding season.
+
+**Trends**
+
+The reporting rate for coucals in Brisbane has been quite variable year-to-year, with some years having birds reported on more than 15% of complete checklists, and others as low as 5%. Most years, however, the reporting rate sits around 7-10%, suggesting that this species is common without being abundant in our region. There is no apparent long-term trend either, with no evidence of a decline but also no evidence of birds becoming increasingly more common.
+
+This species is not considered to be of conservation concern locally, as it is common, widespread and well-adapted to a large range of habitats across the city, with no apparent population declines happening. Further conservation effort for this species should be dedicated to ensuring that remnant tracts of forest, which this species particularly favours, are protected and remain viable for the birds.
+
+**Information Gaps**
+
+- Determine whether birds exhibit seasonal variation in their elevational distribution
+- Determine the causes behind seemingly more locations being inhabited over spring and summer
+- Work out whether birds compete for territories locally
+- Work out why birds are so well-adapted to a wide range of habitats
+- Determine all the causes of seasonal abundance variation
+- Confirm whether birds breed locally
+- Work out where any immigrant birds come from
+- Monitor any annual variations in abundance
+
+**Key Conservation Needs**
+
+- Protect remnant large tracts of forest which this species prefers
+
+**Contributors to Species Account**
+
+Louis Backstrom 
+
+
+
 
 ```{r}
 end_two_column_layout()
