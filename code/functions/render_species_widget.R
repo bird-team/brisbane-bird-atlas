@@ -27,6 +27,16 @@ render_species_widget <- function(x) {
     htmlwidgets::saveWidget(w, out, libdir = "assets/widgets_html/lib",
                             selfcontained = FALSE)
   })
+  # manually overwrite css to make text bigger in radio button legend
+  css_path <- "assets/widgets_html/lib/leaflet-1.3.1/leaflet.css"
+  css <- readLines(css_path)
+  css <- gsub("font: 12px/1.5", "font: 16px/1.5", css, fixed = TRUE)
+  writeLines(css, css_path)
+  # manually overwrite css to make text bigger in other legends
+  css_path <- "assets/widgets_html/lib/leafletfix-1.0.0/leafletfix.css"
+  css <- readLines(css_path)
+  css <- gsub("font: 14px/16px", "font: 16px/18px", css, fixed = TRUE)
+  writeLines(css, css_path)
   # dump html widget into iframe to avoid being ingested by pandoc
   cat(paste0("<iframe src=\"assets/widgets_html/assets/widgets_html/", x,
              ".html\" height=\"500\" width=\"100%\" frameBorder=\"0\">",
