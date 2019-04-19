@@ -28,12 +28,14 @@ render_species_widget <- function(x) {
                             selfcontained = FALSE)
   })
   # manually overwrite css to make text bigger in radio button legend
-  css_path <- "_book/assets/widgets_html/lib/leaflet-1.3.1/leaflet.css"
+  css_path <- paste0("_book/assets/widgets_html/assets/widgets_html/",
+                     "lib/leaflet-1.3.1/leaflet.css")
   css <- readLines(css_path)
   css <- gsub("font: 12px/1.5", "font: 16px/1.5", css, fixed = TRUE)
   writeLines(css, css_path)
   # manually overwrite css to make text bigger in other legends
-  css_path <- "_book/assets/widgets_html/lib/leafletfix-1.0.0/leafletfix.css"
+  css_path <- paste0("_book/assets/widgets_html/assets/widgets_html/",
+                     "lib/leafletfix-1.0.0/leafletfix.css")
   css <- readLines(css_path)
   css <- gsub("font: 14px/16px", "font: 16px/18px", css, fixed = TRUE)
   writeLines(css, css_path)
