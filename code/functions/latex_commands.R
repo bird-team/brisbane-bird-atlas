@@ -83,13 +83,13 @@ reference_list <- function() {
 #' @rdname twocolumn
 start_two_column_layout <- function() {
   if (!isTRUE(knitr:::is_html_output())) {
-    cat("\\Begin{multicols}{2}\n")
+    cat("\\Begin{multicols*}{2}\n")
   }
 }
 
 #' @rdname twocolumn
 end_two_column_layout <- function() {
   if (!isTRUE(knitr:::is_html_output())) {
-    cat("\\End{multicols}\n")
+    cat("\\End{multicols*}\n")
   }
 }
