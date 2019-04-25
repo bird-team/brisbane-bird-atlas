@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category C; Common widespread resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Very common introduced species of built-up habitats around the city. Possibly experiencing a slight decline but no clear trend as yet. Not of conservation concern.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+Widespread across the entire globe wherever there are humans present, the Rock Dove (or Feral Pigeon) is a large species of pigeon found in a wide variety of human-influenced habitats around the Brisbane region. "Wild" type birds are predominately grey all over, but an enormous variety of colour morphs and mutations are known, with some birds pure white, others brown and intergrades between variants being very common. Birds are gregarious and are typically found in large flocks of up to 100, although counts of as many as 400 are known from Brisbane.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,40 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Domesticated by humans thousands of years ago for various purposes, the Rock Dove has a long and rich history with people. Native to Europe, north Africa and west Asia, this species spread around the globe alongside western colonisers and can now be found on every continent except for Antarctica. Within Australia, birds can be found widely across the landmass, being most common around cities and towns wherever there are people. Wild type birds are pale grey all over with dual black bars on the wing, but birds descended from domesticated stock can have an enormous variety of plumages, with more than 300 breeds known.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Feral Pigeons are highly gregarious, with an average count of nearly 10 birds per flock, and counts several dozen being common. The highest count is of 400 birds in one flock at Pinkenba in 1979 [@bischoff1979ebirdS38883517]. Counts of more than 100 birds have come from 10 different locations, including Oxley Creek Common, Kedron Brook Wetlands, Metroplex Wetlands and Luggage Point. The species is widely distributed across lowland Brisbane, and records do occasionally come from the higher parts of the city in the north west as well. Birds breed in Brisbane, although there are remarkably few records, and are present in the city year-round with no evidence of migratory or nomadic behaviour.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+This species is incredibly well-adapted to human environments and does not appear to be at any significant risk. Interestingly, this species (as well as a handful of other introduced species around the city) may be declining slightly in numbers, with birds being less common over the past decade than the decade previous. More work is needed to determine the causes of this decline, if it is indeed occurring.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
+
+Rock Doves are found widely across Brisbane, but are by far the most common around heavily urbanised areas, including the industrial estates to the east along the mouth of the Brisbane River and in the city proper. Birds are more or less absent from the sparsely-settled western suburbs beyond about Moggill, and do not appear to be common in the Camel's Head either, although some records from the region are attested. The species has never been recorded from Moreton Island nor the three inner islands of the bay, although may be sporadic visitors; more survey effort is needed to verify this.
+
+Birds are typically found in the lowland regions of the city up to approximately 100m above sea level, although records up to 200m are not too uncommon. There are very few records above 200m; this is likely due to the lack of suitable habitat above this height rather than an actual elevational preference displayed by this species. Birds have been reported from a wide variety of habitats, but are by far the most common in non-remnant, built up and estuarine environments, with further records coming from dry woodland and wetlands. The geographic distribution of birds around the city is presumably driven by the distribution of these habitats. The distribution of birds within the city shows no clear seasonal variation, with approximately the same areas occupied throughout the year. It is possible though that birds wander locally around the city in search of food and habitat, although finer-scale monitoring than what is currently available is needed to confirm this hypothesis.
+
+**Seasonality**
+
+The abundance of Feral Pigeons in Brisbane shows very little seasonal variation, indicating that this species is a year-round resident that does not display any significant amounts of migratory or nomadic behaviour. There may be slightly more records in summer than in winter, but this is a very minor difference and possibly explained by a large number of factors. Despite their abundance across much of the region, there are very few records of this species breeding in Brisbane. There are only 2 confirmed reports of breeding, 1 of nest building in Shorncliffe [@woodall2017ebirdS36029857] and 1 of an occupied nest in Stones Corner [@leach2017ebirdS36991733]. Many more data are needed here!
+
+**Trends**
+
+The overall prevalence of this species in Brisbane appears to be moderately stable over the _Atlas_ period, although there is some evidence to suggest a slight decline in abundance. Prior to 2010, birds may have been more common, with a decline over the past decade down to a stable reporting rate of about 15%. It would be good to investigate this species' historical abundance in Brisbane to verify this decline and determine any causes behind it. Interestingly, Rock Doves are just one of several introduced species to have experienced local declines, with [Common Myna](#common-myna-acridotheres-tristis), [Common Starling](#common-starling-sturnus-vulgaris) and [House Sparrow](#house-sparrow-passer-domesticus) having also declined over this period. Clearly, some detailed investigation is needed here.
+
+**Information Gaps**
+
+- Determine whether this species regularly visits the islands in the bay or not
+- Collect more breeding data
+- Determine the causes for any declines suffered by this species
+
+**Key Conservation Needs**
+
+- Identify the causes and impact of any declines
+
+**Contributors to Species Account**
+
+Louis Backstrom
+
 
 ```{r}
 end_two_column_layout()
