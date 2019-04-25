@@ -68,7 +68,7 @@ Drongos have been reported from nearly habitat in Brisbane, with the exception o
 
 There is no clear geographical variation in the distribution of Spangled Drongos across the seasons, although given the moderate elevational trend it is likely there is some movement, probably from the western hills into the eastern lowlands and back again, but more data is needed to determine this. Interestingly, perhaps the only visible trend between seasons for this species distribution is an increase in records in the southside of the river in autumn and winter, but once again this is not overly visible or statistically significant with the current available data.
 
-This species is quite well-surveyed across the LGA, although there are two clear gaps in the distribution data - the north west forests including the Camel's Head, and the majority of Moreton Island. These two regions are poorly surveyed in the Atlas as a whole and would benefit from intense survey effort to discover the birdlife that inhabits them.
+This species is quite well-surveyed across the LGA, although there are two clear gaps in the distribution data - the north west forests including the Camel's Head, and the majority of Moreton Island. These two regions are poorly surveyed in the _Atlas_ as a whole and would benefit from intense survey effort to discover the birdlife that inhabits them.
 
 **Seasonality**
 
