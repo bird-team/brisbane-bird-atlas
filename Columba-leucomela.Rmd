@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Locally common localised resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Uncommon to locally common resident of rainforest and wetter forest regions in the west of the city. More records toward the start of the year, with reporting rate declining from February onward, reasons unclear. Not of conservation concern.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+A distinctively-plumaged, large species of pigeon, the White-headed Pigeon is Australia's only native extant representative of the widespread _Columba_ genus. Birds have a white head and body and dark grey wings and tail and are easy to identify. Somewhat gregarious, flocks of up to a dozen are not uncommon, with counts of as many as 40 birds reported. This species is best described as locally common and localised within Brisbane, although it may be more widespread in the north west than current data suggest.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,47 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Widely distributed along the east coast of Australia from Cairns down to Melbourne, White-headed Pigeon are a common species of rainforest and denser vegetation across their range, although within Brisbane they are somewhat uncommon. A distinctive bird, the only real potential ID contenders are aberrantly-plumaged [Feral Pigeons](#rock-dove-columba-livia) with similar colouration - for example descendants of the [Turbit](https://en.wikipedia.org/wiki/Turbit) breed.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Birds are quite gregarious within Brisbane, often found in small flocks of up to a dozen birds, although the average count is only of 2.5 birds per reporting checklist, and most checklists only report one bird. The high count is of 40 birds at Aspley in July 2018 [@lambert2018ebirdS47337982], and counts of more than 10 birds have come from 10 widely spread locations around the city, including Mount Glorious, Brookfield, Mount Crosby and Sherwood. This would tend to indicate that flocks move around widely, most likely in search of fruiting trees to feed on. The species is widely distributed across the elevational gradient in Brisbane, having occurred from sea level to above 600m. There are no breeding records of this species in Brisbane, although it is likely that birds do breed locally - more work is needed here. Birds are present in Brisbane all year-round, although there is a notable decrease in the reporting rate from February to December.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Although this species is quite dependent on wetter forest habitats, which are threatened by modification and destruction across the range, birds appear to be relatively well-adapted to artificial habitats and moderately well-suited to suburban living, with numerous reports of birds in urban parks and gardens. As a result, this species' current status within Brisbane appears to be stable. Nonetheless, care is needed to preserve large tracts of suitable habitat for this species, such as that in D'Aguilar National Park.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
+
+White-headed Pigeons are a relatively localised species within Brisbane, being more or less restricted in their regular distribution to the wetter forests of Brisbane's western suburbs. Given much of the habitat that they are known to prefer (rainforest and wet sclerophyll) lies in the scarcely-surveyed Camel's Head and Body, the true range of this species in Brisbane is somewhat unclear at the moment, but likely covers most of the city west of Oxley/Sherwood. There are very few records from the north, east or south of the city, although odd feeding flocks or wandering individuals do turn up in the suburbs. The species has been reported just once from Moreton Island [@michael2005ebirdS23024493], but this record lacks verification; the species is not known from the island historically [@vernon1975birds] or from other databases such as [Birdata](https://birdata.birdlife.org.au/), so is at best a rare visitor to the bay.
+
+Within Brisbane, birds are widely distributed across the elevational gradient, with the majority of records coming from the lowland below about 100m, but numerous records higher up, as high as Brisbane's summit over 600m. This is probably reflective of the distribution of suitable habitat for this species - wet forests are found at all elevations in Brisbane, and cover the highest mountains in the region (such as Mount Glorious and Mount Nebo). Similarly, the geographic distribution of White-headed Pigeons across Brisbane is presumably mostly driven by the availability of such habitats.
+
+The distribution of birds within the city shows no clear seasonal variation, with approximately the same areas occupied throughout the year, although with some variation. It is however likely (given records across the whole of suburban Brisbane) that birds wander somewhat across the city in search of optimal habitat and fruiting trees, although more fine-scale monitoring than is currently available is needed to confirm this hypothesis.
+
+**Seasonality**
+
+The seasonal abundance of White-headed Pigeons in Brisbane shows a notable level of variation, with a marked decline in reporting rate over the year. Peak reporting rate is in February (at just under 2% of all complete checklists), and drops off steadily until November-December, when the reporting rate is well under 1%. The cause for this is unclear, but may be a reflection of birds moving around either locally (e.g. up and down the mountains, as is seen in other species) or more widely around the region. More work is needed here.
+
+There are no breeding reports of this species in Brisbane, a surprising result given that birds are present year-round in the city (despite the aforementioned variance). As such the local breeding season is not yet known; it would be excellent to collect more information about where and when our local birds breed.
+
+**Trends**
+
+The reporting rate year-to-year for this species has been somewhat variable over the _Atlas_ period, with annual rates as low as 0.5% and as high as 2.5%. The specific causes of such variation are unknown, but may be a result of variations in the number and abundance of fruiting trees, observer patterns and behaviours, or other factors. Fortunately, however, the long-term trend appears stable, with no clear decline or increase in the species' abundance. White-headed Pigeons are not of any significant conservation concern in the sense that Brisbane’s population is rather peripheral to the main distribution of the species across the eastern forests of Australia, and the population appears to be fairly stable over time. However, the species is partially threatened by destruction of habitat across its range, and care is needed to preserve the habitat of this species within Brisbane to safeguard against any declines in population.
+
+**Information Gaps**
+
+- Collect information on any local movements undertaken by this species
+- Collect more records of this species in Moreton Bay and in the Camel's Head
+- Determine the causes for the decline in reporting rate over the course of the year
+- Determine the underlying causes of annual variation in abundance
+- Collect breeding information for this species
+
+**Key Conservation Needs**
+
+- Protect key areas of wet forest in the western suburbs
+
+**Contributors to Species Account**
+
+Louis Backstrom 
+
+
 
 ```{r}
 end_two_column_layout()
