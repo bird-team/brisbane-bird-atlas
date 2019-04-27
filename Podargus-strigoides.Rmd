@@ -6,10 +6,10 @@ species_name <- "Podargus strigoides"
 species_title(species_name, species_data)
 ```
 
-Category A; Uncommon widespread resident.
+Category A; Common widespread resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Uncommon to common widespread resident of most remnant habitats across the city, probably Brisbane's most abundant nocturnal bird. Breeds during spring and young are often quite conspicuous. Not of conservation concern. Photo by Richard Fuller, Sandy Camp Wetlands, 28 Apr 2018")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+A familiar species across the entirety of Australia, Tawny Frogmouths are a distinctive species of bird, with mottled brown and grey plumage that allows them to camouflage expertly against their daytime roosts. Almost always found singly or in small family groups, the high count is of just 8 birds. Frogmouths are widespread and common across much of the city and appear to be increasing in numbers. They can occur almost anywhere there is suitable habitat, even in backyards and parks.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,41 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Common across the entire Australian continent, the Tawny Frogmouth is one of our most abundant species of nocturnal birds, and can be found in mixed habitats across nearly all of Brisbane. A distinctive species with an enormous, frog-like bill, the only real ID contender in the region is the related [Marbled Frogmouth](#marbled-frogmouth-podargus-ocellatus), but birds can be separated by Marbled having a longer tail and blotchy underparts compared with the Tawny's shorter tail and streaked body. Additionally, Marbled Frogmouths have a highly unusual call and are restricted to the upper rainforests in Brisbane, so identification is usually straightforward.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Frogmouths are not very gregarious, being typically found individually or in small family groups of up to 5 birds in Brisbane. The high count is of just 8 birds at Oxley Creek Common in September 2018 [@daley2018ebirdS48531153]; birds are quite territorial and this likely prevents large gatherings of this species outside of exceptional feeding events or similar. Further large counts of this species have come from Dowse Lagoon and Toohey Forest. Birds breed in Brisbane and are present year-round, with more than 100 confirmed breeding reports, mostly from the months between August and December.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+This species has experienced a marked increase in reporting rate over the _Atlas_ period, suggesting that birds are rapidly increasing in numbers. Consequently, Tawny Frogmouths are not considered to be of any conservation concern locally, although there are nevertheless still threats that they face, such as habitat modification and loss. It would be good to determine the factors underlying such a rapid increase in reporting rate and identify if any other species have been affected by the same processes.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
+
+Tawny Frogmouths are widely distributed across nearly all of Brisbane, especially around the suburbs wherever there are moderate-to-large tracts of bushland available to them. Birds appear to be essentially absent from the north west of the region, where they are more or less replaced by the [Marbled Frogmouth](#marbled-frogmouth-podargus-ocellatus), although it would be good to survey the Camel's Head more intensively and determine where the two species' distributions meet and if there is any overlap. Interestingly, there are no eBird records as yet of this species on Moreton Island (nor any of the inner islands in the bay), but this is likely more reflective of the lack of data currently available rather than the species being absent. Furthermore, the species is known historically from the island [@vernon1975birds] and given the abundance of suitable open woodland on the island it seems plausible that this species is in fact moderately common there. More investigation is needed here.
+
+Tawny Frogmouths are mostly a low-to-midland species in Brisbane, occurring mostly below 100m with further records up to 200m, as well as vagrants beyond (up to 500m at the top of Mount Glorious). This distribution is presumably driven by the availability of habitat - as mentioned above, this species essentially avoids rainforest, leaving it to the [Marbled Frogmouth](#marbled-frogmouth-podargus-ocellatus), and as rainforest covers most of the top of Brisbane the remaining suitable habitat for Tawny Frogmouths is lower down the mountains.
+
+Birds have been reported from a very wide variety of habitats, but are most common in dry woodland, where the reporting rate is nearly 15%. The geographic distribution of Frogmouths across Brisbane is presumably mostly driven by the availability of such habitats, although birds are known to wander widely and are reported from other habitats regularly. The distribution of Frogmouths within the city shows no clear seasonal variation, with approximately the same areas occupied throughout the year.
+
+**Seasonality**
+
+The reporting rate for Tawny Frogmouths shows no clear seasonal trend, although the month-to-month reporting rate is quite variable - about 3% in October and 7% in April and August. The underlying reasons behind this are unclear, as birds are thought to be sedentary and territorial throughout the year [@HANZAB4]. More investigation in this area would be beneficial. Frogmouths are one of the most commonly-reported breeding species in Brisbane, with more than 120 confirmed reports of breeding activity. The majority (~75%) of these reports are of occupied nests with further records mostly of recently fledged young and nests with young. The vast majority of reports come from September and October, with a minor lead up period during August and then a drop off in November to early January, presumably mostly of fledglings just about to leave the nest. This season is well-aligned with that in the literature [@HANZAB4].
+
+**Trends**
+
+Tawny Frogmouths are one of few species in Brisbane to have exhibited a marked increase in the reporting rate over the _Atlas_ period, with the past five years having birds reported on approximately twice as many checklists as the five years previous, and three times as many as the period before that. Barring a very strong year in 2016, this increase has been very consistent. It is not particularly clear right now what the causes behind this increase are, although it seems likely that birds have successfully adapted to urban living and are now increasing as a result of this. It would be good to collect more information and perform some more in-depth analyses to verify this.
+
+**Information Gaps**
+
+- Collect records of this species in the Camel's Head and Moreton Island
+- Determine whether Brisbane's birds move around locally, and what factors affect their local distribution   
+- Determine the causes of monthly variation in this species
+
+**Key Conservation Needs**
+
+- Determine the factors causing this species' rapid increase in Brisbane
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()
