@@ -24,7 +24,7 @@ raw_find_observer_name <- function(x, n_tries = 20) {
   if (inherits(w, "try-error"))
     stop(paste("fetching data from ebird.org for checklist:", x))
   # extract observer name
-  as.character(rvest::html_text(rvest::html_node(w, "dd strong"))[1])
+  as.character(rvest::html_text(rvest::html_node(w, ".Heading--h4 span:last-of-type"))[1])
 }
 
 #' Memoised version of of the find observer name function
