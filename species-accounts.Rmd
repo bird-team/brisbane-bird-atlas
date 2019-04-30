@@ -8,7 +8,7 @@ The following pages contain species accounts for all birds known to have occurre
 
 Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas. Currently only few dozen species have draft accounts written - we need more writers!
 
-Species with draft accounts: 48
+Species with draft accounts: 49
 
 - _Anseriformes_ - 15 Species, see [Magpie Goose](#magpie-goose-anseranas-semipalmata)
 - _Galliformes_ - 4 Species, see [Australian Brushturkey](#australian-brushturkey-alectura-lathami)
@@ -16,6 +16,7 @@ Species with draft accounts: 48
 - [Rock Dove](#rock-dove-columba-livia)
 - [White-headed Pigeon](#white-headed-pigeon-columba-leucomela)
 - [Spotted Dove](#spotted-dove-streptopelia-chinensis)
+- [Brown Cuckoo-Dove](#brown-cuckoo-dove-macropygia-phasianella)
 - [Pheasant Coucal](#pheasant-coucal-centropus-phasianinus)
 - [Tawny Frogmouth](#tawny-frogmouth-podargus-strigoides)
 - [Australian Owlet-nightjar](#australian-owlet-nightjar-aegotheles-cristatus)
