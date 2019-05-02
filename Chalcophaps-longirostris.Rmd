@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Uncommon localised resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Uncommon and secretive resident and possible nomadic visitor to wetter habitats around the city. Present year-round, although monthly abundance appears to fluctuate. Not of conservation concern, but local population likely very small and susceptible to various threats.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+An attractive species of medium-sized dove, the Pacific Emerald Dove is very patchily distributed within Brisbane, being only regularly found at a small number of sites, although birds do turn up across the city from time to time. Typically solitary, almost all records are of less than five birds. Birds are most likely in rainforest and wetland habitats, although could conceivably turn up anywhere as a visitor.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,52 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Probably Brisbane's rarest species of resident dove, the Pacific Emerald Dove has a wide distribution within Australia, being found across northern and eastern Australia from the Kimberley to southern New South Wales, as well as in several islands in the Pacific, including Lord Howe and Norfolk. Despite this, it is highly localised within our region, being only found in a small number of sites with any consistency, although birds have occurred quite widely as once-off or irregular visitors, and further birds could possibly be recorded anywhere across the city in suitable habitat.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Within Brisbane, birds are typically found in the wetter western forests in the inner west, particularly around the Brookfield region, generally singly or occasionally pairs or small flocks. The highest count of this species in Brisbane is of just 6 birds, with two records of flocks this large, both from the Brookfield / Gold Creek region [@frazer2015ebirdS25503415; @fuller2017ebirdS33996805]. Birds are present in Brisbane year-round, although with some moderate variation in month-to-month abundance, the causes for this are unknown.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+As a species seemingly quite dependent on particular habitat types, this species is moderately threatened by clearing and modification of its habitat, both across Brisbane and more widely across the range. The overall trend for this species locally is unclear but appears to be stable, so the birds are not immediately threatened but nevertheless should be monitored for any declines they might suffer should some of their key sites around the city be modified or destroyed.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
+
+Pacific Emerald Doves are a localised species within Brisbane, only occurring regularly in one part of the city - the rainforest and wetter sclerophyll forests around Brookfield and Gold Creek Reservoir. They appear to favour the margins of these habitats, and are often easiest found by the side of the road, or in gardens along Gold Creek Road. Interestingly, this species also seems to be regularly recorded in wetland habitats, although this is most likely due to the [Gold Creek Reservoir](https://ebird.org/australia/hotspot/L976352) hotspot being located over the dam (which is classified as wetland), rather than birds actually favouring this habitat. Some more in-depth work would be useful to confirm this, and to determine the extent to which birds use wetland habitats. Further records have come from heathland and dry woodland habitats, suggesting that birds may occasionally move through these habitats in search of food or similar.
+
+The geographic distribution of this species in Brisbane is closely reflective of their favoured habitat, with the majority of records coming from the area around Gold Creek Reservoir and Upper Brookfield, as well as further records coming occasionally from rainforest around the city, including in the Camel's Head, and up on the top of Mount Glorious. This species may be quite widespread throughout the undersurveyed regions of the Camel's Head, but more work is needed in this area to confirm this. There is one record on eBird of this species over on Moreton Island, and birds are known from the island in the literature and are described as uncommon [@vernon1975birds], suggesting that this species may be moderately widespread in the right habitat over on Moreton - more survey effort across the entire island would be useful in confirming this.
+
+Emerald Doves have been reported across a wide elevational gradient, with reports from sea level all the way up to 600m, although the vast majority of records come from 100-200m (especially those from Gold Creek Reservoir, which makes up the median line seen across all months in the graphs). This elevational preference is almost certainly a reflection of the elevation of their favoured habitat (rainforest margins) in the city, rather than an actual elevational preference. There is no evidence of any elevational migratory behaviour for this species.
+
+The geographic distribution of this species shows little-to-no seasonal variation, with approximately the same regular sites occupied year-round, and birds turning up as nomads throughout the year. It is possible that further records of this species and more data might elucidate a pattern to this species' nomadic habits, but as yet it is unclear. It would be good to collect more data from this species at a wide variety of sites around the city (not just Gold Creek) in order to more accurately determine any trends in distribution.
+
+**Seasonality**
+
+Emerald Doves are found in Brisbane all throughout the year, with a moderate level of monthly variation in the recorded abundance, but no clear seasonal trends. It is possible that birds are more conspicuous over summer (perhaps in line with the breeding season) but this is only weakly supported in the data. It would be good to collect more records of this species all throughout the year, to further elucidate any seasonal trends exhibited by the birds.
+
+This species is known to be somewhat nomadic [@HANZAB3], and this is supported in the Brisbane dataset, with a large number of one-off records from around the city, including at sites such as Nudgee Beach, Banks Street Reserve and Sherwood Arboretum. Currently the reasons for such nomadic behaviour are largely unknown, but may be either a result of birds searching for food, or of wandering young birds. Some more in-depth research here would be useful.
+
+There are no reports of confirmed breeding activity in this species yet, a not particularly surprising result given the birds' rarity in the city and the overall lack of breeding records in the eBird dataset. It would be excellent to collect any and all breeding information on this species within Brisbane, to confirm the breeding behaviours and patterns noted in the literature [@HANZAB3].
+
+**Trends**
+
+The annual reporting rate for Pacific Emerald Doves in the Brisbane area over the _Atlas_ period has been very variable, with some years having birds reported on more than 1.5% of complete checklists and others well below 0.5%, including a 3-year period with no records from 2007-2009. This suggests that this species' abundance is quite variable, which is to be expected from a moderately nomadic species that is as rare regardless as it is.
+
+Given that this species appears to quite dependent on particular habitat types, specifically rainforest margins, this species could potentially be threatened by clearing and modification of its habitat, both across Brisbane and more widely across its global range. As noted above, the overall trend for this species locally is unclear and variable but appears to be stable, suggesting that birds are not immediately threatened but nevertheless should be monitored for any declines they might suffer as a result of modification or destruction of their key sites around the city.
+
+**Information Gaps**
+
+- Collect records from the Camel's Head to fill in this species' distribution on the mainland
+- Collect records from Moreton Island to fill in this species' distribution in the bay
+- Collect breeding records for  this species
+- Determine the extent to which birds are nomadic
+- Identify the factors resulting in monthly variation in abundance
+- Identify any factors leading to annual variation in prevalence
+
+**Key Conservation Needs**
+
+- Protect rainforests from logging or modification
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()
