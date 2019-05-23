@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Locally common localised resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Very localised resident of western scrublands and forests. Present throughout the year, with some breeding records too, although monthly abundance patterns are unclear. Not of conservation concern, but population likely quite small and restricted.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+The Common Bronzewing is a large species of mostly ground-dwelling pigeon, with plain brown tones set off by brilliant iridescent wing panels and an attractive face pattern. They are a localised species within Brisbane, and are typically found alone or in small groups, with flocks being unusual. They are found regularly at a small handful of sites across Brisbane, and occasionally wander to other sites where they may be recorded as wanderers.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,46 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+An attractive species of pigeon, the Common Bronzewing is a localised resident within Brisbane with the majority of records coming from a restricted area in the south west of the city, although birds may be more widespread in unsurveyed areas than current data suggest.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Birds are found across varied habitats, but typically favour dry, open woodland; further records have come from rainforest and non-remnant habitats mostly. They never occur in large numbers within the region, with most reports being of one or two birds and a high count of just 9 birds [@gardner2009ebirdS18064390]. Most records come from the suburbs of Pullenvale, Anstead, Kholo and nearby regions. Birds are present in the city year-round, although the month-by-month abundance appears to be quite variable, with a sharp drop-off in records at the start of winter, followed by a steady increase over the rest of the year into summer. The reasons for such a pattern are currently unclear.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Birds do not appear to be particularly threatened at the moment, and there is no evident trend in their abundance over longer periods, but care must be taken to ensure that large tracts of open woodland, which are favoured by this species, remain intact and suitable for the birds. Particularly important are the areas where this species appears to be concentrated: Lake Manchester, Anstead and Kholo.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
+
+Common Bronzewings have been recorded from a large number of _Atlas_ squares across nearly all of Brisbane, but are concentrated in the south west beyond about Brookfield, particularly in the squares around Anstead and Hawkesbury Rd, Lake Manchester and Pullenvale. Other strongholds around the city seem to be in the south east, particularly in the woodlands around Tingalpa Reservoir, and the north west lowlands north of Enoggera Reservoir. There are no records of the species on Moreton Island, either in eBird or in other databases and the historical literature [@vernon1975birds]. This is somewhat surprising given the abundance of undisturbed open woodland habitat on the island and the species' presence on North Stradbroke Island just to the south.
+
+Within Brisbane, Common Bronzewings are found over a relatively distinct elevational gradient, being most common between 50 and 100m, although records below 50m and up to 150m are not unheard of. Such a distribution is likely reflective of the habitat preferences of the birds and the elevations of their regular sites. There is remarkably little variation month-to-month in the elevation of records, suggesting birds are resident in the same areas mostly all year. Little variation is seen in the geographic distribution over the year either.
+
+Habitat-wise, birds appear to be found mostly in dry, open woodland, although the reporting rate in rainforest is also quite high. Interestingly, the species appears to be almost completely absent from forests intermediate between these two habitats - wet sclerophyll. More detailed analysis of records and more survey effort across the western forests and Camel's Head would probably help confirm the habitat preferences of Brisbane's Bronzewings.
+
+**Seasonality**
+
+Bronzewings are present in Brisbane year-round, and have been recorded breeding a handful of times. All breeding records are from summer (Jan-Feb); in the literature birds are known to breed all year-round with a peak over late spring - early summer, so it is possible that Brisbane's birds may breed throughout the year [@HANZAB3].
+
+The monthly abundance of birds appears to be highly variable, with some months being as high as 4% of all checklists reporting the species (Jan) and other months as low as 1.5% (May). Such a finding is interesting, especially given birds appear to be more or less resident in the same sites year-round. Within the literature, birds are reported to be largely sedentary but may be nomadic in certain conditions [@HANZAB3]; nomadism may occur in Brisbane and may be the cause of such variation. More detailed investigation is needed here.
+
+**Trends**
+
+The reporting rate for Bronzewings over recent years has been quite stable, excluding a significant but almost certainly anomalous peak in 2014. It appears this is a species which has only recently been "discovered" by Brisbane's birders in the sense that the vast majority of records come from the last coupe of years, and several of this species' key sites (Anstead, Lake Manchester, Hawkesbury Rd) have only been intensively eBirded in the last few years. More long-term data are needed before a definitive statement can be made about this species' status in Brisbane, but currently everything appears to be stable.
+
+**Information Gaps**
+
+- Collect more breeding data
+- Conduct frequent comprehensive counts at the main sites for the species
+- Understand whether individuals are moving around Brisbane
+- Understand the extent to which individuals may be nomadic
+- Determine the presence/absence of this species on Moreton Island
+- Collect more records of this species in the western forests and Camel's Head
+
+**Key Conservation Needs**
+
+- Protect key sites where this species is concentrated
+
+**Contributors to Species Account**
+
+Louis Backstrom 
 
 ```{r}
 end_two_column_layout()
