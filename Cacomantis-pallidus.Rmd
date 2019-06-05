@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Rare widespread passage migrant.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Rare spring passage migrant to varied habitats across the city. Almost all records of single birds. Abundance fluctuates wildly from year-to-year, but never common at any time. Photo by Richard Fuller, Oxley Creek Common, 15 Aug 2018")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+A variably-plumaged medium-sized cuckoo of most of Australia and parts of Indonesia and Papua New Guinea, the Pallid Cuckoo is a rare visitor to our region. Within Brisbane, the species is an uncommon passage migrant in spring, although records have come from most months of the year. Almost always solitary, with just a handful of reports of multiple birds. Birds can occur widely across many habitats, but most records from non-remnant and wetland environs in Brisbane.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,42 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+The most common cuckoo species across much of arid interior Australia, the Pallid Cuckoo is distinctly rare in Brisbane, being a seasonal visitor to scattered sites across the region. Birds are quite distinctive, although with poor views could conceivably be confused with [Brush Cuckoo](#brush-cuckoo-cacomantis-variolosus), [Fan-tailed Cuckoo](#fan-tailed-cuckoo-cacomantis-flabelliformis) or [Oriental Cuckoo](#oriental-cuckoo-cuculus-optatus). Their call is highly distinctive and easily separates them from any confusion species. As with most Australian cuckoos, this species is brood-parasitic, with honeyeaters, shrike-thrushes and cuckooshrikes all known to be unwitting hosts to Pallid Cuckoo young.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Within Brisbane, and indeed across Australia, Pallid Cuckoos are not very gregarious, and the high count in the region is just three birds [@grilli2017ebirdS39185267]. Records have been widely distributed across Brisbane, though mostly from the lower, more open, regions, but no one site is reliable for the birds, even in spring, and most sites where birds have occurred are widely scattered, suggesting that birds likely move through the region quite rapidly, stopping only briefly to rest and feed. Despite being present in the region during their traditional nesting season, the species is yet to be recorded actually breeding in the region, further suggesting that birds may just be passage visitors to the region. Any reports of nesting activity, or of young birds still being fed by host parents are much needed!
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+This species does not appear to be under any threat, either locally or more widely across Australia, although given their very low numbers in the region could disappear completely with changed climactic conditions; more work is needed to determine any possible threats to this species.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
+
+Pallid Cuckoos have been recorded in several _Atlas_ squares across Brisbane, widely scattered across the mainland. The majority of records come from heavily-birded sites such as Tinchi Tamba and Oxley Creek Common, suggesting that birds might be more common than current data suggest across the entire city. There are no eBird records of this species on Moreton Island. They are more or less a lowland species in the city, with most records coming from under 50m, and no seasonal trends to their elevation.
+
+Birds have been reported from several habitats, but are by far most common in non-remnant, open habitats and wetlands. Howevver, even in these habitats their reporting rate only sits at 0.25%, so they are by no means a common species anywhere. The seasonal distribution of birds shows little variation, with most records outside spring coming from similar sites to those in spring, although more sites have records in spring, suggesting that birds may be somewhat resident or nomadic across the year, with the bulk of the records of migratory movements through the city in spring.
+
+**Seasonality**
+
+As noted above, Pallid Cuckoos are a highly seasonal species in Brisbane, with almost all records coming from the spring months, particularly in September. The species is known to be quite migratory [@HANZAB4], but the extent and nature of these movements, particularly in south east Queensland, are poorly studied. It is not clear where Brisbane's birds are in summer and winter, although a north-south route along the east coast of Australia seems plausible; more work is needed here.
+
+This species is yet to be recorded as properly breeding in the city.
+
+**Trends**
+
+As would be expected for such a rare and seasonally-variable species, the annual abundance of Pallid Cuckoos in Brisbane has been very variable over the _Atlas_ period, with many years having no records and a peak year in 2018 where birds were reported on more than 0.6% of checklists. There is no long-term trends, suggesting that birds are probably stable in population both within Brisbane and across the range. Once again, more work with more data would help to confirm this. There are no major threats identified to this species.
+
+**Information Gaps**
+
+- Collect more records from more sites for this species
+- Collect any breeding records for this species
+- Determine the nature of migratory movements through the city
+- Identify any threats to this species
+
+**Key Conservation Needs**
+
+- Identify and control any threats to the species
+
+**Contributors to Species Account**
+
+Louis Backstrom 
 
 ```{r}
 end_two_column_layout()
