@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Rare widespread summer migrant.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Rare visitor to offshore waters during the summer months from the north, may be more common than current information suggests. Not of any conservation concern at present.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+The Black Noddy is the rarer of the two main Noddy species found in Brisbane, and can be found offshore throughout the summer months in low numbers. It is smaller and darker than its close relative the [Common Noddy](#common-noddy-anous-stolidus), with a long bill a contrasting white cap. Birds typically stay well offshore but do come in close, even within the bay, in inclement weather.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,34 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Widely distributed across the Pacific Ocean and parts of the Central Atlantic and Indian Oceans, the Black Noddy is a small, slender species of tern found in tropical and subtropical waters. Within Australia, the species breeds on islands off the north half of the continent as far south as Lady Elliot Island (with further colonies on Lord Howe and Norfolk Islands as well) and rarely comes close to land, although notable records of this species have occurred from within Moreton Bay following cyclonic conditions out to sea.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Birds could turn up in Brisbane waters year-round but are probably most common off the coast in summer and autumn; this is when the species has been regularly recorded off south-east Queensland pelagic trips. Very little current data exists on the occurrence of this species (and indeed most seabirds) off the coast of Moreton Bay, and without more information it is difficult to predict with certainty when birds are most common in the city. Several threats, primarily nest predation from introduced predators on breeding islands, imperil this species across its range but at present populations are generally stable and the species is not considered endangered.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Within Brisbane, Black Noddies are almost exclusively pelagic, typically being found off the coast out near the continental shelf break. Birds do occasionally venture in closer to shore and may be seen while seawatching, particularly during periods of inclement weather such as following tropical cyclones. Their feeding pattern does not appear to be particularly dependent on seasonal changes, although finer-scale monitoring is likely needed to confirm this.
+
+**Seasonality**
+
+As noted above, Black Noddies do not breed in Brisbane; the closest breeding colonies to the city are Lady Ellio Island, 400km to the north, and Lord Howe Island, 750km to the south east. Birds are present around these colonies throughout most of the year, although they are less common during the winter months. Within Brisbane they appear to be most abundant during late summer and early autumn, although more data are needed to verify this.
+
+**Trends**
+
+Once again, due to the paucity of data available for this species in south east Queensland, it is difficult to draw any firm conclusions about this species' local status in the region. However, the species is not globally or nationally threatened and most populations appear to be stable. Key threats include predation of nests on breeding islands, particularly by introduced mammalian predators, and rising sea levels as a result of climate change.
+
+**Information Gaps**
+
+- Collect more records of this species off the coast
+
+**Key Conservation Needs**
+
+- Monitor populations at nearby breeding locations
+- Monitor frequency of local records for any changes
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()
