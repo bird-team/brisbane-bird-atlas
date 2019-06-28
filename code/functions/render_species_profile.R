@@ -6,7 +6,7 @@
 #'
 #' @param caption \code{character} caption for image.
 #'
-#' @param n_tries \code{integer} number of times to attempt downloading the 
+#' @param n_tries \code{integer} number of times to attempt downloading the
 #'   image.
 #
 #' @return \code{character}.
@@ -27,6 +27,8 @@ render_species_profile <- function(x, caption, n_tries = 20) {
     path <- "assets/misc/missing-profile.png"
   # create code to render image
   if (!isTRUE(knitr:::is_html_output())) {
+    # format caption
+    caption <- format_text_as_latex(caption)
     # download the file since latex can't read images from online sources
     if (startsWith(path, "www.") || startsWith(path, "http://") ||
         startsWith(path, "https://") || startsWith(path, "ftp://")) {
