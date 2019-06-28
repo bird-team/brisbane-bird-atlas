@@ -13,8 +13,8 @@
 format_text_as_latex <- function(x) {
   assertthat::assert_that(assertthat::is.string(x))
   x <- gsub(" _", " \\textit{", fixed = TRUE, x)
-  x <- gsub("_ ", "} ", fixed = TRUE, x)
+  x <- gsub("_", "}", fixed = TRUE, x)
   x <- gsub(" **", " \\textbf{", fixed = TRUE, x)
-  x <- gsub("** ", "} ", fixed = TRUE, x)
+  x <- gsub("**", "}", fixed = TRUE, x)
   x
 }
