@@ -18,7 +18,7 @@ source("code/functions/render_species_audio.R")
 source("code/functions/render_species_profile.R")
 source("code/functions/render_image.R")
 source("code/functions/latex_commands.R")
-source("code/functions/format_text_as_latex.R")
+source("code/functions/format_text.R")
 
 ## load packages
 library(sf)

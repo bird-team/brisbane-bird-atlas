@@ -18,10 +18,10 @@ render_image <- function(x, caption = "", n_tries = 20) {
   assertthat::assert_that(assertthat::is.string(x),
                           assertthat::is.string(caption),
                           assertthat::is.count(n_tries))
+  # format caption
+  caption <- format_text(caption)
   # create code to render image
   if (!isTRUE(knitr:::is_html_output())) {
-    # format caption
-    caption <- format_text_as_latex(caption)
     # download the file since latex can't read images from online sources
     if (startsWith(x, "www.") || startsWith(x, "http://") ||
         startsWith(x, "https://") || startsWith(x, "ftp://")) {

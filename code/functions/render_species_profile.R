@@ -25,10 +25,10 @@ render_species_profile <- function(x, caption, n_tries = 20) {
   # if URL is NA, then set path as default missing image
   if (is.na(path))
     path <- "assets/misc/missing-profile.png"
+  # format caption
+  caption <- format_text(caption)
   # create code to render image
   if (!isTRUE(knitr:::is_html_output())) {
-    # format caption
-    caption <- format_text_as_latex(caption)
     # download the file since latex can't read images from online sources
     if (startsWith(path, "www.") || startsWith(path, "http://") ||
         startsWith(path, "https://") || startsWith(path, "ftp://")) {
