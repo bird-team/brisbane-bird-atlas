@@ -34,13 +34,19 @@ format_text <- function(x, format = "auto") {
   }
   # convert text
   if (format == "latex") {
+    ## italics
     x <- gsub(" _", " \\textit{", fixed = TRUE, x)
     x <- gsub("_", "}", fixed = TRUE, x)
+    ## bold
     x <- gsub(" **", " \\textbf{", fixed = TRUE, x)
     x <- gsub("**", "}", fixed = TRUE, x)
+    ## escape percentages
+    x <- gsub("%", "\\%", fixed = TRUE, x)
   } else {
+    ## italics
     x <- gsub(" _", " <i>", fixed = TRUE, x)
     x <- gsub("_", "</i>", fixed = TRUE, x)
+    ## bold
     x <- gsub(" **", " <b>", fixed = TRUE, x)
     x <- gsub("**", "</b>", fixed = TRUE, x)
   }
