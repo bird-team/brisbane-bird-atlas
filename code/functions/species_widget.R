@@ -126,6 +126,11 @@ species_widget <- function(x, species_data, record_data, grid_data,
   # main processing
   ## initialize leaflet map
   l <- leaflet::leaflet()
+  ## restrict viewing window
+  l <- leaflet::setMaxBounds(l, raster::xmin(grid_raster_raw_data),
+                             raster::ymin(grid_raster_raw_data),
+                             raster::xmax(grid_raster_raw_data),
+                             raster::ymax(grid_raster_raw_data))
   ## set starting view
   if (!is.null(inital_view)) {
     l <- leaflet::setView(l, lng = inital_view[[1]], lat = inital_view[[2]],
@@ -148,6 +153,9 @@ species_widget <- function(x, species_data, record_data, grid_data,
   }
   ## add tiles
   l <- leaflet::addProviderTiles(l, "Esri.WorldGrayCanvas", group = "Thematic")
+  ## add home button
+  l <- leafem::addHomeButton(l, raster::extent(grid_data), "Reset view",
+                             position = "topleft")
   ## add reporting rate and detection maps (as required)
   for (i in plot_names) {
     curr_palette <- palette
