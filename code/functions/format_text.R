@@ -2,7 +2,7 @@
 #'
 #' This function converts text formatted using markdown to Latex or HTML.
 #' Please note that only simple formatting commands are currently accepted
-#' (i.e. commands for expressing text in italic or bold font).
+#' (i.e. commands for expressing text in italic, bold, or underlined font).
 #'
 #' @param x \code{character} containing text in markdown format.
 #'
@@ -13,10 +13,10 @@
 #' @return \code{character} formatted text.
 #'
 #' @examples
-#' format_text("this is _italics text_ and this is **bold text**.",
-#'              format = "html")
-#' format_text("this is _italics text_ and this is **bold text**.",
-#'              format = "latex")
+#' format_text("this is _italics text_, **bold text**, and ||underlined text||.",
+#'             format = "html")
+#' format_text("this is _italics text_, **bold text**, and ||underlined text||.",
+#'             format = "latex")
 format_text <- function(x, format = "auto") {
   # assert arguments are valid
   assertthat::assert_that(assertthat::is.string(x),
@@ -40,6 +40,9 @@ format_text <- function(x, format = "auto") {
     ## bold
     x <- gsub(" **", " \\textbf{", fixed = TRUE, x)
     x <- gsub("**", "}", fixed = TRUE, x)
+    ## underline
+    x <- gsub(" ||", " \\underline{", fixed = TRUE, x)
+    x <- gsub("||", "}", fixed = TRUE, x)
     ## escape percentages
     x <- gsub("%", "\\%", fixed = TRUE, x)
   } else {
@@ -49,6 +52,9 @@ format_text <- function(x, format = "auto") {
     ## bold
     x <- gsub(" **", " <b>", fixed = TRUE, x)
     x <- gsub("**", "</b>", fixed = TRUE, x)
+    ## underline
+    x <- gsub(" ||", " <u>", fixed = TRUE, x)
+    x <- gsub("||", "</u>", fixed = TRUE, x)
   }
   # return result
   x
