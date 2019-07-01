@@ -48,12 +48,6 @@ piggyback::pb_upload("assets/maps.zip",
                      overwrite = TRUE,
                      tag = "v.0.0.1",
                      use_timestamps = FALSE)
-piggyback::pb_upload("assets/surveyor-sheets.zip",
-                     repo = "bird-team/brisbane-bird-atlas",
-                     name = "assets-surveyor-sheets.zip",
-                     overwrite = TRUE,
-                     tag = "v.0.0.1",
-                     use_timestamps = FALSE)
 
 ## message
 message("Finished pushing assets to storage!")
