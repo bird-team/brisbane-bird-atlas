@@ -127,10 +127,12 @@ species_widget <- function(x, species_data, record_data, grid_data,
   ## initialize leaflet map
   l <- leaflet::leaflet()
   ## restrict viewing window
-  l <- leaflet::setMaxBounds(l, raster::xmin(grid_raster_raw_data),
-                             raster::ymin(grid_raster_raw_data),
-                             raster::xmax(grid_raster_raw_data),
-                             raster::ymax(grid_raster_raw_data))
+  study_area_data_wgs1984 <- as(sf::st_transform(study_area_data, 4326),
+                                "Spatial")
+  l <- leaflet::setMaxBounds(l, raster::xmin(study_area_data_wgs1984),
+                             raster::ymin(study_area_data_wgs1984),
+                             raster::xmax(study_area_data_wgs1984),
+                             raster::ymax(study_area_data_wgs1984))
   ## set starting view
   if (!is.null(inital_view)) {
     l <- leaflet::setView(l, lng = inital_view[[1]], lat = inital_view[[2]],
@@ -154,8 +156,6 @@ species_widget <- function(x, species_data, record_data, grid_data,
   ## add tiles
   l <- leaflet::addProviderTiles(l, "Esri.WorldGrayCanvas", group = "Thematic")
   ## add home button
-  study_area_data_wgs1984 <- as(sf::st_transform(study_area_data, 4326),
-                                "Spatial")
   l <- leafem::addHomeButton(l, raster::extent(study_area_data_wgs1984),
                              "Reset view", position = "topleft")
   ## add reporting rate and detection maps (as required)
