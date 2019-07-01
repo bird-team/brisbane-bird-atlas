@@ -154,8 +154,10 @@ species_widget <- function(x, species_data, record_data, grid_data,
   ## add tiles
   l <- leaflet::addProviderTiles(l, "Esri.WorldGrayCanvas", group = "Thematic")
   ## add home button
-  l <- leafem::addHomeButton(l, raster::extent(grid_data), "Reset view",
-                             position = "topleft")
+  study_area_data_wgs1984 <- as(sf::st_transform(study_area_data, 4326),
+                                "Spatial")
+  l <- leafem::addHomeButton(l, raster::extent(study_area_data_wgs1984),
+                             "Reset view", position = "topleft")
   ## add reporting rate and detection maps (as required)
   for (i in plot_names) {
     curr_palette <- palette
@@ -169,8 +171,7 @@ species_widget <- function(x, species_data, record_data, grid_data,
   ## add Brisbane extent
   l <- leaflet::addPolygons(l, color = "black", fillColor = "transparent",
                             weight = 2.5, smoothFactor = 0.4,
-                            data = as(sf::st_transform(study_area_data, 4326),
-                                      "Spatial"),
+                            data = study_area_data_wgs1984,
                             group = "Brisbane extent")
   ## add sampling grid
   l  <- leaflet::addPolygons(l, color = "black", fillColor = "transparent",
