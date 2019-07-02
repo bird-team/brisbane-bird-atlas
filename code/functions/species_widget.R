@@ -129,10 +129,10 @@ species_widget <- function(x, species_data, record_data, grid_data,
   ## restrict viewing window
   study_area_data_wgs1984 <- as(sf::st_transform(study_area_data, 4326),
                                 "Spatial")
-  l <- leaflet::setMaxBounds(l, raster::xmin(study_area_data_wgs1984),
-                             raster::ymin(study_area_data_wgs1984),
-                             raster::xmax(study_area_data_wgs1984),
-                             raster::ymax(study_area_data_wgs1984))
+  # l <- leaflet::setMaxBounds(l, raster::xmin(study_area_data_wgs1984),
+  #                            raster::ymin(study_area_data_wgs1984),
+  #                            raster::xmax(study_area_data_wgs1984),
+  #                            raster::ymax(study_area_data_wgs1984))
   ## set starting view
   if (!is.null(inital_view)) {
     l <- leaflet::setView(l, lng = inital_view[[1]], lat = inital_view[[2]],
