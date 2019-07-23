@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Common widespread resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Common but decreasing resident of widespread habitats. Reporting rate varies throughout the year slightly, but birds appear to be mostly sedentary. Not presently of major conservation concern, but decline should be monitored.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+One of Australia's most common species of pigeon, the Crested Pigeon is abundant over much of its range, and indeed remains common throughout the Brisbane region, despite a notable decline over the past decade that merits further investigation. The species is distinctive for its sharply pointed crest and iconic whistling flurry of wingbeats that can be heard when birds are flushed or startled. Birds are moderately gregarious, being most often found in pairs or small groups, although counts of up to 50 are known in the area.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,15 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Widely distributed across almost all of Australia excluding Tasmania and the far north, Crested Pigeon are an abundant species of moderate-sized pigeon. The genus _Ocyphaps_ is monotypic, but the species is quite closely related to several other Australian pigeons, including the Rock-Pigeons (_Petrophassa_) and Bronzewings (_Phaps_). Sexes are very similar and the species itself is quite straightforward to identify, with a distinctive (particularly within Brisbane) upright crest and iridescent wing panels that vary in colour depending on the lighting.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Crested Pigeons are somewhat gregarious, but are most commonly found in pairs or small family groups. Given their abundance however, it is not uncommon to find several pairs in a relatively small area across the one birding outing, and flocks of numerous birds do occasionally form; as such, counts of up to 50 birds have been recorded locally [@tzuchiang2016ebirdS30554540]. Within Brisbane, birds are found almost exclusively at lower elevations up to 200m, with roughly uniform abundance over a vast tract of the city where habitat is suitable. Birds breed in Brisbane, with numerous breeding records between August and February. Birds are present in Brisbane year-round, although monthly abundances vary somewhat.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Interestingly, this species appears to be facing a significant decline across the city currently, and the causes of this are unclear. More work is needed here, and the species' abundance should be closely monitored, not only within Brisbane but across Australia more widely.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
+
+Crested Pigeons are common across a large area of the city, having been reported from most _Atlas_ squares with substantial data coverage. They appear to be essentially absent from the heavily-forested western parts of the city, particularly those above 200m in elevation, above which height the species has only been reported once. The hard altitudinal cap is notable, and it would be interesting to investigate this further, particularly if habitat mapping were to be incorporated. 
 
 ```{r}
 end_two_column_layout()
