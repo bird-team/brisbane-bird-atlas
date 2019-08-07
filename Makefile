@@ -63,9 +63,17 @@ grid:
 	&& rm grid.zip || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
+## backup assets
+backup_assets:
+	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
+	&& docker cp ./assets bba:$(PATHSEP2)tmp/ \
+	&& docker exec bba sh -c "zip -r assets_backup.zip assets" \
+	&& docker cp bba:$(PATHSEP2)tmp/assets_backup.zip . || true
+	@docker stop -t 1 bba || true && docker rm bba || true
+
 ## build assets
 # rebuild assets locally
-assets:
+assets: backup_assets
 	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
 	&& docker cp . bba:$(PATHSEP2)tmp/ \
 	&& docker cp "$(USRHOME)/.Renviron" bba:$(PATHSEP2)root/.Renviron \

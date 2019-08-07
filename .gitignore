@@ -28,5 +28,8 @@ assets/maps/*
 assets/surveyor-sheets/*
 assets/grid-maps/*
 
+# backup files
+assets_backup.zip
+
 # profile pictures
 assets/profile/*
