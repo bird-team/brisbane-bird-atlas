@@ -40,7 +40,7 @@ record_path <- dir(tmp3, "^.*\\.txt$", full.names = TRUE)
 unzip(dir("data/land", "^.*\\.zip$", full.names = TRUE),
           exdir = tmp4)
 land_path <- dir(tmp4, "^.*\\.shp$", full.names = TRUE)[1]
-elevation_path <- dir("data/elevation", "^.*\\.grd$", full.names = TRUE)[1]
+elevation_path <- dir("data/elevation", "^.*\\.tif$", full.names = TRUE)[1]
 grid_path <- dir("data/grid", "^.*\\.shp$", full.names = TRUE)[1]
 grid_metadata_path <- dir("data/grid", "^.*\\.xlsx$", full.names = TRUE)[1]
 exclude_locality_path <- dir("data/localities", "^.*\\.xlsx$",
