@@ -49,7 +49,7 @@ audio_data <- do.call(format_audio_data,
 ## find month year for latest checklist
 unzip(dir("data/records", "^.*\\.zip$", full.names = TRUE), exdir = tmp1)
 record_path <- dir(tmp1, "^.*\\.txt$", full.names = TRUE)
-record_data <- data.table::fread(record_path, data.table = FALSE)
+record_data <- data.table::fread(record_path, quote = "", data.table = FALSE)
 record_data <- record_data[[parameters$records$date_column_name]]
 record_data <- as.POSIXct(strptime(record_data,
                                    parameters$records$date_column_format))

@@ -82,7 +82,7 @@ grid_data <- sf::read_sf(grid_path)
 grid_metadata <- readxl::read_excel(grid_metadata_path, sheet = 1)
 exclude_locality_data <- readxl::read_excel(exclude_locality_path, sheet = 1)
 land_data <- sf::st_transform(sf::read_sf(land_path), parameters$crs)
-record_data <- data.table::fread(record_path, data.table = FALSE)
+record_data <- data.table::fread(record_path, quote = "", data.table = FALSE)
 species_data <- readxl::read_excel(species_path, sheet = 1)
 elevation_data <- raster::raster(elevation_path)
 vegetation_data <- sf::st_transform(sf::read_sf(vegetation_path),
