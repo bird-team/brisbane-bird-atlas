@@ -74,7 +74,7 @@ species_graph <- function(x, species_data, record_data) {
         dplyr::filter(species_scientific_name == x)
   p2 <- d2 %>%
         ggplot2::ggplot(mapping = ggplot2::aes(x = Month, y = elevation)) +
-        ggplot2::geom_boxplot() +
+        ggplot2::geom_violin() +
         ggplot2::xlab("") +
         ggplot2::ylab("Elevation (m)") +
         ggplot2::scale_x_discrete(drop = FALSE) +
@@ -117,7 +117,7 @@ species_graph <- function(x, species_data, record_data) {
                       year >= records_starting_year)
   p4 <- d4 %>%
         ggplot2::ggplot(mapping = ggplot2::aes(x = Month, y = count)) +
-        ggplot2::geom_boxplot() +
+        ggplot2::geom_violin() +
         ggplot2::xlab("") +
         ggplot2::ylab("Count (#)") +
         ggplot2::scale_x_discrete(drop = FALSE) +
@@ -148,7 +148,7 @@ species_graph <- function(x, species_data, record_data) {
         ggplot2::xlab("") +
         ggplot2::ylab("Breeding reported (%)") +
         ggplot2::scale_y_continuous(
-          limits = c(0, ifelse(max(d5$rate, na.rm = TRUE) < 1e-15, 
+          limits = c(0, ifelse(max(d5$rate, na.rm = TRUE) < 1e-15,
                                100, breeding_ymax))) +
         ggplot2::scale_x_discrete(drop = FALSE) +
         ggplot2::theme(
