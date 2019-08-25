@@ -72,6 +72,9 @@ species_graph <- function(x, species_data, record_data) {
   d2 <- record_data %>%
         dplyr::filter(year >= records_starting_year) %>%
         dplyr::filter(species_scientific_name == x)
+  if (all(!is.finite(d2$elevation)))
+    stop("none of the records for this species overlap with the ",
+         "elevation data")
   p2 <- d2 %>%
         ggplot2::ggplot(mapping = ggplot2::aes(x = Month, y = elevation)) +
         ggplot2::geom_boxplot() +

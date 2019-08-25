@@ -251,6 +251,7 @@ elevation_data <- raster::projectRaster(elevation_data, method = "bilinear",
 elevation_data[raster::Which(elevation_data < 0)] <- 0
 elevation_data[raster::Which(is.na(elevation_data))] <- 0
 locality_data$elevation <- raster::extract(elevation_data, locality_data)
+locality_data$elevation[!is.finite(locality_data$elevation)] <- 0
 rm(locality_pts, elevation_data)
 
 ### extract vegetation data
