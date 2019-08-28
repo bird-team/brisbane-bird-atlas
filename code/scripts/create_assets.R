@@ -50,8 +50,14 @@ exclude_locality_path <- dir("data/localities", "^.*\\.xlsx$",
 library(dplyr)
 library(sf)
 library(patchwork)
+library(tictoc)
+
+## setup run timer
+tictoc::tic.clearlog()
+tictoc::tic("Total run time")
 
 ## source functions
+tictoc::tic("Source functions")
 source("code/functions/format_grid_data.R")
 source("code/functions/format_grid_metadata.R")
 source("code/functions/format_ebird_records.R")
@@ -70,8 +76,11 @@ source("code/functions/color_numeric_palette.R")
 source("code/functions/ymax.R")
 source("code/functions/breaks.R")
 source("code/functions/addLegend_custom.R")
+tictoc::toc(log = TRUE, quiet = TRUE)
 
 # Preliminary processing
+tictoc::tic("Preliminary processing")
+
 ## load parameters
 parameters <- yaml::read_yaml("data/parameters/parameters.yaml")
 
@@ -289,7 +298,11 @@ file_names <- gsub("/", "", file_names, fixed = TRUE)
 file_names <- gsub(" ", "-", file_names, fixed = TRUE)
 file_names <- gsub(".", "", file_names, fixed = TRUE)
 
+tictoc::toc(log = TRUE, quiet = TRUE)
+
 # Set up variables for caching
+tictoc::tic("Set up variables for caching")
+
 ## graphs hashes
 tmp_hash <- digest::digest(list(record_data, parameters$graphs))
 tmp_df <- dplyr::select(species_data, graphs, checklists_starting_year,
@@ -338,7 +351,11 @@ grid_data$sheet_hash <- plyr::laply(
     digest::digest(list(grid_data[i, ], tmp_hash))
 })
 
+tictoc::toc(log = TRUE, quiet = TRUE)
+
 # Exports
+tictoc::tic("Exports")
+
 ## spawn cluster workers
 is_parallel <- isTRUE(parameters$threads > 1)
 if (is_parallel) {
@@ -361,6 +378,7 @@ if (is_parallel) {
 }
 
 ## create surveyor sheet for each grid cell
+tictoc::tic("Surveyor sheets")
 message("starting surveyor sheets...")
 ### determine which grids for which to make surveyor sheets
 grid_indices <- which(grid_data$type == "land")
@@ -446,7 +464,10 @@ result <- plyr::laply(grid_indices, .parallel = is_parallel,
   TRUE
 })
 
+tictoc::toc(log = TRUE, quiet = TRUE)
+
 ## create graphs for each species
+tictoc::tic("Graphs)
 message("starting graphs...")
 result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
                       function(i) {
@@ -485,7 +506,10 @@ result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
   TRUE
 })
 
+tictoc::toc(log = TRUE, quiet = TRUE)
+
 ## create tables
+tictoc::tic("Tables")
 message("starting tables...")
 result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
                       function(i) {
@@ -516,7 +540,10 @@ result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
   TRUE
 })
 
+tictoc::toc(log = TRUE, quiet = TRUE)
+
 ## create interactive maps for each species
+tictoc::tic("Widgets")
 message("starting widgets...")
 result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
                       function(i) {
@@ -552,7 +579,10 @@ result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
   TRUE
 })
 
+tictoc::toc(log = TRUE, quiet = TRUE)
+
 ## create static maps for each species
+tictoc::tic("Maps")
 message("starting maps...")
 result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
                       function(i) {
@@ -592,8 +622,18 @@ result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
   TRUE
 })
 
+tictoc::toc(log = TRUE, quiet = TRUE)
+
 ## cleanup
 if (is_parallel) {
   doParallel::stopImplicitCluster()
   cl <- parallel::stopCluster(cl)
 }
+
+tictoc::toc(log = TRUE, quiet = TRUE)
+
+# finish timer
+tictoc::toc(log = TRUE, quiet = TRUE)
+
+# print total runtime
+writeLines(unlist(tic.log(format = TRUE)))
