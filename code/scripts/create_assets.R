@@ -467,7 +467,7 @@ result <- plyr::laply(grid_indices, .parallel = is_parallel,
 tictoc::toc(log = TRUE, quiet = TRUE)
 
 ## create graphs for each species
-tictoc::tic("Graphs)
+tictoc::tic("Graphs")
 message("starting graphs...")
 result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
                       function(i) {
