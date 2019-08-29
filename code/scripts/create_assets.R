@@ -493,6 +493,10 @@ result <- plyr::laply(seq_len(nrow(species_data)), .parallel = is_parallel,
   # save graphs
   if (!is.null(p)) {
     n <- as.character(stringr::str_count(species_data$graphs[i], "_") + 1)
+    ggplot2::ggsave(paste0("assets/graphs/", file_names[i], ".png"), p,
+                    width = parameters$graphs$size[[n]]$width,
+                    height = parameters$graphs$size[[n]]$height,
+                    units = "in")
     ggplot2::ggsave(paste0("assets/graphs/", file_names[i], ".jpeg"), p,
                     width = parameters$graphs$size[[n]]$width,
                     height = parameters$graphs$size[[n]]$height,
