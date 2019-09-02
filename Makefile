@@ -88,6 +88,7 @@ assets: backup_assets
 	&& docker cp bba:$(PATHSEP2)tmp/assets/graphs.zip assets \
 	&& docker cp bba:$(PATHSEP2)tmp/assets/tables.zip assets \
 	&& docker cp bba:$(PATHSEP2)tmp/assets/surveyor-sheets.zip assets \
+	&& docker cp bba:$(PATHSEP2)tmp/tictoclog.txt tictoclog.txt \
 	&& cd assets \
 	&& unzip -o maps.zip \
 	&& unzip -o widgets.zip \

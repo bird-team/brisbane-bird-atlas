@@ -33,3 +33,6 @@ assets_backup.zip
 
 # profile pictures
 assets/profile/*
+
+# log files
+tictoclog.txt
