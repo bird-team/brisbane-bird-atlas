@@ -641,4 +641,5 @@ tictoc::toc(log = TRUE, quiet = TRUE)
 
 # print total runtime
 tictoclog <- tictoc::tic.log(format = TRUE)
-writeLines(unlist(tictoclog))
+tictoclog <- unlist(tictoclog)
+write.table(tictoclog, "tictoclog.txt")
