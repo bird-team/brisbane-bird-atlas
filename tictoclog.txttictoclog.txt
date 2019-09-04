@@ -1,10 +1,10 @@
-Source functions: 0.093 sec elapsed
-Preliminary processing: 223.492 sec elapsed
-Set up variables for caching: 35.54 sec elapsed
-Surveyor sheets: 6996.495 sec elapsed
-Graphs: 0.268 sec elapsed
-Tables: 0.187 sec elapsed
-Widgets: 0.159 sec elapsed
-Maps: 0.255 sec elapsed
-Exports: 6997.367 sec elapsed
-Total run time: 7256.492 sec elapsed
+Source functions: 0.095 sec elapsed
+Preliminary processing: 223.769 sec elapsed
+Set up variables for caching: 35.396 sec elapsed
+Surveyor sheets: 0.31 sec elapsed
+Graphs: 1908.142 sec elapsed
+Tables: 0.293 sec elapsed
+Widgets: 0.27 sec elapsed
+Maps: 0.311 sec elapsed
+Exports: 1909.328 sec elapsed
+Total run time: 2168.589 sec elapsed
