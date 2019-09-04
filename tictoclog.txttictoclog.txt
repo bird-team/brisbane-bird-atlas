@@ -1,0 +1,10 @@
+Source functions: 0.093 sec elapsed
+Preliminary processing: 223.492 sec elapsed
+Set up variables for caching: 35.54 sec elapsed
+Surveyor sheets: 6996.495 sec elapsed
+Graphs: 0.268 sec elapsed
+Tables: 0.187 sec elapsed
+Widgets: 0.159 sec elapsed
+Maps: 0.255 sec elapsed
+Exports: 6997.367 sec elapsed
+Total run time: 7256.492 sec elapsed
