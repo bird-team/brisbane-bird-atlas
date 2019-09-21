@@ -60,6 +60,30 @@ Birds are present in Brisbane year-round, although are reported much more freque
 
 **Distribution and Habitat**
 
+Bush-hens have been recorded from a large number of sites around the city, with reports in more than 50 _Atlas_ squares. Almost all reports have come from riparian habitats, along densely vegetated creek lines, although the species might occasionally be found a little distance from water. Birds are seen most commonly along the verges of Kedron Brook, Enoggera Creek, Oxley Creek and Bulimba Creek, all low-lying systems within the Brisbane region; birds are rarely found above 50m in elevation. The species has not been reported from the densely-vegetated forest regions in the north west of the city, nor from Moreton Island or the bay, and likely does not occur in these regions due to lack of suitable habitat.
+
+**Seasonality**
+
+Pale-vented Bush-hens exhibit a large degree of seasonal variation in reporting rate, with a significant proportion of reports coming from the warmer months, between September and March. This is possibly due to birds being more vocal and conspicuous during this period, coinciding with the breeding season and birds searching for mates and establishing territories. However, it could also be indicative of seasonal migration to some extent; this needs further investigation. The species has been recorded breeding in the city a couple of times, with reports in February and December indicating a summer breeding season, in line with the peak in reporting rate observed. Beyond the change in reporting rate over the year, birds do not appear to move around significantly, with regular sites having reports in all seasons, although finer-scale reporting and analysis of records may uncover more subtle patterns.
+
+**Trends**
+
+The reporting rate for this species over the past decade appears to be quite stable, and indeed may be increasing slightly, indicating that this species is not at any imminent risk in the region. Given that Brisbane lies towards the southern end of this species' distribution across Indonesia and Queensland's coastline, it may well be the case that a southerly range expansion is occurring with warming climactic conditions, which would lead to a presumed increase in abundance locally. Once again, finer-scale monitoring and investigation of various factors is required here.
+
+**Information Gaps**
+
+- Determine whether birds are migratory in the region
+- Determine any possible range expansions or increases in local population as a result of climate change
+- Collect more breeding information
+
+**Key Conservation Needs**
+
+- Protect fringing vegetation along swamps and creeks
+
+**Contributors to Species Account**
+
+Louis Backstrom
+
 
 
 ```{r}
