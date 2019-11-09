@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Common widespread resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Familiar bird of urban and remnant habitats around the city. More often heard than seen, thanks to their generally secretive nature and wailing call. Not of conservation concern at present in Brisbane, although declining and endangered in the south.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+A common and familiar species around Brisbane, the Bush Stone-Curlew is a distinctive bird with a unique, wailing call that can carry very long distances at night. They have textured brown & grey plumage, very long legs and necks and are easy to identify. They are common in open habitats around Brisbane, and seem well-adapted to urban life, with several pairs in parks around even the most built-up areas of the city, as well as many more around the region.
 
 ```{r}
 end_two_column_layout()
