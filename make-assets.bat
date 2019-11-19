@@ -1,0 +1,2 @@
+make rm_image pull_image
+make assets push_assets push_surveyor_sheets
