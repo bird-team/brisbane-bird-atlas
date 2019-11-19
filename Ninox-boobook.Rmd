@@ -1,5 +1,5 @@
 ```{r, include=FALSE}
-species_name <- "Ninox novaeseelandiae"
+species_name <- "Ninox boobook"
 ```
 
 ```{r}

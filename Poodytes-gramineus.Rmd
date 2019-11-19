@@ -1,12 +1,12 @@
 ```{r, include=FALSE}
-species_name <- "Megalurus mathewsi"
+species_name <- "Poodytes gramineus"
 ```
 
 ```{r}
 species_title(species_name, species_data)
 ```
 
-Category A; Uncommon localised passage migrant.
+Category A; Rare localised nomadic visitor.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")

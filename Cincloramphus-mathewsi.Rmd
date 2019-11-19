@@ -1,12 +1,12 @@
 ```{r, include=FALSE}
-species_name <- "Megalurus cruralis"
+species_name <- "Cincloramphus mathewsi"
 ```
 
 ```{r}
 species_title(species_name, species_data)
 ```
 
-Category A; Rare localised passage migrant.
+Category A; Uncommon localised passage migrant.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")
