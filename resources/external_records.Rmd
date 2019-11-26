@@ -1,11 +1,57 @@
 # This file is for records that are not in eBird but should be a part of the Atlas, particularly for rare vagrants etc. In future, these records will be imported into eBird under an Atlas account.
 
-Species: Regent Honeyeater
-  Date: 31 July 2018
-  Location: Enoggera Reservoir - Walkabout Creek
-  Count: 1
-  Observer: Ann Cheeseman
-  Notes: Brisbane Birds FB Page
+Species:
+  Date:
+  Location:
+  Count:
+  Observer:
+  Notes:
+
+**Completed**
+  Species: Regent Honeyeater
+    Date: 31 July 2018
+    Location: Enoggera Reservoir - Walkabout Creek
+    Count: 1
+    Observer: Ann Cheeseman
+    Notes: Brisbane Birds FB Page
+
+  Species: White Tern
+    Date: 30 April 1973
+    Location: Meeandah [mouth of Brisbane River]
+    Count: 1
+    Observer: J. Liddy
+    Notes: Sunbird vol. 4 no. 2
+
+  Species: Southern Fulmar [Antarctic Fulmar / Silver-grey Petrel]
+    Date: 9 October 1972
+    Location: Eager Beach, Moreton Island
+    Count: 1
+    Observer: J. S. McEvoy
+    Notes: [Dead] Sunbird vol. 5 no. 3
+
+  Species: Oriental Plover
+    Date: 13 November 1994
+    Location: Archerfield Airport
+    Count: 14
+    Observer: Tom Tarrant and Graham Palmer
+    Notes: Sunbird vol. 25 no. 4
+
+  Species: Barred Cuckooshrike
+    Date: 6 November 2018
+    Location: Toowong Cemetery
+    Count: 1
+    Observer: Mick McKean
+    Notes: Brisbane Birds FB Page
+
+**Rejected**
+  Species: Brush Bronzewing
+    Date: 5 September 1972
+    Location: Near Capalaba [follow up location - may not be Brisbane]
+    Count: 1
+    Observer: Greg Roberts
+    Notes: Sunbird vol. 3 no. 3 - Greg has no memory of the sighting
+
+# To be verified
 
 Species: Pacific Gull
   Date: 18 January 1972
@@ -13,27 +59,6 @@ Species: Pacific Gull
   Count: 1
   Observer: S. Bang
   Notes: Sunbird vol. 3 no. 1
-
-Species: Brush Bronzewing
-  Date: 5 September 1972
-  Location: Near Capalaba [follow up location - may not be Brisbane]
-  Count: 1
-  Observer: Greg Roberts
-  Notes: Sunbird vol. 3 no. 3
-
-Species: White Tern
-  Date: 30 April 1973
-  Location: Meeandah [mouth of Brisbane River]
-  Count: 1
-  Observer: J. Liddy
-  Notes: Sunbird vol. 4 no. 2
-
-Species: Southern Fulmar [Antarctic Fulmar / Silver-grey Petrel]
-  Date: 9 October 1972
-  Location: Eager Beach, Moreton Island
-  Count: 1
-  Observer: J. S. McEvoy
-  Notes: [Dead] Sunbird vol. 5 no. 3
 
 Species: Asian Dowitcher
   Date: 11 January 1976
@@ -46,13 +71,6 @@ Species: Little Curlew
   Date: 13 November 1994
   Location: Archerfield Airport
   Count: 34
-  Observer: Tom Tarrant and Graham Palmer
-  Notes: Sunbird vol. 25 no. 4
-
-Species: Oriental Plover
-  Date: 13 November 1994
-  Location: Archerfield Airport
-  Count: 14
   Observer: Tom Tarrant and Graham Palmer
   Notes: Sunbird vol. 25 no. 4
 
@@ -995,17 +1013,3 @@ Species: Jacky Winter
   Count: 1
   Observer: J. White
   Notes: BQ Sightings Page "First time seen in this area" [Between Ashmore St and Kedron Brook bikeway, Everton Park, SEQ	]
-
-Species: Barred Cuckooshrike
-  Date: 6 November 2018
-  Location: Toowong Cemetery
-  Count: 1
-  Observer: Mick McKean
-  Notes: Brisbane Birds FB Page
-
-Species:
-  Date:
-  Location:
-  Count:
-  Observer:
-  Notes:
