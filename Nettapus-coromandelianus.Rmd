@@ -62,7 +62,7 @@ The Cotton Pygmy-Goose is widely distributed across Brisbane, with records from 
 
 Cotton Pygmy-Geese are almost exclusively restricted to wetland habitats in Brisbane, with only a handful of records coming from other habitats such as estuaries or non-remnant areas. However, even in wetlands the total reporting rate only approaches 3%, indicating that the species is distinctly rare within Brisbane. They are mostly found at very low altitudes, with an average elevation of approximately 10m; the highest records are from 150m, indicating that Pygmy-Geese are a lowland species within Brisbane.
 
-**Seasonality**
+**Seasonality and Breeding**
 
 Brisbane's birds are strongly migratory, being a clear winter immigrant into the region, although there are records from all months of the year. There are no breeding records from within Brisbane, although this is unsurprising as birds typically breed during summer with the wet season [@HANZAB1], during which birds are typically absent from the region. It would be good to collect more information about the seasonal movements of this species and to determine where Brisbane's birds migrate to during summer and where they breed.
 

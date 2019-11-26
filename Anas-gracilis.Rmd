@@ -68,7 +68,7 @@ Birds have been reported from a wide variety of habitats, but are by far the mos
 
 Furthermore, this species is known to be highly nomadic [@roshier2008drives; @roshier2006movements; @mills1976status], with birds wandering widely in search of water during times of drought. While Brisbane's climate and landscape is vastly different to that found across inland Australia, where this species is widely found, it is likely that Brisbane's population has some connection to the inland birds, and as a result Brisbane's birds may move inland during boom periods of widespread rain and flood. On a more local level, it is likely that birds wander widely across the city in search of optimal habitat, although more fine-scale monitoring is needed to confirm this hypothesis.
 
-**Seasonality**
+**Seasonality and Breeding**
 
 Grey Teal are quite a seasonally-variable species within Brisbane, being much more common over the cooler months of the year. The reporting rate between May and September is over 15%, while across the rest of the year it is somewhat lower; during January and February birds are only reported on 7.5% of checklists. This indicates that a large proportion of Brisbane's population are migratory, presumably moving outside the Brisbane region in spring and returning in autumn to spend winter near the coast. It is not currently known, however, where the birds go, and how regular this movement is. Given that the breeding season for this species is generally over spring and summer, this indicates that many birds move inland to breed, with only a handful of breeders remaining to breed in Brisbane. Much more work is needed to determine the specific nature of this pattern.
 

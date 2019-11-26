@@ -66,7 +66,7 @@ Black Swans have been reported from all across Brisbane, except in the higher al
 
 Within Brisbane, the geographic distribution of Black Swans is likely driven by their requirement for particular wetland habitats with suitable aquatic vegetation available to them as food, and while these types of lakes and waterways are more common in the east of the city than the west, it is somewhat surprising that birds are not reported more frequently at well-watched sites such as Priors Pocket, Gold Creek Reservoir and Lake Manchester, especially given the species is more common further west in the Lockyer Valley and on Lake Wivenhoe. The seasonal distribution of Black Swans shows no clear variation, indicating that birds are resident year-round at the same sites and do no exhibit regular movements or migratory behaviour, although there is perhaps some evidence of broader nomadism (see Trends).
 
-**Seasonality**
+**Seasonality and Breeding**
 
 There are 48 reports of Black Swan confirmed breeding activity from Brisbane, spanning nearly every month of the year. The only month without breeding activity is March, with a clear peak in the season over July, where nearly 10% of reporting checklists have breeding activity as well. This indicates that birds within Brisbane seem to breed whenever there are suitable conditions rather than following a clear breeding season, although it is likely they more often than not breed in late winter - early spring; this is in line with the season as reported in the literature across Australia [@HANZAB1]. It would be good to collect more breeding data for this species (even though this is one of the better surveyed breeding birds in the _Atlas_) to determine the true breeding season.
 

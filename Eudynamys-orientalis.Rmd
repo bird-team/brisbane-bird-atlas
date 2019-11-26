@@ -64,7 +64,7 @@ Pacific Koels can be found all across Brisbane in the summer months, appearing t
 
 Birds have been reported from essentially every broad habitat type within Brisbane, with the exception of ocean and heathland. Their absence in heathland is likely more reflective of the current lack of data available for heath in Brisbane than true habitat preferences; this needs to be confirmed with further visits to Moreton Island's heath during spring and summer. Interestingly, birds appear to be most abundant in modified urban habitats, particularly built-up areas. This may be reflective of a preference for ornamental fruiting trees like those found across suburban parks and gardens, or it may be something else. Nevertheless, birds are common in more remnant forested habitats as well, including rainforest, wet sclerophyll and dry woodland. Their distribution locally shows clear seasonal variation, with birds having been recorded from very few sites in autumn and winter (as they are all up north in New Guinea) and being fairly ubiquitous across the entire city during spring and summer.
 
-**Seasonality**
+**Seasonality and Breeding**
 
 Koels are some of our most strongly migratory land birds, and are summer breeding migrants to the city. During the months between October and February, they are one of the most frequently-encountered species across all of Brisbane, appearing on approximately 25% of checklists. Conversely, in the cooler months from about April to August they are essentially absent, with very few records (probably of overwintering juveniles) as the vast majority of the population are in New Guinea and various other islands to the north of Australia. In addition to the large numbers of birds which are present in Brisbane all summer and presumably breed here, a part of the population moves through our city on its way further south in spring (as birds are found all down the east coast to Victoria), and back again in autumn on the northward migration. Some more work on the migratory patterns of Pacific Koels in Brisbane would be helpful to better understand the population dynamics of this species.
 
@@ -86,7 +86,7 @@ The population of Pacific Koels in Brisbane appears to have remained relatively 
 
 **Contributors to Species Account**
 
-Louis Backstrom 
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()

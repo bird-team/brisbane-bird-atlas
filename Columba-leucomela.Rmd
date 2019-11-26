@@ -68,7 +68,7 @@ Within Brisbane, birds are widely distributed across the elevational gradient, w
 
 The distribution of birds within the city shows no clear seasonal variation, with approximately the same areas occupied throughout the year, although with some variation. It is however likely (given records across the whole of suburban Brisbane) that birds wander somewhat across the city in search of optimal habitat and fruiting trees, although more fine-scale monitoring than is currently available is needed to confirm this hypothesis.
 
-**Seasonality**
+**Seasonality and Breeding**
 
 The seasonal abundance of White-headed Pigeons in Brisbane shows a notable level of variation, with a marked decline in reporting rate over the year. Peak reporting rate is in February (at just under 2% of all complete checklists), and drops off steadily until November-December, when the reporting rate is well under 1%. The cause for this is unclear, but may be a reflection of birds moving around either locally (e.g. up and down the mountains, as is seen in other species) or more widely around the region. More work is needed here.
 

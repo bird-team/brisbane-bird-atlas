@@ -60,7 +60,7 @@ A vagrant nomad to Brisbane's wetlands, Freckled Duck are a rare species of wate
 
 Freckled Ducks are distributed widely across Australia, being regularly recorded from nearly all regions of the nation excluding Tasmania and north west Western Australia, but they are distinctly rare and patchily distributed. They favour freshwater swamps with suitable fringing vegetation, similar to many other species of waterfowl. Within Brisbane, all records have come from well-vegetated swamps and wetlands, with a wide geographic range displayed; records have come from as far west as Moggill and as far east as Wynnum. Further records could come from nearly any wetland with suitable habitat in Brisbane.
 
-**Seasonality**
+**Seasonality and Breeding**
 
 Freckled Ducks have occurred in Brisbane in most months of the year, with the exception of March, suggesting no clear seasonal pattern to their occurrence. This is likely a result of birds being nomadic, and choosing to stay in Brisbane as long as the habitat is suitable for them - several records of birds have been particularly long-staying. More analysis of existing and future records would be beneficial to further determine any seasonal patterns in abundance. The species has never been recorded breeding in Brisbane.
 

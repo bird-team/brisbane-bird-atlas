@@ -66,7 +66,7 @@ Wandering Whistling-Ducks are quite patchily-distributed across Brisbane, and wh
 
 The geographic distribution of Wandering Whistling-Ducks across Brisbane is presumably driven by the limited availability of suitable wetland habitat with deep water and fringing vegetation, which this species prefers. It is somewhat surprising that certain seemingly-suitable locations (such as the fringes of Gold Creek and Enoggera Reservoirs) are not more regularly visited by these birds, although it is possible the birds are simply well-suited to their current favoured sites and do not regularly move around.
 
-**Seasonality**
+**Seasonality and Breeding**
 
 There are 8 reports of Wandering Whistling-Ducks breeding in Brisbane, from 5 different locations. All of these are from the first 3 months of the year, indicating a late summer breeding period, somewhat in line with the reported literature, which states a wet season breeding period [@HANZAB1]. Interestingly, barring an anomaly in the month of July, the average and maximum counts for this species follow a somewhat cyclical trend, with numbers over winter being higher than those during summer. Given that this pattern is not reflected in the frequency data, this would suggest that birds are more spread out or less conspicuous over summer. Given that this species generally nests in signle pairs [@HANZAB1], it seems likely that birds are in smaller breeding groups over summer but coalesce into larger flocks over the drier winter season when they are not breeding. More data and research are needed to determine the validity of this hypothesis.
 

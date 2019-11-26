@@ -68,7 +68,7 @@ Quail are found across a relatively wide elevational gradient within the city, a
 
 The local distribution of Brown Quail shows very little seasonal variation, with the same sites occupied throughout the year and no clear evidence of any seasonal migration or nomadism. Birds are typically resident in the wetter parts of their range [@HANZAB2] so this trend (or lack thereof) in the data is unsurprising. More fine-scale work is needed to ascertain the nature and extent of any local movements that birds might display.
 
-**Seasonality**
+**Seasonality and Breeding**
 
 There is some degree of seasonal variation in the abundance of Brown Quail within Brisbane. Reporting rate is approximately 2-3% higher during spring and early summer (Aug-Jan) than during other months. Similarly, the average count of birds shows a similar pattern, although slightly earlier in the year - May through to October have the highest average number of birds per checklist (more than 6 in August), with a sharp drop off at the beginning of summer.
 

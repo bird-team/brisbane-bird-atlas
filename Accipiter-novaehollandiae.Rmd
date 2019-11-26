@@ -66,7 +66,7 @@ Within Brisbane, Grey Goshawks are most commonly found in wet sclerophyll and ra
 
 Birds occur in Brisbane at a mean elevation of about 100m, but have been recorded from sea level all the way up to over 600m, which is not surprising given their propensity for wandering. There is no clear seasonal pattern in their elevational preferences. Additionally, the species shows no clear geographical trends in its distribution in Brisbane over the seasons, occurring widely throughout the year with no significant pattern present. This is surprising given the seasonal pattern of abundance present in the reporting data, but there are probable reasons for this.
 
-**Seasonality**
+**Seasonality and Breeding**
 
 There are three reports of Grey Goshawks breeding in Brisbane, in the months of September, October and November. Two records are of occupied nests [@murray2014ebirdS20283445; @murray2014ebirdS19953145] and one of a nest with young [@murray2014ebirdS20522442]. However, all these records are of the same birds at the same site in the same season by the same year, so there is a clear lack of comprehensive data available for this species' breeding habits in Brisbane. It is not known at this stage whether Brisbane's population is in fact resident, or whether it moves in and out of the city environs. The data suggests the latter, as there is a clear trend present of birds being less abundant over summer and more over winter, but the reason for this is unknown, as birds are resident across the rest of Australia [@HANZAB2]. Much more work is needed on this species to determine its movements and breeding patterns.
 

@@ -70,7 +70,7 @@ The geographic distribution of coucals in our region shows a moderate degree of 
 
 Habitat-wise, Pheasant Coucals appear to be very much generalist in their preferences, having been recorded from every _Atlas_ habitat except for ocean. Birds are most common, however, in dry woodland, rainforest, non-remnant and wetland habitats. Such a wide variety of preferred habitats has likely resulted in this species being able to fill many ecological niches and led to this species' abundance across the entire city.
 
-**Seasonality**
+**Seasonality and Breeding**
 
 Pheasant Coucals show a large degree of seasonal variation, with significantly more records coming from spring and summer, before dropping of sharply at the beginning of autumn. There are two likely explanations for this: first, that birds are migratory within the region, and move into Brisbane over summer (presumably to breed, more on this below) resulting in a marked increase in reporting rate, as is seen; second, that birds are more conspicuous over the warmer months, as they call more and are more energetic in the lead-up to the breeding season, once again leading to more records. The pattern seen in their abundance is likely a combination of these two factors, but more detailed investigation would be helpful to confirm this.
 

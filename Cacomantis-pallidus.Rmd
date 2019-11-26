@@ -66,7 +66,7 @@ Pallid Cuckoos have been recorded in several _Atlas_ squares across Brisbane, wi
 
 Birds have been reported from several habitats, but are by far most common in non-remnant, open habitats and wetlands. Howevver, even in these habitats their reporting rate only sits at 0.25%, so they are by no means a common species anywhere. The seasonal distribution of birds shows little variation, with most records outside spring coming from similar sites to those in spring, although more sites have records in spring, suggesting that birds may be somewhat resident or nomadic across the year, with the bulk of the records of migratory movements through the city in spring.
 
-**Seasonality**
+**Seasonality and Breeding**
 
 As noted above, Pallid Cuckoos are a highly seasonal species in Brisbane, with almost all records coming from the spring months, particularly in September. The species is known to be quite migratory [@HANZAB4], but the extent and nature of these movements, particularly in south east Queensland, are poorly studied. It is not clear where Brisbane's birds are in summer and winter, although a north-south route along the east coast of Australia seems plausible; more work is needed here.
 

@@ -68,7 +68,7 @@ This species is best-described as a lowland species within Brisbane, with the va
 
 The distribution of birds within the city shows no clear seasonal variation, with approximately the same areas occupied throughout the year. Unlike their close relatives in Grey Teal, Chestnut Teal are not particularly nomadic and appear to inhabit the same regions all year-round. It is however possible that birds wander somewhat across the city in search of optimal habitat, although more fine-scale monitoring than is currently available is needed to confirm this hypothesis.
 
-**Seasonality**
+**Seasonality and Breeding**
 
 Chestnut Teal are present in Brisbane all year-round, although as noted above they are slightly more common over summer than winter. During the warmer months, birds are reported on as many as 12% of all checklists, while over winter and the transition months the reporting rate is much lower; in June it is as low as 6%. The specific reasons for this are somewhat unclear [@HANZAB1], and the species' movements and distribution are not overly well-studied [@norman1988aspects]. It seems likely however, that this species moves toward the coast to breed over summer (resulting in increased abundance within Brisbane), and then disperses either locally or more widely over the non-breeding season. Some detailed investigation into Brisbane's teal and their movements would be useful in assessing this hypothesis.
 

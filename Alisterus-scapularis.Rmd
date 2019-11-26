@@ -72,7 +72,7 @@ King-Parrots have been reported from nearly every filled _Atlas_ grid square wes
 
 The distribution of King-Parrots in Brisbane shows no clear seasonal variation, with birds being found in roughly the same areas across the year, and at the same elevations as discussed above. Given the scarcity of breeding data currently available, it is possible that birds move to less-surveyed areas (or regions beyond Brisbane) to breed, but this seems less likely than the alternative that birds are simply less conspicuous when nesting, as with most species. More data are needed to confirm this.
 
-**Seasonality**
+**Seasonality and Breeding**
 
 Not much is currently known from the data regarding Australian King-Parrot's breeding habits within Brisbane. The current limited data suggest a spring-summer nesting period, in line with the broader literature [@HANZAB4]. Interestingly, the two months with the lowest reporting rate for this species, November and December, are during this period, so it is possible that birds are more difficult to observe or simply less abundant during the breeding period. However, more data are needed to ascertain the nature and cause of this minor pattern.
 

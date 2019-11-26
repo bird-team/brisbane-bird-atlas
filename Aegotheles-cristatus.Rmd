@@ -66,7 +66,7 @@ Owlet-nightjars are found across all of mainland Brisbane, but are generally res
 
 The distribution of birds across the city shows no clear seasonal trend, with most of the main sites for the birds having records year-round. The species has never been reported from Moreton Island, and is also absent from historical records [@vernon1975birds], a somewhat surprising result given the abundance of dry woodland habitat present. This may be a simple issue of not having enough data (especially nocturnal reports) to detect the species, or once again may be symptomatic of a habitual trend exhbited by the birds.
 
-**Seasonality**
+**Seasonality and Breeding**
 
 This species has never been recorded breeding in Brisbane. Across Australia, birds breed from August to December [@HANZAB4], with nests typically built in hollows up to 5m above the ground. Given the inconspicuous nature of these nesting hollows, it is unsurprising that birds have never been reported as breeding, as this would likely require a concerted effort by a diligent observer. However, breeding is likely to occur at all locations where the species is regularly found and where there are suitable nesting hollows.
 

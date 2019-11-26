@@ -68,7 +68,7 @@ Tawny Frogmouths are mostly a low-to-midland species in Brisbane, occurring most
 
 Birds have been reported from a very wide variety of habitats, but are most common in dry woodland, where the reporting rate is nearly 15%. The geographic distribution of Frogmouths across Brisbane is presumably mostly driven by the availability of such habitats, although birds are known to wander widely and are reported from other habitats regularly. The distribution of Frogmouths within the city shows no clear seasonal variation, with approximately the same areas occupied throughout the year.
 
-**Seasonality**
+**Seasonality and Breeding**
 
 The reporting rate for Tawny Frogmouths shows no clear seasonal trend, although the month-to-month reporting rate is quite variable - about 3% in October and 7% in April and August. The underlying reasons behind this are unclear, as birds are thought to be sedentary and territorial throughout the year [@HANZAB4]. More investigation in this area would be beneficial. Frogmouths are one of the most commonly-reported breeding species in Brisbane, with more than 120 confirmed reports of breeding activity. The majority (~75%) of these reports are of occupied nests with further records mostly of recently fledged young and nests with young. The vast majority of reports come from September and October, with a minor lead up period during August and then a drop off in November to early January, presumably mostly of fledglings just about to leave the nest. This season is well-aligned with that in the literature [@HANZAB4].
 

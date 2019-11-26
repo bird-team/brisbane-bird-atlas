@@ -70,7 +70,7 @@ As a result of their preference for wetter forested habitats around the city, Br
 
 The elevational distribution of Cuckoo-Doves shows no clear seasonal variation, although further data may elucidate a trend yet. Similarly, the geographic distribution of birds shows very little seasonal variation, with approximately the same sites occupied year-round. Records of wandering birds appear to have come from all seasons as well, indicating that birds are prone to wandering around the city regardless of the time of the year, although more investigation here would be helpful.
 
-**Seasonality**
+**Seasonality and Breeding**
 
 Brown Cuckoo-Doves are present in Brisbane year-round, with very little evidence of any seasonal variation in their abundance or distribution, as noted above. There may be two slight increases over autumn and spring, perhaps suggesting that some birds are passage visitors to the region, but given this species is not known to be regularly migratory [@HANZAB3], this seems unlikely and is probably the result of random variation in the data.
 
