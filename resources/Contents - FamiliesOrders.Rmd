@@ -5,23 +5,23 @@ Galliformes - Chickens and relatives - Australian Brushturkey
 Podicepiformes - Grebes - Australasian Grebe
 Columbiformes - Pigeons - Rock Dove
 Cuculiformes - Cuckoos - Pheasant Coucal
-Podargiformes - Frogmouths - Marbled Frogmouth
+Podargiformes - Frogmouths - Tawny Frogmouth
 Caprimulgiformes - Nightjars - White-throated Nightjar
 Aegotheliformes - Owlet-nightjars - Australian Owlet-nightjar
 Apodiformes - Swifts and Hummingbirds - White-throated Needletail
 Gruiformes - Cranes and Rails - Lewin's Rail
 Charadriiformes - Shorebirds, Gulls and Auks - Bush Stone-Curlew
-Phaethontiformes - Tropicbirds - Red-tailed Tropicbird
+Phaethontiformes - Tropicbirds - White-tailed Tropicbird
 Sphenisciformes - Penguins - Little Penguin
-Procellariiformes - Tubenosed Seabirds - Wilson's Storm-Petrel
+Procellariiformes - Tubenosed Seabirds - Yellow-nosed Albatross
 Ciconiiformes - Storks - Black-necked Stork
+Suliformes - Boobies, Cormorants and Frigatebirds - Lesser Frigatebird
 Pelecaniformes - Pelicans, Herons and Ibises - Australian Pelican
-Suliformes - Boobies, Cormorants and Frigatebirds
 Accipitriformes - Hawks and relatives - Osprey
-Strigiformes - Owls - Australasian Grass-Owl
-Coraciiformes - Rollers, Bee-eaters and Kingfishers - Rainbow Bee-Eater
+Strigiformes - Owls - Sooty Owl
+Coraciiformes - Rollers, Bee-eaters and Kingfishers - Azure Kingfisher
 Falconiformes - Falcons - Nankeen Kestrel
-Psittaciformes - Parrots and Cockatoos - Cockatiel
+Psittaciformes - Parrots and Cockatoos - Red-tailed Black-Cockatoo
 
 --
 
@@ -31,54 +31,36 @@ Pittidae - Pittas - Noisy Pitta
 Ptilonorhynchidae - Bowerbirds - Green Catbird
 Climacteridae - Treecreepers - White-throated Treecreeper
 Maluridae - Fairywrens and relatives - Variegated Fairywren
-Meliphagidae - Honeyeaters - Dusky Honeyeater
+Meliphagidae - Honeyeaters - Eastern Spinebill
 Pardalotidae - Pardalotes - Spotted Pardalote
-Acanthizidae - Scrubwrens, Thornbills and Gerygones - Brown Gerygone
-Orthonychidae - Logrunners - Australian Logrunner
+Acanthizidae - Scrubwrens, Thornbills and Gerygones - Yellow-throated Scrubwren
 Pomatostomidae - Australasian Babblers - Grey-crowned Babbler
-Neosittidae - Sittellas - Varied Sittella
-Campephagidae - Cuckooshrikes and Trillers - Ground Cuckooshrike
-Cinclosomatidae - Quail-thrushes - Spotted Quail-thrush
-Pachycephalidae - Whistlers and Shrikethrushes - Rufous Whistler
-Falcunculidae - Shrike-tits - Crested Shrike-tit
+Orthonychidae - Logrunners - Australian Logrunner
 Psophodidae - Whipbirds - Eastern Whipbird
-Oriolidae - Orioles - Australasian Figbird
-Artamidae - Butcherbirds, Woodswallows and relatives - Pied Currawong
+Cinclosomatidae - Quail-thrushes - Spotted Quail-thrush
+Artamidae - Butcherbirds, Woodswallows and relatives - White-breasted Woodswallow
+Campephagidae - Cuckooshrikes and Trillers - Ground Cuckooshrike
+Neosittidae - Sittellas - Varied Sittella
+Falcunculidae - Shrike-tits - Crested Shrike-tit
+Pachycephalidae - Whistlers and Shrikethrushes - Rufous Whistler
+Oriolidae - Orioles - Olive-backed Oriole
 Dicruridae - Drongos - Spangled Drongo
 Rhipiduridae - Fantails - Willie Wagtail
+Monarchidae - Monarchs - White-eared Monarch
 Corvidae - Crows and Ravens - Torresian Crow
-Monarchidae - Monarchs - Leaden Flycatcher
 Corcoracidae - Australian Mudnesters - Apostlebird
 Paradisaeidae - Birds of Paradise - Paradise Riflebird
-Petroicidae - Australasian Robins - Rose Robin
-Dicaeidae - Flowerpeckers - Mistletoebird
-Estrildidae - Estrilid Finches - Scaly-breasted Munia
-Passeridae - Sparrows - House Sparrow
-Motacillidae - Wagtails and Pipits - Australasian Pipit
-Fringillidae - True Finches - European Goldfinch
+Petroicidae - Australasian Robins - Jacky Winter
 Alaudidae - Larks - Australasian Bushlark
-Cisticolidae - Cisticolas - Golden-headed Cisticola
-Locustellidae - Grassbirds and relatives - Brown Songlark
+Hirundinidae - Swallows and Martins - Welcome Swallow
 Acrocephalidae - Reed-Warblers - Australian Reed-Warbler
-Hirundinidae - Swallows and Martins - White-backed Swallow
+Locustellidae - Grassbirds and relatives - Brown Songlark
+Cisticolidae - Cisticolas - Golden-headed Cisticola
 Zosteropidae - White-eyes - Silvereye
-Sturnidae - Starlings - Common Starling
 Turdidae - Thrushes - Russet-tailed Thrush
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Sturnidae - Starlings - Metallic Starling
+Dicaeidae - Flowerpeckers - Mistletoebird
+Motacillidae - Wagtails and Pipits - Eastern Yellow Wagtail
+Fringillidae - True Finches - European Goldfinch
+Passeridae - Sparrows - House Sparrow
+Estrildidae - Estrildid  Finches - Scaly-breasted Munia
