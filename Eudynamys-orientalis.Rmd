@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Abundant widespread summer migrant.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Abundant and conspicuous migrant. Arrives in our region around early October and is easily identified by its far-carrying "coo-ee" call that is a familiar sound to any Brisbane resident. Not of conservation concern.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+The Pacific Koel is one of our largest and most abundant species of cuckoo, common in summer across northern and eastern Australia from Broome to Victoria's north east. Birds are strongly sexually dimorphic; males are a brilliant glossy violet while females and young birds are speckled and barred mixtures of buffy brown and tan. Birds are common migrants to most habitats in Brisbane.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,39 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+A highly distinctive species within Australia, the Pacific Koel (aka Eastern Koel) is a large, brood-parasitic cuckoo with strong sexual dimorphism. The eastern Australian subspecies breeds locally along the east coast between about September and April, and winters in New Guinea. Birds are strikingly-plumaged: adult males are a brilliant glossy violet-black all over with a red eye, while females and younger birds are patterned tan and brown. In all plumages this species is distinctive, with the only potential confusion species being the very rare vagrant [Asian Koel](https://ebird.org/species/asikoe2/), sometimes treated as conspecific with this taxon. To date, this species has only been recorded in remote parts of Western Australia and the islands in the Indian Ocean, so is highly unlikely to turn up in Brisbane.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Koels are not overly gregarious, typically occurring in singles or pairs, although occasionally a small flock will descend on a fruiting tree, often mixed in with other species such as [Australasian Figbirds](#australasian-figbird-sphecotheres-vieilloti) and [Channel-billed Cuckoos](#channel-billed-cuckoo-scythrops-novaehollandiae), also a conspicuous summer migrant. The high count is of ten birds at Mount Gravatt in 2016 [@richter2016ebirdS32486369]. Birds can be found anywhere throughout the city at all altitudes, although appear to be more common in the lower regions, particularly in modified habitats. Birds breed in Brisbane and all down the east coast, although there are very few local records. As noted above, birds are highly seasonal, migrating between eastern Australia and New Guinea (and other islands to the north) every year. This species is not currently threatened anywhere in its range and appears to be relatively stable locally, suggesting that it is not of any significant conservation concern.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Pacific Koels can be found all across Brisbane in the summer months, appearing to be equally happy in remnant habitats and built-up areas of suburbia. They have been recorded from nearly all comprehensively-surveyed _Atlas_ squares, with the exception of parts of the city near the mouth of the Brisbane River and the Port, which contain less suitable habitat for them. Birds have been recorded occasionally on Moreton Island, and more intensive survey efforts across the island will aid in better mapping this species' distribution locally. Birds are most common in the lower regions of the city, with an average elevation of below 100m, but have been recorded all the way from sea level to the highest parts of the city on the top of Mount Glorious. Their altitudinal preference is likely driven by the local availability of fruiting trees and the presence of host species to parasitize.
+
+Birds have been reported from essentially every broad habitat type within Brisbane, with the exception of ocean and heathland. Their absence in heathland is likely more reflective of the current lack of data available for heath in Brisbane than true habitat preferences; this needs to be confirmed with further visits to Moreton Island's heath during spring and summer. Interestingly, birds appear to be most abundant in modified urban habitats, particularly built-up areas. This may be reflective of a preference for ornamental fruiting trees like those found across suburban parks and gardens, or it may be something else. Nevertheless, birds are common in more remnant forested habitats as well, including rainforest, wet sclerophyll and dry woodland. Their distribution locally shows clear seasonal variation, with birds having been recorded from very few sites in autumn and winter (as they are all up north in New Guinea) and being fairly ubiquitous across the entire city during spring and summer.
+
+**Seasonality**
+
+Koels are some of our most strongly migratory land birds, and are summer breeding migrants to the city. During the months between October and February, they are one of the most frequently-encountered species across all of Brisbane, appearing on approximately 25% of checklists. Conversely, in the cooler months from about April to August they are essentially absent, with very few records (probably of overwintering juveniles) as the vast majority of the population are in New Guinea and various other islands to the north of Australia. In addition to the large numbers of birds which are present in Brisbane all summer and presumably breed here, a part of the population moves through our city on its way further south in spring (as birds are found all down the east coast to Victoria), and back again in autumn on the northward migration. Some more work on the migratory patterns of Pacific Koels in Brisbane would be helpful to better understand the population dynamics of this species.
+
+Pacific Koels, like many species of cuckoo, are brood-parasitic, choosing to lay their eggs in the nests of other species rather than raise their young themselves. Locally on the east coast, this species is known to parasitize various species, including [Noisy Friarbirds](#noisy-friarbird-philemon-corniculatus), [Little Friarbirds](#little-friarbird-philemon-citreogularis), [Magpie-larks](#magpie-lark-grallina-cyanoleuca), [Australasian Figbirds](#australasian-figbird-sphecotheres-vieilloti) and [Olive-backed Orioles](#olive-backed-oriole-oriolus-sagittatus). However, breeding records in Brisbane are scarce, with the only reports being in January. This may indicate that the majority of breeding birds in the population breed outside of the city, perhaps further south in New South Wales; this needs further investigation and confirmation.
+
+**Trends**
+
+The population of Pacific Koels in Brisbane appears to have remained relatively stable over the past decade, with small fluctuations year-to-year probably reflecting migratory variation rather than changes in the population size of the species. Birds are not considered threatened anywhere within their range, and their trend appears stable. Consequently, this species is not of any local conservation concern, and indeed appears to be thriving. The main priorities for this species are to ensure that food options in the city remain abundant, and that host species are available for birds to parasitize; both of these requirements currently appear to be met.
+
+**Information Gaps**
+
+- Collect records of this species in poorly-surveyed parts of the city
+- Determine whether this species breeds regularly in the city
+- Determine what proportion of the population moves through the city on passage
+
+**Key Conservation Needs**
+
+- Protect this species and its hosts
+
+**Contributors to Species Account**
+
+Louis Backstrom 
 
 ```{r}
 end_two_column_layout()

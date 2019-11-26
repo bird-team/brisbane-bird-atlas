@@ -8,7 +8,7 @@ The following pages contain species accounts for all birds known to have occurre
 
 Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas. Currently only few dozen species have draft accounts written - we need more writers!
 
-Species with draft accounts: 55
+Species with draft accounts: 56
 
 - _Anseriformes_ - 15 Species, see [Magpie Goose](#magpie-goose-anseranas-semipalmata)
 - _Galliformes_ - 4 Species, see [Australian Brushturkey](#australian-brushturkey-alectura-lathami)
@@ -21,6 +21,7 @@ Species with draft accounts: 55
 - [Common Bronzewing](#common-bronzewing-phaps-chalcoptera)
 - [Crested Pigeon](#crested-pigeon-ocyphaps-lophotes)
 - [Pheasant Coucal](#pheasant-coucal-centropus-phasianinus)
+- [Pacific Koel](#pacific-koel-eudynamys-orientalis)
 - [Pallid Cuckoo](#pallid-cuckoo-cacomantis-pallidus)
 - [Tawny Frogmouth](#tawny-frogmouth-podargus-strigoides)
 - [Australian Owlet-nightjar](#australian-owlet-nightjar-aegotheles-cristatus)
