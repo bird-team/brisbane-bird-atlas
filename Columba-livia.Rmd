@@ -6,7 +6,7 @@ species_name <- "Columba livia"
 species_title(species_name, species_data)
 ```
 
-Category C; Common widespread resident.
+Category C; Abundant widespread resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Very common introduced species of built-up habitats around the city. Possibly experiencing a slight decline but no clear trend as yet. Not of conservation concern.")

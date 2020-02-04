@@ -6,7 +6,7 @@ species_name <- "Plectorhyncha lanceolata"
 species_title(species_name, species_data)
 ```
 
-Category A; Locally common widespread resident.
+Category A; Moderately common widespread resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")

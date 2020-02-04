@@ -6,7 +6,7 @@ species_name <- "Zapornia pusilla"
 species_title(species_name, species_data)
 ```
 
-Category A; Locally common localised passage migrant.
+Category A; Moderately common localised passage migrant.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")

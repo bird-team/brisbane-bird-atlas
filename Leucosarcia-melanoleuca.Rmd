@@ -6,7 +6,7 @@ species_name <- "Leucosarcia melanoleuca"
 species_title(species_name, species_data)
 ```
 
-Category A; Locally common localised resident.
+Category A; Moderately common localised resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")

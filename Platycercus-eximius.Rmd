@@ -6,7 +6,7 @@ species_name <- "Platycercus eximius"
 species_title(species_name, species_data)
 ```
 
-Category Pending; Needs verification.
+Category A; Vagrant.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")

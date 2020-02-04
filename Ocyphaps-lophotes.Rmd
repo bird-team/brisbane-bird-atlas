@@ -6,7 +6,7 @@ species_name <- "Ocyphaps lophotes"
 species_title(species_name, species_data)
 ```
 
-Category A; Common widespread resident.
+Category A; Abundant widespread resident.
 
 ```{r}
 render_species_profile(species_name, caption = "Common but decreasing resident of widespread habitats. Reporting rate varies throughout the year slightly, but birds appear to be mostly sedentary. Not presently of major conservation concern, but decline should be monitored.")
@@ -92,7 +92,7 @@ Crested Pigeons are noteworthy for displaying a clear and marked decline in repo
 
 **Contributors to Species Account**
 
-Louis Backstrom 
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()

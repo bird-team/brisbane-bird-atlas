@@ -6,7 +6,7 @@ species_name <- "Nymphicus hollandicus"
 species_title(species_name, species_data)
 ```
 
-Category A; Rare widespread nomadic visitor.
+Category A; Vagrant.
 
 ```{r}
 render_species_profile(species_name, caption = "Insert caption here.")

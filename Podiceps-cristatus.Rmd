@@ -6,7 +6,7 @@ species_name <- "Podiceps cristatus"
 species_title(species_name, species_data)
 ```
 
-Category A; Uncommon localised resident.
+Category A; Uncommon localised partial winter migrant.
 
 ```{r}
 render_species_profile(species_name, caption = "Rare and localised resident of aquatic habitats on the edges of the city, occasional nomadic visitor more widely across the region. Not of conservation concern, but numbers in Brisbane are low and may be threatened with habitat loss.")
@@ -98,7 +98,7 @@ Great Crested Grebes are not of any conservation nationally or locally, although
 
 **Contributors to Species Account**
 
-Louis Backstrom 
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()
