@@ -56,6 +56,7 @@ rmd_files:
 - Eudynamys-orientalis.Rmd
 - Scythrops-novaehollandiae.Rmd
 - Chrysococcyx-basalis.Rmd
+- Chrysococcyx-osculans.Rmd
 - Chrysococcyx-lucidus.Rmd
 - Chrysococcyx-minutillus.Rmd
 - Cacomantis-pallidus.Rmd
@@ -432,6 +433,7 @@ rmd_files:
 - Anas-platyrhynchos-x-superciliosa.Rmd
 - Calidris-ferruginea-x-melanotos.Rmd
 - Cacatua-tenuirostris-x-sanguinea.Rmd
+- Trichoglossus-haematodus-x-chlorolepidotus.Rmd
 - Phylidonyris-novaehollandiae-x-niger.Rmd
 - acknowledgements.Rmd
 - references.Rmd
