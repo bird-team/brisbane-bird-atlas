@@ -4,8 +4,9 @@
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#0474AC;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:none;}
 </style>
-<g id="Layer_2">
+<g id="Layer_2_1_">
 	<g>
 		<path class="st0" d="M315.1,126.1c4.8,28.7,5.7,61.3-4.5,88.4c-8.3,29.1-27.2,63.6-52.3,89.7c-9.7,9.5-20,20.6-34.9,31.2
 			c-0.4,0.9-11.1,5.7-4.7,5.6c1.5,0.6,2.4,0.5,3.9,0.9c6,1.1,11.5,3.1,18.4,3.7c28.4,4.5,61.2,7,90.6,3.3
@@ -17,4 +18,5 @@
 			C148.7,146.7,122.1,140.1,92.9,142.2"/>
 	</g>
 </g>
+<rect class="st1" width="512" height="512"/>
 </svg>
