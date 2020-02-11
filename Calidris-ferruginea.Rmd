@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Common widespread summer migrant.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Locally common but globally endangered small shorebird of mudflats around the city. Considered critically endangered in Australia and Near Threatened globally, with intense conservation actions in place to prevent further population declines.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+Named for its long, downcurved beak which is one of this species' most useful ID features, the Curlew Sandpiper is a small, generally unassuming shorebird which favours coastal mudflats for its wintering grounds here in Australia. Birds are gregarious, particularly at roosting sites, with counts in the hundreds being not uncommon, and counts in the thousands are attested.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,39 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Widely distributed across the Old World and Oceania, the Curlew Sandpiper is one of Moreton Bay's most common shorebird species, with annual numbers over summer likely in the thousands. Birds breed across the Siberian Tundra over the boreal summer (austral winter) before migrating 15000km south to their wintering grounds across Eurasia, Africa and Oceania. At optimal sites in Brisbane, particularly roosting sites at the Port of Brisbane and Manly, counts can number in the many hundreds, although typical counts are much lower, with an average count of around 30 birds seen at a time. Counts of over 100 birds have been reported from many sites, including the Lytton, Manly and Port of Brisbane Wader Roosts, Nudgee Beach, Boondall Wetlands, Tinchi Tamba, Lota and Pinkenba.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Curlew Sandpipers are one of Brisbane's more selective species of shorebird in terms of habitat use, showing strong preference for large, expansive mudflats at low tide to feed on and replenish body mass after their long southward migration. Their roost preferences at high tide are more relaxed, and birds can be found at many wader roosts around the city over the summer months; the species is commonly found in mixed flocks with other shorebirds including [Red-necked Stint](#red-necked-stint-calidris-ruficollis) and [Bar-tailed Godwit](#bar-tailed-godwit-limosa-lapponica). As a consequence of this preference, birds are restricted almost entirely to the coastline of Moreton Bay (including the mudflats around the inner bay islands and the south of Moreton Island), with very few records more than 5km inland.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Birds have been recorded across the entire stretch of Brisbane's internal coastline on Moreton Bay, from Tinch Tamba in the north, all the way down to Ransome in the south, with only a few gaps in the distribution currently due to lack of survey effort. Conservation organisations such as the [Queensland Wader Study Group](http://waders.org.au/) have been studying this species in Brisbane for many years, and as a consequence we have a strong understanding of its distribution and habitat preferences both locally and internationally.
+
+Overwintering birds (of which there are a few each year, but never in large numbers - probably first year immatures) seem to show similar preferences to migratory birds in terms of distribution and habitat. However, shorebird survey effort is lower over the winter months as birders move inland, so more in depth effort in this regard might be beneficial.
+
+**Seasonality**
+
+As noted above, Curlew Sandpipers are a strongly migratory species of shorebird, breeding in Siberia between May and August before migrating southward to spend the boreal winter in the southern hemisphere, including along the coastline of Australia. This migration is up to 15000km each way, with most birds doing the return trip every year for their entire life. As a consequence, birds are most common in Brisbane over our summer months, with the majority of the population arriving between late September and early November, staying over the warmest part of the year before departing again in late March and April. Birds do not breed in Brisbane, or indeed in the southern hemisphere.
+
+**Trends**
+
+The reporting rate of Curlew Sandpipers on eBird locally has been quite varied over the years, with no clear trend apparent. However, at a wider scale (and as a result of more controlled monitoring programs), significant declines in this species' numbers have been observed, leading to this species being listed as nationally Critically Endangered. Causes for the decline are likely complex and numerous, but include loss of habitat, particularly in staging grounds in the South China Sea, global warming, and disruption of food stocks. As a consequence, this species is of significant conservation concern at every level - local, national and international; significant effort is required in order to reverse the steep downward trend.
+
+**Information Gaps**
+
+- Understand the behaviours of overwintering birds better
+- Locate further high tide roosts employed by this species
+- Determine any local movements of this species around Moreton Bay
+
+**Key Conservation Needs**
+
+- Reverse steep downward population trend
+- Protect habitat in wintering, staging and breeding areas
+- Mitigate effects of global warming to limit phenological disruptions to this species and others
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()
