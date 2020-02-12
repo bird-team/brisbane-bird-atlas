@@ -8,7 +8,7 @@ The following pages contain species accounts for all birds known to have occurre
 
 Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas. Currently only few dozen species have draft accounts written - we need more writers!
 
-Species with draft accounts: 58
+Species with draft accounts: 59
 
 - _Anseriformes_ - 15 Species, see [Magpie Goose](#magpie-goose-anseranas-semipalmata)
 - _Galliformes_ - 4 Species, see [Australian Brushturkey](#australian-brushturkey-alectura-lathami)
@@ -41,6 +41,7 @@ Species with draft accounts: 58
 - _Acanthiza_ - 5 Species, see [Buff-rumped Thornbill](#buff-rumped-thornbill-acanthiza-reguloides)
 - [Cicadabird](#common-cicadabird-edolisoma-tenuirostre)
 - [White-breasted Woodswallow](#white-breasted-woodswallow-artamus-leucorynchus)
+- [White-browed Woodswallow](#white-browed-woodswallow-artamus-superciliosus)
 - [Spangled Drongo](#spangled-drongo-dicrurus-bracteatus)
 - [Australian Reed-Warbler](#australian-reed-warbler-acrocephalus-australis)
 - [Common Myna](#common-myna-acridotheres-tristis)

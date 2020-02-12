@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Vagrant.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Rare vagrant to Brisbane's skies during spring and early summer. May be more regular than current data suggest, but generally rely on specific conditions to drive an influx of birds to the coast.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+Richly coloured in tones of vinous grey and rufous, White-browed Woodswallows are an attractive species of woodswallow found across nearly all of the Australian continent, with most birds residing in the semi-arid interior. Birds are highly gregarious and very nomadic, with massive irruptions of woodswallows occurring in areas where food is abundant and conditions are favourable.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,33 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Widespread across a vast area of the Australian mainland, White-breasted Woodswallows are one of Brisbane's six recorded species of woodswallow; likely the third most regularly recorded. Despite their vast range and large numbers, they are only rare vagrants into the Brisbane range, with flocks only occasionally making it over the Great Dividing Range into the Lockyer Valley and our skies. However, when incursions do occur, they can be in staggering numbers, with skies filling with flocks of noisy woodwallows numbering into the thousands - the highest recorded count in Brisbane is of an estimated 2000 birds in one flock at Moggill in 1972 [@birdsQLD1972ebirdS16589995].
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+As noted above, birds typically only occur in Brisbane during periods of great irruptions, often following storm fronts in early spring, in mixed flocks either with [Masked Woodswallows](#masked-woodswallow-artamus-personatus) or other aerial insectivores such as swallows, martins and swifts. Conditions inland to the west, where this species is most abundant, can turn unfavourable during warmer, drier months, forcing birds to the coast to search for food; it is during these periods that woodswallow incursions occur.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+The majority of nomadic woodswallow records in our region come from the western regions of the city, with concentrations around Lake Manchester and Moggill. However, records have come from all parts of the city, and the occasional reporting of this species on [Norfolk Island](https://ebird.org/country/NF) suggest that birds are capable of moving vast distances, even over open water; almost certainly further survey effort on Moreton Island would turn up birds here during favourable periods.
+
+**Seasonality**
+
+Nearly all records of White-browed Woodswallow in our region have been during spring, with just a handful of records in fringing months during late winter and early summer. The exact reasons for this pattern are unknown, but likely are due to seasonal changes in food availability, and regular weather patterns that drive the birds east towards our coast. More work is needed here.
+
+**Trends**
+
+Being a rare vagrant, it is difficult to determine any long term trend in the abundance of woodswallows in Brisbane. However, they are not globally threatened, and while numbers probably vary widely (as is to be expected for a nomadic species) they do not appear to be declining over long periods.
+
+**Information Gaps**
+
+- Collect more records of this species in Brisbane
+
+**Key Conservation Needs**
+
+- Ensure numbers of insects are maintained to provide food for this species and others
+
+**Contributors to Species Account**
+
+Louis Backstrom
 
 ```{r}
 end_two_column_layout()
