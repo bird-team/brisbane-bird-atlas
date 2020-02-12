@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Uncommon localised resident.
 
 ```{r}
-render_species_profile(species_name, caption = "Insert caption here.")
+render_species_profile(species_name, caption = "Shy resident of tree-lined watercourses around Brisbane. Despite its brilliant colours, can be difficult to see as it darts between perches over the water. While generally uncommon, the population appears stable.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit [@rexample1; @rexample2; @rexample3]. Donec sed justo nunc. In in cursus turpis, sollicitudin pellentesque lacus. Aliquam et orci malesuada, tristique justo quis, feugiat ex. Phasellus at sem sit amet sapien consequat fringilla. Praesent pretium aliquet ante, eu maximus augue placerat ut. Donec odio erat, vehicula non accumsan quis, ultricies eu arcu. Aliquam erat volutpat. In hac habitasse platea dictumst. Nullam lacus elit, luctus a cursus ut, tempus id arcu. Quisque ornare eleifend augue, ac aliquet sapien posuere porttitor. Nam lacinia, diam at molestie tempor, erat ligula vulputate ligula, id rutrum magna justo in lorem. Vivamus posuere risus augue. Ut velit elit, hendrerit sit amet lacus nec, mattis commodo neque.
+Australia's second smallest resident kingfisher, the Azure, is an uncommon and shy resident within the Brisbane region, widely distributed across the city but in localised patches, favouring densely-vegetated freshwater creeks, where it is almost always found alone, although counts of up to 4 have been recorded.
 
 ```{r}
 end_two_column_layout()
@@ -54,13 +54,37 @@ clear_page()
 start_two_column_layout()
 ```
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Clad in brilliant azure blue and rich orange, the Azure Kingfisher is surely one of our most beautiful birds. Within our region, it is unmistakeable - no other bird has its spectacular combination of colours. Distributed all along the east and north coast from Victoria to the Kimberley (and with further populations in New Guinea and Indonesia), birds favour wetter habitats, particularly watercourses fringed with trees and dense vegetation. Within Brisbane, they are uncommon and localised, being reported on just 2% of all complete checklists. Unlike some of our other local kingfisher species, this species does not particularly enjoy human company, choosing to live in remnant, undisturbed habitats, although birds are found in parks and gardens occasionally too.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+While birds are widely distributed across the city, their numbers are quite low, with most sightings being of lone individuals - the high count in Brisbane is just 4 birds. They are present in Brisbane throughout the entire year, with very little variation in abundance over the seasons, suggesting that birds are sedentary and probably breed locally, although records of breeding birds are few and far between.
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+**Distribution and Habitat**
 
-In ut elit facilisis, laoreet nulla et, porta leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus ullamcorper eros at magna malesuada, ac maximus nibh imperdiet. Pellentesque id purus nec erat pharetra iaculis. Mauris velit neque, faucibus sed faucibus et, lobortis et felis. Morbi suscipit odio pretium pellentesque finibus. Aenean ultrices ex sapien. Curabitur tempus justo dolor, sit amet pulvinar diam fringilla at. Cras sit amet auctor ante. Maecenas laoreet nisi sem, elementum condimentum sem aliquam in. Praesent aliquam consequat leo sed fringilla. Aliquam sit amet metus quis ligula ultricies pharetra ut vitae velit. Sed sed vulputate mi. Nullam et elit vitae arcu efficitur venenatis.
+Azure Kingfishers are found across nearly all of Brisbane, mostly in isolated patches along watercourses not far from water. They are by far most abundant in wetlands, where they are reported on nearly 5% of all complete checklists, while birds are also occasionally found in heath, dry woodland and non-remnant habitats. Birds appear to be more or less absent from Moreton Island, although may be more regular on the island here than current data suggest - some structured surveys in suitable habitat on the island would clarify this.
+
+Birds are present in Brisbane all year-round, and do not appear to move around the region much, presumably living and breeding in the same area all year-round, but it is difficult to confirm this with the number of breeding records currently in the database. More records around breeding sites and in more remote parts of the city will likely clarify the distribution of this species somewhat.
+
+**Seasonality and Breeding**
+
+There are very few breeding records of Azure Kingfishers in Brisbane, although this is likely more a result of the birds' cryptic breeding habits rather than an actual lack of breeding behaviour. Birds nest in excavated burrows in the banks of watercourses, making them hard to observe by casual birders. Birds are believed to breed between early spring and early autumn around our region, so any birders observing this species during the warmer months are encouraged to keep an eye out for breeding behaviours. An interesting dip in the number of records during December could be a result of birds changing behaviour during the breeding period (with one parent incubating the eggs at all times), or it could be due to birds leaving their regular non-breeding sites to breed. More work is needed to determine the cause of this, and to identify breeding habitats within Brisbane.
+
+**Trends**
+
+The long-term trend of Azure Kingfishers appears to be stable in Brisbane, with the reporting rate locally staying stable over the past decade. The species is not of any conservation concern, either locally or at a broader scale - Brisbane's population is stable and makes up only a small portion of the total global population. Possible threats include water pollution, increased flooding due to climate change, and habitat destruction and modification.
+
+**Information Gaps**
+
+- Determine the distribution of this species on Moreton Island
+- Collect more information on the breeding ecology of this species locally
+
+**Key Conservation Needs**
+
+- Protect wetlands and watercourses
+
+**Contributors to Species Account**
+
+Louis Backstrom 
+
 
 ```{r}
 end_two_column_layout()

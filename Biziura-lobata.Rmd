@@ -9,7 +9,7 @@ species_title(species_name, species_data)
 Category A; Vagrant.
 
 ```{r}
-render_species_profile(species_name, caption = "Rare vagrant to Brisbane. May be resident on Moreton Island, but any population once present as probably declined. Not of conservation concern.")
+render_species_profile(species_name, caption = "Rare vagrant to Brisbane. May be resident on Moreton Island, but any population once present has probably declined. Not of conservation concern.")
 ```
 
 ```{r}
@@ -24,7 +24,7 @@ render_species_audio(species_name, audio_data)
 start_two_column_layout()
 ```
 
-One of Australia's most curious and distinctive species of bird, the Musk Duck is a rare vagrant to Brisbane wetlands and is Australia's largest species of duck. Most records are of single birds in Brisbane, and this species is not particularly gregarious. Further records may come from anywhere there is suitable habitat.
+One of Australia's most curious and distinctive species of bird, the Musk Duck is a rare vagrant to Brisbane wetlands. Most records are of single birds in Brisbane, and this species is not particularly gregarious. Further records may come from anywhere there is suitable habitat.
 
 ```{r}
 end_two_column_layout()

@@ -8,7 +8,7 @@ The following pages contain species accounts for all birds known to have occurre
 
 Please see the [Contributing](https://brisbanebirds.com/contributing.html) page for details on how you can help write this atlas. Currently only few dozen species have draft accounts written - we need more writers!
 
-Species with draft accounts: 57
+Species with draft accounts: 58
 
 - _Anseriformes_ - 15 Species, see [Magpie Goose](#magpie-goose-anseranas-semipalmata)
 - _Galliformes_ - 4 Species, see [Australian Brushturkey](#australian-brushturkey-alectura-lathami)
@@ -33,6 +33,7 @@ Species with draft accounts: 57
 - [Grey Goshawk](#grey-goshawk-accipiter-novaehollandiae)
 - [Brown Goshawk](#brown-goshawk-accipiter-fasciatus)
 - [Collared Sparrowhawk](#collared-sparrowhawk-accipiter-cirrocephalus.html)
+- [Azure Kingfisher](#azure-kingfisher-ceyx-azureus)
 - [Australian King-Parrot](#australian-king-parrot-alisterus-scapularis)
 - [Green Catbird](#green-catbird-ailuroedus-crassirostris)
 - [Eastern Spinebill](#eastern-spinebill-acanthorhynchus-tenuirostris)
