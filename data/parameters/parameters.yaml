@@ -93,7 +93,7 @@ species:                                                         # parameters fo
   external_resource_column_names:                                # paramters containing external resources
     ebird: ebird_link                                            # column name containing the URL for the species information on eBird
     botw: botw_link                                              # column name containing the URL for the species information on Birds of the World
-    inaturalist:                                                 # column name containing the URL for the species information on iNaturalist
+    inaturalist: inaturalist_link                                # column name containing the URL for the species information on iNaturalist
     ala: ala_link                                                # column name containing the URL for the species information on the Atlas of Living Australia
     iucn: IUCN_link                                              # column name containing the URL for the species information on the IUCN Red List
     xenocanto: xenocanto_link                                    # column name containing the URL for the species information on Xenocanto
