@@ -47,8 +47,11 @@
 #'   the species' profile pictures.
 #'
 #' @param surveyor_sheet_checklist_column_name \code{character} name of column
-#'   name containing \code{TRUE}/\code{FALSE} if the species should be
+#'   containing \code{TRUE}/\code{FALSE} if the species should be
 #'   included in the surveyor sheet checklists.
+#'
+#' @param external_resource_column_names \code{character} name of columns
+#'   containing \code{character} URLs for external resources.
 #'
 #' @return \code{data.frame} with formatted data.
 format_species_data <- function(x, scientific_column_name, common_column_name,
@@ -59,7 +62,8 @@ format_species_data <- function(x, scientific_column_name, common_column_name,
                                 record_year_column_name,
                                 distribution_column_name,
                                 profile_url_column_name,
-                                surveyor_sheet_checklist_column_name) {
+                                surveyor_sheet_checklist_column_name,
+                                external_resource_column_names) {
   # assert arguments are valid
   assertthat::assert_that(inherits(x, "data.frame"),
                           nrow(x) > 0,
@@ -107,7 +111,9 @@ format_species_data <- function(x, scientific_column_name, common_column_name,
                           assertthat::has_name(x,
                             surveyor_sheet_checklist_column_name),
                           is.character(
-                            x[[surveyor_sheet_checklist_column_name]]))
+                            x[[surveyor_sheet_checklist_column_name]]),
+                          all(assertthat::has_name(x,
+                            unlist(unname(external_resource_column_names)))))
   # rename columns
   data.table::setnames(x,
                        c(scientific_column_name, common_column_name,
@@ -137,7 +143,8 @@ format_species_data <- function(x, scientific_column_name, common_column_name,
              "iucn_threat_status", "national_threat_status",
              "qld_threat_status", "graphs", "maps", "checklists_starting_year",
              "records_starting_year", "distribution", "profile_url",
-             "surveyor_sheet_checklist"),
+             "surveyor_sheet_checklist",
+             unname(unlist(external_resource_column_names))),
          drop = FALSE]
 
   # sort data

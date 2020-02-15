@@ -6,6 +6,10 @@ species_name <- "Pachycephala rufiventris"
 species_title(species_name, species_data)
 ```
 
+```{r, eval = isTRUE(knitr:::is_html_output())}
+render_species_badges(species_name, species_data)
+```
+
 Category A; Common widespread partial winter migrant.
 
 ```{r}

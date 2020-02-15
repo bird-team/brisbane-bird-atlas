@@ -11,6 +11,7 @@ source("code/functions/format_audio_data.R")
 source("code/functions/format_species_data.R")
 source("code/functions/species_title.R")
 source("code/functions/render_species_graph.R")
+source("code/functions/render_species_badges.R")
 source("code/functions/render_species_map.R")
 source("code/functions/render_species_widget.R")
 source("code/functions/render_species_table.R")
@@ -55,3 +56,17 @@ record_data <- as.POSIXct(strptime(record_data,
                                    parameters$records$date_column_format))
 data_release_month_year <- format(max(record_data), "%B %Y")
 rm(record_data)
+
+## validate logo parameters
+assertthat::assert_that(
+  setequal(names(parameters$external_resources$logos),
+           names(parameters$external_resources$names)),
+  msg = paste("external_resources/logos and external_resources/names",
+              "parameters in parameters.yaml contain resources with different",
+              "identifiers (e.g. bli)"))
+assertthat::assert_that(
+  setequal(names(parameters$external_resources$logos),
+           names(parameters$species$external_resource_column_names)),
+  msg = paste("external_resources/logos and external_resource_column_names",
+              "parameters in parameters.yaml contain resources with different",
+              "identifiers (e.g. bli)"))

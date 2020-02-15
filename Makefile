@@ -72,8 +72,20 @@ backup_assets:
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 ## build assets
+# rebuild badges
+badges:
+	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
+	&& docker cp . bba:$(PATHSEP2)tmp/ \
+	&& docker exec bba sh -c "Rscript /tmp/code/scripts/create_badges.R" \
+	&& docker exec bba sh -c "cd assets; zip -r badges.zip badges" \
+	&& docker cp bba:$(PATHSEP2)tmp/assets/badges.zip assets \
+	&& cd assets \
+	&& unzip -o badges.zip \
+	&& rm badges.zip || true
+	@docker stop -t 1 bba || true && docker rm bba || true
+
 # rebuild assets locally
-assets: backup_assets
+assets: backup_assets logos
 	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
 	&& docker cp . bba:$(PATHSEP2)tmp/ \
 	&& docker cp "$(USRHOME)/.Renviron" bba:$(PATHSEP2)root/.Renviron \

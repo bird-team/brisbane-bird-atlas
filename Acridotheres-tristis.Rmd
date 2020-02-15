@@ -6,6 +6,10 @@ species_name <- "Acridotheres tristis"
 species_title(species_name, species_data)
 ```
 
+```{r, eval = isTRUE(knitr:::is_html_output())}
+render_species_badges(species_name, species_data)
+```
+
 Category C; Common widespread resident.
 
 ```{r}

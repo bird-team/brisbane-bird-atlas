@@ -1,39 +1,39 @@
 title: atlas parameters
 
-crs: 3857                                              # coordinate reference system for mapping
-grid_resolution: 2000                                  # resolution for atlas grid cells in meters
-number_species: "all"                                  # number of species to include in atlas
-number_surveyor_sheets: "all"                          # number of surveyor sheets to produce
-threads: 1                                             # number of threads to use when creating assets
+crs: 3857                                                        # coordinate reference system for mapping
+grid_resolution: 2000                                            # resolution for atlas grid cells in meters
+number_species: "all"                                            # number of species to include in atlas
+number_surveyor_sheets: "all"                                    # number of surveyor sheets to produce
+threads: 1                                                       # number of threads to use when creating assets
 
-maps:                                                  # parameters controlling appearance of the maps
-  colors:                                              # colors for making color ramps
+maps:                                                            # parameters controlling appearance of the maps
+  colors:                                                        # colors for making color ramps
     - "#a1d99b"
     - "#74c476"
     - "#41ab5d"
     - "#238b45"
     - "#005a32"
-  minimum_required_checklists: 5                       # number of checklists required for a grid cell to be adequately sampled for reporting rates
-  minimum_required_events: 10                          # number of sampling events required for a grid cell to be adequately sampled for range estimates
-  size:                                                # map image dimensions
-    1:                                                 # dimensions for image containing 1 panel
-      height: 2.25                                     # map image height in inches
-      width: 3.5                                       # map image width in inches
-    2:                                                 # dimensions for image containing 2 panels
-      height: 2.5                                      # map image height in inches
-      width: 6.0                                       # map image width in inches
-    3:                                                 # dimensions for image containing 3 panels
-      height: 2.5                                      # map image height in inches
-      width: 8.0                                       # map image width in inches
-    4:                                                 # dimensions for image containing 4 panels
-      height: 4.0                                      # map image height in inches
-      width: 5.5                                       # map image width in inches
-    5:                                                 # dimensions for image containing 5 panels
-      height: 4.0                                      # map image height in inches
-      width: 6.75                                      # map image width in inches
-    6:                                                 # dimensions for image containing 6 panels
-      height: 4.0                                      # map image height in inches
-      width: 6.75                                      # map image width in inches
+  minimum_required_checklists: 5                                 # number of checklists required for a grid cell to be adequately sampled for reporting rates
+  minimum_required_events: 10                                    # number of sampling events required for a grid cell to be adequately sampled for range estimates
+  size:                                                          # map image dimensions
+    1:                                                           # dimensions for image containing 1 panel
+      height: 2.25                                               # map image height in inches
+      width: 3.5                                                 # map image width in inches
+    2:                                                           # dimensions for image containing 2 panels
+      height: 2.5                                                # map image height in inches
+      width: 6.0                                                 # map image width in inches
+    3:                                                           # dimensions for image containing 3 panels
+      height: 2.5                                                # map image height in inches
+      width: 8.0                                                 # map image width in inches
+    4:                                                           # dimensions for image containing 4 panels
+      height: 4.0                                                # map image height in inches
+      width: 5.5                                                 # map image width in inches
+    5:                                                           # dimensions for image containing 5 panels
+      height: 4.0                                                # map image height in inches
+      width: 6.75                                                # map image width in inches
+    6:                                                           # dimensions for image containing 6 panels
+      height: 4.0                                                # map image height in inches
+      width: 6.75                                                # map image width in inches
 
 graphs:                                                          # parameters controlling appearance of the graphs
   size:                                                          # graph image dimensions
@@ -56,6 +56,26 @@ graphs:                                                          # parameters co
       height: 4.0                                                # graph image height in inches
       width: 7.5                                                 # graph image width in inches
 
+external_resources:                                              # parameters controlling external resources
+  logos:
+    ebird: data/logos/ala_small.svg                              # file path for eBird logo
+    botw: data/logos/botw_small.svg                              # file path for Birds of the World logo
+    inaturalist: data/logos/inaturalist_small.svg                # file path for iNaturalist logo
+    ala: data/logos/ala_small.svg                                # file path for the Atlas of Living Australia logo
+    iucn: data/logos/iucn_small.svg                              # file path for IUCN Red List logo
+    xenocanto: data/logos/xenocanto_small.svg                    # file path for the Xenocanto logo
+    bli: data/logos/bla_small.svg                                # file path for Bird Life International logo
+    bla: data/logos/bli_small.svg                                # file path for Bird Life Australia
+  names:
+    ebird: eBird                                                 # text for eBird link
+    botw: Birds of the World                                     # text for Birds of the World link
+    inaturalist: iNaturalist                                     # text for iNaturalist link
+    ala: Atlas of Living Australia                               # text for the Atlas of Living Australia link
+    iucn: IUCN                                                   # text for IUCN Red List link
+    xenocanto: Xenocanto                                         # text for the Xenocanto link
+    bli: BirdLife International                                  # text for Bird Life International link
+    bla: BirdLife Australia                                      # text for Bird Life Australia
+
 species:                                                         # parameters for species data
   scientific_column_name: species_scientific_name                # column name for species' scientific name
   common_column_name: species_preferred_English_name             # column name for species' common name
@@ -69,7 +89,16 @@ species:                                                         # parameters fo
   record_year_column_name: records_starting_year                 # column name indicating the earliest year for records
   distribution_column_name: distribution                         # column name describing if the species' distribution covers "land", "marine", or "both" habitats
   profile_url_column_name: profile_url                           # column name containing the web link (URL) for the species' profile picture
-  surveyor_sheet_checklist_column_name: surveyor_sheet_checklist # column name contianing TRUE/FALSE if the species should be included in the surveyor sheet checklists
+  surveyor_sheet_checklist_column_name: surveyor_sheet_checklist # column name containing TRUE/FALSE if the species should be included in the surveyor sheet checklists
+  external_resource_column_names:                                # paramters containing external resources
+    ebird: ebird_link                                            # column name containing the URL for the species information on eBird
+    botw: botw_link                                              # column name containing the URL for the species information on Birds of the World
+    inaturalist:                                                 # column name containing the URL for the species information on iNaturalist
+    ala: ala_link                                                # column name containing the URL for the species information on the Atlas of Living Australia
+    iucn: IUCN_link                                              # column name containing the URL for the species information on the IUCN Red List
+    xenocanto: xenocanto_link                                    # column name containing the URL for the species information on Xenocanto
+    bli: bli_link                                                # column name containing the URL for the species information on Bird Life International
+    bla: bla_link                                                # column name containing the URL for the species information on Bird Life Australia
 
 records:                                                         # parameters for eBird record data
   scientific_column_name: SCIENTIFIC NAME                        # column name for species' scientific name

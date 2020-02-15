@@ -6,6 +6,10 @@ species_name <- "Tringa brevipes"
 species_title(species_name, species_data)
 ```
 
+```{r, eval = isTRUE(knitr:::is_html_output())}
+render_species_badges(species_name, species_data)
+```
+
 Category A; Moderately common localised summer migrant.
 
 ```{r}
