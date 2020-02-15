@@ -87,3 +87,8 @@ div.info > i {
   border-color: #555 !important;
   vertical-align: middle !important;
 }
+
+/* increase width of page content */
+.book .book-body .page-wrapper .page-inner {
+  max-width: 900px !important;
+}
