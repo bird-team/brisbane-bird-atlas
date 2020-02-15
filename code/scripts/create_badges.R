@@ -17,6 +17,7 @@ assertthat::assert_that(all(file.exists(resource_images)),
 ## prepare text for html
 resource_text <- gsub(" ", "%20", resource_text, fixed = TRUE)
 resource_text <- gsub("\n", "", resource_text)
+resource_text <- gsub("-", "--", resource_text, fixed = TRUE)
 
 ## format SVGs for imgshields.io
 formatted_images_text <-

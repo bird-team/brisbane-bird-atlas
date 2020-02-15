@@ -72,9 +72,9 @@ external_resources:                                              # parameters co
     inaturalist: iNaturalist                                     # text for iNaturalist link
     ala: Atlas of Living Australia                               # text for the Atlas of Living Australia link
     iucn: IUCN                                                   # text for IUCN Red List link
-    xenocanto: Xenocanto                                         # text for the Xenocanto link
-    bli: BirdLife International                                  # text for Bird Life International link
-    bla: BirdLife Australia                                      # text for Bird Life Australia
+    xenocanto: "Xeno-canto"                                      # text for the Xenocanto link
+    bli: BirdLife Int.                                           # text for Bird Life International link
+    bla: BirdLife Aus.                                           # text for Bird Life Australia
 
 species:                                                         # parameters for species data
   scientific_column_name: species_scientific_name                # column name for species' scientific name
