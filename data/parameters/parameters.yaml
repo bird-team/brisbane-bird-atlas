@@ -58,7 +58,7 @@ graphs:                                                          # parameters co
 
 external_resources:                                              # parameters controlling external resources
   logos:
-    ebird: data/logos/ala_small.svg                              # file path for eBird logo
+    ebird: data/logos/ebird_small.svg                            # file path for eBird logo
     botw: data/logos/botw_small.svg                              # file path for Birds of the World logo
     inaturalist: data/logos/inaturalist_small.svg                # file path for iNaturalist logo
     ala: data/logos/ala_small.svg                                # file path for the Atlas of Living Australia logo
