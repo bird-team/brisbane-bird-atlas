@@ -70,7 +70,7 @@ external_resources:                                              # parameters co
     ebird: eBird                                                 # text for eBird link
     botw: Birds of the World                                     # text for Birds of the World link
     inaturalist: iNaturalist                                     # text for iNaturalist link
-    ala: Atlas of Living Australia                               # text for the Atlas of Living Australia link
+    ala: ALA                                                     # text for the Atlas of Living Australia link
     iucn: IUCN                                                   # text for IUCN Red List link
     xenocanto: "Xeno-canto"                                      # text for the Xenocanto link
     bli: BirdLife Int.                                           # text for Bird Life International link
