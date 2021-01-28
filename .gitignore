@@ -36,3 +36,6 @@ assets/profile/*
 
 # log files
 tictoclog.txt
+
+# dont ignore gitkeeps
+!.gitkeep
