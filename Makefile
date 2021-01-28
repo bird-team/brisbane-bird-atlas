@@ -85,7 +85,7 @@ badges:
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 # rebuild assets locally
-assets: backup_assets
+assets: backup_assets badges
 	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
 	&& docker cp . bba:$(PATHSEP2)tmp/ \
 	&& docker cp "$(USRHOME)/.Renviron" bba:$(PATHSEP2)root/.Renviron \
@@ -239,4 +239,4 @@ start_container:
 stop_container:
 	@docker stop -t 1 bba || true && docker rm bba || true
 
-.PHONY: clean init data update build deploy reset assets
+.PHONY: clean init data update build deploy reset assets badges
