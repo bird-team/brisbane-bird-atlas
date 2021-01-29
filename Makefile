@@ -143,7 +143,7 @@ test_access:
 	&& docker cp . bba:$(PATHSEP2)tmp/ \
 	&& docker cp "$(USRHOME)/.Renviron" bba:$(PATHSEP2)root/.Renviron \
 	&& docker exec bba sh -c "ls -la /root/.Renviron" \
-	&& docker exec bba sh -c "R -e 'f=tempfile();writeLines(\"this is a test2\", f);pb_upload(file=f, repo=\"bird-team/brisbane-bird-atlas\", tag=\"v.0.0.1\", name=\"new-test5.txt\")'" || true
+	&& docker exec bba sh -c "R -e 'f=tempfile();writeLines(\"this is a test2\", f);piggyback::pb_upload(file=f, repo=\"bird-team/brisbane-bird-atlas\", tag=\"v.0.0.1\", name=\"new-test5.txt\")'" || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 # push assets to online storage
