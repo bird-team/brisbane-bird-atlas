@@ -138,6 +138,14 @@ pull_assets:
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 # push assets to online storage
+test_access:
+	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
+	&& docker cp . bba:$(PATHSEP2)tmp/ \
+	&& docker cp "$(USRHOME)/.Renviron" bba:$(PATHSEP2)root/.Renviron \
+	&& docker exec bba sh -c "ls -la /root/.Renviron" || true
+	@docker stop -t 1 bba || true && docker rm bba || true
+
+# push assets to online storage
 push_assets:
 	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
 	&& docker cp . bba:$(PATHSEP2)tmp/ \
