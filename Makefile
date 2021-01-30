@@ -143,10 +143,8 @@ test_access:
 	&& docker cp . bba:$(PATHSEP2)tmp/ \
 	&& docker cp "$(USRHOME)/.Renviron" bba:$(PATHSEP2)root/.Renviron \
 	&& docker exec bba sh -c "ls -la /root/.Renviron" \
-	&& docker exec bba sh -c "R -e 'Sys.getenv(\"R_PROFILE_USER\")'" \
 	&& docker exec bba sh -c "cd ~ && pwd" \
-	&& docker exec bba sh -c "cat /root/.Renviron" \
-	&& docker exec bba sh -c "R -e 'Sys.getenv(\"GITHUB_TOKEN\")'" \
+	&& docker exec bba sh -c "ping -c3 www.google.com" \
 	&& docker exec bba sh -c "R -e 'f=tempfile();writeLines(\"this is a test2\", f);piggyback::pb_upload(file=f, repo=\"bird-team/brisbane-bird-atlas\", tag=\"v.0.0.1\", name=\"new-test5.txt\")'" || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
