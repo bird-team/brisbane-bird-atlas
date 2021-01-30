@@ -6,7 +6,7 @@ print("initial GITHUB_TOKEN")
 print(Sys.getenv("GITHUB_TOKEN"))
 
 print("release info")
-piggyback::pb_info("bird-team/brisbane-bird-atlas", "v.0.0.1")
+piggyback:::pb_info("bird-team/brisbane-bird-atlas", "v.0.0.1")
 
 
 ## set GITHUB_TOKEN if GITHUB_PAT present
@@ -30,7 +30,7 @@ print("processing GITHUB_TOKEN")
 print(Sys.getenv("GITHUB_TOKEN"))
 
 print("release info")
-piggyback::pb_info("bird-team/brisbane-bird-atlas", "v.0.0.1")
+piggyback:::pb_info("bird-team/brisbane-bird-atlas", "v.0.0.1")
 
 # Main processing
 ## message
