@@ -2,6 +2,13 @@
 ## set default options
 options(stringsAsFactors = FALSE)
 
+print("initial GITHUB_TOKEN")
+print(Sys.getenv("GITHUB_TOKEN"))
+
+print("release info")
+piggyback::pb_info("bird-team/brisbane-bird-atlas", "v.0.0.1")
+
+
 ## set GITHUB_TOKEN if GITHUB_PAT present
 ## set slash symbol for printing
 slash_symbol <- "/"
@@ -18,6 +25,12 @@ if (identical(Sys.getenv("GITHUB_TOKEN"), "")) {
               "contain the credentials fir GitHub (i.e. GITHUB_TOKEN ",
               "variable)"))
 }
+
+print("processing GITHUB_TOKEN")
+print(Sys.getenv("GITHUB_TOKEN"))
+
+print("release info")
+piggyback::pb_info("bird-team/brisbane-bird-atlas", "v.0.0.1")
 
 # Main processing
 ## message
