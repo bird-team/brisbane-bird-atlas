@@ -16,7 +16,7 @@ jobs:
           name: Fetching assets
           command: 'Rscript code/scripts/pull_assets.R && cd assets && unzip -o "*.zip"'
       - run:
-          name: Fetching eBird records
+          name: Fetching eBird data
           command: 'Rscript code/scripts/pull_ebird.R'
       - run:
           name: Building book
