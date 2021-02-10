@@ -137,19 +137,12 @@ pull_assets:
 	&& rm surveyor-sheets.zip || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
-# push assets to online storage
-test_access:
-	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
-	&& docker cp . bba:$(PATHSEP2)tmp/ \
-	&& docker cp "$(USRHOME)/.Renviron" bba:$(PATHSEP2)root/.Renviron \
-	&& docker exec bba sh -c "R -e 'piggyback:::pb_info('bird-team/brisbane-bird-atlas', 'v.0.0.1')'" || true
-	&& docker exec bba sh -c "R -e 'f=tempfile();writeLines(\"this is a test2\", f);piggyback::pb_upload(file=f, repo=\"bird-team/brisbane-bird-atlas\", tag=\"v.0.0.1\", name=\"new-test5.txt\")'" || true
-	@docker stop -t 1 bba || true && docker rm bba || true
 
 # push assets to online storage
 push_assets:
 	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
 	&& docker cp . bba:$(PATHSEP2)tmp/ \
+	&& docker exec bba sh -c "R -q -e 'try(curl::curl_download(\"https://r-lib.github.io/gert/get-libgit2-linux.sh\",\"get-libgit2-linux.sh\"))'" \
 	&& docker cp "$(USRHOME)/.Renviron" bba:$(PATHSEP2)root/.Renviron \
 	&& docker exec bba sh -c "cd assets; zip -r maps.zip maps" \
 	&& docker exec bba sh -c "cd assets; zip -r widgets.zip widgets" \
@@ -166,6 +159,7 @@ push_assets:
 push_surveyor_sheets:
 	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
 	&& docker cp . bba:$(PATHSEP2)tmp/ \
+	&& docker exec bba sh -c "R -q -e 'try(curl::curl_download(\"https://r-lib.github.io/gert/get-libgit2-linux.sh\",\"get-libgit2-linux.sh\"))'" \
 	&& docker cp "$(USRHOME)/.Renviron" bba:$(PATHSEP2)root/.Renviron \
 	&& docker exec bba sh -c "cd assets; zip -r surveyor-sheets.zip surveyor-sheets" \
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/push_surveyor_sheets.R" \
