@@ -16,6 +16,7 @@ before_script:
 script:
   - echo GITHUB_PAT=$GITHUB_PAT >> $HOME/.Renviron
   - make pull_assets
+  - make pull_ebird
   - travis_wait 120 make book_pdf
   - if [ "${TRAVIS_BRANCH}" != "master" ]; then travis_terminate 0; fi
   - make deploy_book_pdf
