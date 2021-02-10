@@ -39,7 +39,7 @@ update_pages:
 
 # book commands
 ## generate initial book with no text (warning: this will reset all the pages)
-init:
+init: pull_ebird
 	docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
 	&& docker cp . bba:$(PATHSEP2)tmp/ \
 	&& docker exec bba sh -c "Rscript code/scripts/initialize_book.R TRUE" \
@@ -52,7 +52,7 @@ init:
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 ## generate sampling grid (warning: this will reset all grid names)
-grid:
+grid: pull_ebird
 	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
 	&& docker cp . bba:$(PATHSEP2)tmp/ \
 	&& docker exec bba sh -c "Rscript code/scripts/create_grid.R" \
@@ -73,7 +73,7 @@ backup_assets:
 
 ## build assets
 # rebuild badges
-badges:
+badges: pull_ebird
 	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
 	&& docker cp . bba:$(PATHSEP2)tmp/ \
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/create_badges.R" \
@@ -85,7 +85,7 @@ badges:
 	@docker stop -t 1 bba || true && docker rm bba || true
 
 # rebuild assets locally
-assets: backup_assets badges
+assets: pull_ebird backup_assets badges
 	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
 	&& docker cp . bba:$(PATHSEP2)tmp/ \
 	&& docker cp "$(USRHOME)/.Renviron" bba:$(PATHSEP2)root/.Renviron \
@@ -137,7 +137,6 @@ pull_assets:
 	&& rm surveyor-sheets.zip || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
-
 # push assets to online storage
 push_assets:
 	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
@@ -174,8 +173,20 @@ rm_gh_surveyor_sheets:
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/rm_gh_surveyor_sheets.R" || true
 	@docker stop -t 1 bba || true && docker rm bba || true
 
+## pull eBird data from GitHub
+pull_ebird: data/records/ebird_data.zip
+
+data/records/ebird_data.zip:
+	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
+	&& docker cp . bba:$(PATHSEP2)tmp/ \
+	&& docker cp "$(USRHOME)/.Renviron" bba:$(PATHSEP2)root/.Renviron \
+	&& docker exec bba sh -c "R -q -e 'try(curl::curl_download(\"https://r-lib.github.io/gert/get-libgit2-linux.sh\",\"get-libgit2-linux.sh\"))'" \
+	&& docker exec bba sh -c "Rscript /tmp/code/scripts/pull_ebird.R" \
+	&& docker cp bba:$(PATHSEP2)tmp/data/records/ebird_data.zip data/records/ebird_data.zip || true
+	@docker stop -t 1 bba || true && docker rm bba || true
+
 ## build book
-book_pdf:
+book_pdf: pull_ebird
 	@mkdir -p _book \
 	&& docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
 	&& docker cp . bba:$(PATHSEP2)tmp/ \
@@ -184,7 +195,7 @@ book_pdf:
 	@docker stop -t 1 bba || true && docker rm bba || true
 	@ls -la _book/brisbane-bird-atlas.pdf
 
-book_website:
+book_website: pull_ebird
 	@docker run --name=bba -w $(PATHSEP2)tmp -dt brisbanebirdteam/build-env:latest \
 	&& docker cp . bba:$(PATHSEP2)tmp/ \
 	&& docker exec bba sh -c "Rscript /tmp/code/scripts/build_book_website.R" \
@@ -242,4 +253,4 @@ start_container:
 stop_container:
 	@docker stop -t 1 bba || true && docker rm bba || true
 
-.PHONY: clean init data update build deploy reset assets badges
+.PHONY: clean init data update build deploy reset assets badges pull_ebird
